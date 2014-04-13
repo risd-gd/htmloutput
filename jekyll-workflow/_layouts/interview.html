@@ -1,0 +1,28 @@
+<html>
+<head>
+
+	<title>{{ page.title }}</title>
+
+	<style>
+
+		body {
+			background-color: magenta;
+			color: yellow;
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<p>{{ page.description }}</p>
+
+	{{ content }}
+
+	{% include example.html %}
+
+</body>
+</html>
