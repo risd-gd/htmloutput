@@ -42,7 +42,7 @@
 
 			.minibrowser nav {
 				position: absolute;
-				height: 50px;
+				height: 80px;
 				padding: 10px;
 				top: 0;
 				left: 0;
@@ -55,6 +55,11 @@
 				letter-spacing: 12px;
 			}
 
+			.title {
+				padding-bottom: 5px;
+				text-align: center;
+			}
+
 			.input {
 				border: 2px solid black;
 				padding: 0.2em;
@@ -64,7 +69,7 @@
 
 			.minibrowser .main {
 				position: absolute;
-				top: 50px;
+				top: 80px;
 				left: 0;
 				right: 0;
 				bottom: 0;
@@ -82,6 +87,7 @@
 				font-size: 40vh;
 				text-align: center;
 				color: blue;
+				display: none;
 			}
 		</style>
 
@@ -91,16 +97,24 @@
 		<h1>html<br>output</h1>
 		<nav class="meta">
 			Lukas Winklerprins <br/>
-			Kinetic Pattern #1 <br/>
+			<!-- Kinetic Pattern #1 <br/> -->
 			<a href="#">#interactive</a> <br/>
 			<a href="#">#kinetic</a> <br/>
+			<!-- <p style="max-width: 600px;">
+				My work for HTML Output thus far has been a bit scattered; I've approached many things at my own whim, played with them, and moved on. As I reflected on everything however, I found that almost all of my work is guided by the question: "what is a piece of browser-native media?"
+			</p>-->
 		</nav>
 		<div class="minibrowser">
 			<nav>
+				<div class="title">
+					<div style="float:left;">O O O</div>
+					Kinetic Patterns #1
+				</div>
 				<div class="btns">◀︎►⎈✕</div>
 				<div class="input">
 					http://htmloutput.risd.gd/kineticpatterns/1.html
 				</div>
+
 			</nav>
 			<div class="main">
 				<iframe height="100%" width="100%" src="http://ltwp.net/output/midterm/1.html">

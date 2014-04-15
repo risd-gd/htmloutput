@@ -22,13 +22,12 @@
 			}
 
 			html {
-				font: bold 32px/1.3 Helvetica, sans-serif;
+				font: bold 20px/1.3 Helvetica, sans-serif;
 			}
 
 
 			iframe {
 				border: 0;
-				opacity: 0.7;
 			}
 
 			.minibrowser {
@@ -42,17 +41,11 @@
 
 			.minibrowser nav {
 				position: absolute;
-				height: 50px;
-				padding: 1em 1.5em;
-				top: 0;
-				left: 0;
-				right: 0;
+				padding: 10px 20px;
+				top: 10px;
+				left: 10px;
 				z-index: 999;
-			}
-
-			h2 {
-				-webkit-transform: rotate(-90deg) translate3d(-40%, 0, 0);
-				-webkit-transform-origin: top left;
+				background: white;
 			}
 
 			.minibrowser .main {
@@ -77,37 +70,6 @@
 				color: blue;
 			}
 
-			.crop {
-				position: fixed;
-				padding: 10px;
-				border-width: 2px !important;
-			}
-
-			.crop.tr {
-				top: 50px;
-				right: 30px;
-				border-bottom: 1px solid black;
-				border-left: 1px solid black;
-			}
-			.crop.tl {
-				top: 50px;
-				left: 30px;
-				border-bottom: 1px solid black;
-				border-right: 1px solid black;
-			}
-			.crop.br {
-				bottom: 30px;
-				right: 30px;
-				border-top: 1px solid black;
-				border-left: 1px solid black;
-			}
-			.crop.bl {
-				bottom: 30px;
-				left: 30px;
-				border-top: 1px solid black;
-				border-right: 1px solid black;
-			}
-
 		</style>
 
 	</head>
@@ -115,24 +77,20 @@
 	<body>
 		<h1>html<br>output</h1>
 		<nav class="meta">
-			Lukas Winklerprins <br/>
-			Kinetic Pattern #1 <br/>
-			<a href="#">#interactive</a> <br/>
-			<a href="#">#kinetic</a> <br/>
+			Lukas Winklerprins —
+			Kinetic Pattern #1 —
+			<a href="#">#interactive</a> —
+			<a href="#">#kinetic</a>
 		</nav>
 		<div class="minibrowser">
 			<nav>
 				<h2>
-					HTML Output<br>
-					Lukas Winklerprins<br>
-					Kinetic Pattern #1<br>
-					<a href="#">#interactive</a><br>
-					<a href="#">#kinetic</a>
+					<a href="#">HTML Output</a> <br>
+					<a href="#">Lukas Winklerprins</a> <br>
+					Kinetic Pattern #1 <br>
+					<a href="#">#interactive</a>, 
+					<a href="#">#kinetic</a> <br>
 				</h2>
-				<div class="crop tr"></div>
-				<div class="crop tl"></div>
-				<div class="crop br"></div>
-				<div class="crop bl"></div>
 			</nav>
 			<div class="main">
 				<iframe height="100%" width="100%" src="http://ltwp.net/output/midterm/1.html">
