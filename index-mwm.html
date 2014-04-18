@@ -1,10 +1,125 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			Hello!
-		</title>
-	</head>
-	<body>
-		Here's my number, call me maybe?
-	</body>
+<head>
+<!-- Authored by John Caserta, most of head can be replaced by codebase and the css moved to a separate css -->
+
+
+	<link href="mono-web/messenger.css" rel="stylesheet" type="text/css" />
+	<link href="text-web/messenger.css" rel="stylesheet" type="text/css" />
+
+	<style>
+		h1 { 
+			font-weight: normal; 
+			text-align: left;  
+			font-size: 5vw; 
+			line-height: 110%; 
+			color: blue; 
+			z-index: -1; 
+			font-weight: 900;
+			position: absolute;
+			-webkit-transform: rotate(-90deg);
+			margin-top: 15%;
+			margin-left: -12.5%;
+		}
+		.messengertext {
+			font-family: 'messengertext';
+		}
+		.messengermono {  
+			font-family: 'messengermono';
+		}
+		.container { 
+			width: 90%; 
+			margin-left: 10%;
+			font-family: 'messengermono'; 
+			color: black; 
+			font-size: 15pt;  
+			line-height: 160%;
+			float:left;
+		}
+		.title {
+			width: 10%;
+		}
+		.full { 
+		  	width: 98.66%; 
+		  	clear: both;
+		  	margin: .66%
+		}
+		.col { 
+		  	width: 32%; 
+		  	float: left;
+		  	margin: .66%;
+		}
+		p {
+			font-family: 'messengertext';
+			padding: 0; 
+			margin: 0;  
+			margin-bottom: 12pt;
+		}
+		p.footer {
+			font-size: 10px;
+			line-height: 1.2em;
+		}
+		ul, ol, li {
+			font-family: 'messengertext';
+			/*list-style-type: none;*/
+			text-indent: none;
+			padding: 0;
+		}
+		/*  p:nth-child(odd) {margin-right: 70pt; }
+		p:nth-child(even) {margin-left: 60pt; }*/
+
+	</style>
+</head>
+
+<body>
+	<div class="title">
+		<h1 class="messengermono">HTML Output</h1>
+	</div>
+	<div class="container">
+	  	<div class="col">
+		  	<p class="messengermono">Interviews</p>
+		   	<ol>
+		  		<li>David Rienfurt</li>
+				<li>Clement Valla</li>
+				<li>Paul Soulellis</li>
+				<li>Peter Bilak</li>
+				<li>Nick Sherman</li>
+				<li>Jurg Lehni</li>
+				<li>Dan Michaelson</li>
+				<li>Ben Perrat</li>
+				<li>Andrew LeClair</li>
+				<li>Jason Pamental</li>
+				<li>Materials Person</li>
+		  	</ol>
+		</div>
+		<div class="col">
+  			<p class="messengermono">Projects</p>
+  			<ol>
+		  		<li>Chroma</li>
+				<li>Profiling</li>
+				<li>!important</li>
+				<li>Sprite Sheets</li>
+				<li>Form of Forms</li>
+				<li>Browser</li>
+				<li>Confetti</li>
+				<li>Animations</li>
+				<li>Experiments</li>
+				<li>Live Editor</li>
+				<li>Patterns</li>
+				<li>Letterhead</li>
+  			</ol>
+		</div>
+  		<div class="col">
+  			<p class="messengermono">Et Cetera</p>
+		  	<ol>
+		  		<li>Tools and the Way we Make</li>
+		  		<li>print.js</li>
+		  		<li>extension</li>
+		  	</ol>
+  		</div>    
+  		<div class="full">
+		  	<p class="footer">The World Wide Web is an ideal development environment because it combines open access to information with the browser's increasingly robust typographic and compositional possibilities. This one-time studio elective makes use of the Web browser as a design tool to create physical forms: event ephemera, wallpaper and textiles, publications and 3-D objects. Readings, site visits, lectures from experts in the field and case studies will inspire a workshop-style research-oriented classroom. Most projects will have open deliverables intended to foster cross-disciplinary experimentation and collaboration. The course is open to everyone, but will be most beneficial to students who have Web development experience.</p>
+  		</div>
+  	</div>
+</body>
 </html>
