@@ -11,11 +11,12 @@ title: HTML Output
 <div class="content">
   {% for category in site.types %}
 
-    <div class="posts">
+    <div>
       <h2 class="cat-name">{{ category }}</h2>
 
       {% for page in site.pages %}{% if page.category == category %}
-
+          <div class="newpage"></div>
+          <hr/>
           <div class="item">
             {% if category == 'interview' %}
               <a href="{{ page.url }}">{{ page.title }}</a> talks to {{ page.author }}
@@ -24,17 +25,11 @@ title: HTML Output
               <div class="author">{{ page.author }}</div>
             {% endif %}
 
-
-            <figure>
-            {% if page.thumb %}
-              <img src="img/{{post.thumb}}">
-            {% endif %}
-            </figure>
+            {{ page.content }}
           </div>
 
         {% endif %}{% endfor %}
     </div>
-    <div class="newpage"></div>
   {% endfor %}
 
 </div>

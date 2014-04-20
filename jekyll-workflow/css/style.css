@@ -12,8 +12,8 @@ html {
 }
 
 body {
-	margin: 0 auto;
-	padding: 1.4rem;
+	margin:    0 auto;
+	padding:   1.4rem;
 	max-width: 900px;
 }
 
@@ -25,12 +25,14 @@ a {
 
 h1 {
 	margin-bottom: 1.4rem;
-	font-size: 2rem;
+	font-size: 6rem;
+	font-family: Messenger Mono;
+	line-height: 1.2;
 }
 
 h2, h3, h4 {
 	margin-bottom: 1.4rem;
-	font-size: 1.5rem;
+	font-size:     1.5rem;
 }
 
 p {
@@ -46,7 +48,7 @@ em {
 }
 
 code {
-	font: 0.9rem/1.4 Messenger Mono, monospace;
+	font:       0.9rem/1.4 Messenger Mono, monospace;
 	background: #ffffbb;
 }
 
@@ -62,14 +64,34 @@ hr {
 }
 
 .cat-name {
-	text-transform: capitalize;
-	border-top: 1px solid #ddd;
-	font-size: 1rem;
+	text-transform: uppercase;
+	font-size:      1rem;
 }
 
 
+.item {
+	margin-bottom: 1.4rem;
+}
+
+.content .posts {
+	display: inline-block;
+	vertical-align: top;
+	width: 32%;
+	padding-right: 1.4rem;
+}
+
+/*.item a {
+	font-size: 1.5rem;
+}
+*/
+
+.newpage {
+	display: none;
+}
+
 @media print {
 	.newpage {
+		display: block;
 		page-break-before: always;
 		border: 0;
 		margin: 0;
@@ -77,5 +99,16 @@ hr {
 }
 
 @page {
-	border: 1px solid red;
+	
 }
+
+@page :left{
+	margin-left: 2in;
+}
+
+@page :right{
+	margin-right: 2in;
+}
+
+
+

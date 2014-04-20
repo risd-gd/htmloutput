@@ -2,6 +2,7 @@
 
 layout: interview
 title: David Desandro (samp)
+author: Evan Brooks
 description: this is this interview I did
 category: interview
 

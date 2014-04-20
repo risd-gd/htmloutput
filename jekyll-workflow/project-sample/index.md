@@ -1,7 +1,7 @@
 ---
 
-layout: project
-title: Dear Chrome
+layout: default
+title: Project Sample Markdown
 description: Hi chrome
 category: project
 
