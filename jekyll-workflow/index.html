@@ -11,7 +11,7 @@ title: HTML Output
 <div class="categories">
   {% for category in site.types %}
 
-    <h2>{{ category }}</h2>
+    <h2 class="cat-name">{{ category }}</h2>
     <div class="posts">
       {% for page in site.pages %}{% if page.category == category %}
 

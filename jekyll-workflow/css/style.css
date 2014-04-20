@@ -61,6 +61,12 @@ hr {
 	margin-bottom: 1.4rem;
 }
 
+.cat-name {
+	text-transform: capitalize;
+	border-top: 1px solid #ddd;
+	font-size: 1rem;
+}
+
 
 @media print {
 	.newpage {

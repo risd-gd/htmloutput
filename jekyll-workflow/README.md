@@ -38,3 +38,6 @@ _If you don't want to install Jekyll or deal with the terminal_
 1. Commit and push your changes
 
 2. Go to [risd-gd.github.io/htmloutput/jekyll-workflow/](http://risd-gd.github.io/htmloutput/jekyll-workflow/)
+
+
+
