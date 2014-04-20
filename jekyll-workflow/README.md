@@ -5,9 +5,7 @@ title: README
 
 ---
 
-# Hey HTML Outputters!
-
-Here's how this works.
+# Hey HTML Outputters, here's how this works:
 
 ---
 
@@ -15,11 +13,13 @@ Here's how this works.
 
 1. Make a folder for your project, essay, or interview
 
-2. Create either an index.html file or index.md file.
+2. Create either an `index.html` file (for stuff you've designed yourself) or `index.md` (to use our default styles, great for essays/interviews) file.
 
-3. Put in the appropriate information (title, author etc) in YAML format. You can use the interview-sample or project-sample as a template to get started, the dashes are important!
+3. Put in the appropriate information (title, author etc) at the top in YAML format. You can use the `interview-sample` or `project-sample` as a template to get started.
 
-3. Put all assets (images, code, etc) in that folder.
+	The project won't show up yet unless it has a category of 'project,' 'interview,' or 'essay.'
+
+3. Put all assets (images, code, etc) in that folder. TBD: Formatting of more complex or multi-page html
 
 ---
 ## Viewing the site

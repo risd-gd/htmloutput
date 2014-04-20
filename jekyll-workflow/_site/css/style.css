@@ -8,11 +8,13 @@
 }
 
 html {
-	font: 20px/1.4 sans-serif;
+	font: 20px/1.4 Messenger Text, sans-serif;
 }
 
 body {
-	margin: 1.4rem
+	margin: 0 auto;
+	padding: 1.4rem;
+	max-width: 900px;
 }
 
 a {
@@ -20,9 +22,15 @@ a {
 	color: blue
 }
 
-h1, h2, h3, h4 {
-	font-weight: bold;
+
+h1 {
 	margin-bottom: 1.4rem;
+	font-size: 2rem;
+}
+
+h2, h3, h4 {
+	margin-bottom: 1.4rem;
+	font-size: 1.5rem;
 }
 
 p {
@@ -38,8 +46,8 @@ em {
 }
 
 code {
-	font-family: monospace;
-	background: #eee;
+	font: 0.9rem/1.4 Messenger Mono, monospace;
+	background: #ffffbb;
 }
 
 blockquote {

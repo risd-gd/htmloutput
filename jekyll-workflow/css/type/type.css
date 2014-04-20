@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Messenger Mono';
+    src: url('messenger-mono.eot');
+    src: url('messenger-mono.eot?#iefix') format('embedded-opentype'),
+         url('messenger-mono.woff') format('woff'),
+         url('messenger-mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Messenger Text';
+    src: url('messenger-text.eot');
+    src: url('messenger-text.eot?#iefix') format('embedded-opentype'),
+         url('messenger-text.woff') format('woff'),
+         url('messenger-text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
