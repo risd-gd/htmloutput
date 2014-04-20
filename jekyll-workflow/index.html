@@ -1,5 +1,25 @@
-<html>
+---
+layout: default
+title: <html output>
+---
 
-our index!
 
-</html>
+<nav>
+	<h1>{{title}}</h1>
+</nav>
+
+<div class="posts">
+	{% for post in site.pages %}
+
+		<div class="item">
+	    	<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+	    	<p>{{ post.description }}</p>
+	    	<figure>
+				{% if post.thumb %}
+				<img src="img/{{post.thumb}}">
+				{% endif %}
+	    	</figure>
+	    </div>
+
+	{% endfor %}
+</div>

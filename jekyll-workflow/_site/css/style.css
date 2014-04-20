@@ -1,0 +1,15 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+html {
+	font: 16px/1.4 sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: blue
+}

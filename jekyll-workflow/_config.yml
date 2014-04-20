@@ -15,3 +15,5 @@ limit_posts: 0
 highlighter: pygments
 
 name: html-output
+
+permalink: pretty
