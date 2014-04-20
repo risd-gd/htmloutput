@@ -3,7 +3,7 @@
 layout: project
 title: Dear Chrome
 description: Hi chrome
-tag: "#interview"
+category: project
 
 ---
 

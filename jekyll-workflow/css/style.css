@@ -3,10 +3,16 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	font: inherit;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-	font: 16px/1.4 sans-serif;
+	font: 20px/1.4 sans-serif;
+}
+
+body {
+	margin: 1.4rem
 }
 
 a {
@@ -15,5 +21,47 @@ a {
 }
 
 h1, h2, h3, h4 {
-	font-weight: bold
+	font-weight: bold;
+	margin-bottom: 1.4rem;
+}
+
+p {
+	margin-bottom: 1.4rem
+}
+
+ol {
+	margin-left: 1.4rem
+}
+
+em {
+	font-style: italic;
+}
+
+code {
+	font-family: monospace;
+	background: #eee;
+}
+
+blockquote {
+	margin-left: 1.4rem;
+	color: gray;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 1.4rem;
+}
+
+
+@media print {
+	.newpage {
+		page-break-before: always;
+		border: 0;
+		margin: 0;
+	}
+}
+
+@page {
+	border: 1px solid red;
 }

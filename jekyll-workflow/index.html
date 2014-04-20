@@ -5,21 +5,31 @@ title: <html output>
 
 
 <nav>
-	<h1>{{title}}</h1>
+  <h1>{{title}}</h1>
 </nav>
 
-<div class="posts">
-	{% for post in site.pages %}
+<div class="categories">
+  {% for category in site.types %}
 
-		<div class="item">
-	    	<a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-	    	<p>{{ post.description }}</p>
-	    	<figure>
-				{% if post.thumb %}
-				<img src="img/{{post.thumb}}">
-				{% endif %}
-	    	</figure>
-	    </div>
+    <h2>{{ category }}</h2>
+    <div class="posts">
+      {% for page in site.pages %}{% if page.category == category %}
 
-	{% endfor %}
+          <div class="item">
+            <a href="{{ page.url }}"><h2>{{ page.title }}</h2></a>
+            <p>{{ page.description }}</p>
+            <figure>
+            {% if page.thumb %}
+              <img src="img/{{post.thumb}}">
+            {% endif %}
+            </figure>
+          </div>
+          
+          <div class="newpage"></div>
+
+        {% endif %}{% endfor %}
+    </div>
+  {% endfor %}
+
 </div>
+
