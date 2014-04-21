@@ -19,16 +19,16 @@ title: HTML Output
 
           <div class="item">
             {% if category == 'interview' %}
-              <a href="{{ page.url }}">{{ page.title }}</a> talks to {{ page.author }}
+              <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a> talks to {{ page.author }}
             {% else %}
-              <a href="{{ page.url }}">{{ page.title }}</a>
+              <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
               <div class="author">{{ page.author }}</div>
             {% endif %}
 
 
             <figure>
             {% if page.thumb %}
-              <img src="img/{{post.thumb}}">
+              <img src="{{ site.baseurl }}img/{{post.thumb}}">
             {% endif %}
             </figure>
           </div>
