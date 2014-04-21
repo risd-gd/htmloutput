@@ -14,7 +14,7 @@
 }
 
 .page-outer {
-	height: 10.5in;
+	height: 11in;
 	width: 8.5in;
 	position: relative;
     page-break-after: always;
@@ -40,6 +40,25 @@
 	right: 0;
 }
 
+.page-outer header {
+	position: absolute;
+	bottom: 3in;
+	text-transform: uppercase;
+}
+
+.page-outer:nth-child(odd) header {
+	-webkit-transform-origin: top left;
+	-webkit-transform: rotate(90deg);
+	left: 0.5in;
+}
+
+.page-outer:nth-child(even) header {
+	-webkit-transform-origin: top right;
+	-webkit-transform: rotate(-90deg);
+	right: 0.5in;
+}
+
+
 @media screen {
 	.page-outer {
 	    margin-bottom: 1em;
@@ -48,6 +67,11 @@
 }
 
 @media print {
+	body, html {
+		margin: 0;
+		padding: 0;
+	}
+
 	.page-outer {
 		border: 1px solid black;
 	}
