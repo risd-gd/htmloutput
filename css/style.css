@@ -1,3 +1,9 @@
+/* ----------------------------------
+
+Generic base styles and resets
+
+----------------------------------*/
+
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -64,6 +70,13 @@ hr {
 	margin-bottom: 1.4rem;
 }
 
+/* ----------------------------------
+
+Styles for the index page
+
+----------------------------------*/
+
+
 .cat-name {
 	text-transform: uppercase;
 	font-size:      1rem;
@@ -80,6 +93,25 @@ hr {
 	width: 32%;
 	padding-right: 1.4rem;
 }
+
+/* ----------------------------------
+
+Styles for an individual page
+
+----------------------------------*/
+
+
+
+
+
+/* ----------------------------------
+
+Note:
+
+Most print styles are in print.css
+@font-face are in /type/type.css
+
+----------------------------------*/
 
 @media screen {
 	.newpage {
