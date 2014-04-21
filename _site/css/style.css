@@ -80,86 +80,9 @@ hr {
 	padding-right: 1.4rem;
 }
 
-/*.item a {
-	font-size: 1.5rem;
-}
-*/
-
-.newpage {
-	display: none;
-}
-
-.content-source {
-    flow-into: content-flow contents;
-}
-
-.content-region {
-    flow-from: content-flow;
-    region-fragment: break;
-    overflow: hidden;
-}
-
-.page-outer {
-	height: 10.5in;
-	width: 8.5in;
-	position: relative;
-    page-break-after: always;
-}
-
-.page-inner {
-	padding: 1.4em 1.2in;
-	position: absolute;
-	margin: auto;
-	bottom: 1in;
-	top: 1in;
-	left: 0;
-	right: 0;
-}
-
 @media screen {
-	.page-outer {
-	    margin-bottom: 1em;
-	    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1), 0 5px 20px rgba(0,0,0,0.1);
+	.newpage {
+		display: none;
 	}
 }
-
-@media print {
-	.page-outer {
-		border: 1px solid black;
-	}
-}
-
-@page {
-	margin: 0;
-	width: 8.5in;
-	height: 11in;
-}
-
-.forprint .newpage {
-	display: block;
-	border: 1px solid red;
-	break-after: region;
-	margin-bottom: 10in;
-	opacity: 0.1;
-}
-
-.forprint .newpage:after {
-	content: "Force a page break!";
-	position: absolute;
-	color: red;
-}
-
-@page :before {
-	content: "Hey";
-}
-
-/*@page :left{
-	margin-left: 1in;
-}
-
-@page :right{
-	margin-right: 1in;
-}
-*/
-
 

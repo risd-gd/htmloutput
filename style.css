@@ -80,9 +80,9 @@ hr {
 	padding-right: 1.4rem;
 }
 
-@media screen {
-	.newpage {
-		display: none;
-	}
+/*.item a {
+	font-size: 1.5rem;
 }
+*/
+
 

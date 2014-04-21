@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <title>HTMLOUTPUTHTMLOUTPUT</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!--
+<link rel="stylesheet" type="text/css" media="print" href="">
+
+-->
+        <link rel="stylesheet" type="text/css" media="screen" href="reset.css">
+        <script>
+
+            $(document).ready(function(){
+                $("#print_button").click(function(){
+                    window.print();
+                });
+
+                for(var i = 0; i<60; i++){
+                    $("#scrolly").append("<marquee direction='left' behavior='alternate'>CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </marquee><br /><marquee direction='right' behavior='alternate'>CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </marquee><br />");
+                }
+            });
+
+        </script>
+        <style>
+            body{
+                xfont-family: Helvetica, sans-serif;
+                font-family: Monaco, monospace;
+                font-size: 12pt;
+            }
+
+            a{
+                color: blue;
+                text-decoration: underline;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+            a:before{
+                content: '>';
+            }
+
+            strong{
+                xtext-decoration: underline;
+                color: red;
+            }
+
+            em{
+                font-style: italic;
+            }
+
+            #print_button{
+                width: 100%;
+                background-color: blue;
+                height: 20%;
+                position: fixed;
+                left: 0px;
+                top: 20px;
+                box-shadow: 0px 2px 2px black;
+                z-index: 4;
+            }
+            #print_button:hover{
+                cursor: pointer;
+                background-color: navy;
+                box-shadow: 0px 1px 2px black;
+            }
+            #print_text{
+                text-align: center;
+                width: 100%;
+                color: white;
+                padding-top: 4%;
+                padding-bottom: 4%;
+                font-size: 2pc;
+                xbackground-color: navy;
+            }
+
+            #title_one{
+                margin-top: 12pc;
+                font-size: 28pc;
+            }
+            #title_two{
+                font-size: 18pc;
+            }
+            .title{
+                font-weight: bold;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                text-align: center;
+                font-family: Helvetica, sans-serif;
+            }
+
+            #masthead{
+                width: 80%;
+                text-align: left;
+                margin: 0 auto;
+                background-color: white;
+                z-index: 3;
+                padding: 20px;
+            }
+            .teams{
+
+                width: 12pc;
+                xheight: 12pc;
+                display: inline-block;
+                margin: 5pt;
+            }
+
+            #gd{
+            }
+            #gd a:before{content: "";}
+
+            #tags{
+                width: 80%;
+                text-align: left;
+                margin: 0 auto;
+                background: white;
+                z-index: 3;
+                padding: 20px;
+            }
+            #tags a{
+                display: inline-block;
+                margin: 12pt;
+                cursor: pointer;
+            }
+            #tags a:before{content: "";}
+
+            #content{
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                background: white;
+                z-index: 3;
+                padding: 20px;
+            }
+            #content img{
+                display: inline-block;
+                cursor: pointer;
+                width: 300px;
+                height: auto;
+                background-color: blue;
+                padding-top: 10px;
+            }
+
+            #scrolly{
+                position: fixed;
+                top: -100px;
+                left: -100px;
+                width: 150%;
+                height: 150%;
+                -webkit-transform: rotate(13deg);
+                z-index: 1;
+            }
+            #scrolly marquee{
+                z-index: 1;
+            }
+            #coverup{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: transparent;
+                z-index: 2;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="print_button"><div id="print_text">PRINT</div></div>
+
+        <div id="scrolly"></div>
+        <div id="coverup">
+
+            <div class="title" id="title_one">HTML</div>
+            <div class="title" id="title_two">OUTPUT</div>
+
+            <div id="masthead">
+                <!-- gotta get some columns up in here -->
+                <a href="htmloutput.charrette.ws">HTML Output</a>, taught by John Caserta at the <a href="risd.edu">Rhode Island School of Design</a>.<br /><br />
+
+                <div class="teams">
+                    <strong>Editorial</strong><br />
+                    John Caserta<br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+
+                <div class="teams">
+                    <strong>Digital Systems</strong><br />
+                    Evan Brooks<br />
+                    Phil Cao<br />
+                    Catherine Schmidt<br />
+                    Lukas WinklerPrins<br />
+                    <br />
+                </div>
+
+                <div class="teams">
+                    <strong>Typography</strong><br />
+                    Christina Rees<br />
+                    John Caserta<br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+
+                <div class="teams">
+                    <strong>Visual Structure</strong><br />
+                    Daniel Giuditta<br />
+                    Kelly<br />
+                    Ojus<br />
+                    <br />
+                    <br />
+                </div>
+                <div class="teams">
+                    <strong style="background-color: red; padding: 10px;"><a href="gd.risd.edu">RISD GD</a></strong>
+                </div>
+
+            </div>
+
+            <!-- END MASTHEAD -->
+            <br /><br />
+            <div id="tags">
+
+                <a>#randomness</a>
+                <a>#data_mashup</a>
+                <a>#web_interfaces</a>
+                <a>#patterns</a>
+                <a>#browser_form</a>
+                <a>#color_tests</a>
+                <a>#browser_print</a>
+                <a>#interview</a>
+                <a>#web_text</a>
+
+            </div>
+
+            <div id="content">
+                <img src="test_thumb_1.png" />
+                <img src="test_thumb_2.png" />
+                <img src="test_thumb_3.png" />
+                <img src="test_thumb_4.png" />
+            </div>
+            <BR /><BR />
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>Blur Composition</title>
+        <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+        <script>
+
+            //////////////////////////////////////////////////////
+            var quasi_random = function(index,base){
+                // HALTON SEQUENCE CODE TAKEN FROM WIKIPEDIA LOL
+                var f = 1/base;
+                var i = index;
+                var result = 0;
+                while(i > 0){
+                    result = result + f*(i%base);
+                    i = Math.floor(i/base);
+                    f = f/base;
+                }
+                return result;
+            }
+
+            //////////////////////////////////////////////////////
+            var random_color = function(){
+                var num = Math.random()*16;
+                //return "c";
+
+                if(0 <= num && num < 1){
+                    return "0";
+                }else if(1 <= num && num < 2){
+                    return "1";
+                }else if(2 <= num && num < 3){
+                    return "2";
+                }else if(3 <= num && num < 4){
+                    return "3";
+                }else if(4 <= num && num < 5){
+                    return "4";
+                }else if(5 <= num && num < 6){
+                    return "5";
+                }else if(6 <= num && num < 7){
+                    return "6";
+                }else if(7 <= num && num < 8){
+                    return "7";
+                }else if(8 <= num && num < 9){
+                    return "8";
+                }else if(9 <= num && num < 10){
+                    return "9";
+                }else if(10 <= num && num < 11){
+                    return "a";
+                }else if(11 <= num && num < 12){
+                    return "b";
+                }else if(12 <= num && num < 13){
+                    return "c";
+                }else if(13 <= num && num < 14){
+                    return "d";
+                }else if(14 <= num && num < 15){
+                    return "e";
+                }else if(15 <= num && num < 16){
+                    return "f";
+                }
+            }
+
+            //////////////////////////////////////////////////////
+
+            $(document).ready(function(){
+                var win_w = $(window).width();
+                var win_h = $(window).height();
+
+                var words_n_stuff = $("body").text();
+                var n_letters = words_n_stuff.length;
+
+                var new_html = "";
+                for(var j = 0; j < n_letters; j++){
+                    new_html = new_html + "<span>"+words_n_stuff.substr(j,1)+"</span>";
+                    // Wraps each letter in <span> </span>
+                }
+
+                $("body").html(new_html);
+
+                var n_spans = $("span").length;
+                for(var i = 0; i < n_spans; i++){
+
+                    var x = Math.floor(Math.random()*win_w);
+                    var y = Math.floor(Math.random()*win_h);
+                    var t = Math.floor(Math.random()*360);
+
+                    //var x = Math.floor(quasi_random(i,2)*win_w);
+                    //var y = Math.floor(quasi_random(i,3)*win_h);
+                    //var t = Math.floor(Math.random()*360);
+
+                    $("span").eq(i).css("top",y+"px");
+                    $("span").eq(i).css("left",x+"px");
+                    $("span").eq(i).css("-webkit-transform", "rotate(" + t + "deg)" );
+                    $("span").eq(i).css("text-shadow","0px 0px 5px #"+random_color()+random_color()+random_color());
+                }
+            });
+
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            body{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                color: black;
+                font-size: 16px;
+                font-family: 'Vollkorn',serif;
+            }
+
+            span{
+                position: fixed;
+                top: 0;
+                left: 0;
+                -webkit-transform: rotate(0deg);
+                color: rgba(255,255,255,0);
+                text-shadow: 0px 0px 0px #000000;
+            }
+            @media print{
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            body{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                color: black;
+                font-size: 16px;
+                font-family: 'Vollkorn',serif;
+            }
+
+            span{
+                position: fixed;
+                top: 0;
+                left: 0;
+                -webkit-transform: rotate(0deg);
+                color: rgba(255,255,255,0);
+                text-shadow: 0px 0px 0px #000000;
+                font-size: 70px;
+            }
+                }
+        </style>
+
+    </head>
+
+    <body>It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deets could have done them better.
+            The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly, who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid soulds who neither know victory nor defeat.</body>
+
+</html>

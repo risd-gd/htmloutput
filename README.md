@@ -26,9 +26,11 @@ title: README
 
 _If you have Jekyll installed locally_
 
-1. Navigate to the jekyll-workflow folder in the terminal and type `jekyll serve -w`. 
+1. Navigate to the jekyll-workflow folder in the terminal and run `jekyll serve -w --baseurl ''`. 
 
 	The `-w` means 'watch.' That means every time you make a change to a file, jekyll will run `serve` and generate a site again. Press `Ctrl-C` to cancel watching, or just close the terminal window.
+
+	The `--baseurl ''` will set the baseurl to nothing, so you can view it locally.
 
 2. Visit [localhost:4000](http://localhost:4000/)
 
@@ -37,7 +39,7 @@ _If you don't want to install Jekyll or deal with the terminal_
 
 1. Commit and push your changes
 
-2. Go to [risd-gd.github.io/htmloutput/jekyll-workflow/](http://risd-gd.github.io/htmloutput/jekyll-workflow/)
+2. Go to [risd-gd.github.io/htmloutput/jekyll-workflow/](http://risd-gd.github.io/htmloutput/)
 
 
 

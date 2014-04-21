@@ -15,6 +15,7 @@ limit_posts: 0
 highlighter: pygments
 
 name:        html-output
+baseurl:     /htmloutput
 
 permalink:   pretty
 
