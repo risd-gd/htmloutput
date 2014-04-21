@@ -1,7 +1,9 @@
+/* ----------------------------------
 
-.newpage {
-	display: none;
-}
+CSS Region flow (used by the polyfill)
+
+----------------------------------*/
+
 
 .content-source {
     flow-into: content-flow contents;
@@ -12,6 +14,12 @@
     region-fragment: break;
     overflow: hidden;
 }
+
+/* ----------------------------------
+
+Page size and paginalia
+
+----------------------------------*/
 
 .page-outer {
 	height: 11in;
@@ -58,13 +66,58 @@
 	right: 0.5in;
 }
 
+/* ----------------------------------
+
+For previewing the print
+
+----------------------------------*/
 
 @media screen {
+	body {
+		max-width: none;
+		text-align: center;
+	}
+
 	.page-outer {
-	    margin-bottom: 1em;
+		display: inline-block;
+		text-align: left;
+	    margin-bottom: 1rem;
 	    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1), 0 5px 20px rgba(0,0,0,0.1);
 	}
+
+	.page-outer[data-page='1'] {
+		display: block;
+		margin: 1rem auto;
+	}
 }
+
+/* ----------------------------------
+
+Faked print styles
+
+----------------------------------*/
+
+
+.forprint .newpage {
+	display: block;
+	border: 1px solid red;
+	break-after: region;
+	margin-bottom: 10in;
+	opacity: 0.1;
+}
+
+.forprint .newpage:after {
+	content: "Force a page break!";
+	position: absolute;
+	color: red;
+}
+
+
+/* ----------------------------------
+
+Actual print styles
+
+----------------------------------*/
 
 @media print {
 	body, html {
@@ -83,23 +136,6 @@
 	height: 11in;
 }
 
-.forprint .newpage {
-	display: block;
-	border: 1px solid red;
-	break-after: region;
-	margin-bottom: 10in;
-	opacity: 0.1;
-}
-
-.forprint .newpage:after {
-	content: "Force a page break!";
-	position: absolute;
-	color: red;
-}
-
-@page :before {
-	content: "Hey";
-}
 
 /*@page :left{
 	margin-left: 1in;
