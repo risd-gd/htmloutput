@@ -1,8 +1,25 @@
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page-inner.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/type/type.css"  type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <script src="../script/cssregions.js"></script>
+  </head>
+  <body class="forprint">
+    <div class="content-source">
+    	{{ content }}
+    </div>
 
-</head>
-<body>
-
-</body>
+    {% for num in (1...20) %}
+    	<div class="page-outer">
+	    	<header>Title or something</header>
+	    	<div class="content-region page-inner">
+	    	</div>
+	    	<footer>Page {{ num }}</footer>
+	    </div>
+    {% endfor %}
+  </body>
 </html>
