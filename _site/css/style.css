@@ -76,6 +76,9 @@ Styles for the index page
 
 ----------------------------------*/
 
+nav {
+	position: relative;
+}
 
 .cat-name {
 	text-transform: uppercase;
@@ -92,6 +95,19 @@ Styles for the index page
 	vertical-align: top;
 	width: 32%;
 	padding-right: 1.4rem;
+}
+
+.print-btn {
+	padding: 1rem 2rem;
+	border: 1px solid black;
+	display: block;
+	text-align: center;
+	color: black;
+}
+
+.print-btn:hover {
+	background: black;
+	color: white;
 }
 
 /* ----------------------------------
