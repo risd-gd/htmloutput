@@ -1,6 +1,6 @@
 ---
 
-layout: interview
+layout: default
 title: David Desandro (samp)
 author: Evan Brooks
 description: this is this interview I did
