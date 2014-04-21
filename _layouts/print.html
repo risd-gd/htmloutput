@@ -10,10 +10,27 @@
     <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
   <body class="forprint">
+
+<!-- 
+
+We're using a polyfill for CSS Regions.
+
+It takes the continuous steam of content from content-source,
+and then send it through the regions in content-region (which
+represent individual printed pages.)
+
+-->
     <div class="content-source">
     	{{ content }}
     </div>
+<!-- 
 
+Because of how CSS Regions works, we can't tell how many
+pages will be necessary. Right now I'm just creating 20
+to start out. If this polyfill works out, we can
+experiment with adding/removing them dynamically
+
+-->
     {% for num in (1...20) %}
     	<div class="page-outer">
 	    	<header>Title or something</header>
@@ -22,5 +39,8 @@
 	    	<footer>{{ num }}</footer>
 	    </div>
     {% endfor %}
+
+
+
   </body>
 </html>
