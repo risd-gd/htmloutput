@@ -20,9 +20,11 @@
                 position: fixed;
                 left: 0;
                 top: 2pc;
-                box-shadow: 0pt 2pt 2pt black;
+                box-shadow: 0pt 1pt 1pt black;
                 z-index: 4;
-                border: 1pt black solid;
+                border-top: 1pt black solid;
+                border-bottom: 1pt black solid;
+                font: 20px/1.4 Messenger Text, sans-serif;
             }
 
         </style>
@@ -31,9 +33,9 @@
     <body>
         <a href="/{{ site.baseurl }}">< Index</a>
 
-        <div id="output_banner">HTML OUTPUT - {{page.title}} by {{page.author}}.</div>
+        <div id="output_banner"><a href="">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
 
-        {% include pieratt.html %}
+        {{ content }} {% comment %}can this pull in a jekyll tag itself?{% endcomment %}
 
     </body>
 </html>
