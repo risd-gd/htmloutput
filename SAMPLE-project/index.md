@@ -25,10 +25,6 @@ Next, lets force a new page
 
 ## Hey cat
 
-![Alt text](http://placekitten.com/g/500/200)
-
-Here is a short caption
-
 ![Alt text](http://placekitten.com/g/500/300)
 
 Here is a caption about why this cat prefers language with significant whitespace
@@ -38,3 +34,7 @@ Here is a caption about why this cat prefers language with significant whitespac
 ![Alt text](http://placekitten.com/g/500/400)
 
 Here is a caption about why this cat doesn't know how to code
+
+<img src="http://placekitten.com/g/800/1000" style="position: absolute;" />
+
+<iframe src="http://ltwp.net/output/midterm/1.html" width="400" height="500"></iframe>

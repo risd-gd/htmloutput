@@ -107,6 +107,7 @@ For previewing the print
 		top: 1em;
 		right: 1em;
 		background: white;
+		display: block;
 	}
 
 }
