@@ -86,14 +86,8 @@ nav {
 
 
 .item {
-	margin-bottom: 1.4rem;
-}
-
-.content .posts {
-	display: inline-block;
-	vertical-align: top;
-	width: 32%;
-	padding-right: 1.4rem;
+	padding: 0.2rem 0;
+	font-size: 2rem;
 }
 
 .print-btn, .toggle-btn {
