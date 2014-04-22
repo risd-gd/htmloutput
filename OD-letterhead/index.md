@@ -7,6 +7,43 @@ category: project
 
 ---
 <link rel="stylesheet" href="css/main.css">
+
+<div class="letter-margins">
+
+            <div class="letter-main">
+                <div class="top">
+                    <p>Title</br>
+                        Organization</br>
+                        Address</br>
+                        City, State, Zip Code</p>
+
+                </div>
+
+                <div class="text">
+
+                    <p>Dear Mr./Ms. Last Name:</p>
+
+                    <p>I am interested in the assistant position advertised in XXX. I am currently employed as Legislative Director for Assemblywoman XXXX, Chairperson of the NYS Assembly XXX. I accepted this position because of the emphasis on the writing and research skills which are applicable to your requirements for an author’s assistant. My experience in the NYS Assembly has afforded me the opportunity to become familiar with the consolidated and unconsolidated laws of the State of New York. I also have extensive experience in legal and policy research.</p>
+
+                    <p>In my position as Legislative Director for Ms. XXX, I prepare her personal legislation which deals with issues relative to her position as Senior Member of the NYS Assembly Standing Committee on XXXX. In as much as she is Chairperson of the XXX Committee I am, of course, heavily involved in the current welfare and Medicaid reform movement.</p>
+
+                    <p>In response to your search for an assistant, I believe my experience in the Legislature, and my research and writing skills qualify me for consideration. If you would like, I can provide you with current samples of my work.</p>
+
+                    <p>To further acquaint you with the specifics of my background I am enclosing my resume. I hope you will consider me for this position. I look forward to meeting with you and discussing my qualifications in more detail.</p>
+
+                
+
+                    <p>Sincerely,</br>
+                    Ojus Doshi</p>
+
+                </div>
+
+                <div class="footer">
+                    <p>ojusdoshi.com | @yoshi22g | 717-574-1894 | ojus.doshi@gmail.com</p>
+                </div>
+            </div>
+
+        </div>
 <script src="js/jquery-2.1.0.min.js"></script>
 <script>
 
@@ -135,41 +172,5 @@ category: project
 
         
 </script>
-<div class="letter-margins">
-
-            <div class="letter-main">
-                <div class="top">
-                    <p>Title</br>
-                        Organization</br>
-                        Address</br>
-                        City, State, Zip Code</p>
-
-                </div>
-
-                <div class="text">
-
-                    <p>Dear Mr./Ms. Last Name:</p>
-
-                    <p>I am interested in the assistant position advertised in XXX. I am currently employed as Legislative Director for Assemblywoman XXXX, Chairperson of the NYS Assembly XXX. I accepted this position because of the emphasis on the writing and research skills which are applicable to your requirements for an author’s assistant. My experience in the NYS Assembly has afforded me the opportunity to become familiar with the consolidated and unconsolidated laws of the State of New York. I also have extensive experience in legal and policy research.</p>
-
-                    <p>In my position as Legislative Director for Ms. XXX, I prepare her personal legislation which deals with issues relative to her position as Senior Member of the NYS Assembly Standing Committee on XXXX. In as much as she is Chairperson of the XXX Committee I am, of course, heavily involved in the current welfare and Medicaid reform movement.</p>
-
-                    <p>In response to your search for an assistant, I believe my experience in the Legislature, and my research and writing skills qualify me for consideration. If you would like, I can provide you with current samples of my work.</p>
-
-                    <p>To further acquaint you with the specifics of my background I am enclosing my resume. I hope you will consider me for this position. I look forward to meeting with you and discussing my qualifications in more detail.</p>
-
-                
-
-                    <p>Sincerely,</br>
-                    Ojus Doshi</p>
-
-                </div>
-
-                <div class="footer">
-                    <p>ojusdoshi.com | @yoshi22g | 717-574-1894 | ojus.doshi@gmail.com</p>
-                </div>
-            </div>
-
-        </div>
 
         
