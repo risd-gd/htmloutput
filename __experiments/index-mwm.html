@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Authored by John Caserta, most of head can be replaced by codebase and the css moved to a separate css -->
-
-
+<!-- Authored by John Caserta, most of head can be replaced by codebase and the css moved to a separate css --> 
 	<link href="mono-web/messenger.css" rel="stylesheet" type="text/css" />
-	<link href="text-web/messenger.css" rel="stylesheet" type="text/css" />
-
-	<style>
-		h1 { 
-			font-weight: normal; 
-			text-align: left;  
-			font-size: 5vw; 
-			line-height: 110%; 
-			color: blue; 
-			z-index: -1; 
-			font-weight: 900;
-			position: absolute;
-			-webkit-transform: rotate(-90deg);
-			margin-top: 15%;
-			margin-left: -12.5%;
+	<link href="text-web/messenger.css" rel="stylesheet" type="text/css" /> 	<style>
+		body {
+			background-color: salmon;
 		}
 		.messengertext {
 			font-family: 'messengertext';
@@ -28,26 +14,49 @@
 			font-family: 'messengermono';
 		}
 		.container { 
-			width: 90%; 
-			margin-left: 10%;
+			width: 7in; 
+			/*height: 9.3in;*/
 			font-family: 'messengermono'; 
 			color: black; 
 			font-size: 15pt;  
 			line-height: 160%;
-			float:left;
+			margin: 0 auto;
+			margin-top: .5in;
+			margin-bottom: .5in;
+			/*background-color: white;*/
 		}
 		.title {
-			width: 10%;
-		}
-		.full { 
-		  	width: 98.66%; 
+			width: 7in; 
 		  	clear: both;
-		  	margin: .66%
+		}
+		.foot { 
+		  	width: 7in;
+		  	/*position: absolute;*/
+		  	/*top: 8in;*/
+		  	clear: both;
+		  	margin-top: 7in;
+		}
+		.interview {
+			width: 7in;
 		}
 		.col { 
-		  	width: 32%; 
+		  	width: 2.25in; 
 		  	float: left;
-		  	margin: .66%;
+		  	margin-left: .125in;
+		}
+		h1 { 
+			font-weight: normal; 
+			text-align: left;
+			font-size: 30pt;  
+			line-height: 110%; 
+			color: white; 
+		}
+		h6 {
+			font-weight: normal; 
+			font-size: 15pt;
+			border-bottom: solid 2px white;
+			margin: 0;
+			padding: 0;
 		}
 		p {
 			font-family: 'messengertext';
@@ -56,28 +65,53 @@
 			margin-bottom: 12pt;
 		}
 		p.footer {
-			font-size: 10px;
+			font-size: 16px;
 			line-height: 1.2em;
 		}
+		p.interview
+			{
+				font-size: 14pt;
+				line-height: 1.2em;
+				font-family: 'messengertext';
+				-moz-column-count:2; /* Firefox */
+				-webkit-column-count:2; /* Safari and Chrome */
+				padding-top: 8px;
+			}
 		ul, ol, li {
 			font-family: 'messengertext';
-			/*list-style-type: none;*/
+			list-style-type: none;
 			text-indent: none;
 			padding: 0;
 		}
+		strong {
+			color: white;
+			font-weight: 900;
+		}
+		em {
+			font-family: 'messengermono';
+			font-size: 16pt;
+			/*margin: 20px;*/
+			font-style: normal;
+			margin-left:-20px
+			overflow: visible;
+		}
+		@media print {
+			.container {page-break-after: always;}
+			body {background-color: white}
+			h1,h2,h3,h4,h5,h6,p {color: black;}
+			h6 {border-bottom: solid 2px black;}
+			strong {background-color: gray;}
+		}
 		/*  p:nth-child(odd) {margin-right: 70pt; }
-		p:nth-child(even) {margin-left: 60pt; }*/
-
-	</style>
-</head>
-
+		p:nth-child(even) {margin-left: 60pt; }*/ 	</style>
+</head> 
 <body>
-	<div class="title">
-		<h1 class="messengermono">HTML Output</h1>
-	</div>
 	<div class="container">
-	  	<div class="col">
-		  	<p class="messengermono">Interviews</p>
+		<div class="title">
+			<h1 class="messengermono">HTML Output*</h1>
+		</div>
+	  	<div class="col" style="margin-left: 0 !important;">
+		  	<h6 class="messengermono">Interviews</h6>
 		   	<ol>
 		  		<li>David Rienfurt</li>
 				<li>Clement Valla</li>
@@ -93,7 +127,7 @@
 		  	</ol>
 		</div>
 		<div class="col">
-  			<p class="messengermono">Projects</p>
+  			<h6 class="messengermono">Projects</h6>
   			<ol>
 		  		<li>Chroma</li>
 				<li>Profiling</li>
@@ -110,16 +144,33 @@
   			</ol>
 		</div>
   		<div class="col">
-  			<p class="messengermono">Et Cetera</p>
+  			<h6 class="messengermono">Et Cetera</h6>
 		  	<ol>
 		  		<li>Tools and the Way we Make</li>
 		  		<li>print.js</li>
 		  		<li>extension</li>
 		  	</ol>
   		</div>    
-  		<div class="full">
-		  	<p class="footer">The World Wide Web is an ideal development environment because it combines open access to information with the browser's increasingly robust typographic and compositional possibilities. This one-time studio elective makes use of the Web browser as a design tool to create physical forms: event ephemera, wallpaper and textiles, publications and 3-D objects. Readings, site visits, lectures from experts in the field and case studies will inspire a workshop-style research-oriented classroom. Most projects will have open deliverables intended to foster cross-disciplinary experimentation and collaboration. The course is open to everyone, but will be most beneficial to students who have Web development experience.</p>
+  		<div class="foot">
+		  	<p class="footer">*The World Wide Web is an ideal development environment because it combines open access to information with the browser's increasingly robust typographic and compositional possibilities. This one-time studio elective makes use of the Web browser as a design tool to create physical forms: event ephemera, wallpaper and textiles, publications and 3-D objects. Readings, site visits, lectures from experts in the field and case studies will inspire a workshop-style research-oriented classroom. Most projects will have open deliverables intended to foster cross-disciplinary experimentation and collaboration. The course is open to everyone, but will be most beneficial to students who have Web development experience.</p>
   		</div>
+  	</div>
+	<div class="container">
+		<div class="title">
+			<h1 class="messengermono">An Interview with Barack Obama</h1>
+		</div>
+	  	<div class="interview">
+		  	<h6 class="messengermono">28 March 2014, Zach Galifianakis</h6>
+		   	<p class="interview"><strong><strong>Galifianakis:</strong></strong> Sorry I had to cancel a few times. My mouse pad broke last week and I had to get my Great Aunt some diabetes shoes and uh… <strong><strong>Obama:</strong></strong> Uh, you know what, Zach? It's no problem. I mean, I have to say, when I heard that, like people actually watch this show, I was actually pretty surprised. <strong>G:</strong> Shh, shh! Hi, welcome to another edition of “Between Two Ferns.” I'm your host, Zach Galifianakis and uh, my guest today is Barack Obam…President Barack Obama. <strong>O:</strong> Good to be with you, Zach. <strong>G:</strong> First question. In 2013, you pardoned a turkey. What do you have planned for 2014? <strong>O:</strong> We'll probably pardon another turkey. We do that every Thanksgiving. Was that depressing to you? Seeing that, uh, one turkey kinda taken out of circulation? A turkey you couldn't eat? <strong>G:</strong> So, how does this work? Do you send Ambassador Rodman to North Korea on your behalf? I read somewhere that you'll be sending Hulk Hogan to Syria, or is that more of a job for Tonya Harding? <strong>O:</strong> Zach, he's, he's not our ambassador. <strong>G:</strong> What should we do about North Ikea? (Looks at paper) Kor… North… <strong>O:</strong> Why don't we move on? <strong>G:</strong> I have to know. What is it like to be the last black president? <strong>O:</strong> Seriously? What's it like for this to be the last time you ever talk to a president? <strong>G:</strong> It must kinda stink though, that you can't run, you know, three times. You know? <strong>O:</strong> No. Actually, I think it's a good idea. Uh, if I ran a third time, it'd be sorta like doing a third “Hangover” movie. It didn't really work out very well, did it? <strong>O:</strong> Now I have to say that I've seen this show before and, uh, some of the episodes have probably been a little better than this. You know, for example, the one with Bradley Cooper, that was a great show. <strong>G:</strong> (muffled) Bradley Cooper… <strong>O:</strong> He kinda carried that movie, didn't he? <strong>G:</strong> Uh, which, which film are you speaking of? <strong>O:</strong> Uh, those “Hangover” movies. He, he, basically, he carried them. <strong>G:</strong> Yeah, everybody loves Bradley. Good for him. <strong>O:</strong> Good lookin’ guy. <strong>G:</strong> Being like that in Hollywood, that's easy! Tall, handsome, that's easy. Be short, fat, and smell like Doritos and try to make it in Hollywood. <strong>G:</strong> Is it going to be hard in two years when, uh, you're no longer president and people will stop letting you win at basketball? <strong>O:</strong> How, how does it feel having a three inch vertical? <strong>G:</strong> It's a three inch horizontal so… <strong>G:</strong> Where are you planning on building your presidential library, in Hawaii or in your home country of Kenya? Because, I mean, both places seem like they would be...<br /><em>You think a woman like Michelle would marry a nerd?</em><br /><strong>O:</strong> Zach, that's a ridiculous question. <strong>G:</strong> Well, you know, not to bring up the birth certificate question, but you really never did really produce your real… <strong>O:</strong>  (Interrupting) Where's your birth certificate? Why, why don't you show it to us right now? <strong>G:</strong> I don't want to show anybody my birth certificate cause it's embarrassing. <strong>O:</strong> What's embarrassing about it? <strong>G:</strong> My weight on it. It says I was born 7 lbs, 8 — hundred ounces. <strong>G:</strong> You know what I would do if I were president, Mr. President? I would make same-sex divorce illegal, then see how bad they want it. <strong>O:</strong> I think that's…why you're not president. And that's a good thing. <strong>G:</strong> You said if you had a son, you would not let him play football. What makes you think he would want to play football? What if he was a nerd like you? <strong>O:</strong> You think a woman like Michelle would marry a nerd? I…why don't you ask her whether she thinks I'm a nerd. <strong>G:</strong> Could I? <strong>O:</strong> No. I'm not going to let her near you. <strong>G:</strong> So do you go any websites that are dot-coms, or dot-nets or do you mainly just stick with dot-govs? <strong>O:</strong> No, actually, we go to dot-govs, have you heard of Health Care-dot-gov? <strong>G:</strong> Here we go, okay, let's get this out of the way, what did you come here to plug? <strong>O:</strong> Well, first of all, I think it's fair to say that I wouldn't be with you here today if I didn't had something to plug. Have you heard of the Affordable Care Act? <strong>G:</strong> Oh yeah, I heard about that, that's the thing that doesn't work. Why would you get the guy that created the Zune to make your website? <strong>O:</strong> Health Care-dot-gov works great now and millions of Americans have already gotten health insurance plans and what we want is for people to know that you can get affordable health care and most young Americans, right now they're not covered and the truth is they can get coverage all for what it costs to pay your cell phone bill. <strong>G:</strong> Is this what they mean by drones? <strong>O:</strong> The point is that a lot of young people think they're invincible. <strong>G:</strong> Did you say invisible? Because uh… <strong>O:</strong> No, no, not invisible, invincible. Meaning that they don't think they can get hurt. <strong>G:</strong> I'm just saying that nobody could be invisible, if you had said invisible. <strong>O:</strong> I understand that, if they get that health insurance they can really make a big difference, and they've got until March 31st to sign up. <strong>G:</strong> I don't have a computer so how does… <strong>O:</strong> Well, then you can call 1-800-318-2596. <strong>G:</strong> Oh, I don't have a phone, I'm off the grid, I don't want you people like, looking at my texts. Know what I mean? <strong>O:</strong> First of all, Zach, nobody's interested in your texts but second of all, you can do it in person, and the law means that insurers can't discriminate against you if you've got a preexisting condition anymore. <strong>G:</strong> Yeah, but what about this, though? (Rolls up sleeve and shows Obama his arm) <strong>O:</strong> That's disgusting. How long have you had that? <strong>G:</strong> Oh, just four months. <strong>O:</strong> Really? <strong>G:</strong> Spider bites. I got attacked by spiders. <strong>O:</strong> Zach, you need to get that checked right away, you need to get on Health Care-dot-gov, because that's one of the most disgusting things I've ever seen. <strong>G:</strong> Is your plug finally over? <strong>O:</strong> Uh, I suppose so. <strong>G:</strong> So which country were you rooting for in the Winter Olympics? <strong>O:</strong> Seriously? I'm the president of the United States. What do you think, Zach? <strong>G:</strong> I want to thank President Obama for being on the show. <strong>O:</strong> I'm going to press this. <strong>G:</strong> Don't touch that, please! (Obama presses red button, the backdrop falls to reveal the show is being filmed in the White House) <strong>G:</strong> Thanks for the interview and thanks for letting me shoot my show here all these years. <strong>O:</strong> You've been shooting these shows…here in the diplomatic room? Who gave you permission to do that? <strong>G:</strong> Bush. <strong>O:</strong> Seriously? Who gave him clearance? (Galifianakis shakes Obama's hand) <strong>G:</strong> Watch the spider bite! <strong>O:</strong> That's the other hand. <strong>G:</strong> They're everywhere.</p>
+  		</div>
+  	</div>	    
+	<div class="container">
+		<div class="title">
+			<h1 class="messengermono">The Browser is All Grown Up</h1>
+		</div>
+	  	<div class="interview">
+		  	<h6 class="messengermono">14 March 2014, John Caserta</h6>
+		   	<p class="interview">The graphical browser turned 20 years old last year. NCSA Mosaic, created at the University of Illinois, was able to support the Compuserv Gif format. Designers began to drop images of all sorts in the browser. At times, complete designs (like version 1 of The New York Times). The workflow was from print to web.<br /><br />Twenty years later, the browser is a formidable means of displaying graphic work. Etc.<br /><br />I find myself increasingly disdainful of all the palettes required when designing print pieces with Adobe products. It's not really Adobe's fault. First it was Aldus Pagemaker, then QuarkXPress, and now Adobe InDesign. The conveniences are manifold, but with each tool comes opportunity and limitation.<br /><br />My tool of choice for most any project -- posters, documents, and even books -- is the Web browser. The browser is not even a tool, really, it's the rendering engine that compiles text instructions.<br /><br />Every tool has its purpose. Early dot matrix output was based on an infinite scroll of paper, perforated to allow for tearing. The need to control or managed the display of the data seems perfunctory.<br /><br />David Reinfurt refers to responsivity as an important aspect of process. That a process of immediate feedback is valuable in terms of making adjustments. Tools for making that allow for an "aha" moment seem critical when faced when infinite options.<br /><br />I have been using the Web Inspector for the last couple years to make adjustments to designs. Designing patterns is perhaps the simplest way to make this process clear. Whereas a dialog box might be needed to make global adjustments in Illustrator, altering margins or border width in the browser can provide immediate access to a multitude of ideas.<br /><br />This real-time working process, where the rendering engine and the tool become one. The volley between plan and result gets collapsed into one act. This is more than an issue of speed. There is a cognitive shift, from pre-meditated to reactive. Each tap of the keyboard alters one number, but in doing so, the entirety of the composition changes.<br /><br />Moving a mouse with your hand while looking at how the screen translates that act has its own potential for surprise. But it's really a simulation of a purely manual acts, such as collaging images together. And although adjusting numbers in the browser's Web Inspector is quantitative, it is more identical to collage than WYSIWYG design methods.<br /><br />In regards to practical project Eugeny Morozov reminds us that the Internet and the browser will likely be a blip in the greater effort of technical advancement.<br /><br />Paul Soullelis questioned where slowness is the more rare attribute.</p>	
   	</div>
 </body>
 </html>
