@@ -57,6 +57,7 @@ code {
 	font:       0.8rem/1.4 Consolas, monospace;
 	background: #ffffbb;
 	display: inline-block;
+	margin-bottom: 1.4rem
 }
 
 blockquote {
@@ -97,7 +98,7 @@ nav {
 	padding-right: 1.4rem;
 }
 
-.print-btn {
+.print-btn, .toggle-btn {
 	padding: 1rem 2rem;
 	border: 1px solid black;
 	display: block;
@@ -105,9 +106,16 @@ nav {
 	color: black;
 }
 
-.print-btn:hover {
+.print-btn:hover, .toggle-btn:hover {
 	background: black;
 	color: white;
+}
+
+.print-nav {
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	background: white;
 }
 
 /* ----------------------------------

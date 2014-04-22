@@ -4,12 +4,49 @@ title: HTML Output
 ---
 
 
+<!-- Title Page -->
+
 <nav>
   <h1>{{ page.title }}</h1>
   <div class="newpage"></div>
 </nav>
 
+
+<!-- Table of Contents -->
+
+<div class="toc">
+
+  <h1>Contents</h1>
+
+  {% for category in site.types %}
+
+    <div>
+      <h1 class="cat-name">{{ category }}</h1>
+
+      {% for page in site.pages %}{% if page.category == category %}
+          <div class="item">
+            {% if category == 'interview' %}
+              <p>{{ page.title }} talks to {{ page.author }}</p>
+            {% else %}
+              <p>{{ page.title }}</p>
+              <div class="author">{{ page.author }}</div>
+            {% endif %}
+
+          </div>
+        {% endif %}{% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
+<div class="newpage"></div>
+
+
+
+<!-- All Content -->
+
 <div class="content">
+
+
   {% for category in site.types %}
 
     <div>
@@ -19,13 +56,20 @@ title: HTML Output
       {% for page in site.pages %}{% if page.category == category %}
           <div class="item">
             {% if category == 'interview' %}
-              <a href="{{ page.url }}">{{ page.title }}</a> talks to {{ page.author }}
+              <h1>{{ page.title }} talks to {{ page.author }}</h1>
             {% else %}
-              <a href="{{ page.url }}">{{ page.title }}</a>
+              <h1>{{ page.title }}</h1>
               <div class="author">{{ page.author }}</div>
             {% endif %}
 
-            {{ page.content }}
+            {% comment %}
+              <!-- We need to mardownify this content. Normally Markdown only runs when
+              Jekyll is rendering a page template. -->
+            {% endcomment %}
+
+            {% capture thiscontent %}{{ page.content }}{% endcapture %}
+            {{ thiscontent | markdownify }}
+
           </div>
           <div class="newpage"></div>
 

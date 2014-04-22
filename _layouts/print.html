@@ -2,15 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ page-inner.title }}</title>
+    <title>Print testing setup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/print.css" type="text/css">
     <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
-  <body class="forprint">
+  <body>
 
+
+  <nav class="print-nav">
+    <a class="toggle-btn" id="toggleprint" href="#">Toggle print mode</a>
+  </nav>
+
+  <script type="text/javascript">
+    var toggler = document.getElementById("toggleprint");
+    var bod = document.body;
+    var toggleprint = function(e) {
+      if (bod.classList.contains("forprint")) {
+        bod.classList.remove("forprint");
+      }
+      else {
+        bod.classList.add("forprint");
+      }
+    };
+
+    toggler.addEventListener("click", toggleprint);
+
+  </script>
 <!-- 
 
 We're using a polyfill for CSS Regions.
@@ -33,13 +53,14 @@ experiment with adding/removing them dynamically
 -->
     {% for num in (1...20) %}
     	<div class="page-outer" data-page="{{ num }}">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>{{ num }}</footer>
 	    </div>
     {% endfor %}
-
 
 
   </body>

@@ -5,11 +5,11 @@ CSS Region flow (used by the polyfill)
 ----------------------------------*/
 
 
-.content-source {
+.forprint .content-source {
     flow-into: content-flow contents;
 }
 
-.content-region {
+.forprint .content-region {
     flow-from: content-flow;
     region-fragment: break;
     overflow: hidden;
@@ -50,8 +50,12 @@ Page size and paginalia
 
 .page-outer header {
 	position: absolute;
-	bottom: 3in;
+	bottom: 4in;
+	text-align: right;
 	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-family: Messenger Mono;
+	font-size: 0.8rem;
 }
 
 .page-outer:nth-child(odd) header {
@@ -73,7 +77,7 @@ For previewing the print
 ----------------------------------*/
 
 @media screen {
-	body {
+	.forprint body {
 		max-width: none;
 		text-align: center;
 	}

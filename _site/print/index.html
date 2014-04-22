@@ -2,15 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Print testing setup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/print.css" type="text/css">
     <script src="/script/cssregions.js"></script>
   </head>
-  <body class="forprint">
+  <body>
 
+
+  <nav class="print-nav">
+    <a class="toggle-btn" id="toggleprint" href="#">Toggle print mode</a>
+  </nav>
+
+  <script type="text/javascript">
+    var toggler = document.getElementById("toggleprint");
+    var bod = document.body;
+    var toggleprint = function(e) {
+      if (bod.classList.contains("forprint")) {
+        bod.classList.remove("forprint");
+      }
+      else {
+        bod.classList.add("forprint");
+      }
+    };
+
+    toggler.addEventListener("click", toggleprint);
+
+  </script>
 <!-- 
 
 We're using a polyfill for CSS Regions.
@@ -21,12 +41,90 @@ represent individual printed pages.)
 
 -->
     <div class="content-source">
-    	<nav>
+    	<!-- Title Page -->
+
+<nav>
   <h1>HTML Output</h1>
   <div class="newpage"></div>
 </nav>
 
+
+<!-- Table of Contents -->
+
+<div class="toc">
+
+  <h1>Contents</h1>
+
+  
+
+    <div>
+      <h1 class="cat-name">interview</h1>
+
+      
+          <div class="item">
+            
+              <p>Peter Biľak (samp) talks to Catherine Schmidt</p>
+            
+
+          </div>
+        
+          <div class="item">
+            
+              <p>David Desandro (samp) talks to Evan Brooks</p>
+            
+
+          </div>
+        
+          <div class="item">
+            
+              <p>Jürg Lehni (samp) talks to Phillipe Cao and Daniel Giudetta</p>
+            
+
+          </div>
+        
+    </div>
+  
+
+    <div>
+      <h1 class="cat-name">project</h1>
+
+      
+          <div class="item">
+            
+              <p>Project Sample Markdown</p>
+              <div class="author"></div>
+            
+
+          </div>
+        
+    </div>
+  
+
+    <div>
+      <h1 class="cat-name">essay</h1>
+
+      
+          <div class="item">
+            
+              <p>The browser is all grown up</p>
+              <div class="author">John Caserta</div>
+            
+
+          </div>
+        
+    </div>
+  
+</div>
+
+<div class="newpage"></div>
+
+
+
+<!-- All Content -->
+
 <div class="content">
+
+
   
 
     <div>
@@ -36,43 +134,47 @@ represent individual printed pages.)
       
           <div class="item">
             
-              <a href="/SAMPLE-interview/">Peter Biľak (samp)</a> talks to Catherine Schmidt
+              <h1>Peter Biľak (samp) talks to Catherine Schmidt</h1>
             
 
-            <p>I did this sick interview.</p>
-<p><strong>Cathy:</strong> Do you like cake?</p>
-<p><strong>Peter:</strong> I love cake!</p>
+            
+
+            
+            <p>I did this sick interview.</p><p><strong>Cathy:</strong> Do you like cake?</p><p><strong>Peter:</strong> I love cake!</p>
+
           </div>
           <div class="newpage"></div>
 
         
           <div class="item">
             
-              <a href="/SAMPLE-interview2/">David Desandro (samp)</a> talks to Evan Brooks
+              <h1>David Desandro (samp) talks to Evan Brooks</h1>
             
 
-            Evan Brooks: hey
+            
 
-David Desandro: hey
+            
+            <p>David Desandro: hey</p>
 
-Evan: hi
+<p>Evan: hi</p>
 
-David: hi
+<p>David: hi</p>
+
           </div>
           <div class="newpage"></div>
 
         
           <div class="item">
             
-              <a href="/SAMPLE-interview3/">Jürg Lehni (samp)</a> talks to Phillipe Cao and Daniel Giudetta
+              <h1>Jürg Lehni (samp) talks to Phillipe Cao and Daniel Giudetta</h1>
             
 
-            Dan: hey
+            
 
-Phil: yo
+            
+            <p>Phil: yo</p>
 
-Jürg: sup
-
+<p>Jürg: sup</p>
 
           </div>
           <div class="newpage"></div>
@@ -88,21 +190,27 @@ Jürg: sup
       
           <div class="item">
             
-              <a href="/SAMPLE-project/">Project Sample Markdown</a>
+              <h1>Project Sample Markdown</h1>
               <div class="author"></div>
             
 
-            This is the project I did
+            
 
-Isn't that exciting
+            
+            <p>This is the project I did</p>
 
-	Here is a code block!
+<p>Isn&#8217;t that exciting</p>
 
-THat was a nice code block
+<pre><code>Here is a code block!</code></pre>
 
-> Here is a block quote!
+<p>THat was a nice code block</p>
 
-Wasn't that a _great_ and __amazing__ blockquote?
+<blockquote>
+<p>Here is a block quote!</p>
+</blockquote>
+
+<p>Wasn&#8217;t that a <em>great</em> and <strong>amazing</strong> blockquote?</p>
+
           </div>
           <div class="newpage"></div>
 
@@ -117,65 +225,44 @@ Wasn't that a _great_ and __amazing__ blockquote?
       
           <div class="item">
             
-              <a href="/SAMPLE-essay/">The browser is all grown up</a>
+              <h1>The browser is all grown up</h1>
               <div class="author">John Caserta</div>
             
 
-              <div class="nums">
-  <ol>
-      <script>
-        i=0;
-        do {
-          document.write("<li>&nbsp;</li>");
-          i++;
-          }
-        while (i<10) 
-        </script>
-  </ol>
-  </div>
-  <h1>The browser is all grown up</h1>
+            
 
-<article>
-<div  class="messengertext">
-<p>The graphical browser turned 20 years old last year. NCSA Mosaic, created at the University of Illinois, was able to support the Compuserv Gif format. Designers began to drop images of all sorts in the browser. At times, complete designs (like version 1 of The New York Times). The workflow was from print to web. </p>
+            
+            <p>The graphical browser turned 20 years old last year. NCSA Mosaic, created at the University of Illinois, was able to support the Compuserv Gif format. Designers began to drop images of all sorts in the browser. At times, complete designs (like version 1 of The New York Times). The workflow was from print to web.</p>
+
 <p>Twenty years later, the browser is a formidable means of displaying graphic work. Etc.</p>
 
-<p>I find myself increasingly disdainful of all the palettes required when designing print pieces with Adobe products. It's not really Adobe's fault. First it was Aldus Pagemaker, then QuarkXPress, and now Adobe InDesign. The conveniences are manifold, but with each tool comes opportunity and limitation. 
-</p>
+<p>I find myself increasingly disdainful of all the palettes required when designing print pieces with Adobe products. It&#8217;s not really Adobe&#8217;s fault. First it was Aldus Pagemaker, then QuarkXPress, and now Adobe InDesign. The conveniences are manifold, but with each tool comes opportunity and limitation.</p>
 
-<p>
-  My tool of choice for most any project -- posters, documents, and even books -- is the Web browser. The browser is not even a tool, really, it's the rendering engine that compiles text instructions.  
-</p>
+<p>My tool of choice for most any project &#8211; posters, documents, and even books &#8211; is the Web browser. The browser is not even a tool, really, it&#8217;s the rendering engine that compiles text instructions.</p>
 
-<p>
- Every tool has its purpose. Early dot matrix output was based on an infinite scroll of paper, perforated to allow for tearing. The need to control or managed the display of the data seems perfunctory. 
-</p>
-<p>
+<blockquote>
+<p>Here is a great pull quote.</p>
+</blockquote>
 
- David Reinfurt refers to responsivity as an important aspect of process. That a process of immediate feedback is valuable in terms of making adjustments. Tools for making that allow for an "aha" moment seem critical when faced when infinite options. 
-</p>
-<p>
+<p>Every tool has its purpose. Early dot matrix output was based on an infinite scroll of paper, perforated to allow for tearing. The need to control or managed the display of the data seems perfunctory.</p>
 
- I have been using the Web Inspector for the last couple years to make adjustments to designs. Designing patterns is perhaps the simplest way to make this process clear. Whereas a dialog box might be needed to make global adjustments in Illustrator, altering margins or border width in the browser can provide immediate access to a multitude of ideas.  
-</p>
-<p>
+<p>David Reinfurt refers to responsivity as an important aspect of process. That a process of immediate feedback is valuable in terms of making adjustments. Tools for making that allow for an &#8220;aha&#8221; moment seem critical when faced when infinite options.</p>
+<p style='color:red;'> Hey this inline HTML but you can't even tell </p>
+<p>I have been using the Web Inspector for the last couple years to make adjustments to designs. Designing patterns is perhaps the simplest way to make this process clear. Whereas a dialog box might be needed to make global adjustments in Illustrator, altering margins or border width in the browser can provide immediate access to a multitude of ideas.</p>
 
- This real-time working process, where the rendering engine and the tool become one. The volley between plan and result gets collapsed into one act. This is more than an issue of speed. There is a cognitive shift, from pre-meditated to reactive. Each tap of the keyboard alters one number, but in doing so, the entirety of the composition changes.  
-</p>
+<pre><code>var plustwo = function(x) {
+  return x + 2;
+}</code></pre>
 
-<p>Moving a mouse with your hand while looking at how the screen translates that act has its own potential for surprise. But it's really a simulation of a purely manual acts, such as collaging images together. And although adjusting numbers in the browser's Web Inspector is quantitative, it is more identical to collage than WYSIWYG design methods.</p>
+<p>This real-time working process, where the rendering engine and the tool become one. The volley between plan and result gets collapsed into one act. This is more than an issue of speed. There is a cognitive shift, from pre-meditated to reactive. Each tap of the keyboard alters one number, but in doing so, the entirety of the composition changes.</p>
+
+<p>Moving a mouse with your hand while looking at how the screen translates that act has its own potential for surprise. But it&#8217;s really a simulation of a purely manual acts, such as collaging images together. And although adjusting numbers in the browser&#8217;s Web Inspector is quantitative, it is more identical to collage than WYSIWYG design methods.</p>
 
 <p>In regards to practical project</p>
 
-<p>Eugeny Morozov reminds us that the Internet and the browser will likely be a blip in the greater effort of technical advancement. 
-<p>
- Paul Soullelis questioned where slowness is the more rare attribute.    
+<p>Eugeny Morozov reminds us that the Internet and the browser will likely be a blip in the greater effort of technical advancement.</p>
 
-</p>
-</article>
-
-</body>
-</html>
+<p>Paul Soullelis questioned where slowness is the more rare attribute.</p>
 
           </div>
           <div class="newpage"></div>
@@ -198,146 +285,185 @@ experiment with adding/removing them dynamically
 -->
     
     	<div class="page-outer" data-page="1">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>1</footer>
 	    </div>
     
     	<div class="page-outer" data-page="2">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>2</footer>
 	    </div>
     
     	<div class="page-outer" data-page="3">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>3</footer>
 	    </div>
     
     	<div class="page-outer" data-page="4">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>4</footer>
 	    </div>
     
     	<div class="page-outer" data-page="5">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>5</footer>
 	    </div>
     
     	<div class="page-outer" data-page="6">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>6</footer>
 	    </div>
     
     	<div class="page-outer" data-page="7">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>7</footer>
 	    </div>
     
     	<div class="page-outer" data-page="8">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>8</footer>
 	    </div>
     
     	<div class="page-outer" data-page="9">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>9</footer>
 	    </div>
     
     	<div class="page-outer" data-page="10">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>10</footer>
 	    </div>
     
     	<div class="page-outer" data-page="11">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>11</footer>
 	    </div>
     
     	<div class="page-outer" data-page="12">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>12</footer>
 	    </div>
     
     	<div class="page-outer" data-page="13">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>13</footer>
 	    </div>
     
     	<div class="page-outer" data-page="14">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>14</footer>
 	    </div>
     
     	<div class="page-outer" data-page="15">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>15</footer>
 	    </div>
     
     	<div class="page-outer" data-page="16">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>16</footer>
 	    </div>
     
     	<div class="page-outer" data-page="17">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>17</footer>
 	    </div>
     
     	<div class="page-outer" data-page="18">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>18</footer>
 	    </div>
     
     	<div class="page-outer" data-page="19">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>19</footer>
 	    </div>
     
     	<div class="page-outer" data-page="20">
-	    	<header>Title or something</header>
+	    	<header>
+          Title or something
+        </header>
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>20</footer>
 	    </div>
     
-
 
 
   </body>
