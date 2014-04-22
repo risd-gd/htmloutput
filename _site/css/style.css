@@ -97,9 +97,8 @@ nav {
 }
 
 .print-btn, .toggle-btn {
-	padding: 1rem 2rem;
+	padding: 0.5rem 2rem;
 	border: 1px solid black;
-	display: block;
 	text-align: center;
 	color: black;
 }
