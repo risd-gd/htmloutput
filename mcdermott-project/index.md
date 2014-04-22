@@ -7,7 +7,7 @@ category: project
 
 ---
 
-<link rel=stylsheet href="style.css">
+<link href="style.css" rel="stylesheet" type="text/css">
 
 #This is the project I did.
 
