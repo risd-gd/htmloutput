@@ -1,6 +1,6 @@
 ---
 
-layout: interview
+layout: page
 title: Questions for Jurg
 author: Philippe Cao, Dan Giuditta
 description: Questions we had for Jurgh! 
