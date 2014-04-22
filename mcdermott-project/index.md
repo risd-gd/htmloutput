@@ -2,6 +2,7 @@
 
 layout: page
 title: This is Important
+author: Michael McDermott
 description: A project messing with CSS and stuff
 category: project
 
@@ -9,28 +10,10 @@ category: project
 
 <link href="style.css" rel="stylesheet" type="text/css">
 
-#This is the project I did.
+The nature of cascading style sheets makes the visual form of a website extremely tenuous. One small CSS change can render a well known website unrecognizable, thereby creating new visual form and revealing the underlying structure of the site. Our explorations insert a few lines of CSS into common websites like Google, Facebook, & Yahoo via a manipulated, open-source Chrome extension called "textfreestyles". Using a default A2 size page as a frame or cropping tool, we selected interesting compositions for printed output.
 
-Isn't that exciting
+A2 (16.5 in x 23.4 in), digitally printed, RISD 2014
 
-	Here is a code block!
-
-THat was a nice code block
-
-> Here is a block quote!
-
-Wasn't that a _great_ and __amazing__ blockquote?
-
-Next, lets force a new page
-
-<div class="newpage"></div>
-
-## Hey cat
-
-Here is a caption about why this cat prefers language with significant whitespace
-
-## These are images
-
-Here is a caption about why this cat doesn't know how to code
+<img src="Projo">
 
 <img src="Google.jpg" />

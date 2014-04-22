@@ -1,3 +1,15 @@
-h1 {
-	font-size: 100px;
-}
+		.messengertext {
+			font-family: 'messengertext';
+		}
+		.messengermono {  
+			font-family: 'messengermono';
+		}
+		img {
+			width: 50%;
+		}
+		p {
+			font-family: 'messengertext';
+			padding: 0; 
+			margin: 0;  
+			margin-bottom: 16pt;
+		}
