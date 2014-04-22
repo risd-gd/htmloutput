@@ -16,7 +16,6 @@
             #output_banner{
                 width: 100%;
                 background: white;
-                height: 2pc;
                 position: fixed;
                 left: 0;
                 top: 0;
@@ -25,6 +24,7 @@
                 border-top: 1pt black solid;
                 border-bottom: 1pt black solid;
                 font: 20px/1.4 Messenger Text, sans-serif;
+                padding: 5pt;
             }
             #output_banner a{
                 text-decoration: none;
@@ -37,7 +37,7 @@
     <body>
         <a href="/{{ site.baseurl }}">< Index</a>
 
-        <div id="output_banner"><a href="">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
+        <div id="output_banner"><a style="text-decoration: none; color: blue; background: none;" href="http://risd-gd.github.io/htmloutput/">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
 
         {{ content }}
 
