@@ -2,7 +2,7 @@
 
 layout: page
 title: This is Important
-description: A project messing with CSS and stuff.
+description: A project messing with CSS and stuff
 category: project
 
 ---
