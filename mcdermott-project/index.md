@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: "!important"
+title: This is Important
 description: A project messing with CSS and stuff.
 category: project
 
