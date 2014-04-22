@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>Ben Pieratt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/type/type.css"  type="text/css">
-        <link rel="stylesheet" href="/css/style.css" type="text/css">
+        <!--<link rel="stylesheet" href="/css/type/type.css"  type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css"> -->
         <style>
 
             *{
@@ -18,10 +18,13 @@
                 background: white;
                 height: 2pc;
                 position: fixed;
-                left: 0px;
-                top: 20px;
-                box-shadow: 0px 2px 2px black;
+                left: 0;
+                top: 2pc;
+                box-shadow: 0pt 1pt 1pt black;
                 z-index: 4;
+                border-top: 1pt black solid;
+                border-bottom: 1pt black solid;
+                font: 20px/1.4 Messenger Text, sans-serif;
             }
 
         </style>
@@ -30,14 +33,249 @@
     <body>
         <a href="/">< Index</a>
 
-        <div id="output_banner">HTML OUTPUT</div>
-        <h1>Ben Pieratt</h1>
-        <p>I did this sick interview.</p>
-<p><strong>Cathy:</strong> Do you like cake?</p>
-<p><strong>Peter:</strong> I love cake!</p>
+        <div id="output_banner"><a href="">HTML OUTPUT</a> - Ben Pieratt, interview, by Lukas WinklerPrins.</div>
+
+        <html>
+    <head>
+        <title>An Interview With Ben Pieratt</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+        <script>
+
+            var random_skew = function(i){
+                var x = Math.floor((Math.random()-0.5)*60);
+                var y = Math.floor((Math.random()-0.5)*60);
+
+                $(".quote").eq(i).css("-webkit-transform","skew("+x+"deg,"+y+"deg)");
+
+            }
+
+            $(document).ready(function(){
+
+                var n_quotes = $(".quote").length;
+
+                for(var k = 0; k < n_quotes; k++){
+                    random_skew(k);
+                }
+
+            });
+
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            body{
+                font-family: 'Vollkorn', serif;
+                font-size: 10pt;
+                font-weight: 400;
+            }
+
+            h2{
+                font-size: 7pt;
+                font-style: italic;
+                width: 100%;
+                text-align: center;
+                margin-top: 1pc;
+                margin-bottom: 1pc;
+            }
+
+            .grad{
+                width: 20%;
+                background-image:
+                    linear-gradient(
+                        to bottom,
+                        yellow,
+                        red,
+                        blue
+                        );
+                display: inline-block;
+                height: 200pt;
+            }
+
+            a{
+            background: -webkit-linear-gradient(yellow, red, blue);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-decoration: none;
+            }
+
+            #top{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0pc;
+                left: 0;
+                page-break-after: always;
+            }
+            #bottom{
+                width: 100%;
+                height: auto;
+                background: -webkit-linear-gradient(white, yellow, red, blue);
+            }
+
+            #title{
+                height: 200pt;
+                width: 60%;
+                display: inline-block;
+                text-align: center;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 800;
+                font-size: 60pt;
+                position: relative;
+                top: -76pt;
+            }
+
+            .txt{
+                width: 50%;
+                margin-left: 25%;
+                margin-right: 25%;
+                text-align: left;
+                font-size: 14pt;
+                margin-top: -6%;
+                margin-bottom: 10%;
+            }
+
+            .quote{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 30pt;
+                font-weight: 800;
+                margin: 0 auto;
+                -webkit-transform: skew(-20deg, -12deg);
+                width: 600px;
+                padding-top: 150px;
+                padding-bottom: 150px;
+                clear: both;
+                page-break-after: always;
+            }
+
+            .split{
+                background: linear-gradient(to right, yellow, red, blue);
+                height: 50px;
+                width: 100px;
+                margin: 0 auto;
+                display: none;
+            }
 
 
-        
+        </style>
+    </head>
+    <body>
+        <div id="top">
+            <h2>A brief interview with...</h2>
+            <div class="grad"></div><div id="title">BEN PIERATT</div><div class="grad"></div>
+
+            <div class="txt">
+                <a href="http://pieratt.com">Ben Pieratt</a> is a designer known for projects like <a href="http://hessian.tv">Hessian</a> and <a href="http://svpply.com">SVPPLY</a>. He has been through the ringer as a startup CEO and came out the other side with quite a bit of personal drive and focus, which has lead to his most recent studio, <a href="http://pieratt.com/internetland/">Internetland</a>.<br /><br />
+                In a short interview about the web, his professional career, "digital native", and chaos, he imparts some wisdom.<br />
+                See also: the <a href="https://vimeo.com/91429221">video interview</a> and <a href="transcription.txt">transcript</a>.
+            </div>
+        </div>
+
+
+        <div id="bottom">
+        <!-- ---- -->
+        <div class="split" style="margin-top: 100%;"></div>
+
+        <div class="quote" style="margin-top: 100%;">
+            "i'm inspired by the internet and i love the internet as a concept; this notion of world connection is something that as a designer i can feel good about contributing to"
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "i can't draw. but in illustrator i feel very loose. so i'm trying to embrace digital, embrace the internet, embrace this embrace towards becoming an artist."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "books are going to be around for a long time and they'll be beautiful, but screens are going to get more interesting for a while..."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "...the thing that sold me is the retina display. it's so vibrant and so crisp that it contributes to digital artists embracing the screen as its own medium."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "it's fun to think about things native to the internet. i only work in RGB space; the colors i love most are the ones that can't exist in CMYK."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "i can put this magazine piece on a wall, even six years ago i wouldn't have thought it was beautiful. but now the patina of the shitty paper feels like something legitimate."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "print is dead so print is art."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "svpply was our first experiment, this notion of building design that takes chaos into account and then uses best practices to make something great."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "all of this design has to fail gracefully."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "that's really a problem when you're building a product and you don't like using it. you don't learn anything from it. it can't speak to you because you are not trying."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "don't be afraid of having style because it's a working exression of what components you find interesting in what you're working on."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "i love the internet. i love the web, but i don't like the app store because it's filtered through apple's editorial."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "if you want your thing to look new then make it one column and make it big. the moment you break something into two columns, it looks old."
+        </div>
+
+        <div class="split"></div>
+
+        <div class="quote">
+            "bring the internet into the slow-time; make it something you can appreciate as an art object."
+        </div>
+
+        </div>
+
+        <div style="display: block; background:-webkit-linear-gradient(blue,red,yellow,white); width: 100%; height: 200px;"></div><br />
+
+        <div class="txt" style="text-align: center; margin-top: 50px;">
+            With thanks to Ben Pieratt and John Caserta. Made for <a href="http://htmloutput.charrette.ws">HTML Output</a>.
+        </div>
+
+
+
+    </body>
+</html>
+
+ 
 
     </body>
 </html>

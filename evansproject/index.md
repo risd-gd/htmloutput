@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: Evans project
+title: Project Sample Markdown and Images
 description: Hi chrome
 category: project
 
