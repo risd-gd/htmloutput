@@ -22,6 +22,7 @@
                 top: 2pc;
                 box-shadow: 0pt 2pt 2pt black;
                 z-index: 4;
+                border: 1pt black solid;
             }
 
         </style>
@@ -30,9 +31,7 @@
     <body>
         <a href="/{{ site.baseurl }}">< Index</a>
 
-        <div id="output_banner">HTML OUTPUT</div>
-        <h1>{{page.title }}</h1>
-        {{ content }}
+        <div id="output_banner">HTML OUTPUT - {{page.title}} by {{page.author}}.</div>
 
         {% include pieratt.html %}
 
