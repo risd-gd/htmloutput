@@ -35,6 +35,8 @@ Here is a caption about why this cat prefers language with significant whitespac
 
 Here is a caption about why this cat doesn't know how to code
 
-<img src="http://placekitten.com/g/800/1000" style="position: absolute;" />
+<img src="http://placekitten.com/g/800/1000" />
 
-<iframe src="http://ltwp.net/output/midterm/1.html" width="400" height="500"></iframe>
+<div class="newpage"></div>
+
+<iframe src="http://ltwp.net/output/midterm/1.html"></iframe>

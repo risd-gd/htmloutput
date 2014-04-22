@@ -12,7 +12,6 @@ CSS Region flow (used by the polyfill)
 .forprint .content-region {
     flow-from: content-flow;
     region-fragment: break;
-    overflow: hidden;
 }
 
 /* ----------------------------------
@@ -26,6 +25,7 @@ Page size and paginalia
 	width: 8.5in;
 	position: relative;
     page-break-after: always;
+    overflow: hidden;
 }
 
 .page-inner {
@@ -72,6 +72,12 @@ Page size and paginalia
 
 .forprint img {
 	width: 100%;
+}
+
+.forprint iframe {
+	width: 8.5in;
+	height: 11in;
+	margin: 0 -1in;
 }
 
 /* ----------------------------------

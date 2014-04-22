@@ -13,15 +13,13 @@ Here's how this works:
 
 ## File structure
 
-1. Make a folder for your project, essay, or interview
+1. Make a folder for your project, essay, or interview. You can use one of the folders called `SAMPLE` as a guide.
 
-2. Create either an `index.html` file (for stuff you've designed yourself) or `index.md` (to use our default styles, great for essays/interviews) file.
+2. Create either an `index.html` file (for stuff you've designed yourself) or `index.md` file (to use our default styles, great for essays/interviews).
 
-3. Put in the appropriate information (title, author etc) at the top in YAML format. You can use the `interview-sample` or `project-sample` as a template to get started.
+3. Put in the appropriate information (title, author etc) at the top in YAML format. Look at the samples to see an example. The project won't show up yet unless it has a category of 'project,' 'interview,' or 'essay.'
 
-	The project won't show up yet unless it has a category of 'project,' 'interview,' or 'essay.'
-
-3. Put all assets (images, code, etc) in that folder. TBD: Formatting of more complex or multi-page html
+4. Put all assets (images, code, etc) in that folder. TBD: Formatting of more complex or multi-page html
 
 ---
 
