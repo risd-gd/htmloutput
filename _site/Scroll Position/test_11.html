@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Nujabes</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!--
+        <link rel="stylesheet" type="text/css" media="print" href="">
+        <link rel="stylesheet" type="text/css" media="screen" href="../reset.css">
+        -->
+        <script>
+
+            $(document).ready(function(){
+
+                for(var i = 0; i<170; i++){
+                    $("#one").append("<div></div>");
+                }
+                for(var i = 0; i<400; i++){
+                    $("#two").append("<div></div>");
+                }
+                for(var i = 0; i<4000; i++){
+                    $("#thr").append("<div></div>");
+                }
+                for(var i = 0; i<1; i++){
+                    //$("#for").append("<div>&amp;</div>");
+                    //$("#for").append("<div></div>");
+                }
+
+                $(document).scroll(function(){
+                    var scrollTop = $(document).scrollTop();
+
+                    var one = 30 - 0.0008*scrollTop;
+                    var two = Math.floor(scrollTop*0.012);
+                    var thr = Math.sin(scrollTop*0.002);
+                    var fur = Math.floor(scrollTop*0.05);
+
+                    $("#one").children().css("height", one+"pc" );
+                    $("#two").children().css("-webkit-transform","rotate("+two+"deg)");
+                    $("#thr").children().css("margin",Math.floor(40+50*thr)+"px");
+                    $("#for").children().css("-webkit-transform","rotate("+fur+"deg)");
+                });
+
+            });
+
+        </script>
+        <style>
+            body{
+                width: 100%;
+                overflow-x: hidden;
+                height: 2500px;
+            }
+
+            #one, #thr{
+                position: absolute;
+                width: 200%;
+                position: absolute;
+                left: -5pc;
+                top: 0pc;
+                z-index: 1;
+            }
+
+            #two{
+                position: fixed;
+                width: 200%;
+                left: -2pc;
+                top: -3pc;
+                z-index: 3;
+            }
+
+            #thr{
+                z-index: 2;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            #for{
+                z-index: 0;
+                position: fixed;
+                width: 120%;
+
+            }
+
+
+            #one div{
+                width: 200%;
+                height: 30pc;
+                transform: rotate(2deg);
+                -webkit-transform: rotate(2deg);
+                margin: 5pc;
+                background-color: bisque;
+                opacity: 0.9;
+                float: left;
+            }
+
+            #two div{
+                display: inline-block;
+                border: 100px solid transparent;
+                border-top: 40px solid red;
+                xborder-left: 80px solid red;
+                overflow: hidden;
+                width: 0px;
+                height: 50px;
+                margin: -50px;
+            }
+
+            #thr div{
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                -webkit-border-radius: 50%;
+                background: cyan;
+                opacity: 1;
+                margin: -10px;
+                opacity: 0.4;
+            }
+
+            #for div{
+                overflow: hidden;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                font-size: 4pc;
+                -webkit-transform-origin: 0% 0%;
+                -webkit-transform: rotate(10deg);
+                background-color: blue;
+            }
+
+        </style>
+        <!-- <script type="text/javascript" src="scrolly.js"></script> -->
+    </head>
+    <body>
+
+        <div id="one">
+
+
+        </div>
+        <div id="two">
+
+
+        </div>
+        <div id="thr">
+
+
+        </div>
+
+    </body>
+</html>
