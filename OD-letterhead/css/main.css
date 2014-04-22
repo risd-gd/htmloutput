@@ -4,7 +4,7 @@ body, html {
 }
 
 .letter-main {
-	position: absolute;
+	position: absolute !important;
 	top: 130px;
 	left: 130px;
 	right: 130px;
@@ -23,7 +23,7 @@ body, html {
 }
 
 .letter-margins {
-	position: absolute;
+	position: absolute !important;
 	background-color: black;
 	
 	top:0;
@@ -35,7 +35,7 @@ body, html {
 }
 
 span {
-	position: absolute;
+	position: absolute !important;
 	font-family: "Gotham", "Helvetica", sans-serif;
 }
 
