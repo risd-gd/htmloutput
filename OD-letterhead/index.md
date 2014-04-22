@@ -1,6 +1,6 @@
 ---
 
-layout: standalone
+layout: page
 title: Ojus Letterhead Experiment
 description: cool jquery rando letters
 category: project
