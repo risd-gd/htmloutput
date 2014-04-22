@@ -7,7 +7,7 @@ category: project
 
 ---
 <script src="js/jquery-2.1.0.min.js"></script>
-        <script>
+<script>
 
             //////////////////////////////////////////////////////
             var quasi_random = function(index,base){
@@ -133,7 +133,7 @@ category: project
             });
 
         
-        </script>
+</script>
 <div class="letter-margins">
 
             <div class="letter-main">
