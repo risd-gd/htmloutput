@@ -19,3 +19,10 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'Gothic60';
+    src: url('gothi.otf');
+    font-weight: normal;
+    font-style: normal;
+
+}

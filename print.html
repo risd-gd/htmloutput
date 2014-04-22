@@ -65,10 +65,12 @@ title: HTML Output
             {% comment %}
               <!-- We need to mardownify this content. Normally Markdown only runs when
               Jekyll is rendering a page template. -->
-            {% endcomment %}
 
             {% capture thiscontent %}{{ page.content }}{% endcapture %}
             {{ thiscontent | markdownify }}
+
+            {% endcomment %}
+
 
           </div>
           <div class="newpage"></div>

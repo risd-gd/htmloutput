@@ -1,24 +1,177 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ojus Letterhead Experiment</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/type/type.css"  type="text/css">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-  </head>
-  <body>
-    <a href="/">< Index</a>
-    <h1>Ojus Letterhead Experiment</h1>
+    <head>
+        <meta charset="utf-8">
+        <title>Ojus Letterhead Experiment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="/css/type/type.css"  type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css"> -->
+        <style>
 
-    <div class="meta">
-      <p>Author: </p>
-      <p>Category: project</p>
-      <p>Description: cool jquery rando letters</p>
-    </div>
+            *{
+                margin: 0;
+                padding: 0;
+            }
 
-    <div class="content">
-      <div class="letter-margins">
+            #output_banner{
+                width: 100%;
+                background: white;
+                height: 2pc;
+                position: fixed;
+                left: 0;
+                top: 0;
+                box-shadow: 0pt 1pt 1pt black;
+                z-index: 4;
+                border-top: 1pt black solid;
+                border-bottom: 1pt black solid;
+                font: 20px/1.4 Messenger Text, sans-serif;
+            }
+            #output_banner a{
+                text-decoration: none;
+                color: blue
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <a href="/">< Index</a>
+
+        <div id="output_banner"><a href="">HTML OUTPUT</a> - Ojus Letterhead Experiment, project, by .</div>
+
+        <link rel="stylesheet" href="css/main.css" />
+
+<script src="js/jquery-2.1.0.min.js"></script>
+
+<script>
+
+            //////////////////////////////////////////////////////
+            var quasi_random = function(index,base){
+                // HALTON SEQUENCE CODE TAKEN FROM WIKIPEDIA LOL
+                var f = 1/base;
+                var i = index;
+                var result = 0;
+                while(i > 0){
+                    result = result + f*(i%base);
+                    i = Math.floor(i/base);
+                    f = f/base;
+                }
+                return result;
+            }
+
+            //////////////////////////////////////////////////////
+            var random_color = function(){
+                var num = Math.random()*16;
+                //return "random color element of hex code";
+
+                if(0 <= num && num < 1){
+                    return "0";
+                }else if(1 <= num && num < 2){
+                    return "1";
+                }else if(2 <= num && num < 3){
+                    return "2";
+                }else if(3 <= num && num < 4){
+                    return "3";
+                }else if(4 <= num && num < 5){
+                    return "4";
+                }else if(5 <= num && num < 6){
+                    return "5";
+                }else if(6 <= num && num < 7){
+                    return "6";
+                }else if(7 <= num && num < 8){
+                    return "7";
+                }else if(8 <= num && num < 9){
+                    return "8";
+                }else if(9 <= num && num < 10){
+                    return "9";
+                }else if(10 <= num && num < 11){
+                    return "a";
+                }else if(11 <= num && num < 12){
+                    return "b";
+                }else if(12 <= num && num < 13){
+                    return "c";
+                }else if(13 <= num && num < 14){
+                    return "d";
+                }else if(14 <= num && num < 15){
+                    return "e";
+                }else if(15 <= num && num < 16){
+                    return "f";
+                }
+            }
+
+            //////////////////////////////////////////////////////
+
+            var random_size = function(){
+                return Math.round(Math.random()*100+10);
+            }
+
+            //////////////////////////////////////////////////////
+
+            var random_rotation = function(){
+                return Math.floor(Math.random()*360);
+            }
+
+            //////////////////////////////////////////////////////
+
+            var random_skew = function() {
+                return Math.floor(Math.random()*360);
+            }
+
+            //////////////////////////////////////////////////////
+
+            var random_margins = function(){
+                var margins = [];
+                margins[0] = Math.floor(Math.random()*110 - 10);
+                margins[1] = Math.floor(Math.random()*110 - 10);
+                // the idea is for them to be in percents
+                return margins;
+            }
+
+            //////////////////////////////////////////////////////
+
+            var random_div = function(){
+                var n_divs = 10;
+                return Math.floor(Math.random()*n_divs);
+            }
+
+            //////////////////////////////////////////////////////
+
+            $(document).ready(function(){
+                var win_w = $(window).width();
+                var win_h = $(window).height();
+
+                var words_n_stuff = $(".letter-main").text();
+                var n_letters = words_n_stuff.length;
+
+                var new_html = "";
+                for(var j = 0; j < n_letters; j++){
+                    new_html = new_html + "<span>"+words_n_stuff.substr(j,1)+"</span>";
+                    // Wraps each letter in <span> </span>
+                }
+
+                $(".letter-margins").append(new_html);
+
+                var n_spans = $("span").length;
+                for(var i = 0; i < n_spans; i++){
+
+                    var x = Math.floor(Math.random()*win_w);
+                    var y = Math.floor(Math.random()*win_h);
+
+                    $("span").eq(i).css("top",y+"px");
+                    $("span").eq(i).css("left",x+"px");
+                    $("span").eq(i).css("-webkit-transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
+                    $("span").eq(i).css("-moz-transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
+                    $("span").eq(i).css("transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
+                    $("span").eq(i).css("color","#"+random_color()+random_color()+random_color());
+                    $("span").eq(i).css("font-size",random_size()+"pt");
+                    $("span").eq(i).css("margin",random_margins()+"px");
+                }
+            });
+
+        
+</script>
+
+<div class="letter-margins">
 
             <div class="letter-main">
                 <div class="top">
@@ -55,137 +208,7 @@
 
         </div>
 
-<pre><code>    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
 
-        //////////////////////////////////////////////////////
-        var quasi_random = function(index,base){
-            // HALTON SEQUENCE CODE TAKEN FROM WIKIPEDIA LOL
-            var f = 1/base;
-            var i = index;
-            var result = 0;
-            while(i &gt; 0){
-                result = result + f*(i%base);
-                i = Math.floor(i/base);
-                f = f/base;
-            }
-            return result;
-        }
 
-        //////////////////////////////////////////////////////
-        var random_color = function(){
-            var num = Math.random()*16;
-            //return "random color element of hex code";
-
-            if(0 &lt;= num &amp;&amp; num &lt; 1){
-                return "0";
-            }else if(1 &lt;= num &amp;&amp; num &lt; 2){
-                return "1";
-            }else if(2 &lt;= num &amp;&amp; num &lt; 3){
-                return "2";
-            }else if(3 &lt;= num &amp;&amp; num &lt; 4){
-                return "3";
-            }else if(4 &lt;= num &amp;&amp; num &lt; 5){
-                return "4";
-            }else if(5 &lt;= num &amp;&amp; num &lt; 6){
-                return "5";
-            }else if(6 &lt;= num &amp;&amp; num &lt; 7){
-                return "6";
-            }else if(7 &lt;= num &amp;&amp; num &lt; 8){
-                return "7";
-            }else if(8 &lt;= num &amp;&amp; num &lt; 9){
-                return "8";
-            }else if(9 &lt;= num &amp;&amp; num &lt; 10){
-                return "9";
-            }else if(10 &lt;= num &amp;&amp; num &lt; 11){
-                return "a";
-            }else if(11 &lt;= num &amp;&amp; num &lt; 12){
-                return "b";
-            }else if(12 &lt;= num &amp;&amp; num &lt; 13){
-                return "c";
-            }else if(13 &lt;= num &amp;&amp; num &lt; 14){
-                return "d";
-            }else if(14 &lt;= num &amp;&amp; num &lt; 15){
-                return "e";
-            }else if(15 &lt;= num &amp;&amp; num &lt; 16){
-                return "f";
-            }
-        }
-
-        //////////////////////////////////////////////////////
-
-        var random_size = function(){
-            return Math.round(Math.random()*100+10);
-        }
-
-        //////////////////////////////////////////////////////
-
-        var random_rotation = function(){
-            return Math.floor(Math.random()*360);
-        }
-
-        //////////////////////////////////////////////////////
-
-        var random_skew = function() {
-            return Math.floor(Math.random()*360);
-        }
-
-        //////////////////////////////////////////////////////
-
-        var random_margins = function(){
-            var margins = [];
-            margins[0] = Math.floor(Math.random()*110 - 10);
-            margins[1] = Math.floor(Math.random()*110 - 10);
-            // the idea is for them to be in percents
-            return margins;
-        }
-
-        //////////////////////////////////////////////////////
-
-        var random_div = function(){
-            var n_divs = 10;
-            return Math.floor(Math.random()*n_divs);
-        }
-
-        //////////////////////////////////////////////////////
-
-        $(document).ready(function(){
-            var win_w = $(window).width();
-            var win_h = $(window).height();
-
-            var words_n_stuff = $(".letter-main").text();
-            var n_letters = words_n_stuff.length;
-
-            var new_html = "";
-            for(var j = 0; j &lt; n_letters; j++){
-                new_html = new_html + "&lt;span&gt;"+words_n_stuff.substr(j,1)+"&lt;/span&gt;";
-                // Wraps each letter in &lt;span&gt; &lt;/span&gt;
-            }
-
-            $(".letter-margins").append(new_html);
-
-            var n_spans = $("span").length;
-            for(var i = 0; i &lt; n_spans; i++){
-
-                var x = Math.floor(Math.random()*win_w);
-                var y = Math.floor(Math.random()*win_h);
-
-                $("span").eq(i).css("top",y+"px");
-                $("span").eq(i).css("left",x+"px");
-                $("span").eq(i).css("-webkit-transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
-                $("span").eq(i).css("-moz-transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
-                $("span").eq(i).css("transform", "rotate(" + random_rotation() + "deg) skew(" + random_skew() + "deg)" );
-                $("span").eq(i).css("color","#"+random_color()+random_color()+random_color());
-                $("span").eq(i).css("font-size",random_size()+"pt");
-                $("span").eq(i).css("margin",random_margins()+"px");
-            }
-        });
-
-    
-    &lt;/script&gt;
-</code></pre>
-
-    </div>
-
-  </body>
+    </body>
 </html>
