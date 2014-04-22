@@ -20,6 +20,7 @@
     var toggler = document.getElementById("toggleprint");
     var bod = document.body;
     var toggleprint = function(e) {
+      e.preventDefault();
       if (bod.classList.contains("forprint")) {
         bod.classList.remove("forprint");
       }

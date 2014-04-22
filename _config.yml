@@ -13,6 +13,7 @@ future:      true
 show_drafts: nil
 limit_posts: 0
 highlighter: pygments
+markdown:    kramdown
 
 name:        html-output
 baseurl:     /htmloutput
@@ -20,3 +21,4 @@ baseurl:     /htmloutput
 permalink:   pretty
 
 types:       [interview, project, essay]
+
