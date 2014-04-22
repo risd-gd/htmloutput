@@ -25,13 +25,9 @@ Next, lets force a new page
 
 ## Hey cat
 
-![Alt text](http://placekitten.com/g/500/300)
-
 Here is a caption about why this cat prefers language with significant whitespace
 
 ## These are images
-
-![Alt text](http://placekitten.com/g/500/400)
 
 Here is a caption about why this cat doesn't know how to code
 
