@@ -36,7 +36,7 @@ _If you don't want to install Jekyll or deal with the terminal_
 
 _If you have Jekyll installed locally_
 
-1. Navigate to the jekyll-workflow folder in the terminal and run `jekyll serve -w --baseurl ''`.
+1. Navigate to the htmloutput folder in the terminal and run `jekyll serve -w --baseurl ''`.
 
 	
 	Note that those are two regular straight quotes despite appearing like smart curly quotes in Anther's typeface. The `-w` means 'watch.' That means every time you make a change to a file, jekyll will run `serve` and generate a site again. Press `Ctrl-C` to cancel watching, or just close the terminal window. The `--baseurl ''` will set the baseurl to nothing, so you can view it locally. 
