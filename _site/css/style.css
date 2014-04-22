@@ -110,20 +110,20 @@ nav {
 	color: white;
 }
 
-.print-nav {
-	position: fixed;
-	top: 1em;
-	right: 1em;
-	background: white;
-}
-
 /* ----------------------------------
 
 Styles for an individual page
 
 ----------------------------------*/
 
+.meta {
+	color: green;
+	margin-bottom: 1.4rem;
+}
 
+.meta p {
+	margin: 0;
+}
 
 
 

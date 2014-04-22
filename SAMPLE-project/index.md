@@ -1,7 +1,7 @@
 ---
 
 layout: page
-title: Project Sample Markdown
+title: Project Sample Markdown and Images
 description: Hi chrome
 category: project
 
@@ -18,3 +18,23 @@ THat was a nice code block
 > Here is a block quote!
 
 Wasn't that a _great_ and __amazing__ blockquote?
+
+Next, lets force a new page
+
+<div class="newpage"></div>
+
+## Hey cat
+
+![Alt text](http://placekitten.com/g/500/200)
+
+Here is a short caption
+
+![Alt text](http://placekitten.com/g/500/300)
+
+Here is a caption about why this cat prefers language with significant whitespace
+
+## These are images
+
+![Alt text](http://placekitten.com/g/500/400)
+
+Here is a caption about why this cat doesn't know how to code

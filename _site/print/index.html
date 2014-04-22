@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/css/print.css" type="text/css">
     <script src="/script/cssregions.js"></script>
   </head>
-  <body>
+  <body class="forprint">
 
 
   <nav class="print-nav">
+    Hey. This uses a CSS regions polyfill.
     <a class="toggle-btn" id="toggleprint" href="#">Toggle print mode</a>
   </nav>
 
@@ -92,7 +93,7 @@ represent individual printed pages.)
       
           <div class="item">
             
-              <p>Project Sample Markdown</p>
+              <p>Project Sample Markdown and Images</p>
               <div class="author"></div>
             
 
@@ -201,7 +202,7 @@ represent individual printed pages.)
       
           <div class="item">
             
-              <h1>Project Sample Markdown</h1>
+              <h1>Project Sample Markdown and Images</h1>
               <div class="author"></div>
             
 
@@ -222,6 +223,26 @@ represent individual printed pages.)
 </blockquote>
 
 <p>Wasn’t that a <em>great</em> and <strong>amazing</strong> blockquote?</p>
+
+<p>Next, lets force a new page</p>
+
+<div class="newpage"></div>
+
+<h2 id="hey-cat">Hey cat</h2>
+
+<p><img src="http://placekitten.com/g/500/200" alt="Alt text" /></p>
+
+<p>Here is a short caption</p>
+
+<p><img src="http://placekitten.com/g/500/300" alt="Alt text" /></p>
+
+<p>Here is a caption about why this cat prefers language with significant whitespace</p>
+
+<h2 id="these-are-images">These are images</h2>
+
+<p><img src="http://placekitten.com/g/500/400" alt="Alt text" /></p>
+
+<p>Here is a caption about why this cat doesn’t know how to code</p>
 
 
           </div>
@@ -443,42 +464,6 @@ experiment with adding/removing them dynamically
 	    	<div class="content-region page-inner">
 	    	</div>
 	    	<footer>16</footer>
-	    </div>
-    
-    	<div class="page-outer" data-page="17">
-	    	<header>
-          Title or something
-        </header>
-	    	<div class="content-region page-inner">
-	    	</div>
-	    	<footer>17</footer>
-	    </div>
-    
-    	<div class="page-outer" data-page="18">
-	    	<header>
-          Title or something
-        </header>
-	    	<div class="content-region page-inner">
-	    	</div>
-	    	<footer>18</footer>
-	    </div>
-    
-    	<div class="page-outer" data-page="19">
-	    	<header>
-          Title or something
-        </header>
-	    	<div class="content-region page-inner">
-	    	</div>
-	    	<footer>19</footer>
-	    </div>
-    
-    	<div class="page-outer" data-page="20">
-	    	<header>
-          Title or something
-        </header>
-	    	<div class="content-region page-inner">
-	    	</div>
-	    	<footer>20</footer>
 	    </div>
     
 

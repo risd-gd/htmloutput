@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/print.css" type="text/css">
     <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
-  <body>
+  <body class="forprint">
 
 
   <nav class="print-nav">
+    Hey. This uses a CSS regions polyfill.
     <a class="toggle-btn" id="toggleprint" href="#">Toggle print mode</a>
   </nav>
 
@@ -52,7 +53,7 @@ to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
 -->
-    {% for num in (1...20) %}
+    {% for num in (1...16) %}
     	<div class="page-outer" data-page="{{ num }}">
 	    	<header>
           Title or something

@@ -70,11 +70,19 @@ Page size and paginalia
 	right: 0.5in;
 }
 
+.forprint img {
+	width: 100%;
+}
+
 /* ----------------------------------
 
 For previewing the print
 
 ----------------------------------*/
+
+.print-nav {
+	display: none;
+}
 
 @media screen {
 	.forprint body {
@@ -93,7 +101,16 @@ For previewing the print
 		display: block;
 		margin: 1rem auto;
 	}
+
+	.print-nav {
+		position: fixed;
+		top: 1em;
+		right: 1em;
+		background: white;
+	}
+
 }
+
 
 /* ----------------------------------
 
