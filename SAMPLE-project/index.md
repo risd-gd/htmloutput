@@ -1,6 +1,6 @@
 ---
 
-layout: default
+layout: page
 title: Project Sample Markdown
 description: Hi chrome
 category: project

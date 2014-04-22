@@ -1,6 +1,6 @@
 ---
 
-layout: default
+layout: page
 title: The browser is all grown up
 author: John Caserta
 description: this is an essay I'm guessing John wrote
