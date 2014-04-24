@@ -15,6 +15,11 @@ Here's how this works:
 
 1. Make a folder for your project, essay, or interview. You can use one of the folders called `SAMPLE` as a guide.
 
+1a. Folder naming conventions:
+interview-LAST NAME OF INTERVIEWEE-LAST NAME OF INTERVIEWER
+project-YOUR LAST NAME-ONE WORD PROJECT TITLE
+essay-AUTHOR LAST NAME
+
 2. Create either an `index.html` file (for stuff you've designed yourself) or `index.md` file (to use our default styles, great for essays/interviews).
 
 3. Put in the appropriate information (title, author etc) at the top in YAML format. Look at the samples to see an example. The project won't show up yet unless it has a category of 'project,' 'interview,' or 'essay.'
