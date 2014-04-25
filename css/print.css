@@ -157,7 +157,7 @@ Actual print styles
 		border: 1px solid black;
 	}
 }
-
+/*
 @page {
 	margin: 0;
 	width: 8.5in;
@@ -165,7 +165,7 @@ Actual print styles
 }
 
 
-/*@page :left{
+@page :left{
 	margin-left: 1in;
 }
 
