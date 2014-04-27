@@ -20,7 +20,7 @@
             .q:before { content: '{{ page.interviewer_initials }}   '; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
             p:before { content: '{{ page.interviewee_initials }}   '; color: red; font-size: 10pt; font-family: "Messenger Mono";}
             q { background-color: gold;}
-            del { text-decoration:line-through }
+            del { text-decoration:line-through; color: grey;}
             mark { font-style: normal; background: rgba(0,255,0,.2);}
             s { color: grey;}
             p { margin: 0; text-indent: 2pc; margin-right: 1pc; }
@@ -28,6 +28,24 @@
             .meta{
                 margin-left: 2pc;
                 margin-right: 1pc;
+            }
+
+            blockquote{
+                margin-left: -2pc;
+                margin-right: 3pc;
+                color: red;
+                font-family: "Messenger Mono";
+                text-indent: 6pt;
+            }
+
+            .interview-intro{
+                margin-top: 2pc;
+                margin-bottom: 2pc;
+            }
+
+            .interview_conclusion{
+                margin-top: 2pc;
+                margin-bottom: 2pc;
             }
 
 
