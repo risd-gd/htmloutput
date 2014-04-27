@@ -76,13 +76,12 @@ Page size and paginalia
   font-family: Messenger Mono;
   font-size: 0.5rem;
   border-top: 1pt solid black;
+  text-align: left;
 }
 .page-outer:nth-child(odd) > footnotes{
-  text-align: right;
   right: 1.5in;
 }
 .page-outer:nth-child(even) > footnotes{
-  text-align: left;
   left: 1.5in;
 }
 
