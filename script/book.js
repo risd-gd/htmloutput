@@ -1,3 +1,6 @@
+// ---------------
+// User interface
+
 var toggler = document.getElementById("toggleguides");
 var trimmer = document.getElementById("trimpages");
 
@@ -6,7 +9,11 @@ trimmer.addEventListener("click", function(){
   trimRegions('content-flow')
 });
 
+// -------------------------
 
+// Toggle guides
+
+// -------------------------
 
 function toggleprint(e) {
   e.preventDefault();
@@ -17,6 +24,29 @@ function toggleprint(e) {
     document.documentElement.classList.add("_guides");
   }
 };
+
+// -------------------------
+
+// ENABLE BLEED
+// --
+// Remove margins of any region
+// that is part of a full-bleed
+// image spread
+
+// -------------------------
+
+function allowBleeds(flowName) {
+  var flow = document.getNamedFlows().namedItem(flowName);
+  // TODO
+}
+
+// -------------------------
+
+// TRIM
+// --
+// Trim extra pages that have no content
+
+// -------------------------
 
 // From:
 // http://docs.webplatform.org/wiki/apis/css-regions/NamedFlow/firstEmptyRegionIndex
