@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="_book">
   <head>
     <meta charset="utf-8">
     <title>Print testing setup</title>
@@ -9,24 +9,22 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
     <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
-  <body class="_book">
+  <body>
 
 
   <nav class="print-nav">
-    Hey. This uses a CSS regions polyfill.
     <a class="toggle-btn" id="toggleprint" href="#">Toggle print mode</a>
   </nav>
 
   <script type="text/javascript">
     var toggler = document.getElementById("toggleprint");
-    var bod = document.body;
     var toggleprint = function(e) {
       e.preventDefault();
-      if (bod.classList.contains("_book")) {
-        bod.classList.remove("_book");
+      if (document.classList.contains("_book")) {
+        document.classList.remove("_book");
       }
       else {
-        bod.classList.add("_book");
+        document.classList.add("_book");
       }
     };
     toggler.addEventListener("click", toggleprint);
@@ -52,7 +50,7 @@ to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
 -->
-    {% for num in (1...16) %}
+    {% for num in (1...100) %}
     	<div class="page-outer" data-page="{{ num }}">
 	    	<header>
           Title or something

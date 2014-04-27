@@ -90,19 +90,19 @@ nav {
 	font-size: 2rem;
 }
 
-.print-btn, .toggle-btn {
+.print-btn {
 	padding: 0.8rem 2rem;
 	border: 1px solid black;
 	text-align: center;
 	color: black;
 }
 
-.print-btn:hover, .toggle-btn:hover {
+.print-btn:hover {
 	background: black;
 	color: white;
 }
 
-.posts{
+.posts {
   margin-bottom: 2rem;
 }
 
