@@ -42,23 +42,25 @@ Page size and paginalia
 .page-inner {
 	position: absolute;
 	margin: auto;
-	bottom: 1in;
-	top: 0.2in;
-	left: 0.4in;
-	right: 0.4in;
+	bottom: -0.2in;
+	top: -0.2in;
+	left: -0.2in;
+	right: -0.2in;
+	overflow: hidden;
+	padding: 0.4in 0.6in 0.7in;
 }
 
-.page-outer footer {
+
+.page-outer > footer {
 	font-size: 2em;
 	position: absolute;
 	text-align: center;
 	margin: auto;
-	bottom: 0.2in;
-	left: 0;
-	right: 0;
+	bottom: 2in;
+	z-index: 999;
 }
 
-.page-outer header {
+.page-outer > header {
 	position: absolute;
 	bottom: 4in;
 	text-align: right;
@@ -68,16 +70,30 @@ Page size and paginalia
 	font-size: 0.8rem;
 }
 
-.page-outer:nth-child(odd) header {
+.page-outer:nth-child(odd) > header {
 	-webkit-transform-origin: top left;
 	-webkit-transform: rotate(90deg);
 	left: 0.3in;
 }
 
-.page-outer:nth-child(even) header {
+.page-outer:nth-child(even) > header {
 	-webkit-transform-origin: top right;
 	-webkit-transform: rotate(-90deg);
 	right: 0.3in;
+}
+
+
+.page-outer:nth-child(odd) > footer {
+	left: 0.15in;
+}
+.page-outer:nth-child(even) > footer {
+	right: 0.15in;
+}
+
+.page-outer:nth-child(17) > .page-inner,
+.page-outer:nth-child(18) > .page-inner {
+	padding: 0;
+	background: black;
 }
 
 /*._book img {
@@ -96,24 +112,32 @@ Book image spreads
 
 ----------------------------------*/
 
+
+._book-spread._fullbleed {
+	outline: 1px solid lime;
+}
+
 ._book-spread-l,
 ._book-spread-r {
-	height: 7in;
+	height: 7.5in;
 	overflow: hidden;
 	width: 100%;
 	position: relative;
-	outline: 1px solid magenta;
+	outline: 1px solid lime;
 	break-after: region;
 	box-sizing: content-box;
 }
 
+
 ._fullbleed ._book-spread-l,
 ._fullbleed ._book-spread-r {
-	margin: -0.5em -0.5in;
-	padding: 0.5em 0.5in;
+	height: 9in;
+	/*margin: -0.5em -0.5in;
+	padding: 0.5em 0.5in;*/
 }
 
-._fullbleed figcaption {
+
+._book-spread figcaption {
 	position: absolute;
 	background: white;
 	bottom: 0;
@@ -126,17 +150,17 @@ Book image spreads
 	display: block;
 	outline: 1px solid orange;
 	top: 0;
-	width: 195%;
+	width: 198%;
 	/* less than 200% to account for bleed and spine */
 }
 
 ._book-spread-l {
-	padding-right: 0.5in;
+	/* padding-right: 0.5in; */
 }
 
 ._book-spread-r {
-	padding-left: 0.5in;
-	margin-left: -0.5in;
+	/* padding-left: 0.5in;
+	margin-left: -0.5in; */
 	/* 'Undo' the inside margin */
 }
 
@@ -166,17 +190,42 @@ For previewing the print
 		background: #eee
 	}
 
-	.page-inner {
-		outline: 1px solid cyan;
-	}
-
 	.page-outer {
 		background: white;
 		display: inline-block;
-		overflow: hidden;
-	    margin-bottom: 1rem;
+	    margin: 100px;
 	    box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
 	    outline: 1px solid rgba(0,0,0,0.1)
+	}
+
+	/* bleed line */
+	._guides .page-inner {
+		outline: 1px solid cyan;
+	}
+
+	/* margin line */
+	._guides .page-outer::after {
+		content: "";
+		border: 1px dotted cyan;
+		position: absolute;
+		display: block;
+		bottom: 0.5in;
+		top: 0.2in;
+		left: 0.4in;
+		right: 0.4in;
+	}
+
+	/* page line */
+	._guides .page-outer::before {
+		content: "";
+		border: 1px solid magenta;
+		position: absolute;
+		display: block;
+		bottom: 0in;
+		top: 0in;
+		left: 0in;
+		right: 0in;
+		z-index: 999;
 	}
 
 	.page-outer[data-page='1'] {
@@ -192,6 +241,8 @@ For previewing the print
 		background: white;
 		display: block;
 		z-index: 999;
+		padding: 15px;
+		border-top: 1px solid gray;
 	}
 
 }
@@ -233,7 +284,7 @@ Faked print styles
 
 	.page-outer {
 		margin-top: 0.2in;
-		outline: 1px black;
+		outline: 1px solid black;
 	}
 }
 /*
