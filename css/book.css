@@ -57,7 +57,7 @@ Page size and paginalia
 	text-align: center;
 	margin: auto;
 	bottom: 2in;
-	z-index: 999;
+	z-index: 100;
 }
 
 .page-outer > header {
@@ -225,7 +225,7 @@ For previewing the print
 		top: 0in;
 		left: 0in;
 		right: 0in;
-		z-index: 999;
+		z-index: 100;
 	}
 
 	.page-outer[data-page='1'] {
