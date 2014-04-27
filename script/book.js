@@ -72,7 +72,7 @@ function trimRegions(flowName) {
 var num_links = $("a").length; // to be the number of footnotes
 for(i=0; i<num_links; i++){
   var url = $("a").eq(i).attr("href");
-  $(".footnotes").append("["+i+"] " + url + " <br />");
+  $("footnotes").append("["+i+"] " + url + " <br />");
 }
 
 
