@@ -77,11 +77,11 @@ Page size and paginalia
   font-size: 0.5rem;
 }
 .page-outer:nth-child(odd) > footnotes{
-  right: 2in;
+  right: 0.3in;
   text-align: right;
 }
 .page-outer:nth-child(even) > footnotes{
-  left: 2in;
+  left: 0.3in;
   text-align: left;
 }
 
