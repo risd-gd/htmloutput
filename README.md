@@ -15,7 +15,7 @@ Here's how this works:
 
 1. Make a folder for your project, essay, or interview. You can use one of the folders called `SAMPLE` as a guide.
 
-1a. Folder naming conventions:
+1. Folder naming conventions:
 interview-LAST NAME OF INTERVIEWEE-LAST NAME OF INTERVIEWER
 project-YOUR LAST NAME-ONE WORD PROJECT TITLE
 essay-AUTHOR LAST NAME
