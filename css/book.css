@@ -71,9 +71,6 @@ Page size and paginalia
 }
 
 .page-outer > footnotes{
-  position: absolute;
-  left: 1in;
-  top: 5in;
   font-family: Messenger Mono;
   font-size: 0.5rem;
   border-top: 1pt solid black;
