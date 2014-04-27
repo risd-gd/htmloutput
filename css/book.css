@@ -71,10 +71,11 @@ Page size and paginalia
 }
 
 .page-outer > footnotes{
+  position: absolute;
+  top: 4in;
+  left: 0in;
   font-family: Messenger Mono;
   font-size: 0.5rem;
-  border-top: 1pt solid black;
-  text-align: left;
 }
 .page-outer:nth-child(odd) > footnotes{
 }
