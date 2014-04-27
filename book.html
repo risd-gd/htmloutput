@@ -57,7 +57,7 @@ title: HTML Output
       {% for page in site.pages %}{% if page.category == category %}
           <div class="item">
             {% if category == 'interview' %}
-              <h1>{{ page.title }} talks to {{ page.author }}</h1>
+              <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
             {% else %}
               <h1>{{ page.title }}</h1>
               <div class="author">{{ page.author }}</div>

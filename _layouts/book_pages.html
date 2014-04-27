@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html class="_book _guides">
-  <head>
-    <meta charset="utf-8">
-    <title>Print testing setup</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
-    <script src="{{ site.baseurl }}/script/cssregions.js"></script>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <title>Print testing setup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="{{ site.baseurl }}/script/cssregions.js"></script>
+    </head>
+    <body>
 
 
-  <nav class="print-nav">
-    <button class="toggle-btn" id="toggleguides">Toggle preview mode</button>
-    <button class="toggle-btn" id="trimpages">Trim pages</button>
-  </nav>
+        <nav class="print-nav">
+            <button class="toggle-btn" id="toggleguides">Toggle preview mode</button>
+            <button class="toggle-btn" id="trimpages">Trim pages</button>
+        </nav>
 
-  <div class="temp spacer"></div>
-<!-- 
+        <div class="temp spacer"></div>
+        <!--
 
 We're using a polyfill for CSS Regions.
 
@@ -27,10 +28,10 @@ and then send it through the regions in content-region (which
 represent individual printed pages.)
 
 -->
-    <div class="content-source">
-    	{{ content }}
-    </div>
-<!-- 
+        <div class="content-source">
+            {{ content }}
+        </div>
+        <!--
 
 Because of how CSS Regions works, we can't tell how many
 pages will be necessary. Right now I'm just creating 20
@@ -38,20 +39,23 @@ to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
 -->
-    {% for num in (1...100) %}
-    	<div class="page-outer" data-page="{{ num }}">
-	    	<div class="content-region page-inner">
-	    	</div>
-        <header>
-          Title or something
-        </header>
-	    	<footer>
-          {{ num }}
-        </footer>
-	    </div>
-    {% endfor %}
+        {% for num in (1...100) %}
+        <div class="page-outer" data-page="{{ num }}">
+            <div class="content-region page-inner">
+            </div>
+            <div class="footnotes">
+                footnotes hello
+            </div>
+            <header>
+                Title or something
+            </header>
+            <footer>
+                {{ num }}
+            </footer>
+        </div>
+        {% endfor %}
 
-  <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>
 
-  </body>
+    </body>
 </html>

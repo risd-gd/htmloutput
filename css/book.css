@@ -70,6 +70,20 @@ Page size and paginalia
 	font-size: 0.8rem;
 }
 
+.page-outer > footnotes{
+  position: absolute;
+  bottom: 1in;
+  font-family: Messenger Mono;
+  font-size: 0.5rem;
+  border-top: 1pt solid black;
+}
+.page-outer:nth-child(odd) > footnotes{
+  text-align: right;
+}
+.page-outer:nth-child(even) > footnotes{
+  text-align: left;
+}
+
 .page-outer:nth-child(odd) > header {
 	-webkit-transform-origin: top left;
 	-webkit-transform: rotate(90deg);
