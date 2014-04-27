@@ -236,7 +236,7 @@ Faked print styles
 		outline: 1px black;
 	}
 }
-
+/*
 @page {
 	margin: 0;
 	width: 8.5in;
@@ -244,7 +244,7 @@ Faked print styles
 }
 
 
-/*@page :left{
+@page :left{
 	margin-left: 1in;
 }
 
