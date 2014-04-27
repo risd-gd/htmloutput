@@ -5,11 +5,11 @@ CSS Region flow (used by the polyfill)
 ----------------------------------*/
 
 
-.forprint .content-source {
+._book .content-source {
     flow-into: content-flow contents;
 }
 
-.forprint .content-region {
+._book .content-region {
     flow-from: content-flow;
     region-fragment: break;
 }
@@ -21,8 +21,8 @@ Page size and paginalia
 ----------------------------------*/
 
 .page-outer {
-	height: 11in;
-	width: 8.5in;
+	height: 8.25in;
+	width: 6in;
 	position: relative;
     page-break-after: always;
     overflow: hidden;
@@ -70,11 +70,11 @@ Page size and paginalia
 	right: 0.5in;
 }
 
-.forprint img {
+._book img {
 	width: 100%;
 }
 
-.forprint iframe {
+._book iframe {
 	width: 8.5in;
 	height: 11in;
 	margin: 0 -1in;
@@ -91,7 +91,7 @@ For previewing the print
 }
 
 @media screen {
-	.forprint body {
+	._book body {
 		max-width: none;
 		text-align: center;
 	}
@@ -126,7 +126,7 @@ Faked print styles
 ----------------------------------*/
 
 
-.forprint .newpage {
+._book .newpage {
 	display: block;
 	border: 1px solid red;
 	break-after: region;
@@ -134,7 +134,7 @@ Faked print styles
 	opacity: 0.1;
 }
 
-.forprint .newpage:after {
+._book .newpage:after {
 	content: "Force a page break!";
 	position: absolute;
 	color: red;
@@ -143,7 +143,7 @@ Faked print styles
 
 /* ----------------------------------
 
-Actual print styles
+"Actual" print styles
 
 ----------------------------------*/
 
