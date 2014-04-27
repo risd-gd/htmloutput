@@ -131,7 +131,7 @@ Book image spreads
 
 ._fullbleed ._book-spread-l,
 ._fullbleed ._book-spread-r {
-	height: 9in;
+	height: 8.7in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
@@ -140,7 +140,8 @@ Book image spreads
 ._book-spread figcaption {
 	position: absolute;
 	background: white;
-	bottom: 0;
+	bottom: 1in;
+	left: 1in;
 	font-size: 10pt;
 }
 
@@ -257,7 +258,7 @@ Faked print styles
 
 ._book ._page-break {
 	display: block;
-	border: 1px solid red;
+	outline: 1px solid red;
 	break-after: region;
 	margin-bottom: 6in;
 	opacity: 0.1;
