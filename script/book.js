@@ -7,10 +7,10 @@ var bleeder = document.getElementById("fixbleeds");
 
 toggler.addEventListener("click", toggleprint);
 trimmer.addEventListener("click", function(){
-  trimRegions('content-flow')
+  trimRegions(this, 'content-flow')
 });
 bleeder.addEventListener("click", function(){
-  allowBleeds('content-flow')
+  allowBleeds(this, 'content-flow')
 });
 
 // -------------------------
@@ -39,11 +39,12 @@ function toggleprint(e) {
 
 // -------------------------
 
-function allowBleeds(flowName) {
+function allowBleeds(btn, flowName) {
   var flow = document.getNamedFlows().namedItem(flowName);
   var bleeders = document.querySelectorAll("._fullbleed");
 
   document.documentElement.classList.add("_bleed-enabled")
+  btn.setAttribute("disabled", true);
 
   console.log(bleeders);
   for (var i = 0; i < 1; i++) {
@@ -68,7 +69,7 @@ function allowBleeds(flowName) {
 // From:
 // http://docs.webplatform.org/wiki/apis/css-regions/NamedFlow/firstEmptyRegionIndex
 // deletes any empty regions from the end of a flow:
-function trimRegions(flowName) {
+function trimRegions(btn, flowName) {
     var flow = document.getNamedFlows().namedItem(flowName);
     var index = flow.firstEmptyRegionIndex;
     var regions = flow.getRegions();
@@ -77,6 +78,9 @@ function trimRegions(flowName) {
     if (index == -1) {
       alert("Can't. Wait until page splitting is finished?");
       return(false); // no empty regions?
+    }
+    else {
+    	btn.setAttribute("disabled", true);
     }
     // remove first empty region &amp; all thereafter:
     for (var i = index; i < regions.length; i++) {
