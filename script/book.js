@@ -99,7 +99,7 @@ $(document).ready(function(){
 
     var url = $("a").eq(i).attr("href");
 
-    var page_num = $("a").eq(i).closest(".page-outer").attr("data-page");
+    var page_num = $("a").eq(i).closest(".page-outer").html();
     alert(page_num);
 
     //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
