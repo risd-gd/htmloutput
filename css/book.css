@@ -26,10 +26,10 @@ Book overall style
 
 ._book .sidematter {
 	position: absolute;
-	top: 0.3in;
-	left: 0.3in;
+	top: 1in;
+	left: 0.5in;
 	-webkit-transform: rotate(90deg);
-	-webkit-transform-orgin: top left;
+	-webkit-transform-origin: top left;
 	color: red;
 }
 
