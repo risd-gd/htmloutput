@@ -94,8 +94,14 @@ function trimRegions(btn, flowName) {
 
 $(document).ready(function(){
   var num_links = $("a").length;
-  alert(num_links);
+
+  for(i=0; i<num_links; i++){
+
+    alert($("a").eq(i).parents(".page-outer").attr("class"));
+
   //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
+
+  }
 
 });
 
