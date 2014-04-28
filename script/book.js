@@ -92,8 +92,6 @@ function trimRegions(btn, flowName) {
 
 // Create Footnotes of hyperlink URLs
 
-alert('hi');
-
 /*
 var num_links = $("a").length; // the number of links & footnotes
 alert(num_links);
