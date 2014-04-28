@@ -90,7 +90,14 @@ function trimRegions(btn, flowName) {
     return(true);
 }
 
-// Create Footnotes of hyperlink URLs
+// -------------------------
+
+// FOOTNOTES
+// --
+// Add footnote URLs to pages
+// with hyperlinks.
+
+// -------------------------
 
 $(document).ready(function(){
   var num_links = $("a").length;
@@ -100,7 +107,7 @@ $(document).ready(function(){
     var url = $("a").eq(i).attr("href");
 
     var page_num = $("a").eq(i).closest(".page-outer").html();
-    alert(page_num);
+    //alert(page_num);
 
     //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
 
