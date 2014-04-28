@@ -94,6 +94,7 @@ function trimRegions(btn, flowName) {
 $(document).ready(function(){
   /*
   var num_links = $("a").length; // the number of links & footnotes
+  var num_links = $("a").length; // to be the number of footnotes
   for(i=0; i<num_links; i++){
     var url = $("a").eq(i).attr("href");
     var page_outer = $("a").eq(i).parents(".page-outer").index();
@@ -104,13 +105,16 @@ $(document).ready(function(){
   for(i=0; i<num_pages; i++){
 
     var num_links = $(".page-outer").eq(i).find("a").length;
-    alert(num_links);
+    if(num_links > 0){
+      alert(num_links);
+    }
 
     for(j=0; j<num_links; j++){
       var url = $(".page-outer").eq(i).find("a").eq(j).attr("href");
       alert(url);
     }
 
+    //alert("are footnotes working? answer: " + page_outer);
   }
 
 });
