@@ -109,7 +109,8 @@ for(i=0; i<num_links; i++){
 */
 
 var num_pages = $(".page-outer").length;
-for(i=0; i<num_pages i++){
+alert("number of pages: "+num_pages);
+for(var i=0; i<num_pages i++){
 
   var num_links = $(".page-outer").eq(i).find("a").length;
   alert(num_links);
