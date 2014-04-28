@@ -98,10 +98,9 @@ $(document).ready(function(){
   for(i=0; i<num_links; i++){
 
     var url = $("a").eq(i).attr("href");
-    alert(url);
 
-    //$("a").eq(i).parents(".page-outer").css("outline","1px solid red");
-    alert($("a").eq(i).closest(".page-outer").data('page'));
+    var page_num = $("a").eq(i).closest(".page-outer").data('page');
+    alert(page_num);
 
     //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
 
