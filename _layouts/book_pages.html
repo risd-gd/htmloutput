@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
   <body>
@@ -28,10 +29,10 @@ and then send it through the regions in content-region (which
 represent individual printed pages.)
 
 -->
-    <div class="content-source">
-    	{{ content }}
-    </div>
-<!-- 
+        <div class="content-source">
+            {{ content }}
+        </div>
+        <!--
 
 Because of how CSS Regions works, we can't tell how many
 pages will be necessary. Right now I'm just creating 20
@@ -39,20 +40,22 @@ to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
 -->
-    {% for num in (1...100) %}
-    	<div class="page-outer" data-page="{{ num }}">
-	    	<div class="content-region page-inner">
-	    	</div>
-        <header>
-          Title or something
-        </header>
-	    	<footer>
-          {{ num }}
-        </footer>
-	    </div>
-    {% endfor %}
+        {% for num in (1...100) %}
+        <div class="page-outer" data-page="{{ num }}">
+            <div class="content-region page-inner">
+            </div>
+            <header>
+                Title or something
+            </header>
+            <footer>
+                {{ num }}
+            </footer>
+            <footnotes>
+            </footnotes>
+        </div>
+        {% endfor %}
 
-  <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>
 
-  </body>
+    </body>
 </html>
