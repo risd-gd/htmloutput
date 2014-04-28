@@ -98,10 +98,12 @@ $(document).ready(function(){
   for(i=0; i<num_links; i++){
 
     var url = $("a").eq(i).attr("href");
+    alert(url);
 
-    $("a").eq(i).parents(".page-outer").css("outline","1px solid red");
+    //$("a").eq(i).parents(".page-outer").css("outline","1px solid red");
+    //$("a")
 
-    $("footnotes").eq(i).append("["+i+"] " + url + " <br />");
+    //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
 
   }
 
