@@ -91,20 +91,19 @@ function trimRegions(btn, flowName) {
 }
 
 // Create Footnotes of hyperlink URLs
-$(document).ready(function(){
 
-  var num_links = $("a").length; // the number of links & footnotes
-  for(i=0; i<num_links; i++){
-    var url = $("a").eq(i).attr("href");
-    var page_outer = $("a").eq(i).parents(".page-outer").index();
-    //$("footnotes").eq(pg_num-1).append("["+i+"] " + url + " <br />");
+var num_links = $("a").length; // the number of links & footnotes
+for(i=0; i<num_links; i++){
+  var url = $("a").eq(i).attr("href");
+  var page_outer = $("a").eq(i).parents(".page-outer").index();
+  //$("footnotes").eq(pg_num-1).append("["+i+"] " + url + " <br />");
 
-    var num_pages = $(".page-outer").length;
-    alert(num_pages);
-  }
+  var num_pages = $(".page-outer").length;
+  alert(num_pages);
+}
 
 
-  /*
+/*
   var num_pages = $(".page-outer").length;
   for(i=0; i<num_pages; i++){
 
@@ -116,8 +115,6 @@ $(document).ready(function(){
       alert(url);
     }
   }
-  */
-
-});
+*/
 
 
