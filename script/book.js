@@ -101,7 +101,7 @@ $(document).ready(function(){
     alert(url);
 
     //$("a").eq(i).parents(".page-outer").css("outline","1px solid red");
-    //$("a")
+    alert($("a").eq(i).closest(".page-outer").data('page'));
 
     //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
 
