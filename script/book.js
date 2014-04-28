@@ -3,10 +3,14 @@
 
 var toggler = document.getElementById("toggleguides");
 var trimmer = document.getElementById("trimpages");
+var bleeder = document.getElementById("fixbleeds");
 
 toggler.addEventListener("click", toggleprint);
 trimmer.addEventListener("click", function(){
   trimRegions('content-flow')
+});
+bleeder.addEventListener("click", function(){
+  allowBleeds('content-flow')
 });
 
 // -------------------------
@@ -37,7 +41,20 @@ function toggleprint(e) {
 
 function allowBleeds(flowName) {
   var flow = document.getNamedFlows().namedItem(flowName);
-  // TODO
+  var bleeders = document.querySelectorAll("._fullbleed");
+
+  document.documentElement.classList.add("_bleed-enabled")
+
+  console.log(bleeders);
+  for (var i = 0; i < 1; i++) {
+    var regions = flow.getRegionsByContent(bleeders[i]);
+    console.log(regions);
+    for (var j = 0; j < regions.length; j++) {
+      if (regions[j]) {
+        regions[j].classList.add("_bleed");
+      }
+    }
+  }
 }
 
 // -------------------------

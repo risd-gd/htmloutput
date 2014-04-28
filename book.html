@@ -63,6 +63,8 @@ title: HTML Output
               <div class="author">{{ page.author }}</div>
             {% endif %}
 
+            <div class="sidematter">(Side matter for '{{ page.title }}')</div>
+
             {% if page.printready %}
               <!-- We need to mardownify this content. Normally Markdown only runs when
               Jekyll is rendering a page template. -->
