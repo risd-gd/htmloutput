@@ -108,7 +108,6 @@ for(i=0; i<num_links; i++){
 }
 */
 
-$(document).ready(function(){
   alert('let go');
   var num_pages = $(".page-outer").length;
   alert("number of pages: "+num_pages);
@@ -118,7 +117,6 @@ $(document).ready(function(){
     alert(num_links);
 
   }
-});
 
 
 /*
