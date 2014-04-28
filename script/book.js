@@ -41,14 +41,14 @@ function toggleprint(e) {
 
 function allowBleeds(btn, flowName) {
   var flow = document.getNamedFlows().namedItem(flowName);
-  var bleeders = document.querySelectorAll("._fullbleed");
+  var spreads = document.querySelectorAll("._fullbleed");
 
   document.documentElement.classList.add("_bleed-enabled")
   btn.setAttribute("disabled", true);
 
-  console.log(bleeders);
+  console.log(spreads);
   for (var i = 0; i < 1; i++) {
-    var regions = flow.getRegionsByContent(bleeders[i]);
+    var regions = flow.getRegionsByContent(spreads[i]);
     console.log(regions);
     for (var j = 0; j < regions.length; j++) {
       if (regions[j]) {
