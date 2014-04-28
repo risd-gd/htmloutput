@@ -92,6 +92,8 @@ function trimRegions(btn, flowName) {
 
 // Create Footnotes of hyperlink URLs
 
+alert('hi');
+
 /*
 var num_links = $("a").length; // the number of links & footnotes
 alert(num_links);
@@ -106,20 +108,19 @@ for(i=0; i<num_links; i++){
     $(".page-outer > a").length;
   }
 }
-*/
+
 
   alert('let go');
   var num_pages = $(".page-outer").length;
   alert("number of pages: "+num_pages);
   for(var i=0; i<num_pages i++){
-
     var num_links = $(".page-outer").eq(i).find("a").length;
     alert(num_links);
 
   }
 
 
-/*
+
   var num_pages = $(".page-outer").length;
   for(i=0; i<num_pages; i++){
 
