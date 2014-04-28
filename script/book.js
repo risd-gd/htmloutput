@@ -90,11 +90,10 @@ function trimRegions(flowName) {
 $(document).ready(function(){
   var num_links = $("a").length; // to be the number of footnotes
   for(i=0; i<num_links; i++){
-    alert($("a").eq());
     var url = $("a").eq(i).attr("href");
-    var page_outer = $("a").eq(i).parents(".page-outer");
+    var page_outer = $("a").eq(i).parents(".page-outer").index();
 
-    alert("are footnotes working? answer: " + pg_num);
+    alert("are footnotes working? answer: " + page_outer);
     //$("footnotes").eq(pg_num-1).append("["+i+"] " + url + " <br />");
   }
 });
