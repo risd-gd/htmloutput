@@ -75,7 +75,7 @@ $(document).ready(function(){
   alert(num_links);
   for(i=0; i<num_links; i++){
     var url = $("a").eq(i).attr("href");
-    var pg_num = $("a").eq(i).parent().attr("class"); //.parent().data("page");
+    var pg_num = $("a").eq(i).parents(".page-outer").data("page"); //.parent().data("page");
     alert(pg_num);
     //$("footnotes").eq(pg_num-1).append("["+i+"] " + url + " <br />");
   }
