@@ -90,9 +90,9 @@ function trimRegions(flowName) {
 $(document).ready(function(){
   var num_links = $("a").length; // to be the number of footnotes
   for(i=0; i<num_links; i++){
+    alert($("a").eq());
     var url = $("a").eq(i).attr("href");
     var page_outer = $("a").eq(i).parents(".page-outer");
-    var pg_num = $(".page-outer").index(page_outer);
 
     alert("are footnotes working? answer: " + pg_num);
     //$("footnotes").eq(pg_num-1).append("["+i+"] " + url + " <br />");
