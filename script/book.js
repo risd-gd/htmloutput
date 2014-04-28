@@ -97,7 +97,7 @@ $(document).ready(function(){
 
   for(i=0; i<num_links; i++){
 
-    alert($("a").eq(i).parents(".page-outer").attr("class"));
+    alert($("a").eq(i).parents(".page-outer").css("outline","1px solid red"));
 
   //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
 
