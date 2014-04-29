@@ -163,7 +163,6 @@ Interview Styles
 
 ----------------------------------*/
 
-body { line-height: 130%; font-size: 12pt; padding-left: 2pc; margin: 4pc auto; width: 25.5pc; font-family: "Benton Modern";}
 
 .interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
 .interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
