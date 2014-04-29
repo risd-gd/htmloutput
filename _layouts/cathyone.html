@@ -25,7 +25,18 @@
     		font-size: 50px;
             text-align: center;
 
+            margin-top: 150px;
+
     	}
+
+        h2 {
+
+            font-family: "Antenna RE";
+            font-weight: normal;
+            font-size: 15px;
+            text-align: center;
+
+        }
 
     	p {
 
@@ -48,11 +59,52 @@
 
     	}
 
+        /* 
+
+          a n n o t a t i o n s
+
+        */
+
+        span.cathy {
+            font-family: "Poynter Serif RE";
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        span.cathy2 {
+            padding-bottom: 2px;
+            border-bottom: 2px solid cyan;
+        }
+
+        span.cathy3 {
+            font-family: "Antenna Black";
+            color: magenta;
+        }
+
     	/* 
 
     	  l a y o u t
 
     	*/
+
+        figure {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        } figure img {
+            margin-bottom: 25px;
+            width: 100%;
+            height: auto;
+           -webkit-filter: grayscale(1);
+        } figure figcaption {
+
+            font-family: "Antenna RE";
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 15px;
+            font-style: italic;
+
+        }
 
         div#container {
             width: 60%;
@@ -61,17 +113,24 @@
         }
 
         body {
+            height: 100%;
+            width: 100%;
            margin: 0;
            padding: 0;
         }
 
-    	div.meta {
+    	p.meta {
+
+            display: none;
 
             text-align: center;
 
     		font-family: "Antenna RE";
-    		font-size: 12px;
-    		line-height: 20px;
+    		font-size: 18px;
+    		line-height: 25px;
+            font-style: italic;
+
+            margin-bottom: 50px;
 
     	}
 
@@ -80,6 +139,7 @@
     		font-family: "Antenna RE";
     		font-size: 12px;
     		line-height: 20px;
+            font-style: italic;
 
     	}
 
@@ -90,6 +150,32 @@
     	*/
 
         @media print {
+
+            h1 {
+                /* font-family: "Antenna Black"; */
+                font-family: "Antenna Black";
+                font-weight: normal;
+                font-size: 30pt;
+                text-align: center;
+            }
+
+            h2 {
+
+                font-family: "Antenna";
+                font-weight: normal;
+                font-size: 12pt;
+                text-align: center;
+
+            }
+
+            section.interview-intro, section.interview-conclusion {
+
+                font-family: "Antenna";
+                font-size: 9pt;
+                line-height: 15pt;
+                font-style: italic;
+
+            }
 
             p {
 
@@ -113,6 +199,10 @@
             }
 
             body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
                 border: 1px solid #ccc;
             }
 
@@ -132,12 +222,15 @@
 
     <div id="container">
 
-        <h1>&#9997; {{ page.title }} &#9850;</h1>
+        <h1>{{ page.title }}</br>
+            &#9997;</h1>
 
-        <div class="meta">
-            {{ page.author }} / {{ page.category }}<br />
-            Description: {{ page.description }}<br />
-        </div>
+        <h2>by {{ page.author }}</h2>
+
+        <p class="meta">
+            {{ page.category }}<br />
+            {{ page.description }}<br />
+        </p>
 
         <div class="content">
             {{ content }}
