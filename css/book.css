@@ -224,6 +224,15 @@ For previewing the print
 		background: #eee
 	}
 
+	._book-pages, ._book-content {
+		visibility: hidden;
+	}
+
+	._regions-loaded ._book-pages {
+		visibility: visible;
+	}
+
+
 	.page-outer {
 		background: white;
 		display: inline-block;

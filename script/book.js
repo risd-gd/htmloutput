@@ -13,6 +13,7 @@ imagesLoaded( document.body, function( instance ) {
 
 
 function finallyTheLayoutIsDone() {
+  document.body.classList.add("_regions-loaded");
   document.getElementById("status").innerHTML = "Book is ready.";
 }
 
