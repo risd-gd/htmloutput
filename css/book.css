@@ -100,7 +100,7 @@ Page size and paginalia
 	position: relative;
     page-break-after: always;
     margin: auto;
-    display: none;
+    /*display: none;*/
 }
 
 .page-inner {

@@ -22,7 +22,7 @@ function finallyTheLayoutIsDone() {
 }
 
 var progbar = document.getElementById("progbar")
-var pages = 120;
+var pages = document.querySelectorAll(".page-outer").length;
 function reportPagesLeft(p) {
   var done = pages - p;
   progbar.value = done / pages;

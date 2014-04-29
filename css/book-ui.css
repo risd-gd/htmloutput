@@ -142,12 +142,12 @@ Actual print styles
 
 @media print {
 	body, html {
-		margin: 0;
+		margin: 1px;
 		padding: 0;
 	}
 
 	.page-outer {
-		margin-top: 0.2in;
-		outline: 1px solid black;
+		/*margin-top: 0.2in;*/
+		/*outline: 1px solid black;*/
 	}
 }

@@ -4481,14 +4481,15 @@ var cssRegionsHelpers = {
     retargetEvents: function retargetEvents(node1,node2) {
         
         var retargetEvent = "cssRegionsHelpers.retargetEvent(this,event)";
-        node2.setAttribute("onclick", retargetEvent);
-        node2.setAttribute("ondblclick", retargetEvent);
-        node2.setAttribute("onmousedown", retargetEvent);
-        node2.setAttribute("onmouseup", retargetEvent);
-        node2.setAttribute("onmousein", retargetEvent);
-        node2.setAttribute("onmouseout", retargetEvent);
-        node2.setAttribute("onmouseenter", retargetEvent);
-        node2.setAttribute("onmouseleave", retargetEvent);
+        // WHO CARES ABOUT THIS - EB
+        // node2.setAttribute("onclick", retargetEvent);
+        // node2.setAttribute("ondblclick", retargetEvent);
+        // node2.setAttribute("onmousedown", retargetEvent);
+        // node2.setAttribute("onmouseup", retargetEvent);
+        // node2.setAttribute("onmousein", retargetEvent);
+        // node2.setAttribute("onmouseout", retargetEvent);
+        // node2.setAttribute("onmouseenter", retargetEvent);
+        // node2.setAttribute("onmouseleave", retargetEvent);
         
     },
     
