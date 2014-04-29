@@ -20,5 +20,5 @@ baseurl:     /htmloutput
 
 permalink:   pretty
 
-types:       [interview, project, essay]
+types:       [interview, project, essay, print]
 

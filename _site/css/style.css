@@ -27,11 +27,6 @@ a {
 	text-decoration: none;
 	color: blue
 }
-a:after{
-  content: " [" attr(href) "] ";
-  position: relative;
-  left: 2in;
-}
 
 h1 {
 	margin-bottom: 1.4rem;
