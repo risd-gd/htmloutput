@@ -65,9 +65,7 @@ Page size and paginalia
 }
 
 .page-outer > footer {
-	font-size: 2em;
 	position: absolute;
-	text-align: center;
 	margin: auto;
 	top: 0.2in;
 	z-index: 100;
@@ -79,16 +77,16 @@ Page size and paginalia
 	text-align: right;
 	/*text-transform: uppercase;
 	letter-spacing: 0.2em;
-	font-family: Messenger Mono;*/
-	font-size: 0.8rem;
+	font-family: Messenger Mono;
+	font-size: 0.8rem;*/
 }
 
 .page-outer:nth-child(odd) > footer {
-	left: 0.15in;
+	left: 0.25in;
 }
 
 .page-outer:nth-child(even) > footer {
-	right: 0.15in;
+	right: 0.25in;
 }
 
 .page-inner._bleed {
