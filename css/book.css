@@ -221,10 +221,15 @@ For previewing the print
 @media screen {
 	._book body {
 		max-width: 11in;
-		background: #eee
+		background: #eee;
+		margin-top: 1000px;
 	}
 
-	._book-pages, ._book-content {
+	._book body._regions-loaded {
+		margin-top: 0;
+	}
+
+	._book-pages {
 		visibility: hidden;
 	}
 
