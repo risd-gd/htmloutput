@@ -27,9 +27,6 @@ title: HTML Output
           <div class="item">
             {% if category == 'interview' %}
               <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
-            {% else %}
-              <p>{{ page.title }}</p>
-              <div class="author">{{ page.author }}</div>
             {% elsif page.title == 'Endnotes' }
               <p>{{ page.title }}</p>
               <script>
@@ -50,6 +47,9 @@ title: HTML Output
 
                   }
               </script>
+            {% else %}
+              <p>{{ page.title }}</p>
+              <div class="author">{{ page.author }}</div>
             {% endif %}
           </div>
         {% endif %}{% endfor %}

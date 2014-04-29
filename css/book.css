@@ -100,21 +100,6 @@ Footnotes
   text-align: left;
 }
 
-.page-outer:nth-child(odd) > a:after {
-	content: " [" attr(href) "] ";
-	font-size: 90%;
-  position: relative;
-  right: 2in;
-  color: grey;
-}
-.page-outer:nth-child(even) > a:after{
-  content: " [" attr(href) "] ";
-  font-size: 90%;
-  position: relative;
-  left: 2in;
-  color: grey;
-}
-
 .page-outer:nth-child(odd) > header {
 	-webkit-transform-origin: top left;
 	-webkit-transform: rotate(90deg);
