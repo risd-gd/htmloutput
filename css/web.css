@@ -15,7 +15,7 @@ img{
 
 .interview-a { margin: 0; text-indent: 20px;  }
 .interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }
-.interview-a, .interview-q { line-height: 130%; font-size: 16px; margin: 0; font-family: "Benton Modern";}
+.interview-a, .interview-q { line-height: 130%; font-size: 16px; margin: 0 0 40px 0; font-family: "Benton Modern";}
 
 blockquote{
   margin-left: -20px;
