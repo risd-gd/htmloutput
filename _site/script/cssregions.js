@@ -4357,7 +4357,7 @@ var cssRegionsHelpers = {
                         if(!(properties[p] in cssCascade.computationUnsafeProperties) && properties[p][0]!='-') {
                             var style = getComputedStyle(node1).getPropertyValue(properties[p]);
                             var defaultStyle = cssCascade.getDefaultStyleForTag(node1.tagName).getPropertyValue(properties[p]);
-                            if(style != defaultStyle) node2.style.setProperty(properties[p], style)
+                            // if(style != defaultStyle) node2.style.setProperty(properties[p], style) // WHAT IF WE DIDN'T - EB 
                             continue;
                         }
                         
@@ -4366,7 +4366,7 @@ var cssRegionsHelpers = {
                         if(cssValue && cssValue.length) {
                             
                             // if we have a specified value, let's use it
-                            node2.style.setProperty(properties[p], cssValue.toCSSString());
+                            // node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
                             
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
                             
