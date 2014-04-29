@@ -1,0 +1,208 @@
+/* ----------------------------------
+
+Generic base styles and resets
+
+----------------------------------*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font: 20px/1.4 Messenger Text, sans-serif;
+}
+
+body {
+	margin:    0 auto;
+	padding:   1.4rem;
+	max-width: 900px;
+}
+
+sup{
+  font-size: 0.5rem;
+  font-family: "Messenger Mono";
+}
+
+a {
+	text-decoration: none;
+	color: blue
+}
+
+h1 {
+	margin-bottom: 1.4rem;
+	line-height: 1.2;
+}
+
+h2, h3, h4 {
+	margin-bottom: 1.4rem;
+	font-size:     1.5rem;
+}
+
+p {
+	margin-bottom: 1.4rem
+}
+
+ol {
+	margin-left: 1.4rem
+}
+
+em {
+	font-style: italic;
+}
+
+code {
+	font:       0.8rem/1.4 Messenger Mono, monospace;
+	background: #ffffbb;
+	display: inline-block;
+}
+
+blockquote {
+	margin-left: 1.4rem;
+	color: gray;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 1.4rem;
+}
+
+/* ----------------------------------
+
+Styles for the index page
+
+----------------------------------*/
+
+nav {
+	position: relative;
+}
+
+.cat-name {
+	text-transform: uppercase;
+	font-size:      1rem;
+}
+
+
+.item {
+	padding: 0.2rem 0.2rem;
+}
+
+.print-btn {
+	padding: 0.8rem 2rem;
+	border: 1px solid black;
+	text-align: center;
+	color: black;
+}
+
+.print-btn:hover {
+	background: black;
+	color: white;
+}
+
+.posts {
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------------
+
+Styles for an individual page
+
+----------------------------------*/
+
+.meta {
+	color: green;
+	margin-bottom: 1.4rem;
+}
+
+.meta p {
+	margin: 0;
+}
+
+
+/* ----------------------------------
+
+Note:
+
+Most print styles are in print.css
+@font-face are in /type/type.css
+
+----------------------------------*/
+
+@media screen {
+	.newpage {
+		display: none;
+	}
+}
+
+
+/* ----------------------------------
+
+Endmatter
+
+----------------------------------*/
+
+.end{
+  page-break-after: always;
+}
+
+.end .endnote{
+  font-family: Messenger Mono;
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+/* ----------------------------------
+
+Interview Styles
+
+----------------------------------*/
+
+.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
+.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
+
+.interview-a { margin: 0; text-indent: 2pc; }
+.interview-q { margin-left: 2pc; }
+
+blockquote{
+  margin-left: -2pc;
+  margin-right: 3pc;
+  color: red;
+  font-family: "Messenger Mono";
+  margin-top: 2pc;
+  margin-bottom: 2pc;
+}
+
+.interview-matter{
+  margin-top: 1pc;
+  margin-bottom: 1pc;
+}
+
+/* ----------------------------------
+
+Standalone Page "HTML Output" banner Styles
+
+----------------------------------*/
+
+
+#output_banner{
+                width: 100%;
+                background: white;
+                position: fixed;
+                left: 0;
+                top: 0;
+                box-shadow: 0pt 1pt 1pt black;
+                z-index: 4;
+                border-top: 1pt black solid;
+                border-bottom: 1pt black solid;
+                font: 20px/1.4 Messenger Text, sans-serif;
+                padding: 5pt;
+            }
+            #output_banner a{
+                text-decoration: none;
+                color: blue;
+            }

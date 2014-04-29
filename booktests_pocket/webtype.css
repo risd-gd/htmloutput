@@ -1,0 +1,613 @@
+.poynterosdispnarrowroman {
+  font-family: "Poynter OS Disp Narr";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplaybold {
+  font-family: "Poynter OS Disp";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.poynterosdisplaybolditalic {
+  font-family: "Poynter OS Disp";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.poynterosdisplaycondensedbold {
+  font-family: "Poynter OS Disp Cond";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.poynterosdisplaycondensedroman {
+  font-family: "Poynter OS Disp Cond";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplaycondensedsemibold {
+  font-family: "Poynter OS Disp Cond Smbld";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplayitalic {
+  font-family: "Poynter OS Disp";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.poynterosdisplaynarrowbold {
+  font-family: "Poynter OS Disp Narr";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.poynterosdisplaynarrowsemibold {
+  font-family: "Poynter OS Disp Narr Smbld";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplayroman {
+  font-family: "Poynter OS Disp";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplaysemibold {
+  font-family: "Poynter OS Disp Smbld";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterosdisplaysemibolditalic {
+  font-family: "Poynter OS Disp Smbld";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.poynterserifre {
+  font-family: "Poynter Serif RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.poynterserifrebold {
+  font-family: "Poynter Serif RE";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.poynterserifrebolditalic {
+  font-family: "Poynter Serif RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.poynterserifreitalic {
+  font-family: "Poynter Serif RE";
+  font-style: italic;
+  font-weight: normal;
+}
+
+}
+.bentonmodernbold {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmodernbolditalic {
+  font-family: "Benton Modern";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmoderndisplayblack {
+  font-family: BentonModernDispBlack;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayblackitalic {
+  font-family: BentonModernDispBlack;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaybold {
+  font-family: BentonModernDisp;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaybolditalic {
+  font-family: BentonModernDisp;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaycompressedbold {
+  font-family: BentonModernDispComp;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaycompressedbolditalic {
+  font-family: BentonModernDispComp;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaycompressedlight {
+  font-family: BentonModernDispCompLight;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycompressedlightitalic {
+  font-family: BentonModernDispCompLight;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycompressedregular {
+  font-family: BentonModernDispComp;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycompressedregularitalic {
+  font-family: BentonModernDispComp;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycompressedsemibold {
+  font-family: BentonModernDispCompSmbld;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycompressedsemibolditalic {
+  font-family: BentonModernDispCompSmbld;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycondensedbold {
+  font-family: BentonModernDispCond;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaycondensedbolditalic {
+  font-family: BentonModernDispCond;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmoderndisplaycondensedlight {
+  font-family: BentonModernDispCondLight;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycondensedregular {
+  font-family: BentonModernDispCond;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycondensedsemibold {
+  font-family: BentonModernDispCondSmbld;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaycondensedsemibolditalic {
+  font-family: BentonModernDispCondSmbld;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayextracondensedbold {
+  font-family: BentonModernDispExCond;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmoderndisplayextracondensedbolditalic {
+  font-family: BentonModernDispExCond;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmoderndisplayextracondenseditalic {
+  font-family: BentonModernDispExCond;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayextracondensedlightitalic {
+  font-family: BentonModernDispExCondLight;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayitalic {
+  font-family: BentonModernDisp;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaylight {
+  font-family: BentonernModernDispLight;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaylightitalic {
+  font-family: BentonernModernDispLight;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayregular {
+  font-family: BentonModernDisp;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaysemibold {
+  font-family: BentonModernDispSmbld;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplaysemibolditalic {
+  font-family: BentonModernDispSmbld;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayultra {
+  font-family: BentonModernDispUltra;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmoderndisplayultraitalic {
+  font-family: BentonModernDispUltra;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmodernitalic {
+  font-family: "Benton Modern";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.bentonmodernroman {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmodernre {
+  font-family: "Benton Modern RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.bentonmodernrebold {
+  font-family: "Benton Modern RE";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.bentonmodernrebolditalic {
+  font-family: "Benton Modern RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bentonmodernreitalic {
+  font-family: "Benton Modern RE";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipblack {
+  font-family: "Turnip Black";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.turnipblackitalic {
+  font-family: "Turnip Black";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipbold {
+  font-family: "Turnip Regular";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.turnipbolditalic {
+  font-family: "Turnip Regular";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.turnipbook {
+  font-family: "Turnip Book";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.turnipbookitalic {
+  font-family: "Turnip Book";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipitalic {
+  font-family: "Turnip Regular";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turniplight {
+  font-family: "Turnip Light";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.turniplightitalic {
+  font-family: "Turnip Light";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipmedium {
+  font-family: "Turnip Medium";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.turnipmediumitalic {
+  font-family: "Turnip Medium";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipre {
+  font-family: "Turnip RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.turniprebold {
+  font-family: "Turnip RE";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.turniprebolditalic {
+  font-family: "Turnip RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.turnipreitalic {
+  font-family: "Turnip RE";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.turnipregular {
+  font-family: "Turnip Regular";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutblack {
+  font-family: "Scout Black";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutblackitalic {
+  font-family: "Scout Black";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutbold {
+  font-family: Scout;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.scoutbolditalic {
+  font-family: Scout;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.scoutcondensedblack {
+  font-family: "Scout Cond Black";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutcondensedblackitalic {
+  font-family: "Scout Cond Black";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutcondensedbold {
+  font-family: "Scout Cond";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.scoutcondensedbolditalic {
+  font-family: "Scout Cond";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.scoutcondensedextralight {
+  font-family: "Scout Cond Ext Light";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutcondensedextralightitalic {
+  font-family: "Scout Cond Ext Light";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutcondensedlight {
+  font-family: "Scout Cond Light";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutcondensedlightitalic {
+  font-family: "Scout Cond Light";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutcondensedregularitalic {
+  font-family: "Scout Cond";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutcondensedthin {
+  font-family: "Scout Cond Thin";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutcondensedthinitalic {
+  font-family: "Scout Cond Thin";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutextralightitalic {
+  font-family: "Scout Ext Light";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutlight {
+  font-family: "Scout Light";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutlightitalic {
+  font-family: "Scout Light";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutrebolditalic {
+  font-family: "Scout RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.scoutreregular {
+  font-family: "Scout RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutregular {
+  font-family: Scout;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutregularitalic {
+  font-family: Scout;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.scoutthin {
+  font-family: "Scout Thin";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scoutthinitalic {
+  font-family: "Scout Thin";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.apresre {
+  font-family: "Apres RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.apresrebold {
+  font-family: "Apres RE";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.apresrebolditalic {
+  font-family: "Apres RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.apresreitalic {
+  font-family: "Apres RE";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.ibisre {
+  font-family: "Ibis RE";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.ibisrebold {
+  font-family: "Ibis RE";
+  font-style: normal;
+  font-weight: bold;
+}
+
+.ibisrebolditalic {
+  font-family: "Ibis RE";
+  font-style: italic;
+  font-weight: bold;
+}
+
+.ibisreitalic {
+  font-family: "Ibis RE";
+  font-style: italic;
+  font-weight: normal;
+}
+
