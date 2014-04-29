@@ -35,7 +35,7 @@ represent individual printed pages.)
         <!--
 
 Because of how CSS Regions works, we can't tell how many
-pages will be necessary. Right now I'm just creating 20
+pages will be necessary. Right now I'm just creating 100
 to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
@@ -43,7 +43,7 @@ experiment with adding/removing them dynamically
         {% for num in (1...100) %}
         <div class="page-outer" data-page="{{ num }}">
             <div class="content-region page-inner">
-                <!-- all content will be in this div -->
+                <!-- all content will be in this div for each page -->
             </div>
             <header>
                 Title or something

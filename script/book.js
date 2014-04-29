@@ -90,28 +90,14 @@ function trimRegions(btn, flowName) {
     return(true);
 }
 
-// -------------------------
+// Endnotes
+var num_links = $("a").length;
 
-// FOOTNOTES
-// --
-// Add footnote URLs to pages
-// with hyperlinks.
+for(i=0; i<num_links; i++){
 
-// -------------------------
+  var temp = $("a").eq(i).html();
+  $("a").eq(i).html(temp+"<sup>["+i+"]</sup>");
 
-$(document).ready(function(){
-  var num_links = $("a").length;
+}
 
-  for(i=0; i<num_links; i++){
-
-    var url = $("a").eq(i).attr("href");
-
-    var page_num = $("a").eq(i).closest(".page-outer").html();
-    //alert(page_num);
-
-    //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
-
-  }
-
-});
 
