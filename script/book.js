@@ -47,7 +47,7 @@ function allowBleeds(btn, flowName) {
   btn.setAttribute("disabled", true);
 
   console.log(spreads);
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < 2; i++) {
     var regions = flow.getRegionsByContent(spreads[i]);
     console.log(regions);
     for (var j = 0; j < regions.length; j++) {
@@ -97,7 +97,7 @@ for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
-  $("a").eq(i).html(temp+" <span class='book_url'>["+url+"]");
+  $("a").eq(i).html(temp+" <span class='url'>["+url+"]</span>");
 
 }
 
