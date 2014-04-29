@@ -294,13 +294,16 @@ Faked print styles
 
 ._book ._page-break {
 	display: block;
-	outline: 1px solid red;
 	break-after: region;
 	margin-bottom: 6in;
+}
+
+._book._guides ._page-break {
+	outline: 1px solid red;
 	opacity: 0.1;
 }
 
-._book ._page-break:after {
+._book._guides ._page-break:before {
 	content: "Force a page break!";
 	position: absolute;
 	color: red;

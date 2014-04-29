@@ -20,7 +20,7 @@ bleeder.addEventListener("click", function(){
 // -------------------------
 
 function toggleprint(e) {
-  e.preventDefault();
+  // e.preventDefault();
   if (document.documentElement.classList.contains("_guides")) {
     document.documentElement.classList.remove("_guides");
   }
