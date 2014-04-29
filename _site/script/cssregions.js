@@ -5799,6 +5799,9 @@ cssRegions.Flow.prototype._relayout = function(data){
         cssRegions.layoutContent(regionStack, contentFragment, {
 			onprogress: function(continueLayout) {
 				
+
+                reportPagesLeft(regionStack.length);
+
 	            // NOTE: we recover the scroll position in case the browser mess it up
 	            document.documentElement.scrollTop = docElmScrollTop;
 	            document.body.scrollTop = docBdyScrollTop;

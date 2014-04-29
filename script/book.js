@@ -1,6 +1,10 @@
 
 // ==================
-// block polyfill from running unless we say so
+// First scroll to top. 
+
+window.scrollTo(0,0);
+
+// Then block polyfill from running unless we say so.
 
 window.cssRegionsManualTrigger = false;
 
@@ -15,6 +19,13 @@ imagesLoaded( document.body, function( instance ) {
 function finallyTheLayoutIsDone() {
   document.body.classList.add("_regions-loaded");
   document.getElementById("status").innerHTML = "Book is ready.";
+}
+
+var progbar = document.getElementById("progbar")
+var pages = 120;
+function reportPagesLeft(p) {
+  var done = pages - p;
+  progbar.value = done / pages;
 }
 
 

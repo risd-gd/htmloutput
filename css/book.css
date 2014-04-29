@@ -92,11 +92,11 @@ Page size and paginalia
 }
 
 .page-outer:nth-child(odd) > footer {
-	left: 0.25in;
+	right: 0.4in;
 }
 
 .page-outer:nth-child(even) > footer {
-	right: 0.25in;
+	left: 0.4in;
 }
 
 .page-inner._bleed {
@@ -107,13 +107,13 @@ Page size and paginalia
 .page-outer:nth-child(odd) > header {
 	/*-webkit-transform-origin: top left;
 	-webkit-transform: rotate(90deg);*/
-	left: 0.8in;
+	right: 0.5in;
 }
 
 .page-outer:nth-child(even) > header {
 	/*-webkit-transform-origin: top right;
 	-webkit-transform: rotate(-90deg);*/
-	right: 0.8in;
+	left: 0.5in;
 }
 
 
