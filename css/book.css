@@ -335,9 +335,9 @@ Interview print styles
 .interview-q:before {font-size: 10pt;}
 .interview-a:before {font-size: 10pt;}
 
-.interview-a { margin: 0; text-indent: 2pc; }
-.interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
 .interview-a, .interview-q {font-size: 12pt; margin: 0; }
+.interview-a { text-indent: 2pc; }
+.interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
 
 blockquote{
   margin-left: -2pc;
