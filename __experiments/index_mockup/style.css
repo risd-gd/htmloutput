@@ -143,7 +143,7 @@ a:hover{
 }
 
 .imgGallery{
-	width:200%;
+	width:100%;
 	height:100%;
 	overflow-x:scroll;
 	overflow-y:hidden;
