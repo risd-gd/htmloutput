@@ -11,6 +11,7 @@ Generic base styles and resets
 	font: inherit;
 	margin: 0;
 	padding: 0;
+
 }
 
 html {
@@ -160,27 +161,21 @@ Endmatter
 
 Interview Styles
 
+separated into print and web
 ----------------------------------*/
 
-.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
-
-.interview-a { margin: 0; text-indent: 2pc; }
-.interview-q { margin-left: 2pc; }
-
-blockquote{
-  margin-left: -2pc;
-  margin-right: 3pc;
-  color: red;
-  font-family: "Messenger Mono";
-  margin-top: 2pc;
-  margin-bottom: 2pc;
+.interview-intro{
+	margin-bottom: 18px;
 }
 
-.interview-matter{
-  margin-top: 1pc;
-  margin-bottom: 1pc;
-}
+.interview-q:before { content: ''; color: red; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: red; font-family: "Messenger Mono";}
+
+.interview-a {}
+.interview-q {}
+.interview-a, .interview-q { line-height: 130%; font-family: "Benton Modern";}
+
+
 
 /* ----------------------------------
 
@@ -190,19 +185,19 @@ Standalone Page "HTML Output" banner Styles
 
 
 #output_banner{
-                width: 100%;
-                background: white;
-                position: fixed;
-                left: 0;
-                top: 0;
-                box-shadow: 0pt 1pt 1pt black;
-                z-index: 4;
-                border-top: 1pt black solid;
-                border-bottom: 1pt black solid;
-                font: 20px/1.4 Messenger Text, sans-serif;
-                padding: 5pt;
-            }
-            #output_banner a{
-                text-decoration: none;
-                color: blue;
-            }
+  width: 100%;
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0pt 1pt 1pt black;
+  z-index: 4;
+  border-top: 1pt black solid;
+  border-bottom: 1pt black solid;
+  font: 20px/1.4 Messenger Text, sans-serif;
+  padding: 5pt;
+}
+#output_banner a{
+  text-decoration: none;
+  color: blue;
+}

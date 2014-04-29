@@ -1,14 +1,32 @@
-body { line-height: 130%; font-size: 12pt; padding-left: 2pc; margin: 4pc auto; width: 25.5pc; font-family: "Benton Modern";}
 
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
 mark { font-style: normal; background: rgba(0,255,0,.2);}
 s { color: grey;}
-p { margin: 0; margin-right: 1pc; }
 img{
-  margin-left: -2pc;
-  margin-top: 2pc;
-  margin-bottom: 2pc;
+  margin-left: -20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
+.interview-q:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
+
+.interview-a { margin: 0; text-indent: 20px;  }
+.interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }
+.interview-a, .interview-q { font-size: 20px; margin: 0 0 30px 0; }
+
+blockquote{
+  margin-left: -20px;
+  margin-right: 30px;
+  color: red;
+  font-family: "Messenger Mono";
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.interview-matter{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
