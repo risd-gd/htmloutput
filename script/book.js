@@ -106,7 +106,11 @@ $(document).ready(function(){
 
     var url = $("a").eq(i).attr("href");
 
-    var page_num = $("a").eq(i).closest(".page-outer").html();
+    $(".end").append("<span class='endnote'>["+i+"] "+url+"</span><br />");
+    // try doing something next to link?
+    // try adding a [i] next to the link (using pseudoclass?)
+
+    //var page_num = $("a").eq(i).closest(".page-outer").html();
     //alert(page_num);
 
     //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
