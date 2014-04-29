@@ -33,6 +33,11 @@ Book overall style
 	color: red;
 }
 
+._book .url{
+  font-size: 8pt;
+  color: blue;
+}
+
 
 /* ----------------------------------
 
@@ -98,27 +103,6 @@ Page size and paginalia
 	width: 8.5in;
 	height: 11in;
 	margin: 0 -1in;
-}
-
-/* ----------------------------------
-
-Footnotes
-
-----------------------------------*/
-
-.page-outer > footnotes{
-  position: absolute;
-  bottom: 0.35in;
-  font-family: Messenger Mono;
-  font-size: 0.5rem;
-}
-.page-outer:nth-child(odd) > footnotes{
-  right: 0.5in;
-  text-align: right;
-}
-.page-outer:nth-child(even) > footnotes{
-  left: 0.5in;
-  text-align: left;
 }
 
 .page-outer:nth-child(odd) > header {
