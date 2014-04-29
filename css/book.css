@@ -1,18 +1,3 @@
-/* ----------------------------------
-
-CSS Region flow (used by the polyfill)
-
-----------------------------------*/
-
-
-._book .content-source {
-    flow-into: content-flow contents;
-}
-
-._book .content-region {
-    flow-from: content-flow;
-    region-fragment: break;
-}
 
 /* ----------------------------------
 
@@ -21,10 +6,10 @@ Book overall style
 ----------------------------------*/
 
 ._book {
-	font-size: 10pt;
+	font: 10pt/1.4 'Messenger Text', sans-serif;
 }
 
-._book .sidematter {
+._book-content .sidematter {
 	position: absolute;
 	top: 1in;
 	left: 0.5in;
@@ -33,7 +18,7 @@ Book overall style
 	color: red;
 }
 
-._book .url{
+._book-content .url{
   font-size: 10pt;
   color: red;
   -webkit-transform: rotate(90deg);
@@ -43,8 +28,53 @@ Book overall style
   width: 4pt;
 }
 
-._book a{
+._book-content a{
   color: black;
+}
+
+/* ----------------------------------
+
+Title page
+
+----------------------------------*/
+
+.title-page h1 {
+	font-size: 6em;
+	font-family: Benton Modern;
+}
+
+.category-name {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+
+/* ----------------------------------
+
+Interview print styles
+
+----------------------------------*/
+
+.interview-q:before {font-size: 10pt;}
+.interview-a:before {font-size: 10pt;}
+
+.interview-a { margin: 0; text-indent: 2pc; }
+.interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
+.interview-a, .interview-q {font-size: 12pt; margin: 0; }
+
+blockquote{
+  margin-left: -0.5pc;
+  /*margin-right: 3pc;*/
+  color: red;
+  font-family: "Messenger Text";
+  margin-top: 1.5pc;
+  margin-bottom: 1.5pc;
+  font-size: 2em;
+}
+
+.interview-matter{
+  margin-top: 1pc;
+  margin-bottom: 1pc;
 }
 
 
@@ -74,6 +104,7 @@ Page size and paginalia
 	padding:  0.8in 0.5in 0.7in;
 }
 
+/* Running head */
 .page-outer > footer {
 	position: absolute;
 	margin: auto;
@@ -81,14 +112,11 @@ Page size and paginalia
 	z-index: 100;
 }
 
+/* page numbers */
 .page-outer > header {
 	position: absolute;
 	top: 0.2in;
 	text-align: right;
-	/*text-transform: uppercase;
-	letter-spacing: 0.2em;
-	font-family: Messenger Mono;
-	font-size: 0.8rem;*/
 }
 
 .page-outer:nth-child(odd) > footer {
@@ -107,13 +135,13 @@ Page size and paginalia
 .page-outer:nth-child(odd) > header {
 	/*-webkit-transform-origin: top left;
 	-webkit-transform: rotate(90deg);*/
-	right: 0.5in;
+	right: 0.9in;
 }
 
 .page-outer:nth-child(even) > header {
 	/*-webkit-transform-origin: top right;
 	-webkit-transform: rotate(-90deg);*/
-	left: 0.5in;
+	left: 0.9in;
 }
 
 
@@ -206,184 +234,3 @@ Book image spreads
 	right: 0;
 	text-align: right;
 }
-
-
-/* ----------------------------------
-
-For previewing the print
-
-----------------------------------*/
-
-.print-nav {
-	display: none;
-}
-
-@media screen {
-	._book body {
-		max-width: 11in;
-		background: #eee;
-		margin-top: 1000px;
-	}
-
-	._book body._regions-loaded {
-		margin-top: 0;
-	}
-
-	._book-pages {
-		visibility: hidden;
-	}
-
-	._regions-loaded ._book-pages {
-		visibility: visible;
-	}
-
-
-	.page-outer {
-		background: white;
-		display: inline-block;
-	    margin: 30px 20px;
-	    box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
-	    outline: 1px solid black;
-	    overflow: hidden;
-	}
-
-	._guides .page-outer {
-		overflow: visible;
-	}
-
-	/* bleed line */
-	._guides .page-inner {
-		outline: 1px solid cyan;
-	}
-
-	/* margin line */
-	._guides .page-outer::after {
-		content: "";
-		border: 1px dotted cyan;
-		position: absolute;
-		display: block;
-		bottom: 0.5in;
-		top: 0.2in;
-		left: 0.4in;
-		right: 0.4in;
-		pointer-events: none;
-	}
-
-	/* page line */
-	._guides .page-outer::before {
-		content: "";
-		border: 1px solid magenta;
-		position: absolute;
-		display: block;
-		bottom: 0in;
-		top: 0in;
-		left: 0in;
-		right: 0in;
-		z-index: 100;
-		pointer-events: none;
-	}
-
-	.page-outer[data-page='1'] {
-		display: block;
-		margin: 1rem auto;
-	}
-
-	.print-nav {
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		background: white;
-		display: block;
-		z-index: 999;
-		padding: 15px;
-		border-top: 1px solid gray;
-	}
-
-}
-
-
-/* ----------------------------------
-
-Faked print styles
-
-----------------------------------*/
-
-
-._book ._page-break {
-	display: block;
-	outline: 1px solid red;
-	break-after: region;
-	/* margin-bottom: 6in; */
-	opacity: 0.1;
-}
-
-._guides ._book ._page-break:after {
-	content: "Force a page break!";
-	position: absolute;
-	color: red;
-}
-
-
-
-/* ----------------------------------
-
-Interview print styles
-
-----------------------------------*/
-
-.interview-q:before {font-size: 10pt;}
-.interview-a:before {font-size: 10pt;}
-
-.interview-a { margin: 0; text-indent: 2pc; }
-.interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
-.interview-a, .interview-q {font-size: 12pt; margin: 0; }
-
-blockquote{
-  margin-left: -2pc;
-  margin-right: 3pc;
-  color: red;
-  font-family: "Messenger Mono";
-  margin-top: 2pc;
-  margin-bottom: 2pc;
-}
-
-.interview-matter{
-  margin-top: 1pc;
-  margin-bottom: 1pc;
-}
-
-/* ----------------------------------
-
-"Actual" print styles
-
-----------------------------------*/
-
-@media print {
-	body, html {
-		margin: 0;
-		padding: 0;
-	}
-
-	.page-outer {
-		margin-top: 0.2in;
-		outline: 1px solid black;
-	}
-}
-/*
-@page {
-	margin: 0;
-	width: 8.5in;
-	height: 11in;
-}
-
-
-@page :left{
-	margin-left: 1in;
-}
-
-@page :right{
-	margin-right: 1in;
-}
-
-*/

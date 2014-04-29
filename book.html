@@ -4,18 +4,30 @@ title: HTML Output
 ---
 
 
+
+<!-- Blank Page -->
+<div class="_page-break"></div>
+
+
+<!-- Blank Page -->
+<div class="_page-break"></div>
+
+
 <!-- Title Page -->
-
-<nav>
+<div class="title-page">
   <h1>{{ page.title }}</h1>
-</nav>
+</div>
+<div class="_page-break"></div>
 
+
+<!-- Front Matter -->
+<div class="title-page">
+  <p>This is a book we made</p>
+</div>
 <div class="_page-break"></div>
 
 
 <!-- Table of Contents -->
-
-
 <h1>Contents</h1>
 
 {% for category in site.types %}
@@ -45,31 +57,36 @@ title: HTML Output
 
 {% for category in site.types %}
 
-  <!--<div>-->
-    <h2 class="cat-name">{{ category }}</h2>
-    <div class="_page-break"></div>
+<!-- Category Page -->
 
-    {% for page in site.pages %}{% if page.category == category %}
-    {% if category == 'interview' %}
-      <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
-    {% else %}
-      <h1>{{ page.title }}</h1>
-      <div class="author">{{ page.author }}</div>
-    {% endif %}
-
-    <div class="sidematter">(Side matter for '{{ page.title }}')</div>
-
-    {% if page.printready %}
-      <!-- We need to mardownify this content. Normally Markdown only runs when
-      Jekyll is rendering a page template. -->
-      {% capture thiscontent %}{{ page.content }}{% endcapture %}
-      {{ thiscontent | markdownify }}
-    {% endif %}
+<h2 class="category-name">{{ category }}</h2>
+<div class="_page-break"></div>
 
 
-    <div class="_page-break"></div>
-    {% endif %}{% endfor %}
-  <!--</div>-->
+<!-- Content Page -->
+
+{% for page in site.pages %}{% if page.category == category %}
+
+{% if category == 'interview' %}
+  <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
+{% else %}
+  <h1>{{ page.title }}</h1>
+  <div class="author">{{ page.author }}</div>
+{% endif %}
+
+<div class="sidematter">(Side matter for '{{ page.title }}')</div>
+
+{% if page.printready %}
+  <!-- We need to mardownify this content. Normally Markdown only runs when
+  Jekyll is rendering a page template. -->
+  {% capture thiscontent %}{{ page.content }}{% endcapture %}
+  {{ thiscontent | markdownify }}
+{% endif %}
+
+
+<div class="_page-break"></div>
+{% endif %}{% endfor %}
+
 {% endfor %}
 
 
