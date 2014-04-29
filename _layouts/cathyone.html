@@ -19,8 +19,11 @@
 
     	h1{
 
-    		font-family: "Antenna Black";
+    		/* font-family: "Antenna Black"; */
+            font-family: "Antenna RE";
+            font-weight: bold;
     		font-size: 50px;
+            text-align: center;
 
     	}
 
@@ -51,15 +54,22 @@
 
     	*/
 
-        body {
+        div#container {
             width: 60%;
             margin-left: auto;
             margin-right: auto;
         }
 
+        body {
+           margin: 0;
+           padding: 0;
+        }
+
     	div.meta {
 
-    		font-family: "Antenna Medium";
+            text-align: center;
+
+    		font-family: "Antenna RE";
     		font-size: 12px;
     		line-height: 20px;
 
@@ -67,7 +77,7 @@
 
     	section.interview-intro, section.interview-conclusion {
 
-    		font-family: "Antenna Medium";
+    		font-family: "Antenna RE";
     		font-size: 12px;
     		line-height: 20px;
 
@@ -83,23 +93,33 @@
 
             p {
 
-                font-family: "Antenna Medium";
-                font-size: 12pt;
-                line-height: 18pt;
+                font-family: "Antenna";
+                font-size: 10pt;
+                line-height: 15pt;
                 font-weight: normal;
 
             }
 
             p.q {
 
-                font-family: "Antenna";
-                font-size: 7pt;
+                font-family: "Antenna Cond";
+                font-size: 8pt;
                 line-height: 10pt;
                 width: 85%;
                 margin-left: auto;
                 margin-right: auto;
-                font-weight: normal;
+                font-weight: bold;
 
+            }
+
+            body {
+                border: 1px solid #ccc;
+            }
+
+            div#container {
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
             }
 
         }
@@ -109,16 +129,21 @@
     </style>
 </head>
 <body>
-        <h1>&#9996; {{ page.title }} &#9996;</h1>
+
+    <div id="container">
+
+        <h1>&#9997; {{ page.title }} &#9850;</h1>
 
         <div class="meta">
-            Author: {{ page.author }}<br />
-            Category: {{ page.category }}<br />
+            {{ page.author }} / {{ page.category }}<br />
             Description: {{ page.description }}<br />
         </div>
 
         <div class="content">
             {{ content }}
         </div>
-</body>
+
+    </div>
+
+ </body>
 </html>
