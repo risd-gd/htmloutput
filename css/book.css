@@ -141,7 +141,7 @@ img {
 /**/
 ._book-spread-l,
 ._book-spread-r {
-	height: 6in;
+	height: 5in;
 	overflow: hidden;
 	width: 100%;
 	position: relative;
@@ -153,7 +153,7 @@ img {
 
 ._bleed-enabled ._book-spread-l._fullbleed ,
 ._bleed-enabled ._book-spread-r._fullbleed {
-	height: 7in;
+	height: 7.05in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
