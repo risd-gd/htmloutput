@@ -34,16 +34,20 @@ title: HTML Output
 <div>
   <h1 class="cat-name">{{ category }}</h1>
 
-  {% for page in site.pages %}{% if page.category == category %}
-      <div class="item">
-        {% if category == 'interview' %}
-          <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
-        {% else %}
-          <p>{{ page.title }}</p>
-          <div class="author">{{ page.author }}</div>
-        {% endif %}
-      </div>
-    {% endif %}{% endfor %}
+  {% for page in site.pages %}
+  {% if page.category == category %}
+  {% if page.printready %}
+    <div class="item">
+      {% if category == 'interview' %}
+        <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
+      {% else %}
+        <p>{{ page.title }}</p>
+        <div class="author">{{ page.author }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
 </div>
 {% endfor %}
 
@@ -65,7 +69,9 @@ title: HTML Output
 
 <!-- Content Page -->
 
-{% for page in site.pages %}{% if page.category == category %}
+{% for page in site.pages %}
+{% if page.category == category %}
+{% if page.printready %}
 
 {% if category == 'interview' %}
   <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
@@ -76,16 +82,15 @@ title: HTML Output
 
 <div class="sidematter">(Side matter for '{{ page.title }}')</div>
 
-{% if page.printready %}
   <!-- We need to mardownify this content. Normally Markdown only runs when
   Jekyll is rendering a page template. -->
   {% capture thiscontent %}{{ page.content }}{% endcapture %}
   {{ thiscontent | markdownify }}
-{% endif %}
-
 
 <div class="_page-break"></div>
-{% endif %}{% endfor %}
+{% endif %}
+{% endif %}
+{% endfor %}
 
 {% endfor %}
 
