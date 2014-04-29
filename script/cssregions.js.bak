@@ -4687,7 +4687,7 @@ var cssRegions = {
         
         // layout the next regions
         // WE LET THE NEXT REGION DECIDE WHAT TO RETURN
-        if(startTime+2 > Date.now()) {// -EB can we make this shorter? changed 200 to 2
+        if(startTime+200 > Date.now()) {
             
             return cssRegions.layoutContent(regions, remainingContent, callback, startTime);
             
@@ -5907,8 +5907,6 @@ cssRegions.Flow.prototype._relayout = function(data){
                 This.relayoutInProgress = false;
                 This.failedLayoutCount = 0;
                 
-                finallyTheLayoutIsDone();
-
                 // restart a layout if a request was queued during the current one
                 if(This.restartLayout) {
                     This.restartLayout = false;

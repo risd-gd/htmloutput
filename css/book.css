@@ -60,6 +60,7 @@ Page size and paginalia
 	position: relative;
     page-break-after: always;
     margin: auto;
+    display: none;
 }
 
 .page-inner {
@@ -143,7 +144,7 @@ Book image spreads
 
 ----------------------------------*/
 
-img {
+._book-content img {
 	display: block;
 	width: 100%;
 }

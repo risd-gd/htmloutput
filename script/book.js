@@ -1,3 +1,22 @@
+
+// ==================
+// block polyfill from running unless we say so
+
+window.cssRegionsManualTrigger = false;
+
+// ---------------
+// Load polyfill when we know all images have loaded
+
+imagesLoaded( document.body, function( instance ) {
+  cssRegions.enablePolyfill();
+});
+
+
+function finallyTheLayoutIsDone() {
+  document.getElementById("status").innerHTML = "Book is ready.";
+}
+
+
 // ---------------
 // User interface
 
