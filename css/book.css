@@ -55,13 +55,13 @@ Page size and paginalia
 
 .page-inner {
 	position: absolute;
-	margin: auto;
-	bottom: -0.125in;
-	top: -0.125in;
-	left: -0.125in;
-	right: -0.125in;
+	margin:   auto;
+	bottom:   -0.125in;
+	top:      -0.125in;
+	left:     -0.125in;
+	right:    -0.125in;
 	overflow: hidden;
-	padding: 0.4in 0.6in 0.7in;
+	padding:  0.8in 0.5in 0.7in;
 }
 
 .page-outer > footer {
@@ -69,23 +69,24 @@ Page size and paginalia
 	position: absolute;
 	text-align: center;
 	margin: auto;
-	bottom: 2in;
+	top: 0.2in;
 	z-index: 100;
 }
 
 .page-outer > header {
 	position: absolute;
-	bottom: 4in;
+	top: 0.2in;
 	text-align: right;
-	text-transform: uppercase;
+	/*text-transform: uppercase;
 	letter-spacing: 0.2em;
-	font-family: Messenger Mono;
+	font-family: Messenger Mono;*/
 	font-size: 0.8rem;
 }
 
 .page-outer:nth-child(odd) > footer {
 	left: 0.15in;
 }
+
 .page-outer:nth-child(even) > footer {
 	right: 0.15in;
 }
@@ -94,15 +95,19 @@ Page size and paginalia
 	padding: 0;
 }
 
-/*._book img {
-	width: 100%;
-}*/
 
-._book iframe {
-	width: 8.5in;
-	height: 11in;
-	margin: 0 -1in;
+.page-outer:nth-child(odd) > header {
+	/*-webkit-transform-origin: top left;
+	-webkit-transform: rotate(90deg);*/
+	left: 0.8in;
 }
+
+.page-outer:nth-child(even) > header {
+	/*-webkit-transform-origin: top right;
+	-webkit-transform: rotate(-90deg);*/
+	right: 0.8in;
+}
+
 
 /* ----------------------------------
 
@@ -125,31 +130,17 @@ Footnotes
   text-align: left;
 }
 
-.page-outer:nth-child(odd) > header {
-	-webkit-transform-origin: top left;
-	-webkit-transform: rotate(90deg);
-	left: 0.3in;
-}
-
-.page-outer:nth-child(even) > header {
-	-webkit-transform-origin: top right;
-	-webkit-transform: rotate(-90deg);
-	right: 0.3in;
-}
-
 /* ----------------------------------
 
 Book image spreads
 
 ----------------------------------*/
 
-
-._book-spread._fullbleed {
-	outline: 1px solid lime;
-	height: 95%;
-	position: relative;
+img {
+	display: block;
 }
 
+/**/
 ._book-spread-l,
 ._book-spread-r {
 	height: 6in;
@@ -162,15 +153,15 @@ Book image spreads
 }
 
 
-._bleed-enabled ._fullbleed ._book-spread-l,
-._bleed-enabled ._fullbleed ._book-spread-r {
-	height: 6.5in;
+._bleed-enabled ._book-spread-l._fullbleed ,
+._bleed-enabled ._book-spread-r._fullbleed {
+	height: 7in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
 
 
-._book-spread figcaption {
+._book-spread-l figcaption {
 	position: absolute;
 	background: white;
 	bottom: 1in;

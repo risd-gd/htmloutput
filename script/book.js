@@ -47,7 +47,7 @@ function allowBleeds(btn, flowName) {
   btn.setAttribute("disabled", true);
 
   console.log(spreads);
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < 2; i++) {
     var regions = flow.getRegionsByContent(spreads[i]);
     console.log(regions);
     for (var j = 0; j < regions.length; j++) {
