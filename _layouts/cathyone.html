@@ -1,0 +1,124 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>{{ page.interviewer }} talks with {{ page.interviewee }}</title>
+
+    <link href="http://cloud.webtype.com/css/ecf730a9-f3df-491d-bbed-016b80252b0e.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://cloud.webtype.com/css/422a9116-3c4c-4a87-8994-557df8ada6b9.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://cloud.webtype.com/css/57eaf0f3-f7a1-4d00-af9a-59609098b5d2.css" rel="stylesheet" type="text/css" />
+
+    <style>
+
+    	/* 
+
+    	  t y p e
+
+    	*/
+
+    	h1{
+
+    		font-family: "Antenna Black";
+    		font-size: 50px;
+
+    	}
+
+    	p {
+
+    		font-family: "Antenna RE";
+    		font-size: 17px;
+    		line-height: 33px;
+            font-weight: normal;
+
+    	}
+
+    	p.q {
+
+    		font-family: "Antenna RE";
+    		font-size: 12px;
+    		line-height: 20px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: normal;
+
+    	}
+
+    	/* 
+
+    	  l a y o u t
+
+    	*/
+
+        body {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    	div.meta {
+
+    		font-family: "Antenna Medium";
+    		font-size: 12px;
+    		line-height: 20px;
+
+    	}
+
+    	section.interview-intro, section.interview-conclusion {
+
+    		font-family: "Antenna Medium";
+    		font-size: 12px;
+    		line-height: 20px;
+
+    	}
+
+    	/* 
+
+    	  p r i n t
+
+    	*/
+
+        @media print {
+
+            p {
+
+                font-family: "Antenna Medium";
+                font-size: 12pt;
+                line-height: 18pt;
+                font-weight: normal;
+
+            }
+
+            p.q {
+
+                font-family: "Antenna";
+                font-size: 7pt;
+                line-height: 10pt;
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+                font-weight: normal;
+
+            }
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+        <h1>&#9996; {{ page.title }} &#9996;</h1>
+
+        <div class="meta">
+            Author: {{ page.author }}<br />
+            Category: {{ page.category }}<br />
+            Description: {{ page.description }}<br />
+        </div>
+
+        <div class="content">
+            {{ content }}
+        </div>
+</body>
+</html>
