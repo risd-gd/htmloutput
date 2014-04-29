@@ -27,26 +27,6 @@ title: HTML Output
           <div class="item">
             {% if category == 'interview' %}
               <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
-            {% elsif page.title == 'Endnotes' %}
-              <p>{{ page.title }}</p>
-              <script>
-                  var num_links = $("a").length;
-
-                  for(i=0; i<num_links; i++){
-
-                      var url = $("a").eq(i).attr("href");
-
-                      document.write("<span class='endnote'>["+i+"] "+url+"</span><br />");
-                      // try doing something next to link?
-                      // try adding a [i] next to the link (using pseudoclass?)
-
-                      //var page_num = $("a").eq(i).closest(".page-outer").html();
-                      //alert(page_num);
-
-                      //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
-
-                  }
-              </script>
             {% else %}
               <p>{{ page.title }}</p>
               <div class="author">{{ page.author }}</div>
@@ -109,7 +89,24 @@ title: HTML Output
 <div class="end">
 
     <h2>Endnotes</h2>
+    <script>
+        var num_links = $("a").length;
 
+        for(i=0; i<num_links; i++){
+
+            var url = $("a").eq(i).attr("href");
+
+            document.write("<span class='endnote'>["+i+"] "+url+"</span><br />");
+            // try doing something next to link?
+            // try adding a [i] next to the link (using pseudoclass?)
+
+            //var page_num = $("a").eq(i).closest(".page-outer").html();
+            //alert(page_num);
+
+            //$("footnotes").eq(i).append("["+i+"] " + url + " <br />");
+
+        }
+    </script>
 
 
 </div>

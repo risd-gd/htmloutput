@@ -23,6 +23,11 @@ body {
 	max-width: 900px;
 }
 
+sup{
+  font-size: 0.5rem;
+  font-family: "Messenger Mono";
+}
+
 a {
 	text-decoration: none;
 	color: blue
