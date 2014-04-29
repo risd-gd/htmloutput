@@ -161,29 +161,11 @@ Endmatter
 
 Interview Styles
 
+separated into print and web 
 ----------------------------------*/
 
 
-.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
 
-.interview-a { margin: 0; text-indent: 2pc; }
-.interview-q { margin-left: 2pc; padding-left: 2pc;  }
-.interview-a, .interview-q { line-height: 130%; font-size: 12pt; margin: 0; font-family: "Benton Modern";}
-
-blockquote{
-  margin-left: -2pc;
-  margin-right: 3pc;
-  color: red;
-  font-family: "Messenger Mono";
-  margin-top: 2pc;
-  margin-bottom: 2pc;
-}
-
-.interview-matter{
-  margin-top: 1pc;
-  margin-bottom: 1pc;
-}
 
 /* ----------------------------------
 

@@ -15,28 +15,25 @@ title: HTML Output
 
 <!-- Table of Contents -->
 
-<div class="toc">
 
-  <h1>Contents</h1>
+<h1>Contents</h1>
 
-  {% for category in site.types %}
+{% for category in site.types %}
+<div>
+  <h1 class="cat-name">{{ category }}</h1>
 
-    <div>
-      <h1 class="cat-name">{{ category }}</h1>
-
-      {% for page in site.pages %}{% if page.category == category %}
-          <div class="item">
-            {% if category == 'interview' %}
-              <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
-            {% else %}
-              <p>{{ page.title }}</p>
-              <div class="author">{{ page.author }}</div>
-            {% endif %}
-          </div>
-        {% endif %}{% endfor %}
-    </div>
-  {% endfor %}
+  {% for page in site.pages %}{% if page.category == category %}
+      <div class="item">
+        {% if category == 'interview' %}
+          <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
+        {% else %}
+          <p>{{ page.title }}</p>
+          <div class="author">{{ page.author }}</div>
+        {% endif %}
+      </div>
+    {% endif %}{% endfor %}
 </div>
+{% endfor %}
 
 <div class="_page-break"></div>
 
@@ -44,43 +41,41 @@ title: HTML Output
 
 <!-- All Content -->
 
-<div class="content">
 
 
-  {% for category in site.types %}
+{% for category in site.types %}
 
-    <!--<div>-->
-      <h2 class="cat-name">{{ category }}</h2>
+  <!--<div>-->
+    <h2 class="cat-name">{{ category }}</h2>
+    <div class="_page-break"></div>
+
+    {% for page in site.pages %}{% if page.category == category %}
+      <div class="item">
+        {% if category == 'interview' %}
+          <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
+        {% else %}
+          <h1>{{ page.title }}</h1>
+          <div class="author">{{ page.author }}</div>
+        {% endif %}
+
+        <div class="sidematter">(Side matter for '{{ page.title }}')</div>
+
+        {% if page.printready %}
+          <!-- We need to mardownify this content. Normally Markdown only runs when
+          Jekyll is rendering a page template. -->
+
+          {% capture thiscontent %}{{ page.content }}{% endcapture %}
+          {{ thiscontent | markdownify }}
+
+        {% endif %}
+
+      </div>
       <div class="_page-break"></div>
 
-      {% for page in site.pages %}{% if page.category == category %}
-        <div class="item">
-          {% if category == 'interview' %}
-            <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
-          {% else %}
-            <h1>{{ page.title }}</h1>
-            <div class="author">{{ page.author }}</div>
-          {% endif %}
+    {% endif %}{% endfor %}
+  <!--</div>-->
+{% endfor %}
 
-          <div class="sidematter">(Side matter for '{{ page.title }}')</div>
-
-          {% if page.printready %}
-            <!-- We need to mardownify this content. Normally Markdown only runs when
-            Jekyll is rendering a page template. -->
-
-            {% capture thiscontent %}{{ page.content }}{% endcapture %}
-            {{ thiscontent | markdownify }}
-
-          {% endif %}
-
-        </div>
-        <div class="_page-break"></div>
-
-      {% endif %}{% endfor %}
-    <!--</div>-->
-  {% endfor %}
-
-</div>
 
 <!-- End Matter
 
