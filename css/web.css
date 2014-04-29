@@ -1,0 +1,37 @@
+body { line-height: 130%; font-size: 12pt; padding-left: 2pc; margin: 4pc auto; width: 25.5pc; font-family: "Benton Modern";}
+
+q { background-color: gold;}
+del { text-decoration:line-through; color: grey;}
+mark { font-style: normal; background: rgba(0,255,0,.2);}
+s { color: grey;}
+.interview-a { margin: 0; text-indent: 2pc; }
+p { margin: 0; margin-right: 1pc; }
+img{
+  margin-left: -2pc;
+  margin-top: 2pc;
+  margin-bottom: 2pc;
+}
+
+/* ----------------------------------
+
+Interview Styles
+
+----------------------------------*/
+
+.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
+.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
+
+
+blockquote{
+  margin-left: -2pc;
+  margin-right: 3pc;
+  color: red;
+  font-family: "Messenger Mono";
+  margin-top: 2pc;
+  margin-bottom: 2pc;
+}
+
+.interview-matter{
+  margin-top: 1pc;
+  margin-bottom: 1pc;
+}
