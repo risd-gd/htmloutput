@@ -97,7 +97,7 @@ for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
-  $("a").eq(i).html(temp+" <span class='book_url'>["+url+"]");
+  $("a").eq(i).html(temp+" <span class='url'>["+url+"]</span>");
 
 }
 
