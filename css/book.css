@@ -34,8 +34,17 @@ Book overall style
 }
 
 ._book .url{
-  font-size: 7pt;
-  color: grey;
+  font-size: 10pt;
+  color: red;
+  -webkit-transform: rotate(90deg);
+
+  font-family: Messenger Mono;
+  display: inline-block;
+  width: 4pt;
+}
+
+._book a{
+  color: black;
 }
 
 
