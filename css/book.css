@@ -145,6 +145,7 @@ Book image spreads
 
 img {
 	display: block;
+	width: 100%;
 }
 
 /**/
