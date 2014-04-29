@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML OUTPUT</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.tags').toggle();
+			
+			$('#tagtoggle').click(function(){
+				$('.tags').slideToggle(300);
+				$('.smalltype').toggleClass('rotated');
+			})
+
+			$('#projecttoggle').click(function(){
+				$('.projects').slideToggle(300);
+			})		
+
+			/*Tag hover shit*/
+			$('.tags>#maintags>a#aboutTag').hover(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#about").toggleClass('highlighted');
+			}, function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#about").toggleClass('highlighted');
+			})
+
+			$('.tags>#maintags>a#projectsTag').hover(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#project").toggleClass('highlighted');
+			}, function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#project").toggleClass('highlighted');
+			})
+
+			$('.tags>#maintags>a#intTag').hover(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#interview").toggleClass('highlighted');
+			}, function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#interview").toggleClass('highlighted');
+			})
+
+
+			$('.tags>#maintags>a#linksTag').hover(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#link").toggleClass('highlighted');
+			}, function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#link").toggleClass('highlighted');
+			})
+
+			/*Click shit*/
+			$('.tags>#maintags>a#aboutTag').click(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#about").toggleClass('highlighted');
+			});
+			$('.tags>#maintags>a#projectsTag').click(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#project").toggleClass('highlighted');
+			});
+			$('.tags>#maintags>a#intTag').click(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#interview").toggleClass('highlighted');
+			});
+			$('.tags>#maintags>a#linksTag').click(function(){
+				$(".projects>ul>a>li").toggleClass('selected');
+				$(".projects>ul>a>li#link").toggleClass('highlighted');
+			});
+
+			/*Image caption*/
+			$('.imgCaption').toggle(); 
+
+			$('.imgBox').hover(function(){
+				$('.imgCaption').toggle();
+			}, function(){
+				$('.imgCaption').toggle();
+			})
+
+		})
+	
+	</script>
+</head>
+<body>
+
+	<div class="sidebar">
+		<h1>HTML Output</h1>
+
+		<a href="#" id="projecttoggle"><h2>Contents  <span class="smalltype">&#9654;</span></h2></a>
+		<div class="projects">
+			<ul>
+				<a href="#"><li id="about">About</li></a>
+				<a href="#"><li id="about">Syllabus</li></a>
+				<a href="#"><li id="about">Class Roster</li></a>
+				<a href="#"><li id="about">Colophon</li></a>
+				<a href="#"><li id="project">Animated Patterns </li></a>
+				<a href="#"><li id="link">Lorem ipsum dolor</li></a>			
+				<a href="#"><li id="project">Dear Chrome... </li></a>
+				<a href="#"><li id="interview">Paul Soulellis</li></a>			
+				<a href="#"><li id="link">Praesentium earum vel.</li></a>			
+				<a href="#"><li id="project">Print.js </li></a>
+				<a href="#"><li id="interview">Dan Michaelson</li></a>	
+				<a href="#"><li id="project">Random Walk </li></a>
+				<a href="#"><li id="project">BasicBrowser </li></a>
+				<a href="#"><li id="interview">David Reinfurt</li></a>			
+				<a href="#"><li id="project">Form of Forms </li></a>
+				<a href="#"><li id="interview">Ben Pieratt</li></a>			
+				<a href="#"><li id="link">Porro minus</li></a>			
+				<a href="#"><li id="project">Profiling on the Web</li></a> 
+				<a href="#"><li id="project">Web Inspector Glitch</li></a>
+				<a href="#"><li id="interview">Jurg Lehni</li></a>			
+				<a href="#"><li id="project">New York Times</li></a>
+				<a href="#"><li id="project">BasicBrowser </li></a>
+				<a href="#"><li id="interview">Jason Pamental</li></a>
+				<a href="#"><li id="link">Perspiciatis </li></a>
+			</ul>
+		</div>
+	
+		<a href="#" id="tagtoggle"><h2>Tags <span class="smalltype">&#9654;</span></h2></a>
+
+		<div class="tags">
+			<ul id="maintags">
+				<a href="#" id="aboutTag"><li>? About </li></a>
+				<a href="#" id="projectsTag"><li>• Projects </li></a>
+				<br>
+				<a href="#" id="intTag"><li>'' Interviews</li></a>
+				<a href="#" id="linksTag"><li>@  Links</li></a>
+			</ul>
+
+			<ul id="subtags">
+				<a href="#"><li>Forms</li></a>
+				<a href="#"><li>Color</li></a>
+				<a href="#"><li>Web inspector</li></a>
+				<a href="#"><li>Web-to-Print</li></a>
+				<a href="#"><li>Experiment</li></a>
+				<a href="#"><li>Default</li></a>
+				<a href="#"><li>Glitches</li></a>
+				<a href="#"><li>Typography</li></a>
+				<a href="#"><li>Tools </li></a>
+
+
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="imgContainer">
+			<div class="imgGallery">
+				<div class="imgBox"></div>
+				<div class="imgBox"></div>
+			</div>
+
+			<div class="imgCaption"><p>Using drop-down menus and checkboxes to create patterns.</p></div>
+
+		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, beatae, dolorum, sunt quas blanditiis repellendus tempore laboriosam aspernatur non nisi quae at odio possimus. Eaque, incidunt ipsa ratione excepturi beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, sapiente natus expedita cumque eius praesentium maxime vero eaque. Sapiente voluptatibus quae dolorum molestias reprehenderit deserunt dicta architecto mollitia omnis ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, corrupti, consequatur earum voluptas placeat quibusdam saepe! At, modi voluptatem quod accusantium nostrum consectetur possimus deserunt pariatur aperiam laudantium officia harum.</p>
+	</div>
+
+	<div class="pattern">
+	</div>
+
+	<div class="content">
+		<div class="interview">
+			<h2>Jurg Lehni talks to Dan &amp; Phil</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, beatae, dolorum, sunt quas blanditiis repellendus tempore laboriosam aspernatur non nisi quae at odio possimus. Eaque, incidunt ipsa ratione excepturi beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, sapiente natus expedita cumque eius praesentium maxime vero eaque.</p>
+			<h3>Lorem ipsum dolor sit amet? Consectetur adipisicing elit? </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, odio, culpa, neque vel sit ipsum labore sapiente voluptates itaque harum quasi nesciunt! Magnam nemo delectus similique repellat autem tempora explicabo.</p>
+			<h3>Lorem ipsum dolor sit amet? Magnam, cumque ad est quo libero enim nisi laboriosam et explicabo adipisci id qui mollitia dolorum? </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, odio, culpa, neque vel sit ipsum labore sapiente voluptates itaque harum quasi nesciunt! Magnam nemo delectus similique repellat autem tempora explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, cumque ad est quo libero enim nisi laboriosam et explicabo adipisci id qui mollitia dolorum. Odio, nobis illum necessitatibus illo alias.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cupiditate, voluptatem, neque tempora illum labore eos temporibus atque ea aut assumenda aspernatur fugit numquam inventore vero fugiat quis qui delectus!</p>
+			<h3>Lorem ipsum dolor sit amet?</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, odio, culpa, neque vel sit ipsum labore sapiente voluptates itaque harum quasi nesciunt! Magnam nemo delectus similique repellat autem tempora explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, error, enim, atque accusamus beatae obcaecati repellat corporis deserunt vero laboriosam quos minus porro quas alias libero commodi exercitationem laudantium autem!</p>
+			<h3>Lorem ipsum dolor sit amet? Magnam, cumque ad est quo libero enim nisi laboriosam et explicabo adipisci id qui mollitia dolorum? </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, odio, culpa, neque vel sit ipsum labore sapiente voluptates itaque harum quasi nesciunt! Magnam nemo delectus similique repellat autem tempora explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, cumque ad est quo libero enim nisi laboriosam et explicabo adipisci id qui mollitia dolorum. Odio, nobis illum necessitatibus illo alias.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cupiditate, voluptatem, neque tempora illum labore eos temporibus atque ea aut assumenda aspernatur fugit numquam inventore vero fugiat quis qui delectus!</p>
+			<h3>Lorem ipsum dolor sit amet?</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, odio, culpa, neque vel sit ipsum labore sapiente voluptates itaque harum quasi nesciunt! Magnam nemo delectus similique repellat autem tempora explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, error, enim, atque accusamus beatae obcaecati repellat corporis deserunt vero laboriosam quos minus porro quas alias libero commodi exercitationem laudantium autem!</p>
+		</div>
+	</div>
+
+	<div class="pattern">
+	</div>
+	
+	<div class="content">
+		<div class="imgContainer">
+			<div class="imgBox"></div>
+			<div class="imgCaption"><p>Using drop-down menus and checkboxes to create patterns.</p></div>
+
+		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, beatae, dolorum, sunt quas blanditiis repellendus tempore laboriosam aspernatur non nisi quae at odio possimus. Eaque, incidunt ipsa ratione excepturi beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, sapiente natus expedita cumque eius praesentium maxime vero eaque. Sapiente voluptatibus quae dolorum molestias reprehenderit deserunt dicta architecto mollitia omnis ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, corrupti, consequatur earum voluptas placeat quibusdam saepe! At, modi voluptatem quod accusantium nostrum consectetur possimus deserunt pariatur aperiam laudantium officia harum.</p>
+	</div>
+</body>
+</html>
