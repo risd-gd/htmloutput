@@ -1,0 +1,189 @@
+@font-face{ font-family:'Messenger-Mono'; src:url('messenger-mono.ttf'); }
+@font-face{ font-family:'Messenger-Text'; src:url('messenger-text.ttf'); }
+
+body{
+	font-family: 'Messenger-Text',sans-serif;
+}
+
+h1{
+	font-family:'Messenger-Mono';
+	font-size:16px;
+}
+
+h2{
+	font-family:'Messenger-Mono';
+	text-decoration: underline; 
+	font-size:21px;
+}
+
+p{
+	font-size:18px;
+}
+
+a{
+	color:#5F4FF0;
+}
+
+a:visited{
+	color:#5F4FF0;
+}
+
+a:hover{
+	color:rgba(0,0,0,0.5);
+
+}
+
+.sidebar{
+	width:200px;
+	height:455px;
+	padding:25px;
+	border:1px dotted black;
+	margin:15px;
+	display:inline-block;
+
+	position:fixed;
+	background-color: white;
+
+	box-shadow: 15px 15px 15px rgba(0,0,0,0.25);
+	overflow-y:auto;
+}
+
+.sidebar ul{
+	list-style-type: none;
+	padding-left:0;
+	line-height: 1.55em;
+}
+
+.sidebar .projects ul li#interview::before{
+	content:" '' ";
+}
+
+.sidebar .projects ul li#project::before{
+	content:" • ";
+}
+
+.sidebar .projects ul li#link::before{
+	content:" @ ";
+	font-size:14px;
+}
+
+.sidebar .projects ul li#about::before{
+	content:"  ?  ";
+	font-size:18px;
+}
+
+.tags ul a{
+	text-decoration: none;
+}
+
+.tags ul#maintags, .tags ul#subtags{
+	list-style-type:none;
+}
+
+.tags ul#maintags li{
+	display: inline;
+	margin-left:15px;
+}
+
+.tags ul#subtags li{
+	display:inline;
+	font-size:12px;
+	margin-left:5px;
+}
+
+.tags ul#subtags a li:after{
+	content:", ";
+}
+
+.smalltype{
+	font-size:10px;
+}
+
+.rotated{
+	-webkit-transform:rotate(90deg);
+	transform:rotate(90deg);
+}
+
+.selected{
+	text-decoration: line-through;
+	color:rgba(0,0,0,0.5);
+}
+
+.highlighted{
+	text-decoration: underline; 
+	color:#5F4FF0;
+}
+
+.content{
+	width:75%;
+	padding:25px;
+	padding-top:5px;
+	display:inline-block;
+	margin:15px 0px 15px 300px;
+	border:1px dotted black;
+	vertical-align: top;
+}
+
+.content p{
+	width:65%;
+	font-size:16px;
+	margin:auto;
+}
+
+.content_title{
+	border-bottom:1px dotted black;
+	margin-bottom:15px;
+}
+
+.imgCaption p{
+	width:100%;
+}
+
+.imgContainer{
+	width:95%;
+	height:800px;
+	margin:auto;
+	margin-bottom:35px;
+	position:relative;	
+
+}
+
+.imgGallery{
+	width:100%;
+	height:100%;
+	overflow-x:scroll;
+	overflow-y:hidden;
+}
+
+.imgBox{
+	width:1200px;
+	height:100%;
+	background-color: rgba(0,0,0,0.55);
+	display:inline-block;
+}
+
+.imgCaption{
+	width:300px;
+	padding:15px;
+	background-color: rgba(255,255,255,0.95);
+
+	position:absolute;
+	bottom:15px;
+	left:15px;
+
+}
+
+.pattern{
+	width:100%;
+	height:800px;
+	background-color: #5F4FF0;
+	margin:0;
+
+}
+
+.interview h3{
+	font-size:18px;
+	margin-left:100px;
+}
+
+
