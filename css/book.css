@@ -34,8 +34,17 @@ Book overall style
 }
 
 ._book .url{
-  font-size: 7pt;
-  color: grey;
+  font-size: 10pt;
+  color: red;
+  -webkit-transform: rotate(90deg);
+
+  font-family: Messenger Mono;
+  display: inline-block;
+  width: 4pt;
+}
+
+._book a{
+  color: black;
 }
 
 
@@ -141,7 +150,7 @@ img {
 /**/
 ._book-spread-l,
 ._book-spread-r {
-	height: 6in;
+	height: 5in;
 	overflow: hidden;
 	width: 100%;
 	position: relative;
@@ -153,7 +162,7 @@ img {
 
 ._bleed-enabled ._book-spread-l._fullbleed ,
 ._bleed-enabled ._book-spread-r._fullbleed {
-	height: 7in;
+	height: 7.05in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
@@ -307,12 +316,12 @@ Interview print styles
 
 ----------------------------------*/
 
-.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
+.interview-q:before {font-size: 10pt;}
+.interview-a:before {font-size: 10pt;}
 
 .interview-a { margin: 0; text-indent: 2pc; }
 .interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
-.interview-a, .interview-q { line-height: 130%; font-size: 12pt; margin: 0; font-family: "Benton Modern";}
+.interview-a, .interview-q {font-size: 12pt; margin: 0; }
 
 blockquote{
   margin-left: -2pc;

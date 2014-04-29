@@ -11,7 +11,7 @@ Generic base styles and resets
 	font: inherit;
 	margin: 0;
 	padding: 0;
-	
+
 }
 
 html {
@@ -161,9 +161,19 @@ Endmatter
 
 Interview Styles
 
-separated into print and web 
+separated into print and web
 ----------------------------------*/
 
+.interview-intro{
+	margin-bottom: 18px;
+}
+
+.interview-q:before { content: ''; color: red; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: red; font-family: "Messenger Mono";}
+
+.interview-a {}
+.interview-q {}
+.interview-a, .interview-q { line-height: 130%; font-family: "Benton Modern";}
 
 
 

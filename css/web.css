@@ -10,12 +10,12 @@ img{
 }
 
 
-.interview-q:before { content: ''; color: red; font-size: 13px; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 13px; font-family: "Messenger Mono";}
+.interview-q:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
 
 .interview-a { margin: 0; text-indent: 20px;  }
 .interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }
-.interview-a, .interview-q { line-height: 130%; font-size: 16px; margin: 0; font-family: "Benton Modern";}
+.interview-a, .interview-q { font-size: 20px; margin: 0 0 30px 0; }
 
 blockquote{
   margin-left: -20px;
