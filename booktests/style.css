@@ -11,7 +11,6 @@ Generic base styles and resets
 	font: inherit;
 	margin: 0;
 	padding: 0;
-	
 }
 
 html {
@@ -24,15 +23,11 @@ body {
 	max-width: 900px;
 }
 
-sup{
-  font-size: 0.5rem;
-  font-family: "Messenger Mono";
-}
-
 a {
 	text-decoration: none;
 	color: blue
 }
+
 
 h1 {
 	margin-bottom: 1.4rem;
@@ -140,70 +135,3 @@ Most print styles are in print.css
 	}
 }
 
-
-/* ----------------------------------
-
-Endmatter
-
-----------------------------------*/
-
-.end{
-  page-break-after: always;
-}
-
-.end .endnote{
-  font-family: Messenger Mono;
-  font-size: 0.7rem;
-  text-align: left;
-}
-
-/* ----------------------------------
-
-Interview Styles
-
-----------------------------------*/
-
-.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
-
-.interview-a { margin: 0; text-indent: 2pc; }
-.interview-q { margin-left: 2pc; }
-
-blockquote{
-  margin-left: -2pc;
-  margin-right: 3pc;
-  color: red;
-  font-family: "Messenger Mono";
-  margin-top: 2pc;
-  margin-bottom: 2pc;
-}
-
-.interview-matter{
-  margin-top: 1pc;
-  margin-bottom: 1pc;
-}
-
-/* ----------------------------------
-
-Standalone Page "HTML Output" banner Styles
-
-----------------------------------*/
-
-
-#output_banner{
-  width: 100%;
-  background: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  box-shadow: 0pt 1pt 1pt black;
-  z-index: 4;
-  border-top: 1pt black solid;
-  border-bottom: 1pt black solid;
-  font: 20px/1.4 Messenger Text, sans-serif;
-  padding: 5pt;
-}
-#output_banner a{
-  text-decoration: none;
-  color: blue;
-}
