@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css"> -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
         <style>
 
             *{
@@ -13,23 +13,7 @@
                 padding: 0;
             }
 
-            #output_banner{
-                width: 100%;
-                background: white;
-                position: fixed;
-                left: 0;
-                top: 0;
-                box-shadow: 0pt 1pt 1pt black;
-                z-index: 4;
-                border-top: 1pt black solid;
-                border-bottom: 1pt black solid;
-                font: 20px/1.4 Messenger Text, sans-serif;
-                padding: 5pt;
-            }
-            #output_banner a{
-                text-decoration: none;
-                color: blue
-            }
+
 
         </style>
 
@@ -37,7 +21,7 @@
     <body>
         <a href="/{{ site.baseurl }}">< Index</a>
 
-        <div id="output_banner"><a style="text-decoration: none; color: blue; background: white;" href="http://risd-gd.github.io/htmloutput/">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
+        <div id="output_banner"><a href="http://risd-gd.github.io/htmloutput/">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
 
         {{ content }}
 
