@@ -316,12 +316,12 @@ Interview print styles
 
 ----------------------------------*/
 
-.interview-q:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono"; }
-.interview-a:before { content: ''; color: red; font-size: 10pt; font-family: "Messenger Mono";}
+.interview-q:before {font-size: 10pt;}
+.interview-a:before {font-size: 10pt;}
 
 .interview-a { margin: 0; text-indent: 2pc; }
 .interview-q { margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;  }
-.interview-a, .interview-q { line-height: 130%; font-size: 12pt; margin: 0; font-family: "Benton Modern";}
+.interview-a, .interview-q {font-size: 12pt; margin: 0; }
 
 blockquote{
   margin-left: -2pc;
