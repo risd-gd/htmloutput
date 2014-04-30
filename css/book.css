@@ -73,13 +73,14 @@ Interview print styles
 }
 
 blockquote{
-  margin-left: -0.5pc;
-  /*margin-right: 3pc;*/
   color: red;
-  font-family: "Messenger Text";
-  margin-top: 1.5pc;
+  font-family: "Messenger Mono";
+  /*
+  margin-left:  -0.5pc;
+  margin-right:  3pc;
+  margin-top:    1.5pc;
   margin-bottom: 1.5pc;
-  font-size: 2em;
+  font-size: 2em;*/
 }
 
 .interview-matter{
@@ -101,6 +102,12 @@ Page size and paginalia
     page-break-after: always;
     margin: auto;
     /*display: none;*/
+}
+
+@page {
+	height: 6.13in;
+	width:  4.5in;
+	margin: 0.25in;
 }
 
 .page-inner {
