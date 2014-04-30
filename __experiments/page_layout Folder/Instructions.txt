@@ -1,0 +1,87 @@
+ADOBE INDESIGN PRINTING INSTRUCTIONS FOR SERVICE PROVIDER REPORT
+
+PUBLICATION NAME: page_layout.indd
+
+PACKAGE DATE: 4/30/14 1:55 PM
+Creation Date: 4/30/14
+Modification Date: 4/30/14
+
+CONTACT INFORMATION
+
+Company Name: 
+Contact: 
+Address: 
+
+
+
+
+
+Phone: 
+Fax: 
+Email: 
+
+SPECIAL INSTRUCTIONS AND OTHER NOTES
+
+
+
+
+
+
+External Plug-ins 0
+Non Opaque Objects :None
+
+FONTS
+4 Fonts Used; 0 Missing, 2 Embedded, 0 Incomplete, 0 Protected
+
+Fonts Packaged
+- Name: BentonModernTwo-Roman; Type: OpenType Type 1, Status: OK
+- Name: Messenger-Mono; Type: OpenType Type 1, Status: OK
+- Name: OTS-derived-font; Type: ???, Status: Embedded
+- Name: Times-Roman; Type: ???, Status: Embedded
+
+
+COLORS AND INKS
+4 Process Inks; 0 Spot Inks
+
+- Name and Type: Process Cyan; Angle: 75.000; Lines/Inch: 70.000
+- Name and Type: Process Magenta; Angle: 15.000; Lines/Inch: 70.000
+- Name and Type: Process Yellow; Angle: 0.000; Lines/Inch: 70.000
+- Name and Type: Process Black; Angle: 45.000; Lines/Inch: 141.000
+
+
+LINKS AND IMAGES
+(Missing & Embedded Links Only)
+Links and Images: 1 Links Found; 0 Modified, 0 Missing 0 Inaccessible
+Images: 0 Embedded, 0 use RGB color space
+
+
+PRINT SETTINGS
+PPD: TOSHIBA MonoMFP-X7, (Office Printer)
+Printing To: Printer
+Number of Copies: 1
+Reader Spreads: Yes
+Even/Odd Pages: Both
+Pages: All
+Proof: No
+Tiling: None
+Scale: 100%, 100%
+Page Position: Center
+Print Layers: Visible & Printable Layers
+Printer's Marks: Crops
+Bleed: 0p0, 0p0, 0p0, 0p0
+Color: Composite, Colors in Black.
+Trapping Mode: None
+Send Image Data: Optimized Subsampling
+OPI/DCS Image Replacement: No
+Page Size: Custom: 25p6 x 41p3.36
+Paper Dimensions: 66p0 x 102p0
+Orientation: Landscape
+Negative: No
+Flip Mode: Off
+
+
+FILE PACKAGE LIST
+
+1. page_layout.indd; type: Adobe InDesign publication; size: 1308K
+2. BentonModernTwo-Roman.otf; type: Font file; size: 29K
+3. Messenger-Mono.otf; type: Font file; size: 10K
