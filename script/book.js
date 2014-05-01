@@ -29,6 +29,40 @@ function reportPagesLeft(p) {
 }
 
 
+
+
+// _________________________
+
+// Pre-process to detect full-spread images and split them in half
+
+// _________________________
+
+
+function preProcessPages() {
+  var imageSpreads = document.querySelectorAll("[data-imagespread]");
+  for (var i = 0; i < imageSpreads.length; i++) {
+    var oldNode = imageSpreads[i];
+    var src = oldNode.querySelector("img").src;
+
+    var newStr = ' \
+      <div class="_book-spread-l _fullbleed">\
+        <img src="' + src + '"/>\
+      </div>\
+      <div class="_book-spread-r _fullbleed">\
+        <img src="' + src + '"/>\
+      </div> ';
+
+    $(newStr).insertAfter(oldNode);
+    oldNode.parentNode.removeChild(oldNode);
+  }
+}
+
+preProcessPages();
+
+
+
+
+
 // _________________________
 
 // Post-process to detect bleeds, running heads
