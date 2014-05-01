@@ -95,8 +95,7 @@ title: HTML Output
 
   <!-- We need to mardownify this content. Normally Markdown only runs when
   Jekyll is rendering a page template. -->
-  {% capture thiscontent %}{{ page.content }}{% endcapture %}
-  {{ thiscontent | markdownify }}
+  {{ page.content }}
 
 <div class="_page-break"></div>
 {% endif %}
