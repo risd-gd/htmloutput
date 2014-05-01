@@ -74,10 +74,19 @@ title: HTML Output
 {% if page.printready %}
 
 {% if category == 'interview' %}
-  <h1>{{ page.interviewee }} talks to {{ page.interviewer }}</h1>
+  <h1 class="post-name"
+      data-post-category="{{ page.category }}"
+      data-interviewee="{{ page.interviewee }}"
+      data-interviewer="{{ page.interviewer }}">
+        {{ page.interviewee }} talks to {{ page.interviewer }}
+  </h1>
+
 {% else %}
-  <h1>{{ page.title }}</h1>
-  <div class="author">{{ page.author }}</div>
+  <h1 class="post-name"
+      data-post-category="{{ page.category }}">
+        {{ page.title }}
+  </h1>
+  <h2 class="post-author">{{ page.author }}</h2>
 {% endif %}
 
 <div class="sidematter">(Side matter for '{{ page.title }}')</div>
