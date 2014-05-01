@@ -37,6 +37,7 @@ function reportPagesLeft(p) {
 
 function postProcessPages(){
 
+  // Persists as we loop through pages
   var head = "";
 
   var pages = document.querySelectorAll(".page-inner");
@@ -49,12 +50,21 @@ function postProcessPages(){
       pg.classList.add("_bleed");
     }
 
-    var heading = pg.querySelector("h1");
+    // If there is an in-page heading designed to trigger a new running head
+    var heading = pg.querySelector("[data-change-running-head]");
     if (heading) {
-      head = heading.innerText;
+      // If it was an interview heading, it's a special case
+      if (heading.getAttribute("data-category") == "interview") {
+        head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
+      }
+      else {
+        head = heading.innerText;
+      }
     }
 
-    pg.parentNode.querySelector("header").innerText = head;
+    // Set this page's running head to the current running head
+    var runner = pg.parentNode.querySelector("._running-head ._section");
+    if (runner) runner.innerText = head;
 
   }
 
@@ -67,6 +77,7 @@ function postProcessPages(){
 var toggler = document.getElementById("toggleguides");
 var trimmer = document.getElementById("trimpages");
 var bleeder = document.getElementById("fixbleeds");
+var postproc = document.getElementById("postproc");
 
 toggler.addEventListener("click", toggleprint);
 trimmer.addEventListener("click", function(){
@@ -74,6 +85,9 @@ trimmer.addEventListener("click", function(){
 });
 bleeder.addEventListener("click", function(){
   allowBleeds(this, 'content-flow')
+});
+postproc.addEventListener("click", function(){
+  postProcessPages();
 });
 
 // -------------------------

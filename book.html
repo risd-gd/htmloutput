@@ -75,7 +75,8 @@ title: HTML Output
 
 {% if category == 'interview' %}
   <h1 class="post-name"
-      data-post-category="{{ page.category }}"
+      data-change-running-head
+      data-category="{{ page.category }}"
       data-interviewee="{{ page.interviewee }}"
       data-interviewer="{{ page.interviewer }}">
         {{ page.interviewee }} talks to {{ page.interviewer }}
@@ -83,7 +84,8 @@ title: HTML Output
 
 {% else %}
   <h1 class="post-name"
-      data-post-category="{{ page.category }}">
+      data-change-running-head
+      data-category="{{ page.category }}">
         {{ page.title }}
   </h1>
   <h2 class="post-author">{{ page.author }}</h2>

@@ -26,6 +26,7 @@
         Functions (danger!): 
         <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
         <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
+        <button class="toggle-btn" id="postproc">Post-process</button>
     </div>
     <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">bookyll v0.1</span>
     <label><input id="toggleguides" type="checkbox" checked /> Show guides</label>
@@ -66,12 +67,19 @@ experiment with adding/removing them dynamically
                     <div class="content-region page-inner">
                         <!-- all content will be in this div for each page -->
                     </div>
-                    <header>
-                        HTML Output
+
+                    <header class="_running-head">
+                        <div class="_book-name">
+                            HTML Output
+                        </div>
+                        <div class="_section">
+                            
+                        </div>
+                        <div class="_pagenum">
+                            {{ num }}
+                        </div>
                     </header>
-                    <footer>
-                        {{ num }}
-                    </footer>
+
                     <footnotes>
                     </footnotes>
                 </div>
