@@ -106,7 +106,7 @@ Page size and paginalia
 }
 
 @page {
-	height: 6.13in;
+	height: 7.13in;
 	width:  4.5in;
 	margin: 0.25in;
 }
@@ -217,8 +217,8 @@ Book image spreads
 }
 
 
-._bleed-enabled ._book-spread-l._fullbleed ,
-._bleed-enabled ._book-spread-r._fullbleed {
+._bleed ._book-spread-l._fullbleed ,
+._bleed ._book-spread-r._fullbleed {
 	height: 7.05in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/

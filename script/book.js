@@ -1,3 +1,25 @@
+// ---------------
+// User interface
+
+// var toggler = document.getElementById("toggleguides");
+// var trimmer = document.getElementById("trimpages");
+// var bleeder = document.getElementById("fixbleeds");
+// var postproc = document.getElementById("postproc");
+
+// if (toggler) toggler.addEventListener("click", toggleprint);
+// if(trimmer) trimmer.addEventListener("click", function(){
+//   trimRegions(this, 'content-flow')
+// });
+// if (bleeder) bleeder.addEventListener("click", function(){
+//   allowBleeds(this, 'content-flow')
+// });
+// if (postproc) postproc.addEventListener("click", function(){
+//   postProcessPages(this);
+// });
+
+
+
+
 
 // ==================
 // First scroll to top. 
@@ -16,12 +38,18 @@ imagesLoaded( document.body, function( instance ) {
 });
 
 
+var HAS_COMPLETED_ONE_LAYOUT = false;
+
 function finallyTheLayoutIsDone() {
   document.body.classList.add("_regions-loaded");
   document.getElementById("status").innerHTML = "Book is ready.";
+
+  HAS_COMPLETED_ONE_LAYOUT = true;
+
+  postProcessPages();
 }
 
-var progbar = document.getElementById("progbar")
+var progbar = document.getElementById("progbar");
 var pages = document.querySelectorAll(".page-outer").length;
 function reportPagesLeft(p) {
   var done = pages - p;
@@ -39,12 +67,15 @@ function reportPagesLeft(p) {
 
 
 function preProcessPages() {
+
+
   var imageSpreads = document.querySelectorAll("[data-imagespread]");
   for (var i = 0; i < imageSpreads.length; i++) {
     var oldNode = imageSpreads[i];
     var src = oldNode.querySelector("img").src;
 
-    var newStr = ' \
+    var splitImageHtml = ' \
+      <div class="_page-break"></div>\
       <div class="_book-spread-l _fullbleed">\
         <img src="' + src + '"/>\
       </div>\
@@ -52,7 +83,7 @@ function preProcessPages() {
         <img src="' + src + '"/>\
       </div> ';
 
-    $(newStr).insertAfter(oldNode);
+    $(splitImageHtml).insertAfter(oldNode);
     oldNode.parentNode.removeChild(oldNode);
   }
 }
@@ -70,6 +101,8 @@ preProcessPages();
 // _________________________
 
 function postProcessPages(){
+
+  document.documentElement.classList.add("_bleed-enabled")
 
   // Persists as we loop through pages
   var head = "";
@@ -99,30 +132,10 @@ function postProcessPages(){
     // Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");
     if (runner) runner.innerText = head;
-
   }
 
+  trimRegions('content-flow');
 }
-
-
-// ---------------
-// User interface
-
-var toggler = document.getElementById("toggleguides");
-var trimmer = document.getElementById("trimpages");
-var bleeder = document.getElementById("fixbleeds");
-var postproc = document.getElementById("postproc");
-
-toggler.addEventListener("click", toggleprint);
-trimmer.addEventListener("click", function(){
-  trimRegions(this, 'content-flow')
-});
-bleeder.addEventListener("click", function(){
-  allowBleeds(this, 'content-flow')
-});
-postproc.addEventListener("click", function(){
-  postProcessPages();
-});
 
 // -------------------------
 
@@ -180,24 +193,22 @@ function allowBleeds(btn, flowName) {
 // From:
 // http://docs.webplatform.org/wiki/apis/css-regions/NamedFlow/firstEmptyRegionIndex
 // deletes any empty regions from the end of a flow:
-function trimRegions(btn, flowName) {
+function trimRegions(flowName) {
     var flow = document.getNamedFlows().namedItem(flowName);
     var index = flow.firstEmptyRegionIndex;
     var regions = flow.getRegions();
     console.log("removed regions from index: " + index);
 
     if (index == -1) {
-      alert("Can't. Wait until page splitting is finished?");
+      alert("Can't trim extra pages. Wait until page splitting is finished?");
       return(false); // no empty regions?
     }
-    else {
-    	btn.setAttribute("disabled", true);
-    }
+
     // remove first empty region &amp; all thereafter:
     for (var i = index; i < regions.length; i++) {
         regions[i].parentNode.parentNode.removeChild(regions[i].parentNode);
     }
-    alert("Trimmed to " + index + " pages");
+    // alert("Trimmed to " + index + " pages");
     return(true);
 }
 

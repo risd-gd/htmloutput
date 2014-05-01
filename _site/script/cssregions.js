@@ -45,7 +45,7 @@ if(!document.caretRangeFromPoint) {
                     cursorNode.parentNode.removeChild(cursorNode);
                 }
                 
-                // validate arguments
+                // validate argumentsrelayout
                 if(!document) { document=window.document; }
                 
                 // return a DOM range
@@ -5709,13 +5709,14 @@ cssRegions.Flow.prototype.generateContentFragment = function() {
 
 cssRegions.Flow.prototype.relayout = function() {
     var This = this;
-    
+
     // prevent previous relayouts from eventing
     cancelAnimationFrame(This.lastEventRAF);
     
     // batch relayout queries
     if(This.relayoutScheduled) { return; }
     if(This.relayoutInProgress) { This.restartLayout=true; return; }
+
     This.relayoutScheduled = true;
     requestAnimationFrame(function() { This._relayout() });
     
@@ -5724,6 +5725,10 @@ cssRegions.Flow.prototype.relayout = function() {
 cssRegions.Flow.prototype._relayout = function(data){
     var This=this;
     
+
+    if (HAS_COMPLETED_ONE_LAYOUT) return;
+
+
     try {
         
         //
