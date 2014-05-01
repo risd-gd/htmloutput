@@ -4437,7 +4437,7 @@ var cssRegionsHelpers = {
                                 +"}"
                             );
                             
-                            node2.parentNode.insertBefore(stylesheet, node2);
+                            // node2.parentNode.insertBefore(stylesheet, node2); // lets not insert this stylesheet - EB
                             
                         }
                     }
