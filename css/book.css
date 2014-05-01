@@ -217,8 +217,8 @@ Book image spreads
 }
 
 
-._bleed ._book-spread-l._fullbleed ,
-._bleed ._book-spread-r._fullbleed {
+._bleed [data-fullbleed],
+._bleed [data-fullbleed] {
 	height: 7.05in;
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/

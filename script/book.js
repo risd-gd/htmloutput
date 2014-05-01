@@ -1,12 +1,12 @@
 // ---------------
 // User interface
 
-// var toggler = document.getElementById("toggleguides");
+var toggler = document.getElementById("toggleguides");
 // var trimmer = document.getElementById("trimpages");
 // var bleeder = document.getElementById("fixbleeds");
 // var postproc = document.getElementById("postproc");
 
-// if (toggler) toggler.addEventListener("click", toggleprint);
+if (toggler) toggler.addEventListener("click", toggleprint);
 // if(trimmer) trimmer.addEventListener("click", function(){
 //   trimRegions(this, 'content-flow')
 // });
@@ -76,10 +76,10 @@ function preProcessPages() {
 
     var splitImageHtml = ' \
       <div class="_page-break"></div>\
-      <div class="_book-spread-l _fullbleed">\
+      <div class="_book-spread-l" data-fullbleed>\
         <img src="' + src + '"/>\
       </div>\
-      <div class="_book-spread-r _fullbleed">\
+      <div class="_book-spread-r" data-fullbleed>\
         <img src="' + src + '"/>\
       </div> ';
 
@@ -112,7 +112,7 @@ function postProcessPages(){
     var pg = pages[i];
 
     // Detect bleeds
-    var hasBleeds = pg.querySelector("._fullbleed");
+    var hasBleeds = pg.querySelector("[data-fullbleed]");
     if (hasBleeds) {
       pg.classList.add("_bleed");
     }
