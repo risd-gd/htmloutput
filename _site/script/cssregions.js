@@ -5718,8 +5718,7 @@ cssRegions.Flow.prototype.relayout = function() {
     if(This.relayoutInProgress) { This.restartLayout=true; return; }
 
     This.relayoutScheduled = true;
-    requestAnimationFrame(function() { This._relayout() });
-    
+    requestAnimationFrame(function() { This._relayout() }); // This limits event loop to frame rate? - EB
 }
 
 cssRegions.Flow.prototype._relayout = function(data){

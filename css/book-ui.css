@@ -41,11 +41,20 @@ For previewing the print
 	font: 15px/1.4 'Messenger Text', sans-serif;
 }
 
+._book body:not(._regions-loaded) .content-source {
+	width: 4.25in;
+	margin: auto;
+	background: white;
+	padding: 0.3in 0.4in;
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+    outline: 1px solid black;
+}
+
+
 @media screen {
 	._book body {
 		max-width: 11in;
 		background: #eee;
-		margin-top: 1000px;
 	}
 
 	._book body._regions-loaded {
