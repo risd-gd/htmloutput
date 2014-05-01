@@ -31,7 +31,7 @@ sup{
 
 a {
 	text-decoration: none;
-	color: blue
+	color: blue;
 }
 
 h1 {
@@ -138,23 +138,6 @@ Most print styles are in print.css
 	.newpage {
 		display: none;
 	}
-}
-
-
-/* ----------------------------------
-
-Endmatter
-
-----------------------------------*/
-
-.end{
-  page-break-after: always;
-}
-
-.end .endnote{
-  font-family: Messenger Mono;
-  font-size: 0.7rem;
-  text-align: left;
 }
 
 /* ----------------------------------

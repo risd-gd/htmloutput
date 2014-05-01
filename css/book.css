@@ -29,7 +29,7 @@ Book overall style
 }
 
 ._book-content a{
-  color: black;
+  color: inherit;
 }
 
 /* ----------------------------------
@@ -62,7 +62,7 @@ Interview print styles
 	margin: 0; text-indent: 2pc;
 }
 .interview-q {
-	margin-left: 2pc; padding-left: 2pc; margin-right: 1pc; 
+	margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;
 }
 .interview-a, .interview-q {
 	font-size: 12pt; margin: 0;
