@@ -29,6 +29,38 @@ function reportPagesLeft(p) {
 }
 
 
+// _________________________
+
+// Post-process to detect bleeds, running heads
+
+// _________________________
+
+function postProcessPages(){
+
+  var head = "";
+
+  var pages = document.querySelectorAll(".page-inner");
+  for (var i = 0; i < pages.length; i++) {
+    var pg = pages[i];
+
+    // Detect bleeds
+    var hasBleeds = pg.querySelector("._fullbleed");
+    if (hasBleeds) {
+      pg.classList.add("_bleed");
+    }
+
+    var heading = pg.querySelector("h1");
+    if (heading) {
+      head = heading.innerText;
+    }
+
+    pg.parentNode.querySelector("header").innerText = head;
+
+  }
+
+}
+
+
 // ---------------
 // User interface
 

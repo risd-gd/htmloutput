@@ -132,8 +132,11 @@ Page size and paginalia
 /* page numbers */
 .page-outer > header {
 	position: absolute;
-	top: 0.2in;
-	text-align: right;
+	bottom: 1in;
+	text-transform: uppercase;
+	font-family: "Benton Modern";
+	letter-spacing: 0.3em;
+	font-size: 0.7em;
 }
 
 .page-outer:nth-child(odd) > footer {
@@ -150,15 +153,15 @@ Page size and paginalia
 
 
 .page-outer:nth-child(odd) > header {
-	/*-webkit-transform-origin: top left;
-	-webkit-transform: rotate(90deg);*/
-	right: 0.9in;
+	-webkit-transform-origin: top right;
+	-webkit-transform: rotate(90deg);
+	right: 0.13in;
 }
 
 .page-outer:nth-child(even) > header {
-	/*-webkit-transform-origin: top right;
-	-webkit-transform: rotate(-90deg);*/
-	left: 0.9in;
+	-webkit-transform-origin: top left;
+	-webkit-transform: rotate(-90deg);
+	left: 0.13in;
 }
 
 
