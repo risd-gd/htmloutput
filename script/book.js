@@ -163,24 +163,24 @@ function toggleprint(e) {
 
 // -------------------------
 
-function allowBleeds(btn, flowName) {
-  var flow = document.getNamedFlows().namedItem(flowName);
-  var spreads = document.querySelectorAll("._fullbleed");
+// function allowBleeds(btn, flowName) {
+//   var flow = document.getNamedFlows().namedItem(flowName);
+//   var spreads = document.querySelectorAll("._fullbleed");
 
-  document.documentElement.classList.add("_bleed-enabled")
-  btn.setAttribute("disabled", true);
+//   document.documentElement.classList.add("_bleed-enabled")
+//   btn.setAttribute("disabled", true);
 
-  console.log(spreads);
-  for (var i = 0; i < 2; i++) {
-    var regions = flow.getRegionsByContent(spreads[i]);
-    console.log(regions);
-    for (var j = 0; j < regions.length; j++) {
-      if (regions[j]) {
-        regions[j].classList.add("_bleed");
-      }
-    }
-  }
-}
+//   console.log(spreads);
+//   for (var i = 0; i < 2; i++) {
+//     var regions = flow.getRegionsByContent(spreads[i]);
+//     console.log(regions);
+//     for (var j = 0; j < regions.length; j++) {
+//       if (regions[j]) {
+//         regions[j].classList.add("_bleed");
+//       }
+//     }
+//   }
+// }
 
 // -------------------------
 
