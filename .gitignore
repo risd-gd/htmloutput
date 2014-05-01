@@ -2,3 +2,7 @@
 _site/*
 _site/*/*
 _site/css/style.css
+
+.DS_Store
+
+.DS_Store
