@@ -161,6 +161,8 @@ Page size and paginalia
 ._recto ._running-head ._book-name {
 	-webkit-transform-origin: top right;
 	-webkit-transform: rotate(90deg);
+	-moz-transform-origin: top right;
+	-moz-transform: rotate(90deg);
 	right: 0.13in;
 }
 
@@ -168,6 +170,8 @@ Page size and paginalia
 ._verso ._running-head ._book-name  {
 	-webkit-transform-origin: top left;
 	-webkit-transform: rotate(-90deg);
+	-moz-transform-origin: top left;
+	-moz-transform: rotate(-90deg);
 	left: 0.13in;
 }
 

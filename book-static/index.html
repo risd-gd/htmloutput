@@ -9,10 +9,10 @@
     <link href="//cloud.webtype.com/css/30d3bb54-2826-4d0a-af4b-6629e5dd58b1.css" rel="stylesheet" type="text/css" data-css-polyfilled="true">
     <link href="//cloud.webtype.com/css/e573bdaf-4428-42af-a427-9cc650bb1895.css" rel="stylesheet" type="text/css" data-css-polyfilled="true">
 
-    <link rel="stylesheet" href="/css/type/type.css" type="text/css" data-css-polyfilled="true">
-    <link rel="stylesheet" href="/css/style.css" type="text/css" data-css-polyfilled="true">
-    <link rel="stylesheet" href="/css/book.css" type="text/css" data-css-polyfilled="true">
-    <link rel="stylesheet" href="/css/book-ui.css" type="text/css" data-css-polyfilled="true">
+    <link rel="stylesheet" href="../css/type/type.css" type="text/css" data-css-polyfilled="true">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" data-css-polyfilled="true">
+    <link rel="stylesheet" href="../css/book.css" type="text/css" data-css-polyfilled="true">
+    <link rel="stylesheet" href="../css/book-ui.css" type="text/css" data-css-polyfilled="true">
 
     <script src="http://code.jquery.com/jquery-latest.js"></script><style type="text/css" data-css-polyfilled="true"></style>
   <style data-css-no-polyfill="true" data-css-polyfilled="true">cssregion,[data-css-region]>*,[data-css-regions-fragment-source]:not([data-css-regions-cloning]),[data-css-regions-fragment-source][data-css-regions-cloned]{display:none !important}[data-css-region]>cssregion:last-of-type{display:inline !important}[data-css-region]{content:normal !important}[data-css-special-continued-fragment]{counter-reset:none !important;counter-increment:none !important;margin-bottom:0 !important;border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important}[data-css-continued-fragment]{counter-reset:none !important;counter-increment:none !important;margin-bottom:0 !important;padding-bottom:0 !important;border-bottom:none !important;border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important}[data-css-continued-fragment]::after{content:none !important;display:none !important}[data-css-special-starting-fragment]{text-indent:0 !important;margin-top:0 !important}[data-css-starting-fragment]{text-indent:0 !important;margin-top:0 !important;padding-top:0 !important;border-top:none !important;border-top-left-radius:0 !important;border-top-right-radius:0 !important}[data-css-starting-fragment]::before{content:none !important;display:none !important}[data-css-continued-block-fragment][data-css-continued-fragment]::after{content:'' !important;display:inline-block !important;width:100% !important;height:0px !important;}</style></head>
@@ -20,15 +20,16 @@
 
 
   <nav class="print-nav">
-    <div style="float: right">
+    <!-- <div style="float: right">
         Functions (danger!): 
         <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
         <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
         <button class="toggle-btn" id="postproc">Post-process</button>
-    </div>
+    </div>-->
     <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">bookyll v0.1</span>
     <label><input id="toggleguides" type="checkbox" checked=""> Show guides</label>
-    <span id="status" style="display:inline; margin-left: 1em; color: blue;">Book is ready.</span>
+    <span id="status" style="display:none; margin-left: 1em; color: blue;">Book is ready.</span>
+    <button class="toggle-btn" id="postproc">Post-process</button>
 
   </nav>
 
@@ -8634,8 +8635,8 @@ No, I’m just excited that these discussions are even happening.
             
         </div>
 
-        <script type="text/javascript" src="/script/imagesloaded.pkgd.js"></script>
-        <script type="text/javascript" src="/script/book.js"></script>
+        <script type="text/javascript" src="../script/imagesloaded.pkgd.js"></script>
+        <script type="text/javascript" src="../script/book.js"></script>
         <!-- <script type="text/javascript" src="/script/cssregions.js"></script> -->
 
     

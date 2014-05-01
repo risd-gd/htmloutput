@@ -5,7 +5,7 @@ var toggler = document.getElementById("toggleguides");
 var regionizer = document.getElementById("regionize");
 // var trimmer = document.getElementById("trimpages");
 // var bleeder = document.getElementById("fixbleeds");
-// var postproc = document.getElementById("postproc");
+var postproc = document.getElementById("postproc");
 
 if (toggler) toggler.addEventListener("click", toggleprint);
 if (regionizer) regionizer.addEventListener("click", regionize);
@@ -15,9 +15,9 @@ if (regionizer) regionizer.addEventListener("click", regionize);
 // if (bleeder) bleeder.addEventListener("click", function(){
 //   allowBleeds(this, 'content-flow')
 // });
-// if (postproc) postproc.addEventListener("click", function(){
-//   postProcessPages(this);
-// });
+if (postproc) postproc.addEventListener("click", function(){
+  postProcessPages(this);
+});
 
 
 
@@ -36,13 +36,13 @@ window.cssRegionsManualTrigger = false;
 // Load polyfill when we know all images have loaded
 
 imagesLoaded( document.body, function( instance ) {
-  regionizer.removeAttribute("disabled");
+  if (regionizer) regionizer.removeAttribute("disabled");
 });
 
 function regionize() {
   cssRegions.enablePolyfill();
   regionizer.style.display = "none";
-  document.getElementById("status").style.display = "inline";
+  document.getElementById("postProcessControls").style.display = "inline";
 }
 
 
