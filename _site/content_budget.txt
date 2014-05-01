@@ -74,9 +74,9 @@ Before after extension ... download
 
 John
 ---
-Patterns (live code, printed)
-Video of making of one of the patterns
-Reinfurt, Michaelson (Christina G)
-Essay talking about tools and the way we make
+Patterns with intro about tools and the way we make
+Video of making of one of the patterns (online only)
+Link to repo for patterns
+Reinfurt, Michaelson, Armand
 Intro to book itself (collaborative)
 
