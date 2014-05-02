@@ -57,7 +57,7 @@ Interview print styles
 ----------------------------------*/
 
 .interview-q:before {font-size: 10pt;}
-.interview-a:before {font-size: 10pt; color: black;}
+.interview-a:before {font-size: 10pt;}
 
 .interview-a {
 	margin: 0; text-indent: 2pc;
@@ -70,7 +70,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: red;
+	color: cyan;
 }
 
 blockquote{
