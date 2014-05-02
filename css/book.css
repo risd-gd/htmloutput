@@ -56,17 +56,17 @@ Interview print styles
 
 ----------------------------------*/
 
-.interview-q:before {font-size: 10pt;}
-.interview-a:before {font-size: 10pt;}
+.interview-q:before {font-size: 11pt;}
+.interview-a:before {font-size: 11pt;}
 
 .interview-a {
-	margin: 0; text-indent: 1.5pc;
+	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
 }
 .interview-q {
-	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 1pc;
+	margin-left: 1.5pc; padding-left: 1.5pc; 
 }
 .interview-a, .interview-q {
-	font-size: 14pt; margin: 0;
+	font-size: 13.5pt; margin: 0;
 }
 
 .interview-q {
