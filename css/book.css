@@ -60,13 +60,13 @@ Interview print styles
 .interview-a:before {font-size: 10pt;}
 
 .interview-a {
-	margin: 0; text-indent: 2pc;
+	margin: 0; text-indent: 1.5pc;
 }
 .interview-q {
-	margin-left: 2pc; padding-left: 2pc; margin-right: 1pc;
+	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 1pc;
 }
 .interview-a, .interview-q {
-	font-size: 12pt; margin: 0;
+	font-size: 14pt; margin: 0;
 }
 
 .interview-q {
@@ -75,7 +75,7 @@ Interview print styles
 
 blockquote{
   color: red;
-  font-family: "Messenger Mono";
+  font-family: "Messenger Mono"; display: none;
   /*
   margin-left:  -0.5pc;
   margin-right:  3pc;
