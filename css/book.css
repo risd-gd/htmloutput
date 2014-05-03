@@ -46,7 +46,14 @@ Title page
 
 .category-name {
 	font-size: 3em;
+	font-family: "Benton Modern";
 	text-transform: uppercase;
+	-webkit-transform: rotate(90deg);
+	line-height: 5in;
+}
+
+.category-name:after {
+	content: "s"
 }
 
 
@@ -55,6 +62,12 @@ Title page
 Interview print styles
 
 ----------------------------------*/
+
+.interview-name {
+	font-size: 5em;
+	font-family: "Benton Modern";
+	line-height: 110%;
+}
 
 .interview-q:before {font-size: 10pt;}
 .interview-a:before {font-size: 10pt;}
@@ -70,7 +83,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: blue;
+	color: rgb(0, 112, 255);
 }
 
 blockquote{
