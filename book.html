@@ -6,6 +6,7 @@ title: HTML Output
 
 
 <!--
+____________________________________________________
 
 This is the generated global stylesheet for the book.
 Any dynamic content that is part of a stylesheet should end up here.
@@ -16,21 +17,31 @@ just ask Evan!
 -->
 <style>
   {% for page in site.pages %}{% if page.category == 'interview' %}
-  	[data-interviewee="{{page.interviewee}}"] .interview-a:before {
+  	[data-page-kind="{{page.interviewee}}"] .interview-a:before {
   		content: '{{ page.interviewee_initials }}';
+  		margin-right: 2ch;
   	}
-  	[data-interviewee="{{page.interviewee}}"] .interview-q:before {
+  	[data-page-kind="{{page.interviewee}}"] .interview-q:before {
   		content: '{{ page.interviewer_initials }}';
+  		margin-right: 2ch;
   	}
   {% endif %}{% endfor %}
 </style>
 
 
-<!-- Blank Page -->
+<!--
+____________________________________________________
+
+Blank Page
+-->
 <div class="_page-break"></div>
 
 
-<!-- Blank Page -->
+<!--
+____________________________________________________
+
+Blank Page
+-->
 <div class="_page-break"></div>
 
 
@@ -45,7 +56,11 @@ Title Page
 <div class="_page-break"></div>
 
 
-<!-- Front Matter -->
+<!--
+____________________________________________________
+
+Front Matter, maybe?
+-->
 <div class="title-page">
   <p>This is a book we made</p>
 </div>
@@ -57,22 +72,25 @@ ____________________________________________________
 
 Table of Contents
 -->
-<h1>Contents</h1>
+<h1 class="toc-heading">Contents</h1>
 
 {% for category in site.types %}
 <div class="toc">
-  <h1 class="cat-name">{{ category }}</h1>
+  <h3 class="toc-title">{{ category }}</h3>
 
   {% for page in site.pages %}
   {% if page.category == category %}
   {% if page.printready %}
-    <div class="item">
+    <div class="toc-item">
       {% if category == 'interview' %}
-        <p>{{ page.interviewee }} talks to {{ page.interviewer }}</p>
+        <h4>{{ page.interviewee }} talks to {{ page.interviewer }}</h4>
       {% else %}
-        <p>{{ page.title }}</p>
-        <div class="author">{{ page.author }}</div>
+        <h4>
+        	{{ page.title }}
+        	— <span class="toc-author">{{ page.author }}</span>
+        </h4>
       {% endif %}
+      <div class="toc-pg">12</div>
     </div>
   {% endif %}
   {% endif %}
@@ -120,12 +138,12 @@ All Content
 
 
 {% else %}
-  <h1 class="post-name"
+  <h1 class="post-name project-name"
       data-change-running-head
       data-category="{{ page.category }}">
         {{ page.title }}
   </h1>
-  <h2 class="post-author">{{ page.author }}</h2>
+  <h3 class="post-author">{{ page.author }}</h3>
 {% endif %}
 
 <div class="sidematter">(Side matter for '{{ page.title }}')</div>

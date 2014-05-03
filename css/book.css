@@ -6,7 +6,7 @@ Book overall style
 ----------------------------------*/
 
 ._book {
-	font: 10pt/1.4 'Messenger Text', sans-serif;
+	font: 12pt/1.4 'Benton Modern', sans-serif;
 }
 
 ._book-content .sidematter {
@@ -56,6 +56,42 @@ Title page
 	content: "s"
 }
 
+/* ----------------------------------
+
+Table of contents
+
+----------------------------------*/
+
+.toc-heading {
+	font-size: 2em;
+}
+
+.toc-title {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.8em;
+}
+
+.toc-item {
+	position: relative;
+	padding-right: 0.4in;
+	margin-bottom: 1em;
+}
+
+.toc h4 {
+	margin: 0;
+	font-size: 1rem;
+}
+
+.toc-author {
+	color: green;
+}
+
+.toc-pg {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 
 /* ----------------------------------
 
@@ -63,14 +99,17 @@ Interview print styles
 
 ----------------------------------*/
 
-.interview-name {
+.interview-name, .project-name {
 	font-size: 5em;
 	font-family: "Benton Modern";
 	line-height: 110%;
 }
 
-.interview-q:before {font-size: 10pt;}
-.interview-a:before {font-size: 10pt;}
+.interview-q:before,
+.interview-a:before {
+	font-size: 10pt;
+	/* font-family: "Benton Modern"; */
+}
 
 .interview-a {
 	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
@@ -84,6 +123,12 @@ Interview print styles
 
 .interview-q {
 	color: rgb(0, 112, 255);
+}
+
+.interview-intro,
+.interview-conclusion {
+	font-style: italic;
+	font-family: "Benton Modern";
 }
 
 blockquote{
@@ -147,6 +192,7 @@ Page size and paginalia
 
 ._running-head ._section {
 	bottom: 3in;
+	color: red;
 }
 
 ._running-head ._book-name {
