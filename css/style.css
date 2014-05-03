@@ -16,6 +16,7 @@ Generic base styles and resets
 
 html {
 	font: 20px/1.4 Messenger Text, sans-serif;
+	text-rendering: optimizeLegibility
 }
 
 body {
