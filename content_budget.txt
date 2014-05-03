@@ -1,3 +1,28 @@
+Title
+Subtitle
+
+Intro text (could be clickable or shows by default?)
+
+Table of contents (could be cover, could be low key, page numbers??)
+
+Alternate projects and interviews? (decision to come)
+
+Indexes
+If we use a classname, can it pull all content and place here? Like names referenced?
+- Index of names 
+- Index of all links featured?
+- Any other indexes that we can get for "free" by tagging that would help the book, or point folks to the web?
+
+Credits/Colophon
+
+
+
+
+
+
+
+
+
 Michael
 ---
 Cropped compositions (series?)
@@ -78,5 +103,5 @@ Patterns with intro about tools and the way we make
 Video of making of one of the patterns (online only)
 Link to repo for patterns
 Reinfurt, Michaelson, Armand
-Intro to book itself (collaborative)
+Intro  (different online than in print )
 
