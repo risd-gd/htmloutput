@@ -63,7 +63,7 @@ Interview print styles
 	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
 }
 .interview-q {
-	margin-left: 1.5pc; padding-left: 1.5pc; 
+	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 0; padding-right: 0;
 }
 .interview-a, .interview-q {
 	font-size: 12pt; margin: 0;
