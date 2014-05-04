@@ -214,8 +214,9 @@ Page size and paginalia
 }
 
 ._running-head ._section {
-	bottom: 3in;
-	color: red;
+	bottom: 0in;
+	width: 6.4in;
+	font-family: Scout;
 }
 
 ._running-head ._book-name {
@@ -238,6 +239,9 @@ Page size and paginalia
 	padding: 0;
 }
 
+._verso ._running-head ._section {
+	text-align: right;
+}
 
 ._recto ._running-head ._section,
 ._recto ._running-head ._book-name {
