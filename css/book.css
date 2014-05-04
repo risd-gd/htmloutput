@@ -7,6 +7,7 @@ Book overall style
 
 ._book {
 	font: 12pt/1.4 'Benton Modern', sans-serif;
+	text-rendering: optimizeLegibility;
 }
 
 ._book-content .sidematter {
@@ -52,8 +53,9 @@ Title page
 	line-height: 5in;
 }
 
-.category-name:after {
-	content: "s"
+[data-page-kind="section-page"] .page-inner {
+	background: black;
+	color: white;
 }
 
 /* ----------------------------------

@@ -50,17 +50,23 @@ var HAS_COMPLETED_ONE_LAYOUT = false;
 
 function finallyTheLayoutIsDone() {
   document.body.classList.add("_regions-loaded");
-  document.getElementById("status").innerHTML = "Book is ready.";
+  stat.innerHTML = "Book is ready.";
 
   HAS_COMPLETED_ONE_LAYOUT = true;
+
+  window.onbeforeunload = function() {
+    return "Are you in a hurry? If you leave this page it will need to be rebuilt again. That'll take a minute.";
+  }
 
   postProcessPages();
 }
 
 var progbar = document.getElementById("progbar");
+var stat = document.getElementById("status");
 var pages = document.querySelectorAll(".page-outer").length;
 function reportPagesLeft(p) {
   var done = pages - p;
+  stat.innerHTML = "Building page " + done;
   progbar.value = done / pages;
 }
 
@@ -128,6 +134,7 @@ function postProcessPages(){
 
     // If there is an in-page heading designed to trigger a new running head
     var heading = pg.querySelector("[data-change-running-head]");
+    var pagekindchange = pg.querySelector("[data-change-page-kind]");
     if (heading) {
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
@@ -145,7 +152,9 @@ function postProcessPages(){
         var tocLine = document.querySelector('.page-inner [data-toc="' + id + '"]');
         if (tocLine) tocLine.innerText = num;
       }
-
+    }
+    else if (pagekindchange) {
+      pageKind = pagekindchange.getAttribute("data-change-page-kind");
     }
 
     // Set this page's page kind
