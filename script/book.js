@@ -94,6 +94,17 @@ function preProcessPages() {
     $(splitImageHtml).insertAfter(oldNode);
     oldNode.parentNode.removeChild(oldNode);
   }
+
+  // [B] Detect hrefs and insert 
+  var links = document.querySelectorAll("[href]");
+  if (links) {
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      $("<sup data-href='" + href + "'>[x]</sup>").insertAfter(links[i]);
+    }
+  }
+
+
 }
 
 preProcessPages();
@@ -120,13 +131,13 @@ function postProcessPages(){
   for (var i = 0; i < pages.length; i++) {
     var pg = pages[i];
 
-    // Detect bleeds
+    // [A] Detect bleeds
     var hasBleeds = pg.querySelector("[data-fullbleed]");
     if (hasBleeds) {
       pg.classList.add("_bleed");
     }
 
-    // If there is an in-page heading designed to trigger a new running head
+    // [B] If there is an in-page heading designed to trigger a new running head
     var heading = pg.querySelector("[data-change-running-head]");
     var pagekindchange = pg.querySelector("[data-change-page-kind]");
     if (heading) {
@@ -151,12 +162,23 @@ function postProcessPages(){
       pageKind = pagekindchange.getAttribute("data-change-page-kind");
     }
 
-    // Set this page's page kind
+    // [C] Set this page's page kind
     pg.parentNode.setAttribute("data-page-kind", pageKind);
 
-    // Set this page's running head to the current running head
+    // [D] Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");
     if (runner) runner.innerText = head;
+
+
+    // [E] Set footnotes
+    var links = pg.querySelectorAll("[data-href]");
+    if (links) {
+      for (var j = 0; j < links.length; j++) {
+        var href = links[j].getAttribute("data-href");
+        console.log("Page " + i + " has footnote " + j + " = " + href);
+      }
+    }
+
   }
 
   trimRegions('content-flow');
@@ -258,7 +280,7 @@ for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
-  $("a").eq(i).html(temp+" <span class='url'>["+url+"]</span>");
+  $("a").eq(i).html(temp+" <span class='url'>[0]"+url+"</span>");
 
 }
 
