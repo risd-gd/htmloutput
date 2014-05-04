@@ -96,7 +96,7 @@ function preProcessPages() {
   }
 
   // [B] Detect hrefs and insert 
-  var links = document.querySelectorAll("[href]");
+  var links = document.querySelectorAll("a[href]");
   if (links) {
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
