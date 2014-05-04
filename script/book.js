@@ -137,6 +137,15 @@ function postProcessPages(){
       else {
         head = heading.innerText;
       }
+
+      // Add this page to the table of contents
+      var id = heading.getAttribute("data-id");
+      if (id) {
+        var num = pg.parentNode.getAttribute("data-page");
+        var tocLine = document.querySelector('.page-inner [data-toc="' + id + '"]');
+        if (tocLine) tocLine.innerText = num;
+      }
+
     }
 
     // Set this page's page kind
@@ -148,6 +157,10 @@ function postProcessPages(){
   }
 
   trimRegions('content-flow');
+}
+
+function updateTableOfContents() {
+
 }
 
 // -------------------------
