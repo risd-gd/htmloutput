@@ -141,7 +141,7 @@ For previewing the print
 		border-top: 1px solid gray;
 	}
 
-	#regionize {
+	.toggle-btn {
 		padding: 0.3em 1em;
 		display: inline;
 		margin: -0.3em 0;
@@ -152,7 +152,7 @@ For previewing the print
 		cursor: pointer;
 	}
 
-	#regionize:hover {
+	.toggle-btn:hover {
 		background: blue;
 	}
 

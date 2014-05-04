@@ -3,18 +3,12 @@
 
 var toggler = document.getElementById("toggleguides");
 var regionizer = document.getElementById("regionize");
-// var trimmer = document.getElementById("trimpages");
-// var bleeder = document.getElementById("fixbleeds");
+var restyle = document.getElementById("restyle");
 var postproc = document.getElementById("postproc");
 
 if (toggler) toggler.addEventListener("click", toggleprint);
 if (regionizer) regionizer.addEventListener("click", regionize);
-// if(trimmer) trimmer.addEventListener("click", function(){
-//   trimRegions(this, 'content-flow')
-// });
-// if (bleeder) bleeder.addEventListener("click", function(){
-//   allowBleeds(this, 'content-flow')
-// });
+if (restyle) restyle.addEventListener("click", reloadStylesheets);
 if (postproc) postproc.addEventListener("click", function(){
   postProcessPages(this);
 });
@@ -168,8 +162,18 @@ function postProcessPages(){
   trimRegions('content-flow');
 }
 
-function updateTableOfContents() {
+// -------------------------
 
+// Reload CSS
+
+// -------------------------
+
+
+function reloadStylesheets() {
+    var queryString = '?reload=' + new Date().getTime();
+    $('link[rel="stylesheet"]').each(function () {
+        this.href = this.href.replace(/\?.*|$/, queryString);
+    });
 }
 
 // -------------------------
