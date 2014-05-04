@@ -19,11 +19,9 @@ just ask Evan!
   {% for page in site.pages %}{% if page.category == 'interview' %}
   	[data-page-kind="{{page.interviewee}}"] .interview-a:before {
   		content: '{{ page.interviewee_initials }}';
-  		margin-right: 2ch;
   	}
   	[data-page-kind="{{page.interviewee}}"] .interview-q:before {
   		content: '{{ page.interviewer_initials }}';
-  		margin-right: 2ch;
   	}
   {% endif %}{% endfor %}
 </style>

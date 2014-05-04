@@ -102,14 +102,16 @@ Interview print styles
 ----------------------------------*/
 
 .interview-name, .project-name {
-	font-size: 5em;
+	font-size: 8em;
 	font-family: "Benton Modern";
 	line-height: 110%;
 }
 
 .interview-q:before,
 .interview-a:before {
+	content: "XX";
 	font-size: 10pt;
+  	margin-right: 2ch;
 	/* font-family: "Benton Modern"; */
 }
 
