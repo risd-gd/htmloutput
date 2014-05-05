@@ -45,7 +45,7 @@ if(!document.caretRangeFromPoint) {
                     cursorNode.parentNode.removeChild(cursorNode);
                 }
                 
-                // validate arguments
+                // validate argumentsrelayout
                 if(!document) { document=window.document; }
                 
                 // return a DOM range
@@ -4357,7 +4357,7 @@ var cssRegionsHelpers = {
                         if(!(properties[p] in cssCascade.computationUnsafeProperties) && properties[p][0]!='-') {
                             var style = getComputedStyle(node1).getPropertyValue(properties[p]);
                             var defaultStyle = cssCascade.getDefaultStyleForTag(node1.tagName).getPropertyValue(properties[p]);
-                            if(style != defaultStyle) node2.style.setProperty(properties[p], style)
+                            if(style != defaultStyle) node2.style.setProperty(properties[p], style) // WHAT IF WE DIDN'T - EB 
                             continue;
                         }
                         
@@ -4366,7 +4366,7 @@ var cssRegionsHelpers = {
                         if(cssValue && cssValue.length) {
                             
                             // if we have a specified value, let's use it
-                            node2.style.setProperty(properties[p], cssValue.toCSSString());
+                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
                             
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
                             
@@ -4437,7 +4437,7 @@ var cssRegionsHelpers = {
                                 +"}"
                             );
                             
-                            node2.parentNode.insertBefore(stylesheet, node2);
+                            node2.parentNode.insertBefore(stylesheet, node2); // lets not insert this stylesheet - EB
                             
                         }
                     }
@@ -4481,14 +4481,15 @@ var cssRegionsHelpers = {
     retargetEvents: function retargetEvents(node1,node2) {
         
         var retargetEvent = "cssRegionsHelpers.retargetEvent(this,event)";
-        node2.setAttribute("onclick", retargetEvent);
-        node2.setAttribute("ondblclick", retargetEvent);
-        node2.setAttribute("onmousedown", retargetEvent);
-        node2.setAttribute("onmouseup", retargetEvent);
-        node2.setAttribute("onmousein", retargetEvent);
-        node2.setAttribute("onmouseout", retargetEvent);
-        node2.setAttribute("onmouseenter", retargetEvent);
-        node2.setAttribute("onmouseleave", retargetEvent);
+        // WHO CARES ABOUT THIS - EB
+        // node2.setAttribute("onclick", retargetEvent);
+        // node2.setAttribute("ondblclick", retargetEvent);
+        // node2.setAttribute("onmousedown", retargetEvent);
+        // node2.setAttribute("onmouseup", retargetEvent);
+        // node2.setAttribute("onmousein", retargetEvent);
+        // node2.setAttribute("onmouseout", retargetEvent);
+        // node2.setAttribute("onmouseenter", retargetEvent);
+        // node2.setAttribute("onmouseleave", retargetEvent);
         
     },
     
@@ -4687,7 +4688,7 @@ var cssRegions = {
         
         // layout the next regions
         // WE LET THE NEXT REGION DECIDE WHAT TO RETURN
-        if(startTime+200 > Date.now()) {
+        if(startTime+2 > Date.now()) {// -EB can we make this shorter? changed 200 to 2
             
             return cssRegions.layoutContent(regions, remainingContent, callback, startTime);
             
@@ -5708,21 +5709,25 @@ cssRegions.Flow.prototype.generateContentFragment = function() {
 
 cssRegions.Flow.prototype.relayout = function() {
     var This = this;
-    
+
     // prevent previous relayouts from eventing
     cancelAnimationFrame(This.lastEventRAF);
     
     // batch relayout queries
     if(This.relayoutScheduled) { return; }
     if(This.relayoutInProgress) { This.restartLayout=true; return; }
+
     This.relayoutScheduled = true;
-    requestAnimationFrame(function() { This._relayout() });
-    
+    requestAnimationFrame(function() { This._relayout() }); // This limits event loop to frame rate? - EB
 }
 
 cssRegions.Flow.prototype._relayout = function(data){
     var This=this;
     
+
+    if (HAS_COMPLETED_ONE_LAYOUT) return;
+
+
     try {
         
         //
@@ -5799,6 +5804,9 @@ cssRegions.Flow.prototype._relayout = function(data){
         cssRegions.layoutContent(regionStack, contentFragment, {
 			onprogress: function(continueLayout) {
 				
+
+                reportPagesLeft(regionStack.length);
+
 	            // NOTE: we recover the scroll position in case the browser mess it up
 	            document.documentElement.scrollTop = docElmScrollTop;
 	            document.body.scrollTop = docBdyScrollTop;
@@ -5907,6 +5915,8 @@ cssRegions.Flow.prototype._relayout = function(data){
                 This.relayoutInProgress = false;
                 This.failedLayoutCount = 0;
                 
+                finallyTheLayoutIsDone();
+
                 // restart a layout if a request was queued during the current one
                 if(This.restartLayout) {
                     This.restartLayout = false;

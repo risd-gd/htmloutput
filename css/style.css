@@ -16,6 +16,7 @@ Generic base styles and resets
 
 html {
 	font: 20px/1.4 Messenger Text, sans-serif;
+	text-rendering: optimizeLegibility
 }
 
 body {
@@ -31,7 +32,7 @@ sup{
 
 a {
 	text-decoration: none;
-	color: blue
+	color: blue;
 }
 
 h1 {
@@ -140,23 +141,6 @@ Most print styles are in print.css
 	}
 }
 
-
-/* ----------------------------------
-
-Endmatter
-
-----------------------------------*/
-
-.end{
-  page-break-after: always;
-}
-
-.end .endnote{
-  font-family: Messenger Mono;
-  font-size: 0.7rem;
-  text-align: left;
-}
-
 /* ----------------------------------
 
 Interview Styles
@@ -173,7 +157,7 @@ separated into print and web
 
 .interview-a {}
 .interview-q {}
-.interview-a, .interview-q { line-height: 130%; font-family: "Benton Modern";}
+.interview-a, .interview-q { line-height: 125%; font-family: "Benton Modern";}
 
 
 

@@ -2,3 +2,9 @@
 _site/*
 _site/*/*
 _site/css/style.css
+
+.DS_Store
+
+.DS_Store
+
+__experiments/page_layout Folder/Document fonts/AdobeFnt14.lst

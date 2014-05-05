@@ -4,23 +4,44 @@
     <meta charset="utf-8">
     <title>Print testing setup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Scout -->
+   <link href="//cloud.webtype.com/css/e573bdaf-4428-42af-a427-9cc650bb1895.css" rel="stylesheet" type="text/css" />
+
+   <!-- Benton -->
+   <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
+
+
     <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/book-ui.css" type="text/css">
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{{ site.baseurl }}/script/cssregions.js"></script>
   </head>
   <body>
 
 
   <nav class="print-nav">
     <div style="float: right">
-        Functions (danger!): 
+        <button class="toggle-btn" id="restyle">Refresh CSS</button>
+        <!--Functions (danger!): 
         <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
         <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
+        <button class="toggle-btn" id="postproc">Post-process</button> -->
     </div>
     <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">bookyll v0.1</span>
-    <label><input id="toggleguides" type="checkbox" checked /> Show guides</label>
+
+    <span id="postProcessControls" style="display: none;">
+        <label><input id="toggleguides" type="checkbox" checked /> Show guides</label>
+        <span id="status" style="display:inline; margin-left: 1em; color: blue;">
+        <!--<img style="width:16px; height: 16px; margin: -4px 5px; vertical-align: middle" src="http://www.animatedgif.net/bookscalendars/anim0019-1_e0.gif"/> -->
+            Making book...
+            <progress id="progbar" value="0" max="1"></progress>
+        </span>
+    </span>
+    <button class="toggle-btn" id="regionize" disabled>Make book!</button>
+
   </nav>
 
   <div class="temp spacer"></div>
@@ -33,7 +54,7 @@ and then send it through the regions in content-region (which
 represent individual printed pages.)
 
 -->
-        <div class="content-source">
+        <div class="_book-content content-source">
             {{ content }}
         </div>
         <!--
@@ -44,23 +65,36 @@ to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
 -->
-        {% for num in (1...70) %}
-        <div class="page-outer" data-page="{{ num }}">
-            <div class="content-region page-inner">
-                <!-- all content will be in this div for each page -->
-            </div>
-            <header>
-                Title or something
-            </header>
-            <footer>
-                {{ num }}
-            </footer>
-            <footnotes>
-            </footnotes>
-        </div>
-        {% endfor %}
 
+
+        <div class="_book-pages">
+            {% for num in (1...250) %}
+                <div class="page-outer {% cycle 'page-side': '_recto', '_verso' %}" data-page="{{ num }}">
+                    <div class="content-region page-inner">
+                        <!-- all content will be in this div for each page -->
+                    </div>
+
+                    <header class="_running-head">
+                        <div class="_book-name">
+                            HTML Output
+                        </div>
+                        <div class="_section">
+                            
+                        </div>
+                        <div class="_pagenum">
+                            {{ num }}
+                        </div>
+                    </header>
+
+                    <footnotes>
+                    </footnotes>
+                </div>
+            {% endfor %}
+        </div>
+
+        <script type="text/javascript" src="{{ site.baseurl }}/script/imagesloaded.pkgd.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/cssregions.js"></script>
 
     </body>
 </html>
