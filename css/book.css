@@ -95,7 +95,7 @@ Table of contents
 }
 
 .toc-author {
-	color: SeaGreen;
+	color: rgb(42,204,66);
 }
 
 .toc-pg {
@@ -127,7 +127,7 @@ Interview print styles
 }
 
 .interview-q:before {
-	color: seagreen;
+	color: rgb(42,204,66);
 }
 
 .interview-a:before {
@@ -146,7 +146,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: seagreen; /*rgb(46,139,87);*/
+	color: rgb(42,204,66);
 }
 
 .interview-intro,
@@ -167,6 +167,11 @@ blockquote{
   margin-top:    1.5pc;
   margin-bottom: 1.5pc;
   font-size: 2em;*/
+}
+
+mark { 
+	font-style: normal; 
+	background: aquamarine;
 }
 
 .interview-matter{
