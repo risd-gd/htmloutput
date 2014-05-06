@@ -104,6 +104,8 @@ Table of contents
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-family: Scout;
+	font-weight: bold;
 }
 
 /* ----------------------------------
@@ -124,6 +126,10 @@ Interview print styles
 	font-size: 10pt;
   	margin-right: 2ch;
 	/* font-family: "Benton Modern"; */
+}
+
+.interview-q:before {
+	color: black;
 }
 
 .interview-a {
@@ -228,10 +234,10 @@ Page size and paginalia
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 0.6in;
+	bottom: 0.9in;
 	font-family: Scout;
 	font-weight: bold;
-	font-size: 0.55em;
+	/*font-size: 0.55em;*/
 }
 
 ._recto ._running-head ._pagenum {
