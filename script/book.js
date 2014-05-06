@@ -291,6 +291,8 @@ for(i=0; i<num_links; i++){
     url = url.substring(start,end);
   }
 
+
+
   $("a").eq(i).html(temp + "<span class='url'>"+url+"</span>");
 
 }
