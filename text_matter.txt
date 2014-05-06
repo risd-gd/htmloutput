@@ -8,15 +8,18 @@ Conversations and projects that explore the web browser as a general purpose des
 INTRO
 (should output differently in print than online)
 
+Web Intro
 The Web browser is an ideal tool for designers because it combines As the palettes and options increase in Adobe projects, the modern Web browser has more and more what designers need from a tool: data awareness and interactivity with increasingly robust presentation options. This website (book) collects a few months worth of conversations with practitioners in design and experiments with the browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and a book. A book that in fact comes from this very website. A "responsive" website that at any point in its development could output to a LuLu-printable pdf. The book prioritizing reading and documentation, the website foregrounding its ability to update, many more images and links to live code downloads. 
 
 
+Print Intro
+A book is an ideal place for designers to archive and present their work in a physical format. Unlike the web, the book is a final format. It cannot lose compatibility or functionality. It cannot be linked to, it cannot be updated, and it cannot be edited. It can be reprinted but each individual book is an archive of a specific time and state. For this project each book marks a time the website was printed. A different time might mean a different book but all the content comes from the same website. 
 
 
 BACK OF BOOK/BACK COVER? (OR FRONT MATTER??)
 
 Credits (last page? back? both?)
-HTML Output was produced within a Graphic Design elective with the same name. All projects and work remains the copyright of the student or with the author (when referenced) Spring 2014. A limited run of 50 books was printed by RISD GD. Further copies available from LuLu.com/asdf 
+HTML Output was produced within a Graphic Design elective with the same name. All projects and work remains the copyright of the student or with the author (when referenced) Spring 2014. A limited run of 50 books was printed by RISD GD. Further copies available from LuLu.com/asdf
 
 Authors:
 
@@ -24,7 +27,7 @@ Authors:
 Colophon:
 Messenger Mono, designed  by Anther Kiley and Colin Frazer (ctr). 
 Benton Modern, designed by Cyrus Highsmith (?) and provided by WebType
-Whatelse
+This edition was captured on XX/XX/XXXX at XX:XX
 
 Core website development:
 Evan, Lukas, Phil, anyoneelse?
