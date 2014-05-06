@@ -127,6 +127,10 @@ Interview print styles
 }
 
 .interview-q:before {
+	color: seagreen;
+}
+
+.interview-a:before {
 	color: black;
 }
 
@@ -142,7 +146,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: SeaGreen; /*rgb(46,139,87);*/
+	color: seagreen; /*rgb(46,139,87);*/
 }
 
 .interview-intro,
