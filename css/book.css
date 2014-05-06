@@ -95,7 +95,7 @@ Table of contents
 }
 
 .toc-author {
-	color: rgb(9,240,75);
+	color: rgb(42,204,66);
 }
 
 .toc-pg {
@@ -127,7 +127,7 @@ Interview print styles
 }
 
 .interview-q:before {
-	color: rgb(9,240,75);
+	color: rgb(42,204,66);
 }
 
 .interview-a:before {
@@ -146,7 +146,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: rgb(9,240,75);
+	color: rgb(42,204,66);
 }
 
 .interview-intro,
