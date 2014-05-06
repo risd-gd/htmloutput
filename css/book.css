@@ -107,7 +107,7 @@ Table of contents
 }
 
 .toc-author {
-	color: green;
+	color: SeaGreen;
 }
 
 .toc-pg {
@@ -154,7 +154,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: green; /*rgb(0, 112, 255);*/
+	color: SeaGreen; /*rgb(46,139,87);*/
 }
 
 .interview-intro,
