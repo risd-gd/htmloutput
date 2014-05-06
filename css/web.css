@@ -5,7 +5,7 @@ Interview Styles
 ----------------------------------*/
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
-mark { font-style: normal; background: aquamarine;}
+mark { font-style: normal; background: rgba(0, 255, 0, .1);}
 s { color: grey;} 
 img{
   margin-left: -20px;
