@@ -181,6 +181,10 @@ blockquote{
   margin-bottom: 1pc;
 }
 
+del{
+  display: none;
+}
+
 
 /* ----------------------------------
 
