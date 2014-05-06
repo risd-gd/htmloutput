@@ -36,6 +36,7 @@ imagesLoaded( document.body, function( instance ) {
 function regionize() {
   cssRegions.enablePolyfill();
   regionizer.style.display = "none";
+  document.documentElement.classList.remove("_notsplityet");
   document.getElementById("postProcessControls").style.display = "inline";
 }
 
@@ -100,7 +101,7 @@ function preProcessPages() {
   if (links) {
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      $("<sup data-href='" + href + "'>[x]</sup>").insertAfter(links[i]);
+      $("<sup data-href='" + href + "'>x</sup>").insertAfter(links[i]);
     }
   }
 
@@ -173,10 +174,13 @@ function postProcessPages(){
     // [E] Set footnotes
     var links = pg.querySelectorAll("[data-href]");
     if (links) {
+      var notes = "";
       for (var j = 0; j < links.length; j++) {
         var href = links[j].getAttribute("data-href");
-        console.log("Page " + i + " has footnote " + j + " = " + href);
+        links[j].innerText = j;
+        notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
       }
+      pg.parentNode.querySelector("._footer").innerHTML = notes;
     }
 
   }

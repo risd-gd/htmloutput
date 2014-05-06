@@ -16,12 +16,6 @@ Book overall style
 }
 
 ._book-content .sidematter {
-	position: absolute;
-	top: 1in;
-	left: 0.5in;
-	-webkit-transform: rotate(90deg);
-	-webkit-transform-origin: top left;
-	color: red;
 	display: none;
 }
 
@@ -32,9 +26,9 @@ Book overall style
   font-family: Messenger Mono;
   display: inline-block;
   width: 4pt;*/
-  color: transparent;
-  -webkit-text-stroke: 0.5px magenta;
-  opacity: 0.5;
+  color: magenta;
+  /*-webkit-text-stroke: 0.5px magenta;*/
+  opacity: 0.2;
 	position: absolute;
 	left: 0;
 	/*font-family: Verdana;
@@ -218,25 +212,45 @@ Page size and paginalia
 ._running-head ._section {
 	bottom: 0in;
 	width: 6.4in;
+	text-align: center;
+	text-decoration: underline;
 	font-family: Scout;
 }
 
 ._running-head ._book-name {
 	bottom: 0.6in;
+	display: none;
 }
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 30%;
+	bottom: 0.6in;
 	font-family: Scout;
 	font-weight: bold;
+	font-size: 0.55em;
 }
 
 ._recto ._running-head ._pagenum {
 	right: 0.12in;
+	-webkit-transform: rotate(90deg);
 }
 ._verso ._running-head ._pagenum {
 	left: 0.12in;
+	-webkit-transform: rotate(-90deg);
+}
+
+._running-head ._footer {
+	top: 6in;
+	left: 0.8in;
+	right: 0.6in;
+	position: absolute;
+	font-size: 0.7em;
+	font-family: "Messenger Text";
+	color: magenta;
+}
+
+._running-head ._footer i, ._book sup {
+	color: magenta;
 }
 
 .page-inner._bleed {
@@ -244,7 +258,7 @@ Page size and paginalia
 }
 
 ._verso ._running-head ._section {
-	text-align: right;
+	/*text-align: right;*/
 }
 
 ._recto ._running-head ._section,

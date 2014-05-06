@@ -4366,7 +4366,7 @@ var cssRegionsHelpers = {
                         if(cssValue && cssValue.length) {
                             
                             // if we have a specified value, let's use it
-                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
+                            // node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
                             
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
                             
@@ -4437,7 +4437,7 @@ var cssRegionsHelpers = {
                                 +"}"
                             );
                             
-                            node2.parentNode.insertBefore(stylesheet, node2); // lets not insert this stylesheet - EB
+                            // node2.parentNode.insertBefore(stylesheet, node2); // lets not insert this stylesheet - EB
                             
                         }
                     }

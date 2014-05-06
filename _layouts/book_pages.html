@@ -37,8 +37,8 @@
         <span id="status" style="display:inline; margin-left: 1em; color: blue;">
         <!--<img style="width:16px; height: 16px; margin: -4px 5px; vertical-align: middle" src="http://www.animatedgif.net/bookscalendars/anim0019-1_e0.gif"/> -->
             Making book...
-            <progress id="progbar" value="0" max="1"></progress>
         </span>
+        <progress id="progbar" value="0" max="1"></progress>
     </span>
     <button class="toggle-btn" id="regionize" disabled>Make book!</button>
 
@@ -103,6 +103,9 @@ experiment with adding/removing them dynamically
                             
                         </div>
                         <div class="_pagenum">
+                            {{ num }}
+                        </div>
+                        <div class="_footer">
                             {{ num }}
                         </div>
                     </header>
