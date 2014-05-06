@@ -167,7 +167,8 @@ Interview print styles
 
 blockquote{
   color: red;
-  font-family: "Messenger Mono"; display: none;
+  font-family: "Messenger Mono";
+  display: none;
   /*
   margin-left:  -0.5pc;
   margin-right:  3pc;
