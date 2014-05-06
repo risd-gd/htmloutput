@@ -285,13 +285,20 @@ for(i=0; i<num_links; i++){
   var url = $("a").eq(i).attr("href");
 
   // strip "http://"
-  var start = url.indexOf("://") + 3;
+  var start = url.indexOf("://");
   var end = url.length;
   if(start !== -1){
+    start = start + 3;
     url = url.substring(start,end);
   }
 
-
+  // strip "www."
+  start = url.indexOf("www.");
+  end = url.length;
+  if(start !== -1){
+    start = start + 4;
+    url = url.substring(start,end);
+  }
 
   $("a").eq(i).html(temp + "<span class='url'>"+url+"</span>");
 
