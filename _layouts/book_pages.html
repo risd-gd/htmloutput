@@ -25,7 +25,7 @@
   <nav class="print-nav">
     <div style="float: right">
         <button class="toggle-btn" id="restyle">Refresh CSS</button>
-        <!--Functions (danger!): 
+        <!--Functions (danger!):
         <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
         <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
         <button class="toggle-btn" id="postproc">Post-process</button> -->
@@ -81,7 +81,7 @@ represent individual printed pages.)
         <!--
 
 Because of how CSS Regions works, we can't tell how many
-pages will be necessary. Right now I'm just creating 100
+pages will be necessary. Right now I'm just creating 250
 to start out. If this polyfill works out, we can
 experiment with adding/removing them dynamically
 
@@ -100,7 +100,7 @@ experiment with adding/removing them dynamically
                             HTML Output
                         </div>
                         <div class="_section">
-                            
+
                         </div>
                         <div class="_pagenum">
                             {{ num }}
@@ -110,8 +110,7 @@ experiment with adding/removing them dynamically
                         </div>
                     </header>
 
-                    <footnotes>
-                    </footnotes>
+
                 </div>
             {% endfor %}
         </div>

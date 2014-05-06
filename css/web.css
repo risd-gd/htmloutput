@@ -10,8 +10,8 @@ img{
 }
 
 
-.interview-q:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
-.interview-a:before { content: ''; color: red; font-size: 15px; font-family: "Messenger Mono";}
+.interview-q:before { font-size: 15px; }
+.interview-a:before { font-size: 15px; }
 
 .interview-a { margin: 0; text-indent: 20px;  }
 .interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }

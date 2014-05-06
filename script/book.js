@@ -122,7 +122,7 @@ function preProcessPages() {
     oldNode.parentNode.removeChild(oldNode);
   }
 
-  // [B] Detect hrefs and insert 
+  // [B] Detect hrefs and insert
   var links = document.querySelectorAll("a[href]");
   if (links) {
     for (var i = 0; i < links.length; i++) {
@@ -202,6 +202,10 @@ function postProcessPages(){
         var href = links[j].getAttribute("data-href");
         links[j].innerText = j;
         notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
+
+        //var temp = $("a").eq(j).html();
+        //$("a").eq(j).html(temp + "<span class='url'>["+j+"] "+href+"</span>");
+
       }
       pg.parentNode.querySelector("._footer").innerHTML = notes;
     }
@@ -272,14 +276,14 @@ function trimRegions(flowName) {
     return(true);
 }
 
-// Endnotes
+// URLs in Book
 var num_links = $("a").length;
 
 for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
-  $("a").eq(i).html(temp + "<span class='url'>[0]"+url+"</span>");
+  $("a").eq(i).html(temp + "<span class='url'>"+url+"</span>");
 
 }
 

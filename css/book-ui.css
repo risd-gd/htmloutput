@@ -142,8 +142,6 @@ For previewing the print
 		color: red;
 	}
 
-
-
 	.page-outer[data-page='1'] {
 		display: block;
 		margin: 1rem auto;

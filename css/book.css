@@ -20,24 +20,32 @@ Book overall style
 }
 
 ._book-content .url{
-/*  font-size: 10pt;
-  color: red;
-  -webkit-transform: rotate(90deg);
-  font-family: Messenger Mono;
-  display: inline-block;
-  width: 4pt;*/
+  font-size: 10pt;
   color: magenta;
+  /*-webkit-transform: rotate(90deg);*/
+  font-family: Messenger Mono;
+  text-decoration: none;
+  display: inline-block;
+  width: 0pt;
+  overflow: visible;
+  height: 0pt;
+	/*font-weight: bold;*/
+  opacity: 0.5;
+  position: relative;
+  top: -3pt;
+  left: -3pc;
   /*-webkit-text-stroke: 0.5px magenta;*/
+
+  /*color: magenta;
   opacity: 0.2;
 	position: absolute;
 	left: 0;
-	/*font-family: Verdana;
-	font-weight: bold;*/
 	font-size: 4em;
 	line-height: 100%;
-	width: 100%;
-	word-break: break-word;
+	width: 100%;*/
+	/*word-break: break-word;*/
 	z-index: -1;
+
 }
 
 ._book-content a{
