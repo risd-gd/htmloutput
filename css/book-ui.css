@@ -14,6 +14,9 @@ CSS Region flow (used by the polyfill)
     region-fragment: break;
 }
 
+[data-remove-before-print] {
+	display: none !important;
+}
 
 /* ----------------------------------
 

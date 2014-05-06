@@ -82,13 +82,17 @@ Table of Contents
     <div class="toc-item">
       {% if category == 'interview' %}
         <h4>{{ page.interviewee }} talks to {{ page.interviewer }}</h4>
-      	<div class="toc-pg" data-toc="{{ page.interviewee }}">##</div>
+      	<div class="toc-pg" data-toc="{{ page.interviewee }}">
+          <input type="checkbox" checked="false" />
+        </div>
       {% else %}
         <h4>
         	{{ page.title }}
         	— <span class="toc-author">{{ page.author }}</span>
         </h4>
-      	<div class="toc-pg" data-toc="{{ page.title }}">##</div>
+      	<div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
       {% endif %}
     </div>
   {% endif %}

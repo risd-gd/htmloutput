@@ -1,3 +1,8 @@
+var HAS_COMPLETED_ONE_LAYOUT = false;
+
+// Block polyfill from running unless we say so.
+window.cssRegionsManualTrigger = false;
+
 // ---------------
 // User interface
 
@@ -14,34 +19,56 @@ if (postproc) postproc.addEventListener("click", function(){
 });
 
 
-
-
-
 // ==================
-// First scroll to top. 
+// React to checkbox
+$("[type=checkbox]").change(function(e){
+  var id = this.parentNode.getAttribute("data-toc");
+  var elt = document.querySelector('[data-id="' + id + '"]');
 
-window.scrollTo(0,0);
+  if (!this.checked) {
+    $(elt).nextUntil("[data-id]").andSelf().attr("data-remove-before-print", true);
+  }
+  else {
+    $(elt).nextUntil("[data-id]").andSelf().removeAttr("data-remove-before-print");
+  }
 
-// Then block polyfill from running unless we say so.
+});
+// First lets uncheck them all!
+$("[type=checkbox]").attr("checked", false).change();;
 
-window.cssRegionsManualTrigger = false;
-
-// ---------------
-// Load polyfill when we know all images have loaded
+// -------------------------------------
+// Enable UI when we know all images have loaded
 
 imagesLoaded( document.body, function( instance ) {
   if (regionizer) regionizer.removeAttribute("disabled");
 });
 
+// -------------------------------------
+//
+// R E G I O N I Z E R
+//
+// Load polyfill when we know all images have loaded
+
 function regionize() {
-  cssRegions.enablePolyfill();
-  regionizer.style.display = "none";
+
+  // First remove the stuff we don't want to print
+  $("[data-remove-before-print]").remove();
+
+  // Then preprocess various stuff
+  preProcessPages();
+
+  // Remove global class
   document.documentElement.classList.remove("_notsplityet");
+
+  // Hide button and mess with controls
+  regionizer.style.display = "none";
   document.getElementById("postProcessControls").style.display = "inline";
+
+  // Begin regionizing
+  cssRegions.enablePolyfill();
 }
 
-
-var HAS_COMPLETED_ONE_LAYOUT = false;
+// -------------------------------------
 
 function finallyTheLayoutIsDone() {
   document.body.classList.add("_regions-loaded");
@@ -107,9 +134,6 @@ function preProcessPages() {
 
 
 }
-
-preProcessPages();
-
 
 
 
@@ -218,34 +242,6 @@ function toggleprint(e) {
   }
 };
 
-// -------------------------
-
-// ENABLE BLEED
-// --
-// Remove margins of any region
-// that is part of a full-bleed
-// image spread
-
-// -------------------------
-
-// function allowBleeds(btn, flowName) {
-//   var flow = document.getNamedFlows().namedItem(flowName);
-//   var spreads = document.querySelectorAll("._fullbleed");
-
-//   document.documentElement.classList.add("_bleed-enabled")
-//   btn.setAttribute("disabled", true);
-
-//   console.log(spreads);
-//   for (var i = 0; i < 2; i++) {
-//     var regions = flow.getRegionsByContent(spreads[i]);
-//     console.log(regions);
-//     for (var j = 0; j < regions.length; j++) {
-//       if (regions[j]) {
-//         regions[j].classList.add("_bleed");
-//       }
-//     }
-//   }
-// }
 
 // -------------------------
 
@@ -284,7 +280,7 @@ for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
-  //$("a").eq(i).html(temp + "<span class='url'>[0]"+url+"</span>");
+  $("a").eq(i).html(temp + "<span class='url'>[0]"+url+"</span>");
 
 }
 
