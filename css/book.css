@@ -20,31 +20,31 @@ Book overall style
 }
 
 ._book-content .url{
-  font-size: 10pt;
+  /*font-size: 4em;
   color: magenta;
-  /*-webkit-transform: rotate(90deg);*/
+  -webkit-transform: rotate(90deg);*/
   font-family: Messenger Mono;
-  text-decoration: none;
-  display: inline-block;
-  width: 0pt;
+  /*width: 0pt;
   overflow: visible;
-  height: 0pt;
+  height: 0pt;*/
 	/*font-weight: bold;*/
-  opacity: 0.5;
+  /*opacity: 0.5;
   position: relative;
   top: -3pt;
-  left: -3pc;
-  /*-webkit-text-stroke: 0.5px magenta;*/
+  left: -3pc;*/
+  -webkit-text-stroke: 0.5px magenta;
 
-  /*color: magenta;
+  color: magenta;
   opacity: 0.2;
 	position: absolute;
 	left: 0;
 	font-size: 4em;
 	line-height: 100%;
-	width: 100%;*/
-	/*word-break: break-word;*/
+	width: 100%;
+	word-break: break-word;
 	z-index: -1;
+  text-decoration: none;
+  display: inline-block;
 
 }
 

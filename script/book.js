@@ -283,6 +283,14 @@ for(i=0; i<num_links; i++){
 
   var temp = $("a").eq(i).html();
   var url = $("a").eq(i).attr("href");
+
+  // strip "http://"
+  var start = url.indexOf("://") + 3;
+  var end = url.length;
+  if(start !== -1){
+    url = url.substring(start,end);
+  }
+
   $("a").eq(i).html(temp + "<span class='url'>"+url+"</span>");
 
 }
