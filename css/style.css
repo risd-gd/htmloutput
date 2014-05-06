@@ -153,7 +153,7 @@ separated into print and web
 }
 
 .interview-q:before { content: ''; color: SeaGreen; font-family: "Messenger Mono";}
-.interview-a:before { content: ''; color: black; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: SeaGreen; font-family: "Messenger Mono";}
 
 .interview-a {}
 .interview-q {}
