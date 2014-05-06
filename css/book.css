@@ -32,10 +32,12 @@ Book overall style
   position: relative;
   top: -3pt;
   left: -3pc;*/
-  -webkit-text-stroke: 0.5px magenta;
+  /*-webkit-text-stroke: 0.9px magenta;*/
 
   color: magenta;
-  opacity: 0.2;
+  /*color: white;
+  background-color: magenta;*/
+  opacity: 0.3;
 	position: absolute;
 	left: 0;
 	font-size: 4em;
