@@ -152,8 +152,8 @@ separated into print and web
 	margin-bottom: 18px;
 }
 
-.interview-q:before { content: ''; color: red; font-family: "Messenger Mono";}
-.interview-a:before { content: ''; color: red; font-family: "Messenger Mono";}
+.interview-q:before { content: ''; color: SeaGreen; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: black; font-family: "Messenger Mono";}
 
 .interview-a {}
 .interview-q {}
