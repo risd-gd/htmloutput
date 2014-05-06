@@ -20,7 +20,7 @@ Book overall style
 }
 
 ._book-content .url{
-  	font-family: Messenger Mono;
+  	font-family: Messenger Text;
   	width: 0;
   	overflow: visible;
   	height: 0;
@@ -245,7 +245,7 @@ Page size and paginalia
 	left:     -0.125in;
 	right:    -0.125in;
 	overflow: hidden;
-	padding:  0.5in 0.6in 1in;
+	padding:  0.5in 0.6in 0.7in;
 }
 
 
@@ -280,6 +280,7 @@ Page size and paginalia
 	bottom: 0.9in;
 	font-family: Scout;
 	font-weight: bold;
+	font-size: 0.55em;
 	/*font-size: 0.55em;*/
 }
 
