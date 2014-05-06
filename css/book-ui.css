@@ -188,6 +188,10 @@ For previewing the print
 		background: white;
 	}
 
+	._regions-loaded #progbar {
+		display: none;
+	}
+
 	#progbar[value]::-webkit-progress-bar {
   		background-color: white;
   	}
@@ -211,6 +215,8 @@ Actual print styles
 	}
 
 	.page-outer {
+		/* BECAUSE CHROME !?!?! */
+		-webkit-transform: scale(0.944);
 		margin-top: 1in;
 		/*outline: 1px solid black;*/
 	}

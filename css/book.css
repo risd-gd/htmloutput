@@ -213,8 +213,12 @@ Page size and paginalia
 	bottom: 0in;
 	width: 6.4in;
 	text-align: center;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	font-family: Scout;
+}
+
+._running-head ._section span {
+	border-bottom: 1px solid black;
 }
 
 ._running-head ._book-name {
@@ -246,12 +250,17 @@ Page size and paginalia
 	position: absolute;
 	font-size: 0.7em;
 	font-family: "Messenger Text";
-	color: magenta;
 }
 
 ._running-head ._footer i, ._book sup {
 	color: magenta;
 }
+
+sup {
+	font-size: 0.7em;
+	line-height: 0;
+}
+
 
 .page-inner._bleed {
 	padding: 0;

@@ -168,7 +168,7 @@ function postProcessPages(){
 
     // [D] Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");
-    if (runner) runner.innerText = head;
+    if (runner) runner.innerHTML = "<span>" + head + "</span>";
 
 
     // [E] Set footnotes
