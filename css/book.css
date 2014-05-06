@@ -154,7 +154,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: rgb(0, 112, 255);
+	color: green; /*rgb(0, 112, 255);*/
 }
 
 .interview-intro,
@@ -269,7 +269,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer i, ._book sup {
-	color: blue;
+	color: magenta;
 }
 
 ._book sup {
