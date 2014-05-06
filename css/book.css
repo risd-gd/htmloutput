@@ -169,6 +169,11 @@ blockquote{
   font-size: 2em;*/
 }
 
+mark { 
+	font-style: normal; 
+	background: aquamarine;
+}
+
 .interview-matter{
   margin-top: 1pc;
   margin-bottom: 1pc;
