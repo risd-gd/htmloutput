@@ -30,6 +30,10 @@ sup{
   font-family: "Messenger Mono";
 }
 
+footnote{
+  display: none;
+}
+
 a {
 	text-decoration: none;
 	color: blue;
@@ -117,7 +121,7 @@ Styles for an individual page
 ----------------------------------*/
 
 .meta {
-	color: SeaGreen;
+	color: rgb(42, 204,66);
 	margin-bottom: 1.4rem;
 }
 
@@ -152,8 +156,8 @@ separated into print and web
 	margin-bottom: 18px;
 }
 
-.interview-q:before { content: ''; color: aquamarine; font-family: "Messenger Mono";}
-.interview-a:before { content: ''; color: aquamarine; font-family: "Messenger Mono";}
+.interview-q:before { content: ''; color: rgb(42,204,66); font-family: "Messenger Mono";}
+.interview-a:before { content: ''; color: rgb(42,204,66); font-family: "Messenger Mono";}
 
 .interview-a {}
 .interview-q {}

@@ -30,6 +30,10 @@ sup{
   font-family: "Messenger Mono";
 }
 
+footnote{
+  display: none;
+}
+
 a {
 	text-decoration: none;
 	color: blue;

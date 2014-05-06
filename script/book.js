@@ -215,16 +215,16 @@ function postProcessPages(){
     //}
 
     // [F] Footnotes for non-URLs
-    var footnotes = pg.querySelectorAll("[data-footnote]");
-    if(footnotes){
-      var notes = ""; // don't make this more than 3 lines or so!
-      for (var j = 0; j < footnotes.length; j++){
-        var material = footnotes[j].getAttribute("data-footnote");
-        footnotes[j].innertext = j; // set footnote number, each page starts at 0
-        notes += "<div><i>"+j+"</i> &#8212;"+material+"</div>";
-      }
-      pg.parentNode.querySelector(".footer").innerHTML = notes;
-    }
+    //var footnotes = pg.querySelectorAll("[data-footnote]");
+    //if(footnotes){
+    //  var notes = ""; // don't make this more than 3 lines or so!
+    //  for (var j = 0; j < footnotes.length; j++){
+    //    var material = footnotes[j].getAttribute("data-footnote");
+    //    footnotes[j].innertext = j; // set footnote number, each page starts at 0
+    //    notes += "<div><i>"+j+"</i> &#8212;"+material+"</div>";
+    //  }
+    //  pg.parentNode.querySelector(".footer").innerHTML = notes;
+    //}
 
   }
 
