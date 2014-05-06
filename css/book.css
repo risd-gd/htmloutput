@@ -248,17 +248,18 @@ Page size and paginalia
 	left: 0.8in;
 	right: 0.6in;
 	position: absolute;
-	font-size: 0.7em;
-	font-family: "Messenger Text";
+	font-size: 0.6em;
+	font-family: "Scout";
 }
 
 ._running-head ._footer i, ._book sup {
-	color: magenta;
+	color: blue;
 }
 
-sup {
-	font-size: 0.7em;
+._book sup {
+	font-size: 0.6em;
 	line-height: 0;
+	font-family: "Scout";
 }
 
 
