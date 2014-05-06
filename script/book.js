@@ -123,19 +123,26 @@ function preProcessPages() {
   }
 
   // [B] Detect hrefs and insert
-  var links = document.querySelectorAll("a[href]");
-  if (links) {
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute("href");
-      $("<sup data-href='" + href + "'>x</sup>").insertAfter(links[i]);
+  //var links = document.querySelectorAll("a[href]");
+  //if (links) {
+  //  for (var i = 0; i < links.length; i++) {
+  //    var href = links[i].getAttribute("href");
+  //    $("<sup data-href='" + href + "'>x</sup>").insertAfter(links[i]);
+  //  }
+  //}
+
+  // [C] find foonotes, add superscripts
+  var footnotes = $("footnote");
+  if(footnotes){
+    for(var i=0; i< footnotes.length; i++){
+      var material = footnotes.eq(i).html(); // this is working!!!
+      $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
+
     }
+
   }
 
-
 }
-
-
-
 
 // _________________________
 
@@ -195,19 +202,28 @@ function postProcessPages(){
 
 
     // [E] Set footnotes
-    var links = pg.querySelectorAll("[data-href]");
-    if (links) {
-      var notes = "";
-      for (var j = 0; j < links.length; j++) {
-        var href = links[j].getAttribute("data-href");
-        links[j].innerText = j;
-        notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
+    //var links = pg.querySelectorAll("[data-href]");
+    //if (links) {
+    //  var notes = "";
+    //  for (var j = 0; j < links.length; j++) {
+    //    var href = links[j].getAttribute("data-href");
+    //    links[j].innerText = j;
+    //    notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
 
-        //var temp = $("a").eq(j).html();
-        //$("a").eq(j).html(temp + "<span class='url'>["+j+"] "+href+"</span>");
+    //  }
+    //  pg.parentNode.querySelector("._footer").innerHTML = notes;
+    //}
 
+    // [F] Footnotes for non-URLs
+    var footnotes = pg.querySelectorAll("[data-footnote]");
+    if(footnotes){
+      var notes = ""; // don't make this more than 3 lines or so!
+      for (var j = 0; j < footnotes.length; j++){
+        var material = footnotes[j].getAttribute("data-footnote");
+        footnotes[j].innertext = j; // set footnote number, each page starts at 0
+        notes += "<div><i>"+j+"</i> &#8212;"+material+"</div>";
       }
-      pg.parentNode.querySelector("._footer").innerHTML = notes;
+      pg.parentNode.querySelector(".footer").innerHTML = notes;
     }
 
   }
