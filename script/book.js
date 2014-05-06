@@ -1,7 +1,6 @@
-var HAS_COMPLETED_ONE_LAYOUT = false;
-
 // Block polyfill from running unless we say so.
 window.cssRegionsManualTrigger = false;
+window.HAS_COMPLETED_ONE_LAYOUT = false;
 
 // ---------------
 // User interface
@@ -21,7 +20,7 @@ if (postproc) postproc.addEventListener("click", function(){
 
 // ==================
 // React to checkbox
-$("[type=checkbox]").change(function(e){
+$(".toc [type=checkbox]").change(function(e){
   var id = this.parentNode.getAttribute("data-toc");
   var elt = document.querySelector('[data-id="' + id + '"]');
 
@@ -34,7 +33,7 @@ $("[type=checkbox]").change(function(e){
 
 });
 // First lets uncheck them all!
-$("[type=checkbox]").attr("checked", false).change();;
+$(".toc [type=checkbox]").attr("checked", false).change();;
 
 // -------------------------------------
 // Enable UI when we know all images have loaded
