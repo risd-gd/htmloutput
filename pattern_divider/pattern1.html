@@ -1,0 +1,72 @@
+
+<html>
+
+	<head> 
+	
+<!-- 	Rules and Regulations to follow
+	1. Resave the filed on opening and add 1 to the final number.
+	2. Add your name to this list with the file name after.
+		John Caserta - pattern1.html
+		Chr - pattern2.html
+	3. Edit one of the container styles. Don't touch the other one.
+	4. Save and email your choice of next person that hasn't worked on it yet.	 -->
+
+		<title>Pattern</title>
+		<style>
+			/* Overflow, rgba, float/position, classes, recursive */
+
+			.container { position: absolute; width: 1000px; top: 0; left: 0;  } 
+			.container2 { position: absolute; width: 1000px; top: 0; left: 0; z-index: 2;  } 
+
+			.container div  { 
+				width: 40px; height: 40px;
+				float: left;
+				border-radius: 50%;
+				background: none;
+				border: 1px solid transparent;
+				margin: -1px;
+				margin-left: -35px;
+				}
+			.container div:nth-child(odd)  { 
+				border-bottom: 2px solid black;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				}
+			.container div:nth-child(even)  { 
+				border-top: 2px solid black;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				}
+			
+		</style>
+	</head>
+	
+	<body> 
+		<!-- jc: only this one is active -->
+		<div class="container">
+		<script>
+				i=0;
+				do {
+				  document.write("<div></div>");
+				  i++;
+				  }
+				while (i<6000) 
+  		</script>
+		</div>
+
+
+		<!-- jc: there is no css for this block -->
+		<div class="container2">
+		<script>
+				i=0;
+				do {
+				  document.write("<div></div>");
+				  i++;
+				  }
+				while (i<6000) 
+  		</script>
+		</div>
+
+	</body>
+
+</html>

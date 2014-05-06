@@ -20,30 +20,18 @@ Book overall style
 }
 
 ._book-content .url{
-  /*font-size: 4em;
-  color: magenta;
-  -webkit-transform: rotate(90deg);*/
   font-family: Messenger Mono;
-  /*width: 0pt;
+  width: 0pt;
   overflow: visible;
-  height: 0pt;*/
-	/*font-weight: bold;*/
-  /*opacity: 0.5;
+  height: 0pt;
+  opacity: 0.7;
   position: relative;
   top: -3pt;
-  left: -3pc;*/
-  /*-webkit-text-stroke: 0.9px magenta;*/
+  left: -3pc;
 
-  color: magenta;
-  /*color: white;
-  background-color: magenta;*/
-  opacity: 0.3;
-	position: absolute;
-	left: 0;
-	font-size: 4em;
-	line-height: 100%;
-	width: 100%;
-	word-break: break-word;
+  color: blue;
+	font-size: 0.6em;
+	xword-break: break-word;
 	z-index: -1;
   text-decoration: none;
   display: inline-block;
@@ -52,7 +40,7 @@ Book overall style
 
 ._book-content a{
   color: blue;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 ._sideways-page {
@@ -137,7 +125,7 @@ Table of contents
 }
 
 .toc-author {
-	color: green;
+	color: rgba(0, 255, 0, 1);
 }
 
 .toc-pg {
@@ -169,6 +157,10 @@ Interview print styles
 }
 
 .interview-q:before {
+	color: rgba(0, 255, 0, 1);
+}
+
+.interview-a:before {
 	color: black;
 }
 
@@ -184,7 +176,7 @@ Interview print styles
 }
 
 .interview-q {
-	color: green; /*rgb(0, 112, 255);*/
+	color: rgba(0, 255, 0, 1);
 }
 
 .interview-intro,
@@ -197,7 +189,8 @@ Interview print styles
 
 blockquote{
   color: red;
-  font-family: "Messenger Mono"; display: none;
+  font-family: "Messenger Mono";
+  display: none;
   /*
   margin-left:  -0.5pc;
   margin-right:  3pc;
@@ -206,9 +199,18 @@ blockquote{
   font-size: 2em;*/
 }
 
+mark { 
+	font-style: normal; 
+	background: rgba(0, 255, 0, .1);
+}
+
 .interview-matter{
   margin-top: 1pc;
   margin-bottom: 1pc;
+}
+
+del{
+  display: none;
 }
 
 
@@ -299,7 +301,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer i, ._book sup {
-	color: magenta;
+	color: blue;
 }
 
 ._book sup {

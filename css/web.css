@@ -1,8 +1,12 @@
+/* ----------------------------------
 
+Interview Styles
+
+----------------------------------*/
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
-mark { font-style: normal; background: rgba(0,255,0,.2);}
-s { color: grey;}
+mark { font-style: normal; background: rgba(0, 255, 0, .1);}
+s { color: grey;} 
 img{
   margin-left: -20px;
   margin-top: 20px;
@@ -24,9 +28,4 @@ blockquote{
   font-family: "Messenger Mono";
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.interview-matter{
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
