@@ -4366,7 +4366,7 @@ var cssRegionsHelpers = {
                         if(cssValue && cssValue.length) {
                             
                             // if we have a specified value, let's use it
-                            // node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
+                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
                             
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
                             
@@ -5040,7 +5040,11 @@ var cssRegions = {
         }
             
         // now, let's try to find a break-before/break-after element before the splitting point
-        var current = r.endContainer; if(current.hasChildNodes()) {current=current.childNodes[r.endOffset-1]};
+        var current = r.endContainer;
+        if (current.hasChildNodes()) {
+            current = current.childNodes[r.endOffset-1];
+            // if (n) current = n; // - EB maybe fixes error?
+        };
         var first = r.endContainer.firstChild;
         do {
             if(current.style) {

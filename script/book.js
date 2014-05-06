@@ -103,7 +103,7 @@ function reportPagesLeft(p) {
 
 function preProcessPages() {
 
-
+  // [A] Clone image spreads
   var imageSpreads = document.querySelectorAll("[data-imagespread]");
   for (var i = 0; i < imageSpreads.length; i++) {
     var oldNode = imageSpreads[i];
@@ -122,7 +122,28 @@ function preProcessPages() {
     oldNode.parentNode.removeChild(oldNode);
   }
 
-  // [B] Detect hrefs and insert
+  // [B] Clone text spreads
+  var textSpreads = document.querySelectorAll("[data-textspread]");
+  for (var i = 0; i < textSpreads.length; i++) {
+    var baseNode = textSpreads[i];
+
+    var pt2 = baseNode.cloneNode(true);
+    pt2.setAttribute("data-sideways-part", "2");
+
+    var pt3 = baseNode.cloneNode(true);
+    pt3.setAttribute("data-sideways-part", "3");
+
+    $(baseNode).after([
+      $('<div class="_page-break"></div>'),
+      pt2,
+      $('<div class="_page-break"></div>'),
+      pt3
+    ]);
+  }
+
+
+
+  // [C] Detect hrefs and insert
   var links = document.querySelectorAll("a[href]");
   if (links) {
     for (var i = 0; i < links.length; i++) {

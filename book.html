@@ -72,15 +72,12 @@ Table of Contents
 -->
 <h1 class="toc-heading">Contents</h1>
 
-{% for category in site.types %}
 <div class="toc">
-  <h3 class="toc-title">{{ category }}</h3>
 
-  {% for page in site.pages %}
-  {% if page.category == category %}
+{% for page in site.pages %}
   {% if page.printready %}
     <div class="toc-item">
-      {% if category == 'interview' %}
+      {% if page.category == 'interview' %}
         <h4>{{ page.interviewee }} talks to {{ page.interviewer }}</h4>
       	<div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
@@ -96,13 +93,39 @@ Table of Contents
       {% endif %}
     </div>
   {% endif %}
-  {% endif %}
-  {% endfor %}
-</div>
 {% endfor %}
+</div>
 
 <div class="_page-break"></div>
+<div class="_page-break"></div>
 
+<!--
+____________________________________________________
+
+Test textspread
+-->
+<figure class="_sideways-page" data-textspread data-fullbleed>
+  <h1>
+    Jurg Lehni
+    talks to
+    Daniel
+    Giudetta
+    and Phil
+    Cao
+  </h1>
+</figure>
+
+<!--<figure class="_sideways-page" data-textspread data-fullbleed>
+  <h1>
+    Jurg Lehni
+    talks to
+    Daniel
+    Giudetta
+    and Phil
+    Cao
+  </h1>
+</figure>-->
+<div class="_page-break"></div>
 
 
 <!--
@@ -115,14 +138,16 @@ All Content
 
 {% for category in site.types %}
 
-<!-- Category Page -->
 
+{% comment %}
+<!-- Category Page -->
 <h1 class="category-name"
-	data-change-page-kind="section-page">
-	{{ category }}
+	data-change-page-kind="section-page"
+  data-id="{{ category }}">
+	 test {{ category }}
 </h1>
 <div class="_page-break"></div>
-
+{% endcomment %}
 
 <!-- Content Page -->
 

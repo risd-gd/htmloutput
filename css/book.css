@@ -55,6 +55,36 @@ Book overall style
   text-decoration: underline;
 }
 
+._sideways-page {
+	overflow: hidden;
+	position: relative;
+	/*height: 4in;*/
+}
+
+._bleed ._sideways-page {
+	/*height: 7.05in;*/
+}
+
+._sideways-page h1 {
+	position: absolute;
+	top: 50%;
+	left: -2.5in;
+	width: 6in;
+	font-size: 90pt;
+	line-height: 100%;
+	-webkit-transform: rotate(-90deg);
+	-webkit-transform-origin: top center;
+}
+
+._sideways-page[data-sideways-part='2'] h1 {
+	left: -6.75in;
+}
+
+._sideways-page[data-sideways-part='3'] h1 {
+	left: -11in;
+}
+
+
 /* ----------------------------------
 
 Title page
