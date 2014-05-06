@@ -44,6 +44,8 @@ a:hover{
 	top: 100px;
 
 	width:200px;
+	max-height: 400px;
+
 	padding:25px;
 	/* border:1px dotted black; */
 	margin:15px;
