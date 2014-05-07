@@ -18,26 +18,47 @@
 			.container { position: absolute; width: 1000px; top: 0; left: 0;  } 
 			.container2 { position: absolute; width: 1000px; top: 0; left: 0; z-index: 2;  } 
 
-			.container div  { 
-				width: 70px; height: 40px;
+		.container div  { 
+				width: 40px; height: 40px;
 				float: left;
 				border-radius: 50%;
 				background: none;
-				border: 3px solid transparent;
-				margin: -5px;
-				margin-left: -45px;
-
+				border: 1px solid transparent;
+				margin: -1px;
+				margin-left: -35px;
 				}
 			.container div:nth-child(odd)  { 
-				border-bottom: 2px solid purple;
+				border-bottom: 2px solid black;
 				-webkit-transform: rotate(45deg);
 				-moz-transform: rotate(45deg);
-
 				}
 			.container div:nth-child(even)  { 
-				border-top: 5px solid orange;
+				border-top: 2px solid black;
 				-webkit-transform: rotate(-45deg);
 				-moz-transform: rotate(-45deg);
+				}
+
+				.container2 div  { 
+				
+				float: left;
+				margin:-40px -30px -30px -30px;
+				}
+			.container2 div:nth-child(odd)  { 
+				background: palegreen; 
+
+				border:solid 50px coral;
+
+				width:50px;
+				height:50px;
+				}
+			.container2 div:nth-child(even)  { 
+				background: palegreen; 
+
+				border:solid 50px coral;
+				width:100px;
+				height:100px;
+				border-radius:100px;
+				margin-top:50px;
 				}
 			
 		</style>
