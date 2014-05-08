@@ -1,3 +1,5 @@
+/*jshint laxcomma:true */
+
 // Block polyfill from running unless we say so.
 window.cssRegionsManualTrigger = false;
 window.HAS_COMPLETED_ONE_LAYOUT = false;
@@ -171,7 +173,7 @@ function preProcessPages() {
 
 function postProcessPages(){
 
-  document.documentElement.classList.add("_bleed-enabled")
+  document.documentElement.classList.add("_bleed-enabled");
 
   // Persists as we loop through pages
   var head  = ""
