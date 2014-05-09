@@ -5,6 +5,13 @@ Book overall style
 
 ----------------------------------*/
 
+.printy{
+  display: visible;
+}
+.noprinty{
+  display: none;
+}
+
 ._book {
 	font: 12pt/1.4 'Benton Modern', sans-serif;
 	text-rendering: optimizeLegibility;
@@ -291,7 +298,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6.15in;
+	top: 6.25in;
 	left: 0.8in;
 	right: 0.6in;
 	position: absolute;
