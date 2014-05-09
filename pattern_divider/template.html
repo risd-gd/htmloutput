@@ -15,43 +15,40 @@
 
 		<title>Pattern</title>
 		<style>
-			/* Overflow, rgba, float/position, classes, recursive */
 
-			.container { position: absolute; width: 1000px; top: 0; left: 0;  } 
+			.container { width: 1000px;  } 
 
 			.container div  { 
 				width: 20px; height: 20px;
 				float: left;
 				border-radius: 50%;
 				background: none;
-				border: 1px solid transparent;
-				margin: 0px;
-				margin-left: 0px;
 				}
 			.container div:nth-child(odd)  { 
+				margin: 0px;
+				margin-left: 0px;
 				border-left: 1px solid black;
 				border-right: 1px solid black;
 				border-bottom: 1px solid black;
 				border-top: 1px solid black;
 				-webkit-transform: rotate(45deg);
 				-moz-transform: rotate(45deg);
-				rotate(45deg);
 				}
 			.container div:nth-child(even)  { 
+				margin: 0px;
+				margin-left: 0px;
 				border-left: 1px solid black;
 				border-right: 1px solid black;
 				border-bottom: 1px solid black;
 				border-top: 1px solid black;
 				-webkit-transform: rotate(-45deg);
 				-moz-transform: rotate(-45deg);
-				rotate(-45deg);
 				}
 			
 		</style>
 	</head>
 	
 	<body> 
-		<!-- jc: only this one is active -->
 		<div class="container">
 		<script>
 				i=0;
@@ -62,8 +59,6 @@
 				while (i<6000) 
   		</script>
 		</div>
-
-
 
 	</body>
 
