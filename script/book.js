@@ -1,5 +1,7 @@
 /*jshint laxcomma:true */
 
+// THIS HELPS PREP CONTENT FOR THE BOOK FORMAT.
+
 // Block polyfill from running unless we say so.
 window.cssRegionsManualTrigger = false;
 window.HAS_COMPLETED_ONE_LAYOUT = false;
@@ -158,9 +160,22 @@ function preProcessPages() {
     for(var i=0; i< footnotes.length; i++){
       var material = footnotes.eq(i).html(); // this is working!!!
       $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
-
     }
+  }
 
+  // [D] Swap GIFs out for fixed PNG version
+  // requires there be a .png version of the frame people want in print.
+  var num_images = $("img").length;
+  for(i=0; i<num_images; i++){
+    var src = $("img").eq(i).attr("src");
+    var end = src.length;
+    var start = end-4;
+
+    if(src.substring(start,end)==".gif"){
+      alert("WE FOUND ONE LADDY!");
+      // swap out PNG extension with fixed frame for printing
+      $("img").eq(i).attr("src",src.substring(0,start)+".png");
+    }
   }
 
 }
@@ -313,7 +328,11 @@ function trimRegions(flowName) {
     return(true);
 }
 
-// URLs in Book
+// -------------------------
+
+// URL STYLING
+
+// -------------------------
 var num_links = $("a").length;
 
 for(i=0; i<num_links; i++){
@@ -340,5 +359,4 @@ for(i=0; i<num_links; i++){
   $("a").eq(i).html("<span class='url'>"+url+"</span>" + temp);
 
 }
-
 
