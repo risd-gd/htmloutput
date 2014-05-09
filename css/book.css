@@ -21,17 +21,16 @@ Book overall style
 
 ._book-content .url{
   font-family: Messenger Text;
+  position: relative;
+  height: 0;
   width: 0;
   overflow: visible;
-  height: 0;
   opacity: 0.7;
-  position: relative;
-  top: 5pt;
-  left: -3pc;
+  top: 1pt;
+  left: 0pt;
   color: blue;
   font-size: 0.6em;
   z-index: -1;
-  text-decoration: none;
   display: inline-block;
 }
 
@@ -292,7 +291,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6in;
+	top: 6.15in;
 	left: 0.8in;
 	right: 0.6in;
 	position: absolute;
