@@ -1,0 +1,68 @@
+
+<html>
+
+	<head> 
+	
+<!-- 	Rules and Regulations to follow
+	1. Resave the filed on opening and use your name as filename.
+	2. Only change css values below (no selectors, no properties, no html)
+	
+	Example: .containter { border: 1px solid dashed; }
+	 do not change the selector  .container or property  "border"
+		 -->
+
+		<title>Pattern</title>
+		<style>
+			/* Overflow, rgba, float/position, classes, recursive */
+
+			.container { position: absolute; width: 1000px; top: 0; left: 0;  } 
+
+			.container div  { 
+				width: 20px; height: 20px;
+				float: left;
+				border-radius: 50%;
+				background: none;
+				border: 1px solid transparent;
+				margin: 0px;
+				margin-left: 0px;
+				}
+			.container div:nth-child(odd)  { 
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-top: 1px solid black;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				rotate(45deg);
+				}
+			.container div:nth-child(even)  { 
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-top: 1px solid black;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				rotate(-45deg);
+				}
+			
+		</style>
+	</head>
+	
+	<body> 
+		<!-- jc: only this one is active -->
+		<div class="container">
+		<script>
+				i=0;
+				do {
+				  document.write("<div></div>");
+				  i++;
+				  }
+				while (i<6000) 
+  		</script>
+		</div>
+
+
+
+	</body>
+
+</html>
