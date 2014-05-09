@@ -20,21 +20,19 @@ Book overall style
 }
 
 ._book-content .url{
-  	font-family: Messenger Text;
-  	width: 0;
-  	overflow: visible;
-  	height: 0;
-  	opacity: 0.7;
-  	position: relative;
- 	text-indent: 0;
- 	top: 5pt;
-  	left: 0; /*-3pc;*/
-  	color: blue;
-	font-size: 0.6em;
-	xword-break: break-word;
-	z-index: -1;
-  	text-decoration: none;
-  	display: inline-block;
+  font-family: Messenger Text;
+  width: 0;
+  overflow: visible;
+  height: 0;
+  opacity: 0.7;
+  position: relative;
+  top: 5pt;
+  left: -3pc;
+  color: blue;
+  font-size: 0.6em;
+  z-index: -1;
+  text-decoration: none;
+  display: inline-block;
 }
 
 ._book-content a{
@@ -200,8 +198,8 @@ blockquote{
   font-size: 2em;*/
 }
 
-mark { 
-	font-style: normal; 
+mark {
+	font-style: normal;
 	background: rgba(0, 255, 0, .1);
 }
 
@@ -345,6 +343,10 @@ Page size and paginalia
 Footnotes
 
 ----------------------------------*/
+
+footnote{
+  display: visible;
+}
 
 .page-outer > footnotes{
   position: absolute;
