@@ -172,7 +172,7 @@ function preProcessPages() {
     var start = end-4;
 
     if(src.substring(start,end)==".gif"){
-      alert("WE FOUND ONE LADDY!");
+      //alert("WE FOUND ONE LADDY!");
       // swap out PNG extension with fixed frame for printing
       $("img").eq(i).attr("src",src.substring(0,start)+".png");
     }
