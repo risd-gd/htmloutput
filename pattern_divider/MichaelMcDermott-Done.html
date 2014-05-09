@@ -1,0 +1,65 @@
+
+<html>
+
+	<head> 
+	
+<!-- 	Rules and Regulations to follow
+	1. Resave the filed on opening and use your name as filename.
+	2. Only change css values below (no selectors, no properties, no html)
+	
+	Example: .containter { border: 1px solid dashed; }
+	 do not change the selector  .container or property  "border"
+
+	3. Keep it black and white for now. We'll discuss another color in class. Having it be one color is good.
+		 -->
+
+		<title>Pattern</title>
+		<style>
+			/*Added margin left and margin top to get it to flow off the screen, otherwise it was being weird.*/
+			.container { width: 120%; margin-left:-100px; margin-top: -500px;  } 
+
+			.container div  { 
+				width: 40px; height: 200px;
+				float: left;
+				border-radius: 0%;
+				background: white;
+				}
+			.container div:nth-child(odd)  { 
+				margin: -10px;
+				margin-left: 0px;
+				border-left: 10px dashed black;
+				border-right: 50px dashed black;
+				border-bottom: 20px dashed black;
+				border-top: 1px dashed black;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				}
+			.container div:nth-child(even)  { 
+				margin: 0px;
+				margin-left: 0px;
+				border-left: 10px solid black;
+				border-right: 1px solid white;
+				border-bottom: 1px solid black;
+				border-top: 10px solid black;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				}
+			
+		</style>
+	</head>
+	
+	<body> 
+		<div class="container">
+		<script>
+				i=0;
+				do {
+				  document.write("<div></div>");
+				  i++;
+				  }
+				while (i<6000) 
+  		</script>
+		</div>
+
+	</body>
+
+</html>
