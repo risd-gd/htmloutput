@@ -1,0 +1,218 @@
+/*********** CSS RESET **********/
+
+/*
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+} 
+
+
+/********** TYPE **************/
+@font-face {
+                font-family: 'messengermono';
+                src: url('messenger-mono.eot');
+                src: url('messenger-mono.eot?#iefix') format('embedded-opentype'),
+                     url('messenger-mono.woff') format('woff'),
+                     url('messenger-mono.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+@font-face {
+    font-family: 'messengertext';
+    src: url('messenger-text.eot');
+    src: url('messenger-text.eot?#iefix') format('embedded-opentype'),
+         url('messenger-text.woff') format('woff'),
+         url('messenger-text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*.bentonmodernroman {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: normal;
+}*/
+
+body {
+    font-family: "Benton Modern RE", georgia, times, serif;
+    font-size: 16pt;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/********** Container and Wrapper ***********/
+
+.container {
+
+    width: 252pt;
+    height: 441pt;
+    background-color: white;
+    border: 1px solid gray;
+    -webkit-box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    margin: 80px auto;
+    padding: 27pt;
+    page-break-after: always;
+}
+
+.wrapper {
+    margin:0;
+    width:252pt;
+    height: 441pt;
+    position: relative;
+}
+
+/********** Content Elements *************/
+
+#main-image {
+    width: 225pt;
+    height: 414pt;
+    background-image: url("../img/img_04_yahoo.jpg");
+    background-position: center;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+#main-image figcaption {
+    position: absolute;
+    bottom: 27pt;
+    left: 27pt;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    padding: 3pt;
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 6pt;
+    line-height: 7pt;
+}
+
+h1 {
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 30pt;
+    line-height: 36pt;
+    color: black;
+    background-color: white;
+    text-align: left;
+    
+    width:225pt;
+    margin: 0;
+    padding: 3pt;
+    position: absolute;
+    top:27pt;
+    left:0;
+    z-index: 3;
+
+}
+
+.project-meta {
+
+    position: absolute;
+    width:72pt;
+    z-index: 2;
+    padding: 9pt;
+    margin: 0;
+    left:0;
+    top:81pt;
+    background-color: rgba(96,96,96,0.75);
+}
+
+.project-meta div {
+    margin: 0 0 14pt 0;
+}
+
+.project-meta h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 8pt;
+    line-height: 10.5pt;
+    text-decoration: underline;
+    color: white;
+    text-align: left;
+}
+
+.project-meta p {
+    margin:0;
+    padding:0;
+    font-family: 'messengermono', monospace;
+    font-size: 8pt;
+    line-height: 10.5pt;
+    color: white;
+    text-align: left;
+}
+
+
+.description {
+    width: 144pt;
+    padding: 9pt 0 0 9pt;
+    font-family: "Benton Modern RE", georgia, times, serif;
+    font-size: 9pt;
+    line-height: 14pt;
+    color: black;
+    background-color: white;
+    text-align: left;
+    position: absolute;
+    right:0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.description:first-letter {
+    float: left; 
+    color: black;
+    font-family: "BentonModernDispBlack", georgia, times, serif; 
+    font-size: 27pt;  
+    padding-top: 5pt; 
+    padding-right: 3pt; 
+    padding-left: 0; 
+    padding-bottom: 3pt;
+}
+
+
