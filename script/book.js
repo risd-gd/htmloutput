@@ -361,3 +361,14 @@ for(i=0; i<num_links; i++){
 
 }
 
+// -------------------------
+
+// SYMBOLS PREPARATION
+
+// -------------------------
+
+// Dashes
+
+// Smart Quotes
+
+// Non-breaking hyphens &#8209;

@@ -39,6 +39,7 @@ Book overall style
   font-size: 0.6em;
   z-index: -1;
   display: inline-block;
+  white-space: nowrap; <!-- necessary to prevent line breaks -->
 }
 
 ._book-content a{
