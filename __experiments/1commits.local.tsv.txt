@@ -1,0 +1,760 @@
+sync thing.
+illos
+spread
+ing wrap
+edits
+edits
+update
+figure tag
+edits
+highlights
+more edits
+interview edits
+webb pattern
+w
+image
+quotes
+b
+pt 2
+command p
+credit
+fix
+width
+figure tag
+animated gif
+Footnote in Pieratt.
+Printy & NoPrinty classes
+Footnotes now working.
+Finishing URL & Footnote Styles
+Footnotes working. Changing URL styling.
+update(final?)
+My Pattern, finished!
+GIF>PNG Finished
+GIF to PNG Test
+Test for GIF Printing
+Lukas BW Pattern
+edits
+color statement
+cleanup
+patterns
+fix alignment
+Tiny edits made in my text editor because it works!
+Pattern update
+cleaner
+fixed
+up
+up
+up
+text up
+up
+up
+updates
+tweaks to margins and urls
+messing with urls
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+prototype for overflowing text spreads
+lala
+fixes
+updates
+edits
+ugh another sync issue
+another little sync issue
+stuff
+Footnote formatting cont.
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Colors again yeah
+Tryna real footnotes
+pattern
+edit
+colors
+edited image links
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+edits
+pattern
+updates
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+git doing stuff?
+Colors
+added a type landscape projects
+edit
+edits
+Colors
+Testing as "Project" category
+edit
+sync thing
+mark color
+edits
+something
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+URL http & www stripping
+images
+colors again
+imagesss
+Color Commits
+images2
+images
+patterns
+Colors
+Colors
+iamge2
+Aquamarine
+crisis averted
+image
+images
+URL Styling, squeezed between lines
+Color Updates
+images
+edit
+RULES AND REGS
+pattern
+lil tiny thing
+Editing Pieratt <del> tag
+fixing sidebar in cathy experimentz
+cathy index mockup fun fun fun
+image add
+better preview, more green
+URL styling.
+Strip "http://" from URLs before print
+More URL Styling.
+Stab at a Print Intro
+edit
+edit
+update
+inline images
+edit
+test
+fixing file
+more projects
+edit
+edit
+edit
+edit
+edit
+edits
+edits
+edits
+edits
+edit
+edit
+edit
+edits
+edits
+edits
+edits
+tone down interview initials, bigger page numbers
+fix for checkboxes
+Book system is now almost usable! Featuring checkboxes!
+Footnotes. It's cool that they are 0-indexed right?
+fixes to footnotes and printing scale
+(fixed) Add crop marks and url footnotes
+edits
+edits
+edits
+crop marks and printing tweaks
+bleeds
+image bleed
+merge my stuff plz git
+  sandboxed my updates
+made image width 100%
+correctes svg issues
+added the image
+added an image to my interview
+Added letterhead project description and image
+Deleted my individual project
+Amended Michael's Project
+title
+edits
+updates
+edits
+video embed
+essay
+edits
+edits
+edits
+edits
+value paperback
+Undo some CSS regions hacks (broke height detection)
+fix one typo that breaks everything (yikes)
+Nicer running heads
+nicer running heads
+Modified Jason Pamental Interview
+Experiment with oversized/overlaid URLs
+Add placeholder initials so measuring is accurate
+Added a handy "refresh CSS" button
+(rough) ability to style page treatment based on category.
+Working PAGE NUMBERS in the table of contents
+Prep TOC a little better. Initials work now.
+adjustments to interview-to-book system
+margins
+leading
+edits
+text matter
+text-rendering in style
+fontsize
+margins
+css
+edits
+armand updates
+edits
+edits
+blue
+cyan
+colors
+title on reinfurt
+0
+ignore
+misc improvements to book generator (works in FF)
+edits
+Updated /book/ to give better print preview
+fonts
+Improved automatic-add-bleed code
+old bleed code
+book.js functions run automatically
+CSS Regions will only perform layout once
+pre-processor for book.js splits images into spreads
+don't need to markdownify content in book
+better class name/structure to running heads.
+New _recto and _verso classes
+stop inserting extra stylesheets (performance?)
+add data-elements to book for running heads
+Prototype running-head generator
+removed extra copy of book-static
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Added /book-static/ so we can play with css better
+layout adjustments
+page layouts
+fewer images
+swapped img
+paths
+Link Coloring
+test
+test
+image edits
+image edits
+image edits
+images
+pdf on smaller page size
+first full-length exported pdf (!)
+various fixes to printing/regions issues
+If not printready, leave off table of contents
+added print ready:true to a bunch of interviews
+edits3
+edits2
+edits
+text edits
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Web inspector works in book mode now
+Improved book structure / fleshed out styles
+margins
+Got rid of "print" category type
+Added progress bar for page layout because hey why not
+fixes to visibility
+hide all book content until loading is done.
+Trying improve book layout speed. Also gif.
+image files
+add more pages
+added my part of important project
+hide content before flow
+added that file directory
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Fixed file paths for book print
+paths
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+adding images
+jesus fuck
+project update
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+gosh dang
+Fixed image tags
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Michael deleted stuff
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+added project
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Testing Webb's Soulellis
+new stuff
+fix
+limit image width
+fewer bilaks
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Added a Dear Chrome project folder
+removing multiple bilaks
+doing things
+ok
+deleted old file
+lil rename to soulellis interview
+Added audio link
+Splitting Up interview styles.
+tweak?
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+interview css
+some edits
+Adding "interview-intro" class
+18px
+delete
+margin to bottom of section
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+URL Vertical Orientation
+Index mockup cleanup
+spaces?
+Reinfurt Interview Non Edit
+tweaks to bleed setting
+Removed an extra img in index
+edits
+edits
+size
+margins
+margins
+edits
+Added index mockup
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+pixels
+styles
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+doooin it
+interview change
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+animation edits
+Fixed some weird CSS in JL interview
+mdash
+misc changes
+styles
+small page numbers
+edits
+spelling
+no body styles
+create leclair interview
+paragraph spacing
+interview text edits
+moved styles
+Added a <blockquote> tag to JL interview
+improvements to page breaks and bleeds
+URL Styling
+Got rid of those extra <br> tags
+Added extra <br> tags
+fixing
+no unicode :'( ( ( (
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+URL Styling, removing footnotes
+updates soulellis
+Nice indenting and polishing on Jurg
+styles
+more updates - soulellis
+Completed basic markdown for Jurg interview
+update interview
+made my own type experiment
+claiming my territory
+Initial markup for Jurg interview
+styles
+styles
+markup updates
+Adding web.css to all the templates
+interview formatting
+iframes
+Variety of small changes
+Establishing Interview in style.css
+Lil' Mevis Initials Fix
+Fixing Armand Mevis Interview
+peter interview fix
+Initializing web.css
+small page size!
+Assorted Formatting
+fix pierrat indentation
+Adding John's interviews as print ready.
+tweaks to book.html. Also I'm calling this "bookyll"
+name
+edit to title
+intials
+interview changes
+some spanz
+type tests for itnerviews
+Edited interview text
+cathytests
+cathytests
+Small tidies to endnote functionality
+Endnotes Now Working
+interview changes
+Formatting Interview
+formatting interview
+interview changes
+added initials to my interview
+soulellis edits
+Added full interview text
+soulellis edits
+soulellis edits
+edits
+edits
+soulellis edits
+soulellis interview using template
+Fixed it.
+Testing if my local server is working
+Removing some scrap
+OK something got funky
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Print Matter Integration, esp Endnotes
+More testing of endnote/footnotes
+marked up peter interview
+sample page for printing tests
+Pieratt Interview Finalizing
+Footnote Page Test 36
+Footnote Page Test 35
+Footnote Page Test 34
+Footnote Page Test 33
+Footnote Page Test 33
+Footnote Page Test 32
+Footnote Page Test 31
+Footnote Page Test 30
+Footnote Page Test 29
+Footnote Page Test 28
+Footnote Page Test 27
+Footnote Page Test 26
+TRYNA FIX THE DAMN THING
+Footnote Page Test 25
+Footnote Page Test 26
+Footnote Page Test 25
+Footnote Page Test 24
+Footnote Page Test 23
+Footnote Page Test 23
+Footnote Page test 22
+Footnote Page test 22
+fixes to full-bleed code
+running heads test
+Footnote Page Test 21
+Disable one-time-use buttons
+Footnote Page Test 21
+Footnote Page Test 20
+Footnote Page Test 19
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+detect bleed images (rough)
+Footnote Page Test 18
+Footnote Page Test 17
+Footnote Page Test 18
+Footnote Page Test 17
+Footnote Page test 16
+Footnote Page Test 15
+Footnote Page Test 14
+Footnote Page Test 13
+Footnote Page Test 13
+Footnote Page Test 12
+Footnote Page Test 11
+Footnote Page Test 10
+Footnote Page Test 9
+Footnote Page Test 8
+Footnote Page Test 7
+Footnote Page Test 6
+Footnote Page Test 5
+Footnote Page test 4
+Footnote Page test 3
+Footnote Page test 2
+Footnote page test 1
+Assigning footnotes to the correct page
+footnotes content test 1
+footnotes content test!!!
+footnote position test 8
+footer position test 8
+footer position test 7
+footer position test 6
+footnotes position test 5
+footer position test 4
+footer position test 3
+footer position test 2
+Footnote positioning test 1
+Testing Footnote Position
+mas
+overflow
+overflow
+overflow
+ylw
+more ylw
+no float
+widths
+heights
+heights
+widths
+margins
+Test Print
+hide bleed when not in guide mode
+Better comments in book.js
+guides default to on
+Testing blockquote/image spacing
+tweaks to spreads
+renamed to book.js
+move book scripts to their own file
+Tiny {{interviewer}} changes.
+Additional Interview Formatting
+preliminary support for removing extra pages
+Spaces before Initials in Interview
+smaller margins in print preview
+Better support for spreads, guides in book preview
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+refinements to book system— allow for spreads
+book styles are distinct from print styles
+fixes for book printing
+regenerated site elements
+new class '_book' to represent book styles
+Don't need to sync _site folder...
+blub blub
+Finishes touches to Pieratt Interview
+Finalizing Pieratt Interview
+Ben Pieratt Interview
+Building out the interview template
+Interview meta formatting
+Eliminating Initials in header
+Still trying to right my wrong…
+Fixing Pseudo-classes in interview format
+Ugh I broke something again
+Structuring universal interview format
+styles
+messenger on page
+no margin p
+margins
+body
+quantity
+pattern
+amt of pattern
+less pattern
+left 0
+changes
+z-index
+patterns
+cat change
+edits
+styles
+edits
+edits
+directory change
+new styles
+edits
+transcribing
+fun
+font
+size
+12pt
+pt to px
+edits
+edits
+transcribing
+dash
+dash
+ems
+indent
+margins
+marginright
+margin
+margin
+text
+txt
+text
+edits
+typesetting
+width
+width
+text
+css
+edits
+lineheight
+text
+text
+text
+q
+fonts
+typesetting
+fixed index link
+css
+Typesetting
+css
+font size
+body size
+benton
+padding
+margins
+color
+margins
+margins and size
+Text
+Patterns project
+Folder Naming Conventions
+Changed folder names
+markup adjustments
+converted to new markup
+interview updates
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+(regenerated site)
+fixed templates
+font
+font/lead
+bentonere
+Larger size
+New tags added
+Markup changes
+Remap styles
+Killed body
+Layout change
+Path changes
+Type updates
+cleaned up code junk
+Some index page margin work.
+misc regenerated changes
+clean out columns, etc
+move script to bottom in od-letterhead
+deleted old sample templates
+teeny tiny standalone update
+Workin on dat standalone
+Changed 'to' to 'with'
+Profiling Wikipedia
+misc changes
+OK Pieratt's back
+return 8
+return 7
+break 6
+break 5
+break try 4?
+break try 3
+unbreak print-all page
+again?
+line break?
+blank returns
+uhh
+Quotes?
+change layout to standalone
+testing 123
+added h6!
+floated images
+soulellis interview
+edit
+Testing some things
+Type tweaks
+Type tweaks
+Type tweaks
+Case change
+change back to page
+various other peoples changes
+Added a link to my css
+Gothic 60 in styles
+Applying Gothic60
+change to standalone
+add css to project page
+Adding Gothic 60 to type
+Taking out pieratt.html again, to avoid breaking.
+add header to html project page
+Modified CSS to OD-letterhead
+fixing link
+Testing Out Stylesheet
+deleted h1
+OD-letterhead no spaces
+Paul Soulellis Interview
+messing with the order of the script
+Create project folder
+WebTyped
+fix readme
+Removed h1
+Changed Jurg Lehni questions to Page template
+Jurg Lehni Questions
+still tryna
+Tryna Fix Pieratt
+Bye Bye Pieratt
+removed period
+Dan build
+Kelly's changes
+Changed Title
+fix exclamation point
+Added a New Project
+Fixed Title
+Unknown changes
+OK, back to include.
+Removing Include
+fix
+Removed Cat stuff
+Creating my project folder
+changes
+Standalone Format Update Again
+BOUT TO TRY SUMTHIN WITH THE LAYOUT
+pieratt interview page update #2
+micro push for pieratt testing
+Fitting Pieratt into Jekyll
+Iteration Updates
+Iterations
+Type updates
+Ugh, comment error.
+readme improvements
+Moving scrolly.js
+Adjusting standalone template.
+Testing Standalone Pg Bar
+fixed conflicts
+removed tag that broke jekyll build
+fixed print buttons
+Added WIP Pieratt Interview
+Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+Started layout for standalone pages.
+Fixes to the README
+misc style tweaks
+switch pages to new "page" layout file (adds title)
+Added Scroll Position Project
+Switched to kramdown so github stops complaining
+Add Table of Contents stub and various print stuff
+More markup
+More layouts
+Typesetting
+Marked up
+Web type
+Created Linked by Air
+switched everything to default template
+baseurl issue fixed
+attempt to fix baseurl issues
+Added print button to index
+better commenting, slicker print preview
+Better commenting
+Added comments to print.html
+better print styles
+fix to readme
+updates to style and read me
+Fixed issue with relative paths to CSS
+Moved Jekyll to root directory and renamed stuff
+Move everything to /__experiments
+Added CSS regions polyfill for print control
+misc design boilerplate
+more sample data
+Added web fonts and improved readme
+Improved default styles, general setup
+Added readme for the jekyll site
+Get jekyll even more set up
+Added a space?
+Editing my own homepage ideas
+(Catherine's changes)
+color chan
+Added Confetti & Randomized Text
+updated iframe
+Created Marquee BG
+Added iframe tests
+Columns when printing in Firefox
+jekyll folder contents :
+Deleting jekyll.
+Created a site folder containing an initial version of a landing page with some basic elements, e.g. print button, masthead content, lil screenshots.
+jekyll example directory and pages
+updated writing
+Messenger Font added to mix
+margins
+body margin
+writing
+Separating essay from web type spec
+More size options
+All the web type fonts
+Added benton
+Type experiments with writing
+Font size 1000px
+Cleaned up Fetch Head
+Added a message from John Maeda
+fixed conflicts
+Merge branch 'master' of https://github.com/risd-gd/htmloutput
+Added a very important title
+Added 'no'
+Merge branch 'master' of https://github.com/risd-gd/htmloutput
+Added a lorem ipsum
+Merge branch 'master' of https://github.com/risd-gd/htmloutput
+icecream
+Added a blink tag
+Altered the text
+New page, this is awesome!
+hacker
+cathyhax
+Initial commit

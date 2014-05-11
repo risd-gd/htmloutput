@@ -1,0 +1,760 @@
+9dbb8a2	Lukas	Sat May 10 09:46:02 2014	sync thing.
+b6c22e8	John Caserta	Sat May 10 07:30:12 2014	illos
+3f04736	John Caserta	Sat May 10 07:29:08 2014	spread
+4f6417f	John Caserta	Sat May 10 07:26:35 2014	ing wrap
+4d57409	John Caserta	Sat May 10 07:25:33 2014	edits
+6120dd4	John Caserta	Sat May 10 07:19:58 2014	edits
+9ae3c89	John Caserta	Sat May 10 07:18:31 2014	update
+1b6d1e7	John Caserta	Sat May 10 07:13:57 2014	figure tag
+dfa14f0	John Caserta	Sat May 10 07:12:21 2014	edits
+1c0a3ec	xtinaland	Fri May 9 22:07:49 2014	highlights
+7c28843	xtinaland	Fri May 9 22:02:53 2014	more edits
+021583d	xtinaland	Fri May 9 21:57:37 2014	interview edits
+b894c6c	xtinaland	Fri May 9 12:30:34 2014	webb pattern
+572222a	xtinaland	Tue May 6 22:37:08 2014	w
+427b4e3	John Caserta	Fri May 9 19:39:11 2014	image
+92e5096	John Caserta	Fri May 9 19:13:45 2014	quotes
+6a28ede	John Caserta	Fri May 9 19:12:19 2014	b
+78b2516	John Caserta	Fri May 9 19:11:06 2014	pt 2
+d0a9977	John Caserta	Fri May 9 19:10:24 2014	command p
+f4412bf	John Caserta	Fri May 9 19:08:39 2014	credit
+c6b6635	John Caserta	Fri May 9 19:07:01 2014	fix
+f62307e	John Caserta	Fri May 9 19:06:30 2014	width
+25fa335	John Caserta	Fri May 9 19:04:23 2014	figure tag
+2154b66	John Caserta	Fri May 9 19:03:20 2014	animated gif
+79eca70	Lukas	Fri May 9 14:52:57 2014	Footnote in Pieratt.
+648affb	Lukas	Fri May 9 14:48:21 2014	Printy & NoPrinty classes
+4a6c70b	Lukas	Fri May 9 14:48:11 2014	Footnotes now working.
+3e7be69	Lukas	Fri May 9 14:13:25 2014	Finishing URL & Footnote Styles
+d2f8892	Lukas	Fri May 9 14:01:01 2014	Footnotes working. Changing URL styling.
+515eedd	John Caserta	Fri May 9 12:27:49 2014	update(final?)
+4cdd584	mmcdermott18	Fri May 9 11:09:05 2014	My Pattern, finished!
+8837758	Lukas	Fri May 9 10:49:48 2014	GIF>PNG Finished
+06d6d93	Lukas	Fri May 9 10:44:31 2014	GIF to PNG Test
+a3d2a4a	Lukas	Fri May 9 10:06:48 2014	Test for GIF Printing
+3d3d5d1	Lukas	Fri May 9 09:35:42 2014	Lukas BW Pattern
+21ff182	John Caserta	Fri May 9 07:37:35 2014	edits
+9a52b5c	John Caserta	Fri May 9 07:31:27 2014	color statement
+1a337eb	John Caserta	Fri May 9 07:26:41 2014	cleanup
+01455c3	John Caserta	Fri May 9 07:26:19 2014	patterns
+816285a	xtinarees	Thu May 8 20:12:20 2014	fix alignment
+e1fc0b3	Evan Brooks	Thu May 8 13:24:10 2014	Tiny edits made in my text editor because it works!
+d77d7f3	xtinarees	Wed May 7 15:13:42 2014	Pattern update
+3b7c87a	xtinaland	Tue May 6 22:10:11 2014	cleaner
+9137167	xtinaland	Tue May 6 22:06:41 2014	fixed
+97a4fee	xtinaland	Tue May 6 21:54:08 2014	up
+d974f23	xtinaland	Tue May 6 21:51:08 2014	up
+422293b	xtinaland	Tue May 6 21:41:10 2014	up
+7ea747b	xtinaland	Tue May 6 21:34:57 2014	text up
+3a9a0c7	xtinaland	Tue May 6 17:53:48 2014	up
+f2666a1	xtinaland	Tue May 6 17:44:25 2014	up
+c878cce	John Caserta	Tue May 6 17:26:25 2014	updates
+56ab654	Evan Brooks	Tue May 6 17:15:17 2014	tweaks to margins and urls
+473140b	Evan Brooks	Tue May 6 16:48:54 2014	messing with urls
+93e7445	Evan Brooks	Tue May 6 16:01:05 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+87d3425	Evan Brooks	Tue May 6 15:58:59 2014	prototype for overflowing text spreads
+06b9f36	xtinaland	Tue May 6 15:42:43 2014	lala
+9ffd248	xtinaland	Tue May 6 15:40:48 2014	fixes
+0b4d5d2	xtinaland	Tue May 6 15:38:32 2014	updates
+d81d0f3	John Caserta	Tue May 6 14:48:47 2014	edits
+30d7a34	Lukas	Tue May 6 14:34:03 2014	ugh another sync issue
+9289406	Lukas	Tue May 6 14:33:50 2014	another little sync issue
+e2d6ed0	xtinaland	Tue May 6 13:03:01 2014	stuff
+5c89b2e	Lukas	Tue May 6 13:00:46 2014	Footnote formatting cont.
+da9d2d1	mmcdermott18	Tue May 6 12:58:28 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+3b587af	mmcdermott18	Tue May 6 12:57:14 2014	Colors again yeah
+ff30a4c	Lukas	Tue May 6 12:55:02 2014	Tryna real footnotes
+94f59cd	xtinarees	Tue May 6 12:53:00 2014	pattern
+162546c	kwalters87	Tue May 6 12:50:31 2014	edit
+0181d6a	mmcdermott18	Tue May 6 12:48:41 2014	colors
+e3295ab	yoshi22g	Tue May 6 12:47:56 2014	edited image links
+f46c6b6	John Caserta	Tue May 6 12:47:09 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+a1bb503	John Caserta	Tue May 6 12:47:08 2014	edits
+871617a	xtinarees	Tue May 6 12:46:24 2014	pattern
+0e655d5	John Caserta	Tue May 6 12:46:38 2014	updates
+21e8201	yoshi22g	Tue May 6 12:45:32 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+bcdefb2	yoshi22g	Tue May 6 12:45:28 2014	git doing stuff?
+ff05075	mmcdermott18	Tue May 6 12:45:19 2014	Colors
+0b60b72	yoshi22g	Tue May 6 12:44:08 2014	added a type landscape projects
+d6cba4e	kwalters87	Tue May 6 12:42:27 2014	edit
+6f9f6d2	kwalters87	Tue May 6 12:39:55 2014	edits
+f1d0903	mmcdermott18	Tue May 6 12:38:37 2014	Colors
+80e54e4	xtinaland	Tue May 6 12:35:28 2014	Testing as "Project" category
+a1cd3da	kwalters87	Tue May 6 12:34:19 2014	edit
+f33cb2a	Lukas	Tue May 6 12:28:33 2014	sync thing
+aea73a0	mmcdermott18	Tue May 6 12:26:48 2014	mark color
+8183bd3	John Caserta	Tue May 6 12:25:24 2014	edits
+5e7fe59	Lukas	Tue May 6 12:24:55 2014	something
+462fa53	Lukas	Tue May 6 12:24:13 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+55ff15e	Lukas	Tue May 6 12:24:10 2014	URL http & www stripping
+4c3a33b	xtinarees	Tue May 6 12:21:40 2014	images
+537941e	mmcdermott18	Tue May 6 12:20:39 2014	colors again
+fa1a5a1	xtinarees	Tue May 6 12:17:31 2014	imagesss
+92f028f	mmcdermott18	Tue May 6 12:17:32 2014	Color Commits
+4a67b19	xtinarees	Tue May 6 12:15:15 2014	images2
+678e3ef	xtinarees	Tue May 6 12:13:00 2014	images
+576f173	John Caserta	Tue May 6 12:13:39 2014	patterns
+bbc3162	mmcdermott18	Tue May 6 12:08:59 2014	Colors
+371e0f7	mmcdermott18	Tue May 6 12:08:39 2014	Colors
+0b17b9f	xtinarees	Tue May 6 12:07:55 2014	iamge2
+89afe46	mmcdermott18	Tue May 6 12:07:53 2014	Aquamarine
+fdb59e2	mmcdermott18	Tue May 6 12:06:02 2014	crisis averted
+9fd574d	xtinarees	Tue May 6 12:05:54 2014	image
+8d2a496	xtinarees	Tue May 6 12:03:07 2014	images
+9e0ca8f	Lukas	Tue May 6 12:03:07 2014	URL Styling, squeezed between lines
+e9a3fc4	mmcdermott18	Tue May 6 12:03:04 2014	Color Updates
+ef3a150	xtinarees	Tue May 6 11:59:59 2014	images
+ebaaa7b	kwalters87	Tue May 6 11:58:58 2014	edit
+e1f514a	mmcdermott18	Tue May 6 11:53:07 2014	RULES AND REGS
+44af57d	John Caserta	Tue May 6 11:44:56 2014	pattern
+467d5b0	Lukas	Tue May 6 11:21:44 2014	lil tiny thing
+2f1a37a	Lukas	Tue May 6 09:45:34 2014	Editing Pieratt <del> tag
+8322a80	cathschmidt	Tue May 6 09:33:31 2014	fixing sidebar in cathy experimentz
+e3abc96	cathschmidt	Tue May 6 09:26:35 2014	cathy index mockup fun fun fun
+14434eb	John Caserta	Tue May 6 09:20:43 2014	image add
+095e1f1	Evan Brooks	Tue May 6 08:46:39 2014	better preview, more green
+6978bc2	Lukas	Tue May 6 08:39:06 2014	URL styling.
+b4b9ae8	Lukas	Tue May 6 08:34:47 2014	Strip "http://" from URLs before print
+2681027	Lukas	Tue May 6 08:14:46 2014	More URL Styling.
+1f8061e	mmcdermott18	Tue May 6 08:24:57 2014	Stab at a Print Intro
+4f22a18	kwalters87	Tue May 6 07:34:23 2014	edit
+7eb624c	kwalters87	Tue May 6 07:32:21 2014	edit
+898e33a	xtinaland	Tue May 6 03:36:26 2014	update
+8d59aeb	xtinaland	Tue May 6 03:34:43 2014	inline images
+4552300	xtinaland	Tue May 6 03:12:15 2014	edit
+80b19b0	xtinaland	Tue May 6 03:06:30 2014	test
+c22be6b	xtinaland	Tue May 6 03:00:06 2014	fixing file
+f5fba16	xtinaland	Tue May 6 02:11:16 2014	more projects
+0a16a67	kwalters87	Tue May 6 02:07:58 2014	edit
+1932a48	kwalters87	Tue May 6 01:46:37 2014	edit
+37dac16	kwalters87	Tue May 6 01:46:17 2014	edit
+b3e170f	kwalters87	Tue May 6 01:38:57 2014	edit
+eeabea6	kwalters87	Tue May 6 01:37:48 2014	edit
+580db2d	kwalters87	Tue May 6 01:16:54 2014	edits
+bcab0c1	kwalters87	Tue May 6 01:09:46 2014	edits
+f19010d	kwalters87	Tue May 6 01:01:36 2014	edits
+4c126ac	kwalters87	Tue May 6 00:57:01 2014	edits
+237a958	kwalters87	Tue May 6 00:51:25 2014	edit
+87de144	kwalters87	Tue May 6 00:47:32 2014	edit
+5a4fa4c	kwalters87	Tue May 6 00:44:09 2014	edit
+cbc4b28	kwalters87	Tue May 6 00:42:23 2014	edits
+d9be077	kwalters87	Tue May 6 00:38:25 2014	edits
+50c71ba	kwalters87	Tue May 6 00:30:21 2014	edits
+586c6f2	kwalters87	Tue May 6 00:20:15 2014	edits
+dcd25d7	Evan Brooks	Mon May 5 23:22:29 2014	tone down interview initials, bigger page numbers
+0b995a4	Evan Brooks	Mon May 5 23:17:49 2014	fix for checkboxes
+2a36633	Evan Brooks	Mon May 5 23:08:45 2014	Book system is now almost usable! Featuring checkboxes!
+0359c52	Evan Brooks	Mon May 5 21:44:41 2014	Footnotes. It's cool that they are 0-indexed right?
+21178dc	Evan Brooks	Mon May 5 21:35:49 2014	fixes to footnotes and printing scale
+06f5046	Evan Brooks	Mon May 5 21:12:50 2014	(fixed) Add crop marks and url footnotes
+df1b0e8	John Caserta	Mon May 5 20:52:34 2014	edits
+c830393	John Caserta	Mon May 5 20:49:58 2014	edits
+d93cda1	John Caserta	Mon May 5 20:27:36 2014	edits
+ffbf1eb	Evan Brooks	Mon May 5 20:01:08 2014	crop marks and printing tweaks
+a327d10	John Caserta	Mon May 5 19:40:29 2014	bleeds
+30fa89d	John Caserta	Mon May 5 19:38:02 2014	image bleed
+b93e2a9	cathschmidt	Mon May 5 19:21:51 2014	merge my stuff plz git
+2262740	DanielGiuditta	Mon May 5 18:59:25 2014	  sandboxed my updates
+9244ca2	yoshi22g	Mon May 5 01:03:50 2014	made image width 100%
+04d6427	yoshi22g	Mon May 5 01:02:01 2014	correctes svg issues
+78dd540	yoshi22g	Mon May 5 00:59:41 2014	added the image
+8fa5cf1	yoshi22g	Mon May 5 00:58:53 2014	added an image to my interview
+5dc20b7	yoshi22g	Mon May 5 00:40:24 2014	Added letterhead project description and image
+9f3eed1	yoshi22g	Mon May 5 00:14:23 2014	Deleted my individual project
+6df9abc	yoshi22g	Mon May 5 00:11:51 2014	Amended Michael's Project
+ad4606f	John Caserta	Sun May 4 21:38:23 2014	title
+d9cff16	John Caserta	Sun May 4 21:33:30 2014	edits
+9f26038	John Caserta	Sun May 4 21:29:03 2014	updates
+ddee0f3	John Caserta	Sun May 4 09:15:33 2014	edits
+7dc56c0	John Caserta	Sun May 4 09:10:40 2014	video embed
+437ff6f	John Caserta	Sun May 4 08:45:44 2014	essay
+3bea8f0	John Caserta	Sun May 4 08:43:36 2014	edits
+6352c52	John Caserta	Sun May 4 08:37:29 2014	edits
+aeff360	John Caserta	Sun May 4 08:15:46 2014	edits
+2192c3c	John Caserta	Sun May 4 07:58:29 2014	edits
+d20ca47	John Caserta	Sun May 4 07:46:49 2014	value paperback
+1283994	Evan Brooks	Sun May 4 00:50:23 2014	Undo some CSS regions hacks (broke height detection)
+1be4a6b	Evan Brooks	Sun May 4 00:01:05 2014	fix one typo that breaks everything (yikes)
+0ec735f	Evan Brooks	Sat May 3 23:52:45 2014	Nicer running heads
+832c5e3	Evan Brooks	Sat May 3 23:44:33 2014	nicer running heads
+6fa7548	yoshi22g	Sat May 3 22:43:46 2014	Modified Jason Pamental Interview
+12ac324	Evan Brooks	Sat May 3 22:11:04 2014	Experiment with oversized/overlaid URLs
+a0fb734	Evan Brooks	Sat May 3 21:24:25 2014	Add placeholder initials so measuring is accurate
+a149593	Evan Brooks	Sat May 3 21:15:46 2014	Added a handy "refresh CSS" button
+8adda4c	Evan Brooks	Sat May 3 21:01:02 2014	(rough) ability to style page treatment based on category.
+1b6de41	Evan Brooks	Sat May 3 20:22:18 2014	Working PAGE NUMBERS in the table of contents
+11d885d	Evan Brooks	Sat May 3 19:53:47 2014	Prep TOC a little better. Initials work now.
+b49ca24	Evan Brooks	Sat May 3 18:28:37 2014	adjustments to interview-to-book system
+9d3edad	John Caserta	Sat May 3 14:14:26 2014	margins
+8a5db47	John Caserta	Sat May 3 14:12:25 2014	leading
+85e7b14	John Caserta	Sat May 3 13:07:01 2014	edits
+978df10	John Caserta	Sat May 3 13:00:13 2014	text matter
+ccedf41	John Caserta	Sat May 3 09:15:51 2014	text-rendering in style
+c8d6569	John Caserta	Fri May 2 11:10:52 2014	fontsize
+e93f736	John Caserta	Fri May 2 11:06:38 2014	margins
+79cef09	John Caserta	Fri May 2 11:03:38 2014	css
+f662ce5	John Caserta	Fri May 2 09:47:16 2014	edits
+d07e70a	John Caserta	Fri May 2 09:45:52 2014	armand updates
+3198719	John Caserta	Thu May 1 22:27:41 2014	edits
+1b09b08	John Caserta	Thu May 1 22:25:04 2014	edits
+736c963	John Caserta	Thu May 1 21:52:00 2014	blue
+2dbbc30	John Caserta	Thu May 1 21:50:55 2014	cyan
+348f31c	John Caserta	Thu May 1 21:48:16 2014	colors
+04b81cc	John Caserta	Thu May 1 21:46:10 2014	title on reinfurt
+b8f6ba1	John Caserta	Thu May 1 21:42:32 2014	0
+1542c4f	Evan Brooks	Thu May 1 17:15:17 2014	ignore
+d1187d2	Evan Brooks	Thu May 1 17:14:26 2014	misc improvements to book generator (works in FF)
+0f5c775	John Caserta	Thu May 1 16:45:54 2014	edits
+f1b0f61	Evan Brooks	Thu May 1 16:40:49 2014	Updated /book/ to give better print preview
+47e44a4	John Caserta	Thu May 1 15:28:48 2014	fonts
+ce2cd46	Evan Brooks	Thu May 1 02:26:37 2014	Improved automatic-add-bleed code
+d93ac0e	Evan Brooks	Thu May 1 02:12:57 2014	old bleed code
+0edf3a0	Evan Brooks	Thu May 1 02:11:29 2014	book.js functions run automatically
+f226371	Evan Brooks	Thu May 1 02:09:37 2014	CSS Regions will only perform layout once
+5644789	Evan Brooks	Thu May 1 01:34:09 2014	pre-processor for book.js splits images into spreads
+7fb585d	Evan Brooks	Thu May 1 01:05:03 2014	don't need to markdownify content in book
+f2de5ba	Evan Brooks	Thu May 1 00:52:30 2014	better class name/structure to running heads.
+aa4def1	Evan Brooks	Thu May 1 00:05:59 2014	New _recto and _verso classes
+0c42c6d	Evan Brooks	Thu May 1 00:04:40 2014	stop inserting extra stylesheets (performance?)
+799a9a2	Evan Brooks	Thu May 1 00:04:21 2014	add data-elements to book for running heads
+b8b31a8	Evan Brooks	Wed Apr 30 23:45:19 2014	Prototype running-head generator
+1f837a2	Evan Brooks	Wed Apr 30 23:19:44 2014	removed extra copy of book-static
+5e294cc	Evan Brooks	Wed Apr 30 23:13:08 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+28671e4	Evan Brooks	Wed Apr 30 23:12:38 2014	Added /book-static/ so we can play with css better
+922626d	John Caserta	Wed Apr 30 14:59:44 2014	layout adjustments
+9ba9e80	John Caserta	Wed Apr 30 13:56:25 2014	page layouts
+e0a8b57	John Caserta	Wed Apr 30 07:22:58 2014	fewer images
+1c5c7fe	John Caserta	Wed Apr 30 07:21:28 2014	swapped img
+ffd047c	John Caserta	Wed Apr 30 07:20:47 2014	paths
+9fcf9f2	Lukas	Tue Apr 29 20:56:15 2014	Link Coloring
+9acb19a	xtinarees	Tue Apr 29 20:51:51 2014	test
+9936f5e	xtinarees	Tue Apr 29 20:50:24 2014	test
+b68eade	xtinarees	Tue Apr 29 20:44:55 2014	image edits
+1ff7678	xtinarees	Tue Apr 29 20:39:13 2014	image edits
+efb66aa	xtinarees	Tue Apr 29 20:36:55 2014	image edits
+8587ce7	xtinarees	Tue Apr 29 13:03:44 2014	images
+1999490	Evan Brooks	Tue Apr 29 20:31:00 2014	pdf on smaller page size
+436b02a	Evan Brooks	Tue Apr 29 18:39:51 2014	first full-length exported pdf (!)
+2138d4c	Evan Brooks	Tue Apr 29 18:16:50 2014	various fixes to printing/regions issues
+65e40bf	Evan Brooks	Tue Apr 29 17:04:09 2014	If not printready, leave off table of contents
+101da3c	Evan Brooks	Tue Apr 29 17:00:05 2014	added print ready:true to a bunch of interviews
+65d38ee	kwalters87	Tue Apr 29 18:02:21 2014	edits3
+f0fda20	kwalters87	Tue Apr 29 18:00:57 2014	edits2
+dd58b36	kwalters87	Tue Apr 29 17:58:38 2014	edits
+dd18345	kwalters87	Tue Apr 29 17:54:32 2014	text edits
+6b6feba	Evan Brooks	Tue Apr 29 16:36:37 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+9a0da52	Evan Brooks	Tue Apr 29 16:34:06 2014	Web inspector works in book mode now
+ba5191d	Evan Brooks	Tue Apr 29 16:31:55 2014	Improved book structure / fleshed out styles
+81018ff	John Caserta	Tue Apr 29 15:42:04 2014	margins
+e2035e7	Lukas	Tue Apr 29 15:09:00 2014	Got rid of "print" category type
+5f96d39	Evan Brooks	Tue Apr 29 15:01:59 2014	Added progress bar for page layout because hey why not
+0bd9651	Evan Brooks	Tue Apr 29 14:44:45 2014	fixes to visibility
+7eb06ed	Evan Brooks	Tue Apr 29 14:39:17 2014	hide all book content until loading is done.
+9911ed3	Evan Brooks	Tue Apr 29 14:34:24 2014	Trying improve book layout speed. Also gif.
+68bb5f9	xtinaland	Tue Apr 29 13:10:22 2014	image files
+a47a022	Evan Brooks	Tue Apr 29 13:08:22 2014	add more pages
+f0a9084	yoshi22g	Tue Apr 29 13:05:22 2014	added my part of important project
+0b5942b	Evan Brooks	Tue Apr 29 13:05:14 2014	hide content before flow
+a82efb6	mmcdermott18	Tue Apr 29 13:03:11 2014	added that file directory
+0c62592	cathschmidt	Tue Apr 29 13:03:19 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+cd9d0a8	Phil	Tue Apr 29 13:02:55 2014	Fixed file paths for book print
+3fdf57a	John Caserta	Tue Apr 29 13:02:54 2014	paths
+3cc63c2	cathschmidt	Tue Apr 29 13:02:55 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+50f6ff1	xtinarees	Tue Apr 29 13:01:36 2014	adding images
+ef18720	cathschmidt	Tue Apr 29 13:02:14 2014	jesus fuck
+b252d27	John Caserta	Tue Apr 29 13:01:34 2014	project update
+6103f8e	cathschmidt	Tue Apr 29 13:01:06 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+43ac764	cathschmidt	Tue Apr 29 13:00:30 2014	gosh dang
+bccde59	Phil	Tue Apr 29 12:59:50 2014	Fixed image tags
+dfaf12f	Lukas	Tue Apr 29 12:59:20 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+5f7703c	Lukas	Tue Apr 29 12:59:16 2014	Michael deleted stuff
+02772e7	DanielGiuditta	Tue Apr 29 12:59:10 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+058a279	DanielGiuditta	Tue Apr 29 12:59:07 2014	added project
+f94b034	Lukas	Tue Apr 29 12:58:59 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+1cc0158	Lukas	Tue Apr 29 12:58:37 2014	Testing Webb's Soulellis
+6bab902	mmcdermott18	Tue Apr 29 12:58:07 2014	new stuff
+1489317	Evan Brooks	Tue Apr 29 12:57:37 2014	fix
+3eeae71	Evan Brooks	Tue Apr 29 12:56:50 2014	limit image width
+c0183f5	cathschmidt	Tue Apr 29 12:56:50 2014	fewer bilaks
+eac3603	cathschmidt	Tue Apr 29 12:56:06 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+f25e1b5	Phil	Tue Apr 29 12:55:53 2014	Added a Dear Chrome project folder
+f7eac69	cathschmidt	Tue Apr 29 12:55:54 2014	removing multiple bilaks
+349014b	cathschmidt	Tue Apr 29 12:54:53 2014	doing things
+0657390	Lukas	Tue Apr 29 12:51:04 2014	ok
+2c89219	xtinaland	Tue Apr 29 12:50:49 2014	deleted old file
+bc6fc0e	Lukas	Tue Apr 29 12:50:37 2014	lil rename to soulellis interview
+918425a	mmcdermott18	Tue Apr 29 12:49:17 2014	Added audio link
+cde2e80	Lukas	Tue Apr 29 12:47:55 2014	Splitting Up interview styles.
+750ccfc	Evan Brooks	Tue Apr 29 12:47:22 2014	tweak?
+23d984b	Evan Brooks	Tue Apr 29 12:47:09 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+493e108	Evan Brooks	Tue Apr 29 12:46:44 2014	interview css
+90e8bd0	mmcdermott18	Tue Apr 29 12:44:31 2014	some edits
+4f85e27	Lukas	Tue Apr 29 12:43:36 2014	Adding "interview-intro" class
+574840c	mmcdermott18	Tue Apr 29 12:42:29 2014	18px
+368bb73	mmcdermott18	Tue Apr 29 12:42:08 2014	delete
+f78734c	mmcdermott18	Tue Apr 29 12:41:34 2014	margin to bottom of section
+7f545dd	Lukas	Tue Apr 29 12:38:49 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+c01fdcc	Lukas	Tue Apr 29 12:36:14 2014	URL Vertical Orientation
+d954dd3	Phil	Tue Apr 29 12:36:06 2014	Index mockup cleanup
+27950b0	mmcdermott18	Tue Apr 29 12:35:56 2014	spaces?
+8058843	mmcdermott18	Tue Apr 29 12:34:18 2014	Reinfurt Interview Non Edit
+4e81d0e	Evan Brooks	Tue Apr 29 12:33:10 2014	tweaks to bleed setting
+fa5c922	Phil	Tue Apr 29 12:31:38 2014	Removed an extra img in index
+4cacf0b	xtinaland	Tue Apr 29 12:28:31 2014	edits
+fa5a1f0	xtinaland	Tue Apr 29 12:27:26 2014	edits
+567e26d	John Caserta	Tue Apr 29 12:24:46 2014	size
+061f803	John Caserta	Tue Apr 29 12:21:47 2014	margins
+7df8ee5	John Caserta	Tue Apr 29 12:20:42 2014	margins
+41588dc	xtinaland	Tue Apr 29 12:19:49 2014	edits
+d502861	Phil	Tue Apr 29 12:19:27 2014	Added index mockup
+7cba16f	cathschmidt	Tue Apr 29 12:15:15 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+ea4db85	John Caserta	Tue Apr 29 12:14:38 2014	pixels
+b0bc128	John Caserta	Tue Apr 29 12:13:53 2014	styles
+19a434e	cathschmidt	Tue Apr 29 12:13:29 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+36ff87f	cathschmidt	Tue Apr 29 12:13:22 2014	doooin it
+fd1ff5e	yoshi22g	Tue Apr 29 12:12:53 2014	interview change
+5144654	cathschmidt	Tue Apr 29 12:11:48 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+247de18	xtinarees	Tue Apr 29 12:11:29 2014	animation edits
+2659d54	Phil	Tue Apr 29 12:11:09 2014	Fixed some weird CSS in JL interview
+54628b4	xtinaland	Tue Apr 29 12:09:59 2014	mdash
+de1eb92	Evan Brooks	Tue Apr 29 12:08:20 2014	misc changes
+50f0fe7	John Caserta	Tue Apr 29 12:07:11 2014	styles
+8dc5d81	Evan Brooks	Tue Apr 29 12:07:09 2014	small page numbers
+0f9408e	xtinaland	Tue Apr 29 12:07:08 2014	edits
+8e3e05a	John Caserta	Tue Apr 29 12:06:22 2014	spelling
+7f3ac13	John Caserta	Tue Apr 29 12:05:31 2014	no body styles
+59397f0	xtinarees	Tue Apr 29 12:04:23 2014	create leclair interview
+b58c667	John Caserta	Tue Apr 29 12:03:57 2014	paragraph spacing
+515eac8	xtinarees	Tue Apr 29 12:02:41 2014	interview text edits
+e755155	John Caserta	Tue Apr 29 12:02:45 2014	moved styles
+015ad03	Phil	Tue Apr 29 12:02:28 2014	Added a <blockquote> tag to JL interview
+dc8e9d6	Evan Brooks	Tue Apr 29 12:00:49 2014	improvements to page breaks and bleeds
+16f563f	Lukas	Tue Apr 29 11:56:28 2014	URL Styling
+39aaf04	Phil	Tue Apr 29 11:56:40 2014	Got rid of those extra <br> tags
+950aaf1	Phil	Tue Apr 29 11:54:27 2014	Added extra <br> tags
+a15dd4d	xtinaland	Tue Apr 29 11:53:20 2014	fixing
+b55ab39	cathschmidt	Tue Apr 29 11:53:19 2014	no unicode :'( ( ( (
+8a8c402	Lukas	Tue Apr 29 11:52:35 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+5885eca	Lukas	Tue Apr 29 11:52:33 2014	URL Styling, removing footnotes
+295f3bf	xtinaland	Tue Apr 29 11:50:59 2014	updates soulellis
+2e80e43	Phil	Tue Apr 29 11:50:08 2014	Nice indenting and polishing on Jurg
+1690d05	John Caserta	Tue Apr 29 11:47:01 2014	styles
+4c2f24f	xtinaland	Tue Apr 29 11:46:28 2014	more updates - soulellis
+2a755dc	Phil	Tue Apr 29 11:45:19 2014	Completed basic markdown for Jurg interview
+028cda3	yoshi22g	Tue Apr 29 11:44:00 2014	update interview
+9c75467	DanielGiuditta	Tue Apr 29 11:43:44 2014	made my own type experiment
+d4be1d8	cathschmidt	Tue Apr 29 11:41:46 2014	claiming my territory
+57065da	Phil	Tue Apr 29 11:39:50 2014	Initial markup for Jurg interview
+6ccd989	John Caserta	Tue Apr 29 11:36:47 2014	styles
+c892558	John Caserta	Tue Apr 29 11:35:33 2014	styles
+8c75caa	xtinaland	Tue Apr 29 11:35:26 2014	markup updates
+07a7fe2	Lukas	Tue Apr 29 11:34:51 2014	Adding web.css to all the templates
+2e59bbd	yoshi22g	Tue Apr 29 11:34:49 2014	interview formatting
+6c1261d	John Caserta	Tue Apr 29 11:32:38 2014	iframes
+4b8273e	Lukas	Tue Apr 29 11:32:19 2014	Variety of small changes
+892131b	Lukas	Tue Apr 29 11:28:29 2014	Establishing Interview in style.css
+9b8d598	Lukas	Tue Apr 29 11:16:57 2014	Lil' Mevis Initials Fix
+eb07d03	Lukas	Tue Apr 29 11:15:27 2014	Fixing Armand Mevis Interview
+09d334e	cathschmidt	Tue Apr 29 11:32:08 2014	peter interview fix
+6b7299b	Lukas	Tue Apr 29 11:13:53 2014	Initializing web.css
+68899bc	Evan Brooks	Tue Apr 29 11:09:31 2014	small page size!
+472b517	Lukas	Tue Apr 29 10:55:23 2014	Assorted Formatting
+52ba09f	Evan Brooks	Tue Apr 29 09:45:17 2014	fix pierrat indentation
+0f6fe4b	Lukas	Tue Apr 29 09:15:37 2014	Adding John's interviews as print ready.
+a8470fa	Evan Brooks	Tue Apr 29 09:02:16 2014	tweaks to book.html. Also I'm calling this "bookyll"
+ff5df4b	kwalters87	Tue Apr 29 08:29:35 2014	name
+b4e77e7	kwalters87	Tue Apr 29 08:28:11 2014	edit to title
+4f2e85d	kwalters87	Tue Apr 29 08:25:30 2014	intials
+6b7930b	kwalters87	Tue Apr 29 08:23:04 2014	interview changes
+28cfc02	cathschmidt	Tue Apr 29 07:55:24 2014	some spanz
+5251725	cathschmidt	Tue Apr 29 06:13:54 2014	type tests for itnerviews
+f7ffcc9	xtinarees	Tue Apr 29 01:17:17 2014	Edited interview text
+70fc63e	cathschmidt	Tue Apr 29 00:17:55 2014	cathytests
+cddee83	cathschmidt	Tue Apr 29 00:12:36 2014	cathytests
+65e6266	Lukas	Mon Apr 28 23:55:13 2014	Small tidies to endnote functionality
+5cd584e	Lukas	Mon Apr 28 23:50:37 2014	Endnotes Now Working
+d166920	yoshi22g	Mon Apr 28 23:46:28 2014	interview changes
+1b29682	yoshi22g	Mon Apr 28 23:33:26 2014	Formatting Interview
+be2c361	yoshi22g	Mon Apr 28 23:04:08 2014	formatting interview
+60209e7	yoshi22g	Mon Apr 28 22:53:59 2014	interview changes
+14c95e0	yoshi22g	Mon Apr 28 22:52:34 2014	added initials to my interview
+0442675	xtinaland	Mon Apr 28 22:50:49 2014	soulellis edits
+aa474f3	yoshi22g	Mon Apr 28 22:48:54 2014	Added full interview text
+eaaf3a7	xtinaland	Mon Apr 28 22:48:16 2014	soulellis edits
+3f03451	xtinaland	Mon Apr 28 22:45:41 2014	soulellis edits
+8acbfb4	xtinaland	Mon Apr 28 22:27:41 2014	edits
+ae6b426	xtinaland	Mon Apr 28 22:26:46 2014	edits
+41253e6	xtinaland	Mon Apr 28 22:26:04 2014	soulellis edits
+e64b086	xtinaland	Mon Apr 28 22:19:13 2014	soulellis interview using template
+c7d0f5a	Lukas	Mon Apr 28 22:06:20 2014	Fixed it.
+39d7ad7	Lukas	Mon Apr 28 22:02:50 2014	Testing if my local server is working
+47a728f	Lukas	Mon Apr 28 21:59:36 2014	Removing some scrap
+859ef78	Lukas	Mon Apr 28 21:55:55 2014	OK something got funky
+6b839cc	Lukas	Mon Apr 28 21:52:11 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+d1bffaa	Lukas	Mon Apr 28 21:52:06 2014	Print Matter Integration, esp Endnotes
+b208f3b	Lukas	Mon Apr 28 21:39:00 2014	More testing of endnote/footnotes
+6bcee11	cathschmidt	Mon Apr 28 21:25:11 2014	marked up peter interview
+3463e5b	Evan Brooks	Mon Apr 28 21:10:00 2014	sample page for printing tests
+8904865	Lukas	Mon Apr 28 20:09:10 2014	Pieratt Interview Finalizing
+d589148	Lukas	Sun Apr 27 23:38:38 2014	Footnote Page Test 36
+4c537ca	Lukas	Sun Apr 27 23:31:43 2014	Footnote Page Test 35
+a417954	Lukas	Sun Apr 27 23:31:14 2014	Footnote Page Test 34
+a669f54	Lukas	Sun Apr 27 23:30:45 2014	Footnote Page Test 33
+b063e27	Lukas	Sun Apr 27 23:29:35 2014	Footnote Page Test 33
+06b6123	Lukas	Sun Apr 27 23:27:31 2014	Footnote Page Test 32
+dbb9113	Lukas	Sun Apr 27 23:21:57 2014	Footnote Page Test 31
+68d2514	Lukas	Sun Apr 27 23:20:46 2014	Footnote Page Test 30
+14c9c20	Lukas	Sun Apr 27 23:17:26 2014	Footnote Page Test 29
+37a71f1	Lukas	Sun Apr 27 23:12:23 2014	Footnote Page Test 28
+2920d54	Lukas	Sun Apr 27 23:11:21 2014	Footnote Page Test 27
+dc5301b	Lukas	Sun Apr 27 23:09:12 2014	Footnote Page Test 26
+eb1dd8c	Lukas	Sun Apr 27 23:07:44 2014	TRYNA FIX THE DAMN THING
+22f42e7	Lukas	Sun Apr 27 23:07:00 2014	Footnote Page Test 25
+fdfdb09	Lukas	Sun Apr 27 23:05:43 2014	Footnote Page Test 26
+e91609b	Lukas	Sun Apr 27 23:04:42 2014	Footnote Page Test 25
+4940686	Lukas	Sun Apr 27 23:01:44 2014	Footnote Page Test 24
+e005a77	Lukas	Sun Apr 27 23:00:21 2014	Footnote Page Test 23
+077f994	Lukas	Sun Apr 27 22:47:42 2014	Footnote Page Test 23
+d186616	Lukas	Sun Apr 27 22:46:16 2014	Footnote Page test 22
+fd7719b	Lukas	Sun Apr 27 22:39:22 2014	Footnote Page test 22
+f169fb2	Evan Brooks	Sun Apr 27 22:29:36 2014	fixes to full-bleed code
+b50ef9e	Evan Brooks	Sun Apr 27 22:23:48 2014	running heads test
+d96d279	Lukas	Sun Apr 27 21:54:13 2014	Footnote Page Test 21
+358fd0d	Evan Brooks	Sun Apr 27 21:53:11 2014	Disable one-time-use buttons
+6cf62ed	Lukas	Sun Apr 27 21:38:25 2014	Footnote Page Test 21
+de169e4	Lukas	Sun Apr 27 21:36:18 2014	Footnote Page Test 20
+a624423	Lukas	Sun Apr 27 21:35:14 2014	Footnote Page Test 19
+a9b24fc	Evan Brooks	Sun Apr 27 21:26:12 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+0ede701	Evan Brooks	Sun Apr 27 21:25:05 2014	detect bleed images (rough)
+10a96cf	Lukas	Sun Apr 27 21:18:07 2014	Footnote Page Test 18
+3b991b7	Lukas	Sun Apr 27 21:17:06 2014	Footnote Page Test 17
+952a9e6	Lukas	Sun Apr 27 21:12:42 2014	Footnote Page Test 18
+d22d430	Lukas	Sun Apr 27 21:10:08 2014	Footnote Page Test 17
+46ebc79	Lukas	Sun Apr 27 21:09:47 2014	Footnote Page test 16
+59fb329	Lukas	Sun Apr 27 21:09:14 2014	Footnote Page Test 15
+6340499	Lukas	Sun Apr 27 21:08:44 2014	Footnote Page Test 14
+38211c2	Lukas	Sun Apr 27 21:05:16 2014	Footnote Page Test 13
+f742deb	Lukas	Sun Apr 27 21:00:09 2014	Footnote Page Test 13
+42842c1	Lukas	Sun Apr 27 20:59:40 2014	Footnote Page Test 12
+cb2df76	Lukas	Sun Apr 27 20:58:21 2014	Footnote Page Test 11
+1c2ea06	Lukas	Sun Apr 27 20:57:44 2014	Footnote Page Test 10
+e13bd4d	Lukas	Sun Apr 27 20:57:25 2014	Footnote Page Test 9
+0ab5820	Lukas	Sun Apr 27 20:56:55 2014	Footnote Page Test 8
+7717c8a	Lukas	Sun Apr 27 20:56:27 2014	Footnote Page Test 7
+ba313d9	Lukas	Sun Apr 27 20:55:55 2014	Footnote Page Test 6
+40ee332	Lukas	Sun Apr 27 20:51:40 2014	Footnote Page Test 5
+c6708e5	Lukas	Sun Apr 27 20:50:47 2014	Footnote Page test 4
+97dd532	Lukas	Sun Apr 27 20:49:18 2014	Footnote Page test 3
+30eec1f	Lukas	Sun Apr 27 20:45:36 2014	Footnote Page test 2
+c793aae	Lukas	Sun Apr 27 20:45:00 2014	Footnote page test 1
+437ac0f	Lukas	Sun Apr 27 20:43:38 2014	Assigning footnotes to the correct page
+7b6fbf5	Lukas	Sun Apr 27 18:56:23 2014	footnotes content test 1
+e9ef31e	Lukas	Sun Apr 27 18:53:59 2014	footnotes content test!!!
+d2a956c	Lukas	Sun Apr 27 18:46:23 2014	footnote position test 8
+2240f5f	Lukas	Sun Apr 27 18:45:44 2014	footer position test 8
+f2a6d98	Lukas	Sun Apr 27 18:44:40 2014	footer position test 7
+7bc7785	Lukas	Sun Apr 27 18:42:49 2014	footer position test 6
+3d1b04e	Lukas	Sun Apr 27 18:41:50 2014	footnotes position test 5
+8adb11e	Lukas	Sun Apr 27 18:40:00 2014	footer position test 4
+2aff113	Lukas	Sun Apr 27 18:39:22 2014	footer position test 3
+d53eabf	Lukas	Sun Apr 27 18:35:57 2014	footer position test 2
+765af13	Lukas	Sun Apr 27 18:29:46 2014	Footnote positioning test 1
+6c1fa78	Lukas	Sun Apr 27 18:27:26 2014	Testing Footnote Position
+c4cbcd7	John Caserta	Sun Apr 27 18:22:23 2014	mas
+2147fc2	John Caserta	Sun Apr 27 18:21:50 2014	overflow
+26b1d7c	John Caserta	Sun Apr 27 18:20:59 2014	overflow
+6a9b943	John Caserta	Sun Apr 27 18:19:53 2014	overflow
+3bb5d00	John Caserta	Sun Apr 27 18:19:13 2014	ylw
+fe170ab	John Caserta	Sun Apr 27 18:18:23 2014	more ylw
+248eba4	John Caserta	Sun Apr 27 18:17:38 2014	no float
+32037ec	John Caserta	Sun Apr 27 18:17:19 2014	widths
+be31f93	John Caserta	Sun Apr 27 18:16:05 2014	heights
+9e83fc2	John Caserta	Sun Apr 27 18:14:26 2014	heights
+d4753a8	John Caserta	Sun Apr 27 18:12:11 2014	widths
+7a9017a	John Caserta	Sun Apr 27 18:10:25 2014	margins
+1bf24e2	Lukas	Sun Apr 27 17:52:54 2014	Test Print
+4b415e7	Evan Brooks	Sun Apr 27 17:50:02 2014	hide bleed when not in guide mode
+f52176c	Evan Brooks	Sun Apr 27 17:46:43 2014	Better comments in book.js
+004cc19	Evan Brooks	Sun Apr 27 17:40:42 2014	guides default to on
+4905088	Lukas	Sun Apr 27 17:39:33 2014	Testing blockquote/image spacing
+a90cec9	Evan Brooks	Sun Apr 27 17:39:06 2014	tweaks to spreads
+9a8138f	Evan Brooks	Sun Apr 27 17:36:40 2014	renamed to book.js
+45c71bc	Evan Brooks	Sun Apr 27 17:34:30 2014	move book scripts to their own file
+e51915a	Lukas	Sun Apr 27 17:32:21 2014	Tiny {{interviewer}} changes.
+2e33c6f	Lukas	Sun Apr 27 17:26:58 2014	Additional Interview Formatting
+5f1205e	Evan Brooks	Sun Apr 27 17:31:17 2014	preliminary support for removing extra pages
+26c3c16	Lukas	Sun Apr 27 13:36:41 2014	Spaces before Initials in Interview
+ab830ca	Evan Brooks	Sun Apr 27 17:11:21 2014	smaller margins in print preview
+fe84fc8	Evan Brooks	Sun Apr 27 16:58:47 2014	Better support for spreads, guides in book preview
+57961c5	Evan Brooks	Sun Apr 27 15:57:56 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+840d8e1	Evan Brooks	Sun Apr 27 15:57:52 2014	refinements to book system— allow for spreads
+d18ce82	Evan Brooks	Sun Apr 27 14:23:12 2014	book styles are distinct from print styles
+5a77fae	Evan Brooks	Sun Apr 27 14:21:33 2014	fixes for book printing
+671cc7a	Evan Brooks	Sun Apr 27 14:21:18 2014	regenerated site elements
+9e23236	Evan Brooks	Sun Apr 27 14:19:02 2014	new class '_book' to represent book styles
+bc21c4c	Evan Brooks	Sun Apr 27 14:16:37 2014	Don't need to sync _site folder...
+941898c	Lukas	Sun Apr 27 13:30:00 2014	blub blub
+b6bacaf	Lukas	Sun Apr 27 13:28:27 2014	Finishes touches to Pieratt Interview
+32f08f3	Lukas	Sun Apr 27 13:23:54 2014	Finalizing Pieratt Interview
+4ee40c6	Lukas	Sun Apr 27 13:14:44 2014	Ben Pieratt Interview
+bcf6190	Lukas	Sun Apr 27 12:49:13 2014	Building out the interview template
+9f90b07	Lukas	Sun Apr 27 12:36:21 2014	Interview meta formatting
+03f62cf	Lukas	Sun Apr 27 12:33:09 2014	Eliminating Initials in header
+455d326	Lukas	Sun Apr 27 12:32:09 2014	Still trying to right my wrong…
+83d8aad	Lukas	Sun Apr 27 11:26:21 2014	Fixing Pseudo-classes in interview format
+8e3cf25	Lukas	Sun Apr 27 11:25:05 2014	Ugh I broke something again
+cc2bdca	Lukas	Sun Apr 27 11:23:50 2014	Structuring universal interview format
+7535942	John Caserta	Sun Apr 27 07:20:44 2014	styles
+6895821	John Caserta	Sun Apr 27 07:19:49 2014	messenger on page
+6893eb0	John Caserta	Sat Apr 26 10:24:30 2014	no margin p
+3d6741e	John Caserta	Sat Apr 26 10:23:47 2014	margins
+edfaa60	John Caserta	Sat Apr 26 10:21:20 2014	body
+36e80a2	John Caserta	Sat Apr 26 10:19:17 2014	quantity
+f9ad87f	John Caserta	Sat Apr 26 10:18:39 2014	pattern
+cb65fcd	John Caserta	Sat Apr 26 10:17:27 2014	amt of pattern
+f032e3c	John Caserta	Sat Apr 26 10:16:29 2014	less pattern
+3aabffe	John Caserta	Sat Apr 26 10:15:16 2014	left 0
+f653bb7	John Caserta	Sat Apr 26 10:14:32 2014	changes
+02dc988	John Caserta	Sat Apr 26 10:12:45 2014	z-index
+5f46386	John Caserta	Sat Apr 26 10:11:52 2014	patterns
+c0e74b0	John Caserta	Sat Apr 26 10:10:40 2014	cat change
+becbb29	John Caserta	Sat Apr 26 08:51:46 2014	edits
+590269a	John Caserta	Sat Apr 26 08:49:45 2014	styles
+8163482	John Caserta	Sat Apr 26 08:30:19 2014	edits
+05af1ab	John Caserta	Sat Apr 26 08:29:50 2014	edits
+883f1ac	John Caserta	Sat Apr 26 08:26:56 2014	directory change
+0ba9823	John Caserta	Sat Apr 26 08:26:15 2014	new styles
+d7ff86f	John Caserta	Fri Apr 25 17:16:16 2014	edits
+1acdf4a	John Caserta	Fri Apr 25 17:14:40 2014	transcribing
+4dd0465	John Caserta	Fri Apr 25 16:37:24 2014	fun
+2b8dbdd	John Caserta	Fri Apr 25 16:36:38 2014	font
+80efcf8	John Caserta	Fri Apr 25 16:35:45 2014	size
+828ac43	John Caserta	Fri Apr 25 16:34:52 2014	12pt
+ee72a50	John Caserta	Fri Apr 25 16:33:54 2014	pt to px
+9ebd9b6	John Caserta	Fri Apr 25 16:32:54 2014	edits
+4920cca	John Caserta	Fri Apr 25 16:27:41 2014	edits
+e7f76dd	John Caserta	Fri Apr 25 16:25:10 2014	transcribing
+50522ea	John Caserta	Fri Apr 25 15:25:20 2014	dash
+4414594	John Caserta	Fri Apr 25 15:25:05 2014	dash
+c06bb24	John Caserta	Fri Apr 25 15:24:28 2014	ems
+be1175d	John Caserta	Fri Apr 25 15:14:31 2014	indent
+c181354	John Caserta	Fri Apr 25 15:13:14 2014	margins
+52bccff	John Caserta	Fri Apr 25 15:11:40 2014	marginright
+404ba02	John Caserta	Fri Apr 25 15:11:05 2014	margin
+729c7b5	John Caserta	Fri Apr 25 15:10:28 2014	margin
+05bbe34	John Caserta	Fri Apr 25 15:09:40 2014	text
+2af6fe2	John Caserta	Fri Apr 25 15:09:12 2014	txt
+3e5cdc9	John Caserta	Fri Apr 25 15:07:40 2014	text
+97c207d	John Caserta	Fri Apr 25 15:07:10 2014	edits
+908ef12	John Caserta	Fri Apr 25 15:05:52 2014	typesetting
+c811777	John Caserta	Fri Apr 25 15:03:36 2014	width
+1f2c1a4	John Caserta	Fri Apr 25 15:02:59 2014	width
+b301224	John Caserta	Fri Apr 25 15:01:54 2014	text
+67c8f2d	John Caserta	Fri Apr 25 14:59:57 2014	css
+0103f7f	John Caserta	Fri Apr 25 14:58:57 2014	edits
+f893bfb	John Caserta	Fri Apr 25 14:57:55 2014	lineheight
+ca6471f	John Caserta	Fri Apr 25 14:55:48 2014	text
+f8aedde	John Caserta	Fri Apr 25 14:55:16 2014	text
+085e547	John Caserta	Fri Apr 25 14:54:08 2014	text
+af7035b	John Caserta	Fri Apr 25 14:52:59 2014	q
+cbf8243	John Caserta	Fri Apr 25 14:51:25 2014	fonts
+320a91a	John Caserta	Fri Apr 25 14:50:22 2014	typesetting
+2a81083	John Caserta	Fri Apr 25 14:49:00 2014	fixed index link
+a58ad4b	John Caserta	Fri Apr 25 14:48:15 2014	css
+fc6b1dd	John Caserta	Fri Apr 25 14:46:45 2014	Typesetting
+dc50f38	John Caserta	Fri Apr 25 14:38:21 2014	css
+3e81498	John Caserta	Fri Apr 25 14:21:18 2014	font size
+d4c8715	John Caserta	Fri Apr 25 12:28:25 2014	body size
+96a4cd1	John Caserta	Fri Apr 25 12:17:26 2014	benton
+4b838fa	John Caserta	Thu Apr 24 18:03:35 2014	padding
+d928c7b	John Caserta	Thu Apr 24 18:03:11 2014	margins
+ab14831	John Caserta	Thu Apr 24 18:02:28 2014	color
+8c7c8f2	John Caserta	Thu Apr 24 18:01:20 2014	margins
+ba9ecd5	John Caserta	Thu Apr 24 17:59:02 2014	margins and size
+bfed839	John Caserta	Thu Apr 24 17:53:38 2014	Text
+bbe07cb	John Caserta	Thu Apr 24 17:52:06 2014	Patterns project
+689a92f	mmcdermott18	Wed Apr 23 20:54:13 2014	Folder Naming Conventions
+d730681	mmcdermott18	Wed Apr 23 20:45:29 2014	Changed folder names
+72c26fe	John Caserta	Wed Apr 23 14:57:07 2014	markup adjustments
+ec978be	John Caserta	Wed Apr 23 14:51:03 2014	converted to new markup
+42af14c	John Caserta	Wed Apr 23 14:40:25 2014	interview updates
+bc8e4d3	Evan Brooks	Wed Apr 23 13:11:57 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+d031a11	Evan Brooks	Wed Apr 23 13:10:39 2014	(regenerated site)
+a39554c	Evan Brooks	Wed Apr 23 13:10:11 2014	fixed templates
+ec10321	John Caserta	Wed Apr 23 12:30:54 2014	font
+92822f8	John Caserta	Wed Apr 23 12:26:13 2014	font/lead
+0cb7723	John Caserta	Wed Apr 23 12:24:46 2014	bentonere
+5c05369	John Caserta	Wed Apr 23 12:21:52 2014	Larger size
+a78c6cc	John Caserta	Wed Apr 23 12:18:32 2014	New tags added
+a0760bc	John Caserta	Wed Apr 23 12:13:34 2014	Markup changes
+e49a579	John Caserta	Wed Apr 23 12:05:47 2014	Remap styles
+204f4e0	John Caserta	Wed Apr 23 12:05:08 2014	Killed body
+42f7ae6	John Caserta	Wed Apr 23 12:04:24 2014	Layout change
+41e4a66	John Caserta	Wed Apr 23 12:02:50 2014	Path changes
+26a6533	John Caserta	Wed Apr 23 12:00:44 2014	Type updates
+c2b656a	xtinaland	Tue Apr 22 22:30:01 2014	cleaned up code junk
+6f589b6	Lukas	Tue Apr 22 22:26:43 2014	Some index page margin work.
+b889538	Evan Brooks	Tue Apr 22 13:33:25 2014	misc regenerated changes
+3d7445e	Evan Brooks	Tue Apr 22 13:32:39 2014	clean out columns, etc
+b7514d5	yoshi22g	Tue Apr 22 13:31:00 2014	move script to bottom in od-letterhead
+cff3a43	Evan Brooks	Tue Apr 22 13:21:10 2014	deleted old sample templates
+459eb7c	Lukas	Tue Apr 22 12:53:47 2014	teeny tiny standalone update
+6461916	Lukas	Tue Apr 22 12:51:36 2014	Workin on dat standalone
+581c44e	mmcdermott18	Tue Apr 22 12:31:17 2014	Changed 'to' to 'with'
+2d8c935	kwalters87	Tue Apr 22 12:21:06 2014	Profiling Wikipedia
+9f37938	Evan Brooks	Tue Apr 22 12:20:21 2014	misc changes
+b4e3a0b	Lukas	Tue Apr 22 12:20:01 2014	OK Pieratt's back
+f118076	mmcdermott18	Tue Apr 22 12:17:55 2014	return 8
+c548402	mmcdermott18	Tue Apr 22 12:17:16 2014	return 7
+6f15380	mmcdermott18	Tue Apr 22 12:14:26 2014	break 6
+2ec7f21	mmcdermott18	Tue Apr 22 12:12:56 2014	break 5
+bf248b1	mmcdermott18	Tue Apr 22 12:12:27 2014	break try 4?
+a094528	mmcdermott18	Tue Apr 22 12:11:13 2014	break try 3
+fd14279	Evan Brooks	Tue Apr 22 12:10:29 2014	unbreak print-all page
+162030d	mmcdermott18	Tue Apr 22 12:09:54 2014	again?
+44678b3	mmcdermott18	Tue Apr 22 12:09:30 2014	line break?
+b3290ca	mmcdermott18	Tue Apr 22 12:08:22 2014	blank returns
+3971f4f	mmcdermott18	Tue Apr 22 12:07:32 2014	uhh
+32175dd	mmcdermott18	Tue Apr 22 12:05:57 2014	Quotes?
+a6e29d5	xtinarees	Tue Apr 22 12:03:22 2014	change layout to standalone
+8ca497c	mmcdermott18	Tue Apr 22 12:02:54 2014	testing 123
+3a9674e	mmcdermott18	Tue Apr 22 12:02:06 2014	added h6!
+daca8a1	mmcdermott18	Tue Apr 22 11:59:39 2014	floated images
+71935f2	xtinaland	Tue Apr 22 11:59:04 2014	soulellis interview
+6ba1070	mmcdermott18	Tue Apr 22 11:58:49 2014	edit
+e42bf03	mmcdermott18	Tue Apr 22 11:57:12 2014	Testing some things
+520693b	John Caserta	Tue Apr 22 11:53:28 2014	Type tweaks
+ad01ce8	John Caserta	Tue Apr 22 11:52:56 2014	Type tweaks
+b1af5f9	John Caserta	Tue Apr 22 11:51:42 2014	Type tweaks
+13c9451	John Caserta	Tue Apr 22 11:50:53 2014	Case change
+0fbecee	yoshi22g	Tue Apr 22 11:47:34 2014	change back to page
+33daa27	Evan Brooks	Tue Apr 22 11:47:19 2014	various other peoples changes
+10d59c1	yoshi22g	Tue Apr 22 11:47:00 2014	Added a link to my css
+a1f0ca7	John Caserta	Tue Apr 22 11:46:27 2014	Gothic 60 in styles
+d4d13b4	John Caserta	Tue Apr 22 11:44:28 2014	Applying Gothic60
+5e46b3e	yoshi22g	Tue Apr 22 11:45:43 2014	change to standalone
+f72a7ac	xtinarees	Tue Apr 22 11:45:31 2014	add css to project page
+ee24994	John Caserta	Tue Apr 22 11:43:59 2014	Adding Gothic 60 to type
+2ddd8ad	Lukas	Tue Apr 22 11:42:30 2014	Taking out pieratt.html again, to avoid breaking.
+c53e4d4	xtinarees	Tue Apr 22 11:42:01 2014	add header to html project page
+b1e519f	yoshi22g	Tue Apr 22 11:41:07 2014	Modified CSS to OD-letterhead
+83c883b	mmcdermott18	Tue Apr 22 11:39:35 2014	fixing link
+b548f94	mmcdermott18	Tue Apr 22 11:38:14 2014	Testing Out Stylesheet
+27ac359	John Caserta	Tue Apr 22 11:36:40 2014	deleted h1
+feea6b6	yoshi22g	Tue Apr 22 11:36:07 2014	OD-letterhead no spaces
+a20149a	xtinaland	Tue Apr 22 11:26:37 2014	Paul Soulellis Interview
+9d46652	yoshi22g	Tue Apr 22 11:34:07 2014	messing with the order of the script
+a59f4e0	xtinarees	Tue Apr 22 11:33:29 2014	Create project folder
+6453aab	John Caserta	Tue Apr 22 11:32:28 2014	WebTyped
+8f1eca0	Evan Brooks	Tue Apr 22 11:30:34 2014	fix readme
+0576535	John Caserta	Tue Apr 22 11:30:15 2014	Removed h1
+3a2e4bf	Phil	Tue Apr 22 11:26:40 2014	Changed Jurg Lehni questions to Page template
+4bc1400	Phil	Tue Apr 22 11:25:27 2014	Jurg Lehni Questions
+7ed5df2	Lukas	Tue Apr 22 11:24:53 2014	still tryna
+90b7134	Lukas	Tue Apr 22 11:23:15 2014	Tryna Fix Pieratt
+704c874	Lukas	Tue Apr 22 11:21:48 2014	Bye Bye Pieratt
+1275b86	mmcdermott18	Tue Apr 22 11:20:03 2014	removed period
+f2039ba	John Caserta	Tue Apr 22 11:19:16 2014	Dan build
+54e5e94	kwalters87	Tue Apr 22 11:19:03 2014	Kelly's changes
+e71d2c1	mmcdermott18	Tue Apr 22 11:17:57 2014	Changed Title
+d086b47	Evan Brooks	Tue Apr 22 11:17:37 2014	fix exclamation point
+e5fe59b	yoshi22g	Tue Apr 22 11:16:49 2014	Added a New Project
+45dcd5e	mmcdermott18	Tue Apr 22 11:16:39 2014	Fixed Title
+cc41452	John Caserta	Tue Apr 22 11:15:32 2014	Unknown changes
+8e5cf3d	Lukas	Tue Apr 22 11:15:18 2014	OK, back to include.
+a9b09b3	Lukas	Tue Apr 22 11:12:30 2014	Removing Include
+fdd668d	Evan Brooks	Tue Apr 22 11:14:50 2014	fix
+a9acf01	mmcdermott18	Tue Apr 22 11:13:47 2014	Removed Cat stuff
+a1da423	mmcdermott18	Tue Apr 22 11:12:24 2014	Creating my project folder
+c3546bf	Evan Brooks	Tue Apr 22 11:07:36 2014	changes
+50be8ae	Lukas	Tue Apr 22 11:06:54 2014	Standalone Format Update Again
+6a5d513	Lukas	Tue Apr 22 10:58:44 2014	BOUT TO TRY SUMTHIN WITH THE LAYOUT
+c91b0ce	Lukas	Tue Apr 22 10:51:56 2014	pieratt interview page update #2
+a7fe1d9	Lukas	Tue Apr 22 10:48:50 2014	micro push for pieratt testing
+e0011ff	Lukas	Tue Apr 22 10:46:08 2014	Fitting Pieratt into Jekyll
+ad1abc0	mmcdermott18	Tue Apr 22 10:31:45 2014	Iteration Updates
+ff1e27a	mmcdermott18	Mon Apr 21 23:08:11 2014	Iterations
+afc8199	John Caserta	Tue Apr 22 10:30:46 2014	Type updates
+4651a4b	Lukas	Tue Apr 22 10:30:20 2014	Ugh, comment error.
+c9b000d	Evan Brooks	Tue Apr 22 10:29:30 2014	readme improvements
+2f2e114	Lukas	Tue Apr 22 09:25:08 2014	Moving scrolly.js
+b6323f1	Lukas	Tue Apr 22 09:24:54 2014	Adjusting standalone template.
+0627673	Lukas	Tue Apr 22 09:16:44 2014	Testing Standalone Pg Bar
+c9b0ae3	Evan Brooks	Tue Apr 22 09:00:26 2014	fixed conflicts
+17d8f52	Evan Brooks	Tue Apr 22 08:58:02 2014	removed tag that broke jekyll build
+057b833	Evan Brooks	Tue Apr 22 08:38:34 2014	fixed print buttons
+4b5f1d0	Lukas	Tue Apr 22 08:31:59 2014	Added WIP Pieratt Interview
+947b6fb	Lukas	Tue Apr 22 08:29:54 2014	Merge branch 'gh-pages' of https://github.com/risd-gd/htmloutput into gh-pages
+f0ceee3	Lukas	Tue Apr 22 08:28:24 2014	Started layout for standalone pages.
+f7fdd95	Evan Brooks	Tue Apr 22 08:28:10 2014	Fixes to the README
+c918037	Evan Brooks	Tue Apr 22 08:21:09 2014	misc style tweaks
+cbf189f	Evan Brooks	Mon Apr 21 23:47:17 2014	switch pages to new "page" layout file (adds title)
+6478d20	Lukas	Mon Apr 21 23:29:07 2014	Added Scroll Position Project
+17d9374	Evan Brooks	Mon Apr 21 23:25:55 2014	Switched to kramdown so github stops complaining
+7b00bb5	Evan Brooks	Mon Apr 21 23:08:12 2014	Add Table of Contents stub and various print stuff
+2ae2466	John Caserta	Mon Apr 21 22:17:46 2014	More markup
+9c52c36	John Caserta	Mon Apr 21 22:07:53 2014	More layouts
+9c505f1	John Caserta	Mon Apr 21 21:51:50 2014	Typesetting
+57b0275	John Caserta	Mon Apr 21 21:27:18 2014	Marked up
+370552c	John Caserta	Mon Apr 21 21:01:58 2014	Web type
+78c426c	John Caserta	Mon Apr 21 20:55:53 2014	Created Linked by Air
+eda4189	Evan Brooks	Mon Apr 21 00:01:24 2014	switched everything to default template
+31526b7	Evan Brooks	Sun Apr 20 23:58:52 2014	baseurl issue fixed
+03aec76	Evan Brooks	Sun Apr 20 23:54:00 2014	attempt to fix baseurl issues
+4487b14	Evan Brooks	Sun Apr 20 23:47:58 2014	Added print button to index
+7361f09	Evan Brooks	Sun Apr 20 23:37:37 2014	better commenting, slicker print preview
+223d597	Evan Brooks	Sun Apr 20 23:24:26 2014	Better commenting
+d0980c8	Evan Brooks	Sun Apr 20 23:21:07 2014	Added comments to print.html
+689bcd1	Evan Brooks	Sun Apr 20 23:11:17 2014	better print styles
+78fa93d	Evan Brooks	Sun Apr 20 22:33:52 2014	fix to readme
+826b023	Evan Brooks	Sun Apr 20 22:33:13 2014	updates to style and read me
+87ad186	Evan Brooks	Sun Apr 20 22:13:14 2014	Fixed issue with relative paths to CSS
+6390943	Evan Brooks	Sun Apr 20 21:50:55 2014	Moved Jekyll to root directory and renamed stuff
+fd93462	Evan Brooks	Sun Apr 20 21:47:51 2014	Move everything to /__experiments
+5b5e9fd	Evan Brooks	Sun Apr 20 21:45:49 2014	Added CSS regions polyfill for print control
+958f7ba	Evan Brooks	Sun Apr 20 19:29:15 2014	misc design boilerplate
+63e3c46	Evan Brooks	Sun Apr 20 16:19:40 2014	more sample data
+ed524c1	Evan Brooks	Sun Apr 20 16:09:28 2014	Added web fonts and improved readme
+c713aee	Evan Brooks	Sun Apr 20 15:49:34 2014	Improved default styles, general setup
+ddab20e	Evan Brooks	Sun Apr 20 15:02:55 2014	Added readme for the jekyll site
+89df9cb	Evan Brooks	Sun Apr 20 14:50:12 2014	Get jekyll even more set up
+21a39a2	mmcdermott18	Fri Apr 18 12:18:59 2014	Added a space?
+48aa2ba	mmcdermott18	Fri Apr 18 12:18:34 2014	Editing my own homepage ideas
+8e7fb76	Evan Brooks	Wed Apr 16 10:02:42 2014	(Catherine's changes)
+788252c	John Caserta	Tue Apr 15 12:41:02 2014	color chan
+0df4589	Lukas	Tue Apr 15 11:18:28 2014	Added Confetti & Randomized Text
+2b2d3e9	Evan Brooks	Tue Apr 15 10:55:46 2014	updated iframe
+bf19c67	Lukas	Mon Apr 14 22:01:48 2014	Created Marquee BG
+4ba66e8	Evan Brooks	Tue Apr 15 09:03:41 2014	Added iframe tests
+937d5f4	yoshi22g	Tue Apr 15 01:26:40 2014	Columns when printing in Firefox
+acdb8fe	cathschmidt	Sun Apr 13 18:48:25 2014	jekyll folder contents :
+6327b36	Lukas	Sun Apr 13 18:09:47 2014	Deleting jekyll.
+e6a7989	Lukas	Sun Apr 13 18:06:12 2014	Created a site folder containing an initial version of a landing page with some basic elements, e.g. print button, masthead content, lil screenshots.
+a1902b1	cathschmidt	Sun Apr 13 16:59:52 2014	jekyll example directory and pages
+588f0be	John Caserta	Fri Apr 11 16:39:27 2014	updated writing
+2fb454d	John Caserta	Fri Apr 11 14:09:05 2014	Messenger Font added to mix
+5e5f20d	John Caserta	Fri Apr 11 10:31:52 2014	margins
+4447c28	John Caserta	Fri Apr 11 10:30:39 2014	body margin
+1030c52	John Caserta	Fri Apr 11 10:05:13 2014	writing
+03caec9	John Caserta	Fri Apr 11 09:29:04 2014	Separating essay from web type spec
+3130fc7	John Caserta	Fri Apr 11 09:13:58 2014	More size options
+5ed1b6c	John Caserta	Fri Apr 11 09:05:04 2014	All the web type fonts
+e72c099	John Caserta	Fri Apr 11 08:52:20 2014	Added benton
+ac0c4c0	John Caserta	Fri Apr 11 08:47:46 2014	Type experiments with writing
+20b1533	mmcdermott18	Tue Apr 8 12:31:05 2014	Font size 1000px
+ffcce07	Phil	Tue Apr 8 12:30:31 2014	Cleaned up Fetch Head
+634bc73	Phil	Tue Apr 8 12:29:37 2014	Added a message from John Maeda
+be51734	kwalters87	Tue Apr 8 12:16:20 2014	fixed conflicts
+432eb71	kwalters87	Tue Apr 8 12:13:31 2014	Merge branch 'master' of https://github.com/risd-gd/htmloutput
+a9c29d1	Lukas	Tue Apr 8 12:11:30 2014	Added a very important title
+c9421bc	Phil	Tue Apr 8 12:10:32 2014	Added 'no'
+31eb169	DanielGiuditta	Tue Apr 8 12:10:06 2014	Merge branch 'master' of https://github.com/risd-gd/htmloutput
+0c12b01	yoshi22g	Tue Apr 8 12:09:59 2014	Added a lorem ipsum
+ee16b21	DanielGiuditta	Tue Apr 8 12:10:05 2014	Merge branch 'master' of https://github.com/risd-gd/htmloutput
+88498de	DanielGiuditta	Tue Apr 8 12:09:55 2014	icecream
+aee5652	Phil	Tue Apr 8 12:09:49 2014	Added a blink tag
+14f5e01	kwalters87	Tue Apr 8 12:09:16 2014	Altered the text
+4f2d23c	mmcdermott18	Tue Apr 8 12:09:02 2014	New page, this is awesome!
+29b406a	cathschmidt	Tue Apr 8 12:08:19 2014	hacker
+3089e0f	cathschmidt	Tue Apr 8 12:06:53 2014	cathyhax
+4d9cfbc	Evan Brooks	Tue Apr 8 12:04:22 2014	Initial commit
