@@ -1,0 +1,78 @@
+@font-face{
+	font-family:'Messenger Mono';
+	src:url('Messenger-Mono.otf');
+}
+
+@font-face{
+	font-family: 'Messenger';
+	src:url('Messenger-Text.otf');
+}
+
+body{
+	font-family:'Benton Modern';
+}
+
+.matter{
+	width:500px;
+	margin:auto;
+	border-bottom:1px dotted black;
+
+}
+
+.matter p{
+	font-size:24px;
+
+	margin-top: 55px;
+	margin-bottom:55px;
+	padding-bottom: 15px;
+}
+
+
+p{
+	width:500px;
+	margin:auto;
+	font-size:18px;
+	line-height:1.5em;
+	word-spacing:0.05em;
+	margin-bottom:15px;
+}
+
+a{
+	font-family: 'Messenger Mono';
+	color:rgb(55,50,255);
+	text-decoration: none;
+}
+
+a:hover{
+	background-color:rgb(55,50,255);
+}
+
+.interview-q{
+
+	font-family: 'Messenger Mono';
+	font-size:14px;
+	text-decoration: underline;
+
+	color:rgb(55,50,255);
+
+	width:450px;
+	margin-bottom:15px;
+	margin-top:55px;
+
+}
+
+.interview-a{
+	margin-bottom:15px;
+}
+
+blockquote{
+	font-family: 'Messenger';
+	font-size:24px;
+	line-height:1.5em;
+
+	width:600px;
+	margin:auto;
+	margin-bottom:55px;
+	margin-top:55px;
+
+}
