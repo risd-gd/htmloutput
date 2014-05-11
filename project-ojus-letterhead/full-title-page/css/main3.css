@@ -1,0 +1,286 @@
+/*********** CSS RESET **********/
+
+/*
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+} 
+
+
+/********** TYPE **************/
+@font-face {
+                font-family: 'messengermono';
+                src: url('messenger-mono.eot');
+                src: url('messenger-mono.eot?#iefix') format('embedded-opentype'),
+                     url('messenger-mono.woff') format('woff'),
+                     url('messenger-mono.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+@font-face {
+    font-family: 'messengertext';
+    src: url('messenger-text.eot');
+    src: url('messenger-text.eot?#iefix') format('embedded-opentype'),
+         url('messenger-text.woff') format('woff'),
+         url('messenger-text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*.bentonmodernroman {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: normal;
+}*/
+
+body {
+    font-family: "Benton Modern RE", georgia, times, serif;
+    font-size: 16pt;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/********** Container and Wrapper ***********/
+
+.container {
+
+    width: 306pt;
+    height: 495pt;
+    background-color: white;
+    border: 1px solid gray;
+    -webkit-box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    margin: 80px auto;
+    page-break-after: always;
+}
+
+/********** Content Elements *************/
+/*
+#main-image {
+    width: 225pt;
+    height: 414pt;
+    background-image: url("../img/img_04_yahoo.jpg");
+    background-position: center;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+#main-image figcaption {
+    position: absolute;
+    bottom: 27pt;
+    left: 27pt;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    padding: 3pt;
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 6pt;
+    line-height: 7pt;
+}
+*/
+.shoulder {
+    margin: 21pt 26pt 5pt;
+    width: 252pt;
+
+}
+
+.shoulder p {
+    margin: 0;
+    padding: 6pt;
+    background-color: rgb(242, 242, 242);
+    color: red; 
+    border-radius: 3pt;
+    font-family: 'messengermono', monospace;
+    font-size: 7pt; 
+    display: inline-block;  
+}
+
+
+h1 {
+    width: 252pt;
+    border-bottom: 1px dotted gray;
+    margin: 0 27pt 14pt 27pt;
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 30pt;
+    line-height: 36pt;
+    color: black;
+    text-align: left;
+
+}
+
+.images {
+    width: 279pt;
+    height: 144pt;
+    margin-bottom: 14pt;
+    position: relative;
+    padding-left: 27pt;
+    overflow: hidden;
+}
+
+.pg2 {
+    margin: 81pt 0 0 0;
+    padding: 0;
+    width: 306pt;
+}
+
+#main-image {
+    width: 144pt;
+    height: 144pt;
+    background-image: url("../img/img_04_yahoo.jpg");
+    background-position: center;
+    float: left;
+}
+
+#img1 {
+    width: 121pt;
+    height: 144pt;
+    margin-left: 14pt;
+    float: left;
+    background-image: url("../img/img_01_CNN.jpg");
+    background-position: center;
+}
+
+#img2 {
+    width: 23pt;
+    height: 144pt;
+    margin-right: 14pt;
+    float: left;
+    background-image: url("../img/img_01_CNN.jpg");
+    background-position: 68% 50%;
+    background-position-x: 68%;
+    background-position-y: 50%;
+}
+
+#img3 {
+    width: 144pt;
+    height: 144pt;
+    margin-right: 14pt;
+    float: left;
+    background-image: url("../img/img_02_csstricks.jpg");
+    background-position: center;
+}
+
+#img4 {
+    width: 110pt;
+    height: 144pt;
+    margin:0;
+    float: left;
+    background-image: url("../img/img_03_subreddit.jpg");
+    background-position: center;
+}
+
+.project-meta {
+    width: 252pt;
+    margin:4pt 27pt;
+    padding-bottom: 9pt;
+}
+
+.project-meta ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.project-meta li {
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.key {
+    margin: 0;
+    padding: 0;
+    font-family: 'Benton Modern', georgia, times, serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 8pt;
+    line-height: 10.5pt;
+    color: black;
+    text-align: left;
+}
+
+.value {
+    margin:0;
+    padding:0;
+    font-family: 'messengertext', helvetica, arial, sans-serif;
+    font-size: 8pt;
+    line-height: 10.5pt;
+    color: black;
+    text-align: left;
+}
+
+.value::after {
+    content: " // ";
+}
+
+
+.description {
+    width: 252pt;
+    padding: 0;
+    margin: 0 27pt;
+    font-family: "Benton Modern", georgia, times, serif;
+    font-weight: normal;
+    font-size: 9pt;
+    line-height: 14pt;
+    color: black;
+    text-align: left;
+}
+
+.description:first-letter {
+    float: left; 
+    color: black;
+    font-family: "BentonModernDispBlack", georgia, times, serif; 
+    font-size: 27pt;  
+    padding-top: 7pt; 
+    padding-right: 3pt; 
+    padding-left: 0; 
+    padding-bottom: 3pt;
+}
+
+

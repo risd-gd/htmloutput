@@ -12,3 +12,9 @@ __experiments/page_layout Folder/Document fonts/AdobeFnt14.lst
 .DS_Store
 
 .DS_Store
+
+interview-mevis-caserta/illo/illo_300.psd
+
+*.psd
+
+.DS_Store

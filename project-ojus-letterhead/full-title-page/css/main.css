@@ -1,0 +1,81 @@
+ @font-face {
+                font-family: 'messengermono';
+                src: url('messenger-mono.eot');
+                src: url('messenger-mono.eot?#iefix') format('embedded-opentype'),
+                     url('messenger-mono.woff') format('woff'),
+                     url('messenger-mono.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+@font-face {
+    font-family: 'messengertext';
+    src: url('messenger-text.eot');
+    src: url('messenger-text.eot?#iefix') format('embedded-opentype'),
+         url('messenger-text.woff') format('woff'),
+         url('messenger-text.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*.bentonmodernroman {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: normal;
+}*/
+
+.container {
+
+    width: 306pt;
+    height: 495pt;
+    background-color: white;
+    border: 1px solid gray;
+    -webkit-box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    box-shadow: 2px 2px 10px 2px rgba(100,100,100,.5);
+    margin: 80px auto;
+    page-break-after: always;
+}
+
+
+h3 {
+    font-family: 'messengertext';
+    font-size: 38pt;
+    line-height: 42pt;
+    color: black;
+    text-align: left;
+    margin: 11pt;
+}
+
+p {
+    font-family: "Benton Modern", 'messengertext', georgia, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16pt;
+    line-height: 22pt;
+    color: black;
+    margin: 14pt;
+    text-align: left;
+}
+
+.divider-image {
+    background-image: url("../img/img_01_CNN.jpg");
+    width: 290pt;
+    height: 10pt;
+    background-position: center;
+    margin: 0 0 0 14pt;
+}
+
+#img1 {
+    background-image: url("../img/img_02_csstricks.jpg");
+    background-position: center;
+}
+
+#img2 {
+    background-image: url("../img/img_03_subreddit.jpg");
+    background-position: center;
+}
+
+#img3 {
+    background-image: url("../img/img_04_yahoo.jpg");
+    background-position: center;
+}

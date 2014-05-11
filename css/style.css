@@ -78,6 +78,9 @@ hr {
 	margin-bottom: 1.4rem;
 }
 
+.printy{}
+.noprinty{}
+
 /* ----------------------------------
 
 Styles for the index page
@@ -163,6 +166,8 @@ separated into print and web
 .interview-q {}
 .interview-a, .interview-q { line-height: 125%; font-family: "Benton Modern";}
 
+/*//////////Phil messing around////////////*/ 
+
 /* ----------------------------------
 
 Standalone Page "HTML Output" banner Styles
@@ -187,3 +192,5 @@ Standalone Page "HTML Output" banner Styles
   text-decoration: none;
   color: blue;
 }
+
+

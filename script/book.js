@@ -1,5 +1,7 @@
 /*jshint laxcomma:true, multistr: true */
 
+// THIS HELPS PREP CONTENT FOR THE BOOK FORMAT.
+
 // Block polyfill from running unless we say so.
 window.cssRegionsManualTrigger = false;
 window.HAS_COMPLETED_ONE_LAYOUT = false;
@@ -159,9 +161,22 @@ function preProcessPages() {
     for(var i=0; i< footnotes.length; i++){
       var material = footnotes.eq(i).html(); // this is working!!!
       $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
-
     }
+  }
 
+  // [D] Swap GIFs out for fixed PNG version
+  // requires there be a .png version of the frame people want in print.
+  var num_images = $("img").length;
+  for(i=0; i<num_images; i++){
+    var src = $("img").eq(i).attr("src");
+    var end = src.length;
+    var start = end-4;
+
+    if(src.substring(start,end)==".gif" || src.substring(start,end)==".GIF"){
+      //alert("WE FOUND ONE LADDY!");
+      // swap out PNG extension with fixed frame for printing
+      $("img").eq(i).attr("src",src.substring(0,start)+".png");
+    }
   }
 
 }
@@ -237,16 +252,17 @@ function postProcessPages(){
     //}
 
     // [F] Footnotes for non-URLs
-    //var footnotes = pg.querySelectorAll("[data-footnote]");
-    //if(footnotes){
-    //  var notes = ""; // don't make this more than 3 lines or so!
-    //  for (var j = 0; j < footnotes.length; j++){
-    //    var material = footnotes[j].getAttribute("data-footnote");
-    //    footnotes[j].innertext = j; // set footnote number, each page starts at 0
-    //    notes += "<div><i>"+j+"</i> &#8212;"+material+"</div>";
-    //  }
-    //  pg.parentNode.querySelector(".footer").innerHTML = notes;
-    //}
+    var footnotes = pg.querySelectorAll("[data-footnote]");
+    if(footnotes){
+      var notes = ""; // don't make this more than 3 lines or so!
+      for (var j = 0; j < footnotes.length; j++){
+        var material = footnotes[j].getAttribute("data-footnote");
+        footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
+        $("sup[data-footnote='"+material+"']").html(j);
+        notes += "<div><i>"+j+"</i> &#8212;"+material+"</div>";
+      }
+      pg.parentNode.querySelector("._footer").innerHTML = notes;
+    }
 
   }
 
@@ -314,7 +330,11 @@ function trimRegions(flowName) {
     return(true);
 }
 
-// URLs in Book
+// -------------------------
+
+// URL STYLING
+
+// -------------------------
 var num_links = $("a").length;
 
 for(i=0; i<num_links; i++){
@@ -342,4 +362,14 @@ for(i=0; i<num_links; i++){
 
 }
 
+// -------------------------
 
+// SYMBOLS PREPARATION
+
+// -------------------------
+
+// Dashes
+
+// Smart Quotes
+
+// Non-breaking hyphens &#8209; -- NOT NECESSARY!
