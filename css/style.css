@@ -162,10 +162,16 @@ separated into print and web
 .interview-q:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
 .interview-a:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
 
+p.interview-a, p.interview-q{
+	font-size:18px;
+	line-height:1.5em;
+	word-spacing:0.05em;
+}
+
 .interview-a {
 	font-size:21px;
 	margin-bottom:15px;
-	z-index:0;
+	width:450px;
 }
 .interview-q {
 	font-family: 'Messenger Mono';
@@ -179,7 +185,6 @@ separated into print and web
 	margin-bottom:-55px;
 	margin-top:55px;
 	margin-left:19%;
-	z-index:50;
 
 	padding:15px;
 }
