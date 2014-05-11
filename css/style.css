@@ -162,36 +162,11 @@ separated into print and web
 .interview-q:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
 .interview-a:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
 
-p.interview-a, p.interview-q{
-	font-size:18px;
-	line-height:1.5em;
-	word-spacing:0.05em;
-}
-
-.interview-a {
-	font-size:21px;
-	margin-bottom:15px;
-	width:450px;
-}
-.interview-q {
-	font-family: 'Messenger Mono';
-	font-size:10px;
-	text-decoration: underline;
-	line-height: 1.25em;
-
-	color:rgba(55,50,255,0.25);
-
-	width:550px;
-	margin-bottom:-55px;
-	margin-top:55px;
-	margin-left:19%;
-
-	padding:15px;
-}
+.interview-a {}
+.interview-q {}
 .interview-a, .interview-q { line-height: 125%; font-family: "Benton Modern";}
 
 /*//////////Phil messing around////////////*/ 
-
 
 /* ----------------------------------
 
