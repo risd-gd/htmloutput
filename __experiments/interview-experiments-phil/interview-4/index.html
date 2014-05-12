@@ -1,23 +1,43 @@
----
-
-layout: interview
-title: Jürg Lehni interview
-author: Philippe Cao, Daniel Giuditta
-
-interviewer: Philippe Cao, Daniel Giuditta 
-interviewee: Jürg Lehni
-
-interviewer_initials: PC & DG 
-interviewee_initials: JL
-
-description: Interview with Jürg Lehni
-category: interview
-
-printready: true
-
----
 
 <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interview with Jürg</title>
+	<link href="http://cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />	
+	<link rel="stylesheet" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var interviewCount = $('body').children('.interview-q').length; 
+			var urlCount = $('.interview-a').children('a').length;
+
+			console.log(urlCount);
+
+			$('img').hover(function(){
+				$(this).parent('.imgBox').css('overflow','visible'); 
+				$(this).parent('.imgBox').animate({
+					marginTop:"25px",
+					marginLeft:"25px"
+				},100);
+				$('.interview-a').fadeTo(100,0.25);
+			}, function(){
+				$(this).parent('.imgBox').css('overflow','none'); 
+				$(this).parent('.imgBox').animate({
+					marginTop:"15px",
+					marginLeft:"-100px"
+				},50);
+				$('.interview-a').fadeTo(50,1);
+			})
+
+			$('.interview-a>a').each(function(){
+				var thisURL = $(this).attr('href');
+				$(this).prepend("<div class='urlFrame'>"+thisURL+"</div>");
+			})
+
+		})
+	</script>
 
 	<style>
 		.interview-q:before{
@@ -28,6 +48,8 @@ printready: true
 			content:"JL: ";
 		}
 	</style>
+
+</head>
 <body>
 	
 

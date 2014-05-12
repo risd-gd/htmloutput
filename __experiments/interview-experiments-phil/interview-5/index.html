@@ -1,23 +1,47 @@
----
-
-layout: interview
-title: Jürg Lehni interview
-author: Philippe Cao, Daniel Giuditta
-
-interviewer: Philippe Cao, Daniel Giuditta 
-interviewee: Jürg Lehni
-
-interviewer_initials: PC & DG 
-interviewee_initials: JL
-
-description: Interview with Jürg Lehni
-category: interview
-
-printready: true
-
----
 
 <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interview with Jürg</title>
+	<link href="http://cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />	
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="waypoints.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var interviewCount = $('body').children('.interview-q').length; 
+			var urlCount = $('.interview-a').children('a').length;
+
+			console.log(urlCount);
+
+			$('img').hover(function(){
+				// var ran=Math.floor(Math.random()*(600-400)+400);
+				$(this).parent('.imgBox').css('overflow','visible');
+				$(this).parent('.imgBox').css('z-index','100');
+				$(this).parent().siblings('.imgBox').css('visibility','hidden');
+
+				$('.interview-a,.interview-q').fadeTo(100,0.15);
+			}, function(){
+				$(this).parent('.imgBox').css('overflow','hidden');
+				$(this).parent().siblings('.imgBox').css('visibility','visible');
+
+				$('.interview-a,.interview-q').fadeTo(50,1);
+
+			})
+
+			// $('.interview-q').click(function(){
+			// 	$('.interview-a').fadeToggle(500);
+			// })
+
+			// $('.interview-a>a').each(function(){
+			// 	var thisURL = $(this).attr('href');
+			// 	$(this).prepend("<div class='urlFrame'>"+thisURL+"</div>");
+			// })
+
+		})
+	</script>
 
 	<style>
 		.interview-q:before{
@@ -28,6 +52,8 @@ printready: true
 			content:"JL: ";
 		}
 	</style>
+
+</head>
 <body>
 	
 
@@ -50,12 +76,13 @@ printready: true
 </p>
 <p class="interview-a">
 	My relationship to code is maybe similar to that of a craftsman to his craft. I see it as a way to form abstract material, and I constantly read on new ways of building things using code. I have a strong sense of aesthetics in code, and perhaps the project where I follow that urge the most is Paper.js, as it is an open-source project with a growing audience that understands this. I believe that code can be beautiful or even poetic, and I prefer flexible, dynamic and expressive languages such as JavaScript or Ruby over languages that force me to think like an accountant (e.g. Java). So yes, I still mostly write my own code, but I really like collaborating with other people on programming projects, for example with Jonathan Puckey first on Scritpgorapher.org, and now on Paper.js. I've also worked with other programmers on commercial projects and enjoyed that process. It made me understand how much coding can be an activity of self-expression, with each person's coding style being unique.
-</p><p class="interview-a">
+</p><p class="interview-a" id="picture">
 As for the influence of programming on other aspects of my practice or even my life, I certainly think there is one. Programming encourages thinking in abstract terms of systems and interconnections. Being able to do so fluently certainly shapes the way one thinks about other things. Almost all my physical artworks for example have the nature of tools, platforms and structures for production, similar to the way one would shape a programming library or framework as a platform to be of use to others.
 </p>
 
-<div class="imgBox"><img src="img.jpg" alt=""></div>
-
+<div class="imgContainer">
+<div class="imgBox"><img src="img.jpg" alt=""></div><div class="imgBox"><img src="img_b.jpg"></div><div class="imgBox"><img src="img_2.jpg"></div>
+</div>
 
 <p class="interview-q">
 	In each of your pieces, what constitutes the final work? Do you consider Hector or Viktor, the machines themselves, to be the work of art, or is it the drawing they create? Or, could it be the ‘performance’ of the machines creating the final outputs?
@@ -84,6 +111,8 @@ As for the influence of programming on other aspects of my practice or even my l
 </p>
 
 
+<div class="imgBox"><img src="img_2.jpg" alt=""></div>
+
 
 <p class="interview-q">
 	I’ve noticed that works like Hektor, Empty Words, Moving Picture Show, are all very open about revealing the mechanisms of the tools themselves. Is this an intentional choice, and if so why do you think it’s important to do so?
@@ -93,7 +122,6 @@ As for the influence of programming on other aspects of my practice or even my l
 	And it is the very same motivations that cause me to engage in the creation of open-source software that is built to teach programming to designers, such as Scriptographer.org or Paper.js
 </p>
 
-<div class="imgBox"><img src="img_2.jpg" alt=""></div>
 
 <p class="interview-q">
 	Your use of the Speed-I-Jet seems to really emphasize the idea of instant  reproducibility, both of content and of form. What draws you to this act of repetition? Is it just a byproduct of working with machines?
@@ -110,11 +138,14 @@ As for the influence of programming on other aspects of my practice or even my l
 	But I knew that the core idea was right, and that this kind of environment is exactly what it takes to teach scripting in a design oriented context, so I felt it was best to move on and put the energy into Paper.js instead. I am just about to start working on a graphic user interface for Paper.js that replicates some of what people came to love in Scriptographer, and I am excited to be able to use this for more teaching soon. I think eventually it will get to a point where we won't have to look back anymore, because the new solutions will offer more openness and freedom than a corporately encapsulated solution ever would.
 </p>
 
+<div class="imgBox"><img src="img_3.gif" alt=""></div>
+
+
 <p class="interview-q">
 	Now that the digital and mechanical tools you incorporate in your work (i.e. the die-cutting machine in Empty Words, or even a browser) are becoming proprietary objects, are the politics of the companies that create these tools something you consider when creating your work? Just like the shape of a brush creates different forms, do you think the intentions or desires of the companies behind these tools shape an artist/designer’s final output?
 </p>
 <p class="interview-a">
-	Yes of course each tool has an impact on its user. The quote “We shape our tools and thereafter our tools shape us” comes to mind, which gets wrongly attributed to Marshall McLuhan, while it was actually by Father John Culkin, SJ, a Professor of Communication at Fordham University in New York and friend of <a href="http://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/">McLuhan</a>.
+	Yes of course each tool has an impact on its user. The quote “We shape our tools and thereafter our tools shape us” comes to mind, which gets wrongly attributed to Marshall McLuhan, while it was actually by Father John Culkin, SJ, a Professor of Communication at Fordham University in New York and friend of <a href="http://mcluhangalaxy.wordpress.com/2013/04/01/we-shape-our-tools-and-thereafter-our-tools-shape-us/">McLuhan.</a>
 	With the gently changed vinyl cutting machine, the politics of the actual machine indeed played a role (not a die-cutting machine, which is <a href="http://en.wikipedia.org/wiki/Die_cutting_(web)">another process</a>). Alex and I thought of vinyl labeling as a rather uninteresting default way of putting letters on a wall, similar to the use of color laser printers, or 3D printing, which is now all the rage whenever somebody wants to make a physical object. It felt good to give such a machine, which one could argue has killed the sign painter, a new more friendly meaning.
 	There is a similar context to Moving Picture Show, which only became feasible through the extinction of 35mm film as an actively used medium for film projection. The laser subtitling machinery used to make these films would never have been available before that, and will soon disappear completely. The moment was just right to make a piece of work that speaks of a transition caused by technological advance, completely transforming a whole field of visual production.
 </p>

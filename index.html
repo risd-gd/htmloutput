@@ -51,5 +51,20 @@ title: HTML Output
 
 
 <a href="{{ site.baseurl }}/book" class="print-btn">
-  Book
+  &#8984; P
 </a>
+
+{% for page in site.pages %}
+
+{% if page.content and page.category %}
+
+  <div class="page" id="{{ page.title }}">
+    
+    {{ page.content }}
+
+  </div>
+
+{% endif %}
+    <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
+
+{% endfor %}

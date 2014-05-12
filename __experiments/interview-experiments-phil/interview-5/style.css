@@ -1,0 +1,127 @@
+@font-face{
+	font-family:'Messenger Mono';
+	src:url('Messenger-Mono.otf');
+}
+
+@font-face{
+	font-family: 'Messenger';
+	src:url('Messenger-Text.otf');
+}
+
+body{
+	font-family:'Benton Modern';
+	margin-left:0;
+}
+
+.matter{
+	width:500px;
+	margin:auto;
+	border-bottom:1px dotted black;
+
+}
+
+.matter p{
+	font-family: 'Messenger';
+	font-size:24px;
+	width:600px;
+
+	margin-top: 55px;
+	margin-bottom:55px;
+	padding-bottom: 15px;
+}
+
+
+p{
+	width:450px;
+	margin:auto;
+	font-size:18px;
+	line-height:1.5em;
+	word-spacing:0.05em;
+	margin-bottom:15px;
+	z-index:0;
+
+}
+
+a{
+	font-family: 'Messenger Mono';
+	color:rgb(55,50,255);
+	text-decoration: none;
+}
+
+a:hover{
+	background-color:rgb(55,50,255);
+}
+
+.interview-q{
+
+	font-family: 'Messenger Mono';
+	font-size:24px;
+	text-decoration: underline;
+	line-height: 1.25em;
+
+	color:rgb(55,50,255);
+	border:1px dotted rgba(0,0,0,0);
+
+	width:550px;
+	margin-bottom:-30px;
+	margin-top:55px;
+	margin-left:30%;
+	z-index:50;
+
+	padding:15px;
+
+
+}
+
+.interview-q:hover{
+
+}
+
+
+
+.interview-a{
+	font-size:16px;
+	margin-bottom:15px;
+	z-index:0;
+}
+
+.urlFrame{
+	width:500px;
+	position:absolute;
+	font-size:92px;
+	z-index:-1;
+	opacity:0.1;
+
+	color:rgb(255,70,50);
+	overflow:hidden;
+
+}
+
+img{
+	margin:auto;
+	width:800px;
+}
+
+.imgBox{
+	vertical-align: top;
+	display:inline-block;
+	width:300px;
+	height:200px;
+	overflow:hidden;
+
+	margin-left: 0;
+	margin-right: 0;
+	z-index:100;
+}
+
+blockquote{
+	font-style: italic;
+	font-size:24px;
+	line-height:1.5em;
+	color:rgb(55,50,255);
+
+	width:600px;
+	margin:auto;
+	margin-bottom:55px;
+	margin-top:55px;
+}

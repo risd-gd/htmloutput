@@ -16,3 +16,5 @@ __experiments/page_layout Folder/Document fonts/AdobeFnt14.lst
 interview-mevis-caserta/illo/illo_300.psd
 
 *.psd
+
+.DS_Store
