@@ -208,13 +208,13 @@ nav {
   background-color: blue;
   color: white;
   display: inline-block;
-  font-size: 40px;
+  font-size: 30px;
   xwhite-space: nowrap;
   position: relative;
-  top: 350px;
+  top: 200px;
   border: 1px solid blue;
   font-family: "Messenger-Text", sans-serif;
-  padding: 20px;
+  padding: 10px;
 }
 .pagey .name:hover{
   color: blue;
