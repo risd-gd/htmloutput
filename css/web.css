@@ -4,6 +4,10 @@ Web overall style
 
 ----------------------------------*/
 
+body {
+  color: #1A1A1A;
+}
+
 .printy{
   display: none;
 }
@@ -38,9 +42,15 @@ img{
 }
 
 
-.wrapper {
-  max-width: 600px;
+.wrapper div, p, figure, figcaption{
+  max-width: 500px;
   margin: auto;
+} .wrapper img {
+  height:auto;
+  max-width: 800px;
+  margin-left: auto;
+  margin-top: 15px;
+  display: inline-block;
 }
 
 .interview-q:before, .interview-a:before  { 
@@ -48,9 +58,9 @@ img{
   color: darkorange;
 }
 
-.interview-a { margin: 0; text-indent: 20px;  }
-.interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }
-.interview-a, .interview-q { font-size: 20px; margin: 0 0 30px 0; }
+.interview-a { text-indent: 20px;  }
+.interview-q { padding-left: 20px; }
+.interview-a, .interview-q { font-size: 20px;}
 
 .title {
   font-family: "Benton Modern";
@@ -63,7 +73,7 @@ img{
 }
 
 hr {
-  border-bottom: 7px solid black;
+  border-bottom: 7px solid #1A1A1A;
   width: 25%;
   height: 8px;
   margin-top: 25px;
@@ -71,7 +81,7 @@ hr {
 }
 
 p {
-    
+
     width:500px;
     margin:auto;
     font-size:18px;
