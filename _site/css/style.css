@@ -173,9 +173,8 @@ nav {
 }
 
 #content{
-  top: 0px;
+  top: -320px;
   left: 0px;
-  height: 100%;
   width: 100%;
   padding-left: 30%;
   position: absolute;
