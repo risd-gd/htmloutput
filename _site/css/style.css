@@ -90,7 +90,7 @@ hr {
 
 /* ----------------------------------
 
-Styles for the index page
+Styles for the index/toc page
 
 ----------------------------------*/
 
@@ -123,6 +123,55 @@ nav {
 .posts {
   margin-bottom: 2rem;
 }
+
+/* Above this is old styling, below this is new */
+
+#print_button_link{
+  text-decoration: none;
+  border: 2px solid blue;
+  text-align: center;
+  color: blue;
+  z-index: 2;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 300px;
+  display: inline-block;
+  padding: 50px 0px;
+}
+#print_button_link:hover{
+  background: blue;
+  color: white;
+}
+
+#nav_box{
+	top: 150px;
+  left: 0px;
+	width: 300px;
+	max-height: 400px;
+	padding:25px;
+	margin:15px;
+	display:inline-block;
+	position:fixed;
+	background-color: white;
+	border: 2px solid black;
+	box-shadow: 15px 15px 15px rgba(0,0,0,0.25);
+	overflow-y:auto;
+  font-size: 14px;
+  z-index: 3;
+}
+
+#content{
+  top: 0px;
+  left: 345px;
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  z-index: 1;
+}
+
+#content .caption{}
+
 
 /* ----------------------------------
 
@@ -173,7 +222,7 @@ separated into print and web
 .interview-q {}
 .interview-a, .interview-q { line-height: 125%; font-family: "Benton Modern";}
 
-/*//////////Phil messing around////////////*/ 
+/*//////////Phil messing around////////////*/
 
 /* ----------------------------------
 

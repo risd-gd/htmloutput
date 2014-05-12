@@ -1,14 +1,11 @@
 ---
 layout: toc
-title: HTML Output
+title: HTML OUTPUT
 ---
 
-<div id="print_button">
-    <a href="{{ site.baseurl }}/book" class="print_button_link">
+<a href="{{ site.baseurl }}/book" id="print_button_link">
         &#8984; P
-    </a>
 </a>
-</div>
 
 <div id="nav_box">
     {% for category in site.types %}
@@ -16,15 +13,26 @@ title: HTML Output
 
     {% for page in site.pages %}{% if page.category == category %}
         {% if category == 'interview' %}
-            {{ page.interviewee }} — {{ page.interviewer }}<br />
+            {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
         {% else %}
-            {{ page.title }}<br />
+            {{ page.title }} by {{ page.author }}<br />
         {% endif %}
 
     {% endif %}{% endfor %}
+
+    <br /><br />
+
+    {% endfor %}
 </div>
 
 <div id="content">
 
+    {% for category in site.types %}
+    {% for page in site.pages %}{% if page.category == category %}
+
+    <a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+
+    {% endif %}{% endfor %}
+    {% endfor %}
 
 </div>
