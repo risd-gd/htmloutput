@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
+
         <style>
 
 
@@ -23,16 +24,22 @@
     </head>
     <body>
 
-        <a href="{{ site.baseurl }}">< Index</a>
-        <h1>{{ page.title }}</h1>
+        <div class="wrapper">
 
-        <div class="meta">
-            Author: {{ page.author }}<br />
-            Category: {{ page.category }}<br />
-            Description: {{ page.description }}<br />
+            <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
+
+            <div class="title">{{ page.title }} <hr> {{ page.description }}<hr> by {{ page.author }}<hr></div>
+
+
+
+            <!-- <div class="meta">
+                Author: {{ page.author }}<br />
+                Category: {{ page.category }}<br />
+                Description: {{ page.description }}<br />
+            </div> -->
+
+            {{ content }}
         </div>
-
-        {{ content }}
 
     </body>
 </html>

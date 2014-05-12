@@ -11,9 +11,20 @@ Web overall style
   display: visible;
 }
 
+.toc {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 115px;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  border-bottom: 3px solid blue;
+}
+
 /* ----------------------------------
 
-Interview Styles
+Interview & Project Styles
 
 ----------------------------------*/
 q { background-color: gold;}
@@ -27,19 +38,98 @@ img{
 }
 
 
-.interview-q:before { font-size: 15px; }
-.interview-a:before { font-size: 15px; }
+.wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+
+.interview-q:before, .interview-a:before  { 
+  font-size: 15px; 
+  color: darkorange;
+}
 
 .interview-a { margin: 0; text-indent: 20px;  }
 .interview-q { margin-left: 20px; padding-left: 20px; margin-right: 10px; }
 .interview-a, .interview-q { font-size: 20px; margin: 0 0 30px 0; }
 
+.title {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 110%;
+  width: 500px;
+  margin: auto;
+}
+
+hr {
+  border-bottom: 7px solid black;
+  width: 25%;
+  height: 8px;
+  margin-top: 25px;
+  margin-bottom: 35px; 
+}
+
+p {
+    
+    width:500px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.5em;
+    margin-bottom:15px;
+}
+ 
+a {
+    font-family: 'Messenger Mono';
+    color:rgb(55,50,255);
+    text-decoration: none;
+} a:hover {
+    background-color:rgb(55,50,255);
+}
+
+.interview {
+  margin:auto;
+  width: 60%;
+}
+
+.interview-q{
+
+  font-family: 'Messenger Mono';
+  font-size:14px;
+
+  color: dodgerblue;
+
+  width:450px;
+  margin-bottom:15px;
+  margin-top:55px;
+
+}
+
+.interview-a{
+  margin-bottom:15px;
+  font-size:18px;
+  line-height:1.5em;
+}
+
 blockquote{
-  margin-left: -20px;
-  margin-right: 30px;
-  color: red;
-  font-family: "Messenger Mono";
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: none;
+  font-family: 'Messenger Text';
+  font-size:24px;
+  line-height:1.5em;
+
+  width:600px;
+  margin:auto;
+  margin-bottom:55px;
+  margin-top:55px;
+
+}
+
+.interview-intro {
+  width:500px;
+  margin:auto;
+  border-bottom:1px dotted black;
+  font-size:24px;
+  font-family:'Benton Modern';
+  margin-top: 55px;
+  margin-bottom:55px;
+  padding-bottom: 15px;
 }
