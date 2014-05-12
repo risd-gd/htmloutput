@@ -182,7 +182,11 @@ nav {
   overflow-x: hidden;
 }
 
-#content .caption{
+.pagey{
+  width: 100%;
+}
+
+.pagey .caption{
   width: 60%;
   text-align: left;
   background-color: blue;
@@ -193,9 +197,10 @@ nav {
   left: 300px;
   font-family: "Benton Modern",serif;
   padding: 6px;
+  border: 1px solid blue;
 }
 
-#content .name{
+.pagey .name{
   width: 100%;
   text-align: left;
   background-color: blue;
@@ -209,16 +214,16 @@ nav {
   font-family: "Benton Modern", serif;
   padding: 20px;
 }
-#content .name:hover{
+.pagey .name:hover{
   color: transparent;
   background-color: transparent;
 }
-#content .caption:hover{
+.pagey .caption:hover{
   color: transparent;
   background-color: transparent;
 }
 
-#content img{
+.pagey img{
   width: 100%;
 }
 
