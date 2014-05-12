@@ -219,7 +219,7 @@ nav {
   top: 200px;
   border: 1px solid blue;
   font-family: "Messenger-Text", sans-serif;
-  padding: 10px;
+  padding: 20px;
 }
 .pagey .name:hover{
   color: blue;
