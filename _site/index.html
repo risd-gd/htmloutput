@@ -7,9 +7,84 @@
     <link rel="stylesheet" href="/css/type/type.css"  type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/web.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body>
-    <nav>
+    <style>
+  
+    [data-interviewee="Peter Biľak"] .interview-a:before {
+      content: 'PB';
+    }
+    [data-interviewee="Peter Biľak"] .interview-q:before {
+      content: 'CS';
+    }
+  
+    [data-interviewee="Augustina Bello-Decurnex"] .interview-a:before {
+      content: 'AB';
+    }
+    [data-interviewee="Augustina Bello-Decurnex"] .interview-q:before {
+      content: 'KW';
+    }
+  
+    [data-interviewee="Andrew LeClair"] .interview-a:before {
+      content: 'AL';
+    }
+    [data-interviewee="Andrew LeClair"] .interview-q:before {
+      content: 'CR';
+    }
+  
+    [data-interviewee="Jürg Lehni"] .interview-a:before {
+      content: 'JL';
+    }
+    [data-interviewee="Jürg Lehni"] .interview-q:before {
+      content: 'PC & DG';
+    }
+  
+    [data-interviewee="Armand Mevis and Dylan Fracareta"] .interview-a:before {
+      content: 'AM';
+    }
+    [data-interviewee="Armand Mevis and Dylan Fracareta"] .interview-q:before {
+      content: 'JC';
+    }
+  
+    [data-interviewee="Dan Michaelson"] .interview-a:before {
+      content: 'DM';
+    }
+    [data-interviewee="Dan Michaelson"] .interview-q:before {
+      content: 'JC';
+    }
+  
+    [data-interviewee="Jason Pamental"] .interview-a:before {
+      content: 'JP';
+    }
+    [data-interviewee="Jason Pamental"] .interview-q:before {
+      content: 'OD';
+    }
+  
+    [data-interviewee="Ben Pieratt"] .interview-a:before {
+      content: 'BP';
+    }
+    [data-interviewee="Ben Pieratt"] .interview-q:before {
+      content: 'LTWP';
+    }
+  
+    [data-interviewee="David Reinfurt"] .interview-a:before {
+      content: 'DR';
+    }
+    [data-interviewee="David Reinfurt"] .interview-q:before {
+      content: 'JC';
+    }
+  
+    [data-interviewee="Paul Soulellis"] .interview-a:before {
+      content: 'PS';
+    }
+    [data-interviewee="Paul Soulellis"] .interview-q:before {
+      content: 'CW';
+    }
+  
+</style>
+
+<nav>
   <h1>HTML Output</h1>
 
 </nav>
@@ -437,17 +512,24 @@
 </a>
 
 
-
-
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="About this project">
-    
-    <p>This <span class="noprinty">website</span> <span class="printy">book</span> combines conversations with practicing designers with three months of experimental projects that use the web browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and a book. <span class="printy">This book in your very hands was printed from a web browser. </span> <span class="printy">This website prints to a small paperback book.</span> A "responsive" website that at any point in its development  couldoutput to a pdf. </p>
+      
+      <h1>About this project</h1>
+
+    <div class="meta">
+      <p>Author: </p>
+      <p>Category: essay</p>
+      <p>Description: </p>
+    </div>
+
+    <div class="content">
+      <p>This <span class="noprinty">website</span> <span class="printy">book</span> combines conversations with practicing designers with three months of experimental projects that use the web browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and a book. <span class="printy">This book in your very hands was printed from a web browser. </span> <span class="printy">This website prints to a small paperback book.</span> A "responsive" website that at any point in its development  couldoutput to a pdf. </p>
 
 <p>The two forms each offer something distinct, and complementary. The web version is search-indexible, and widely available. A book is an ideal place for designers to archive and present their work in a physical format. Unlike the web, the book is a final format. It cannot lose compatibility or functionality. It cannot be linked to, it cannot be updated, and it cannot be edited. It can be reprinted but each individual book is an archive of a specific time and state. <span class="printy">This one, for example, was generated at XX/XX/XXXX at XX:XX </span>.</p>
 
@@ -468,24 +550,45 @@ Benton Modern, designed by Tobias Frere-Jones and generously provided by <a href
 <h2>Authors and Designers</h2>
 <a href="http://#">Evan Brooks</a>, <a href="http://#">Lukas Winklerprins</a>, <a href="http://#">Philippe Cao</a>, <a href="http://#">Catherine Schmidt, <a href="http://#">Christina Rees</a>, <a href="http://#">Christina Webb</a>, <a href="http://#">Kelly Walters</a>, <a href="http://#">Michael McDermott</a>, <a href="http://#">Ojus Doshi</a>, <a href="http://#">Daniel Giuditta</a>, <a href="http://johncaserta.com">John Caserta</a>
 
+    </div>
 
   </div>
+  
+  
+
+
+
+
+    <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
-    <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
-
-
-
-
+  
 
   <div class="page" id="Peter Biľak">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'PB   '");
+      $(this > ".interview-q:before").css( "content",
+            "'CS   '");
+
+    </script> -->
+
+    <h1>Peter Biľak</h1>
+
+        <div class="meta">
+            Author: You<br />
+            Category: interview<br />
+            Description: This is an interview<br />
+        </div>
     
-    <section class="interview-intro">
+        <div class="content" data-interviewee="Peter Biľak">
+          <section class="interview-intro">
 		Peter is a type designer
 		I interviewed him
 </section>
@@ -547,19 +650,43 @@ Benton Modern, designed by Tobias Frere-Jones and generously provided by <a href
 	</p>
 </section>
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Binary Systems in Textiles">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'AB   '");
+      $(this > ".interview-q:before").css( "content",
+            "'KW   '");
+
+    </script> -->
+
+    <h1>Binary Systems in Textiles</h1>
+
+        <div class="meta">
+            Author: Kelly Walters<br />
+            Category: interview<br />
+            Description: Interview with Augustina Bello-Decurnex, Converse Material Innovation Designer<br />
+        </div>
     
-    <p class="interview-q">
+        <div class="content" data-interviewee="Augustina Bello-Decurnex">
+          <p class="interview-q">
 		My name is Kelly and I'm a graphic design grad here at RISD. Some of my areas of interest that I have been looking and have shaped my design practice are textiles, and so looking to you in terms of inspiration as for your textiles background and I was curious to hear a little bit more about how you ended up in the field.
 </section>
 
@@ -762,19 +889,43 @@ Awesome. Thanks. This is great!
 
 
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Andrew LeClair">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'AL   '");
+      $(this > ".interview-q:before").css( "content",
+            "'CR   '");
+
+    </script> -->
+
+    <h1>Andrew LeClair</h1>
+
+        <div class="meta">
+            Author: Christina Rees<br />
+            Category: interview<br />
+            Description: Interview with Andrew LeClair<br />
+        </div>
     
-    <p class="interview-q">In our class, we are using the browser as a rendering engine/tool. How do you interact with the browser in creating your work?</p>
+        <div class="content" data-interviewee="Andrew LeClair">
+          <p class="interview-q">In our class, we are using the browser as a rendering engine/tool. How do you interact with the browser in creating your work?</p>
 
 <p class="interview-a">The most obvious thing about the browser is that the viewport isn't a fixed dimension. So, rather than designing for a fixed format like you would when designing a poster or a book, you're designing for a set of possible formats, some more likely than others. Your design is more of a probabilistic system in that way. You write a series of rules that define how the design will respond in different scenarios, but you can never fully predict all situations or see all states of your design at the same time.
 
@@ -805,19 +956,43 @@ Ellen Lupton has said that a lot of self-publishing is publishing the self and s
 The design of the book is heavily influenced by the work of Donald Knuth. He made a system, by now probably familiar to most graphic designers, called TeX which was a typesetting system that he designed and built to typeset the volumes he published of his own research. Ether Press uses an open-source variant of TeX called ConTeXt that has more control over typographic detail. The typeface is called <a href="http://checkmyworking.com/cm-web-fonts/">Computer Modern</a> and it's one of the typefaces generated by Knuth's METAFONT program which he built to generate typefaces for use in TeX. </a>
 
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Jürg Lehni interview">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'JL   '");
+      $(this > ".interview-q:before").css( "content",
+            "'PC & DG   '");
+
+    </script> -->
+
+    <h1>Jürg Lehni interview</h1>
+
+        <div class="meta">
+            Author: Philippe Cao, Daniel Giuditta<br />
+            Category: interview<br />
+            Description: Interview with Jürg Lehni<br />
+        </div>
     
-    <!doctype html>
+        <div class="content" data-interviewee="Jürg Lehni">
+          <!doctype html>
 
 	<style>
 		.interview-q:before{
@@ -921,19 +1096,43 @@ As for the influence of programming on other aspects of my practice or even my l
 
 </body>
 </html>
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Design in the Imagination">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'AM   '");
+      $(this > ".interview-q:before").css( "content",
+            "'JC   '");
+
+    </script> -->
+
+    <h1>Design in the Imagination</h1>
+
+        <div class="meta">
+            Author: John Caserta<br />
+            Category: interview<br />
+            Description: Interview with Armand Mevis and Dylan Fracareta<br />
+        </div>
     
-    <style>
+        <div class="content" data-interviewee="Armand Mevis and Dylan Fracareta">
+          <style>
 	    .d:before { content: 'DF   '; }
 </style>
 
@@ -1001,19 +1200,43 @@ A conversation between Dylan Fracareta, Armand Mevis and John Caserta, which too
 </figure>
 
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Systems as form">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'DM   '");
+      $(this > ".interview-q:before").css( "content",
+            "'JC   '");
+
+    </script> -->
+
+    <h1>Systems as form</h1>
+
+        <div class="meta">
+            Author: John Caserta<br />
+            Category: interview<br />
+            Description: Conversation with Dan Michaelson of Linked by Air<br />
+        </div>
     
-    <style>
+        <div class="content" data-interviewee="Dan Michaelson">
+          <style>
 	    .cs:before { content: 'CS    '; }
 
 </style>
@@ -1081,19 +1304,43 @@ Its a reaction to that, in that if we could just capture every single state of e
 </p><p class="interview-a"> You're not literally designing in the inspector (that actually kind of a neat idea), you have a text editor and you've got this other tool as well that then is rendered by the browser...
 </p>
 </del>
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Jason Pamental">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'JP   '");
+      $(this > ".interview-q:before").css( "content",
+            "'OD   '");
+
+    </script> -->
+
+    <h1>Jason Pamental</h1>
+
+        <div class="meta">
+            Author: Ojus Doshi<br />
+            Category: interview<br />
+            Description: This is an interview<br />
+        </div>
     
-    <section class="interview-intro">
+        <div class="content" data-interviewee="Jason Pamental">
+          <section class="interview-intro">
 		[From <a href="http://www.hwdesignco.com/about">H and W Design Company</a>]
 
 		Jason Pamental has worked on the web since 1994. With a background in design and an intimate understanding of technology and its application on the web, he has led creative and technical teams for NFL and America’s Cup teams, Fortune 25 and technology corporations and many other clients, serving in both creative and technical roles. A passionate advocate of web standards and accessibility, Jason embraces new developments in web typography and responsive design as the next logical evolution in usability, search and maintenance of complex web systems.
@@ -1177,19 +1424,43 @@ Its a reaction to that, in that if we could just capture every single state of e
 <p class="interview-q"> Alright, I think that’s all we have time for. Thank you very much for doing this. It’s been really educational.</p>
 <p class="interview-a"> You’re very welcome. I really enjoyed doing it.</p>
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Print Is Dead So Print Is Art">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'BP   '");
+      $(this > ".interview-q:before").css( "content",
+            "'LTWP   '");
+
+    </script> -->
+
+    <h1>Print Is Dead So Print Is Art</h1>
+
+        <div class="meta">
+            Author: Lukas WinklerPrins<br />
+            Category: interview<br />
+            Description: Transcript from skype interview with Ben Pieratt.<br />
+        </div>
     
-    <section class="interview-intro">
+        <div class="content" data-interviewee="Ben Pieratt">
+          <section class="interview-intro">
     <a href="http://pieratt.com">Ben Pieratt</a> is a designer known for projects like Hessian and <a href="http://svpply.com">SVPPLY</a>. He has been through the ringer as a startup CEO and came out the other side with quite a bit of personal drive and focus, which has lead to his most recent studio, Internetland. He sat down for a skype interview with Lukas on March 13, 2014.
 </section>
 
@@ -1546,19 +1817,43 @@ cool, thank you
 word. uhm, cool man. I hope this was moderately interesting.
 </p>
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Responsiveness in Design">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'DR   '");
+      $(this > ".interview-q:before").css( "content",
+            "'JC   '");
+
+    </script> -->
+
+    <h1>Responsiveness in Design</h1>
+
+        <div class="meta">
+            Author: John Caserta<br />
+            Category: interview<br />
+            Description: This is an interview<br />
+        </div>
     
-    <section class="interview-intro">
+        <div class="content" data-interviewee="David Reinfurt">
+          <section class="interview-intro">
 		David Reinfurt recently mounted a show at the Columbia University on the work of Muriel Cooper at MIT. Here is a link to the <a href="https://soundcloud.com/john-caserta-1">audio of the interview.</a>
 </section>
 
@@ -1651,19 +1946,43 @@ word. uhm, cool man. I hope this was moderately interesting.
 
 
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="HTML & Actionable Moments">
+
+  <!--  <script>
+
+      $(this > ".interview-a:before").css( "content",
+            "'PS   '");
+      $(this > ".interview-q:before").css( "content",
+            "'CW   '");
+
+    </script> -->
+
+    <h1>HTML & Actionable Moments</h1>
+
+        <div class="meta">
+            Author: Christina Webb<br />
+            Category: interview<br />
+            Description: transcript of audio interview at RISD CIT 4.14.14<br />
+        </div>
     
-    <section class="interview-intro">
+        <div class="content" data-interviewee="Paul Soulellis">
+          <section class="interview-intro">
 		<a href="http://soulellis.com/">Paul Soulellis</a>is a New York-based artist and creative director, maintaining his studio in Long Island City, NY. He founded <a href="http://libraryoftheprintedweb.tumblr.com/" >Library of the Printed Web</a>. Paul publishes Printed Web #1, the first publication devoted to web-to-print art and discourse.
 </section>
 
@@ -1936,19 +2255,34 @@ No, I’m just excited that these discussions are even happening.
 
 
 
+        </div>
+
 
   </div>
+
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Sample project">
-    
-    <p>This is a test project</p>
+      
+      <h1>Sample project</h1>
+
+    <div class="meta">
+      <p>Author: You</p>
+      <p>Category: project</p>
+      <p>Description: This is a project</p>
+    </div>
+
+    <div class="content">
+      <p>This is a test project</p>
 
 <p>This is a test project</p>
 
@@ -2011,19 +2345,33 @@ No, I’m just excited that these discussions are even happening.
 
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Dear Chrome">
-    
-    <!-- This image will go across two pages and full bleed -->
+      
+      <h1>Dear Chrome</h1>
+
+    <div class="meta">
+      <p>Author: Philippe Cao</p>
+      <p>Category: project</p>
+      <p>Description: Form and color experiments in Google Chrome</p>
+    </div>
+
+    <div class="content">
+      <!-- This image will go across two pages and full bleed -->
 <figure data-imagespread data-fullbleed>
 	<img src="../project-cao-dearchrome/screen1.png">
 	<figcaption>Hi I'm Phil!</figcaption>
@@ -2033,19 +2381,33 @@ No, I’m just excited that these discussions are even happening.
 
 <img src="../project-cao-dearchrome/screen3.png">
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Sample project">
-    
-    This is a test project
+      
+      <h1>Sample project</h1>
+
+    <div class="meta">
+      <p>Author: You</p>
+      <p>Category: project</p>
+      <p>Description: This is a project</p>
+    </div>
+
+    <div class="content">
+      This is a test project
 
 
 <div class="_page-break"></div>
@@ -2077,19 +2439,33 @@ No, I’m just excited that these discussions are even happening.
 	</div>
 </figure>
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="This is Important">
-    
-    <p>The nature of cascading style sheets makes the visual form of a website extremely tenuous. One small CSS change can render a well known website unrecognizable, thereby creating new visual form and revealing the underlying structure of the site. Our explorations insert a few lines of CSS into common websites like Google, Facebook, &amp; Yahoo via a manipulated, open-source Chrome extension called "textfreestyles". Using a default A2 size page as a frame or cropping tool, we selected interesting compositions for printed output.<br />
+      
+      <h1>This is Important</h1>
+
+    <div class="meta">
+      <p>Author: Michael McDermott &amp; Ojus Doshi</p>
+      <p>Category: project</p>
+      <p>Description: A project messing with CSS and stuff</p>
+    </div>
+
+    <div class="content">
+      <p>The nature of cascading style sheets makes the visual form of a website extremely tenuous. One small CSS change can render a well known website unrecognizable, thereby creating new visual form and revealing the underlying structure of the site. Our explorations insert a few lines of CSS into common websites like Google, Facebook, &amp; Yahoo via a manipulated, open-source Chrome extension called "textfreestyles". Using a default A2 size page as a frame or cropping tool, we selected interesting compositions for printed output.<br />
 ###### A2 (16.5 in x 23.4 in), digitally printed, RISD 2014</p>
 
 <img src="../project-mcdermott-important/Projo"> 
@@ -2100,37 +2476,65 @@ No, I’m just excited that these discussions are even happening.
 <img src="../project-mcdermott-important/CSS-Tricks.jpg" />
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Random Letter Letterhead">
-    
-    <p>Designing for modern browsers has allowed for the use of powerful scripting languages for a while now. The ability to generate random numbers through these scripting languages can be further used to create unique web-to-print situations. In this instance, I modified a randomization script created by Lukas to randomly color and skew existing letterforms and place these newly modified letters in a border. If this script was used for personal letterhead that was generated and printed from the browser, each letter would be unique and could be a direct aesthetic response to the content of the letter. That's also contingent upon people still sending letters, which I suspect happens at an extremely low rate.</p>
+      
+      <h1>Random Letter Letterhead</h1>
+
+    <div class="meta">
+      <p>Author: Ojus</p>
+      <p>Category: project</p>
+      <p>Description: Programmatically generate a unique, personal letterhead</p>
+    </div>
+
+    <div class="content">
+      <p>Designing for modern browsers has allowed for the use of powerful scripting languages for a while now. The ability to generate random numbers through these scripting languages can be further used to create unique web-to-print situations. In this instance, I modified a randomization script created by Lukas to randomly color and skew existing letterforms and place these newly modified letters in a border. If this script was used for personal letterhead that was generated and printed from the browser, each letter would be unique and could be a direct aesthetic response to the content of the letter. That's also contingent upon people still sending letters, which I suspect happens at an extremely low rate.</p>
 
 <img src="../project-ojus-letterhead/letterhead-print.jpg"/>
 
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Typographic Landscapes">
-    
-    <p>Through CSS, I tried to transform typography into a pictoral, graphic, or illustrative form that evokes an abstract landscape.</p>
+      
+      <h1>Typographic Landscapes</h1>
+
+    <div class="meta">
+      <p>Author: Ojus</p>
+      <p>Category: project</p>
+      <p>Description: Typographic scale exercises in the browser</p>
+    </div>
+
+    <div class="content">
+      <p>Through CSS, I tried to transform typography into a pictoral, graphic, or illustrative form that evokes an abstract landscape.</p>
 
 <figure data-imagespread data-fullbleed>
 	<img src="../project-ojus-typelandscapes/typelandscapes1.jpg"/>
@@ -2145,19 +2549,33 @@ No, I’m just excited that these discussions are even happening.
 	<img src="../project-ojus-typelandscapes/typelandscapes4.jpg"/>
 </figure>
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="The Web Inspector as Design Tool">
-    
-    <div style="font-size: 200px; font-family: arial">&#x2318;P</div>
+      
+      <h1>The Web Inspector as Design Tool</h1>
+
+    <div class="meta">
+      <p>Author: John Caserta</p>
+      <p>Category: project</p>
+      <p>Description: </p>
+    </div>
+
+    <div class="content">
+      <div style="font-size: 200px; font-family: arial">&#x2318;P</div>
 <!--
 <p>The graphical browser turned 20 years old last year. <a href="http://www.wired.com/2010/04/0422mosaic-web-browser/">NCSA Mosaic</a>, created at the University of Illinois, supported images of to 216 colors using a new HTML tag called "img". What began as a project to structure and share academic content, The World Wide Web quickly served as a distribution center for designs produced for the printed page. Static designs and image assets were downsampled and placed online as additional output.</p>
 
@@ -2215,35 +2633,63 @@ And as it turns out, this pleasure and discovery translates to more everyday des
 <img src="../project-patterns-caserta/IMG_0952.PNG">
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Christinas Project">
-    
-    <p>as;ldkfj</p>
+      
+      <h1>Christinas Project</h1>
+
+    <div class="meta">
+      <p>Author: </p>
+      <p>Category: project</p>
+      <p>Description: browser animations</p>
+    </div>
+
+    <div class="content">
+      <p>as;ldkfj</p>
 <img src="../animation.jpg"/>
 <img src="../animation2.jpg"/>
 <img src="../animation3.jpg"/>
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="Profiling and Wikipedia">
-    
-    <p> In our investigation for Project 1, Christina and and I explored the topic profiling as it relates to online user experiences. In our research we found that there were multiple definitions for profiling, that not only represented the social and political applications that we are familiar with, but technological aspects as well. Using Wikipedia as a source, we found 8 definitions that led back to both our cognitive interests and our process of using HTML code. This inspired a systematic approach to gathering content, collecting imagery, applying HTML attributes and forming the final composition. </p>
+      
+      <h1>Profiling and Wikipedia</h1>
+
+    <div class="meta">
+      <p>Author: Kelly Walters & Christina Webb</p>
+      <p>Category: project</p>
+      <p>Description: Patterns in Profiling</p>
+    </div>
+
+    <div class="content">
+      <p> In our investigation for Project 1, Christina and and I explored the topic profiling as it relates to online user experiences. In our research we found that there were multiple definitions for profiling, that not only represented the social and political applications that we are familiar with, but technological aspects as well. Using Wikipedia as a source, we found 8 definitions that led back to both our cognitive interests and our process of using HTML code. This inspired a systematic approach to gathering content, collecting imagery, applying HTML attributes and forming the final composition. </p>
 
 
 <figure>
@@ -2272,19 +2718,33 @@ And as it turns out, this pleasure and discovery translates to more everyday des
 
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="webb projects/ pattern">
-    
-    <!--
+      
+      <h1>webb projects/ pattern</h1>
+
+    <div class="meta">
+      <p>Author: Christina Webb</p>
+      <p>Category: project</p>
+      <p>Description: patterning divs</p>
+    </div>
+
+    <div class="content">
+      <!--
 <img style="width: 100%;" src="..
 /-->
 
@@ -2325,19 +2785,33 @@ And as it turns out, this pleasure and discovery translates to more everyday des
 
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
 
 
 
-
+  
 
   <div class="page" id="webb projects/ text">
-    
-    <!--
+      
+      <h1>webb projects/ text</h1>
+
+    <div class="meta">
+      <p>Author: Christina Webb</p>
+      <p>Category: project</p>
+      <p>Description: text compositions</p>
+    </div>
+
+    <div class="content">
+      <!--
 <img style="width: 100%;" src="..
 /-->
 <p>html text is transformed beyond utilitarian purpose by CSS specifications, exploring readability, hierarchy, and visual play.</p>
@@ -2384,13 +2858,16 @@ And as it turns out, this pleasure and discovery translates to more everyday des
 
 
 
+    </div>
 
   </div>
+  
+  
+
+
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
-
-
 
 
     <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
