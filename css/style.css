@@ -169,28 +169,15 @@ nav {
   text-align: center;
   text-transform: uppercase;
   padding: 30px;
+  font: 20px/1.4 "Messenger-Text", sans-serif;
 }
-
-<!--
-#nav_box .interview:before{
-  content: ' ❝ ';
-}
-#nav_box .essay:before{
-  content: ' ✎ ';
-}
-#nav_box .project:before{
-  content: ' § ';
-}
-#nav_box .about:before{
-  content: '';
-}
--->
 
 #content{
   top: 0px;
-  left: 345px;
+  left: 0px;
   height: 100%;
-  width: 80%;
+  width: 100%;
+  padding-left: 30%;
   position: absolute;
   z-index: 1;
   overflow-x: hidden;
@@ -198,7 +185,24 @@ nav {
 
 #content .caption{}
 
-#content .name{}
+#content .name{
+  width: 100%;
+  text-align: left;
+  background-color: blue;
+  color: white;
+  display: inline-block;
+  font-size: 100px;
+  xwhite-space: nowrap;
+  position: relative;
+  top: 350px;
+  border: 1px solid blue;
+  font-family: "Benton Modern", serif;
+  padding: 20px;
+}
+#content .name:hover{
+  color: transparent;
+  background-color: transparent;
+}
 
 #content img{
   width: 100%;

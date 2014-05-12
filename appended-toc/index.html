@@ -15,16 +15,14 @@ title: HTML OUTPUT
 
     {% for page in site.pages %}{% if page.category == category %}
         {% if category == 'interview' %}
-            <strong><span class="{{category}}">{{page.title}}</span><br /></strong>
+            <strong><a class="unit {{category}}">{{page.title}}</a><br /></strong>
             {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
         {% else %}
-            <strong><span class="{{category}}">{{page.title}}</span><br /></strong>
-            by {{ page.author }}<br />
+            <strong><a class="unit {{category}}">{{page.title}}</a><br /></strong>
+            {{ page.author }}<br />
         {% endif %}
 
     {% endif %}{% endfor %}
-
-    <br /><br />
 
     {% endfor %}
 </div>
@@ -33,10 +31,8 @@ title: HTML OUTPUT
 
     {% for category in site.types %}
     {% for page in site.pages %}{% if page.category == category %}
-    <div class="pagey">
-        <a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+        <a class="name" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
         <img src="{{ site.baseurl }}{{ page.url }}/hero.png" />
-    </div>
 
     {% endif %}{% endfor %}
     {% endfor %}
