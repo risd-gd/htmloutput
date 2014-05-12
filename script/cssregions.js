@@ -8,7 +8,7 @@ if(!document.caretRangeFromPoint) {
     if (document.caretPositionFromPoint) {
         document.caretRangeFromPoint = function caretRangeFromPoint(x,y) {
             var r = document.createRange();
-            var p = document.caretPositionFromPoint(x,y); 
+            var p = document.caretPositionFromPoint(x,y);
             if(p.offsetNode) {
                 r.setStart(p.offsetNode, p.offset);
                 r.setEnd(p.offsetNode, p.offset);
@@ -16,11 +16,11 @@ if(!document.caretRangeFromPoint) {
             return r;
         }
     } else if((document.body||document.createElement('body')).createTextRange) {
-        
+
         //
         // we may want to convert TextRange to Range
         //
-        
+
         var TextRangeUtils = {
             convertToDOMRange: function (textRange, document) {
                 var adoptBoundary = function(domRange, textRangeInner, bStart) {
@@ -32,7 +32,7 @@ if(!document.caretRangeFromPoint) {
                             parent.insertBefore(cursorNode, cursorNode.previousSibling);
                             cursor.moveToElementText(cursorNode);
                     } while (cursor.compareEndPoints(bStart ? 'StartToStart' : 'StartToEnd', textRangeInner) > 0 && cursorNode.previousSibling);
-                    
+
                     // when we exceed or meet the cursor, we've found the node
                     if (cursor.compareEndPoints(bStart ? 'StartToStart' : 'StartToEnd', textRangeInner) == -1 && cursorNode.nextSibling) {
                             // data node
@@ -44,10 +44,10 @@ if(!document.caretRangeFromPoint) {
                     }
                     cursorNode.parentNode.removeChild(cursorNode);
                 }
-                
+
                 // validate argumentsrelayout
                 if(!document) { document=window.document; }
-                
+
                 // return a DOM range
                 var domRange = document.createRange();
                 adoptBoundary(domRange, textRange, true);
@@ -65,7 +65,7 @@ if(!document.caretRangeFromPoint) {
                     // visible data nodes need a text offset
                     if (container.nodeType == 3 || container.nodeType == 4)
                         textOffset = offset;
-                    
+
                     // create a cursor element node to position range (since we can't select text nodes)
                     var cursorNode = domRangeInner._document.createElement('a');
                     anchorParent.insertBefore(cursorNode, anchorNode);
@@ -76,7 +76,7 @@ if(!document.caretRangeFromPoint) {
                     textRange.setEndPoint(bStart ? 'StartToStart' : 'EndToStart', cursor);
                     textRange[bStart ? 'moveStart' : 'moveEnd']('character', textOffset);
                 }
-               
+
                 // return an IE text range
                 var textRange = domRange._document.body.createTextRange();
                 adoptEndPoint(textRange, domRange, true);
@@ -85,35 +85,35 @@ if(!document.caretRangeFromPoint) {
             }
         };
 
-        
+
         document.caretRangeFromPoint = function caretRangeFromPoint(x,y) {
-            
+
             // the accepted number of vertical backtracking, in CSS pixels
             var IYDepth = 40;
-            
+
             // try to create a text range at the specified location
             var r = document.body.createTextRange();
             for(var iy=IYDepth; iy; iy=iy-4) {
                 var ix = x; if(true) {
                     try {
-                        r.moveToPoint(ix,iy+y-IYDepth); 
+                        r.moveToPoint(ix,iy+y-IYDepth);
                         return TextRangeUtils.convertToDOMRange(r);
                     } catch(ex) {}
                 }
             }
-            
+
             // if that fails, return the location just after the element located there
             try {
-                
+
                 var elem = document.elementFromPoint(x-1,y-1);
                 var r = document.createRange();
                 r.setStartAfter(elem);
                 return r;
-                
+
             } catch(ex) {
-                
+
                 return null;
-                
+
             }
         }
     }
@@ -126,68 +126,68 @@ if(!document.caretRangeFromPoint) {
 
 Range.prototype.myMoveOneCharLeft = function() {
     var r = this;
-    
+
     // move to the previous cursor location
     if(r.endOffset > 0) {
-        
+
         // if we can enter into the previous sibling
         var previousSibling = r.endContainer.childNodes[r.endOffset-1];
         if(previousSibling && previousSibling.lastChild) {
-            
+
             // enter the previous sibling from its end
             r.setEndAfter(previousSibling.lastChild);
-            
+
         } else if(previousSibling && previousSibling.nodeType==previousSibling.TEXT_NODE) { // todo: lookup value
-            
+
             // enter the previous text node from its end
             r.setEnd(previousSibling, previousSibling.nodeValue.length);
-            
+
         } else {
-            
+
             // else move before that element
             r.setEnd(r.endContainer, r.endOffset-1);
-            
+
         }
-        
+
     } else {
         r.setEndBefore(r.endContainer);
     }
-    
+
 }
 
 Range.prototype.myMoveOneCharRight = function() {
     var r = this;
-    
+
     // move to the previous cursor location
     var max = (r.startContainer.nodeType==r.startContainer.TEXT_NODE ? r.startContainer.nodeValue.length : r.startContainer.childNodes.length)
     if(r.startOffset < max) {
-        
+
         // if we can enter into the next sibling
         var nextSibling = r.endContainer.childNodes[r.endOffset];
         if(nextSibling && nextSibling.firstChild) {
-            
+
             // enter the next sibling from its start
             r.setStartBefore(nextSibling.firstChild);
-            
+
         } else if(nextSibling && nextSibling.nodeType==nextSibling.TEXT_NODE && nextSibling.nodeValue!='') { // todo: lookup value
-            
+
             // enter the next text node from its start
             r.setStart(nextSibling, 0);
-            
+
         } else {
-            
+
             // else move before that element
             r.setStart(r.startContainer, r.startOffset+1);
-            
+
         }
-        
+
     } else {
         r.setStartAfter(r.endContainer);
     }
-    
+
     // shouldn't be needed but who knows...
     r.setEnd(r.startContainer, r.startOffset);
-    
+
 }
 
 
@@ -196,26 +196,26 @@ Range.prototype.myMoveOneCharRight = function() {
 ///
 Range.prototype.myMoveTowardRight = function() {
     var r = this;
-    
+
     // move to the previous cursor location
     var isTextNode = r.startContainer.nodeType==r.startContainer.TEXT_NODE;
     var max = (isTextNode ? r.startContainer.nodeValue.length : r.startContainer.childNodes.length)
     if(r.startOffset < max) {
-        
+
         // if we can enter into the next sibling
         var nextSibling = r.endContainer.childNodes[r.endOffset];
         if(nextSibling && nextSibling.firstChild) {
-            
+
             // enter the next sibling from its start
             r.setStartBefore(nextSibling.firstChild);
-            
+
         } else if(nextSibling && nextSibling.nodeType==nextSibling.TEXT_NODE && nextSibling.nodeValue!='') { // todo: lookup value
-            
+
             // enter the next text node from its start
             r.setStart(nextSibling, 0);
-            
+
         } else if(isTextNode) {
-            
+
             // move to the next non a-zA-Z symbol
             var currentText = r.startContainer.nodeValue;
             var currentOffset = r.startOffset;
@@ -224,85 +224,85 @@ Range.prototype.myMoveTowardRight = function() {
                 currentLetter = currentText[currentOffset++];
             }
             r.setStart(r.startContainer, currentOffset);
-            
+
         } else {
-            
+
             // else move before that element
             r.setStart(r.startContainer, r.startOffset+1);
-            
+
         }
-        
+
     } else {
         r.setStartAfter(r.endContainer);
     }
-    
+
     // shouldn't be needed but who knows...
     r.setEnd(r.startContainer, r.startOffset);
-    
+
 }
 
 
 Range.prototype.myMoveEndOneCharLeft = function() {
     var r = this;
-    
+
     // move to the previous cursor location
     if(r.endOffset > 0) {
-        
+
         // if we can enter into the previous sibling
         var previousSibling = r.endContainer.childNodes[r.endOffset-1];
         if(previousSibling && previousSibling.lastChild) {
-            
+
             // enter the previous sibling from its end
             r.setEndAfter(previousSibling.lastChild);
-            
+
         } else if(previousSibling && previousSibling.nodeType==previousSibling.TEXT_NODE) { // todo: lookup value
-            
+
             // enter the previous text node from its end
             r.setEnd(previousSibling, previousSibling.nodeValue.length);
-            
+
         } else {
-            
+
             // else move before that element
             r.setEnd(r.endContainer, r.endOffset-1);
-            
+
         }
-        
+
     } else {
         r.setEndBefore(r.endContainer);
     }
-    
+
 }
 
 Range.prototype.myMoveEndOneCharRight = function() {
     var r = this;
-    
+
     // move to the previous cursor location
     var max = (r.endContainer.nodeType==r.endContainer.TEXT_NODE ? r.endContainer.nodeValue.length : r.endContainer.childNodes.length)
     if(r.endOffset < max) {
-        
+
         // if we can enter into the next sibling
         var nextSibling = r.endContainer.childNodes[r.endOffset];
         if(nextSibling && nextSibling.firstChild) {
-            
+
             // enter the next sibling from its start
             r.setEndBefore(nextSibling.firstChild);
-            
+
         } else if(nextSibling && nextSibling.nodeType==nextSibling.TEXT_NODE) { // todo: lookup value
-            
+
             // enter the next text node from its start
             r.setEnd(nextSibling, 0);
-            
+
         } else {
-            
+
             // else move before that element
             r.setEnd(r.endContainer, r.endOffset+1);
-            
+
         }
-        
+
     } else {
         r.setEndAfter(r.endContainer);
     }
-    
+
 }
 
 //
@@ -310,24 +310,24 @@ Range.prototype.myMoveEndOneCharRight = function() {
 // { therefore we need to fix some browser bugs... }
 //
 Range.prototype.myGetSelectionRect = function() {
-    
+
     // get the browser's claimed rect
     var rect = this.getBoundingClientRect();
-	
+
 	// HACK FOR ANDROID BROWSER AND OLD WEBKIT
-	if(!rect) { 
-		rect={top:0,right:0,bottom:0,left:0,width:0,height:0}; 
+	if(!rect) {
+		rect={top:0,right:0,bottom:0,left:0,width:0,height:0};
 	}
-    
+
     // if the value seems wrong... (some browsers don't like collapsed selections)
     if(this.collapsed && rect.top===0 && rect.bottom===0) {
-        
+
         // select one char and infer location
-        var clone = this.cloneRange(); var collapseToLeft=false; clone.collapse(false); 
-        
+        var clone = this.cloneRange(); var collapseToLeft=false; clone.collapse(false);
+
         // the case where no char before is tricky...
         if(clone.startOffset==0) {
-            
+
             // let's move on char to the right
             clone.myMoveTowardRight();
             collapseToLeft=true;
@@ -336,50 +336,50 @@ Range.prototype.myGetSelectionRect = function() {
             // that spans multiple containers, so we will
             // iterate this process until we have one true
             // char selected
-            clone.setStart(clone.endContainer, 0); 
-            
+            clone.setStart(clone.endContainer, 0);
+
         } else {
-            
+
             // else, just select the char before
             clone.setStart(this.startContainer, this.startOffset-1);
             collapseToLeft=false;
-            
+
         }
-        
+
         // get some real rect
         var rect = clone.myGetSelectionRect();
-        
+
         // compute final value
         if(collapseToLeft) {
             return {
-                
+
                 left: rect.left,
                 right: rect.left,
                 width: 0,
-                
+
                 top: rect.top,
                 bottom: rect.bottom,
                 height: rect.height
-                
+
             }
         } else {
             return {
-                
+
                 left: rect.right,
                 right: rect.right,
                 width: 0,
-                
+
                 top: rect.top,
                 bottom: rect.bottom,
                 height: rect.height
-                
+
             }
         }
-        
+
     } else {
         return rect;
     }
-    
+
 }
 
 // not sure it's needed but still
@@ -389,23 +389,23 @@ if(!window.Node) window.Node = {};
 // make getBCR working on text nodes & stuff
 Node.getBoundingClientRect = function getBoundingClientRect(element) {
     if (element.getBoundingClientRect) {
-        
+
         var rect = element.getBoundingClientRect();
-        
+
     } else {
-        
+
         var range = document.createRange();
         range.selectNode(element);
-        
+
         var rect = range.getBoundingClientRect();
-        
+
     }
-	
+
 	// HACK FOR ANDROID BROWSER AND OLD WEBKIT
-	if(!rect) { 
-		rect={top:0,right:0,bottom:0,left:0,width:0,height:0}; 
+	if(!rect) {
+		rect={top:0,right:0,bottom:0,left:0,width:0,height:0};
 	}
-	
+
 	return rect;
 };
 
@@ -413,16 +413,16 @@ Node.getBoundingClientRect = function getBoundingClientRect(element) {
 // make getCR working on text nodes & stuff
 Node.getClientRects = function getClientRects(firstChild) {
     if (firstChild.getBoundingClientRect) {
-        
+
         return firstChild.getClientRects();
-        
+
     } else {
-        
+
         var range = document.createRange();
         range.selectNode(firstChild);
-        
+
         return range.getClientRects();
-        
+
     }
 };
 
@@ -441,74 +441,74 @@ Node.contains = function contains(parentNode,node) {
 // { this is a special version for breaking algorithms that do not want to miss the previous element real size }
 //
 Range.prototype.myGetExtensionRect = function() {
-    
+
     // this function returns the selection rect
-    // but does take care of taking in account 
+    // but does take care of taking in account
     // the bottom-{padding/border} of the previous
     // sibling element, to detect overflow points
     // more accurately
-    
+
     var rect = this.myGetSelectionRect();
     var previousSibling = this.endContainer.childNodes[this.endOffset-1];
     if(previousSibling) {
-        
+
         // correct with the new take
         var prevSibRect = Node.getBoundingClientRect(previousSibling);
         var adjustedBottom = Math.max(rect.bottom,prevSibRect.bottom);
         if(adjustedBottom == rect.bottom) return rect;
         return {
-            
+
             left: rect.left,
             right: rect.right,
             width: rect.width,
-            
+
             top: rect.top,
             bottom: adjustedBottom,
             height: adjustedBottom - rect.top
-            
+
         };
-        
+
     } else if(this.bottom==0 && this.endContainer.nodeType === 3) {
-        
-        // note that if we are in a text node, 
+
+        // note that if we are in a text node,
         // we may want to cover all the previous
         // text in the node to avoid whitespace
         // related bugs
-        
+
         var onlyWhiteSpaceBefore = /^(\s|\n)*$/.test(this.endContainer.nodeValue.substr(0,this.endOffset));
         if(onlyWhiteSpaceBefore) {
-            
+
             // if we are in the fucking whitespace land, return first line
             var prevSibRect = Node.getClientRects(this.endContainer)[0];
             return prevSibRect;
-            
+
         } else {
-            
+
             // otherwhise, let's rely on previous chars
             var auxiliaryRange = this.cloneRange();
             auxiliaryRange.setStart(this.endContainer,0);
-            
+
             // correct with the new take
             var prevSibRect = auxiliaryRange.getBoundingClientRect();
             var adjustedBottom = Math.max(rect.bottom,prevSibRect.bottom);
             return {
-                
+
                 left: rect.left,
                 right: rect.right,
                 width: rect.width,
-                
+
                 top: rect.top,
                 bottom: adjustedBottom,
                 height: adjustedBottom - rect.top
-                
+
             };
-            
+
         }
-        
+
     } else {
-        
+
         return rect;
-        
+
     }
 }
 "use strict";
@@ -517,14 +517,14 @@ Range.prototype.myGetExtensionRect = function() {
 // some code for console polyfilling
 //
 if(!window.console) {
-		
+
 	window.console = {
 		backlog: '',
-		
+
 	    log: function(x) { this.backlog+=x+'\n'; if(window.debug) alert(x); },
-		
-	    dir: function(x) { try { 
-			
+
+	    dir: function(x) { try {
+
 			var elm = function(e) {
 				if(e.innerHTML) {
 					return {
@@ -540,7 +540,7 @@ if(!window.console) {
 					}
 				}
 			};
-			
+
 			var jsonify = function(o) {
 			    var seen=[];
 			    var jso=JSON.stringify(o, function(k,v){
@@ -552,19 +552,19 @@ if(!window.console) {
 			    });
 			    return jso;
 			};
-			
-			this.log(jsonify(x)); 
-			
+
+			this.log(jsonify(x));
+
 		} catch(ex) { this.log(x) } },
-		
+
 		warn: function(x) { this.log(x) }
-		
+
 	};
-	
+
 	window.onerror = function() {
 	    console.log([].slice.call(arguments,0).join("\n"))
 	};
-	
+
 }
 
 window.cssConsole = {
@@ -579,38 +579,38 @@ window.cssConsole = {
 // some other basic om code
 //
 var basicObjectModel = {
-    
+
     //
     // the following functions are about event cloning
     //
     cloneMouseEvent: function cloneMouseEvent(e) {
         var evt = document.createEvent("MouseEvent");
-        evt.initMouseEvent( 
-            e.type, 
-            e.canBubble||e.bubbles, 
-            e.cancelable, 
-            e.view, 
-            e.detail, 
-            e.screenX, 
-            e.screenY, 
-            e.clientX, 
-            e.clientY, 
-            e.ctrlKey, 
-            e.altKey, 
-            e.shiftKey, 
-            e.metaKey, 
-            e.button, 
+        evt.initMouseEvent(
+            e.type,
+            e.canBubble||e.bubbles,
+            e.cancelable,
+            e.view,
+            e.detail,
+            e.screenX,
+            e.screenY,
+            e.clientX,
+            e.clientY,
+            e.ctrlKey,
+            e.altKey,
+            e.shiftKey,
+            e.metaKey,
+            e.button,
             e.relatedTarget
         );
         return evt;
     },
-    
+
     cloneKeyboardEvent: function cloneKeyboardEvent(e) {
         // TODO: this doesn't work cross-browswer...
         // see https://gist.github.com/termi/4654819/ for the huge code
         return basicObjectModel.cloneCustomEvent(e);
     },
-    
+
     cloneCustomEvent: function cloneCustomEvent(e) {
         var ne = document.createEvent("CustomEvent");
         ne.initCustomEvent(e.type, e.canBubble||e.bubbles, e.cancelable, "detail" in e ? e.detail : e);
@@ -624,9 +624,9 @@ var basicObjectModel = {
         }
         return ne;
     },
-    
+
     cloneEvent: function cloneEvent(e) {
-        
+
         if(e instanceof MouseEvent) {
             return basicObjectModel.cloneMouseEvent(e);
         } else if(e instanceof KeyboardEvent) {
@@ -634,35 +634,35 @@ var basicObjectModel = {
         } else {
             return basicObjectModel.cloneCustomEvent(e);
         }
-        
+
     },
-    
+
     //
     // allows you to drop event support to any class easily
     //
     EventTarget: {
         implementsIn: function(eventClass, static_class) {
-            
+
             if(!static_class && typeof(eventClass)=="function") eventClass=eventClass.prototype;
-            
+
             eventClass.dispatchEvent = basicObjectModel.EventTarget.prototype.dispatchEvent;
             eventClass.addEventListener = basicObjectModel.EventTarget.prototype.addEventListener;
             eventClass.removeEventListener = basicObjectModel.EventTarget.prototype.removeEventListener;
-            
+
         },
         prototype: {}
     }
-    
+
 };
 
 basicObjectModel.EventTarget.prototype.addEventListener = function(eventType,f) {
     if(!this.eventListeners) this.eventListeners=[];
-    
+
     var ls = (this.eventListeners[eventType] || (this.eventListeners[eventType]=[]));
     if(ls.indexOf(f)==-1) {
         ls.push(f);
     }
-    
+
 }
 
 basicObjectModel.EventTarget.prototype.removeEventListener = function(eventType,f) {
@@ -672,12 +672,12 @@ basicObjectModel.EventTarget.prototype.removeEventListener = function(eventType,
     if((i=ls.indexOf(f))!==-1) {
         ls.splice(i,1);
     }
-    
+
 }
 
 basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
     if(!this.eventListeners) this.eventListeners=[];
-    
+
     // abort quickly when no listener has been set up
     if(typeof(event_or_type) == "string") {
         if(!this.eventListeners[event_or_type] || this.eventListeners[event_or_type].length==0) {
@@ -688,13 +688,13 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
             return;
         }
     }
-    
+
     // convert the event
     var event = event_or_type;
     function setUpPropertyForwarding(e,ee,key) {
         Object.defineProperty(ee,key,{
             get:function() {
-                var v = e[key]; 
+                var v = e[key];
                 if(typeof(v)=="function") {
                     return v.bind(e);
                 } else {
@@ -710,55 +710,55 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
         try { Object.defineProperty(e,"target",{get:function() {return v}}); }
         catch(ex) {}
         finally {
-            
+
             if(e.target !== v) {
-                
+
                 var ee = Object.create(Object.getPrototypeOf(e));
                 ee = setUpTarget(ee,v);
                 for(key in e) {
                     if(key != "target") setUpPropertyForwarding(e,ee,key);
                 }
                 return ee;
-                
+
             } else {
-                
+
                 return e;
-                
+
             }
-            
+
         }
     }
-    
+
     // try to set the target
     if(typeof(event)=="object") {
         try { event=setUpTarget(event,this); } catch(ex) {}
-        
+
     } else if(typeof(event)=="string") {
         event = document.createEvent("CustomEvent");
         event.initCustomEvent(event_or_type, /*canBubble:*/ true, /*cancelable:*/ false, /*detail:*/this);
         try { event=setUpTarget(event,this); } catch(ex) {}
-        
+
     } else {
         throw new Error("dispatchEvent expect an Event object or a string containing the event type");
     }
-    
+
     // call all listeners
     var ls = (this.eventListeners[event.type] || (this.eventListeners[event.type]=[]));
     for(var i=ls.length; i--;) {
-        try { 
+        try {
             ls[i](event);
         } catch(ex) {
             setImmediate(function() { throw ex; });
         }
     }
-    
+
     return event.isDefaultPrevented;
 }
 "use strict";
 
 (function() {
-    
-    
+
+
     //
     // polyfill setImmediate
     //
@@ -766,8 +766,8 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
         setTimeout(f, 0);
     };
     window.clearImmediate = window.clearImmediate || window.clearTimeout;
-    
-    
+
+
     //
     // polyfill requestAnimationFrame
     //
@@ -778,8 +778,8 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
     };
     window.cancelAnimationFrame = window.cancelAnimationFrame || window.clearTimeout;
 
-    
-    // 
+
+    //
     // polyfill performance.now()
     //
     if(window.performance && window.performance.now) {
@@ -789,29 +789,29 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
     } else {
         var now = function() { return +new Date(); }
     }
-    
-    
-    // 
+
+
+    //
     // Encapsulate a task
-    // 
+    //
     function Task(action) {
         this.call = action;
     }
-    
-    // 
+
+    //
     // Encapsulate task priority logic
-    // 
+    //
     function TaskScheduler(parent) {
-        
+
         this.isRunning = false;
         this.isScheduledNow = false;
-        
+
         this.taskQueue = [];
         this.delayedTasks = 0;
         this.childSchedulers = [];
         this.parentScheduler = parent;
         if(parent) { parent.childSchedulers.push(this); }
-        
+
         var This = this;
         This.tryRun = function() {
             if(This.parentScheduler) {
@@ -821,95 +821,95 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
             }
         }
         This.run = function() {
-            
+
             This.isRunning = true;
-            
+
             // calling code should not face scheduler errors
             try {
-                
-                // 
+
+                //
                 // walk through all tasks
-                // 
+                //
                 if(This.taskQueue.length !== 0) {
-                    
+
                     var task; while(task=This.taskQueue.shift()) {
-                        
+
                         // run the task
                         // (the loop should not break if a task fails)
-                        try { task.call(); } 
+                        try { task.call(); }
                         catch(ex) { setImmediate(function() { throw ex; }) }
-                        
+
                     }
-                    
+
                 }
-                
-                // 
+
+                //
                 // let child schedulers execute if no task is pending
-                // 
+                //
                 if(This.delayedTasks === 0) {
-                    
+
                     for(var i=0; i<This.childSchedulers.length; i++) {
-                        
+
                         // run the scheduler
                         // (the loop should not break if a scheduler fails)
-                        try { This.childSchedulers[i].run(); } 
+                        try { This.childSchedulers[i].run(); }
                         catch(ex) { setImmediate(function() { throw ex; }) }
-                        
+
                     }
-                    
+
                 }
-                
+
                 //
                 // execute new immediates, if any
                 //
                 if(This.taskQueue.length !== 0) {
-                    
+
                     This.run();
-                    
+
                 }
-                
-                
+
+
             } catch(ex) { setImmediate(function() { throw ex; }) }
-            
+
             This.isRunning = false;
-            
+
         }
-        
+
     }
-    
+
     TaskScheduler.prototype.pushTask = function(f) {
-        
+
         // push the task
         this.taskQueue.push(f);
-        
+
         // ensure the scheduler will run soon
         this.scheduleNow();
-        
+
     };
-    
+
     TaskScheduler.prototype.pushDelayedTask = function(f, scheduler) {
-        
+
         // ask for a delayed execution
         var This = this;
         var result = scheduler(function() {
-            
+
             // push the task
             This.pushTask(f);
             This.delayedTasks--;
-            
+
             // empty the queue
             This.scheduleNow();
-            
+
         });
-        
+
         // record the future task
         this.delayedTasks++;
-        
+
         // return scheduler-relative info
         return result;
-        
+
     }
-    
+
     // aliases for common web functions
     TaskScheduler.prototype.setImmediate = TaskScheduler.prototype.pushTask;
     TaskScheduler.prototype.setTimeout = function(f,d) {
@@ -918,30 +918,30 @@ basicObjectModel.EventTarget.prototype.dispatchEvent = function(event_or_type) {
     TaskScheduler.prototype.requestAnimationFrame = function(f,d) {
         this.pushDelayedTask(f, requestAnimationFrame);
     }
-    
+
     TaskScheduler.prototype.scheduleNow = function() {
-        
-        // avoid creating multiple running 
+
+        // avoid creating multiple running
         // version of the scheduler
         if(this.isRunning) return;
         if(this.isScheduledNow) return;
-        
+
         // schedule a new run
         setImmediate(this.tryRun);
-        
+
     }
-    
+
     window.JSTaskScheduler = TaskScheduler;
-    
+
 }());
 //
 // note: this file is based on Tab Atkins's CSS Parser
 // please include him (@tabatkins) if you open any issue for this file
-// 
+//
 "use strict";
 
-var cssSyntax = { 
-    tokenize: function(string) {}, 
+var cssSyntax = {
+    tokenize: function(string) {},
     parse: function(tokens) {},
     parseCSSValue: function(bestValue, stringOnly) {
         if(stringOnly) {
@@ -960,7 +960,7 @@ var cssSyntax = {
 // css tokenizer
 //
 (function() {
-    
+
     var between = function (num, first, last) { return num >= first && num <= last; }
     function digit(code) { return between(code, 0x30,0x39); }
     function hexdigit(code) { return digit(code) || between(code, 0x41,0x46) || between(code, 0x61,0x66); }
@@ -974,13 +974,13 @@ var cssSyntax = {
     function newline(code) { return code == 0xa || code == 0xc; }
     function whitespace(code) { return newline(code) || code == 9 || code == 0x20; }
     function badescape(code) { return newline(code) || isNaN(code); }
-    
+
     // Note: I'm not yet acting smart enough to actually handle astral characters.
     var maximumallowedcodepoint = 0x10ffff;
-    
+
     // Add support for token lists (superclass of array)
     var TokenList = cssSyntax.TokenList = function TokenList() {
-        var array = []; 
+        var array = [];
         array.toCSSString=cssSyntax.TokenListToCSSString;
         return array;
     }
@@ -997,7 +997,7 @@ var cssSyntax = {
             ));
         }
     }
-    
+
     function tokenize(str, options) {
         if(options == undefined) options = {transformFunctionWhitespace:false, scientificNotation:false};
         var i = -1;
@@ -1005,7 +1005,7 @@ var cssSyntax = {
         var state = "data";
         var code;
         var currtoken;
-    
+
         // Line number information.
         var line = 0;
         var column = 0;
@@ -1017,7 +1017,7 @@ var cssSyntax = {
             column = 0;
         };
         var locStart = {line:line, column:column};
-    
+
         var next = function(num) { if(num === undefined) num = 1; return str.charCodeAt(i+num); };
         var consume = function(num) {
             if(num === undefined)
@@ -1090,7 +1090,7 @@ var cssSyntax = {
                 return code;
             }
         };
-    
+
         for(;;) {
             if(i > str.length*2) return "I'm infinite-looping!";
             consume();
@@ -1146,10 +1146,10 @@ var cssSyntax = {
                 else if(eof()) { emit(new EOFToken); return tokens; }
                 else emit(new DelimToken(code));
                 break;
-    
+
             case "double-quote-string":
                 if(currtoken == undefined) create(new StringToken);
-    
+
                 if(code == 0x22) emit() && switchto("data");
                 else if(eof()) parseerror() && emit() && switchto("data") && reconsume();
                 else if(newline(code)) parseerror() && emit(new BadStringToken) && switchto("data") && reconsume();
@@ -1160,10 +1160,10 @@ var cssSyntax = {
                 }
                 else currtoken.append(code);
                 break;
-    
+
             case "single-quote-string":
                 if(currtoken == undefined) create(new StringToken);
-    
+
                 if(code == 0x27) emit() && switchto("data");
                 else if(eof()) parseerror() && emit() && switchto("data");
                 else if(newline(code)) parseerror() && emit(new BadStringToken) && switchto("data") && reconsume();
@@ -1174,7 +1174,7 @@ var cssSyntax = {
                 }
                 else currtoken.append(code);
                 break;
-    
+
             case "hash":
                 if(namechar(code)) create(new HashToken(code)) && switchto("hash-rest");
                 else if(code == 0x5c) {
@@ -1183,7 +1183,7 @@ var cssSyntax = {
                 }
                 else emit(new DelimToken(0x23)) && switchto('data') && reconsume();
                 break;
-    
+
             case "hash-rest":
                 if(namechar(code)) currtoken.append(code);
                 else if(code == 0x5c) {
@@ -1192,7 +1192,7 @@ var cssSyntax = {
                 }
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "comment":
                 if(code == 0x2a) {
                     if(next() == 0x2f) consume() && switchto('data');
@@ -1201,7 +1201,7 @@ var cssSyntax = {
                 else if(eof()) parseerror() && switchto('data') && reconsume();
                 else donothing();
                 break;
-    
+
             case "at-keyword":
                 if(code == 0x2d) {
                     if(namestartchar(next())) create(new AtKeywordToken(0x2d)) && switchto('at-keyword-rest');
@@ -1215,7 +1215,7 @@ var cssSyntax = {
                 }
                 else emit(new DelimToken(0x40)) && switchto('data') && reconsume();
                 break;
-    
+
             case "at-keyword-rest":
                 if(namechar(code)) currtoken.append(code);
                 else if(code == 0x5c) {
@@ -1224,7 +1224,7 @@ var cssSyntax = {
                 }
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "ident":
                 if(code == 0x2d) {
                     if(namestartchar(next())) create(new IdentifierToken(code)) && switchto('ident-rest');
@@ -1238,7 +1238,7 @@ var cssSyntax = {
                 }
                 else catchfire("Hit the generic 'else' clause in ident state.") && switchto('data') && reconsume();
                 break;
-    
+
             case "ident-rest":
                 if(namechar(code)) currtoken.append(code);
                 else if(code == 0x5c) {
@@ -1248,20 +1248,20 @@ var cssSyntax = {
                 else if(code == 0x28) {
                     if(currtoken.ASCIImatch('url')) switchto('url');
                     else emit(new FunctionToken(currtoken)) && switchto('data');
-                } 
+                }
                 else if(whitespace(code) && options.transformFunctionWhitespace) switchto('transform-function-whitespace') && reconsume();
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "transform-function-whitespace":
                 if(whitespace(next())) donothing();
                 else if(code == 0x28) emit(new FunctionToken(currtoken)) && switchto('data');
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "number":
                 create(new NumberToken());
-    
+
                 if(code == 0x2d) {
                     if(digit(next())) consume() && currtoken.append([0x2d,code]) && switchto('number-rest');
                     else if(next(1) == 0x2e && digit(next(2))) consume(2) && currtoken.append([0x2d,0x2e,code]) && switchto('number-fraction');
@@ -1279,7 +1279,7 @@ var cssSyntax = {
                 }
                 else switchto('data') && reconsume();
                 break;
-    
+
             case "number-rest":
                 if(digit(code)) currtoken.append(code);
                 else if(code == 0x2e) {
@@ -1305,10 +1305,10 @@ var cssSyntax = {
                 }
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "number-fraction":
                 currtoken.type = "number";
-    
+
                 if(digit(code)) currtoken.append(code);
                 else if(code == 0x25) emit(new PercentageToken(currtoken)) && switchto('data');
                 else if(code == 0x45 || code == 0x65) {
@@ -1329,7 +1329,7 @@ var cssSyntax = {
                 }
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "dimension":
                 if(namechar(code)) currtoken.append(code);
                 else if(code == 0x5c) {
@@ -1338,14 +1338,14 @@ var cssSyntax = {
                 }
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "sci-notation":
                 currtoken.type = "number";
-    
+
                 if(digit(code)) currtoken.append(code);
                 else emit() && switchto('data') && reconsume();
                 break;
-    
+
             case "url":
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(code == 0x22) switchto('url-double-quote');
@@ -1354,10 +1354,10 @@ var cssSyntax = {
                 else if(whitespace(code)) donothing();
                 else switchto('url-unquoted') && reconsume();
                 break;
-    
+
             case "url-double-quote":
                 if(! (currtoken instanceof URLToken)) create(new URLToken);
-    
+
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(code == 0x22) switchto('url-end');
                 else if(newline(code)) parseerror() && switchto('bad-url');
@@ -1368,10 +1368,10 @@ var cssSyntax = {
                 }
                 else currtoken.append(code);
                 break;
-    
+
             case "url-single-quote":
                 if(! (currtoken instanceof URLToken)) create(new URLToken);
-    
+
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(code == 0x27) switchto('url-end');
                 else if(newline(code)) parseerror() && switchto('bad-url');
@@ -1382,17 +1382,17 @@ var cssSyntax = {
                 }
                 else currtoken.append(code);
                 break;
-    
+
             case "url-end":
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(whitespace(code)) donothing();
                 else if(code == 0x29) emit() && switchto('data');
                 else parseerror() && switchto('bad-url') && reconsume();
                 break;
-    
+
             case "url-unquoted":
                 if(! (currtoken instanceof URLToken)) create(new URLToken);
-    
+
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(whitespace(code)) switchto('url-end');
                 else if(code == 0x29) emit() && switchto('data');
@@ -1403,7 +1403,7 @@ var cssSyntax = {
                 }
                 else currtoken.append(code);
                 break;
-    
+
             case "bad-url":
                 if(eof()) parseerror() && emit(new BadURLToken) && switchto('data');
                 else if(code == 0x29) emit(new BadURLToken) && switchto('data');
@@ -1413,12 +1413,12 @@ var cssSyntax = {
                 }
                 else donothing();
                 break;
-    
+
             case "unicode-range":
                 // We already know that the current code is a hexdigit.
-    
+
                 var start = [code], end = [code];
-    
+
                 for(var total = 1; total < 6; total++) {
                     if(hexdigit(next())) {
                         consume();
@@ -1427,7 +1427,7 @@ var cssSyntax = {
                     }
                     else break;
                 }
-    
+
                 if(next() == 0x3f) {
                     for(;total < 6; total++) {
                         if(next() == 0x3f) {
@@ -1454,86 +1454,86 @@ var cssSyntax = {
                 }
                 else emit(new UnicodeRangeToken(start)) && switchto('data');
                 break;
-    
+
             default:
                 catchfire("Unknown state '" + state + "'");
             }
         }
     }
-    
+
     function stringFromCodeArray(arr) {
         return String.fromCharCode.apply(null,arr.filter(function(e){return e;}));
     }
-    
+
     var CSSParserToken = cssSyntax.CSSParserToken = function CSSParserToken(options) { return this; }
     CSSParserToken.prototype.finish = function() { return this; }
     CSSParserToken.prototype.toString = function() { return this.tokenType; }
     CSSParserToken.prototype.toJSON = function() { return this.toString(); }
     CSSParserToken.prototype.toCSSString = function() { return this.toString(); }
-    
+
     var BadStringToken = cssSyntax.BadStringToken = function BadStringToken() { return this; }
     BadStringToken.prototype = new CSSParserToken;
     BadStringToken.prototype.tokenType = "BADSTRING";
     BadStringToken.prototype.toCSSString = function() { return "'"; }
-    
+
     var BadURLToken = cssSyntax.BadURLToken = function BadURLToken() { return this; }
     BadURLToken.prototype = new CSSParserToken;
     BadURLToken.prototype.tokenType = "BADURL";
     BadURLToken.prototype.toCSSString = function() { return "url("; }
-    
+
     var WhitespaceToken = cssSyntax.WhitespaceToken = function WhitespaceToken() { return this; }
     WhitespaceToken.prototype = new CSSParserToken;
     WhitespaceToken.prototype.tokenType = "WHITESPACE";
     WhitespaceToken.prototype.toString = function() { return "WS"; }
     WhitespaceToken.prototype.toCSSString = function() { return " "; }
-    
+
     var CDOToken = cssSyntax.CDOToken = function CDOToken() { return this; }
     CDOToken.prototype = new CSSParserToken;
     CDOToken.prototype.tokenType = "CDO";
     CDOToken.prototype.toCSSString = function() { return "<!--"; }
-    
+
     var CDCToken = cssSyntax.CDCToken = function CDCToken() { return this; }
     CDCToken.prototype = new CSSParserToken;
     CDCToken.prototype.tokenType = "CDC";
     CDOToken.prototype.toCSSString = function() { return "-->"; }
-    
+
     var ColonToken = cssSyntax.ColonToken = function ColonToken() { return this; }
     ColonToken.prototype = new CSSParserToken;
     ColonToken.prototype.tokenType = ":";
-    
+
     var SemicolonToken = cssSyntax.SemicolonToken = function SemicolonToken() { return this; }
     SemicolonToken.prototype = new CSSParserToken;
     SemicolonToken.prototype.tokenType = ";";
-    
+
     var OpenCurlyToken = cssSyntax.OpenCurlyToken = function OpenCurlyToken() { return this; }
     OpenCurlyToken.prototype = new CSSParserToken;
     OpenCurlyToken.prototype.tokenType = "{";
-    
+
     var CloseCurlyToken = cssSyntax.CloseCurlyToken = function CloseCurlyToken() { return this; }
     CloseCurlyToken.prototype = new CSSParserToken;
     CloseCurlyToken.prototype.tokenType = "}";
-    
+
     var OpenSquareToken = cssSyntax.OpenSquareToken = function OpenSquareToken() { return this; }
     OpenSquareToken.prototype = new CSSParserToken;
     OpenSquareToken.prototype.tokenType = "[";
-    
+
     var CloseSquareToken = cssSyntax.CloseSquareToken = function CloseSquareToken() { return this; }
     CloseSquareToken.prototype = new CSSParserToken;
     CloseSquareToken.prototype.tokenType = "]";
-    
+
     var OpenParenToken = cssSyntax.OpenParenToken = function OpenParenToken() { return this; }
     OpenParenToken.prototype = new CSSParserToken;
     OpenParenToken.prototype.tokenType = "(";
-    
+
     var CloseParenToken = cssSyntax.CloseParenToken = function CloseParenToken() { return this; }
     CloseParenToken.prototype = new CSSParserToken;
     CloseParenToken.prototype.tokenType = ")";
-    
+
     var EOFToken = cssSyntax.EOFToken = function EOFToken() { return this; }
     EOFToken.prototype = new CSSParserToken;
     EOFToken.prototype.tokenType = "EOF";
     EOFToken.prototype.toCSSString = function() { return ""; }
-    
+
     var DelimToken = cssSyntax.DelimToken = function DelimToken(code) {
         this.value = String.fromCharCode(code);
         return this;
@@ -1542,7 +1542,7 @@ var cssSyntax = {
     DelimToken.prototype.tokenType = "DELIM";
     DelimToken.prototype.toString = function() { return "DELIM("+this.value+")"; }
     DelimToken.prototype.toCSSString = function() { return this.value; }
-    
+
     var StringValuedToken = cssSyntax.StringValuedToken = function StringValuedToken() { return this; }
     StringValuedToken.prototype = new CSSParserToken;
     StringValuedToken.prototype.append = function(val) {
@@ -1575,7 +1575,7 @@ var cssSyntax = {
         }
         return this.value.filter(function(e){return e;});
     }
-    
+
     var IdentifierToken = cssSyntax.IdentifierToken = function IdentifierToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1584,7 +1584,7 @@ var cssSyntax = {
     IdentifierToken.prototype.tokenType = "IDENT";
     IdentifierToken.prototype.toString = function() { return "IDENT("+this.value+")"; }
     IdentifierToken.prototype.toCSSString = function() { return this.value; }
-    
+
     var FunctionToken = cssSyntax.FunctionToken = function FunctionToken(val) {
         // These are always constructed by passing an IdentifierToken
         this.value = val.finish().value;
@@ -1593,7 +1593,7 @@ var cssSyntax = {
     FunctionToken.prototype.tokenType = "FUNCTION";
     FunctionToken.prototype.toString = function() { return "FUNCTION("+this.value+")"; }
     FunctionToken.prototype.toCSSString = function() { return this.value+"("; }
-    
+
     var AtKeywordToken = cssSyntax.AtKeywordToken = function AtKeywordToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1602,7 +1602,7 @@ var cssSyntax = {
     AtKeywordToken.prototype.tokenType = "AT-KEYWORD";
     AtKeywordToken.prototype.toString = function() { return "AT("+this.value+")"; }
     AtKeywordToken.prototype.toCSSString = function() { return "@"+this.value; }
-    
+
     var HashToken = cssSyntax.HashToken = function HashToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1611,7 +1611,7 @@ var cssSyntax = {
     HashToken.prototype.tokenType = "HASH";
     HashToken.prototype.toString = function() { return "HASH("+this.value+")"; }
     HashToken.prototype.toCSSString = function() { return "#"+this.value; }
-    
+
     var StringToken = cssSyntax.StringToken = function StringToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1620,7 +1620,7 @@ var cssSyntax = {
     StringToken.prototype.tokenType = "STRING";
     StringToken.prototype.toString = function() { return '"'+this.value+'"'; }
     StringToken.prototype.toCSSString = function() { return '"'+this.value.replace(/"/g,'\\"')+'"'; } // TODO: improve string serialization?
-    
+
     var URLToken = cssSyntax.URLToken = function URLToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1629,7 +1629,7 @@ var cssSyntax = {
     URLToken.prototype.tokenType = "URL";
     URLToken.prototype.toString = function() { return "URL("+this.value+")"; }
     URLToken.prototype.toCSSString = function() { return 'url("'+this.value.replace(/"/g,'\\"')+'")'; } // TODO: improve string serialization?; }
-    
+
     var NumberToken = cssSyntax.NumberToken = function NumberToken(val) {
         this.value = new TokenList();
         this.append(val);
@@ -1649,8 +1649,8 @@ var cssSyntax = {
         return this;
     }
     NumberToken.prototype.toCSSString = function() { return ""+this.value; }
-    
-    
+
+
     var PercentageToken = cssSyntax.PercentageToken = function PercentageToken(val) {
         // These are always created by passing a NumberToken as val
         val.finish();
@@ -1661,7 +1661,7 @@ var cssSyntax = {
     PercentageToken.prototype.tokenType = "PERCENTAGE";
     PercentageToken.prototype.toString = function() { return "PERCENTAGE("+this.value+")"; }
     PercentageToken.prototype.toCSSString = function() { return this.value+"%"; }
-    
+
     var DimensionToken = cssSyntax.DimensionToken = function DimensionToken(val,unit) {
         // These are always created by passing a NumberToken as the val
         val.finish();
@@ -1689,17 +1689,17 @@ var cssSyntax = {
         this.repr += this.unit;
         return this;
     }
-    
+
     var UnicodeRangeToken = cssSyntax.UnicodeRangeToken = function UnicodeRangeToken(start,end) {
         // start and end are array of char codes, completely finished
         start = parseInt(stringFromCodeArray(start),16);
         if(end === undefined) end = start + 1;
         else end = parseInt(stringFromCodeArray(end),16);
-    
+
         if(start > maximumallowedcodepoint) end = start;
         if(end < start) end = start;
         if(end > maximumallowedcodepoint) end = maximumallowedcodepoint;
-    
+
         this.start = start;
         this.end = end;
         return this;
@@ -1717,18 +1717,18 @@ var cssSyntax = {
     UnicodeRangeToken.prototype.contains = function(code) {
         return code >= this.start && code < this.end;
     }
-    
-    
+
+
     // Exportation.
     cssSyntax.tokenize = tokenize;
-    
+
 }());
 
 //
 // css parser
 //
 (function() {
-    
+
     var TokenList = cssSyntax.TokenList;
     function parse(tokens) {
         // FREMY's ADDITION:
@@ -1737,15 +1737,15 @@ var cssSyntax = {
         if(typeof(tokens)=="string") {
             tokens = cssSyntax.tokenize(tokens);
         }
-        
+
         var mode = 'top-level';
         var i = -1;
         var token;
-    
+
         var stylesheet = new Stylesheet;
         var stack = [stylesheet];
         var rule = stack[0];
-    
+
         var consume = function(advance) {
             if(advance === undefined) advance = 1;
             i += advance;
@@ -1799,10 +1799,10 @@ var cssSyntax = {
                 pop();
             }
         }
-    
+
         for(;;) {
             consume();
-    
+
             switch(mode) {
             case "top-level":
                 switch(token.tokenType) {
@@ -1815,7 +1815,7 @@ var cssSyntax = {
                 default: push(new StyleRule) && switchto('selector') && reprocess();
                 }
                 break;
-    
+
             case "at-rule":
                 switch(token.tokenType) {
                 case ";": pop() && switchto(); break;
@@ -1827,7 +1827,7 @@ var cssSyntax = {
                 default: rule.appendPrelude(consumeAPrimitive());
                 }
                 break;
-    
+
             case "rule":
                 switch(token.tokenType) {
                 case "WHITESPACE": break;
@@ -1837,15 +1837,15 @@ var cssSyntax = {
                 default: push(new StyleRule) && switchto('selector') && reprocess();
                 }
                 break;
-    
+
             case "selector":
                 switch(token.tokenType) {
                 case "{": switchto('declaration'); break;
                 case "EOF": discard() && finish(); return stylesheet;
-                default: rule.appendSelector(consumeAPrimitive()); 
+                default: rule.appendSelector(consumeAPrimitive());
                 }
                 break;
-    
+
             case "declaration":
                 switch(token.tokenType) {
                 case "WHITESPACE":
@@ -1857,7 +1857,7 @@ var cssSyntax = {
                 default: parseerror() && discard() && switchto('next-declaration');
                 }
                 break;
-    
+
             case "after-declaration-name":
                 switch(token.tokenType) {
                 case "WHITESPACE": break;
@@ -1867,7 +1867,7 @@ var cssSyntax = {
                 default: parseerror("Invalid declaration - additional token after property name") && discard() && switchto('next-declaration');
                 }
                 break;
-    
+
             case "declaration-value":
                 switch(token.tokenType) {
                 case "DELIM":
@@ -1885,7 +1885,7 @@ var cssSyntax = {
                 default: rule.append(consumeAPrimitive());
                 }
                 break;
-    
+
             case "declaration-end":
                 switch(token.tokenType) {
                 case "WHITESPACE": break;
@@ -1895,7 +1895,7 @@ var cssSyntax = {
                 default: parseerror("Invalid declaration - additional token after !important.") && discard() && switchto('next-declaration');
                 }
                 break;
-    
+
             case "next-block":
                 switch(token.tokenType) {
                 case "{": consumeAPrimitive() && switchto(); break;
@@ -1903,7 +1903,7 @@ var cssSyntax = {
                 default: consumeAPrimitive(); break;
                 }
                 break;
-    
+
             case "next-declaration":
                 switch(token.tokenType) {
                 case ";": switchto('declaration'); break;
@@ -1912,14 +1912,14 @@ var cssSyntax = {
                 default: consumeAPrimitive(); break;
                 }
                 break;
-    
+
             default:
                 // If you hit this, it's because one of the switchto() calls is typo'd.
                 console.log('Unknown parsing mode: ' + mode);
                 return;
             }
         }
-    
+
         function consumeAPrimitive() {
             switch(token.tokenType) {
             case "(":
@@ -1929,11 +1929,11 @@ var cssSyntax = {
             default: return token;
             }
         }
-    
+
         function consumeASimpleBlock() {
             var endingTokenType = {"(":")", "[":"]", "{":"}"}[token.tokenType];
             var block = new SimpleBlock(token.tokenType);
-    
+
             for(;;) {
                 consume();
                 switch(token.tokenType) {
@@ -1943,11 +1943,11 @@ var cssSyntax = {
                 }
             }
         }
-    
+
         function consumeAFunc() {
             var func = new Func(token.value);
             var arg = new FuncArg();
-    
+
             for(;;) {
                 consume();
                 switch(token.tokenType) {
@@ -1966,7 +1966,7 @@ var cssSyntax = {
             }
         }
     }
-    
+
     var CSSParserRule = cssSyntax.CSSParserRule = function CSSParserRule() { return this; }
     CSSParserRule.prototype.fillType = '';
     CSSParserRule.prototype.toString = function(indent) {
@@ -1976,7 +1976,7 @@ var cssSyntax = {
         this.value.push(val);
         return this;
     }
-    
+
     var Stylesheet = cssSyntax.Stylesheet = function Stylesheet() {
         this.value = new TokenList();
         return this;
@@ -1987,7 +1987,7 @@ var cssSyntax = {
         return {type:'stylesheet', value: this.value.map(function(e){return e.toJSON();})};
     }
     Stylesheet.prototype.toCSSString = function() { return this.value.toCSSString("\n"); }
-    
+
     var AtRule = cssSyntax.AtRule = function AtRule(name) {
         this.name = name;
         this.prelude = new TokenList();
@@ -2005,11 +2005,11 @@ var cssSyntax = {
     AtRule.prototype.toJSON = function() {
         return {type:'at', name:this.name, prelude:this.prelude.map(function(e){return e.toJSON();}), value:this.value.map(function(e){return e.toJSON();})};
     }
-    AtRule.prototype.toCSSString = function() { 
+    AtRule.prototype.toCSSString = function() {
         if(this.fillType != '') {
-            return "@" + this.name + " " + this.prelude.toCSSString() + '{' + this.value.toCSSString() + '} '; 
+            return "@" + this.name + " " + this.prelude.toCSSString() + '{' + this.value.toCSSString() + '} ';
         } else {
-            return "@" + this.name + " " + this.prelude.toCSSString() + '; '; 
+            return "@" + this.name + " " + this.prelude.toCSSString() + '; ';
         }
     }
     AtRule.registry = {
@@ -2026,7 +2026,7 @@ var cssSyntax = {
         'viewport': '',
         'region-style': 'rule'
     };
-    
+
     var StyleRule = cssSyntax.StyleRule = function StyleRule() {
         this.selector = new TokenList();
         this.value = new TokenList();
@@ -2044,7 +2044,7 @@ var cssSyntax = {
     }
     StyleRule.prototype.toCSSString = function() { return this.selector.toCSSString() + '{' + this.value.toCSSString() + '} '; }
 
-    
+
     var Declaration = cssSyntax.Declaration = function Declaration(name) {
         this.name = name;
         this.value = new TokenList();
@@ -2056,7 +2056,7 @@ var cssSyntax = {
         return {type:'declaration', name:this.name, value:this.value.map(function(e){return e.toJSON();})};
     }
     Declaration.prototype.toCSSString = function() { return this.name + ':' + this.value.toCSSString() + '; '; }
-    
+
     var SimpleBlock = cssSyntax.SimpleBlock = function SimpleBlock(type) {
         this.name = type;
         this.value = new TokenList();
@@ -2071,18 +2071,18 @@ var cssSyntax = {
         switch(this.name) {
             case "(":
                 return "(" + this.value.toCSSString() + ")";
-                
+
             case "[":
                 return "[" + this.value.toCSSString() + "]";
-                
+
             case "{":
                 return "{" + this.value.toCSSString() + "}";
-            
+
             default: //best guess
                 return this.name + this.value.toCSSString() + this.name;
         }
     }
-    
+
     var Func = cssSyntax.Func = function Func(name) {
         this.name = name;
         this.value = new TokenList();
@@ -2096,7 +2096,7 @@ var cssSyntax = {
     Func.prototype.toCSSString = function() {
         return this.name+'('+this.value.toCSSString().slice(0,-2)+')';
     }
-    
+
     var FuncArg = cssSyntax.FuncArg = function FuncArg() {
         this.value = new TokenList();
         return this;
@@ -2109,7 +2109,7 @@ var cssSyntax = {
     FuncArg.prototype.toCSSString = function() {
         return this.value.toCSSString()+', ';
     }
-    
+
     // Exportation.
     cssSyntax.parse = parse;
 
@@ -2120,89 +2120,89 @@ var cssSyntax = {
 //
 
 var cssCascade = {
-    
+
     //
     // returns the priority of a unique selector (NO COMMA!)
     // { the return value is an integer, with the same formula as webkit }
     //
     computeSelectorPriorityOf: function computeSelectorPriorityOf(selector) {
         if(typeof selector == "string") selector = cssSyntax.parse(selector+"{}").value[0].selector;
-        
+
         var numberOfIDs = 0;
         var numberOfClasses = 0;
         var numberOfTags = 0;
-        
+
         // TODO: improve this parser, or find one on the web
         for(var i = 0; i < selector.length; i++) {
-            
+
             if(selector[i] instanceof cssSyntax.IdentifierToken) {
                 numberOfTags++;
-                
+
             } else if(selector[i] instanceof cssSyntax.DelimToken) {
                 if(selector[i].value==".") {
                     numberOfClasses++; i++;
                 }
-                
+
             } else if(selector[i] instanceof cssSyntax.ColonToken) {
                 if(selector[++i] instanceof cssSyntax.ColonToken) {
                     numberOfTags++; i++;
-                    
+
                 } else if((selector[i] instanceof cssSyntax.Func) && (/^(not|matches)$/i).test(selector[i].name)) {
                     var nestedPriority = this.computeSelectorPriorityOf(selector[i].value[0].value);
                     numberOfTags += nestedPriority % 256; nestedPriority /= 256;
                     numberOfClasses += nestedPriority % 256; nestedPriority /= 256;
                     numberOfIDs += nestedPriority;
-                    
+
                 } else {
                     numberOfClasses++;
-                    
+
                 }
-                
+
             } else if(selector[i] instanceof cssSyntax.SimpleBlock) {
                 if(selector[i].name=="[") {
                     numberOfClasses++;
                 }
-                
+
             } else if(selector[i] instanceof cssSyntax.HashToken) {
                 numberOfIDs++;
-                
+
             } else {
                 // TODO: stop ignoring unknown symbols?
-                
+
             }
-            
+
         }
-        
+
         if(numberOfIDs>255) numberOfIds=255;
         if(numberOfClasses>255) numberOfClasses=255;
         if(numberOfTags>255) numberOfTags=255;
-        
+
         return ((numberOfIDs*256)+numberOfClasses)*256+numberOfTags;
-        
+
     },
-    
+
     //
     // returns an array of the css rules matching an element
     //
     findAllMatchingRules: function findAllMatchingRules(element) {
-        
+
         // let's look for new results if needed...
         var results = [];
-        
+
         // walk the whole stylesheet...
         var visit = function(rules) {
             for(var r = rules.length; r--; ) {
-                var rule = rules[r]; 
-                
+                var rule = rules[r];
+
                 // media queries hook
                 if(rule.disabled) continue;
-                
+
                 if(rule instanceof cssSyntax.StyleRule) {
-                    
+
                     // consider each selector independtly
                     var subrules = rule.subRules || cssCascade.splitRule(rule);
                     for(var sr = subrules.length; sr--; ) {
-                        
+
                         var isMatching = false;
                         var selector = subrules[sr].selector.toCSSString();
                         try {
@@ -2214,55 +2214,55 @@ var cssCascade = {
                             else if(element.webkitMatchesSelector) isMatching=element.webkitMatchesSelector(selector)
                             else { throw new Error("wft u no element.matchesSelector?") }
                         } catch(ex) { cssConsole.warn("Invalid selector " + selector); }
-                        
+
                         if(isMatching) { results.push(subrules[sr]); }
-                        
+
                     }
-                    
+
                 } else if(rule instanceof cssSyntax.AtRule && rule.name=="media") {
-                    
+
                     visit(rule.value);
-                    
+
                 }
-                
+
             }
         }
-        
+
         for(var s=cssCascade.stylesheets.length; s--; ) {
             var rules = cssCascade.stylesheets[s];
             visit(rules);
         }
-        
+
         return results;
     },
-    
+
     //
     // returns an array of the css rules matching a pseudo-element
     //
     findAllMatchingRulesWithPseudo: function findAllMatchingRules(element,pseudo) {
-        
+
         // let's look for new results if needed...
         var results = [];
-        
+
         // walk the whole stylesheet...
         var visit = function(rules) {
             for(var r = rules.length; r--; ) {
-                var rule = rules[r]; 
-                
+                var rule = rules[r];
+
                 // media queries hook
                 if(rule.disabled) continue;
-                
+
                 if(rule instanceof cssSyntax.StyleRule) {
-                    
+
                     // consider each selector independtly
                     var subrules = rule.subRules || cssCascade.splitRule(rule);
                     for(var sr = subrules.length; sr--; ) {
-                        
+
                         // WE ONLY ACCEPT SELECTORS ENDING WITH THE PSEUDO
                         var selector = subrules[sr].selector.toCSSString().trim().replace(/\/\*\*\//,'');
                         var newLength = selector.length-pseudo.length-1;
                         if(newLength<=0) continue;
-                        
+
                         if(selector.lastIndexOf('::'+pseudo)==newLength-1) {
                             selector = selector.substr(0,newLength-1);
                         } else if(selector.lastIndexOf(':'+pseudo)==newLength) {
@@ -2270,7 +2270,7 @@ var cssCascade = {
                         } else {
                             continue;
                         }
-                        
+
                         // look if the selector matches
                         var isMatching = false;
                         try {
@@ -2282,62 +2282,62 @@ var cssCascade = {
                             else if(element.webkitMatchesSelector) isMatching=element.webkitMatchesSelector(selector)
                             else { throw new Error("wft u no element.matchesSelector?") }
                         } catch(ex) { debugger; setImmediate(function() { throw ex; }) }
-                        
+
                         if(isMatching) { results.push(subrules[sr]); }
-                        
+
                     }
-                    
+
                 } else if(rule instanceof cssSyntax.AtRule && rule.name=="media") {
-                    
+
                     visit(rule.value);
-                    
+
                 }
-                
+
             }
         }
-        
+
         for(var s=cssCascade.stylesheets.length; s--; ) {
             var rules = cssCascade.stylesheets[s];
             visit(rules);
         }
-        
+
         return results;
     },
-    
+
     //
     // a list of all properties supported by the current browser
     //
     allCSSProperties: null,
     getAllCSSProperties: function getAllCSSProperties() {
-        
+
         if(this.allCSSProperties) return this.allCSSProperties;
-        
+
         // get all claimed properties
         var s = getComputedStyle(document.documentElement); var ps = new Array(s.length);
         for(var i=s.length; i--; ) {
             ps[i] = s[i];
         }
-        
+
         // FIX A BUG WHERE WEBKIT DOESN'T REPORT ALL PROPERTIES
         if(ps.indexOf('content')==-1) {ps.push('content');}
         if(ps.indexOf('counter-reset')==-1) {
-            
+
             ps.push('counter-reset');
             ps.push('counter-increment');
-            
+
             // FIX A BUG WHERE WEBKIT RETURNS SHIT FOR THE COMPUTED VALUE OF COUNTER-RESET
             cssCascade.computationUnsafeProperties['counter-reset']=true;
-            
+
         }
-        
+
         // save in a cache for faster access the next times
         return this.allCSSProperties = ps;
-        
+
     },
-    
-    // 
+
+    //
     // those properties are not safe for computation->specified round-tripping
-    // 
+    //
     computationUnsafeProperties: {
         "bottom": false,
         "direction": false,
@@ -2356,7 +2356,7 @@ var cssCascade = {
         "top": false,
         "width": false,
     },
-    
+
     //
     // a list of property we should inherit...
     //
@@ -2392,55 +2392,55 @@ var cssCascade = {
         "word-spacing": false,
         "word-wrap": false,
     },
-    
+
     //
     // returns the default style for a tag
     //
     defaultStylesForTag: Object.create ? Object.create(null) : {},
     getDefaultStyleForTag: function getDefaultStyleForTag(tagName) {
-        
+
         // get result from cache
         var result = cssRegionsHelpers[tagName];
         if(result) return result;
-        
+
         // create dummy virtual element
         var element = document.createElement(tagName);
         var style = cssRegionsHelpers[tagName] = getComputedStyle(element);
         if(style.display) return style;
-        
+
         // webkit fix: insert the dummy element anywhere (head -> display:none)
         document.head.insertBefore(element, document.head.firstChild);
         return style;
     },
-    
-    // 
-    // returns the specified style of an element. 
+
+    //
+    // returns the specified style of an element.
     // REMARK: may or may not unwrap "inherit" and "initial" depending on implementation
     // REMARK: giving "matchedRules" as a parameter allow you to mutualize the "findAllMatching" rules calls
     // REMARK: giving "stringOnly" as a "true" parameter allows to return a fake token list which returns the good string value
-    // 
+    //
     getSpecifiedStyle: function getSpecifiedStyle(element, cssPropertyName, matchedRules, stringOnly) {
-        
+
         // hook for css regions
         var fragmentSource;
         if(fragmentSource=element.getAttribute('data-css-regions-fragment-of')) {
             fragmentSource = document.querySelector('[data-css-regions-fragment-source="'+fragmentSource+'"]');
             if(fragmentSource) return cssCascade.getSpecifiedStyle(fragmentSource, cssPropertyName);
         }
-        
+
         // give IE a thumbs up for this!
         if(element.currentStyle && !window.opera) {
-            
+
             // ask IE to manage the style himself...
             var bestValue = element.myStyle[cssPropertyName] || element.currentStyle[cssPropertyName];
-            
+
             // return a parsed representation of the value
             return cssSyntax.parseCSSValue(bestValue, stringOnly);
-            
+
         } else {
-            
+
             // TODO: support the "initial" and "inherit" things?
-            
+
             // first, let's try inline style as it's fast and generally accurate
             // TODO: what if important rules override that?
             try {
@@ -2448,7 +2448,7 @@ var cssCascade = {
                     return cssSyntax.parseCSSValue(bestValue, stringOnly);
                 }
             } catch(ex) {}
-            
+
             // find all relevant style rules
             var isBestImportant=false; var bestPriority = 0; var bestValue = new cssSyntax.TokenList();
             var rules = matchedRules || (
@@ -2456,14 +2456,14 @@ var cssCascade = {
                 ? element.myMatchedRules || []
                 : cssCascade.findAllMatchingRules(element)
             );
-            
+
             var visit = function(rules) {
-                
+
                 for(var i=rules.length; i--; ) {
-                    
+
                     // media queries hook
                     if(rules[i].disabled) continue;
-                    
+
                     // find a relevant declaration
                     if(rules[i] instanceof cssSyntax.StyleRule) {
                         var decls = rules[i].value;
@@ -2472,7 +2472,7 @@ var cssCascade = {
                                 if(decls[j].name==cssPropertyName) {
                                     // only works if selectors containing a "," are deduplicated
                                     var currentPriority = cssCascade.computeSelectorPriorityOf(rules[i].selector);
-                                    
+
                                     if(isBestImportant) {
                                         // only an important declaration can beat another important declaration
                                         if(decls[j].important) {
@@ -2499,69 +2499,69 @@ var cssCascade = {
                             }
                         }
                     } else if((rules[i] instanceof cssSyntax.AtRule) && (rules[i].name=="media")) {
-                        
+
                         visit(rules[i].value);
-                        
+
                     }
-                    
+
                 }
-                
+
             }
             visit(rules);
-            
+
             // return our best guess...
             return bestValue;
-            
+
         }
-        
+
     },
-    
-    
+
+
     //
     // start monitoring a new stylesheet
     // (should usually not be used because stylesheets load automatically)
     //
     stylesheets: [],
     loadStyleSheet: function loadStyleSheet(cssText,i) {
-        
+
         // load in order
-        
+
         // parse the stylesheet content
         var rules = cssSyntax.parse(cssText).value;
-        
+
         // add the stylesheet into the object model
-        if(typeof(i)!=="undefined") { cssCascade.stylesheets[i]=rules; } 
+        if(typeof(i)!=="undefined") { cssCascade.stylesheets[i]=rules; }
         else { i=cssCascade.stylesheets.push(rules);}
-        
+
         // make sure to monitor the required rules
         cssCascade.startMonitoringStylesheet(rules)
-        
+
     },
-    
+
     //
     // start monitoring a new stylesheet
     // (should usually not be used because stylesheets load automatically)
     //
     loadStyleSheetTag: function loadStyleSheetTag(stylesheet,i) {
-        
+
         if(stylesheet.hasAttribute('data-css-polyfilled')) {
             return;
         }
-        
+
         if(stylesheet.tagName=='LINK') {
-            
+
             // oh, no, we have to download it...
             try {
-                
+
                 // dummy value in-between
                 cssCascade.stylesheets[i] = new cssSyntax.TokenList();
-                
+
                 //
                 var xhr = new XMLHttpRequest(); xhr.href = stylesheet.href;
-                xhr.open('GET',stylesheet.href,true); xhr.ruleIndex = i; 
+                xhr.open('GET',stylesheet.href,true); xhr.ruleIndex = i;
                 xhr.onreadystatechange = function() {
-                    if(this.readyState==4) { 
-                        
+                    if(this.readyState==4) {
+
                         // status 0 is a webkit bug for local files
                         if(this.status==200||this.status==0) {
                             cssCascade.loadStyleSheet(this.responseText,this.ruleIndex)
@@ -2571,85 +2571,85 @@ var cssCascade = {
                     }
                 };
                 xhr.send();
-                
+
             } catch(ex) {
                 cssConsole.log("css-cascade polyfill failled to load: " + stylesheet.href);
             }
-            
+
         } else {
-            
+
             // oh, cool, we just have to parse the content!
             cssCascade.loadStyleSheet(stylesheet.textContent,i);
-            
+
         }
-        
+
         // mark the stylesheet as ok
         stylesheet.setAttribute('data-css-polyfilled',true);
-        
+
     },
-    
+
     //
     // calling this function will load all currently existing stylesheets in the document
     // (should usually not be used because stylesheets load automatically)
     //
     selectorForStylesheets: "style:not([data-no-css-polyfill]):not([data-css-polyfilled]), link[rel=stylesheet]:not([data-no-css-polyfill]):not([data-css-polyfilled])",
     loadAllStyleSheets: function loadAllStyleSheets() {
-        
+
         // for all stylesheets in the <head> tag...
         var head = document.head || document.documentElement;
         var stylesheets = head.querySelectorAll(cssCascade.selectorForStylesheets);
-        
+
         var intialLength = this.stylesheets.length;
         this.stylesheets.length += stylesheets.length
-        
+
         // for all of them...
         for(var i = stylesheets.length; i--;) {
-            
-            // 
+
+            //
             // load the stylesheet
-            // 
-            var stylesheet = stylesheets[i]; 
+            //
+            var stylesheet = stylesheets[i];
             cssCascade.loadStyleSheetTag(stylesheet,intialLength+i)
-            
+
         }
     },
-    
+
     //
     // this is where se store event handlers for monitored properties
     //
     monitoredProperties: Object.create ? Object.create(null) : {},
     monitoredPropertiesHandler: {
         onupdate: function(element, rule) {
-            
+
             // we need to find all regexps that matches
             var mps = cssCascade.monitoredProperties;
             var decls = rule.value;
             for(var j=decls.length-1; j>=0; j--) {
                 if(decls[j].type=="DECLARATION") {
                     if(decls[j].name in mps) {
-                        
+
                         // call all handlers waiting for this
                         var hs = mps[decls[j].name];
                         for(var hi=hs.length; hi--;) {
                             hs[hi].onupdate(element,rule);
                         };
-                        
+
                         // don't call twice
                         break;
-                        
+
                     }
                 }
             }
-            
+
         }
     },
-    
+
     //
     // add an handler to some properties (aka fire when their value *MAY* be affected)
     // REMARK: because this event does not promise the value changed, you may want to figure it out before relayouting
     //
     startMonitoringProperties: function startMonitoringProperties(properties, handler) {
-        
+
         for(var i=properties.length; i--; ) {
             var property = properties[i];
             var handlers = (
@@ -2658,78 +2658,78 @@ var cssCascade = {
             );
             handlers.push(handler)
         }
-        
+
         for(var s=0; s<cssCascade.stylesheets.length; s++) {
             var currentStylesheet = cssCascade.stylesheets[s];
             cssCascade.startMonitoringStylesheet(currentStylesheet);
         }
-        
+
     },
-    
+
     //
     // calling this function will detect monitored rules in the stylesheet
     // (should usually not be used because stylesheets load automatically)
     //
     startMonitoringStylesheet: function startMonitoringStylesheet(rules) {
         for(var i=0; i<rules.length; i++) {
-            
+
             // only consider style rules
             if(rules[i] instanceof cssSyntax.StyleRule) {
-                
+
                 // try to see if the current rule is worth monitoring
                 if(rules[i].isMonitored) continue;
-                
+
                 // for that, let's see if we can find a declaration we should watch
                 var decls = rules[i].value;
                 for(var j=decls.length-1; j>=0; j--) {
                     if(decls[j].type=="DECLARATION") {
                         if(decls[j].name in cssCascade.monitoredProperties) {
-                            
+
                             // if we found some, start monitoring
                             cssCascade.startMonitoringRule(rules[i]);
                             break;
-                            
+
                         }
                     }
                 }
-                
+
             } else if(rules[i] instanceof cssSyntax.AtRule) {
-                
+
                 // handle @media
                 if(rules[i].name == "media" && window.matchMedia) {
-                    
+
                     cssCascade.startMonitoringMedia(rules[i]);
-                    
+
                 }
-                
+
             }
-            
+
         }
     },
-    
+
     //
     // calling this function will detect media query updates and fire events accordingly
     // (should usually not be used because stylesheets load automatically)
     //
     startMonitoringMedia: function startMonitoringMedia(atrule) {
         try {
-            
+
             var media = window.matchMedia(atrule.prelude.toCSSString());
-            
+
             // update all the rules when needed
             cssCascade.updateMedia(atrule.value, !media.matches, false);
             media.addListener(
                 function(newMedia) { cssCascade.updateMedia(atrule.value, !newMedia.matches, true); }
             );
-            
+
             // it seems I like taking risks...
             cssCascade.startMonitoringStylesheet(atrule.value);
-            
+
         } catch(ex) {
             setImmediate(function() { throw ex; })
         }
     },
-    
+
     //
     // define what happens when a media query status changes
     //
@@ -2744,7 +2744,7 @@ var cssCascade = {
                 }
             }
         }
-        
+
         // in case of update, all elements matching the selector went potentially updated...
         if(update) {
             for(var i=rules.length; i--; ) {
@@ -2755,15 +2755,15 @@ var cssCascade = {
             }
         }
     },
-    
-    // 
+
+    //
     // splits a rule if it has multiple selectors
-    // 
+    //
     splitRule: function splitRule(rule) {
-        
+
         // create an array for all the subrules
         var rules = [];
-        
+
         // fill the array
         var currentRule = new cssSyntax.StyleRule(); currentRule.disabled=rule.disabled;
         for(var i=0; i<rule.selector.length; i++) {
@@ -2775,102 +2775,102 @@ var cssCascade = {
             }
         }
         currentRule.value = rule.value; rules.push(currentRule);
-        
+
         // save the result of the split as subrules
         return rule.subRules = rules;
-        
+
     },
-    
-    // 
+
+    //
     // ask the css-selector implementation to notify changes for the rules
-    // 
+    //
     startMonitoringRule: function startMonitoringRule(rule) {
-        
+
         // avoid monitoring rules twice
         if(!rule.isMonitored) { rule.isMonitored=true } else { return; }
-        
+
         // split the rule if it has multiple selectors
         var rules = rule.subRules || cssCascade.splitRule(rule);
-        
+
         // monitor the rules
         for(var i=0; i<rules.length; i++) {
             rule = rules[i];
             myQuerySelectorLive(rule.selector.toCSSString(), {
                 onadded: function(e) {
-                    
+
                     // add the rule to the matching list of this element
                     (e.myMatchedRules = e.myMatchedRules || []).push(rule); // TODO: does not respect priority order
-                    
+
                     // generate an update event
                     cssCascade.monitoredPropertiesHandler.onupdate(e, rule);
-                    
+
                 },
                 onremoved: function(e) {
-                    
+
                     // remove the rule from the matching list of this element
                     if(e.myMatchedRules) e.myMatchedRules.splice(e.myMatchedRules.indexOf(rule), 1);
-                    
+
                     // generate an update event
                     cssCascade.monitoredPropertiesHandler.onupdate(e, rule);
-                    
+
                 }
             });
         }
-        
+
     },
-    
+
     //
     // converts a css property name to a javascript name
     //
-    toCamelCase: function toCamelCase(variable) { 
+    toCamelCase: function toCamelCase(variable) {
         return variable.replace(
-            /-([a-z])/g, 
-            function(str,letter) { 
+            /-([a-z])/g,
+            function(str,letter) {
                 return letter.toUpperCase();
             }
         );
     },
-    
+
     //
     // add some magic code to support properties on the style interface
     //
     polyfillStyleInterface: function(cssPropertyName) {
-        
+
         var prop = {
-            
+
             get: function() {
-                
+
                 try { if(!this.parentElement) throw new Error("Please use the anHTMLElement.myStyle property to get polyfilled properties") }
                 catch(ex) { setImmediate(function() { throw ex; }); return ''; }
-                
+
                 return this.parentElement.getAttribute('data-style-'+cssPropertyName);
-                
+
             },
-            
+
             set: function(v) {
-                
+
                 try { if(!this.parentElement) throw new Error("Please use the anHTMLElement.myStyle property to set polyfilled properties") }
                 catch(ex) { setImmediate(function() { throw ex; }); return; }
-                
+
                 if(this.parentElement.getAttribute('data-style-'+cssPropertyName) != v) {
                     this.parentElement.setAttribute('data-style-'+cssPropertyName,v);
                 }
-                
+
             }
-            
+
         };
-        
+
         var styleProto = Object.getPrototypeOf(document.documentElement.style) || CSSStyleDeclaration;
         Object.defineProperty(styleProto,cssPropertyName,prop);
         Object.defineProperty(styleProto,cssCascade.toCamelCase(cssPropertyName),prop);
         cssCascade.startMonitoringRule(cssSyntax.parse('[data-style-'+cssPropertyName+']{'+cssPropertyName+':attr(style)}').value[0]);
-        
+
         // add to the list of polyfilled properties...
         cssCascade.getAllCSSProperties().push(cssPropertyName);
         cssCascade.computationUnsafeProperties[cssPropertyName] = true;
-        
+
     }
-    
+
 };
 
 //
@@ -2879,7 +2879,7 @@ var cssCascade = {
 basicObjectModel.EventTarget.implementsIn(cssCascade);
 Object.defineProperty(Element.prototype,'myStyle',{
     get: function() {
-        var style = this.style; 
+        var style = this.style;
         if(!style.parentElement) style.parentElement = this;
         return style;
     }
@@ -2931,41 +2931,41 @@ document.addEventListener("DOMContentLoaded", function() {
 ///
 function myEventStream(connect, disconnect, reconnect) {
     var self=this;
-    
+
     // validate arguments
     if(!disconnect) disconnect=function(){};
     if(!reconnect) reconnect=connect;
-    
+
     // high-level states
     var isConnected=false;
     var isDisconnected=false;
     var shouldDisconnect=false;
-    
+
     // global variables
     var callback=null;
     var yieldEvent = function() {
-        
+
         // call the callback function, and pend disposal
         shouldDisconnect=true;
         try { callback && callback(self); } catch(ex) { setImmediate(function() { throw ex; }); }
-        
+
         // if no action was taken, dispose
         if(shouldDisconnect) { dispose(); }
-        
+
     }
-    
+
     // export the interface
     var schedule = this.schedule = function(newCallback) {
-    
+
         // do not allow to schedule on disconnected event streams
         if(isDisconnected) { throw new Error("Cannot schedule on a disconnected event stream"); }
-        
+
         // do not allow to schedule on already scheduled event streams
         if(isConnected && !shouldDisconnect) { throw new Error("Cannot schedule on an already-scheduled event stream"); }
-        
+
         // schedule the new callback
         callback=newCallback; shouldDisconnect=false;
-        
+
         // reconnect to the stream
         if(isConnected) {
             reconnect(yieldEvent);
@@ -2974,17 +2974,17 @@ function myEventStream(connect, disconnect, reconnect) {
             isConnected=true;
         }
     }
-    
+
     var dispose = this.dispose = function() {
-    
+
         // do not allow to dispose non-connected streams
         if(isConnected) {
-        
+
             // disconnect & save resources
-            disconnect(); 
-            self=null; yieldEvent=null; callback=null; 
+            disconnect();
+            self=null; yieldEvent=null; callback=null;
             isConnected=false; isDisconnected=true; shouldDisconnect=false;
-            
+
         }
     }
 }
@@ -2993,34 +2993,34 @@ function myEventStream(connect, disconnect, reconnect) {
 /// call a function every frame
 ///
 function myAnimationFrameEventStream(options) {
-    
+
     // flag that says whether the observer is still needed or not
     var rid = 0;
-        
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(yieldEvent) { rid = requestAnimationFrame(yieldEvent); },
         function disconnect() { cancelAnimationFrame(rid); }
     );
-    
+
 }
 
 ///
 /// call a function every timeout
 ///
 function myTimeoutEventStream(options) {
-    
+
     // flag that says whether the observer is still needed or not
     var rid = 0; var timeout=(typeof(options)=="number") ? (+options) : ("timeout" in options ? +options.timeout : 333);
-        
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(yieldEvent) { rid = setTimeout(yieldEvent, timeout); },
         function disconnect() { clearTimeout(rid); }
     );
-    
+
 }
 
 ///
@@ -3031,7 +3031,7 @@ function myMouseEventStream() {
 
     // flag that says whether the event is still observered or not
     var scheduled = false; var interval=0;
-    
+
     // handle the synchronous nature of mutation events
     var yieldEvent=null;
     var yieldEventDelayed = function() {
@@ -3039,37 +3039,37 @@ function myMouseEventStream() {
         window.removeEventListener(pointermove, yieldEventDelayed, true);
         scheduled = requestAnimationFrame(yieldEvent);
     }
-    
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             window.addEventListener(pointermove, yieldEventDelayed, true);
         },
-        function disconnect() { 
+        function disconnect() {
             window.removeEventListener(pointermove, yieldEventDelayed, true);
             cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
         },
-        function reconnect(newYieldEvent) { 
+        function reconnect(newYieldEvent) {
             yieldEvent=newYieldEvent; scheduled=false;
             window.addEventListener(pointermove, yieldEventDelayed, true);
         }
     );
-    
+
 }
 
 ///
 /// call a function every time the mouse is clicked/unclicked
 ///
 function myMouseButtonEventStream() {
-    var self=this; 
+    var self=this;
     var pointerup = (("PointerEvent" in window) ? "pointerup" : (("MSPointerEvent" in window) ? "MSPointerUp" : "mouseup"));
     var pointerdown = (("PointerEvent" in window) ? "pointerdown" : (("MSPointerEvent" in window) ? "MSPointerDown" : "mousedown"));
 
     // flag that says whether the event is still observered or not
     var scheduled = false; var interval=0;
-    
+
     // handle the synchronous nature of mutation events
     var yieldEvent=null;
     var yieldEventDelayed = function() {
@@ -3078,27 +3078,27 @@ function myMouseButtonEventStream() {
         window.removeEventListener(pointerdown, yieldEventDelayed, true);
         scheduled = requestAnimationFrame(yieldEvent);
     }
-    
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             window.addEventListener(pointerup, yieldEventDelayed, true);
             window.addEventListener(pointerdown, yieldEventDelayed, true);
         },
-        function disconnect() { 
+        function disconnect() {
             window.removeEventListener(pointerup, yieldEventDelayed, true);
             window.removeEventListener(pointerdown, yieldEventDelayed, true);
             cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
         },
-        function reconnect(newYieldEvent) { 
+        function reconnect(newYieldEvent) {
             yieldEvent=newYieldEvent; scheduled=false;
             window.addEventListener(pointerup, yieldEventDelayed, true);
             window.addEventListener(pointerdown, yieldEventDelayed, true);
         }
     );
-    
+
 }
 
 ///
@@ -3107,30 +3107,30 @@ function myMouseButtonEventStream() {
 var myDOMUpdateEventStream;
 if("MutationObserver" in window) {
     myDOMUpdateEventStream = function myDOMUpdateEventStream(options) {
-         
+
         // configuration of the observer
         if(options) {
             var target = "target" in options ? options.target : document.documentElement;
-            var config = { 
-                subtree: "subtree" in options ? !!options.subtree : true, 
-                attributes: "attributes" in options ? !!options.attributes : true, 
-                childList: "childList" in options ? !!options.childList : true, 
+            var config = {
+                subtree: "subtree" in options ? !!options.subtree : true,
+                attributes: "attributes" in options ? !!options.attributes : true,
+                childList: "childList" in options ? !!options.childList : true,
                 characterData: "characterData" in options ? !!options.characterData : false
             };
         } else {
             var target = document.documentElement;
-            var config = { 
-                subtree: true, 
-                attributes: true, 
-                childList: true, 
+            var config = {
+                subtree: true,
+                attributes: true,
+                childList: true,
                 characterData: false
             };
         }
-                            
+
         // start the event stream
         var observer = null;
         myEventStream.call(
-            this, 
+            this,
             function connect(yieldEvent) { if(config) { observer=new MutationObserver(yieldEvent); observer.observe(target,config); target=null; config=null; } },
             function disconnect() { observer && observer.disconnect(); observer=null; },
             function reconnect() { observer.takeRecords(); }
@@ -3143,14 +3143,14 @@ if("MutationObserver" in window) {
 
         // flag that says whether the event is still observered or not
         var scheduled = false;
-        
+
         // configuration of the observer
         if(options) {
             var target = "target" in options ? options.target : document.documentElement;
         } else {
             var target = document.documentElement;
         }
-        
+
         // handle the synchronous nature of mutation events
         var yieldEvent=null;
         var yieldEventDelayed = function() {
@@ -3160,26 +3160,26 @@ if("MutationObserver" in window) {
             target.removeEventListener("DOMSubtreeModified", yieldEventDelayed, false);
             scheduled = requestAnimationFrame(yieldEvent);
         }
-        
+
         // start the event stream
         myEventStream.call(
-            this, 
+            this,
             function connect(newYieldEvent) {
                 yieldEvent=newYieldEvent;
                 document.addEventListener("DOMContentLoaded", yieldEventDelayed, false);
                 target.addEventListener("DOMSubtreeModified", yieldEventDelayed, false);
             },
-            function disconnect() { 
+            function disconnect() {
                 document.removeEventListener("DOMContentLoaded", yieldEventDelayed, false);
                 target.removeEventListener("DOMSubtreeModified", yieldEventDelayed, false);
                 cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
             },
-            function reconnect(newYieldEvent) { 
+            function reconnect(newYieldEvent) {
                 yieldEvent=newYieldEvent; scheduled=false;
                 target.addEventListener("DOMSubtreeModified", yieldEventDelayed, false);
             }
         );
-        
+
     }
 } else {
     myDOMUpdateEventStream = myAnimationFrameEventStream;
@@ -3190,43 +3190,43 @@ if("MutationObserver" in window) {
 ///
 function myFocusEventStream() {
     var self=this;
-    
+
     // handle the filtering nature of focus events
     var yieldEvent=null; var previousActiveElement=null; var previousHasFocus=false; var rid=0;
     var yieldEventDelayed = function() {
-        
+
         // if the focus didn't change
         if(previousActiveElement==document.activeElement && previousHasFocus==document.hasFocus()) {
-            
+
             // then do not generate an event
             setTimeout(yieldEventDelayed, 333); // focus that didn't move is expected to stay
-            
+
         } else {
-            
+
             // else, generate one & save config
             previousActiveElement=document.activeElement;
             previousHasFocus=document.hasFocus();
             yieldEvent();
-            
+
         }
     }
-    
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             rid=setTimeout(yieldEventDelayed, 500); // let the document load
         },
-        function disconnect() { 
+        function disconnect() {
             clearTimeout(rid); yieldEventDelayed=null; yieldEvent=null; rid=0;
         },
-        function reconnect(newYieldEvent) { 
+        function reconnect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             rid=setTimeout(yieldEventDelayed, 100); // focus by tab navigation moves fast
         }
     );
-    
+
 }
 
 ///
@@ -3235,29 +3235,29 @@ function myFocusEventStream() {
 ///
 function myCompositeEventStream(stream1, stream2) {
     var self=this;
-    
+
     // fields
     var yieldEvent=null; var s1=false, s2=false;
-    var yieldEventWrapper=function(s) { 
+    var yieldEventWrapper=function(s) {
         if(s==stream1) s1=true;
         if(s==stream2) s2=true;
         if(s1&&s2) return;
         yieldEvent(self);
     }
-    
+
     // start the event stream
     myEventStream.call(
-        this, 
+        this,
         function connect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             stream1.schedule(yieldEventWrapper);
             stream2.schedule(yieldEventWrapper);
         },
-        function disconnect() { 
+        function disconnect() {
             stream1.dispose();
             stream2.dispose();
         },
-        function reconnect(newYieldEvent) { 
+        function reconnect(newYieldEvent) {
             yieldEvent=newYieldEvent;
             s1 && stream1.schedule(yieldEventWrapper);
             s2 && stream2.schedule(yieldEventWrapper);
@@ -3277,186 +3277,186 @@ function myCompositeEventStream(stream1, stream2) {
 /// the live querySelectorAll implementation
 ///
 window.myQuerySelectorLive = function(selector, handler, root) {
-    
+
     // restrict the selector coverage to some part of the DOM only
     var root = root || document;
-    
+
     // TODO: make use of "mutatedAncestorElement" to update only elements inside the mutated zone
-    
+
     var currentElms = [];
     var loop = function loop(eventStream) {
-        
+
         // schedule next run
         eventStream.schedule(loop);
-        
+
         // update elements matching the selector
         var newElms = [];
         var oldElms = currentElms.slice(0);
         var temps = root.querySelectorAll(selector);
         for(var i=newElms.length=temps.length; i;) { newElms.push(temps[--i]); }
         currentElms = newElms.slice(0); temps=null;
-        
+
         // first let's clear all elements that have been removed from the document
         oldElms = oldElms.filter(function(e) {
-            
+
             // check whether the current element is still there
             var isStillInDocument = (
-                e===document.documentElement 
+                e===document.documentElement
                 || document.documentElement.contains(e)
             );
-            
+
             if(isStillInDocument) {
-                
+
                 // NEED_COMPARE: we will compare this element to the new list
                 return true;
-                
+
             } else {
-                
+
                 // DELETE: raise onremoved, pop old elements
                 try { handler.onremoved && handler.onremoved(e); } catch(ex) { setImmediate(function() {throw ex})}
                 return false;
-                
+
             }
-            
+
         });
-        
+
         // now pop and match until both lists are exhausted
         // (we use the fact the returned elements are in document order)
         var el1 = oldElms.pop();
         var el2 = newElms.pop();
         while(el1 || el2) {
             if(el1===el2) {
-            
+
                 // MATCH: pop both elements
                 el1 = oldElms.pop();
                 el2 = newElms.pop();
-                
+
             } else if (el2 && /*el1 is after el2*/(!el1||(el2.compareDocumentPosition(el1) & (1|2|8|32))===0)) {
-                
+
                 // INSERT: raise onadded, pop new elements
                 try { handler.onadded && handler.onadded(el2); } catch(ex) { setImmediate(function() {throw ex})}
                 el2 = newElms.pop();
-                
+
             } else {
-            
+
                 // DELETE: raise onremoved, pop old elements
                 try { handler.onremoved && handler.onremoved(el1); } catch(ex) { setImmediate(function() {throw ex})}
                 el1 = oldElms.pop();
-                
+
             }
         }
-        
+
     };
-    
+
     // use the event stream that best matches our needs
     var simpleSelector = selector.replace(/:(dir|lang|root|empty|blank|nth-child|nth-last-child|first-child|last-child|only-child|nth-of-type|nth-last-of-child|fist-of-type|last-of-type|only-of-type|not|matches|default)\b/gi,'')
     var eventStream; if(simpleSelector.indexOf(':') == -1) {
-        
+
         // static stuff only
-        eventStream = new myDOMUpdateEventStream(root); 
-        
+        eventStream = new myDOMUpdateEventStream(root);
+
     } else {
-        
+
         // dynamic stuff too
-        eventStream = new myDOMUpdateEventStream(root); 
+        eventStream = new myDOMUpdateEventStream(root);
         if(myDOMUpdateEventStream != myAnimationFrameEventStream) {
-        
+
             // detect the presence of focus-related pseudo-classes
             var reg = /:(focus|active)\b/gi;
             if(reg.test(simpleSelector)) {
-                
+
                 // mouse events should be listened
                 eventStream = new myCompositeEventStream(
                     new myFocusEventStream(),
                     eventStream
                 );
-                
+
                 // simplify simpleSelector
                 var reg = /:(focus)\b/gi;
                 simpleSelector = simpleSelector.replace(reg, ''); // :active has other hooks
-                
+
             }
-            
+
             // detect the presence of mouse-button-related pseudo-classes
             var reg = /:(active)\b/gi;
             if(reg.test(simpleSelector)) {
-                
+
                 // mouse events should be listened
                 eventStream = new myCompositeEventStream(
                     new myMouseButtonEventStream(),
                     eventStream
                 );
-                
+
                 // simplify simpleSelector
                 simpleSelector = simpleSelector.replace(reg, '');
-                
+
             }
 
             // detect the presence of user input pseudo-classes
             var reg = /:(target|checked|indeterminate|valid|invalid|in-range|out-of-range|user-error)\b/gi;
             if(reg.test(simpleSelector)) {
-                
+
                 // slowly dynamic stuff do happen
                 eventStream = new myCompositeEventStream(
                     new myTimeoutEventStream(250),
                     eventStream
                 );
-                
+
                 // simplify simpleSelector
                 simpleSelector = simpleSelector.replace(reg, '');
 
                 var reg = /:(any-link|link|visited|local-link|enabled|disabled|read-only|read-write|required|optional)\b/gi;
                 // simplify simpleSelector
                 simpleSelector = simpleSelector.replace(reg, '');
-                
+
             }
-            
+
             // detect the presence of nearly-static pseudo-classes
             var reg = /:(any-link|link|visited|local-link|enabled|disabled|read-only|read-write|required|optional)\b/gi;
             if(reg.test(simpleSelector)) {
-                
+
                 // nearly static stuff do happen
                 eventStream = new myCompositeEventStream(
                     new myTimeoutEventStream(333),
                     eventStream
                 );
-                
+
                 // simplify simpleSelector
                 simpleSelector = simpleSelector.replace(reg, '');
-                
+
             }
-            
+
             // detect the presence of mouse-related pseudo-classes
             var reg = /:(hover)\b/gi;
             if(reg.test(simpleSelector)) {
-                
+
                 // mouse events should be listened
                 eventStream = new myCompositeEventStream(
                     new myMouseEventStream(),
                     eventStream
                 );
-                
+
                 // simplify simpleSelector
                 simpleSelector = simpleSelector.replace(reg, '');
-                
+
             }
-            
+
             // detect the presence of unknown pseudo-classes
             if(simpleSelector.indexOf(':') !== -1) {
-                
+
                 // other stuff do happen, too (let's give up on events)
-                eventStream = new myAnimationFrameEventStream(); 
-                
+                eventStream = new myAnimationFrameEventStream();
+
             }
-            
+
         }
-        
+
     }
-    
+
     // start handling changes
     loop(eventStream);
-    
-}    
+
+}
 
 /////////////////////////////////////////////////////////////////
 ////                                                         ////
@@ -3475,25 +3475,25 @@ function getCommonAncestor(nodes) {
 
     // start bubbling from the first node
     var currentNode = nodes[0];
-    
+
     // while we still have a candidate ancestor
     bubbling: while(currentNode && currentNode.nodeType!=9) {
-        
+
         // walk all other intial nodes
-        var i = nodes.length;    
+        var i = nodes.length;
         while (--i) {
-            
+
             // if the curent node doesn't contain any of those nodes
             if (!currentNode.contains(nodes[i])) {
-                
+
                 // consider the parent node instead
                 currentNode = currentNode.parentNode;
                 continue bubbling;
-                
+
             }
-            
+
         }
-        
+
         // if all were contained in the current node:
         // we found the solution
         return currentNode;
@@ -3504,42 +3504,42 @@ function getCommonAncestor(nodes) {
 "use strict";
 
 var cssBreak = {
-    
+
     //
-    // returns true if an element is replaced 
+    // returns true if an element is replaced
     // (can't be broken because considered as an image in css layout)
-    // 
+    //
     isReplacedElement: function isReplacedElement(element) {
         if(!(element instanceof Element)) return false;
         var replacedElementTags = /^(SVG|MATH|IMG|VIDEO|OBJECT|EMBED|IFRAME|TEXTAREA|BUTTON|INPUT)$/; // TODO: more
         return replacedElementTags.test(element.tagName);
     },
-    
-    // 
+
+    //
     // returns true if an element has a scrollbar or act on overflowing content
-    // 
+    //
     isScrollable: function isScrollable(element, elementOverflow) {
         if(!(element instanceof Element)) return false;
         if(typeof(elementOverflow)=="undefined") elementOverflow = getComputedStyle(element).overflow;
-        
+
         return (
             elementOverflow !== "visible"
             && elementOverflow !== "hidden"
         );
-        
+
     },
-    
-    // 
+
+    //
     // returns true if the element is part of an inline flow
     // TextNodes definitely qualify, but also inline-block elements
-    // 
+    //
     isSingleLineOfTextComponent: function(element, elementStyle, elementDisplay, elementPosition, isReplaced) {
         if(!(element instanceof Element)) return true;
         if(typeof(elementStyle)=="undefined") elementStyle = getComputedStyle(element);
         if(typeof(elementDisplay)=="undefined") elementDisplay = elementStyle.display;
         if(typeof(elementPosition)=="undefined") elementPosition = elementStyle.position;
         if(typeof(isReplaced)=="undefined") isReplaced = this.isReplacedElement(element);
-        
+
         return (
             elementDisplay === "inline-block"
             || elementDisplay === "inline-table"
@@ -3550,143 +3550,143 @@ var cssBreak = {
             elementPosition === "static"
             || elementPosition === "relative"
         );
-        
+
     },
-    
-    // 
+
+    //
     // returns true if the element is part of an inline flow
     // TextNodes definitely qualify, but also inline-block elements
-    // 
+    //
     hasAnyInlineFlow: function(element) {
-        
+
         function countAsInline(element) {
             if(!(element instanceof Element)) return !(/^\s*$/.test(element.nodeValue));
             return !cssBreak.isOutOfFlowElement(element) && cssBreak.isSingleLineOfTextComponent(element);
         }
-        
+
         // try to find any inline element
         var current = element.firstChild;
         while(current) {
             if(countAsInline(current)) return true;
             current = current.nextSibling;
         }
-        
+
         // no inline element
         return false;
-        
+
     },
-    
-    // 
+
+    //
     // returns true if the element breaks the inline flow
     // (the case of block elements, mostly)
-    // 
+    //
     isLineBreakingElement: function(element, elementStyle, elementDisplay, elementPosition) {
-        
+
         if(!(element instanceof Element)) return false;
         if(typeof(elementStyle)=="undefined") elementStyle = getComputedStyle(element);
         if(typeof(elementDisplay)=="undefined") elementDisplay = elementStyle.display;
         if(typeof(elementPosition)=="undefined") elementPosition = elementStyle.position;
-        
+
         return (
             (
                 // in-flow bock elements
                 (elementDisplay === "block")
                 && !this.isOutOfFlowElement(element, elementStyle, elementDisplay, elementPosition)
-                
+
             ) || (
-                
+
                 // displayed <br> elements
                 element.tagName==="BR" && elementDisplay!=="none"
-                
+
             )
         );
     },
-    
-    // 
+
+    //
     // returns true if the element breaks the inline flow before him
     // (the case of block elements, mostly)
-    // 
+    //
     isLinePreBreakingElement: function(element, elementStyle, elementDisplay, elementPosition) {
         if(!(element instanceof Element)) return false;
 
         var breakBefore = cssCascade.getSpecifiedStyle(element,'break-before').toCSSString();
         return (
-            (breakBefore=="region"||breakBefore=="all") 
+            (breakBefore=="region"||breakBefore=="all")
             || cssBreak.isLineBreakingElement(element, elementStyle, elementDisplay, elementPosition)
         );
-        
+
     },
-    
-    // 
+
+    //
     // returns true if the element breaks the inline flow after him
     // (the case of block elements, mostly)
-    // 
+    //
     isLinePostBreakingElement: function(element, elementStyle, elementDisplay, elementPosition) {
         if(!(element instanceof Element)) return false;
-        
+
         var breakAfter = cssCascade.getSpecifiedStyle(element,'break-after').toCSSString();
         return (
-            (breakAfter=="region"||breakAfter=="all") 
+            (breakAfter=="region"||breakAfter=="all")
             || cssBreak.isLineBreakingElement(element, elementStyle, elementDisplay, elementPosition)
         );
-        
+
     },
-    
-    // 
+
+    //
     // returns true if the element is outside any block/inline flow
     // (this the case of absolutely positioned elements, and floats)
-    // 
+    //
     isOutOfFlowElement: function(element, elementStyle, elementDisplay, elementPosition, elementFloat) {
         if(!(element instanceof Element)) return false;
         if(typeof(elementStyle)=="undefined") elementStyle = getComputedStyle(element);
         if(typeof(elementDisplay)=="undefined") elementDisplay = elementStyle.display;
-        if(typeof(elementPosition)=="undefined") elementPosition = elementStyle.position; 
+        if(typeof(elementPosition)=="undefined") elementPosition = elementStyle.position;
         if(typeof(elementFloat)=="undefined") elementFloat = elementStyle.float || elementStyle.styleFloat || elementStyle.cssFloat;
-        
+
         return (
-            
+
             // positioned elements are out of the flow
             (elementPosition==="absolute"||elementPosition==="fixed")
-            
+
             // floated elements as well
-            || (elementFloat!=="none") 
-            
+            || (elementFloat!=="none")
+
             // not sure but let's say hidden elements as well
             || (elementDisplay==="none")
-            
+
         );
-        
+
     },
-    
-    // 
+
+    //
     // returns true if two sibling elements are in the same text line
     // (this function is not perfect, work with it with care)
-    // 
+    //
     areInSameSingleLine: function areInSameSingleLine(element1, element2) {
-        
+
         //
         // look for obvious reasons why it wouldn't be the case
         //
-        
+
         // if the element are not direct sibling, we must use their inner siblings as well
-        if(element1.nextSibling != element2) { 
-            if(element2.nextSibling != element1) throw "I gave up!"; 
+        if(element1.nextSibling != element2) {
+            if(element2.nextSibling != element1) throw "I gave up!";
             var t = element1; element1=element2; element2=t;
         }
-         
+
         // a block element is never on the same line as another element
         if(this.isLinePostBreakingElement(element1)) return false;
         if(this.isLinePreBreakingElement(element2)) return false;
-        
+
         // if the previous element is out of flow, we may consider it as being part of the current line
         if(this.isOutOfFlowElement(element1)) return true;
-        
+
         // if the current object is not a single line component, return false
         if(!this.isSingleLineOfTextComponent(element1)) return false;
-        
-        // 
+
+        //
         // compute the in-flow bounding rect of the two elements
-        // 
+        //
         var element1box = Node.getBoundingClientRect(element1);
         var element2box = Node.getBoundingClientRect(element2);
         function shift(box,shiftX,shiftY) {
@@ -3697,7 +3697,7 @@ var cssBreak = {
                 right: box.right+shiftX
             }
         }
-        
+
         // we only need to shift elements
         if(element1 instanceof Element) {
             var element1Style = getComputedStyle(element1);
@@ -3706,7 +3706,7 @@ var cssBreak = {
                 element1box = shift(element1box, parseFloat(element1Style.left), parseFloat(element1Style.top))
             }
         }
-        
+
         // we only need to shift elements
         if(element2 instanceof Element) {
             var element2Style = getComputedStyle(element2);
@@ -3715,37 +3715,37 @@ var cssBreak = {
                 element2box = shift(element2box, parseFloat(element2Style.left), parseFloat(element2Style.top))
             }
         }
-        
+
         // order the nodes so that they are in left-to-right order
         // (this means invert their order in the case of right-to-left flow)
         var firstElement = getComputedStyle(element1.parentNode).direction=="rtl" ? element2box : element1box;
         var secondElement = getComputedStyle(element1.parentNode).direction=="rtl" ? element1box : element2box;
-        
+
         // return true if both elements are have non-overlapping
         // margin- and position-corrected in-flow bounding rect
         // and if their relative position is the one of the current
         // flow (either rtl or ltr)
         return firstElement.right <= secondElement.left;
-        
+
         // TODO: what about left-to-right + right-aligned text?
         // I should probably takes care of vertical position in this case to solve ambiguities
-        
+
     },
-    
+
     //
     // returns true if the element has "overflow: hidden" set on it, and actually overflows
     //
     isHiddenOverflowing: function isHiddenOverflowing(element, elementOverflow) {
         if(!(element instanceof Element)) return false;
         if(typeof(elementOverflow)=="undefined") elementOverflow = getComputedStyle(element).display;
-        
+
         return (
-            elementOverflow == "hidden" 
+            elementOverflow == "hidden"
             && element.offsetHeight != element.scrollHeight // trust me that works
         );
-        
+
     },
-    
+
     //
     // returns true if the element has a border-radius that impacts his layout
     //
@@ -3755,97 +3755,97 @@ var cssBreak = {
 
         // if the browser supports radiuses {f### prefixes}
         if("borderTopLeftRadius" in elementStyle) {
-            
+
             var tlRadius = parseFloat(elementStyle.borderTopLeftRadius);
             var trRadius = parseFloat(elementStyle.borderTopRightRadius);
             var blRadius = parseFloat(elementStyle.borderBottomLeftRadius);
             var brRadius = parseFloat(elementStyle.borderBottomRightRadius);
-            
+
             // tiny radiuses (<15px) are tolerated anyway
             if(tlRadius < 15 && trRadius < 15 && blRadius < 15 && brRadius < 15) {
                 return false;
             }
-            
+
             var tWidth = parseFloat(elementStyle.borderTopWidth);
             var bWidth = parseFloat(elementStyle.borderBottomWidth);
             var lWidth = parseFloat(elementStyle.borderLeftWidth);
             var rWidth = parseFloat(elementStyle.borderRightWidth);
-            
+
             // make sure the radius itself is contained into the border
-            
+
             if(tlRadius > tWidth) return true;
             if(tlRadius > lWidth) return true;
-            
+
             if(trRadius > tWidth) return true;
             if(trRadius > rWidth) return true;
-            
+
             if(blRadius > bWidth) return true;
             if(blRadius > lWidth) return true;
-            
+
             if(brRadius > bWidth) return true;
             if(brRadius > rWidth) return true;
-            
+
         }
-        
+
         // all conditions were met
         return false;
     },
-    
+
     //
     // returns true if the element is unbreakable according to the spec
     // (and some of the expected limitations of HTML/CSS)
     //
     isMonolithic: function isMonolithic(element) {
         if(!(element instanceof Element)) return false;
-        
+
         var elementStyle = getComputedStyle(element);
         var elementOverflow = elementStyle.overflow;
         var elementDisplay = elementStyle.display;
-        
+
         // Some content is not fragmentable, for example:
         // - many types of replaced elements (such as images or video)
-        
+
         var isReplaced = this.isReplacedElement(element);
-        
+
         // - scrollable elements
-        
+
         var isScrollable = this.isScrollable(element, elementOverflow);
-        
-        // - a single line of text content. 
-        
+
+        // - a single line of text content.
+
         var isSingleLineOfText = this.isSingleLineOfTextComponent(element, elementStyle, elementDisplay, undefined, isReplaced);
-        
+
         // Such content is considered monolithic: it contains no
-        // possible break points. 
-        
-        // In addition to any content which is not fragmentable, 
+        // possible break points.
+
+        // In addition to any content which is not fragmentable,
         // UAs may consider as monolithic:
-        // - any elements with ‘overflow’ set to ‘auto’ or ‘scroll’ 
+        // - any elements with ‘overflow’ set to ‘auto’ or ‘scroll’
         // - any elements with ‘overflow: hidden’ and a non-‘auto’ logical height (and no specified maximum logical height).
-        
+
         var isHiddenOverflowing = this.isHiddenOverflowing(element, elementOverflow);
-        
+
         // ADDITION TO THE SPEC:
-        // I don't want to handle the case where 
+        // I don't want to handle the case where
         // an element has a border-radius that is bigger
         // than the border-width to which it belongs
         var hasBigRadius = this.hasBigRadius(element, elementStyle);
-        
+
         // all of them are monolithic
         return isReplaced || isScrollable || isSingleLineOfText || isHiddenOverflowing || hasBigRadius;
-        
+
     },
-    
-    // 
+
+    //
     // returns true if "r" is a collapsed range located at a possible break point for "region"
     // (this function does all the magic for you, but you may want to avoid using it too much)
-    // 
+    //
     isPossibleBreakPoint: function isPossibleBreakPoint(r, region) {
-        
+
         // r has to be a range, and be collapsed
         if(!(r instanceof Range)) return false;
         if(!(r.collapsed)) return false;
-        
+
         // no ancestor up to the region has to be monolithic
         var ancestor = r.startContainer;
         while(ancestor && ancestor !== region) {
@@ -3854,90 +3854,90 @@ var cssBreak = {
             }
             ancestor = ancestor.parentNode;
         }
-        
+
         // we also have to check that we're not between two single-line-of-text elements
         // that are actually on the same line (in which case you can't break)
-        var ancestor = r.startContainer; 
+        var ancestor = r.startContainer;
         var lastAncestor = r.startContainer.childNodes[r.startOffset];
         while(ancestor && lastAncestor !== region) {
             if(lastAncestor && lastAncestor.previousSibling) {
-                
+
                 if(this.areInSameSingleLine(lastAncestor, lastAncestor.previousSibling)) {
                     return false;
                 }
-                
+
             }
-            
+
             lastAncestor = ancestor;
             ancestor = ancestor.parentNode;
         }
-        
+
         // there are some very specific conditions for breaking
         // at the edge of an element:
-        
+
         if(r.startOffset==0) {
-            
+
             // Class 3 breaking point:
             // ========================
-            // Between the content edge of a block container box 
-            // and the outer edges of its child content (margin 
-            // edges of block-level children or line box edges 
+            // Between the content edge of a block container box
+            // and the outer edges of its child content (margin
+            // edges of block-level children or line box edges
             // for inline-level children) if there is a (non-zero)
             // gap between them.
-            
+
             var firstChild = r.startContainer.childNodes[0];
             if(firstChild) {
-                
+
                 var firstChildBox = (
                     Node.getBoundingClientRect(firstChild)
                 );
-                
+
                 var parentBox = (
                     r.startContainer.getBoundingClientRect()
                 );
-                
+
                 if(firstChildBox.top == parentBox.top) {
                     return false;
                 }
-                
+
             } else {
                 return false;
             }
-            
+
         }
-        
+
         // all conditions are met!
         return true;
-        
+
     }
-    
+
 }
 "use strict";
 
 var cssRegionsHelpers = {
-    
+
     //
     // returns the previous sibling of the element
     // or the previous sibling of its nearest ancestor that has one
     //
     getAllLevelPreviousSibling: function(e, region) {
         if(!e || e==region) return null;
-        
+
         // find the nearest ancestor that has a previous sibling
         while(!e.previousSibling) {
-            
+
             // but bubble to the next avail ancestor
             e = e.parentNode;
-            
+
             // dont get over the bar
             if(!e || e==region) return null;
-            
+
         }
-        
+
         // return that sibling
         return e.previousSibling;
     },
-    
+
     //
     // prepares the element to become a css region
     //
@@ -3949,55 +3949,55 @@ var cssRegionsHelpers = {
             node.cssRegionsWrapper = node.cssRegionsWrapper || node.appendChild(document.createElement("cssregion"));
         });
     },
-    
+
     //
     // prepares the element to return to its normal css life
     //
     unmarkNodesAsRegion: function(nodes,fast) {
         nodes.forEach(function(node) {
-            
+
             // restore regionOverset to its natural value
             node.regionOverset = 'fit';
-            
+
             // remove the current <cssregion> tag
-            try { node.cssRegionsWrapper && node.removeChild(node.cssRegionsWrapper); } 
-            catch(ex) { setImmediate(function() { throw ex })}; 
+            try { node.cssRegionsWrapper && node.removeChild(node.cssRegionsWrapper); }
+            catch(ex) { setImmediate(function() { throw ex })};
             node.cssRegionsWrapper = undefined;
             delete node.cssRegionsWrapper;
-            
+
             // restore top-level texts that may have been hidden
             cssRegionsHelpers.unhideTextNodesFromFragmentSource([node]);
-            
+
             // unmark as a region
             node.removeAttribute('data-css-region');
         });
     },
-    
+
     //
     // prepares the element for cloning (mainly give them an ID)
     //
     fragmentSourceIndex: 0,
     markNodesAsFragmentSource: function(nodes,ignoreRoot) {
-        
+
         function visit(node,k) {
             var child, next;
             switch (node.nodeType) {
                 case 1: // Element node
-                    
+
                     if(typeof(k)=="undefined" || !ignoreRoot) {
-                        
+
                         // mark as fragment source
                         var id = node.getAttributeNode('data-css-regions-fragment-source');
                         if(!id) { node.setAttribute('data-css-regions-fragment-source', cssRegionsHelpers.fragmentSourceIndex++); }
-                        
+
                     }
-                    
+
                     node.setAttribute('data-css-regions-cloning', true);
-                    
+
                     // expand list values
                     if(node.tagName=='OL') cssRegionsHelpers.expandListValues(node);
                     if(typeof(k)!="undefined" && node.tagName=="LI") cssRegionsHelpers.expandListValues(node.parentNode);
-                    
+
                 case 9: // Document node
                 case 11: // Document fragment node
                     child = node.firstChild;
@@ -4009,30 +4009,30 @@ var cssRegionsHelpers = {
                     break;
             }
         }
-        
+
         nodes.forEach(visit);
-        
+
     },
-    
+
     //
     // computes the "value" attribute of every LI element out there
     //
     expandListValues: function(OL) {
         if(OL.getAttribute("data-css-li-value-expanded")) return;
         OL.setAttribute('data-css-li-value-expanded', true);
-        
+
         if(OL.hasAttribute("reversed")) {
-            
+
             var currentValue = OL.getAttribute("start") ? parseInt(OL.getAttribute("start")) : OL.childElementCount;
             var increment = -1;
-            
+
         } else {
-            
+
             var currentValue = OL.getAttribute("start") ? parseInt(OL.getAttribute("start")) : 1;
             var increment = +1;
-            
+
         }
-        
+
         var LI = OL.firstElementChild; var LIV = null;
         while(LI) {
             if(LI.tagName==="LI") {
@@ -4046,10 +4046,10 @@ var cssRegionsHelpers = {
             }
             LI = LI.nextElementSibling;
         }
-        
-        
+
+
     },
-    
+
     //
     // reverts to automatic computation of the value of LI elements
     //
@@ -4068,23 +4068,23 @@ var cssRegionsHelpers = {
             LI = LI.nextElementSibling;
         }
     },
-    
+
     //
     // makes empty text nodes which cannot get "display: none" applied to them
     //
     listOfTextNodesForIE: [],
     hideTextNodesFromFragmentSource: function(nodes) {
-        
+
         function visit(node,k) {
             var child, next;
             switch (node.nodeType) {
                 case 3: // Text node
-                    
+
                     if(!node.parentNode.getAttribute('data-css-regions-fragment-source')) {
                         // we have to remove their content the hard way...
                         node.cssRegionsSavedNodeValue = node.nodeValue;
                         node.nodeValue = "";
-                        
+
                         // HACK: OTHERWISE IE WILL GC THE TEXTNODE AND RETURNS YOU
                         // A FRESH TEXTNODE THE NEXT TIME WHERE YOUR EXPANDO
                         // IS NOWHERE TO BE SEEN!
@@ -4094,9 +4094,9 @@ var cssRegionsHelpers = {
                             }
                         }
                     }
-                    
+
                     break;
-                    
+
                 case 1: // Element node
                     if(node.hasAttribute('data-css-regions-cloning')) {
                         node.removeAttribute('data-css-regions-cloning');
@@ -4104,84 +4104,7 @@ var cssRegionsHelpers = {
 						if(node.currentStyle) node.currentStyle.display.toString(); // IEFIX FOR BAD STYLE RECALC
                     }
                     if(typeof(k)=="undefined") return;
-                    
-                case 9: // Document node
-                case 11: // Document fragment node                    
-                    child = node.firstChild;
-                    while (child) {
-                        next = child.nextSibling;
-                        visit(child);
-                        child = next;
-                    }
-                    break;
-            }
-        }
-        
-        nodes.forEach(visit);
-        
-    },
-    
-    //
-    // makes emptied text nodes visible again
-    //
-    unhideTextNodesFromFragmentSource: function(nodes) {
-        
-        function visit(node) {
-            var child, next;
-            switch (node.nodeType) {
-                case 3: // Text node
-                    
-                    // we have to remove their content the hard way...
-                    if("cssRegionsSavedNodeValue" in node) {
-                        node.nodeValue = node.cssRegionsSavedNodeValue;
-                        delete node.cssRegionsSavedNodeValue;
-                    }
-                    
-                    break;
-                    
-                case 1: // Element node
-                    if(typeof(k)=="undefined") return;
-                    
-                case 9: // Document node
-                case 11: // Document fragment node                    
-                    child = node.firstChild;
-                    while (child) {
-                        next = child.nextSibling;
-                        visit(child);
-                        child = next;
-                    }
-                    break;
-            }
-        }
-        
-        nodes.forEach(visit);
-        
-    },
-    
-    //
-    // prepares the content elements to return to ther normal css life
-    //
-    unmarkNodesAsFragmentSource: function(nodes) {
-        
-        function visit(node,k) {
-            var child, next;
-            switch (node.nodeType) {
-                case 3: // Text node
-                    
-                    // we have to reinstall their content the hard way...
-                    if("cssRegionsSavedNodeValue" in node) {
-                        node.nodeValue = node.cssRegionsSavedNodeValue;
-                        delete node.cssRegionsSavedNodeValue;
-                    }
-                    
-                    break;
-                case 1: // Element node
-                    node.removeAttribute('data-css-regions-cloned');
-                    node.removeAttribute('data-css-regions-fragment-source');
-					if(node.currentStyle) node.currentStyle.display.toString(); // IEFIX FOR BAD STYLE RECALC
-                    if(node.tagName=="OL") cssRegionsHelpers.unexpandListValues(node);
-                    if(typeof(k)!="undefined" && node.tagName=="LI") cssRegionsHelpers.unexpandListValues(node.parentNode);
-                    
+
                 case 9: // Document node
                 case 11: // Document fragment node
                     child = node.firstChild;
@@ -4193,16 +4116,93 @@ var cssRegionsHelpers = {
                     break;
             }
         }
-        
+
         nodes.forEach(visit);
-        
+
     },
-    
+
+    //
+    // makes emptied text nodes visible again
+    //
+    unhideTextNodesFromFragmentSource: function(nodes) {
+
+        function visit(node) {
+            var child, next;
+            switch (node.nodeType) {
+                case 3: // Text node
+
+                    // we have to remove their content the hard way...
+                    if("cssRegionsSavedNodeValue" in node) {
+                        node.nodeValue = node.cssRegionsSavedNodeValue;
+                        delete node.cssRegionsSavedNodeValue;
+                    }
+
+                    break;
+
+                case 1: // Element node
+                    if(typeof(k)=="undefined") return;
+
+                case 9: // Document node
+                case 11: // Document fragment node
+                    child = node.firstChild;
+                    while (child) {
+                        next = child.nextSibling;
+                        visit(child);
+                        child = next;
+                    }
+                    break;
+            }
+        }
+
+        nodes.forEach(visit);
+
+    },
+
+    //
+    // prepares the content elements to return to ther normal css life
+    //
+    unmarkNodesAsFragmentSource: function(nodes) {
+
+        function visit(node,k) {
+            var child, next;
+            switch (node.nodeType) {
+                case 3: // Text node
+
+                    // we have to reinstall their content the hard way...
+                    if("cssRegionsSavedNodeValue" in node) {
+                        node.nodeValue = node.cssRegionsSavedNodeValue;
+                        delete node.cssRegionsSavedNodeValue;
+                    }
+
+                    break;
+                case 1: // Element node
+                    node.removeAttribute('data-css-regions-cloned');
+                    node.removeAttribute('data-css-regions-fragment-source');
+					if(node.currentStyle) node.currentStyle.display.toString(); // IEFIX FOR BAD STYLE RECALC
+                    if(node.tagName=="OL") cssRegionsHelpers.unexpandListValues(node);
+                    if(typeof(k)!="undefined" && node.tagName=="LI") cssRegionsHelpers.unexpandListValues(node.parentNode);
+
+                case 9: // Document node
+                case 11: // Document fragment node
+                    child = node.firstChild;
+                    while (child) {
+                        next = child.nextSibling;
+                        visit(child);
+                        child = next;
+                    }
+                    break;
+            }
+        }
+
+        nodes.forEach(visit);
+
+    },
+
     //
     // marks cloned content as fragment instead of as fragment source (basically)
     //
     transformFragmentSourceToFragments: function(nodes) {
-        
+
         function visit(node) {
             var child, next;
             switch (node.nodeType) {
@@ -4213,7 +4213,7 @@ var cssRegionsHelpers = {
                     node.removeAttribute('data-css-regions-cloned');
                     node.setAttribute('data-css-regions-fragment-of', id);
                     if(node.id) node.id += "--fragment";
-                    
+
                 case 9: // Document node
                 case 11: // Document fragment node
                     child = node.firstChild;
@@ -4225,57 +4225,57 @@ var cssRegionsHelpers = {
                     break;
             }
         }
-        
+
         nodes.forEach(visit);
-        
+
     },
-    
+
     //
     // removes some invisible text nodes from the tree
     // (useful if you don't want to face browser bugs when dealing with them)
     //
     embedTrailingWhiteSpaceNodes: function(fragment) {
-        
+
         var onlyWhiteSpace = /^\s*$/;
         function visit(node) {
             var child, next;
             switch (node.nodeType) {
                 case 3: // Text node
-                    
+
                     // we only remove nodes at the edges
                     if (!node.previousSibling) {
-                        
+
                         // we only remove nodes if their parent doesn't preserve whitespace
                         if (getComputedStyle(node.parentNode).whiteSpace.substring(0,3)!=="pre") {
-                            
+
                             // only remove pure whitespace nodes
                             if (onlyWhiteSpace.test(node.nodeValue)) {
                                 node.parentNode.setAttribute('data-whitespace-before',node.nodeValue);
                                 node.parentNode.removeChild(node);
                             }
-                            
+
                         }
-                        
+
                         break;
                     }
-                    
+
                     // we only remove nodes at the edges
                     if (!node.nextSibling) {
-                        
+
                         // we only remove nodes if their parent doesn't preserve whitespace
                         if (getComputedStyle(node.parentNode).whiteSpace.substring(0,3)!=="pre") {
-                            
+
                             // only remove pure whitespace nodes
                             if (onlyWhiteSpace.test(node.nodeValue)) {
                                 node.parentNode.setAttribute('data-whitespace-after',node.nodeValue);
                                 node.parentNode.removeChild(node);
                             }
-                            
+
                         }
-                        
+
                         break;
                     }
-                    
+
                     break;
                 case 1: // Element node
                 case 9: // Document node
@@ -4289,16 +4289,16 @@ var cssRegionsHelpers = {
                     break;
             }
         }
-        
+
         visit(fragment);
-        
+
     },
-    
+
     //
     // recover the previously removed invisible text nodes
     //
     unembedTrailingWhiteSpaceNodes: function(fragment) {
-        
+
         var onlyWhiteSpace = /^\s*$/;
         function visit(node) {
             var child, next;
@@ -4317,7 +4317,7 @@ var cssRegionsHelpers = {
                         }
                     }
                     node.removeAttribute('data-whitespace-after')
-                    
+
                 case 9: // Document node
                 case 11: // Document fragment node
                     child = node.firstChild;
@@ -4329,125 +4329,125 @@ var cssRegionsHelpers = {
                     break;
             }
         }
-        
+
         visit(fragment);
-        
+
     },
-    
+
     ///
     /// walk the two trees the same way, and copy all the styles
     /// BEWARE: if the DOMs are different, funny things will happen
     /// NOTE: this function will also remove elements put in another flow
     ///
     copyStyle: function(root1, root2) {
-        
+
         function visit(node1, node2, isRoot) {
             var child1, next1, child2, next2;
             switch (node1.nodeType) {
                 case 1: // Element node
-                    
+
                     // firstly, setup a cache of all css properties on the element
                     var matchedRules = (node1.currentStyle && !window.opera) ? undefined : cssCascade.findAllMatchingRules(node1)
-                    
+
                     // and compute the value of all css properties
                     var properties = cssCascade.allCSSProperties || cssCascade.getAllCSSProperties();
                     for(var p=properties.length; p--; ) {
-                        
+
                         // if the property is computation-safe, use the computed value
                         if(!(properties[p] in cssCascade.computationUnsafeProperties) && properties[p][0]!='-') {
                             var style = getComputedStyle(node1).getPropertyValue(properties[p]);
                             var defaultStyle = cssCascade.getDefaultStyleForTag(node1.tagName).getPropertyValue(properties[p]);
-                            if(style != defaultStyle) node2.style.setProperty(properties[p], style) // WHAT IF WE DIDN'T - EB 
+                            if(style != defaultStyle) node2.style.setProperty(properties[p], style) // WHAT IF WE DIDN'T - EB
                             continue;
                         }
-                        
+
                         // otherwise, get the element's specified value
                         var cssValue = cssCascade.getSpecifiedStyle(node1, properties[p], matchedRules);
                         if(cssValue && cssValue.length) {
-                            
+
                             // if we have a specified value, let's use it
-                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB 
-                            
+                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB
+
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
-                            
+
                             // NOTE: the root will be detached from its parent
                             // Therefore, we have to inherit styles from it (oh no!)
-                            
+
                             // TODO: create a list of inherited properties
                             if(!(properties[p] in cssCascade.inheritingProperties)) continue;
-                            
+
                             // if the property is computation-safe, use the computed value
                             if((properties[p]=="font-size") || (!(properties[p] in cssCascade.computationUnsafeProperties) && properties[p][0]!='-')) {
                                 var style = getComputedStyle(node1).getPropertyValue(properties[p]);
                                 node2.style.setProperty(properties[p], style);
                                 //var parentStyle = style; try { parentStyle = getComputedStyle(node1.parentNode).getPropertyValue(properties[p]) } catch(ex){}
                                 //var defaultStyle = cssCascade.getDefaultStyleForTag(node1.tagName).getPropertyValue(properties[p]);
-                                
+
                                 //if(style === parentStyle) {
                                 //  node2.style.setProperty(properties[p], style)
                                 //}
                                 continue;
                             }
-                            
+
                             // otherwise, get the parent's specified value
                             var cssValue = cssCascade.getSpecifiedStyle(node1, properties[p], matchedRules);
                             if(cssValue && cssValue.length) {
-                                
+
                                 // if we have a specified value, let's use it
                                 node2.style.setProperty(properties[p], cssValue.toCSSString());
-                                
+
                             }
-                            
+
                         }
-                        
+
                     }
-                    
+
                     // now, let's work on ::after and ::before
                     var importPseudo = function(node1,node2,pseudo) {
-                        
+
                         //
                         // we'll need to use getSpecifiedStyle here as the pseudo thing is slow
                         //
                         var mayExist = !!cssCascade.findAllMatchingRulesWithPseudo(node1,pseudo.substr(1)).length;
                         if(!mayExist) return;
-                        
+
                         var pseudoStyle = getComputedStyle(node1,pseudo);
                         if(pseudoStyle.content!='none'){
-                            
+
                             // let's create a stylesheet for the element
                             var stylesheet = document.createElement('style');
                             stylesheet.setAttribute('data-no-css-polyfill',true);
-                            
+
                             // compute the value of all css properties
                             var node2style = "";
                             var properties = cssCascade.allCSSProperties || cssCascade.getAllCSSProperties();
                             for(var p=properties.length; p--; ) {
-                                
+
                                 // we always use the computed value, because we don't have better
                                 var style = pseudoStyle.getPropertyValue(properties[p]);
                                 node2style += properties[p]+":"+style+";";
-                                
+
                             }
-                            
+
                             stylesheet.textContent = (
-                                '[data-css-regions-fragment-of="' + node1.getAttribute('data-css-regions-fragment-source') + '"]' 
+                                '[data-css-regions-fragment-of="' + node1.getAttribute('data-css-regions-fragment-source') + '"]'
                                 +':not([data-css-regions-starting-fragment]):not([data-css-regions-special-starting-fragment])'
                                 +':'+pseudo+'{'
                                 +node2style
                                 +"}"
                             );
-                            
+
                             // node2.parentNode.insertBefore(stylesheet, node2); // lets not insert this stylesheet - EB
-                            
+
                         }
                     }
                     importPseudo(node1,node2,":before");
                     importPseudo(node1,node2,":after");
-                    
+
                     // retarget events
                     cssRegionsHelpers.retargetEvents(node1,node2);
-                    
-                    
+
+
                 case 9: // Document node
                 case 11: // Document fragment node
                     child1 = node1.firstChild;
@@ -4455,31 +4455,31 @@ var cssRegionsHelpers = {
                     while (child1) {
                         next1 = child1.nextSibling;
                         next2 = child2.nextSibling;
-                        
+
                         // decide between process style or hide
                         if(child1.cssRegionsLastFlowIntoName && child1.cssRegionsLastFlowIntoType==="element") {
                             node2.removeChild(child2);
                         } else {
                             visit(child1, child2);
                         }
-                        
+
                         child1 = next1;
                         child2 = next2;
                     }
                     break;
             }
         }
-        
+
         visit(root1, root2, true);
-        
+
     },
-    
+
     //
     // make sure the most critical events still fire in the fragment source
     // even if the browser initially fire them on the fragments
     //
     retargetEvents: function retargetEvents(node1,node2) {
-        
+
         var retargetEvent = "cssRegionsHelpers.retargetEvent(this,event)";
         // WHO CARES ABOUT THIS - EB
         // node2.setAttribute("onclick", retargetEvent);
@@ -4490,45 +4490,45 @@ var cssRegionsHelpers = {
         // node2.setAttribute("onmouseout", retargetEvent);
         // node2.setAttribute("onmouseenter", retargetEvent);
         // node2.setAttribute("onmouseleave", retargetEvent);
-        
+
     },
-    
+
     //
     // single hub for event retargeting operations.
     //
     retargetEvent: function retargeEvent(node2,e) {
-        
+
         // get the node we should fire the event on
         var node1 = (
             (node2.cssRegionsFragmentSource) ||
             (node2.cssRegionsFragmentSource=document.querySelector('[data-css-regions-fragment-source="' + node2.getAttribute('data-css-regions-fragment-of') + '"]'))
         );
-        
+
         if(node1) {
-        
+
             // dispatch the event on the real node
             var ne = basicObjectModel.cloneEvent(e);
             node1.dispatchEvent(ne);
-            
+
             // prevent the event to fire on the region
             e.stopImmediatePropagation ? e.stopImmediatePropagation() : e.stopPropagation();
-            
+
             // make sure to cancel the event if required
             if(ne.isDefaultPrevented || ne.defaultPrevented) { e.preventDefault(); return false; }
-        
+
         }
-        
+
     }
 }
-"use strict";    
+"use strict";
 
 ///
 /// now create a module for region reflow
 ///
 
 var cssRegions = {
-    
-    
+
+
     //
     // this function is at the heart of the region polyfill
     // it will iteratively fill a list of regions until no
@@ -4553,20 +4553,20 @@ var cssRegions = {
     // this last region.
     //
     layoutContent: function(regions, remainingContent, callback, startTime) {
-        
+
         //
         // this function will iteratively fill all the regions
         // when we reach the last region, we return the overset status
         //
-        
+
         // validate args
         if(!regions) return callback.ondone(!!remainingContent.hasChildNodes());
         if(!regions.length) return callback.ondone(!!remainingContent.hasChildNodes());
         if(!startTime) startTime = Date.now();
-        
+
         // get the next region
         var region = regions.pop();
-          
+
         // NOTE: while we don't monitor that, and it can therefore become inacurate
         // I'm going to follow the spec and refuse to mark as region inline/none elements]
         while(true) {
@@ -4577,7 +4577,7 @@ var cssRegions = {
                 break;
             }
         }
-        
+
         // the polyfill actually use a <cssregion> wrapper
         // we need to link this wrapper and the actual region
         if(region.cssRegionsWrapper) {
@@ -4586,43 +4586,43 @@ var cssRegions = {
         } else {
             region.cssRegionHost = region;
         }
-        
+
         // empty the region
         region.innerHTML = '';
-        
+
         // avoid doing the layout of empty regions
         if(!remainingContent.hasChildNodes()) {
-            
+
             region.cssRegionHost.cssRegionsLastOffsetHeight = region.cssRegionHost.offsetHeight;
             region.cssRegionHost.cssRegionsLastOffsetWidth = region.cssRegionHost.offsetWidth;
-            
+
             region.cssRegionHost.regionOverset = 'empty';
-			
+
 			var dummyCallback = { ondone:function(){}, onprogress:function(f){f()} };
             cssRegions.layoutContent(regions, remainingContent, dummyCallback, startTime);
-			
+
             return callback.ondone(false);
-            
+
         }
-        
+
         // append the remaining content to the region
         region.appendChild(remainingContent);
-        
+
         // check if we have more regions to process
         if(regions.length !== 0) {
-			
+
             return this.layoutContentInNextRegionsWhenReady(region, regions, remainingContent, callback, startTime);
-            
+
         } else {
-            
+
             return this.layoutContentInLastRegionWhenReady(region, regions, remainingContent, callback, startTime);
-            
+
         }
-                
+
     },
-	
+
 	layoutContentInNextRegionsWhenReady: function(region, regions, remainingContent, callback, startTime) {
-				
+
 		// delays until all images are loaded
 		var imgs = region.getElementsByTagName('img');
 		for(var imgs_index=imgs.length; imgs_index--; ) {
@@ -4630,12 +4630,12 @@ var cssRegions = {
 				return setTimeout(
 					function() {
 		            	this.layoutContentInNextRegionsWhenReady(region, regions, remainingContent, callback, startTime+32);
-					}.bind(this), 
+					}.bind(this),
 					16
 				);
 			}
 		}
-		
+
         // check if there was an overflow or some break-before/after instruction
 		var regionDidOverflow = region.cssRegionHost.scrollHeight != region.cssRegionHost.offsetHeight;
 		var shouldSegmentContent = regionDidOverflow;
@@ -4644,13 +4644,13 @@ var cssRegions = {
 			var last = region.lastElementChild;
 			var current = first;
 			while(current) {
-				
+
 				if(current != first) {
                     if(/(region|all|always)/i.test(cssCascade.getSpecifiedStyle(current,'break-before',undefined,true).toCSSString())) {
                         shouldSegmentContent = true; break;
                     }
                 }
-				
+
 				if(current != last) {
                     if(/(region|all|always)/i.test(cssCascade.getSpecifiedStyle(current,'break-after',undefined,true).toCSSString())) {
                         current = current.nextElementSibling;
@@ -4661,49 +4661,49 @@ var cssRegions = {
 				current = current.nextElementSibling;
 			}
 		}
-		
-		
+
+
         if(shouldSegmentContent) {
-            
+
             // the remaining content is what was overflowing
             remainingContent = this.extractOverflowingContent(region);
-            
+
         } else {
-            
+
             // there's nothing more to insert
             remainingContent = document.createDocumentFragment();
-            
+
         }
-        
+
         // if any content didn't fit
         if(remainingContent.hasChildNodes()) {
             region.cssRegionHost.regionOverset = 'overset';
         } else {
             region.cssRegionHost.regionOverset = 'fit';
         }
-        
+
         // update flags
         region.cssRegionHost.cssRegionsLastOffsetHeight = region.cssRegionHost.offsetHeight;
         region.cssRegionHost.cssRegionsLastOffsetWidth = region.cssRegionHost.offsetWidth;
-        
+
         // layout the next regions
         // WE LET THE NEXT REGION DECIDE WHAT TO RETURN
         if(startTime+2 > Date.now()) {// -EB can we make this shorter? changed 200 to 2
-            
+
             return cssRegions.layoutContent(regions, remainingContent, callback, startTime);
-            
+
         } else {
-            
+
             return callback.onprogress(function() {
                 cssRegions.layoutContent(regions, remainingContent, callback);
             });
-            
+
         }
-		
+
 	},
-	
+
 	layoutContentInLastRegionWhenReady: function(region, regions, remainingContent, callback, startTime) {
-		
+
 		// delays until all images are loaded
 		var imgs = region.getElementsByTagName('img');
 		for(var imgs_index=imgs.length; imgs_index--; ) {
@@ -4711,37 +4711,37 @@ var cssRegions = {
 				return setTimeout(
 					function() {
 		            	this.layoutContentInLastRegionWhenReady(region, regions, remainingContent, callback, startTime+32);
-					}.bind(this), 
+					}.bind(this),
 					32
 				);
 			}
 		}
-		
+
         // support region-fragment: break
         if(cssCascade.getSpecifiedStyle(region.cssRegionHost,"region-fragment",undefined,true).toCSSString().trim().toLowerCase()=="break") {
-            
+
             // WE RETURN TRUE IF WE DID OVERFLOW
             var didOverflow = (this.extractOverflowingContent(region).hasChildNodes());
-            
+
             // update flags
             region.cssRegionHost.cssRegionsLastOffsetHeight = region.cssRegionHost.offsetHeight;
             region.cssRegionHost.cssRegionsLastOffsetWidth = region.cssRegionHost.offsetWidth;
-            
+
             return callback.ondone(didOverflow);
-            
+
         } else {
-            
+
             // update flags
             region.cssRegionHost.cssRegionsLastOffsetHeight = region.cssRegionHost.offsetHeight;
             region.cssRegionHost.cssRegionsLastOffsetWidth = region.cssRegionHost.offsetWidth;
-            
+
             // WE RETURN FALSE IF WE DIDN'T OVERFLOW
             return callback.ondone(region.cssRegionHost.offsetHeight != region.cssRegionHost.scrollHeight);
-            
+
         }
 	},
 
-    
+
     //
     // this function returns a document fragment containing the content
     // that didn't fit in a particular <cssregion> element.
@@ -4755,27 +4755,27 @@ var cssRegions = {
     // start from scratch.
     //
     extractOverflowingContent: function(region, dontOptimize) {
-        
+
         // make sure empty nodes don't make our life more difficult
         cssRegionsHelpers.embedTrailingWhiteSpaceNodes(region);
-        
+
         // get the region layout
         var sizingH = region.cssRegionHost.offsetHeight; // avail size (max-height)
         var sizingW = region.cssRegionHost.offsetWidth; // avail size (max-width)
         var pos = region.cssRegionHost.getBoundingClientRect(); // avail size?
         pos = {top: pos.top, bottom: pos.bottom, left: pos.left, right: pos.right};
-        
+
         // substract from the bottom any border/padding of the region
         var lostHeight = parseInt(getComputedStyle(region.cssRegionHost).paddingBottom);
         lostHeight += parseInt(getComputedStyle(region.cssRegionHost).borderBottomWidth);
         pos.bottom -= lostHeight; sizingH -= lostHeight;
-        
+
         //
         // note: let's use hit targeting to find a dom range
         // which is close to the location where we will need to
         // break the content into fragments
-        // 
-        
+        //
+
         // get the caret range for the bottom-right of that location
         try {
             var r = dontOptimize ? document.createRange() : document.caretRangeFromPoint(
@@ -4788,7 +4788,7 @@ var cssRegions = {
                 cssConsole.dir(ex);
             } catch (ex) {}
         }
-        
+
         // helper for logging info
         /*cssConsole.log("extracting overflow")
         cssConsole.log(pos.bottom)*/
@@ -4800,13 +4800,13 @@ var cssRegions = {
                 computedBCR: rect
             });*/
         }
-        
+
         var fixNullRect = function() {
             if(rect.bottom==0 && rect.top==0 && rect.left==0 && rect.right==0) {
-				
+
 				var scrollTop = -(document.documentElement.scrollTop || document.body.scrollTop);
 				var scrollLeft = -(document.documentElement.scrollLeft || document.body.scrollLeft);
-				
+
                 rect = {
                     width: 0,
                     heigth: 0,
@@ -4817,84 +4817,84 @@ var cssRegions = {
                 }
             }
         }
-        
+
         // if the caret is outside the region
         if(!r || (region !== r.endContainer && !Node.contains(region,r.endContainer))) {
-            
+
             // if the caret is after the region wrapper but inside the host...
             if(r && r.endContainer === region.cssRegionHost && r.endOffset==r.endContainer.childNodes.length) {
-                
+
                 // move back at the end of the region, actually
                 r.setEnd(region, region.childNodes.length);
-                
+
             } else {
-                
+
                 // move back into the region
                 r = r || document.createRange();
                 r.setStart(region, 0);
                 r.setEnd(region, 0);
                 dontOptimize=true;
-                
+
             }
         }
-        
+
         // start finding the natural breaking point
         do {
-            
+
             // store the current selection rect for fast access
             var rect = r.myGetExtensionRect(); fixNullRect();
             debug();
-            
+
             //
             // note: maybe the text is right-to-left
             // in this case, we can go further than the caret
             //
-            
+
             // move the end point char by char until it's completely in the region
             while(!(r.endContainer==region && r.endOffset==r.endContainer.childNodes.length) && rect.bottom<=pos.top+sizingH) {
-                
+
                 debug();
-                
+
                 // look if we can optimize by moving fast forward
                 var nextSibling = r.endContainer.childNodes[r.endOffset];
                 var nextSiblingRect = !nextSibling || Node.getBoundingClientRect(nextSibling);
                 if(nextSibling && nextSiblingRect.bottom<=pos.top+sizingH) {
-                    
+
                     // if yes, move element by element
                     r.setStartAfter(nextSibling)
                     r.setEndAfter(nextSibling)
                     rect = nextSiblingRect
                     fixNullRect()
-                    
+
                 } else {
-                    
+
                     // otherwise, go char-by-char
                     r.myMoveTowardRight(); rect = r.myGetExtensionRect(); fixNullRect();
-                    
+
                 }
             }
-            
+
             //
             // note: maybe the text is one line too big
             // in this case, we have to backtrack a little
             //
-            
+
             // move the end point char by char until it's completely in the region
             while(!(r.endContainer==region && r.endOffset==0) && rect.bottom>pos.top+sizingH) {
                 debug(); r.myMoveOneCharLeft(); rect = r.myGetExtensionRect(); fixNullRect();
             }
-            
+
             debug()
-            
+
             //
             // note: if we optimized via hit-testing, this may be wrong
-            // if next condition does not hold, we're fine. 
+            // if next condition does not hold, we're fine.
             // otherwhise we must restart without optimization...
             //
-            
+
             // if the selected content is possibly off-target
             var optimizationFailled = false; if(!dontOptimize) {
-                
+
                 var current = r.endContainer;
                 while(current = cssRegionsHelpers.getAllLevelPreviousSibling(current, region)) {
                     if(Node.getBoundingClientRect(current).bottom > pos.top + sizingH) {
@@ -4905,16 +4905,16 @@ var cssRegions = {
                         break;
                     }
                 }
-                
+
             }
-            
-        } while(optimizationFailled) 
-        
-        // 
+
+        } while(optimizationFailled)
+
+        //
         // note: we should not break the content inside monolithic content
         // if we do, we need to change the selection to avoid that
-        // 
-        
+        //
+
         // move the selection before the monolithic ancestors
         var current = r.endContainer;
         while(current !== region) {
@@ -4923,98 +4923,98 @@ var cssRegions = {
             }
             current = current.parentNode;
         }
-        
+
         // if the selection is not in the region anymore, add the whole region
         if(!r || (region !== r.endContainer && !Node.contains(region,r.endContainer))) {
             cssConsole.dir(r.cloneRange()); debugger;
             r.setStart(region,region.childNodes.length);
             r.setEnd(region,region.childNodes.length);
         }
-        
-        // 
+
+        //
         // note: we don't want to break inside a line.
         // backtrack to end of previous line...
-        // 
-        var first = r.startContainer.childNodes[r.startOffset], current = first; 
+        //
+        var first = r.startContainer.childNodes[r.startOffset], current = first;
         if(cssBreak.hasAnyInlineFlow(r.startContainer)) {
             while((current) && (current = current.previousSibling)) {
-                
+
                 if(cssBreak.areInSameSingleLine(current,first)) {
-                    
+
                     // optimization: first and current are on the same line
                     // so if next and current are not the same line, it will still be
                     // the same line the "first" element is in
                     first = current;
-                    
+
                     if(current instanceof Element) {
-                        
+
                         // we don't want to break inside text lines
                         r.setEndBefore(current);
-                        
+
                     } else {
-                        
+
                         // get last line via client rects
                         var lines = Node.getClientRects(current);
-                        
+
                         // if the text node did wrap into multiple lines
                         if(lines.length>1) {
-                            
+
                             // move back from the end until we get into previous line
                             var previousLineBottom = lines[lines.length-2].bottom;
                             r.setEnd(current, current.nodeValue.length);
                             while(rect.bottom>previousLineBottom) {
                                 r.myMoveOneCharLeft(); rect = r.myGetExtensionRect(); fixNullRect();
                             }
-                            
+
                             // make sure we didn't exit the text node by mistake
                             if(r.endContainer!==current) {
                                 // if we did, there's something wrong about the text node
                                 // but we can consider the text node as an element instead
-                                r.setEndBefore(current); // debugger; 
+                                r.setEndBefore(current); // debugger;
                             }
-                            
+
                         } else {
-                            
+
                             // we can consider the text node as an element
                             r.setEndBefore(current);
-                            
+
                         }
-                        
+
                     }
                 } else {
-                    
-                    // if the two elements are not on the same line, 
+
+                    // if the two elements are not on the same line,
                     // then we just found a line break!
                     break;
-                    
+
                 }
-                
+
             }
         }
-        
+
         // if the selection is not in the region anymore, add the whole region
         if(!r || (region !== r.endContainer && !Node.contains(region,r.endContainer))) {
             cssConsole.dir(r.cloneRange()); debugger;
             r.setStart(region,region.childNodes.length);
             r.setEnd(region,region.childNodes.length);
         }
-        
-        
-        // 
+
+
+        //
         // note: the css-break spec says that a region should not be emtpy
-        // 
-        
+        //
+
         // if we end up with nothing being selected, add the first block anyway
         if(r.endContainer===region && r.endOffset===0 && r.endOffset!==region.childNodes.length) {
-            
+
             // find the first allowed break point
             do {
-                
-                //cssConsole.dir(r.cloneRange()); 
-                
+
+                //cssConsole.dir(r.cloneRange());
+
                 // move the position char-by-char
-                r.myMoveTowardRight(); 
-                
+                r.myMoveTowardRight();
+
                 // but skip long islands of monolithic elements
                 // since we know we cannot break inside them anyway
                 var current = r.endContainer;
@@ -5025,20 +5025,20 @@ var cssRegions = {
                     }
                     current = current.parentNode;
                 }
-                
+
             }
             // do that until we reach a possible break point, or the end of the element
             while(!cssBreak.isPossibleBreakPoint(r,region) && !(r.endContainer===region && r.endOffset===region.childNodes.length))
-            
+
         }
-        
+
         // if the selection is not in the region anymore, add the whole region
         if(!r || region !== r.endContainer && !Node.contains(region,r.endContainer)) {
             cssConsole.dir(r.cloneRange()); debugger;
             r.setStart(region,region.childNodes.length);
             r.setEnd(region,region.childNodes.length);
         }
-            
+
         // now, let's try to find a break-before/break-after element before the splitting point
         var current = r.endContainer;
         if (current.hasChildNodes()) {
@@ -5048,7 +5048,7 @@ var cssRegions = {
         var first = r.endContainer.firstChild;
         do {
             if(current.style) {
-                
+
                 if(current != first) {
                     if(/(region|all|always)/i.test(cssCascade.getSpecifiedStyle(current,'break-before',undefined,true).toCSSString())) {
                         r.setStartBefore(current);
@@ -5056,7 +5056,7 @@ var cssRegions = {
                         dontOptimize=true; // no algo involved in breaking, after all
                     }
                 }
-                
+
                 if(current !== region) {
                     if(/(region|all|always)/i.test(cssCascade.getSpecifiedStyle(current,'break-after',undefined,true).toCSSString())) {
                         r.setStartAfter(current);
@@ -5064,10 +5064,10 @@ var cssRegions = {
                         dontOptimize=true; // no algo involved in breaking, after all
                     }
                 }
-                
+
             }
         } while(current = cssRegionsHelpers.getAllLevelPreviousSibling(current, region));
-        
+
         // we're almost done! now, let's collect the ancestors to make some splitting postprocessing
         var current = r.endContainer; var allAncestors=[];
         if(current.nodeType !== current.ELEMENT_NODE) current=current.parentNode;
@@ -5075,33 +5075,33 @@ var cssRegions = {
             allAncestors.push(current);
             current = current.parentNode;
         }
-        
+
         //
         // note: if we're about to split after the last child of
-        // an element which has bottom-{padding/border/margin}, 
+        // an element which has bottom-{padding/border/margin},
         // we need to figure how how much of that p/b/m we can
         // actually keep in the first fragment
-        // 
-        // TODO: avoid top & bottom p/b/m cuttings to use the 
+        //
+        // TODO: avoid top & bottom p/b/m cuttings to use the
         // same variables names, it's ugly
         //
-        
+
         // split bottom-{margin/border/padding} correctly
         if(r.endOffset == r.endContainer.childNodes.length && r.endContainer !== region) {
-            
+
             // compute how much of the bottom border can actually fit
             var box = r.endContainer.getBoundingClientRect();
             var excessHeight = box.bottom - (pos.top + sizingH);
             var endContainerStyle = getComputedStyle(r.endContainer);
             var availBorderHeight = parseFloat(endContainerStyle.borderBottomWidth);
             var availPaddingHeight = parseFloat(endContainerStyle.paddingBottom);
-            
+
             // start by cutting into the border
             var borderCut = excessHeight;
             if(excessHeight > availBorderHeight) {
                 borderCut = availBorderHeight;
                 excessHeight -= borderCut;
-                
+
                 // continue by cutting into the padding
                 var paddingCut = excessHeight;
                 if(paddingCut > availPaddingHeight) {
@@ -5113,38 +5113,38 @@ var cssRegions = {
             } else {
                 excessHeight = 0;
             }
-            
-            
+
+
             // we don't cut borders with radiuses
             // TODO: accept to cut the content not affected by the radius
             if(typeof(borderCut)==="number" && borderCut!==0) {
-                
+
                 // check the presence of a radius:
                 var hasBottomRadius = (
                     parseInt(endContainerStyle.borderBottomLeftRadius)>0
                     || parseInt(endContainerStyle.borderBottomRightRadius)>0
                 );
-                
+
                 if(hasBottomRadius) {
                     // break before the whole border:
                     borderCut = availBorderHeight;
                 }
-                
+
             }
-            
+
         }
-        
-        
+
+
         // split top-{margin/border/padding} correctly
         if(r.endOffset == 0 && r.endContainer !== region) {
-            
-            // note: the only possibility here is that we 
+
+            // note: the only possibility here is that we
             // did split after a padding or a border.
-            // 
-            // it can only happen if the border/padding is 
-            // too big to fit the region but is actually 
+            //
+            // it can only happen if the border/padding is
+            // too big to fit the region but is actually
             // the first break we could find!
-            
+
             // compute how much of the top border can actually fit
             var box = r.endContainer.getBoundingClientRect();
             var availHeight = (pos.top + sizingH) - pos.top;
@@ -5152,15 +5152,15 @@ var cssRegions = {
             var availBorderHeight = parseFloat(endContainerStyle.borderTopWidth);
             var availPaddingHeight = parseFloat(endContainerStyle.paddingTop);
             var excessHeight = availBorderHeight + availPaddingHeight - availHeight;
-            
+
             if(excessHeight > 0) {
-            
+
                 // start by cutting into the padding
                 var topPaddingCut = excessHeight;
                 if(excessHeight > availPaddingHeight) {
                     topPaddingCut = availPaddingHeight;
                     excessHeight -= topPaddingCut;
-                    
+
                     // continue by cutting into the border
                     var topBorderCut = excessHeight;
                     if(topBorderCut > availBorderHeight) {
@@ -5172,11 +5172,11 @@ var cssRegions = {
                 } else {
                     excessHeight = 0;
                 }
-                
+
             }
-            
+
         }
-        
+
         // remove bottom-{pbm} from all ancestors involved in the cut
         for(var i=allAncestors.length-1; i>=0; i--) {
             allAncestors[i].setAttribute('data-css-continued-fragment',true);
@@ -5204,38 +5204,38 @@ var cssRegions = {
             allAncestors[0].setAttribute('data-css-special-continued-fragment',true);
             allAncestors[0].style.paddingTop = (availPaddingHeight-topPaddingCut)+'px';
         }
-        
-        
+
+
         //
-        // note: at this point we have a collapsed range 
+        // note: at this point we have a collapsed range
         // located at the split point
         //
-        
+
         // select the overflowing content
         r.setEnd(region, region.childNodes.length);
-        
+
         // extract it from the current region
         var overflowingContent = r.extractContents();
-        
-        
-        // 
+
+
+        //
         // note: now we have to cancel out the artifacts of
         // the fragments cloning algorithm...
         //
-        
+
         // do not forget to remove any top p/b/m on cut elements
         var newFragments = overflowingContent.querySelectorAll("[data-css-continued-fragment]");
         for(var i=newFragments.length; i--;) { // TODO: optimize by using while loop and a simple matchesSelector.
             newFragments[i].removeAttribute('data-css-continued-fragment')
             newFragments[i].setAttribute('data-css-starting-fragment',true);
         }
-        
+
         // deduct any already-used bottom p/b/m
         var specialNewFragment = overflowingContent.querySelector('[data-css-special-continued-fragment]');
         if(specialNewFragment) {
             specialNewFragment.removeAttribute('data-css-special-continued-fragment')
             specialNewFragment.setAttribute('data-css-starting-fragment',true);
-            
+
             if(typeof(borderCut)==="number") {
                 specialNewFragment.style.borderBottomWidth = (borderCut)+'px';
             }
@@ -5244,7 +5244,7 @@ var cssRegions = {
             } else {
                 specialNewFragment.style.paddingBottom = '0px';
             }
-            
+
             if(typeof(topBorderCut)==="number") {
                 specialNewFragment.removeAttribute('data-css-starting-fragment')
                 specialNewFragment.setAttribute('data-css-special-starting-fragment',true);
@@ -5257,33 +5257,33 @@ var cssRegions = {
                 specialNewFragment.style.paddingBottom = '0px';
                 specialNewFragment.style.borderBottomWidth = '0px';
             }
-            
+
         } else if(typeof(borderCut)==="number") {
-            
+
             // hum... there's an element missing here... {never happens anymore}
             try { throw new Error() }
             catch(ex) { setImmediate(function() { throw ex; }) }
-            
+
         } else if(typeof(topPaddingCut)==="number") {
-            
+
             // hum... there's an element missing here... {never happens anymore}
             try { throw new Error() }
             catch(ex) { setImmediate(function() { throw ex; }) }
-            
+
         }
-        
-        
+
+
         // make sure empty nodes are reintroduced
         cssRegionsHelpers.unembedTrailingWhiteSpaceNodes(region);
         cssRegionsHelpers.unembedTrailingWhiteSpaceNodes(overflowingContent);
-        
+
         // we're ready to return our result!
         return overflowingContent;
-        
+
     },
-        
+
     enablePolyfill: function enablePolyfill() {
-        
+
         //
         // [0] insert necessary css
         //
@@ -5292,24 +5292,24 @@ var cssRegions = {
         s.textContent = "cssregion,[data-css-region]>*,[data-css-regions-fragment-source]:not([data-css-regions-cloning]),[data-css-regions-fragment-source][data-css-regions-cloned]{display:none !important}[data-css-region]>cssregion:last-of-type{display:inline !important}[data-css-region]{content:normal !important}[data-css-special-continued-fragment]{counter-reset:none !important;counter-increment:none !important;margin-bottom:0 !important;border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important}[data-css-continued-fragment]{counter-reset:none !important;counter-increment:none !important;margin-bottom:0 !important;padding-bottom:0 !important;border-bottom:none !important;border-bottom-left-radius:0 !important;border-bottom-right-radius:0 !important}[data-css-continued-fragment]::after{content:none !important;display:none !important}[data-css-special-starting-fragment]{text-indent:0 !important;margin-top:0 !important}[data-css-starting-fragment]{text-indent:0 !important;margin-top:0 !important;padding-top:0 !important;border-top:none !important;border-top-left-radius:0 !important;border-top-right-radius:0 !important}[data-css-starting-fragment]::before{content:none !important;display:none !important}[data-css-continued-block-fragment][data-css-continued-fragment]::after{content:'' !important;display:inline-block !important;width:100% !important;height:0px !important;}";
         var head = document.head || document.getElementsByTagName('head')[0];
         head.appendChild(s);
-        
-        // 
+
+        //
         // [1] when any update happens:
         // construct new content and region flow pairs
         // restart the region layout algorithm for the modified pairs
-        // 
+        //
         cssCascade.startMonitoringProperties(
-            ["flow-into","flow-from","region-fragment"], 
+            ["flow-into","flow-from","region-fragment"],
             {
                 onupdate: function onupdate(element, rule) {
-                    
+
                     // let's just ignore fragments
                     if(element.getAttributeNode('data-css-regions-fragment-of')) return;
-                    
+
                     // log some message in the console for debug
                     cssConsole.dir({message:"onupdate",element:element,selector:rule.selector.toCSSString(),rule:rule});
                     var temp = null;
-                    
+
                     //
                     // compute the value of region properties
                     //
@@ -5317,47 +5317,47 @@ var cssRegions = {
                         cssCascade.getSpecifiedStyle(element, "flow-into")
                         .filter(function(t) { return t instanceof cssSyntax.IdentifierToken })
                     );
-                    
+
                     var flowIntoName = flowInto[0] ? flowInto[0].toCSSString().toLowerCase() : "";
                     if(flowIntoName=="none"||flowIntoName=="initial"||flowIntoName=="inherit"||flowIntoName=="default") {flowIntoName=""}
-                    var flowIntoType = flowInto[1] ? flowInto[1].toCSSString().toLowerCase() : ""; 
+                    var flowIntoType = flowInto[1] ? flowInto[1].toCSSString().toLowerCase() : "";
                     if(flowIntoType!="content") {flowIntoType="element"}
                     var flowInto = flowIntoName ? flowIntoName + " " + flowIntoType : "";
-                    
+
                     var flowFrom = (
                         cssCascade.getSpecifiedStyle(element, "flow-from")
                         .filter(function(t) { return t instanceof cssSyntax.IdentifierToken })
                     );
-                    
-                    var flowFromName = flowFrom[0] ? flowFrom[0].toCSSString().toLowerCase() : ""; 
+
+                    var flowFromName = flowFrom[0] ? flowFrom[0].toCSSString().toLowerCase() : "";
                     if(flowFromName=="none"||flowFromName=="initial"||flowFromName=="inherit"||flowFromName=="default") {flowFromName=""}
                     var flowFrom = flowFromName;
-                    
+
                     //
                     // if the value of any property did change...
                     //
                     if(element.cssRegionsLastFlowInto != flowInto || element.cssRegionsLastFlowFrom != flowFrom) {
-                        
+
                         // remove the element from previous regions
                         var regionOverset = element.regionOverset;
                         var lastFlowFrom = (cssRegions.flows[element.cssRegionsLastFlowFromName]);
                         var lastFlowInto = (cssRegions.flows[element.cssRegionsLastFlowIntoName]);
                         lastFlowFrom && lastFlowFrom.removeFromRegions(element);
                         lastFlowInto && lastFlowInto.removeFromContent(element);
-                        
-                        // relayout those regions 
+
+                        // relayout those regions
                         // (it's async so it will wait for us
                         // to add the element back if needed)
                         lastFlowFrom && regionOverset!='empty' && lastFlowFrom.relayout();
                         lastFlowInto && lastFlowInto.relayout();
-                        
+
                         // save some property values for later
                         element.cssRegionsLastFlowInto = flowInto;
                         element.cssRegionsLastFlowFrom = flowFrom;
                         element.cssRegionsLastFlowIntoName = flowIntoName;
                         element.cssRegionsLastFlowFromName = flowFromName;
                         element.cssRegionsLastFlowIntoType = flowIntoType;
-                        
+
                         // add the element to new regions
                         // and relayout those regions, if deemed necessary
                         if(flowFromName) {
@@ -5370,19 +5370,19 @@ var cssRegions = {
                             lastFlowInto && lastFlowInto.addToContent(element);
                             lastFlowInto && lastFlowInto.relayout();
                         }
-                        
+
                     }
-                    
+
                 }
             }
         );
         cssCascade.startMonitoringProperties(
-            ["break-before","break-after"], 
+            ["break-before","break-after"],
             {onupdate:function(element){
-                
+
                 // avoid fragments triggering update loops
                 if(element.getAttribute('data-css-regions-fragment-of')){return;}
-                
+
                 // update parent regions
                 while(element) {
                     if(element.cssRegionsLastFlowIntoName) {
@@ -5391,38 +5391,38 @@ var cssRegions = {
                     }
                     element=element.parentNode;
                 }
-                
+
             }}
         );
-        
-        
+
+
         //
         // [2] perform the OM exports
         //
         cssRegions.enablePolyfillObjectModel();
-        
+
         //
         // [3] make sure to update the region layout when all images loaded
         //
-        window.addEventListener("load", 
-            function() { 
+        window.addEventListener("load",
+            function() {
                 var flows = document.getNamedFlows();
                 for(var i=0; i<flows.length; i++) {
                     flows[i].relayout();
                 }
             }
         );
-        
-        // 
+
+        //
         // [4] make sure we react to window resizes
         //
         //
         var lastWindowResize = 0;
         var relayoutModifiedFlows = function() {
-            
+
             // specify the function did run
             relayoutModifiedFlows.timeout = 0;
-            
+
             // rerun the layout
             var flows = document.getNamedFlows();
             for(var i=0; i<flows.length; i++) {
@@ -5433,10 +5433,10 @@ var cssRegions = {
                     flows[i].relayoutIfSizeChanged();
                 }
             }
-            
+
         }
         var hasOngoingLayouts = function() {
-            
+
             var flows = document.getNamedFlows();
             for(var i=0; i<flows.length; i++) {
                 if(flows[i].lastRelayout > lastWindowResize) continue;
@@ -5444,12 +5444,12 @@ var cssRegions = {
                     return true;
                 }
             }
-            
+
             return false;
-            
+
         }
         var restartOngoingLayouts = function() {
-            
+
             var flows = document.getNamedFlows();
             for(var i=0; i<flows.length; i++) {
                 if(flows[i].lastRelayout > lastWindowResize) continue;
@@ -5457,80 +5457,80 @@ var cssRegions = {
                     flows[i].relayout();
                 }
             }
-            
+
         }
         window.addEventListener("resize",
             function() {
-                
+
                 // update the last layout flag
                 lastWindowResize = +new Date();
-                
+
                 // if we aren't planning a resfresh already
-                if(!relayoutModifiedFlows.timeout) { 
-                    
+                if(!relayoutModifiedFlows.timeout) {
+
                     // if we are already busy
                     if(hasOngoingLayouts()) {
-                        
+
                         // restart all layouts now
                         setTimeout(restartOngoingLayouts, 16);
-                        
+
                         // wait half a second before restarting them from now
                         relayoutModifiedFlows.timeout = setTimeout(relayoutModifiedFlows, 500);
-                        
+
                     } else {
-                        
+
                         // debounce by running the resize code every 200ms
                         relayoutModifiedFlows.timeout = setTimeout(relayoutModifiedFlows, 200);
-                        
+
                     }
-                    
+
                 }
-                
+
             }
         );
-        
+
     },
-    
+
     // this dictionnary is supposed to contains all the currently existing flows
     flows: Object.create ? Object.create(null) : {}
-    
+
 };
 "use strict";
 
-// 
+//
 // this class contains flow-relative data field
-// 
+//
 cssRegions.Flow = function NamedFlow(name) {
-    
+
     // TODO: force immediate relayout if someone ask the overset properties
     // and the layout has been deemed wrong (still isn't a proof of correctness but okay)
-    
+
     // define the flow name
     this.name = name; Object.defineProperty(this, "name", {get: function() { return name; }});
-    
+
     // define the overset status
     this.overset = false;
-    
+
     // define the first empty region
     this.firstEmptyRegionIndex = -1;
-    
+
     // elements poured into the flow
     this.content = []; this.lastContent = [];
-    
+
     // elements that consume this flow
     this.regions = []; this.lastRegions = [];
-    
+
     // event handlers
     this.eventListeners = {
         "regionfragmentchange": [],
         "regionoversetchange": [],
     };
-    
+
     // this function is used to work with dom event streams
     var This=this; This.update = function(stream) {
         stream.schedule(This.update); This.relayout();
     };
-    
+
     // register to style changes already
     This.lastStylesheetAdded = 0;
     cssCascade.addEventListener('stylesheetadded', function() {
@@ -5541,96 +5541,96 @@ cssRegions.Flow = function NamedFlow(name) {
             cssConsole.warn("Please don't add stylesheets as a response to region events. Operation cancelled.")
         }
     });
-    
+
     // a small counter to avoid enter retry loops
     This.failedLayoutCount = 0;
-    
+
     // some other fields
     This.lastEventRAF = 0;
     This.restartLayout = false;
 }
-    
+
 cssRegions.Flow.prototype.removeFromContent = function(element) {
-    
+
     // clean up stuff
     this.removeEventListenersOf(element);
-    
+
     // remove reference
     var index = this.content.indexOf(element);
     if(index>=0) { this.content.splice(index,1); }
-    
+
 };
 
 cssRegions.Flow.prototype.removeFromRegions = function(element) {
-    
+
     // clean up stuff
     this.removeEventListenersOf(element);
-    
+
     // remove reference
     var index = this.regions.indexOf(element);
     if(index>=0) { this.regions.splice(index,1); }
-    
+
 };
 
 cssRegions.Flow.prototype.addToContent = function(element) {
-    
+
     // walk the tree to find an element inside the content chain
     var content = this.content;
     var treeWalker = document.createTreeWalker(
         document.documentElement,
         NodeFilter.SHOW_ELEMENT,
-        function(node) { 
-            return content.indexOf(node) >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; 
+        function(node) {
+            return content.indexOf(node) >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
         },
         false
-    ); 
-    
+    );
+
     // which by the way has to be after the considered element
     treeWalker.currentNode = element;
-    
+
     // if we find such node
     if(treeWalker.nextNode()) {
-        
+
         // insert the element at his current location
         content.splice(content.indexOf(treeWalker.currentNode),0,element);
-        
+
     } else {
-        
+
         // add the new element to the end of the array
         content.push(element);
-        
+
     }
 
 };
 
 cssRegions.Flow.prototype.addToRegions = function(element) {
-    
+
     // walk the tree to find an element inside the region chain
     var regions = this.regions;
     var treeWalker = document.createTreeWalker(
         document.documentElement,
         NodeFilter.SHOW_ELEMENT,
-        function(node) { 
-            return regions.indexOf(node) >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; 
+        function(node) {
+            return regions.indexOf(node) >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
         },
         false
     );
-    
+
     // which by the way has to be after the considered element
     treeWalker.currentNode = element;
-    
+
     // if we find such node
     if(treeWalker.nextNode()) {
-        
+
         // insert the element at his current location
         regions.splice(this.regions.indexOf(treeWalker.currentNode),0,element);
-        
+
     } else {
-        
+
         // add the new element to the end of the array
         regions.push(element);
     }
-    
+
 };
 
 cssRegions.Flow.prototype.generateContentFragment = function() {
@@ -5639,20 +5639,20 @@ cssRegions.Flow.prototype.generateContentFragment = function() {
     // add copies of all due content
     for(var i=0; i<this.content.length; i++) {
         var element = this.content[i];
-        
-        // 
+
+        //
         // STEP 1: IDENTIFY FRAGMENT SOURCES AS SUCH
         //
         cssRegionsHelpers.markNodesAsFragmentSource([element], element.cssRegionsLastFlowIntoType=="content");
-        
-        
+
+
         //
         // STEP 2: CLONE THE FRAGMENT SOURCES
-        // 
-        
+        //
+
         // depending on the requested behavior
         if(element.cssRegionsLastFlowIntoType=="element") {
-            
+
                 // add the element
                 var el = element;
                 var elClone = el.cloneNode(true);
@@ -5663,15 +5663,15 @@ cssRegions.Flow.prototype.generateContentFragment = function() {
                     elToInsert.appendChild(elClone);
                 }
                 fragment.appendChild(elToInsert);
-                
+
                 // clone the style
                 cssRegionsHelpers.copyStyle(el, elClone);
-            
+
         } else {
-            
+
             // add current children
             var el = element.firstChild; while(el) {
-                
+
                 // add the element
                 var elClone = el.cloneNode(true);
                 var elToInsert = elClone; if(elToInsert.tagName=="LI") {
@@ -5681,30 +5681,30 @@ cssRegions.Flow.prototype.generateContentFragment = function() {
                     elToInsert.appendChild(elClone);
                 }
                 fragment.appendChild(elToInsert);
-                
+
                 // clone the style
                 cssRegionsHelpers.copyStyle(el, elClone);
-                
+
                 el = el.nextSibling;
             }
-            
+
         }
-        
+
     }
-    
+
     //
     // STEP 3: HIDE TEXT NODES IN FRAGMENT SOURCES
     //
     cssRegionsHelpers.hideTextNodesFromFragmentSource(this.content);
-    
+
     //
     // STEP 4: CONVERT CLONED FRAGMENT SOURCES INTO TRUE FRAGMENTS
     //
     cssRegionsHelpers.transformFragmentSourceToFragments(
         Array.prototype.slice.call(fragment.childNodes,0)
     )
-    
-    
+
+
     //
     // CLONED CONTENT IS READY!
     //
@@ -5716,7 +5716,7 @@ cssRegions.Flow.prototype.relayout = function() {
 
     // prevent previous relayouts from eventing
     cancelAnimationFrame(This.lastEventRAF);
-    
+
     // batch relayout queries
     if(This.relayoutScheduled) { return; }
     if(This.relayoutInProgress) { This.restartLayout=true; return; }
@@ -5727,15 +5727,15 @@ cssRegions.Flow.prototype.relayout = function() {
 
 cssRegions.Flow.prototype._relayout = function(data){
     var This=this;
-    
+
 
     if (HAS_COMPLETED_ONE_LAYOUT) return;
 
 
     try {
-        
+
         //
-        // note: it is recommended to look at the beautiful 
+        // note: it is recommended to look at the beautiful
         // drawings I made before attempting to understand
         // this stuff. If you don't have them, ask me.
         //
@@ -5743,81 +5743,81 @@ cssRegions.Flow.prototype._relayout = function(data){
         This.relayoutInProgress=true; This.relayoutScheduled=false;
         This.lastRelayout = +new Date();
         //debugger;
-        
+
         // NOTE: we recover the scroll position in case the browser mess it up
         var docElmScrollTop = data && data.docElmScrollTop ? data.docElmScrollTop : document.documentElement.scrollTop;
         var docBdyScrollTop = data && data.docBdyScrollTop ? data.docBdyScrollTop : document.body.scrollTop;
-        
-        
+
+
         //
         // STEP 1: REMOVE PREVIOUS EVENT LISTENERS
         //
-        
+
         // remove the listeners from everything
         This.removeEventListenersOf(This.lastRegions);
         This.removeEventListenersOf(This.lastContent);
         cancelAnimationFrame(This.lastEventRAF);
-        
-        
+
+
         //
         // STEP 2: RESTORE CONTENT/REGIONS TO A CLEAN STATE
         //
-        
+
         // detect elements being removed of the document
         This.regions = This.regions.filter(function(e) { return document.documentElement.contains(e); })
         This.content = This.content.filter(function(e) { return document.documentElement.contains(e); })
-        
+
         // cleanup previous layout
         cssRegionsHelpers.unmarkNodesAsRegion(This.lastRegions); This.lastRegions = This.regions.slice(0);
         cssRegionsHelpers.unmarkNodesAsFragmentSource(This.lastContent); This.lastContent = This.content.slice(0);
-        
-        
-        
+
+
+
         //
         // STEP 3: EMPTY ALL REGIONS
         // ADD WRAPPER FOR FLOW CONTENT
         // PREPARE FOR CONTENT CLONING
         //
-        
+
         // empty all the regions
         cssRegionsHelpers.markNodesAsRegion(This.regions);
-        
+
         // create a fresh list of the regions
         var regionStack = This.regions.slice(0).reverse();
-        
-        
-        
+
+
+
         //
         // STEP 4: CLONE THE CONTENT
         // ADD METADATA TO CLONED CONTENT
         // HIDE FLOW CONTENT AT INITIAL POSITION
         //
-        
+
         // create a fresh list of the content
         // compute the style of all source elements
         // generate stylesheets for those rules
         var contentFragment = This.generateContentFragment();
-        
-        
-        
+
+
+
         //
         // STEP 5: POUR CONTENT INTO THE REGIONS
         //
-        
+
         // layout this stuff
         cssRegions.layoutContent(regionStack, contentFragment, {
 			onprogress: function(continueLayout) {
-				
+
 
                 reportPagesLeft(regionStack.length);
 
 	            // NOTE: we recover the scroll position in case the browser mess it up
 	            document.documentElement.scrollTop = docElmScrollTop;
 	            document.body.scrollTop = docBdyScrollTop;
-				
+
 				// NOTE: if the current layout goes nowhere, start a new one already
 	            if(This.restartLayout) {
-					
+
 		            This.relayoutInProgress = false;
 		            This.failedLayoutCount = 0;
 	                This.restartLayout = false;
@@ -5825,47 +5825,47 @@ cssRegions.Flow.prototype._relayout = function(data){
 	                	docElmScrollTop: docElmScrollTop,
 						docBdyScrollTop: docBdyScrollTop
 	                });
-					
+
 	            } else {
-	            	
+
 					setImmediate(continueLayout);
-					
+
 	            }
-				
+
 			},
             ondone: function onLayoutDone(overset) {
-            
+
                 This.overset = overset;
                 This.firstEmptyRegionIndex = This.regions.length-1; while(This.regions[This.firstEmptyRegionIndex]) {
-                
+
                     // tell whether the region is empty
                     var isEmpty = false;
                     isEmpty = isEmpty || !This.regions[This.firstEmptyRegionIndex].cssRegionsWrapper;
                     isEmpty = isEmpty || !This.regions[This.firstEmptyRegionIndex].cssRegionsWrapper.firstChild;
-                    
+
                     // if the region is not empty
                     if(!isEmpty) {
-                        
+
                         // the first empty region if the next one, if it exists
                         if((++This.firstEmptyRegionIndex)==This.regions.length) {
                             This.firstEmptyRegionIndex = -1;
                         }
                         break;
-                        
+
                     } else {
-                         
+
                         // else, let's try the previous region
-                        This.firstEmptyRegionIndex--; 
-                        
+                        This.firstEmptyRegionIndex--;
+
                     }
                 }
-                
-                
-                
+
+
+
                 //
                 // STEP 6: REGISTER TO UPDATE EVENTS
                 //
-                
+
                 // make sure regions update are taken in consideration
                 if(window.MutationObserver) {
                     This.addEventListenersTo(This.content);
@@ -5877,48 +5877,48 @@ cssRegions.Flow.prototype._relayout = function(data){
                         This.addEventListenersTo(This.content);
                     });
                 }
-                
-                
-                
+
+
+
                 //
                 // STEP 7: FIRE SOME EVENTS
                 //
                 if(This.regions.length > 0 && !This.restartLayout) {
-                    
+
                     // before doing anything, let's check our stuff is consistent
                     var isBuggy = false;
                     isBuggy = isBuggy || This.regions.some(function(e) { return !document.documentElement.contains(e); })
                     isBuggy = isBuggy || This.content.some(function(e) { return !document.documentElement.contains(e); })
-                    
+
                     if(isBuggy) {
-                        
+
                         // if we found any bug, we will need to restart a layout
                         cssConsole.warn("Buggy css regions layout: the page changed; we need to restart.");
-                        This.restartLayout = true; 
-                        
+                        This.restartLayout = true;
+
                     } else {
-                        
+
                         // if it was okay, let's fire some event
                         This.lastEventRAF = requestAnimationFrame(function() {
-                        
+
                             // TODO: only fire when necessary but...
                             This.dispatchEvent('regionfragmentchange');
                             This.dispatchEvent('regionoversetchange');
-                            
+
                         });
-                        
+
                     }
                 }
-                
-                
+
+
                 // NOTE: we recover the scroll position in case the browser mess it up
                 document.documentElement.scrollTop = docElmScrollTop;
                 document.body.scrollTop = docBdyScrollTop;
-                
+
                 // mark layout has being done
                 This.relayoutInProgress = false;
                 This.failedLayoutCount = 0;
-                
+
                 finallyTheLayoutIsDone();
 
                 // restart a layout if a request was queued during the current one
@@ -5926,30 +5926,30 @@ cssRegions.Flow.prototype._relayout = function(data){
                     This.restartLayout = false;
                     This.relayout();
                 }
-                
+
             }
         });
-        
+
     } catch(ex) {
-        
-        // sometimes IE fails for no valid reason 
+
+        // sometimes IE fails for no valid reason
         // (other than the page is still loading)
         setImmediate(function() { throw ex; });
-        
+
         // but we cannot accept to fail, so we need to try again
         // until we finish a complete layout pass...
         This.failedLayoutCount++;
         if(This.failedLayoutCount<7) {requestAnimationFrame(function() { This._relayout() });}
         else {This.failedLayoutCount=0; This.relayoutScheduled=false; This.relayoutInProgress=false; This.restartLayout=false; }
-        
+
     }
 }
 
 cssRegions.Flow.prototype.relayoutIfSizeChanged = function() {
-    
+
     // go through all regions
     // and see if any did change of size
-    var rs = this.regions;     
+    var rs = this.regions;
     for(var i=rs.length; i--; ) {
         if(
             rs[i].offsetHeight !== rs[i].cssRegionsLastOffsetHeight
@@ -5958,31 +5958,31 @@ cssRegions.Flow.prototype.relayoutIfSizeChanged = function() {
             this.relayout(); return;
         }
     }
-    
+
 }
 
 cssRegions.Flow.prototype.addEventListenersTo = function(nodes) {
     var This=this; if(nodes instanceof Element) { nodes=[nodes] }
-    
+
     nodes.forEach(function(element) {
         if(!element.cssRegionsEventStream) {
             element.cssRegionsEventStream = new myDOMUpdateEventStream({target: element});
             element.cssRegionsEventStream.schedule(This.update);
         }
     });
-    
+
 }
 
 cssRegions.Flow.prototype.removeEventListenersOf = function(nodes) {
     var This=this; if(nodes instanceof Element) { nodes=[nodes] }
-    
+
     nodes.forEach(function(element) {
         if(element.cssRegionsEventStream) {
             element.cssRegionsEventStream.dispose();
             delete element.cssRegionsEventStream;
         }
     });
-    
+
 }
 
 // alias
@@ -6002,17 +6002,17 @@ cssRegions.NamedFlow.prototype.getRegionsByContent = function getRegionsByConten
     var regions = [];
     var fragments = document.querySelectorAll('[data-css-regions-fragment-of="'+node.getAttribute('data-css-regions-fragment-source')+'"]');
     for (var i=0; i<fragments.length; i++) {
-        
+
         var current=fragments[i]; do {
-            
+
             if(current.getAttribute('data-css-region')) {
                 regions.push(current); break;
             }
-            
+
         } while(current=current.parentNode);
-        
+
     }
-    
+
     return regions;
 }
 
@@ -6022,9 +6022,9 @@ basicObjectModel.EventTarget.implementsIn(cssRegions.Flow);
 // this class is a collection of named flows (not an array, sadly)
 //
 cssRegions.NamedFlowCollection = function NamedFlowCollection() {
-    
+
     this.length = 0;
-    
+
 }
 
 cssRegions.NamedFlowCollection.prototype.namedItem = function(k) {
@@ -6036,46 +6036,46 @@ cssRegions.NamedFlowCollection.prototype.namedItem = function(k) {
 // this helper creates the required methods on top of the DOM {ie: public exports}
 //
 cssRegions.enablePolyfillObjectModel = function() {
-    
+
     //
     // DOCUMENT INTERFACE
     //
-    
+
     //
     // returns a static list of active named flows
     //
     document.getNamedFlows = function() {
-            
+
         var c = new cssRegions.NamedFlowCollection(); var flows = cssRegions.flows;
         for(var flowName in cssRegions.flows) {
-            
+
             if(Object.prototype.hasOwnProperty.call(flows, flowName)) {
-                
+
                 // only active flows can be included
                 if(flows[flowName].content.length!=0 || flows[flowName].regions.length!=0) {
                     c[c.length++] = c[flowName] = flows[flowName];
                 }
-                
+
             }
-            
+
         }
         return c;
-        
+
     }
-    
+
     //
     // returns a live object for any named flow
     //
     document.getNamedFlow = function(flowName) {
-            
+
         var flows = cssRegions.flows;
         return (flows[flowName] || (flows[flowName]=new cssRegions.NamedFlow(flowName)));
-        
+
     }
-    
+
     //
     // ELEMENT INTERFACE
-    //    
+    //
     Object.defineProperties(
         Element.prototype,
         {
@@ -6106,8 +6106,8 @@ cssRegions.enablePolyfillObjectModel = function() {
             }
         }
     )
-    
-    
+
+
     //
     // CSSStyleDeclaration interface
     //
