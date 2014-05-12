@@ -372,4 +372,4 @@ for(i=0; i<num_links; i++){
 
 // Smart Quotes
 
-// Non-breaking hyphens &#8209; -- NOT NECESSARY!
+// Non-breaking hyphens &#8209; -- NOT NECESSARY! URLs get wrapped to not break.
