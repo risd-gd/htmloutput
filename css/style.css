@@ -68,6 +68,10 @@ em {
 	font-style: italic;
 }
 
+strong{
+  font-weight: bold;
+}
+
 code {
 	font:       0.8rem/1.4 Messenger Mono, monospace;
 	background: #ffffbb;
@@ -159,6 +163,25 @@ nav {
 	overflow-y:auto;
   font-size: 14px;
   z-index: 3;
+  font-family: "Benton Modern", serif;
+}
+#nav_box .top{
+  text-align: center;
+  text-transform: uppercase;
+  padding: 30px;
+}
+
+#nav_box .interview:before{
+  content: ' ❝ ';
+}
+#nav_box .essay:before{
+  content: ' ✎ ';
+}
+#nav_box .project:before{
+  content: ' § ';
+}
+#nav_box .about:before{
+  content: '';
 }
 
 #content{
