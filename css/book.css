@@ -410,6 +410,12 @@ Book image spreads
 	font-size: 10pt;
 } -->
 
+figcaption{
+  text-align: center;
+  font-size: 10pt;
+  padding: 1pc 0pc;
+}
+
 ._book-spread-l > img,
 ._book-spread-r > img {
 	position: absolute;

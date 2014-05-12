@@ -40,7 +40,10 @@ img{
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
+figcaption{
+  font-size: 12px;
+  padding: 5px 0px;
+}
 
 .wrapper div, p, figure, figcaption{
   max-width: 500px;

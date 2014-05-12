@@ -89,6 +89,11 @@ hr {
 	margin-bottom: 1.4rem;
 }
 
+figcaption{
+  text-style: italic;
+
+}
+
 .printy{}
 .noprinty{}
 
