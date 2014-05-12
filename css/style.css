@@ -179,7 +179,8 @@ nav {
 }
 
 #content{
-  top: -320px;
+  /*was 320px*/
+  top: -87px;
   left: 0px;
   width: 100%;
   padding-left: 30%;
