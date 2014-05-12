@@ -31,8 +31,8 @@ title: HTML OUTPUT
 
     {% for category in site.types %}
     {% for page in site.pages %}{% if page.category == category %}
-    <div class="pagey" id="{{ page.url }}">
-        <a class="name" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+    <div class="pagey">
+        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
         <img src="{{ site.baseurl }}{{ page.url }}hero.png" />
         <span class="caption">{{ page.description }}</span>
     </div>

@@ -7,7 +7,7 @@ $(document).ready(function(){
     var end = temp.length - 1;
     temp = temp.substring(1,end);
     $(".nav_link").eq(i).attr("name",temp);
-    $(".pagey").eq(i).attr("id",temp);
+    $(".name").eq(i).attr("id",temp);
   }
 
   var scrollTop = $(document).scrollTop();
@@ -15,7 +15,7 @@ $(document).ready(function(){
   $(".nav_link").click(function() {
     var scroll_to = $(this).attr("name");
     $('html, body').animate({
-      scrollTop: $("#"+scroll_to).offset().top + 320
+      scrollTop: $("#"+scroll_to).offset().top -20
     }, 800);
   });
 
