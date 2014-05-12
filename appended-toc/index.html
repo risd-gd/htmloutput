@@ -8,14 +8,18 @@ title: HTML OUTPUT
 </a>
 
 <div id="nav_box">
+    <div class="top">HTML OUTPUT</div>
+
     {% for category in site.types %}
-    {{ category }}:<br /><br />
+    <div class="top">{{ category }}:</div>
 
     {% for page in site.pages %}{% if page.category == category %}
         {% if category == 'interview' %}
+            <strong><span class="{{category}}">{{page.title}}</span><br /></strong>
             {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
         {% else %}
-            {{ page.title }} by {{ page.author }}<br />
+            <strong><span class="{{category}}">{{page.title}}</span><br /></strong>
+            by {{ page.author }}<br />
         {% endif %}
 
     {% endif %}{% endfor %}
