@@ -54,8 +54,17 @@ title: HTML Output
   &#8984; P
 </a>
 
-{% for page in site.pages %}{% if page.content %}{% if page.category == category %}
+{% for page in site.pages %}
 
-  {{ page.content }}
+{% if page.content and page.category %}
 
-{% endif %}{% endif %}{% endfor %}
+  <div class="page" id="{{ page.title }}">
+    
+    {{ page.content }}
+
+  </div>
+
+{% endif %}
+    <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
+
+{% endfor %}
