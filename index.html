@@ -4,17 +4,6 @@ title: HTML Output
 ---
 
 
-<style>
-  {% for page in site.pages %}{% if page.category == 'interview' %}
-    [data-interviewee="{{page.interviewee}}"] .interview-a:before {
-      content: '{{ page.interviewee_initials }}  ';
-    }
-    [data-interviewee="{{page.interviewee}}"] .interview-q:before {
-      content: '{{ page.interviewer_initials }}  ';
-    }
-  {% endif %}{% endfor %}
-</style>
-
 <nav>
   <h1>{{ page.title }}</h1>
 
@@ -62,64 +51,5 @@ title: HTML Output
 
 
 <a href="{{ site.baseurl }}/book" class="print-btn">
-  &#8984; P
+  Book
 </a>
-
-{% for page in site.pages %}{% if page.content and page.category %}
-
-  {% case page.category %}
-
-  {% when 'interview' %}
-
-  <div class="page" id="{{ page.title }}">
-
-  <!--  <script>
-
-      $(this > ".interview-a:before").css( "content",
-            "'{{ page.interviewee_initials }}   '");
-      $(this > ".interview-q:before").css( "content",
-            "'{{ page.interviewer_initials }}   '");
-
-    </script> -->
-
-    <h1>{{ page.title }}</h1>
-
-        <div class="meta">
-            Author: {{ page.author }}<br />
-            Category: {{ page.category }}<br />
-            Description: {{ page.description }}<br />
-        </div>
-    
-        <div class="content" data-interviewee="{{ page.interviewee }}">
-          {{ page.content }}
-        </div>
-
-
-  </div>
-
-  {% else %}
-
-  <div class="page" id="{{ page.title }}">
-      
-      <h1>{{ page.title }}</h1>
-
-    <div class="meta">
-      <p>Author: {{ page.author }}</p>
-      <p>Category: {{ page.category }}</p>
-      <p>Description: {{ page.description }}</p>
-    </div>
-
-    <div class="content">
-      {{ page.content }}
-    </div>
-
-  </div>
-  
-  {% endcase %}
-
-
-
-{% endif %}
-    <img src="http://placekitten.com/1500/800" style="margin-top:200px; margin-bottom: 200px; margin-left: 0px; width: 100%; height: auto;">
-
-{% endfor %}
