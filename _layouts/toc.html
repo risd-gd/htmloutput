@@ -7,13 +7,10 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/toc.js"></script>
     </head>
     <body>
-        <a href="/{{ site.baseurl }}">< Index</a>
-
-        <div id="output_banner"><a href="http://risd-gd.github.io/htmloutput/">HTML OUTPUT</a> - {{page.title}}, {{page.category}}, by {{page.author}}.</div>
-
         {{ content }}
-
     </body>
 </html>
