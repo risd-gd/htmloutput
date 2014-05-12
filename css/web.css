@@ -53,8 +53,8 @@ img{
   display: inline-block;
 }
 
-.interview-q:before, .interview-a:before  { 
-  font-size: 15px; 
+.interview-q:before, .interview-a:before  {
+  font-size: 15px;
   color: darkorange;
 }
 
@@ -77,7 +77,7 @@ hr {
   width: 25%;
   height: 8px;
   margin-top: 25px;
-  margin-bottom: 35px; 
+  margin-bottom: 35px;
 }
 
 p {
@@ -88,9 +88,8 @@ p {
     line-height:1.5em;
     margin-bottom:15px;
 }
- 
+
 a {
-    font-family: 'Messenger Mono';
     color:rgb(55,50,255);
     text-decoration: none;
 } a:hover {
