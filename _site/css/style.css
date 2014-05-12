@@ -169,7 +169,7 @@ nav {
 	overflow-y:auto;
   font-size: 14px;
   z-index: 3;
-  font-family: "Benton Modern", serif;
+  font-family: "Messenger-Text", sans-serif;
 }
 #nav_box .top{
   text-align: center;
@@ -202,7 +202,7 @@ nav {
   position: relative;
   top: -200px;
   left: 300px;
-  font-family: "Benton Modern",serif;
+  font-family: "Messenger-Text", sans-serif;
   padding: 6px;
   border: 1px solid blue;
 }
@@ -213,16 +213,16 @@ nav {
   background-color: blue;
   color: white;
   display: inline-block;
-  font-size: 100px;
+  font-size: 30px;
   xwhite-space: nowrap;
   position: relative;
-  top: 350px;
+  top: 200px;
   border: 1px solid blue;
-  font-family: "Benton Modern", serif;
-  padding: 20px;
+  font-family: "Messenger-Text", sans-serif;
+  padding: 10px;
 }
 .pagey .name:hover{
-  color: transparent;
+  color: blue;
   background-color: transparent;
 }
 .pagey .caption:hover{
