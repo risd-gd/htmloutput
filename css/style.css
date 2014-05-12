@@ -182,7 +182,18 @@ nav {
   overflow-x: hidden;
 }
 
-#content .caption{}
+#content .caption{
+  width: 60%;
+  text-align: left;
+  background-color: blue;
+  color: white;
+  display: inline-block;
+  position: relative;
+  top: -200px;
+  left: 300px;
+  font-family: "Benton Modern",serif;
+  padding: 6px;
+}
 
 #content .name{
   width: 100%;
@@ -199,6 +210,10 @@ nav {
   padding: 20px;
 }
 #content .name:hover{
+  color: transparent;
+  background-color: transparent;
+}
+#content .caption:hover{
   color: transparent;
   background-color: transparent;
 }
