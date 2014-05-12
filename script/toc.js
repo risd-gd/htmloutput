@@ -10,8 +10,8 @@ $(document).ready(function(){
     $(".name").eq(i).attr("id",temp);
   }
 
+  // scroll-to action.
   var scrollTop = $(document).scrollTop();
-
   $(".nav_link").click(function() {
     var scroll_to = $(this).attr("name");
     $('html, body').animate({

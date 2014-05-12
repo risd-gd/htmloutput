@@ -402,13 +402,13 @@ Book image spreads
 }
 
 
-._book-spread-l figcaption {
+<!--._book-spread-l figcaption {
 	position: absolute;
 	background: white;
 	bottom: 1in;
 	left: 1in;
 	font-size: 10pt;
-}
+} -->
 
 ._book-spread-l > img,
 ._book-spread-r > img {
