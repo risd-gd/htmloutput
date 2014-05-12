@@ -33,8 +33,10 @@ title: HTML OUTPUT
 
     {% for category in site.types %}
     {% for page in site.pages %}{% if page.category == category %}
-
-    <a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+    <div class="pagey">
+        <a href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+        <img src="{{ site.baseurl }}{{ page.url }}/hero.png" />
+    </div>
 
     {% endif %}{% endfor %}
     {% endfor %}

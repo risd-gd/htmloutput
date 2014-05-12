@@ -171,6 +171,7 @@ nav {
   padding: 30px;
 }
 
+<!--
 #nav_box .interview:before{
   content: ' ❝ ';
 }
@@ -183,17 +184,25 @@ nav {
 #nav_box .about:before{
   content: '';
 }
+-->
 
 #content{
   top: 0px;
   left: 345px;
   height: 100%;
-  width: 70%;
+  width: 80%;
   position: absolute;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 #content .caption{}
+
+#content .name{}
+
+#content img{
+  width: 100%;
+}
 
 
 /* ----------------------------------
