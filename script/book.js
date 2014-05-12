@@ -1,4 +1,4 @@
-/*jshint laxcomma:true */
+/*jshint laxcomma:true, multistr: true */
 
 // THIS HELPS PREP CONTENT FOR THE BOOK FORMAT.
 
@@ -24,6 +24,7 @@ if (postproc) postproc.addEventListener("click", function(){
 
 // ==================
 // React to checkbox
+
 $(".toc [type=checkbox]").change(function(e){
   var id = this.parentNode.getAttribute("data-toc");
   var elt = document.querySelector('[data-id="' + id + '"]');
@@ -37,7 +38,7 @@ $(".toc [type=checkbox]").change(function(e){
 
 });
 // First lets uncheck them all!
-$(".toc [type=checkbox]").attr("checked", false).change();;
+$(".toc [type=checkbox]").attr("checked", false).change();
 
 // -------------------------------------
 // Enable UI when we know all images have loaded
@@ -81,7 +82,7 @@ function finallyTheLayoutIsDone() {
 
   window.onbeforeunload = function() {
     return "Are you in a hurry? If you leave this page it will need to be rebuilt again. That'll take a minute.";
-  }
+  };
 
   postProcessPages();
 }
@@ -296,7 +297,7 @@ function toggleprint(e) {
   else {
     document.documentElement.classList.add("_guides");
   }
-};
+}
 
 
 // -------------------------
