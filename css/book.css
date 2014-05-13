@@ -33,10 +33,10 @@ Book overall style
   width: 0;
   overflow: visible;
   opacity: 0.7;
-  top: 0.7pt;
-  left: 0pt;
+  top: -10pt;
+  left: 16pt;
   color: blue;
-  font-size: 0.6em;
+  font-size: 7pt;
   z-index: -1;
   display: inline-block;
   white-space: nowrap; <!-- necessary to prevent line breaks -->
