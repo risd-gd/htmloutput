@@ -127,6 +127,7 @@ nav {
 .print-btn:hover {
 	background: black;
 	color: white;
+  cursor: pointer;
 }
 
 .posts {
@@ -153,6 +154,7 @@ nav {
 #print_button_link:hover{
   background: blue;
   color: white;
+  cursor: pointer;
 }
 
 #nav_box{
@@ -175,12 +177,16 @@ nav {
 }
 #nav_box .top{
   /* text-align: center; */
-  text-transform: uppercase; 
+  text-transform: uppercase;
   padding: 10px;
   font: 20px/1.4 "Messenger Text", sans-serif;
 }
 #nav_box .green{
   color: green;
+}
+
+#nav_box .nav_link:hover{
+  cursor: pointer;
 }
 
 #content{
