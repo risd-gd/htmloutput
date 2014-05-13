@@ -4,27 +4,28 @@ title: HTML OUTPUT
 ---
 
 <a href="{{ site.baseurl }}/book" id="print_button_link">
-        &#8984; P
+        &#8984; Book
 </a>
 
 <div id="nav_box">
-    <div class="top">HTML OUTPUT</div>
+    <div class="site-title" data-toggler>☰ HTML OUTPUT</div>
 
-    {% for category in site.types %}
-    <div class="top">{{ category }}:</div>
+    <div data-togglee>
+        {% for category in site.types %}
+        <div class="top">{{ category }}:</div>
+            {% for page in site.pages %}{% if page.category == category %}
+                {% if category == 'interview' %}
+                    <strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
+                    {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
+                {% else %}
+                    <strong><a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br /></strong>
+                    {{ page.author }}<br />
+                {% endif %}
 
-    {% for page in site.pages %}{% if page.category == category %}
-        {% if category == 'interview' %}
-            <strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
-            {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
-        {% else %}
-            <strong><a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br /></strong>
-            {{ page.author }}<br />
-        {% endif %}
-
-    {% endif %}{% endfor %}
-
-    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
 </div>
 
 <div id="content">
@@ -41,3 +42,13 @@ title: HTML OUTPUT
     {% endfor %}
 
 </div>
+
+<script>
+    var toggler = document.querySelector("[data-toggler]");
+    var togglee = document.querySelector("[data-togglee]");
+
+    toggler.addEventListener("click", function(e){
+        togglee.style.maxHeight = "1000px";
+        console.log("hey");
+    });
+</script>
