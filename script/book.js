@@ -397,7 +397,7 @@ for(i=0; i<num_links; i++){
     url = url.substring(start,end);
   }
 
-  $("a").eq(i).html("<span class='url'>"+&#9000;+"</span>" + temp);
+  $("a").eq(i).html("<span class='url'>"+"&#9000;"+"</span>" + temp);
 
 }
 
