@@ -2,6 +2,9 @@
 
 Web overall style
 
+Web Green Color
+Hex - #20B981
+RGB - (32, 185, 129)
 ----------------------------------*/
 
 body {
@@ -33,7 +36,7 @@ Interview & Project Styles
 ----------------------------------*/
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
-mark { font-style: normal; background: rgba(0, 255, 0, .1);}
+mark { font-style: normal; background: rgba(32, 185, 129, .1);}
 s { color: grey;}
 img{
   /* margin-left: -20px;
@@ -42,10 +45,10 @@ img{
 }
 
 .interview-name{
-  color: green;
+  color: #20B981;
 }
 .interview-bar{
-  border-bottom: 5pt solid green;
+  border-bottom: 5pt solid #20B981;
 }
 
 
@@ -64,14 +67,14 @@ img{
   font-size: 15px;
 }
 .interview-q:before{
-  color: green;
+  color: #20B981;
 }
 .interview-a:before{
   color: black;
 }
 
 .interview-a { text-indent: 20px;  }
-.interview-q { padding-left: 20px; color: green;}
+.interview-q { padding-left: 20px; color: #20B981;}
 .interview-a, .interview-q { font-size: 20px; }
 
 .title {
@@ -118,7 +121,7 @@ a {
   font-family: 'Messenger Text';
   font-size:24px;
 
-  color: green;
+  color: #20B981;
 
   width:450px;
   margin-left:30%;

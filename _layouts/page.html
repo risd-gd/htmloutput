@@ -23,19 +23,27 @@
 
             $('.imageContainer').hover(function(){
                 $(this).toggleClass('selectedImage');
+                $('.imageContainer').not(".selectedImage").css('opacity','0.05');
+                $('p').css('opacity','0.05');
+
+
             }, function(){
                 $(this).toggleClass('selectedImage');
+                $('.imageContainer').css('opacity','1');
+                $('p').css('opacity','1');
+
             })
 
-            $('.imageContainer').not(document.getElementByClass("selectedImage")).css('opacity','0.15');
+
+
 
         })
     </script>
 
     <style>
         .imageContainer{
-            width:500px;
-            height:200px;
+            width:700px;
+            height:300px;
             overflow:hidden;
         }
 
@@ -43,6 +51,10 @@
             width:800px;
             height:400px;
             overflow:visible;
+        }
+
+        .selectedImage{
+            
         }
     </style>
   </head>
