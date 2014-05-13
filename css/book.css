@@ -38,7 +38,8 @@ Book overall style
   overflow: visible;
   white-space: nowrap; /* necessary to prevent line breaks */
   text-indent: 0pt;
-  opacity: .5;
+  opacity: .6;
+  z-index: 100;
   top: -15pt;
   left: 15pt;
   letter-spacing: .5pt;
@@ -51,6 +52,8 @@ Book overall style
   margin: 0pt;
   padding: 0pt;
   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
 
 }
 
