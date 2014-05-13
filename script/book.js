@@ -38,7 +38,7 @@ $(".toc [type=checkbox]").change(function(e){
 
 });
 // First lets uncheck them all!
-// $(".toc [type=checkbox]").attr("checked", false).change();
+$(".toc [type=checkbox]").attr("checked", false).change();
 
 // -------------------------------------
 // Enable UI when we know all images have loaded
@@ -116,14 +116,14 @@ function preProcessPages() {
     var src = oldNode.querySelector("img").src;
 
     var splitImageHtml = ' \
-      <div class="_page-break"></div>\
+      <div class="_dontpage-break"></div>\
       <div class="_book-spread-l" data-fullbleed>\
         <img src="' + src + '"/>\
       </div>\
       <div class="_book-spread-r" data-fullbleed>\
         <img src="' + src + '"/>\
       </div> \
-      <div class="_page-break"></div>';
+      <div class="_dontpage-break"></div>';
 
     $(splitImageHtml).insertAfter(oldNode);
     oldNode.parentNode.removeChild(oldNode);
