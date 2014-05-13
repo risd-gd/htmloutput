@@ -23,11 +23,11 @@
 
             $('.imageContainer').hover(function(){
                 $(this).toggleClass('selectedImage');
-                $('._book-spread').children().not(".selectedImage").css('opacity','0.15');
+                $('.imageContainer').not(".selectedImage").css('opacity','0.15');
 
             }, function(){
                 $(this).toggleClass('selectedImage');
-             $('._book-spread').children().not(".selectedImage").css('opacity','1');
+             $('.imageContainer').children().not(".selectedImage").css('opacity','1');
 
             })
 
