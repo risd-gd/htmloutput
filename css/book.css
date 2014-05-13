@@ -172,12 +172,20 @@ Interview print styles
   line-height: 100%;
 }
 
+.interview-name{
+  color: rgba(0,255,0,1);
+}
+
 hr{
 	border-bottom: 5pt solid black;
 	width: 35%;
 	height: 0pc;
 	margin-top: 2pc;
 	margin-bottom: 2pc;
+}
+
+hr .interview{
+  border-bottom: 5pt solid rgba(0,255,0,1);
 }
 
 .interview-q:before,
