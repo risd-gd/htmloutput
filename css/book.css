@@ -209,8 +209,9 @@ blockquote{
 
 mark {
 	font-style: normal;
-	background: rgba(0, 255, 0, .1);
-	border-bottom: 1px solid rgba(0,255,0,.5);
+	background: rgba(0, 255, 0, .15);
+	border-bottom: 1px solid rgba(0,255,0,1);
+	padding-bottom: 1px;
 }
 
 .interview-matter{
@@ -286,8 +287,8 @@ Page size and paginalia
 ._running-head ._pagenum {
 	position: absolute;
 	bottom: 0.9in;
-	font-family: Scout;
-	font-weight: bold;
+	font-family: "Messenger Text";
+	font-weight: normal;
 	font-size: 0.55em;
 	/*font-size: 0.55em;*/
 }
