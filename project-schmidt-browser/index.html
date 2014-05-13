@@ -37,63 +37,57 @@ printready: true
 
 <code>
 	<pre>
-import javax.swing.*;
-import java.awt.*;
-import java.io.*;
+	
+import javax.swing.*; // importing the swing library
+import java.awt.*; // importing the awt library
+import java.io.*; //importing java input/output
 
-public class MiniBrowser2 {
+public class BabyBrowser {
 	
 	public static void main (String[] args) throws IOException{
 
-		JFrame jf1 = new JFrame();
+		// laying out our application frame using Swing stuff
+		JFrame jf1 = new JFrame(); // this houses our whole browser
 		jf1.setPreferredSize(new Dimension (1000,800));
-		
-		BorderLayout bLayout = new BorderLayout();
+		BorderLayout bLayout = new BorderLayout(); // this determines where stuff goes
 		jf1.setLayout(bLayout);
-		jf1.pack();
-		
-		FlowLayout fl1 = new FlowLayout();
+		jf1.pack(); //pack it in
+		FlowLayout fl1 = new FlowLayout(); //another layout thing
+		JPanel jp1 = new JPanel(fl1); //the jPanel now has the flow layout
+		jp1.setBounds(60, 800, 60, 800); // margins, essentially
 
-		JPanel jp1 = new JPanel(fl1);
-		
-		jp1.setBounds(60, 800, 60, 800);
-
+		// naming buttons, setting sizes
 		String text1 = "back";
-		
-		
 		JButton back = new JButton(text1);
 		back.setSize(50, 50);
 		JButton go = new JButton(text2);
 		go.setSize(50, 50);
 		
-		String urlstrang = "http://risd-gd.github.io/htmloutput";
-
+		// url
+		String urlstrang = "http://pheel.us/thanks/";
 		JTextField url = new JTextField(urlstrang);
-
 		url.setPreferredSize(new Dimension (600,30));
 
+		// adding buttons
 		jp1.add(back);
 		jp1.add(url);
 		jp1.add(go);
 
-		JEditorPane content = new JEditorPane("http://risd-gd.github.io/htmloutput");
+		//setting the url
+		JEditorPane content = new JEditorPane("http://pheel.us/thanks/");
 		
+		//adding the content window part of the application
 		JScrollPane jscroll1 = new JScrollPane(content);
 		jscroll1.setSize(500, 200);
 			
+		// more layout stuff
 		jf1.add(jp1, BorderLayout.NORTH);
-		
 		jf1.add(jscroll1, BorderLayout.CENTER);
-	
 		jf1.setBounds(500, 500, 500, 500);
-		
 		jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		jp1.setVisible(true);
-		
 		jf1.setVisible(true);
 	}
-
 }
 </pre>
 </code>
