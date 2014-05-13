@@ -267,7 +267,7 @@ function postProcessPages(){
         if (tocLine) tocLine.innerText = num;
       }
     }
-    
+
 
     // [C] Set this page's page kind
     pg.parentNode.setAttribute("data-page-kind", pageKind);
@@ -397,7 +397,7 @@ for(i=0; i<num_links; i++){
     url = url.substring(start,end);
   }
 
-  $("a").eq(i).html("<span class='url'>"+url+"</span>" + temp);
+  $("a").eq(i).html("<span class='url'>"+&#9000;+"</span>" + temp);
 
 }
 

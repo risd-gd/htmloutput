@@ -178,6 +178,9 @@ nav {
   padding: 10px;
   font: 20px/1.4 "Messenger Text", sans-serif;
 }
+#nav_box .green{
+  color: green;
+}
 
 #content{
   /*was 320px*/
