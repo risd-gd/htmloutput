@@ -55,7 +55,7 @@ img{
 
 .interview-q:before, .interview-a:before  {
   font-size: 15px;
-  color: darkorange;
+  /* color: darkorange;  */
 }
 
 .interview-a { text-indent: 20px;  }
@@ -103,10 +103,10 @@ a {
 
 .interview-q{
 
-  font-family: 'Messenger Mono';
-  font-size:14px;
+  font-family: 'Messenger Text';
+  font-size:20px;
 
-  color: dodgerblue;
+  color: rgba(0, 255, 0, 1);
 
   width:450px;
   margin-bottom:15px;
