@@ -229,7 +229,8 @@ function postProcessPages(){
 
   // Persists as we loop through pages
   var head  = ""
-    , pageKind = "";
+    , pageKind = ""
+    , intervName;
 
   var pages = document.querySelectorAll(".page-inner");
   for (var i = 0; i < pages.length; i++) {
@@ -253,7 +254,7 @@ function postProcessPages(){
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
         head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
-        pageKind = heading.getAttribute("data-interviewee");
+        intervName = heading.getAttribute("data-interviewee");
       }
       else {
         head = heading.innerText;
@@ -271,6 +272,7 @@ function postProcessPages(){
 
     // [C] Set this page's page kind
     pg.parentNode.setAttribute("data-page-kind", pageKind);
+    pg.parentNode.setAttribute("data-page-interv", intervName);
 
     // [D] Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");

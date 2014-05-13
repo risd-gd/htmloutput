@@ -309,6 +309,11 @@ Page size and paginalia
 	border-bottom: 1px solid black;
 }
 
+[data-page-kind='interview'] ._running-head ._section span {
+	color: lime;
+	border-bottom: 1px solid lime;
+}
+
 ._running-head ._book-name {
 	bottom: 0.6in;
 	display: none;

@@ -17,10 +17,10 @@ just ask Evan!
 -->
 <style>
   {% for page in site.pages %}{% if page.category == 'interview' %}
-  	[data-page-kind="{{page.interviewee}}"] .interview-a:before {
+  	[data-page-interv="{{page.interviewee}}"] .interview-a:before {
   		content: '{{ page.interviewee_initials }}';
   	}
-  	[data-page-kind="{{page.interviewee}}"] .interview-q:before {
+  	[data-page-interv="{{page.interviewee}}"] .interview-q:before {
   		content: '{{ page.interviewer_initials }}';
   	}
   {% endif %}{% endfor %}
