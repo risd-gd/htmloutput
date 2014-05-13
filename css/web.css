@@ -33,7 +33,7 @@ Interview & Project Styles
 ----------------------------------*/
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
-mark { font-style: normal; background: (32, 185, 129, .1);}
+mark { font-style: normal; background: rgba(32, 185, 129, .1);}
 s { color: grey;}
 img{
   margin-left: -20px;
