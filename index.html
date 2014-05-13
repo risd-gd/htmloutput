@@ -1,55 +1,43 @@
 ---
-layout: default
-title: HTML Output
+layout: toc
+title: HTML OUTPUT
 ---
 
+<a href="{{ site.baseurl }}/book" id="print_button_link">
+        &#8984; P
+</a>
 
-<nav>
-  <h1>{{ page.title }}</h1>
+<div id="nav_box">
+    <div class="top">HTML OUTPUT</div>
 
-</nav>
+    {% for category in site.types %}
+    <div class="top">{{ category }}:</div>
 
-<div class="content">
-  {% for category in site.types %}
+    {% for page in site.pages %}{% if page.category == category %}
+        {% if category == 'interview' %}
+            <strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
+            {{ page.interviewee }} &#8212; {{ page.interviewer }}<br />
+        {% else %}
+            <strong><a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br /></strong>
+            {{ page.author }}<br />
+        {% endif %}
 
-    <div class="posts">
-      <h2 class="cat-name">{{ category }}</h2>
+    {% endif %}{% endfor %}
 
-      {% for page in site.pages %}{% if page.category == category %}
-
-          <div class="item">
-            {% if category == 'interview' %}
-              <a href="{{ site.baseurl }}{{ page.url }}">
-                {{ page.title }}
-              </a>
-
-              <div class="author">{{ page.interviewee }} — {{ page.interviewer }}</div>
-
-              <!-- <blockquote>
-                “You will find that punch cutters would take a lot of liberty in interpreting the drawings, in order to make type work in the technology involved.”
-              </blockquote> -->
-
-            {% else %}
-              <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
-              <div class="author">{{ page.author }}</div>
-            {% endif %}
-
-
-            <figure>
-            {% if page.thumb %}
-              <img src="{{ site.baseurl }}img/{{post.thumb}}">
-            {% endif %}
-            </figure>
-          </div>
-
-        {% endif %}{% endfor %}
-    </div>
-    <div class="newpage"></div>
-  {% endfor %}
-
+    {% endfor %}
 </div>
 
+<div id="content">
 
-<a href="{{ site.baseurl }}/book" class="print-btn">
-  Book
-</a>
+    {% for category in site.types %}
+    {% for page in site.pages %}{% if page.category == category %}
+    <div class="pagey">
+        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
+        <img src="{{ site.baseurl }}{{ page.url }}hero.png" />
+        <!-- Below was the caption on the hero image. Is it necessary? -->
+        <!-- <span class="caption">{{ page.description }}</span> -->
+    </div>
+    {% endif %}{% endfor %}
+    {% endfor %}
+
+</div>
