@@ -18,14 +18,15 @@
         <script>
             $(document).ready(function(){
                 $('img').each(function(){
-                    $(this).wrap("<div class='imageWrapper'></div>");
+                    $(this).wrap("<div class='imageContainer'></div>");
                 })
             })
         </script>
         <style>
 
-            .imageWrapper{
+            .imageContainer{
                 width:800px;
+                height:500px;
                 margin-left:15px;
             }
 

@@ -155,3 +155,10 @@ blockquote{
   margin-bottom:55px;
   padding-bottom: 15px;
 }
+
+/*-----Media Query maybe-----*/ 
+@media all and (max-width: 640px) {
+  .interview-a {
+    margin-left:25px;
+  }
+}
