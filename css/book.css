@@ -18,7 +18,7 @@ Book overall style
 }
 
 [data-page-kind="project"].page-outer {
-	background: rgb(226, 228, 243);
+	/* background: rgb(226, 228, 243); */
 }
 
 ._book p {
