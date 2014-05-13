@@ -287,7 +287,7 @@ separated into print and web
   font-style: normal;
   font-weight: bold;
   font-size: 3.5pc;
-  line-height: 100%;
+  line-height: 110%;
 }
 
 .interview-name{
@@ -296,7 +296,7 @@ separated into print and web
 
 hr{
 	border-bottom: 5pt solid black;
-	width: 35%;
+	width: 25%;
 	height: 0pc;
 	margin-top: 2pc;
 	margin-bottom: 2pc;
