@@ -151,9 +151,19 @@ Interview print styles
 ----------------------------------*/
 
 .interview-name, .project-name {
-	font-size: 8em;
-	font-family: "Benton Modern";
-	line-height: 110%;
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5pc;
+  line-height: 100%;
+}
+
+hr{
+	border-bottom: 5pt solid black;
+	width: 35%;
+	height: 0pc;
+	margin-top: 2pc;
+	margin-bottom: 2pc;
 }
 
 .interview-q:before,

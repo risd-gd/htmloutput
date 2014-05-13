@@ -156,6 +156,7 @@ All Content
 {% if page.printready %}
 
 {% if category == 'interview' %}
+    <!--
   <h1 class="post-name interview-name"
       data-change-running-head
       data-category="{{ page.category }}"
@@ -165,12 +166,27 @@ All Content
         {{ page.interviewee }}
   </h1>
   <h3>talks to {{ page.interviewer }}</h3>
+-->
 
-  <div class="_page-break"></div>
+<h1 class="interview-name"
+    data-change-running-head
+    data-category="{{ page.category }}"
+    data-interviewee="{{ page.interviewee }}"
+    data-interviewer="{{ page.interviewer }}"
+    data-id="{{ page.interviewee }}">
+    {{ page.title }}
+</h1>
+<hr />
+
+<h1 class="interview-name">{{ page.interviewee }}</h1>
+<hr />
+<h1 class="interview-name">{{ page.interviewer }}</h1>
+
+<div class="_page-break"></div>
 
 
 {% else %}
-  <h1 class="post-name project-name"
+  <h1 class="project-name"
       data-change-running-head
       data-category="{{ page.category }}"
       data-id="{{ page.title }}">

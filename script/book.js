@@ -368,8 +368,8 @@ for(i=0; i<num_links; i++){
 
 // -------------------------
 
-// Dashes
+// Dashes -- deal with it fuckers.
 
-// Smart Quotes -- taken care of by curlies.js or whatever it is.
+// Smart Quotes -- yeah we gotta do this manually.
 
 // Non-breaking hyphens &#8209; -- NOT NECESSARY! URLs get wrapped to not break.
