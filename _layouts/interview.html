@@ -13,6 +13,15 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').each(function(){
+                    $(this).wrap("<div class='imageWrapper'></div>");
+                })
+            })
+        </script>
         <style>
 
 
