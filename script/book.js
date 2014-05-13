@@ -149,13 +149,13 @@ function preProcessPages() {
   }
 
   // [B] Detect hrefs and insert
-  //var links = document.querySelectorAll("a[href]");
-  //if (links) {
-  //  for (var i = 0; i < links.length; i++) {
-  //    var href = links[i].getAttribute("href");
-  //    $("<sup data-href='" + href + "'>x</sup>").insertAfter(links[i]);
-  //  }
-  //}
+  var links = document.querySelectorAll("a[href]");
+  if (links) {
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      $("<sup data-href='" + href + "'>x</sup>").insertAfter(links[i]);
+    }
+  }
 
   // [C] find foonotes, add superscripts
   var footnotes = $("footnote");
