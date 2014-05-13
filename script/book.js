@@ -278,17 +278,17 @@ function postProcessPages(){
 
 
     // [E] Set footnotes
-    //var links = pg.querySelectorAll("[data-href]");
-    //if (links) {
-    //  var notes = "";
-    //  for (var j = 0; j < links.length; j++) {
-    //    var href = links[j].getAttribute("data-href");
-    //    links[j].innerText = j;
-    //    notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
+    var links = pg.querySelectorAll("[data-href]");
+    if (links) {
+      var notes = "";
+      for (var j = 0; j < links.length; j++) {
+        var href = links[j].getAttribute("data-href");
+        links[j].innerText = j;
+        notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
 
-    //  }
-    //  pg.parentNode.querySelector("._footer").innerHTML = notes;
-    //}
+      }
+      pg.parentNode.querySelector("._footer").innerHTML = notes;
+    }
 
     // [F] Footnotes for non-URLs
     var footnotes = pg.querySelectorAll("[data-footnote]");
@@ -374,6 +374,7 @@ function trimRegions(flowName) {
 // URL STYLING
 
 // -------------------------
+/*
 var num_links = $("a").length;
 
 for(i=0; i<num_links; i++){
@@ -397,18 +398,11 @@ for(i=0; i<num_links; i++){
     url = url.substring(start,end);
   }
 
-  $("a").eq(i).html("<span class='url'>"+"&#9000;"+"</span>" + temp);
+  //var rot = Math.floor(Math.random()*360);
+
+  //$("a").eq(i).html("<span style='-webkit-transform: rotate("+rot+"deg)' class='url'>"+url+"</span>"+temp);
 
 }
+*/
 
-// -------------------------
 
-// SYMBOLS PREPARATION
-
-// -------------------------
-
-// Dashes -- deal with it fuckers.
-
-// Smart Quotes -- yeah we gotta do this manually.
-
-// Non-breaking hyphens &#8209; -- NOT NECESSARY! URLs get wrapped to not break.
