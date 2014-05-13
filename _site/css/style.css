@@ -169,13 +169,13 @@ nav {
 	overflow-y:auto;
   font-size: 14px;
   z-index: 3;
-  font-family: "Messenger-Text", sans-serif;
+  font-family: "Messenger Text", sans-serif;
 }
 #nav_box .top{
   text-align: center;
   text-transform: uppercase;
   padding: 30px;
-  font: 20px/1.4 "Messenger-Text", sans-serif;
+  font: 20px/1.4 "Messenger Text", sans-serif;
 }
 
 #content{
@@ -190,7 +190,6 @@ nav {
 
 .pagey{
   width: 100%;
-  margin-bottom: -150px;
 }
 
 .pagey .caption{
@@ -202,7 +201,7 @@ nav {
   position: relative;
   top: -200px;
   left: 300px;
-  font-family: "Messenger-Text", sans-serif;
+  font-family: "Messenger Text", sans-serif;
   padding: 6px;
   border: 1px solid blue;
 }
@@ -218,7 +217,7 @@ nav {
   position: relative;
   top: 200px;
   border: 1px solid blue;
-  font-family: "Messenger-Text", sans-serif;
+  font-family: "Messenger Text", sans-serif;
   padding: 10px;
 }
 .pagey .name:hover{
@@ -286,29 +285,5 @@ separated into print and web
 
 /*//////////Phil messing around////////////*/
 
-/* ----------------------------------
-
-Standalone Page "HTML Output" banner Styles
-
-----------------------------------*/
-
-
-#output_banner{
-  width: 100%;
-  background: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  box-shadow: 0pt 1pt 1pt black;
-  z-index: 4;
-  border-top: 1pt black solid;
-  border-bottom: 1pt black solid;
-  font: 20px/1.4 Messenger Text, sans-serif;
-  padding: 5pt;
-}
-#output_banner a{
-  text-decoration: none;
-  color: blue;
-}
 
 
