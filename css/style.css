@@ -158,7 +158,8 @@ nav {
 	top: 150px;
   left: 0px;
 	width: 300px;
-	max-height: 400px;
+  /*was 400px*/
+	max-height: 75%;
 	padding:25px;
 	margin:15px;
 	display:inline-block;
@@ -179,7 +180,8 @@ nav {
 }
 
 #content{
-  top: -320px;
+  /*was 320px*/
+  top: -87px;
   left: 0px;
   width: 100%;
   padding-left: 30%;
@@ -217,8 +219,13 @@ nav {
   position: relative;
   top: 200px;
   border: 1px solid blue;
+<<<<<<< HEAD
   font-family: "Messenger Text", sans-serif;
   padding: 10px;
+=======
+  font-family: "Messenger-Text", sans-serif;
+  padding: 20px;
+>>>>>>> FETCH_HEAD
 }
 .pagey .name:hover{
   color: blue;
@@ -231,6 +238,7 @@ nav {
 
 .pagey img{
   width: 100%;
+  margin-bottom: 55px;
 }
 
 

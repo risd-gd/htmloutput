@@ -34,7 +34,8 @@ title: HTML OUTPUT
     <div class="pagey">
         <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
         <img src="{{ site.baseurl }}{{ page.url }}hero.png" />
-        <span class="caption">{{ page.description }}</span>
+        <!-- Below was the caption on the hero image. Is it necessary? -->
+        <!-- <span class="caption">{{ page.description }}</span> -->
     </div>
     {% endif %}{% endfor %}
     {% endfor %}
