@@ -34,9 +34,11 @@ Book overall style
   overflow: visible;
   opacity: 0.7;
   top: -10pt;
-  left: 16pt;
+  left: 8pt;
+  letter-spacing: .5pt;
   color: blue;
-  font-size: 7pt;
+  font-size: 6pt;
+  text-transform: uppercase;
   z-index: -1;
   display: inline-block;
   white-space: nowrap; <!-- necessary to prevent line breaks -->
@@ -130,12 +132,8 @@ Table of contents
 	font-size: 1rem;
 }
 
-.toc h4 .toc-author {
+.toc-author {
 	color: rgba(0, 255, 0, 1);
-	font-family: "Messenger Text";
-	text-transform: uppercase;
-	font-size: .8rem;
-
 }
 
 .toc-pg {
