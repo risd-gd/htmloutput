@@ -130,7 +130,7 @@ Table of contents
 	font-size: 1rem;
 }
 
-.toc-author {
+.toc h4 .toc-author {
 	color: rgba(0, 255, 0, 1);
 	font-family: "Messenger Text";
 	text-transform: uppercase;
