@@ -161,6 +161,7 @@ blockquote{
   .interview-q {
     font-family:'Benton Modern';
     font-size:18px;
-    margin-left:25px;
+    margin:auto;
+    margin-bottom:15px;
   }
 }
