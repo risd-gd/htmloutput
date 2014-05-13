@@ -23,7 +23,7 @@
 
             $('.imageContainer').hover(function(){
                 $(this).toggleClass('selectedImage');
-                $('.imageContainer').not(".selectedImage").css('opacity','0.15');
+                $(document).children().not(".selectedImage").css('opacity','0.15');
 
             }, function(){
                 $(this).toggleClass('selectedImage');
@@ -35,8 +35,8 @@
 
     <style>
         .imageContainer{
-            width:500px;
-            height:200px;
+            width:700px;
+            height:300px;
             overflow:hidden;
         }
 
