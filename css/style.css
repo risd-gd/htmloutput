@@ -276,12 +276,36 @@ Interview Styles
 separated into print and web
 ----------------------------------*/
 
+.interview-name, .project-name {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5pc;
+  line-height: 100%;
+}
+
+.interview-name{
+  color: rgba(0,255,0,1);
+}
+
+hr{
+	border-bottom: 5pt solid black;
+	width: 35%;
+	height: 0pc;
+	margin-top: 2pc;
+	margin-bottom: 2pc;
+}
+
+.interview-bar{
+  border-bottom: 5pt solid rgba(0,255,0,1);
+}
+
 .interview-intro{
 	margin-bottom: 18px;
 }
 
-.interview-q:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
-.interview-a:before { content: ''; color: rgba(0, 255, 0, 1); font-family: "Messenger Mono";}
+.interview-q:before { content: ''; font-family: "Messenger Mono";}
+.interview-a:before { content: ''; font-family: "Messenger Mono";}
 
 .interview-a {}
 .interview-q {}

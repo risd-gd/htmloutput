@@ -41,6 +41,13 @@ img{
   margin-bottom: 20px;
 }
 
+.interview-name{
+  color: green;
+}
+.interview-bar{
+  border-bottom: 5pt solid green;
+}
+
 
 .wrapper div, p, figure, figcaption{
   max-width: 500px;
@@ -55,12 +62,17 @@ img{
 
 .interview-q:before, .interview-a:before  {
   font-size: 15px;
-  /* color: darkorange;  */
+}
+.interview-q:before{
+  color: green;
+}
+.interview-a:before{
+  color: black;
 }
 
 .interview-a { text-indent: 20px;  }
-.interview-q { padding-left: 20px; }
-.interview-a, .interview-q { font-size: 20px;}
+.interview-q { padding-left: 20px; color: green;}
+.interview-a, .interview-q { font-size: 20px; }
 
 .title {
   font-family: "Benton Modern";
@@ -106,7 +118,7 @@ a {
   font-family: 'Messenger Text';
   font-size:20px;
 
-  color: rgba(0, 255, 0, 1);
+  color: green;
 
   width:450px;
   margin-bottom:15px;
