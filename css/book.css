@@ -241,7 +241,8 @@ del{
 .snip-ready {
 	white-space: pre-wrap;
 	background: rgb(252, 251, 228);
-	padding: 0.1in;
+	padding: 0.1in 1in;
+	margin: 0 -1in 1.4em;
 }
 
 
