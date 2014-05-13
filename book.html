@@ -170,6 +170,7 @@ All Content
 
 <h1 class="interview-name"
     data-change-running-head
+    data-change-page-kind
     data-category="{{ page.category }}"
     data-interviewee="{{ page.interviewee }}"
     data-interviewer="{{ page.interviewer }}"
@@ -184,10 +185,11 @@ All Content
 
 <div class="_page-break"></div>
 
-
 {% else %}
+
   <h1 class="project-name"
       data-change-running-head
+      data-change-page-kind
       data-category="{{ page.category }}"
       data-id="{{ page.title }}">
         {{ page.title }}
@@ -197,8 +199,6 @@ All Content
 
 <div class="_page-break"></div>
 {% endif %}
-
-<div class="sidematter">(Side matter for '{{ page.title }}')</div>
 
   {{ page.content }}
 

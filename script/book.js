@@ -262,8 +262,9 @@ function postProcessPages(){
         if (tocLine) tocLine.innerText = num;
       }
     }
-    else if (pagekindchange) {
-      pageKind = pagekindchange.getAttribute("data-change-page-kind");
+    
+    if (pagekindchange) {
+      pageKind = pagekindchange.getAttribute("data-category");
     }
 
     // [C] Set this page's page kind

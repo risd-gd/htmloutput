@@ -17,6 +17,10 @@ Book overall style
 	text-rendering: optimizeLegibility;
 }
 
+[data-page-kind="project"].page-outer {
+	background: rgb(226, 228, 243);
+}
+
 ._book p {
 	position: relative;
 	z-index: 1;
@@ -32,7 +36,7 @@ Book overall style
   height: 0;
   width: 0;
   overflow: visible;
-  white-space: nowrap; <!-- necessary to prevent line breaks -->
+  white-space: nowrap; /* necessary to prevent line breaks */
   text-indent: 0pt;
   opacity: 0.8;
   top: 2pt;
@@ -437,19 +441,19 @@ Book image spreads
 
 ._bleed [data-fullbleed],
 ._bleed [data-fullbleed] {
-	height: 7.05in;
+	height: 7.05in !important; /* Sorry */
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
 
 
-<!--._book-spread-l figcaption {
+/*._book-spread-l figcaption {
 	position: absolute;
 	background: white;
 	bottom: 1in;
 	left: 1in;
 	font-size: 10pt;
-} -->
+} */
 
 figcaption{
   text-align: center;
