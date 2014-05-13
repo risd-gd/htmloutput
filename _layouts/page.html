@@ -21,12 +21,14 @@
                 $(this).wrap("<div class='imageContainer'></div>");
             })
 
-            $('imageContainer').hover(function(){
+            $('.imageContainer').hover(function(){
                 $(this).toggleClass('selectedImage');
-                $('imageContainer').not(document.getElementByClass("selectedImage")).css('opacity','0.15');
             }, function(){
-
+                $(this).toggleClass('selectedImage');
             })
+
+            $('.imageContainer').not(document.getElementByClass("selectedImage")).css('opacity','0.15');
+
         })
     </script>
 
