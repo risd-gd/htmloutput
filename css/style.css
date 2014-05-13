@@ -137,7 +137,8 @@ nav {
 
 #print_button_link{
   text-decoration: none;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  background: white;
   text-align: center;
   color: blue;
   z-index: 2;
@@ -146,8 +147,8 @@ nav {
   left: 15px;
   width: 300px;
   display: inline-block;
-  padding: 50px 0px;
-  box-shadow: 15px 15px 15px rgba(0,0,0,0.25);
+  padding: 30px 0px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 }
 #print_button_link:hover{
   background: blue;
@@ -155,7 +156,7 @@ nav {
 }
 
 #nav_box{
-	top: 150px;
+	top: 95px;
   left: 0px;
 	width: 300px;
   /*was 400px*/
@@ -165,16 +166,16 @@ nav {
 	display:inline-block;
 	position:fixed;
 	background-color: white;
-	border: 2px solid black;
-	box-shadow: 15px 15px 15px rgba(0,0,0,0.25);
+	/*border: 2px solid black;*/
+	box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 	overflow-y:auto;
   font-size: 14px;
   z-index: 3;
   font-family: "Messenger Text", sans-serif;
 }
 #nav_box .top{
-  text-align: center;
-  text-transform: uppercase;
+  /* text-align: center; */
+  text-transform: uppercase; 
   padding: 10px;
   font: 20px/1.4 "Messenger Text", sans-serif;
 }
@@ -187,7 +188,7 @@ nav {
   top: -87px;
   left: 0px;
   width: 100%;
-  padding-left: 30%;
+  /*padding-left: 30%;*/
   position: absolute;
   z-index: 1;
   overflow-x: hidden;
@@ -212,19 +213,21 @@ nav {
 }
 
 .pagey .name{
-  width: 100%;
+  /* width: 100%; */
   text-align: left;
   background-color: blue;
   color: white;
   display: inline-block;
-  font-size: 30px;
+  font-size: 80px;
   xwhite-space: nowrap;
   position: relative;
   top: 200px;
   border: 1px solid blue;
   font-family: "Messenger Text", sans-serif;
   padding: 10px;
+  left: 25%;
 }
+
 .pagey .name:hover{
   color: blue;
   background-color: transparent;
