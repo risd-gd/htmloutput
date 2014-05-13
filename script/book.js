@@ -102,6 +102,7 @@ function reportPagesLeft(p) {
 // _________________________
 
 // Pre-process to detect full-spread images and split them in half
+// And also a lot of other thing!
 
 // _________________________
 
@@ -121,7 +122,8 @@ function preProcessPages() {
       </div>\
       <div class="_book-spread-r" data-fullbleed>\
         <img src="' + src + '"/>\
-      </div> ';
+      </div> \
+      <div class="_page-break"></div>';
 
     $(splitImageHtml).insertAfter(oldNode);
     oldNode.parentNode.removeChild(oldNode);
