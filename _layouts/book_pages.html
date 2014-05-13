@@ -11,13 +11,18 @@
    <!-- Benton -->
    <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
 
-
+   <!-- CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book-ui.css" type="text/css">
 
-      <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- CODEMIRROR (For syntax highlighting) -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/script/lib/codemirror.css">
+
+
+    <!-- Script -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
   </head>
   <body>
@@ -95,6 +100,13 @@ experiment with adding/removing them dynamically
                 </div>
             {% endfor %}
         </div>
+
+        <!-- CODEMIRROR (For syntax highlighting) -->
+        <script src="{{ site.baseurl }}/script/lib/codemirror.js"></script>
+        <script src="{{ site.baseurl }}/script/addon/runmode/runmode.js"></script>
+        <script src="{{ site.baseurl }}/script/mode/xml/xml.js"></script>
+
+        <!-- SCRIPTS -->
 
         <script type="text/javascript" src="{{ site.baseurl }}/script/imagesloaded.pkgd.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/script/book.js"></script>

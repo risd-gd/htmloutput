@@ -181,6 +181,18 @@ function preProcessPages() {
     }
   }
 
+  // [E] Syntax highlight our code snippets
+  var snippets = document.querySelectorAll(".snippet");
+  for (var i = 0; i < snippets.length; i++) {
+    var snip = snippets[i];
+    var txt = snip.value;
+    var mode = "application/xml";
+    var insertNode = document.createElement("pre");
+    $(insertNode).insertAfter(snip);
+    CodeMirror.runMode(txt, mode, insertNode);
+  }
+
+
 }
 
 // _________________________
