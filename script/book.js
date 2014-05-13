@@ -181,6 +181,9 @@ function preProcessPages() {
     }
   }
 
+  // [E] highlight Code
+  highlightCode();
+
 }
 
 // _________________________
@@ -189,7 +192,7 @@ function preProcessPages() {
 
 // _________________________
 
-function highlight(){
+function highlightCode(){
   var snippets = document.querySelectorAll(".snippet");
   for (var i = 0; i < snippets.length; i++) {
     var snip = snippets[i];
