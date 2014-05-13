@@ -33,13 +33,12 @@ Book overall style
 ._book-content .url{
   font-family: Messenger Text;
   position: relative;
-  color: cyan;
   height: 0;
   width: 0;
   overflow: visible;
   white-space: nowrap; /* necessary to prevent line breaks */
   text-indent: 0pt;
-  opacity: 1;
+  opacity: .5;
   top: -15pt;
   left: 15pt;
   letter-spacing: .5pt;
@@ -51,6 +50,7 @@ Book overall style
   line-height: 90%;
   margin: 0pt;
   padding: 0pt;
+  -webkit-transform: rotate(90deg);
 
 }
 
