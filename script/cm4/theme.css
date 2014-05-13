@@ -35,7 +35,7 @@
 }
 .cm-s-loop-light .cm-tag,
 .cm-s-loop-dark .cm-tag {
-  font-weight: bold;
+  font-weight: 500;
 }
 .cm-s-loop-light .CodeMirror-lint-message-error,
 .cm-s-loop-dark .CodeMirror-lint-message-error,
@@ -194,8 +194,8 @@
 .cm-mode-css.cm-s-loop-light .cm-property,
 .cm-mode-scss.cm-s-loop-light .cm-property,
 .cm-mode-sass.cm-s-loop-light .cm-property {
-  color: #69899e !important;
-  font-weight: 400;
+  /*color: #69899e !important;*/
+  font-weight: 300;
 }
 .cm-mode-css.cm-s-loop-light .cm-variable,
 .cm-mode-scss.cm-s-loop-light .cm-variable,

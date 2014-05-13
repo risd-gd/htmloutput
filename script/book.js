@@ -200,7 +200,7 @@ function highlightCode(){
     var mode = getMode(ext);
     var txt = snip.value;
     var insertNode = document.createElement("pre");
-    insertNode.className = "snip-ready cm-s-loop-light cm-mode-" + ext;
+    insertNode.className = "snippet-ready cm-s-loop-light cm-mode-" + ext;
 
     $(insertNode).insertAfter(snip);
     $(snip).remove();

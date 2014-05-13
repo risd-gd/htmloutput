@@ -238,11 +238,26 @@ del{
   display: none;
 }
 
-.snip-ready {
+/* ----------------------------------
+
+Code snippet
+
+----------------------------------*/
+
+.snippet-ready {
 	white-space: pre-wrap;
-	background: rgb(252, 251, 228);
-	padding: 0.1in 1in;
-	margin: 0 -1in 1.4em;
+	background: rgba(0, 255, 0, .04);
+	border-top: 1px solid rgba(0,255,0,0.1);
+	border-bottom: 1px solid rgba(0,255,0,0.1);
+	padding: 0.1in 0.6in;
+	margin: 0 -0.6in 1.4em;
+}
+[data-css-starting-fragment].snippet-ready {
+	margin-top: -0.6in !important;
+	padding-top: 0.6in !important;
+}
+[data-css-continued-fragment].snippet-ready {
+	padding-bottom: 0.6in !important;
 }
 
 
