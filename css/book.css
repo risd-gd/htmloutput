@@ -33,14 +33,15 @@ Book overall style
 ._book-content .url{
   font-family: Messenger Text;
   position: relative;
+  color: cyan;
   height: 0;
   width: 0;
   overflow: visible;
   white-space: nowrap; /* necessary to prevent line breaks */
   text-indent: 0pt;
-  opacity: 0.8;
-  top: 2pt;
-  left: 0pt;
+  opacity: 1;
+  top: -15pt;
+  left: 15pt;
   letter-spacing: .5pt;
   color: blue;
   font-size: 6pt;
