@@ -18,8 +18,17 @@ printready: true
     With it, one can easily specify paper output size that crops the pattern before printing.
 </p>
 <p>
-    works best in Safari<footnote>This is because Google Chrome has limited built-in paper size options and Firefox applies obnoxious user agent styles.</footnote>.
+    print.js works best in Safari<footnote>This is because Google Chrome has limited built-in paper size options and Firefox applies obnoxious user agent styles.</footnote>.
 </p>
 
+<p>
+    There are some best practices for formatting:<br />
+    1. All javascript must be in the head or external file. None in the body. Use jquery!<br />
+    2. Put print.js at the very end of your head.<br />
+    3. The outside div should be called either "wrapper" or "container," otherwise it will assume it is a structural div rather than big wrapper.<br />
+    4. Structure goes body > "wrapper" > container divs > pattern divs. <br />
+    5. Write your CSS in a <code>&#60;style&#62;</code> tag rather than on a separate .css file. <br />
+    6. REQUIRES <code>&#60;!DOCTYPE HTML&#62;</code> tag at beginning, to find page height. <br />
+</p>
 
 
