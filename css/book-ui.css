@@ -27,7 +27,7 @@ Faked print styles
 
 ._book ._page-break {
 	display: block;
-	outline: 1px solid red;
+	/*outline: 1px solid red;*/
 	break-after: region;
 	/* margin-bottom: 6in; */
 	opacity: 0.1;
