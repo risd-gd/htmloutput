@@ -28,20 +28,24 @@ Book overall style
 
 ._book-content .url{
   font-family: Messenger Text;
-  position: relative;
   height: 0;
   width: 0;
   overflow: visible;
-  opacity: 0.7;
-  top: -10pt;
-  left: 8pt;
+  white-space: nowrap; <!-- necessary to prevent line breaks -->
+  opacity: 0.8;
+  position: relative;
+  top: 2pt;
+  left: 0pt;
   letter-spacing: .5pt;
   color: blue;
   font-size: 6pt;
   text-transform: uppercase;
   z-index: -1;
   display: inline-block;
-  white-space: nowrap; <!-- necessary to prevent line breaks -->
+  margin: 0pt 0pt 0pt 0pt;
+  padding: 0pt 0pt 0pt 0pt;
+  line-height: 90%;
+  text-indent: 0pc
 }
 
 ._book-content a{
