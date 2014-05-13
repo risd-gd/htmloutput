@@ -284,7 +284,7 @@ Page size and paginalia
 	left:     -0.125in;
 	right:    -0.125in;
 	overflow: hidden;
-	padding:  0.5in 0.6in 0.7in;
+	padding:  0.5in 0.6in 0.85in;
 }
 
 
@@ -333,9 +333,8 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6.25in;
-	left: 0.8in;
-	right: 0.6in;
+	top: 6.15in;
+	left: 0.6in;
 	position: absolute;
 	font-size: 0.6em;
 	font-family: Messenger Test;

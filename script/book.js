@@ -316,7 +316,7 @@ function postProcessPages(){
 
         footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
         $("sup[data-footnote='"+material+"']").html(j);
-        notes += "&rarr;; <i>"+j+"</i> &#8212;"+temp+"&nbsp;";
+        notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+" ";
       }
       pg.parentNode.querySelector("._footer").innerHTML = notes;
     }
