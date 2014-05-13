@@ -38,7 +38,7 @@ $(".toc [type=checkbox]").change(function(e){
 
 });
 // First lets uncheck them all!
-$(".toc [type=checkbox]").attr("checked", false).change();
+// $(".toc [type=checkbox]").attr("checked", false).change();
 
 // -------------------------------------
 // Enable UI when we know all images have loaded
