@@ -237,6 +237,12 @@ del{
   display: none;
 }
 
+.snip-ready {
+	white-space: pre-wrap;
+	border: 1px solid red;
+	word-break: break-all;
+}
+
 
 /* ----------------------------------
 

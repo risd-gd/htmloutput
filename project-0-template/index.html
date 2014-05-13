@@ -23,16 +23,75 @@ printready: true
 
 <p>This is a test project</p>
 
-<textarea class="snippet">
-	Sample code!
+<!-- JAVASCRIPT -->
+<h2> HERE IS SOME JAVASCRIPT </h2>
+<textarea class="snippet" data-mode="js">
+// [B] Clone text spreads
+var textSpreads = document.querySelectorAll("[data-textspread]");
+for (var i = 0; i < textSpreads.length; i++) {
+  var baseNode = textSpreads[i];
+  var pt2 = baseNode.cloneNode(true);
+  pt2.setAttribute("data-sideways-part", "2");
 
-	<p>Some html!</p>
+  var pt3 = baseNode.cloneNode(true);
+  pt3.setAttribute("data-sideways-part", "3");
 
-	style {
-		some: css;
-	}
+  $(baseNode).after([
+    $('<div class="_page-break"></div>'),
+    pt2,
+    $('<div class="_page-break"></div>'),
+    pt3
+   );
+}
+</textarea>
 
-	document.getElementById("wow!").innerText("javascript!");
+<!-- HTML -->
+<h2> HERE IS SOME HTML</h2>
+<textarea class="snippet" data-mode="html">
+  <span id="postProcessControls" style="display: none;">
+    <label><input id="toggleguides" type="checkbox" checked /> Show guides</label>
+      <span id="status" style="display:inline; margin-left: 1em; color: blue;">
+        Making book...
+      </span>
+    <progress id="progbar" value="0" max="1"></progress>
+  </span>
+</textarea>
+
+<!-- HTML -->
+<h2> HERE IS SOME CSS</h2>
+<textarea class="snippet" data-mode="css">
+.toc-heading {
+  font-size: 2em;
+}
+
+.toc-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+}
+
+.toc-item {
+  position: relative;
+  padding-right: 0.4in;
+  margin-bottom: 1em;
+}
+
+.toc h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.toc-author {
+  color: rgba(0, 255, 0, 1);
+}
+
+.toc-pg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: "Messenger Text";
+  font-weight: normal;
+}
 </textarea>
 
 <p>This is a test project</p>

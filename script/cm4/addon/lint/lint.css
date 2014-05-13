@@ -1,0 +1,192 @@
+/* The lint marker gutter */
+.CodeMirror-lint-markers {
+  width: 10px;
+  left: 400px;
+}
+
+.CodeMirror-gutter-elt:hover {
+  z-index: 999;
+  // background: white;
+}
+
+.CodeMirror-lint-marker-warning,
+.CodeMirror-lint-marker-error,
+.console-log-marker {
+  /*left: -300px;
+  width: 300px;*/
+  position: relative;
+  text-align: left;
+}
+
+.CodeMirror-gutter-wrapper[style] {
+  left: auto!important;
+}
+
+.console-log-marker {
+  color: #bbb;
+  font-size: 15px;
+  -webkit-animation: decay 0.2s;
+}
+
+.console-error {
+  color: rgba(200,0,0,1);
+  font: 14px/1.2 "National";
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.logged-error {
+  background: rgba(255,0,0,0.2);
+}
+
+.CodeMirror-lint-tooltip {
+  background-color: infobackground;
+  border: 1px solid black;
+  border-radius: 4px 4px 4px 4px;
+  color: infotext;
+  font-family: monospace;
+  font-size: 10pt;
+  overflow: hidden;
+  padding: 2px 5px;
+  position: fixed;
+  white-space: pre;
+  white-space: pre-wrap;
+  z-index: 100;
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+}
+
+.CodeMirror-lint-mark-error, .CodeMirror-lint-mark-warning {
+  background-position: left bottom;
+  background-repeat: repeat-x;
+}
+
+.CodeMirror-lint-mark-error {
+  background-image:
+  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJDw4cOCW1/KIAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAHElEQVQI12NggIL/DAz/GdA5/xkY/qPKMDAwAADLZwf5rvm+LQAAAABJRU5ErkJggg==")
+  ;
+
+  // background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADAQMAAACOOjyFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QTU5NUM3QkFCNjAxMUUzOUFFNEI3RTRFMTVFODQ5QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QTU5NUM3Q0FCNjAxMUUzOUFFNEI3RTRFMTVFODQ5QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkyMjU4RTA4QUIxQzExRTM5QUU0QjdFNEUxNUU4NDlCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdBNTk1QzdBQUI2MDExRTM5QUU0QjdFNEUxNUU4NDlCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Sc2x5wAAAAZQTFRF/wEB////xMF6xAAAAAJ0Uk5T/wDltzBKAAAADklEQVQIHWP4wBDA8AEABpYCMZ1w+D8AAAAASUVORK5CYII="); 
+
+  // background: rgba(255,0,0,0.12);
+  // border-bottom: 1px solid red;
+}
+
+.CodeMirror-lint-mark-error:hover {
+  background: rgba(255,0,0,0.15);
+}
+
+.CodeMirror-lint-mark-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJFhQXEbhTg7YAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAMklEQVQI12NkgIIvJ3QXMjAwdDN+OaEbysDA4MPAwNDNwMCwiOHLCd1zX07o6kBVGQEAKBANtobskNMAAAAASUVORK5CYII=");
+  // background: rgba(255,220,0,0.2);
+}
+
+.CodeMirror-lint-mark-warning:hover {
+  background: rgba(255,220,0,0.5);
+}
+
+
+.CodeMirror-lint-marker-error, .CodeMirror-lint-marker-warning {
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  height: 16px;
+  // overflow: hidden;
+  // width: 16px;
+  text-align: left;
+  vertical-align: middle;
+  position: relative;
+  // border-top: 1px solid red;
+}
+
+.CodeMirror-lint-marker-error:hover,
+.CodeMirror-lint-marker-warning:hover {
+  // background: white;
+  // outline: 1px solid gray;
+  // overflow: visible;
+  // height: auto;
+  z-index: 999;
+}
+
+/*.CodeMirror-lint-message-error, .CodeMirror-lint-message-warning {
+  // padding-left: 18px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  // width: 200px;
+  opacity: 1;
+  font: 14px/1.2 "National";
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #bbb;
+
+  padding-bottom: 0.5em;
+  // -webkit-animation: enter 0.5s;
+}*/
+
+.CM-current-lint {
+  // -webkit-animation: enter 0.3s;
+  -webkit-transform-origin: top right;
+  -webkit-transition: all 0.2s;
+  -webkit-transform: scale(1);
+
+}
+
+
+.CodeMirror-lint-message-error.CM-current-lint {
+  color: rgba(200,0,0,1);
+}
+
+.CodeMirror-lint-message-warning.CM-current-lint {
+  color: rgba(220,190,0,1);
+}
+
+
+
+@-webkit-keyframes enter {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(0.99);
+  }
+  70% {
+    -webkit-transform: scale(1.02);
+  }
+  90% {
+    -webkit-transform: scale(0.99);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes decay {
+  0% {
+    color: black;
+  }
+  100% {
+    color: #bbb;
+  }
+}
+
+
+.CodeMirror-lint-marker-error, .CodeMirror-lint-message-error {
+  //background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAHlBMVEW7AAC7AACxAAC7AAC7AAAAAAC4AAC5AAD///+7AAAUdclpAAAABnRSTlMXnORSiwCK0ZKSAAAATUlEQVR42mWPOQ7AQAgDuQLx/z8csYRmPRIFIwRGnosRrpamvkKi0FTIiMASR3hhKW+hAN6/tIWhu9PDWiTGNEkTtIOucA5Oyr9ckPgAWm0GPBog6v4AAAAASUVORK5CYII=");
+}
+
+.CodeMirror-lint-marker-warning, .CodeMirror-lint-message-warning {
+  //background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAANlBMVEX/uwDvrwD/uwD/uwD/uwD/uwD/uwD/uwD/uwD6twD/uwAAAADurwD2tQD7uAD+ugAAAAD/uwDhmeTRAAAADHRSTlMJ8mN1EYcbmiixgACm7WbuAAAAVklEQVR42n3PUQqAIBBFUU1LLc3u/jdbOJoW1P08DA9Gba8+YWJ6gNJoNYIBzAA2chBth5kLmG9YUoG0NHAUwFXwO9LuBQL1giCQb8gC9Oro2vp5rncCIY8L8uEx5ZkAAAAASUVORK5CYII=");
+}
+
+.CodeMirror-lint-marker-multiple {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAMAAADzjKfhAAAACVBMVEUAAAAAAAC/v7914kyHAAAAAXRSTlMAQObYZgAAACNJREFUeNo1ioEJAAAIwmz/H90iFFSGJgFMe3gaLZ0od+9/AQZ0ADosbYraAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  width: 100%; height: 100%;
+}
