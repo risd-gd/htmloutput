@@ -244,6 +244,11 @@ function postProcessPages(){
     // [B] If there is an in-page heading designed to trigger a new running head
     var heading = pg.querySelector("[data-change-running-head]");
     var pagekindchange = pg.querySelector("[data-change-page-kind]");
+
+    if (pagekindchange) {
+      pageKind = pagekindchange.getAttribute("data-category");
+    }
+
     if (heading) {
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
@@ -263,9 +268,6 @@ function postProcessPages(){
       }
     }
     
-    if (pagekindchange) {
-      pageKind = pagekindchange.getAttribute("data-category");
-    }
 
     // [C] Set this page's page kind
     pg.parentNode.setAttribute("data-page-kind", pageKind);
