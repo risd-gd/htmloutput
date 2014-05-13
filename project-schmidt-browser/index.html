@@ -1,0 +1,99 @@
+---
+
+layout: page
+title: A baby browser
+author: Catherine Leigh Schmidt
+description: BabyBrowser is a tiny web browser.
+category: project
+printready: true
+
+---
+
+<p>
+	BabyBrowser is a tiny browser written in Java. Using Java's charmingly outdated Swing library, it's essentially a frame that points to a URL. Sometimes it can parse HTML &amp; CSS, and sometimes it can't. BabyBrowser questions the ubiquity and completeness of the web. It highlights the fact that the web as we know it is simply a set of agreed-upon standards. BabyBrowser shows that potentially there are different ways to use and see the internet.
+</p>
+
+<p>
+	The following are some screenshots of BabyBrowser.
+</p>
+
+<figure>
+	<img src="../project-schmidt-browser/hero.png">
+</figure>
+
+<figure>
+	<img src="../project-schmidt-browser/one.png">
+</figure>
+
+<figure>
+	<img src="../project-schmidt-browser/two.png">
+</figure>
+
+<figure>
+	<img src="../project-schmidt-browser/three.png">
+</figure>
+
+<p>The following is the code of BabyBrowser in full. Please, try this at home.</p>
+
+<code>
+import javax.swing.*;
+import java.awt.*;
+import java.io.*;
+
+public class MiniBrowser2 {
+	
+	public static void main (String[] args) throws IOException{
+
+		JFrame jf1 = new JFrame();
+		jf1.setPreferredSize(new Dimension (1000,800));
+		
+		BorderLayout bLayout = new BorderLayout();
+		jf1.setLayout(bLayout);
+		jf1.pack();
+		
+		FlowLayout fl1 = new FlowLayout();
+
+		JPanel jp1 = new JPanel(fl1);
+		
+		jp1.setBounds(60, 800, 60, 800);
+
+		String text1 = "back";
+		
+		
+		JButton back = new JButton(text1);
+		back.setSize(50, 50);
+		JButton go = new JButton(text2);
+		go.setSize(50, 50);
+		
+		String urlstrang = "http://pheel.us/thanks/";
+
+		JTextField url = new JTextField(urlstrang);
+
+		url.setPreferredSize(new Dimension (600,30));
+
+		jp1.add(back);
+		jp1.add(url);
+		jp1.add(go);
+
+		JEditorPane content = new JEditorPane("http://pheel.us/thanks/");
+		
+		JScrollPane jscroll1 = new JScrollPane(content);
+		jscroll1.setSize(500, 200);
+			
+		jf1.add(jp1, BorderLayout.NORTH);
+		
+		jf1.add(jscroll1, BorderLayout.CENTER);
+	
+		jf1.setBounds(500, 500, 500, 500);
+		
+		jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		jp1.setVisible(true);
+		
+		jf1.setVisible(true);
+	}
+
+}
+
+</code>
+
