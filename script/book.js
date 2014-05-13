@@ -102,6 +102,7 @@ function reportPagesLeft(p) {
 // _________________________
 
 // Pre-process to detect full-spread images and split them in half
+// And also a lot of other thing!
 
 // _________________________
 
