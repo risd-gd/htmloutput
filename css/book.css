@@ -132,6 +132,9 @@ Table of contents
 
 .toc-author {
 	color: rgba(0, 255, 0, 1);
+	font-family: "Messenger Text";
+	font-size: .8rem;
+
 }
 
 .toc-pg {
