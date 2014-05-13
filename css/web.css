@@ -158,7 +158,7 @@ blockquote{
 
 /*-----Media Query maybe-----*/ 
 @media (max-width: 640px) {
-  .interview-a {
+  .interview-q {
     font-family:'Benton Modern';
     font-size:18px;
     margin-left:25px;
