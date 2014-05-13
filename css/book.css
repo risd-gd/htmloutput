@@ -32,31 +32,28 @@ Book overall style
 
 ._book-content .url{
   font-family: Messenger Text;
-  text-indent: 0pt;
-  position: relative;
   overflow: visible;
   white-space: nowrap; /* necessary to prevent line breaks */
-  opacity: .7;
-  z-index: 100;
-  top: 2pt;
-  left: 0pt;
-  height: 0pt;
-  width: 0pt;
+  text-indent: 0pt;
+  opacity: 1;
   letter-spacing: .5pt;
   color: blue;
-  font-size: 8pt;
+  font-size: 6pt;
   text-transform: uppercase;
   z-index: -1;
   display: inline-block;
-  line-height: 90%;
   margin: 0pt;
   padding: 0pt;
+  xbackground-color: blue;
   <!--
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
-  font-style: normal;
+  top: -15pt;
+  left: 15pt;
   -->
+  font-style: normal;
+
 }
 
 ._book-content a{
@@ -341,7 +338,7 @@ Page size and paginalia
 	right: 0.6in;
 	position: absolute;
 	font-size: 0.6em;
-	font-family: "Scout";
+	font-family: Messenger Test;
 }
 
 ._running-head ._footer i, ._book sup {
