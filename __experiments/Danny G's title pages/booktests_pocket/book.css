@@ -1,0 +1,498 @@
+/* ----------------------------------
+
+CSS Region flow (used by the polyfill)
+
+----------------------------------*/
+
+
+._book .content-source {
+    flow-into: content-flow contents;
+}
+
+._book .content-region {
+    flow-from: content-flow;
+    region-fragment: break;
+}
+
+/* ----------------------------------
+
+Book overall style
+
+----------------------------------*/
+
+._book {
+	font-size: 10pt;
+}
+
+._book .sidematter {
+	position: absolute;
+	top: 1in;
+	left: 0.5in;
+	-webkit-transform: rotate(90deg);
+	-webkit-transform-origin: top left;
+	color: red;
+}
+
+
+/* ----------------------------------
+
+type test
+
+----------------------------------*/
+@font-face{
+	font-family: messenger;
+	src: url('type/messenger-text.ttf')
+	
+}
+
+@font-face{
+	font-family: acta;
+	src: url('type/Acta-Bold.otf')
+	
+}
+
+@font-face{
+	font-family: circular;
+	src: url('type/CircularStd-Bold.otf')
+	
+}
+
+
+
+.scoutboldhead {
+  font-family: Scout;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height:110%;
+  letter-spacing: 0.03em;
+}
+
+.timeshead {
+	font-family: times;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 95%;
+}
+
+.poynterosdisplaybold {
+  font-family: "Poynter OS Disp";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 110%;
+}
+
+
+/* THIS GUY RIGHT HUR */
+.bentonmoderndisplaybold {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 110%;
+}
+
+.messenger{
+	font-family: messenger;
+	font-size: 65px;
+}
+
+.acta{
+	font-family: acta;
+	font-size: 60px;
+}
+
+.circular{
+	font-family: circular;
+	font-size: 55px;
+}
+
+uline{
+  text-decoration: none;
+  border-bottom: 7px solid black;
+}
+
+/* THIS IS THE RULE RIGHT HUR */
+hr{
+	border-bottom: 7px solid black;
+	width: 25%;
+	height: 8px;
+	margin-top: 25px;
+	margin-bottom: 35px;
+	
+}
+
+.apresreboldhead {
+  font-family: "Apres RE";
+  font-style: normal;
+  font-weight: bold;
+   font-size: 36px;
+  line-height:100%;
+}
+
+.apresreboldh2 {
+  font-family: "Apres RE";
+  font-style: normal;
+  font-weight: bold;
+   font-size: 14px;
+  line-height:125%;
+ }
+  .apresre {
+  font-family: "Apres RE";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height:125%;
+
+}
+
+.antennaboldhead {
+  font-family: Antenna;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height:125%;
+}
+
+.antennaboldh2 {
+  font-family: Antenna;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height:125%;
+}
+
+
+/* ----------------------------------
+
+Page size and paginalia
+
+----------------------------------*/
+
+
+.page-outer {
+	height: 6.88in;
+	width: 4.25in;
+	position: relative;
+    page-break-after: always;
+    margin: auto;
+}
+
+.page-inner {
+	position: absolute;
+	margin: auto;
+	bottom: -0.125in;
+	top: -0.125in;
+	left: -0.125in;
+	right: -0.125in;
+	overflow: hidden;
+	padding: 0.4in 0.6in 0.7in;
+}
+
+.page-outer > footer {
+	font-size: 2em;
+	position: absolute;
+	text-align: center;
+	margin: auto;
+	bottom: 2in;
+	z-index: 100;
+	color: #e50000;
+}
+
+.page-outer > header {
+	position: absolute;
+	bottom: 4in;
+	text-align: right;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-family: Messenger Mono;
+	font-size: 0.8rem;
+	color: #0700a8;
+}
+
+.page-outer:nth-child(odd) > footer {
+	left: 0.15in;
+}
+.page-outer:nth-child(even) > footer {
+	right: 0.15in;
+}
+
+.page-inner._bleed {
+	padding: 0;
+}
+
+/*._book img {
+	width: 100%;
+}*/
+
+._book iframe {
+	width: 8.5in;
+	height: 11in;
+	margin: 0 -1in;
+}
+
+/* ----------------------------------
+
+Book image spreads
+
+----------------------------------*/
+
+
+._book-spread._fullbleed {
+	outline: 1px solid lime;
+	height: 95%;
+	position: relative;
+}
+
+._book-spread-l,
+._book-spread-r {
+	height: 7.5in;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	outline: 1px solid red;
+	break-after: region;
+	box-sizing: content-box;
+}
+
+
+._bleed-enabled ._fullbleed ._book-spread-l,
+._bleed-enabled ._fullbleed ._book-spread-r {
+	height: 8.6in;
+	/*margin: -0.5em -0.5in;
+	padding: 0.5em 0.5in;*/
+}
+
+
+._book-spread figcaption {
+	position: absolute;
+	background: white;
+	bottom: 1in;
+	left: 1in;
+	font-size: 10pt;
+}
+
+._book-spread-l > img,
+._book-spread-r > img {
+	position: absolute;
+	display: block;
+	outline: 1px solid orange;
+	top: 0;
+	width: 193%;
+	/* less than 200% to account for bleed and spine */
+}
+
+._book-spread-l {
+	/* padding-right: 0.5in; */
+}
+
+._book-spread-r {
+	/* padding-left: 0.5in;
+	margin-left: -0.5in; */
+	/* 'Undo' the inside margin */
+}
+
+._book-spread-l img {
+	left: 0;
+}
+
+._book-spread-r img {
+	right: 0;
+	text-align: right;
+}
+
+
+/* ----------------------------------
+
+For previewing the print
+
+----------------------------------*/
+
+.print-nav {
+	display: none;
+}
+
+	.page-outer > footer {
+	font-size: 2em;
+	position: absolute;
+	text-align: center;
+	margin: auto;
+	bottom: 2in;
+	z-index: 100;
+}
+
+	.page-outer > header {
+		position: absolute;
+		bottom: 4in;
+		text-align: right;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-family: Messenger Mono;
+		font-size: 0.8rem;
+	}
+	
+	.page-outer > footnotes{
+	  position: absolute;
+	  bottom: 0.35in;
+	  font-family: Messenger Mono;
+	  font-size: 0.5rem;
+	}
+	.page-outer:nth-child(odd) > footnotes{
+	  right: 0.5in;
+	  text-align: right;
+	}
+	.page-outer:nth-child(even) > footnotes{
+	  left: 0.5in;
+	  text-align: left;
+	}
+	
+	.page-outer:nth-child(odd) > header {
+		-webkit-transform-origin: top left;
+		-webkit-transform: rotate(90deg);
+		left: 0.3in;
+	}
+	
+	.page-outer:nth-child(even) > header {
+		-webkit-transform-origin: top right;
+		-webkit-transform: rotate(-90deg);
+		right: 0.3in;
+	}
+	
+	
+	.page-outer:nth-child(odd) > footer {
+		left: 0.15in;
+	}
+	.page-outer:nth-child(even) > footer {
+		right: 0.15in;
+	}
+
+@media screen {
+	._book body {
+		max-width: none;
+		background: #eee
+	}
+
+	.page-outer {
+		background: white;
+		display: inline-block;
+	    margin: 30px 20px;
+	    box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+	    outline: 1px solid black;
+	    overflow: hidden;
+	}
+	
+
+
+	._guides .page-outer {
+		overflow: visible;
+	}
+
+	/* bleed line */
+	._guides .page-inner {
+		outline: 1px solid cyan;
+	}
+
+	/* margin line */
+	._guides .page-outer::after {
+		content: "";
+		border: 1px dotted cyan;
+		position: absolute;
+		display: block; 
+		bottom: 0.5in;
+		top: 0.2in;
+		left: 0.4in;
+		right: 0.4in;
+		pointer-events: none;
+	}
+
+	/* page line */
+	._guides .page-outer::before {
+		content: "";
+		border: 1px solid magenta;
+		position: absolute;
+		display: block;
+		bottom: 0in;
+		top: 0in;
+		left: 0in;
+		right: 0in;
+		z-index: 100;
+		pointer-events: none;
+	}
+
+	.page-outer[data-page='1'] {
+		display: block;
+		margin: 1rem auto;
+	}
+
+	.print-nav {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: white;
+		display: block;
+		z-index: 999;
+		padding: 15px;
+		border-top: 1px solid gray;
+	}
+
+}
+
+
+/* ----------------------------------
+
+Faked print styles
+
+----------------------------------*/
+
+
+._book ._page-break {
+	display: block;
+	outline: 1px solid red;
+	break-after: region;
+	margin-bottom: 6in;
+	opacity: 0.1;
+}
+
+._book ._page-break:after {
+	content: "Force a page break!";
+	position: absolute;
+	color: red;
+}
+
+
+/* ----------------------------------
+
+"Actual" print styles
+
+----------------------------------*/
+
+@media print {
+	body, html {
+		margin: 0;
+		padding: 0;
+	}
+
+	.page-outer {
+		margin-top: 0.2in;
+		outline: 1px solid black;
+	}
+}
+/*
+@page {
+	margin: 0;
+	width: 8.5in;
+	height: 11in;
+}
+
+
+@page :left{
+	margin-left: 1in;
+}
+
+@page :right{
+	margin-right: 1in;
+}
+
+*/
