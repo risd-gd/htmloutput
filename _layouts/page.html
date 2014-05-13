@@ -20,6 +20,13 @@
             $('img').each(function(){
                 $(this).wrap("<div class='imageContainer'></div>");
             })
+
+            $('imageContainer').hover(function(){
+                $(this).toggleClass('selectedImage');
+                $('imageContainer').not(document.getElementByClass("selectedImage")).css('opacity','0.15');
+            }, function(){
+
+            })
         })
     </script>
 
@@ -33,6 +40,7 @@
         .imageContainer:hover{
             width:800px;
             height:400px;
+            overflow:visible;
         }
     </style>
   </head>
