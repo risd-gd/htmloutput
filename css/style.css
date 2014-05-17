@@ -145,7 +145,7 @@ nav {
   z-index: 2;
   position: fixed;
   top: 15px;
-  left: 15px;
+  right: 15px;
   width: 300px;
   display: inline-block;
   padding: 30px 0px;
@@ -157,12 +157,26 @@ nav {
   cursor: pointer;
 }
 
+.site-title {
+  padding: 10px 0px;
+  color: blue;
+  text-align: center;
+}
+
+
+[data-togglee] {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s;
+}
+
 #nav_box{
-	top: 95px;
+	top: 0px;
   left: 0px;
 	width: 300px;
   /*was 400px*/
-	max-height: 70%;
+	max-height: 90%;
+  /* bottom: 10px; */
 	padding:25px;
 	margin:15px;
 	display:inline-block;
@@ -171,7 +185,7 @@ nav {
 	/*border: 2px solid black;*/
 	box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 	overflow-y:auto;
-  font-size: 14px;
+  /*font-size: 14px;*/
   z-index: 3;
   font-family: "Messenger Text", sans-serif;
 }
