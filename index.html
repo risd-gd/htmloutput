@@ -10,7 +10,7 @@ title: HTML OUTPUT
 <div id="nav_box">
     <div class="site-title" data-toggler>☰ HTML OUTPUT</div>
 
-    <div data-togglee>
+    <div class="toglee" data-togglee>
         {% for category in site.types %}
         <div class="top">{{ category }}:</div>
             {% for page in site.pages %}{% if page.category == category %}
@@ -44,11 +44,17 @@ title: HTML OUTPUT
 </div>
 
 <script>
-    var toggler = document.querySelector("[data-toggler]");
+    /*var toggler = document.querySelector("[data-toggler]");
     var togglee = document.querySelector("[data-togglee]");
 
     toggler.addEventListener("click", function(e){
         togglee.style.maxHeight = "1000px";
         console.log("hey");
+    }); */
+
+    $( ".site-title" ).click(function() {
+        $( ".toglee" ).toggle( 500, function() {
+            // Animation complete.
+        });
     });
 </script>

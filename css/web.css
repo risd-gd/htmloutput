@@ -29,6 +29,10 @@ body {
   border-bottom: 3px solid blue;
 }
 
+.site-title{
+  cursor: pointer;
+}
+
 /* ----------------------------------
 
 Interview & Project Styles
@@ -95,22 +99,6 @@ hr {
   margin-bottom: 35px;
 }
 
-p {
-
-    width:500px;
-    margin:auto;
-    font-size:18px;
-    line-height:1.5em;
-    margin-bottom:15px;
-}
-
-a {
-    color:rgb(55,50,255);
-    text-decoration: none;
-} a:hover {
-    background-color:rgb(55,50,255);
-}
-
 .interview {
   margin:auto;
   width: 60%;
@@ -159,7 +147,39 @@ blockquote{
   padding-bottom: 15px;
 }
 
-/*-----Media Query maybe-----*/ 
+/* ----------------------------------
+
+General Styling
+
+----------------------------------*/
+
+p {
+
+    width:500px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.5em;
+    margin-bottom:15px;
+}
+
+a {
+    color:rgb(55,50,255);
+    text-decoration: none;
+} a:hover {
+    background-color:rgb(55,50,255);
+}
+
+#nav_box{
+}
+.toglee{
+  max-height: 800px;
+  display: none;
+
+}
+
+
+
+/*-----Media Query maybe-----*/
 @media (max-width: 640px) {
   .interview-q {
     font-family:'Benton Modern';
