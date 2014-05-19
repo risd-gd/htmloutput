@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//cloud.webtype.com/css/422a9116-3c4c-4a87-8994-557df8ada6b9.css" rel="stylesheet" type="text/css" />
-    <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
-    <link href="//cloud.webtype.com/css/e808a380-c942-4cb0-b7ba-fc7a755d85f9.css" rel="stylesheet" type="text/css" />
-    <link href="//cloud.webtype.com/css/30d3bb54-2826-4d0a-af4b-6629e5dd58b1.css" rel="stylesheet" type="text/css" />
-    <link href="//cloud.webtype.com/css/e573bdaf-4428-42af-a427-9cc650bb1895.css" rel="stylesheet" type="text/css" />
-    <link href="{{ site.baseurl }}/css/webtype.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//cloud.webtype.com/css/422a9116-3c4c-4a87-8994-557df8ada6b9.css" rel="stylesheet" type="text/css" />
+        <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
+        <link href="//cloud.webtype.com/css/e808a380-c942-4cb0-b7ba-fc7a755d85f9.css" rel="stylesheet" type="text/css" />
+        <link href="//cloud.webtype.com/css/30d3bb54-2826-4d0a-af4b-6629e5dd58b1.css" rel="stylesheet" type="text/css" />
+        <link href="//cloud.webtype.com/css/e573bdaf-4428-42af-a427-9cc650bb1895.css" rel="stylesheet" type="text/css" />
+        <link href="{{ site.baseurl }}/css/webtype.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('img').each(function(){
-                $(this).wrap("<div class='imageContainer'></div>");
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/web.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('img').each(function(){
+                    $(this).wrap("<div class='imageContainer'></div>");
+                })
+
+                $('.imageContainer').hover(function(){
+                    $(this).toggleClass('selectedImage');
+                    $('.imageContainer').not(".selectedImage").css('opacity','0.05');
+                    $('p').css('opacity','0.05');
+
+
+                }, function(){
+                    $(this).toggleClass('selectedImage');
+                    $('.imageContainer').css('opacity','1');
+                    $('p').css('opacity','1');
+
+                })
+
+
+
+
             })
+        </script>
 
-            $('.imageContainer').hover(function(){
-                $(this).toggleClass('selectedImage');
-                $('.imageContainer').not(".selectedImage").css('opacity','0.05');
-                $('p').css('opacity','0.05');
+        <style>
+            .imageContainer{
+                width:700px;
+                height:300px;
+                overflow:hidden;
+            }
 
+            .imageContainer:hover{
+                width:800px;
+                height:400px;
+                overflow:visible;
+            }
 
-            }, function(){
-                $(this).toggleClass('selectedImage');
-                $('.imageContainer').css('opacity','1');
-                $('p').css('opacity','1');
+            .selectedImage{
 
-            })
-
-
-
-
-        })
-    </script>
-
-    <style>
-        .imageContainer{
-            width:700px;
-            height:300px;
-            overflow:hidden;
-        }
-
-        .imageContainer:hover{
-            width:800px;
-            height:400px;
-            overflow:visible;
-        }
-
-        .selectedImage{
-            
-        }
-    </style>
-  </head>
+            }
+        </style>
+    </head>
 
 
-  <body>
+    <body>
 
-    <div class="wrapper">
+        <div class="wrapper">
 
-        <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
+            <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
 
         <div class="title">{{ page.title }} <hr> {{ page.description }}<hr> by {{ page.author }}<hr></div>
 
         {{ content }}
 
     </div>
-  </body>
+
+    <!-- CODEMIRROR (For syntax highlighting) -->
+    <script src="{{ site.baseurl }}/script/cm4/lib/codemirror.js"></script>
+    <script src="{{ site.baseurl }}/script/cm4/addon/runmode/runmode.js"></script>
+    <script src="{{ site.baseurl }}/script/cm4/mode/xml/xml.js"></script>
+    <script src="{{ site.baseurl }}/script/cm4/mode/javascript/javascript.js"></script>
+    <script src="{{ site.baseurl }}/script/cm4/mode/css/css.js"></script>
+</body>
 </html>
 
 </html>

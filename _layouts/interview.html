@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/script/web.js"></script>
         <script>
             $(document).ready(function(){
                 $('img').each(function(){
@@ -39,14 +40,20 @@
 
         <div class="wrapper">
 
-        <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
+            <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
 
-        <div class="title interview-name">{{ page.title }} <hr class="interview-bar" /> {{ page.description }}<hr class="interview-bar" /> by {{ page.author }}<hr class="interview-bar" /></div>
+            <div class="title interview-name">{{ page.title }} <hr class="interview-bar" /> {{ page.description }}<hr class="interview-bar" /> by {{ page.author }}<hr class="interview-bar" /></div>
 
-        {{ content }}
-    </div>
+            {{ content }}
+        </div>
 
 
-</body>
+    <!-- CODEMIRROR (For syntax highlighting) -->
+        <script src="{{ site.baseurl }}/script/cm4/lib/codemirror.js"></script>
+        <script src="{{ site.baseurl }}/script/cm4/addon/runmode/runmode.js"></script>
+        <script src="{{ site.baseurl }}/script/cm4/mode/xml/xml.js"></script>
+        <script src="{{ site.baseurl }}/script/cm4/mode/javascript/javascript.js"></script>
+        <script src="{{ site.baseurl }}/script/cm4/mode/css/css.js"></script>
+    </body>
 
 </html>

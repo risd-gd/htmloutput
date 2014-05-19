@@ -192,6 +192,7 @@ nav {
 #nav_box .top{
   /* text-align: center; */
   text-transform: uppercase;
+  text-weight: bold;
   padding: 10px;
   font: 20px/1.4 "Messenger Text", sans-serif;
 }

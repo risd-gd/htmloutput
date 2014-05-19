@@ -172,9 +172,8 @@ a {
 #nav_box{
 }
 .toglee{
-  max-height: 800px;
   display: none;
-
+  max-height: 5000px;
 }
 
 

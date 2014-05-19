@@ -9,10 +9,11 @@ title: HTML OUTPUT
 
 <div id="nav_box">
     <div class="site-title" data-toggler>☰ HTML OUTPUT</div>
-
     <div class="toglee" data-togglee>
+            <hr />
         {% for category in site.types %}
         <div class="top">{{ category }}:</div>
+        <hr />
             {% for page in site.pages %}{% if page.category == category %}
                 {% if category == 'interview' %}
                     <strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
@@ -24,6 +25,7 @@ title: HTML OUTPUT
 
                 {% endif %}
             {% endfor %}
+        <hr />
         {% endfor %}
     </div>
 </div>
