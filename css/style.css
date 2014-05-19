@@ -72,12 +72,6 @@ strong{
   font-weight: bold;
 }
 
-code {
-	font:       0.8rem/1.4 Messenger Mono, monospace;
-	background: #ffffbb;
-	display: inline-block;
-}
-
 blockquote {
 	margin-left: 1.4rem;
 	color: gray;

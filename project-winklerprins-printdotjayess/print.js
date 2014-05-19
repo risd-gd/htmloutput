@@ -3,8 +3,8 @@ $('document').ready(function(){
   var p_width = 4.5; // 4.25 crop
   var p_length = 7.13; // 6.88 crop
   var p_unit = "in";
-  var type = "pattern"; // pattern or chunks
-  var kind = "fixed"; // scroller or fixed (if a pattern)
+  var kind = "fixed"; // scroller or fixed pattern.
+  // (i.e. you scroll down a page, or changes as you scroll with fixed positioned elements)
 
   var browser_window_sizing = 0;
 
@@ -14,7 +14,7 @@ $('document').ready(function(){
     p_unit = "px"; //
   }
 
-  var p_m = ""; // this will be the string we add all styling to.
+  var p_m = ""; // String of all Print Media styling.
 
   //////////////////////////////////////////////////////
   // Check for a container/wrapper of the entire document
@@ -39,7 +39,7 @@ $('document').ready(function(){
   //////////////////////////////////////////////////////
   for(var i = 0; i < num_cont; i++){
 
-    var cont_identifier = "#"; // Start by assuming the first div on the pattern repeat page is a container
+    var cont_identifier = "#"; // Start by assuming the first div is a container.
     var cont_name = $(wrap_identifier+wrap_name+" > div").eq(i).attr('id');
 
     if(cont_name == null){
@@ -51,7 +51,6 @@ $('document').ready(function(){
         cont_identifier = wrap_identifier+wrap_name+" div:eq("+i+") > ";
 
       }else if(0){
-        //alert("Please make sure your pattern begins with a container-style div");
         alert("Your document structure might not match print.js' needs.");
         cont_name = null;
       }
@@ -116,12 +115,12 @@ $('document').ready(function(){
   wrap_css = wrap_css + "} ";
   p_m = p_m + wrap_identifier+wrap_name+wrap_css;
 
-  p_m = p_m + "body{height: "+p_length+p_unit+"; width: "+p_width+p_unit+"; overflow: hidden;} "; // background-color: transparent ???
+  p_m = p_m + "body{height: "+p_length+p_unit+"; width: "+p_width+p_unit+"; overflow: hidden;} ";
 
   //////////////////////////////////////////////////////
-  // END STUFF—finishes the @media print CSS thingy, assuming all existinc CSS is for screen (could use a check)
+  // END STUFF—finishes the @media print CSS
   var css = $("style").html();
-  // when "screen" media left unspecified, @print just writes on top of the normal style (good to retain the page's inherent style)
+  // when "screen" media left unspecified, @print just writes on top of the normal style
   css = css + "@media print{" + p_m+"} ";
   //css = css + p_m; // for testing purposes only
 
