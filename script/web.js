@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   highlightCode();
 
-  $('img').each(function(){
+    $('img').each(function(){
     $(this).wrap("<div class='imageContainer'></div>");
   })
 
@@ -10,13 +10,10 @@ $(document).ready(function(){
     $(this).toggleClass('selectedImage');
     $('.imageContainer').not(".selectedImage").css('opacity','0.05');
     $('p').css('opacity','0.05');
-
-
   }, function(){
     $(this).toggleClass('selectedImage');
     $('.imageContainer').css('opacity','1');
     $('p').css('opacity','1');
-
   })
 
 });

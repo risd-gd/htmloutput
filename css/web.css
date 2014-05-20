@@ -46,20 +46,23 @@ code {
 }
 
 .imageContainer{
-                width:700px;
-                height:300px;
-                overflow:hidden;
-            }
+  width:700px;
+  height:300px;
+  overflow:hidden;
+}
 
-            .imageContainer:hover{
-                width:800px;
-                height:400px;
-                overflow:visible;
-            }
+.imageContainer:hover{
+  overflow:visible;
+  width: auto;
+  height: auto;
+  min-width: 700px;
+  min-height: 300px;
+}
 
-            .selectedImage{
-
-            }
+.selectedImage{
+  z-index: 200;
+  opacity: 1;
+}
 
 /* ----------------------------------
 
