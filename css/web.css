@@ -45,6 +45,22 @@ code {
   word-wrap: break-word;
 }
 
+.imageContainer{
+                width:700px;
+                height:300px;
+                overflow:hidden;
+            }
+
+            .imageContainer:hover{
+                width:800px;
+                height:400px;
+                overflow:visible;
+            }
+
+            .selectedImage{
+
+            }
+
 /* ----------------------------------
 
 Interview & Project Styles

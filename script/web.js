@@ -2,6 +2,23 @@ $(document).ready(function(){
 
   highlightCode();
 
+  $('img').each(function(){
+    $(this).wrap("<div class='imageContainer'></div>");
+  })
+
+  $('.imageContainer').hover(function(){
+    $(this).toggleClass('selectedImage');
+    $('.imageContainer').not(".selectedImage").css('opacity','0.05');
+    $('p').css('opacity','0.05');
+
+
+  }, function(){
+    $(this).toggleClass('selectedImage');
+    $('.imageContainer').css('opacity','1');
+    $('p').css('opacity','1');
+
+  })
+
 });
 
 function highlightCode(){
@@ -28,3 +45,4 @@ function highlightCode(){
     else if (ext == "js") return "javascript";
   };
 }
+
