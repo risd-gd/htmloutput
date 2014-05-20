@@ -34,9 +34,13 @@ body {
 }
 
 code {
-	font:       0.8rem/1.4 Messenger Mono, monospace;
-	background: #ffffbb;
+	font: 0.8rem/1.4 Messenger Mono, monospace;
+	background: rgba(0, 255, 0, .04);
+	border: 1px solid rgba(0,255,0,0.1);
+	padding: 0.1in 0in;
+	margin: 1em 0in;
 	display: inline-block;
+  width: 100%;
 }
 
 /* ----------------------------------

@@ -243,7 +243,7 @@ Code snippet
 	border-top: 1px solid rgba(0,255,0,0.1);
 	border-bottom: 1px solid rgba(0,255,0,0.1);
 	padding: 0.1in 0.6in;
-	margin: 0 -0.6in 1.4em;
+	margin: 1em -0.6in;
 }
 [data-css-starting-fragment].snippet-ready {
 	margin-top: -0.6in !important;
