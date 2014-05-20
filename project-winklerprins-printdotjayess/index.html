@@ -23,14 +23,17 @@ printready: true
 
 <p>
     There are some best practices for formatting:<br />
-    1. All javascript must be in the head or external file. None in the body. Use jquery!<br />
-    2. Put print.js at the very end of your head.<br />
-    3. The outside div should be called either "wrapper" or "container," otherwise it will assume it is a structural div rather than big wrapper.<br />
-    4. Structure goes body > "wrapper" > container divs > pattern divs. <br />
-    5. Write your CSS in a <code><textarea class="snippet" data-mode="html"><style></textarea></code> tag rather than on a separate .css file. <br />
-    6. Requires a <code><textarea class="snippet" data-mode="html"><!DOCTYPE HTML></textarea></code> tag at beginning, to find page height.
+    <strong>1.</strong> All javascript must be in the head or external file. None in the body. Use jquery!<br />
+    <strong>2.</strong> Put print.js at the very end of your head.<br />
+    <strong>3.</strong> The outside div should be called either &ldquo;wrapper&rdquo; or &ldquo;container,&rduo; otherwise it will assume it is a structural div rather than big wrapper.<br />
+    <strong>4.</strong> Structure goes body > &ldquo;wrapper&rdquo; > container divs > pattern divs. <br />
+    <strong>5.</strong> Write your CSS in a <code><textarea class="snippet" data-mode="html"><style></textarea></code> tag rather than on a separate .css file. <br />
+    <strong>6.</strong> Requires a <code><textarea class="snippet" data-mode="html"><!DOCTYPE HTML></textarea></code> tag at beginning, to find page height.
 </p>
     <p>
+        Below is the javascript. At top, you input paper width and length, and the unit you used. You can also view the source <a href="{{site.baseurl}}/project-winklerprins-printdotjayess/print.js">here</a>.
+    </p>
+
     <code><textarea class="snippet" data-mode="js">
 $('document').ready(function(){
 
@@ -170,5 +173,3 @@ $('document').ready(function(){
 });
 </textarea></code>
 
-
-</p>
