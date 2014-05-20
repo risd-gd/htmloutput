@@ -90,7 +90,9 @@ img{
 .wrapper div, p, figure, figcaption{
   max-width: 500px;
   margin: auto;
-} .wrapper img {
+}
+
+.wrapper img {
   height:auto;
   max-width: 800px;
   margin-left: auto;
@@ -103,9 +105,11 @@ img{
 }
 .interview-q:before{
   color: #20B981;
+  line-height: 24px;
 }
 .interview-a:before{
   color: black;
+  line-height: 1.5em;
 }
 
 .interview-a { text-indent: 20px;  }
@@ -136,21 +140,15 @@ hr {
 }
 
 .interview-q{
-
   font-family: 'Messenger Text';
   font-size:24px;
-
   color: #20B981;
-
   width:450px;
   margin-left:30%;
-  margin-bottom:-15px;
-  margin-top:55px;
 
 }
 
 .interview-a{
-  margin-bottom:15px;
   font-size:18px;
   line-height:1.5em;
 }
