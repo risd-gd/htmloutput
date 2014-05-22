@@ -29,14 +29,13 @@ $('document').ready(function(){
   if(wrap_name != 'container' && wrap_name != 'wrapper'){
     // there isn't a wrapper. Let's make one! (happens later)
     no_wrap = 1;
-    wrap_name = "body";
+    wrap_name = "body >";
     wrap_identifier = "";
   }
 
+  //////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
   var num_cont = $(wrap_identifier+wrap_name+" > div").length;
-
-  //////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////
   for(var i = 0; i < num_cont; i++){
 
     var cont_identifier = "#"; // Start by assuming the first div is a container.
@@ -48,11 +47,8 @@ $('document').ready(function(){
       if(cont_name == null){
         // still! Just unadorned <div> then
         cont_name = "";
-        cont_identifier = wrap_identifier+wrap_name+" div:eq("+i+") > ";
+        cont_identifier = wrap_identifier+wrap_name+" div:eq("+i+")";
 
-      }else if(0){
-        alert("Your document structure might not match print.js' needs.");
-        cont_name = null;
       }
     }
     var num_repeat = 0;
@@ -61,9 +57,9 @@ $('document').ready(function(){
     repeat_name = $(cont_identifier+cont_name+" > div").eq(0).attr("class");
 
     if(repeat_name == null){
-      num_repeat = $(cont_identifier+cont_name+" div").length;
+      num_repeat = $(cont_identifier+cont_name+" > div").length;
     }else{
-      num_repeat = $(cont_identifier+cont_name+" div."+repeat_name).length;
+      num_repeat = $(cont_identifier+cont_name+" > div."+repeat_name).length;
     }
 
     //////////////////////////////////////////////////////
@@ -71,6 +67,7 @@ $('document').ready(function(){
 
     var cont_p_width = 2+p_width;
     var cont_p_length = 1+p_length;
+    // these dimensions structure the overflow. one unit on either side, one unit on top.
 
     var cont_css = "{ overflow: hidden; width: "+cont_p_width+p_unit+"; ";
     if(kind == "scroll"){
@@ -81,6 +78,7 @@ $('document').ready(function(){
     cont_css = cont_css + "top: -1"+p_unit+"; left: -1"+p_unit+"; } ";
 
     var repeat_css = "{} ";
+    // content can go in here as user desires.
 
     p_m = p_m + cont_identifier + cont_name + cont_css;
 
@@ -118,7 +116,7 @@ $('document').ready(function(){
   p_m = p_m + "body{height: "+p_length+p_unit+"; width: "+p_width+p_unit+"; overflow: hidden;} ";
 
   //////////////////////////////////////////////////////
-  // END STUFF—finishes the @media print CSS
+  // Finishes the @media print CSS
   var css = $("style").html();
   // when "screen" media left unspecified, @print just writes on top of the normal style
   css = css + "@media print{" + p_m+"} ";
