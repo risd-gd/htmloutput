@@ -97,8 +97,6 @@ function reportPagesLeft(p) {
 }
 
 
-
-
 // _________________________
 
 // Pre-process to detect full-spread images and split them in half
@@ -269,7 +267,6 @@ function postProcessPages(){
       }
     }
 
-
     // [C] Set this page's page kind
     pg.parentNode.setAttribute("data-page-kind", pageKind);
     pg.parentNode.setAttribute("data-page-interv", intervName);
@@ -277,7 +274,6 @@ function postProcessPages(){
     // [D] Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");
     if (runner) runner.innerHTML = "<span>" + head + "</span>";
-
 
     // [E] Set footnotes
     var links = pg.querySelectorAll("[data-href]");
@@ -424,5 +420,4 @@ for(i=0; i<num_links; i++){
 
 }
 */
-
 

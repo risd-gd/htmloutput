@@ -139,7 +139,7 @@ nav {
   z-index: 2;
   position: fixed;
   top: 15px;
-  right: 15px;
+  left: 15px;
   width: 300px;
   display: inline-block;
   padding: 30px 0px;
@@ -165,7 +165,7 @@ nav {
 }
 
 #nav_box{
-	top: 0px;
+	top: 100px;
   left: 0px;
 	width: 300px;
   /*was 400px*/
@@ -196,6 +196,10 @@ nav {
 
 #nav_box .nav_link:hover{
   cursor: pointer;
+}
+
+#nav_box a.interview:before{
+  content: "❝ ";
 }
 
 #content{

@@ -60,7 +60,7 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page">
-  <p>This is a book we made</p>
+  <p>This is a book we made.</p>
 </div>
 <div class="_page-break"></div>
 
@@ -78,14 +78,13 @@ Table of Contents
   {% if page.printready %}
     <div class="toc-item">
       {% if page.category == 'interview' %}
-        <h4>{{ page.interviewee }} talks to {{ page.interviewer }}</h4>
+        <h4>{{ page.interviewee }} talks to <span class="toc-author">{{ page.interviewer }}</span></h4>
       	<div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
         </div>
       {% else %}
         <h4>
-        	{{ page.title }}
-        	— <span class="toc-author">{{ page.author }}</span>
+        	{{ page.title }} — <span class="toc-author">{{ page.author }}</span>
         </h4>
       	<div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />

@@ -35,14 +35,14 @@ printready: true
 
 <p>The following is the code of BabyBrowser in full. Please, try this at home.</p>
 
-<textarea class="snippet" data-mode="js">
-	
+<code><textarea class="snippet" data-mode="js">
+
 import javax.swing.*; // importing the swing library
 import java.awt.*; // importing the awt library
 import java.io.*; //importing java input/output
 
 public class BabyBrowser {
-	
+
 	public static void main (String[] args) throws IOException{
 
 		// laying out our application frame using Swing stuff
@@ -61,7 +61,7 @@ public class BabyBrowser {
 		back.setSize(50, 50);
 		JButton go = new JButton(text2);
 		go.setSize(50, 50);
-		
+
 		// url
 		String urlstrang = "http://pheel.us/thanks/";
 		JTextField url = new JTextField(urlstrang);
@@ -74,11 +74,11 @@ public class BabyBrowser {
 
 		//setting the url
 		JEditorPane content = new JEditorPane("http://pheel.us/thanks/");
-		
+
 		//adding the content window part of the application
 		JScrollPane jscroll1 = new JScrollPane(content);
 		jscroll1.setSize(500, 200);
-			
+
 		// more layout stuff
 		jf1.add(jp1, BorderLayout.NORTH);
 		jf1.add(jscroll1, BorderLayout.CENTER);
@@ -88,5 +88,5 @@ public class BabyBrowser {
 		jf1.setVisible(true);
 	}
 }
-</textarea>
+    </textarea></code>
 
