@@ -85,6 +85,7 @@ function finallyTheLayoutIsDone() {
   };
 
   postProcessPages();
+  $(".toc [type=checkbox]").replaceWith("&#10005;"); // replaces checkboxes with X
 }
 
 var progbar = document.getElementById("progbar");
@@ -275,7 +276,7 @@ function postProcessPages(){
     var runner = pg.parentNode.querySelector("._running-head ._section");
     if (runner) runner.innerHTML = "<span>" + head + "</span>";
 
-    // [E] Set footnotes
+    // [E] Set footnotes... might not be necessary any more.
     var links = pg.querySelectorAll("[data-href]");
     if (links) {
       var notes = "";
@@ -420,4 +421,3 @@ for(i=0; i<num_links; i++){
 
 }
 */
-
