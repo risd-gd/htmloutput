@@ -196,6 +196,7 @@ a {
     text-decoration: none;
 } a:hover {
     background-color:rgb(55,50,255);
+    color: white;
 }
 
 #nav_box{
