@@ -18,9 +18,9 @@ title: HTML OUTPUT
                 {% if category == 'interview' %}
                     <!--<strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
                     {{ page.interviewee }} &#8212; {{ page.interviewer }}<br /> -->
-        <strong><a class="nav_link {{category}}" name="{{page.url}}">{{ page.interviewee }} talks to {{ page.interviewer }}</a><br /></strong>
+        <a class="nav_link {{category}}" name="{{page.url}}">{{ page.interviewee }} talks to {{ page.interviewer }}</a><br />
                 {% else %}
-                    <strong><a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br /></strong>
+                    <a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br />
                     {{ page.author }}<br />
                 {% endif %}
 
