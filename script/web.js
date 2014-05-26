@@ -2,9 +2,10 @@ $(document).ready(function(){
 
   highlightCode();
 
-    $('img').each(function(){
+  $('img').not('.nohover').each(function(){
     $(this).wrap("<div class='imageContainer'></div>");
   })
+
 
   $('.imageContainer').hover(function(){
     $(this).toggleClass('selectedImage');
