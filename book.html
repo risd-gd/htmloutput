@@ -76,21 +76,21 @@ Table of Contents
 
 {% for page in site.pages %}
   {% if page.printready %}
-    <div class="toc-item">
+    <label class="toc-item">
       {% if page.category == 'interview' %}
-        <h4>{{ page.interviewee }} talks to <span class="toc-author">{{ page.interviewer }}</span></h4>
-      	<div class="toc-pg" data-toc="{{ page.interviewee }}">
+        <div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
         </div>
+        <h4>{{ page.interviewee }} talks to <span class="toc-author">{{ page.interviewer }}</span></h4>
       {% else %}
-        <h4>
-        	{{ page.title }} — <span class="toc-author">{{ page.author }}</span>
-        </h4>
       	<div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />
         </div>
+        <h4>
+          {{ page.title }} — <span class="toc-author">{{ page.author }}</span>
+        </h4>
       {% endif %}
-    </div>
+    </label>
   {% endif %}
 {% endfor %}
 </div>
@@ -173,6 +173,7 @@ All Content
     data-category="{{ page.category }}"
     data-interviewee="{{ page.interviewee }}"
     data-interviewer="{{ page.interviewer }}"
+    data-pageurl="html.risd.gd{{page.url}}"
     data-id="{{ page.interviewee }}">
     {{ page.title }}
 </h1>
@@ -188,6 +189,7 @@ All Content
       data-change-running-head
       data-change-page-kind
       data-category="{{ page.category }}"
+      data-pageurl="html.risd.gd{{page.url}}"
       data-id="{{ page.title }}">
         {{ page.title }}
   </h1>
