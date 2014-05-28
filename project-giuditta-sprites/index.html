@@ -1,0 +1,35 @@
+---
+
+layout: page
+title: CSS Sprite explosion
+author: Daniel Giuditta
+description: Fun in the browser with web inspector and CSS Sprite sheets
+category: project
+printready: true
+
+---
+
+<p>
+CSS sprite sheets are strange artifact of contemporary web infrastructure that are on the verge of extinction. Websites like google and facebook are served many millions of times per day. The contents of the webpage all have to be sent from the server to your computer, and each time the 'client' and the server communicate its costs a fraction of a penny. 
+</p>
+
+<p>
+CSS sprite sheets are large image maps masked out by divs. They can be manually revealed by isolating the element in web inspector, expanding the width and height of the parent div so that the frame around the sprite sheet no longer masked out a single icon but reveals the entire image map. In some cases I had to move the background positioning to 0,0 so that the image was centered in the now expanded parent frame. In contrast to the Content Stripper which showed a webpage at its most minimal, manually revealing sprite sheets created a texture of density on familiar sites. Facebook with all of its sprite sheets revealed shows the hidden structure of Facebook— its the Facebook that's always there but we never see. 
+</p>
+
+
+<!-- This image will go across two pages and full bleed -->
+<figure data-imagespread data-fullbleed>
+	<img src="../project-giuditta-sprites/hero.png">
+</figure>
+
+<!-- This image will go across two pages and full bleed -->
+<figure data-imagespread data-fullbleed>
+	<img src="../project-giuditta-sprites/fb.png">
+</figure>
+
+<!-- This image will go across two pages and full bleed -->
+<figure data-imagespread data-fullbleed>
+	<img src="../project-giuditta-sprites/goog.png">
+</figure>
+
