@@ -10,11 +10,13 @@ window.HAS_COMPLETED_ONE_LAYOUT = false;
 // User interface
 
 var toggler = document.getElementById("toggleguides");
+var togglecrop = document.getElementById("togglecrop");
 var regionizer = document.getElementById("regionize");
 var restyle = document.getElementById("restyle");
 var postproc = document.getElementById("postproc");
 
-if (toggler) toggler.addEventListener("click", toggleprint);
+if (toggler) toggler.addEventListener("click", toggleGuidesAndBleed);
+if (togglecrop) togglecrop.addEventListener("click", toggleCropMarks);
 if (regionizer) regionizer.addEventListener("click", regionize);
 if (restyle) restyle.addEventListener("click", reloadStylesheets);
 if (postproc) postproc.addEventListener("click", function(){
@@ -30,9 +32,11 @@ $(".toc [type=checkbox]").change(function(e){
   var elt = document.querySelector('[data-id="' + id + '"]');
 
   if (!this.checked) {
+    this.parentNode.parentNode.classList.add("_wont-print");
     $(elt).nextUntil("[data-id]").andSelf().attr("data-remove-before-print", true);
   }
   else {
+    this.parentNode.parentNode.classList.remove("_wont-print");
     $(elt).nextUntil("[data-id]").andSelf().removeAttr("data-remove-before-print");
   }
 
@@ -80,9 +84,9 @@ function finallyTheLayoutIsDone() {
 
   HAS_COMPLETED_ONE_LAYOUT = true;
 
-  window.onbeforeunload = function() {
-    return "Are you in a hurry? If you leave this page it will need to be rebuilt again. That'll take a minute.";
-  };
+  // window.onbeforeunload = function() {
+  //   return "Are you in a hurry? If you leave this page it will need to be rebuilt again. That'll take a minute.";
+  // };
 
   postProcessPages();
   $(".toc [type=checkbox]").replaceWith("&#10005;"); // replaces checkboxes with X
@@ -187,7 +191,7 @@ function preProcessPages() {
 
 // _________________________
 
-// Codemirror
+// Codemirror code highlighting
 
 // _________________________
 
@@ -228,12 +232,14 @@ function postProcessPages(){
 
   // Persists as we loop through pages
   var head  = ""
+    , headUrl = ""
     , pageKind = ""
     , intervName;
 
   var pages = document.querySelectorAll(".page-inner");
   for (var i = 0; i < pages.length; i++) {
     var pg = pages[i];
+    var isRecto = pg.parentNode.classList.contains("_recto") ? true : false;
 
     // [A] Detect bleeds
     var hasBleeds = pg.querySelector("[data-fullbleed]");
@@ -250,6 +256,8 @@ function postProcessPages(){
     }
 
     if (heading) {
+      headUrl = heading.getAttribute("data-pageurl");
+      
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
         head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
@@ -274,7 +282,14 @@ function postProcessPages(){
 
     // [D] Set this page's running head to the current running head
     var runner = pg.parentNode.querySelector("._running-head ._section");
-    if (runner) runner.innerHTML = "<span>" + head + "</span>";
+    if (runner) {
+      if (!isRecto) {
+        runner.innerHTML = "<span>" + head + "</span>";
+      }
+      else {
+        runner.innerHTML = "<span class='_headurl'>" + headUrl + "</span>";
+      }
+    }
 
     // [E] Set footnotes... might not be necessary any more.
     var links = pg.querySelectorAll("[data-href]");
@@ -345,13 +360,24 @@ function reloadStylesheets() {
 
 // -------------------------
 
-function toggleprint(e) {
+function toggleGuidesAndBleed(e) {
   // e.preventDefault();
   if (document.documentElement.classList.contains("_guides")) {
     document.documentElement.classList.remove("_guides");
   }
   else {
     document.documentElement.classList.add("_guides");
+  }
+}
+
+
+function toggleCropMarks(e) {
+  // e.preventDefault();
+  if (document.documentElement.classList.contains("_cropmarks")) {
+    document.documentElement.classList.remove("_cropmarks");
+  }
+  else {
+    document.documentElement.classList.add("_cropmarks");
   }
 }
 

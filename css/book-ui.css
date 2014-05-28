@@ -35,12 +35,63 @@ Faked print styles
 
 /* ----------------------------------
 
+UI for bookmaker
+
+----------------------------------*/
+
+._book._notsplityet {
+	color: black !important;
+}
+
+._book._notsplityet ._wont-print h4 {
+	opacity: 0.3;
+}
+
+._book._notsplityet ._wont-print h4:hover {
+	opacity: 0.4;
+}
+
+._book._notsplityet .toc-pg {
+	left: 0;
+	right: auto;
+	padding: 5px;
+}
+
+._book._notsplityet .toc-item {
+	padding-left: 2.5em;
+}
+
+._book._notsplityet body {
+	/*background: gray;*/
+}
+
+._book._notsplityet .title-page,
+._book._notsplityet .toc-heading {
+	display: none;
+}
+
+._book._notsplityet .toc h4 {
+	font-size: 24px !important;
+}
+
+._book._notsplityet .toc-author {
+	color: inherit !important;
+}
+
+._book._notsplityet .content-source {
+	max-width: 800px;
+	margin: auto;
+	padding: 0.3in 0.4in;
+}
+
+/* ----------------------------------
+
 For previewing the print
 
 ----------------------------------*/
 
 
-.page-outer:before {
+._cropmarks .page-outer:before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -60,14 +111,6 @@ For previewing the print
 .print-nav {
 	display: none;
 	font: 15px/1.4 'Messenger Text', sans-serif;
-}
-
-._book._notsplityet .content-source {
-	width: 4.25in;
-	margin: auto;
-	background: white;
-	padding: 0.3in 0.4in;
-	box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
 }
 
 ._book._notsplityet .page-outer {
@@ -112,7 +155,7 @@ For previewing the print
 		outline: 1px solid cyan;
 	}
 
-	/* margin line */
+	/* margin line 
 	._guides .page-outer::after {
 		content: "";
 		border: 1px dotted cyan;
@@ -123,7 +166,7 @@ For previewing the print
 		left: 0.4in;
 		right: 0.4in;
 		pointer-events: none;
-	}
+	} */
 
 	/* page line */
 /*	._guides .page-outer::before {
@@ -156,22 +199,24 @@ For previewing the print
 		bottom: 0;
 		right: 0;
 		left: 0;
-		background: white;
 		display: block;
 		z-index: 999;
 		padding: 15px;
-		border-top: 1px solid gray;
+		background: white;
+		box-shadow: 0 0 2px rgba(0,0,0,0.2);
 	}
 
 	.toggle-btn {
-		padding: 0.3em 1em;
-		display: inline;
+		padding: 0.4em 1em;
 		margin: -0.3em 0;
 		-webkit-appearance: none;
 		border: none;
-		color: white;
-		background: black;
+		background: transparent;
 		cursor: pointer;
+		border: 1px solid;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		float: right;
 	}
 
 	.toggle-btn:hover {
@@ -222,7 +267,10 @@ Actual print styles
 	.page-outer {
 		/* BECAUSE CHROME !?!?! */
 		-webkit-transform: scale(0.944);
+	}
+
+	/* Hacky and temporary, assume that crop marks means large paper*/
+	._cropmarks .page-outer {
 		margin-top: 1in;
-		/*outline: 1px solid black;*/
 	}
 }
