@@ -38,9 +38,22 @@
             }
 
             .toc {
+                visibility: hidden;
+            }
+
+            .toc, .toc-foot {
                 max-width: 24ch; /* approx character width */
                 margin: 0 auto;
-                visibility: hidden;
+            }
+
+            .toc-foot {
+                margin-top: 3em;
+            }
+
+            header .btn,
+            .toc-foot a, 
+            .toc-foot a:visited {
+                color: blue;
             }
 
             .toc-wrapper {
@@ -109,7 +122,6 @@
             /*.active-item h2 .project-title,*/
             /*.pullquote,*/
             .active-item,
-            header .btn,
             .active-item:after {
                 color: rgb(0, 172, 103);
             }
