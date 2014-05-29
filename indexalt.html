@@ -1,0 +1,57 @@
+---
+layout: toc-alt
+title: HTML OUTPUT
+---
+
+
+<div class="toc-wrapper">
+  <div class="toc">
+
+    <header>
+      <h1>HTML Output</h1>
+      <a class="btn" href="#">&#8984; Book</a>
+    </header>
+
+    <p>
+      This is an introduction. I have a lot of things to say about that. Here is one of those things. Okay okay okay.
+    </p><br><br>
+
+    {% for pg in site.pages %}
+      {% if pg.category %}
+        {% if pg.category == 'interview' %}
+          <div class="item item-interview">
+            <a href="{{ site.baseurl }}{{ pg.url }}">
+              <h2 class="arrowed">
+                <span class="interviewee">
+                  {{pg.interviewee}}
+                </span>
+                talks with
+                {{pg.interviewer}}
+              </h2>
+            </a>
+            <figure class="hero-fig pullquote">
+              <a href="{{ site.baseurl }}{{ pg.url }}" >
+                {{pg.title}}
+              </a>
+            </figure>
+          </div>
+        {% else %}
+          <div class="item item-project">
+            <a href="{{ site.baseurl }}{{ pg.url }}" >
+              <h2>
+                <span class="arrowed project-title">
+                  {{pg.title}}
+                </span><br>
+                {{pg.author}}
+              </h2>
+            </a>
+            <figure class="hero-fig">
+              <img src="{{ site.baseurl }}{{ pg.url }}hero.png" />
+            </figure>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
