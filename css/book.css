@@ -455,8 +455,9 @@ Book image spreads
 
 figcaption{
   text-align: center;
-  font-size: 10pt;
+  font-size: 8.5pt;
   padding: 1pc 0pc;
+  font-style: italic;
 }
 
 ._book-spread-l > img,
