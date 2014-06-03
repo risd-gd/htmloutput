@@ -79,10 +79,36 @@
                 display: inline;
             }
 
-            .item a:hover h2,
-            .item .pullquote a:hover {
+            .item a:hover h2  {
                 border-bottom: 1px dashed;
             }
+
+            .item .pullquote a {
+                border-bottom: 0px dotted;
+                -webkit-transition: border 0.5s;
+            }
+            .item .pullquote a:hover {
+                -webkit-animation: bord 0.3s linear infinite;
+                border-bottom: 1px dashed;
+            }
+
+            @-webkit-keyframes bord {
+                0%, 100% {
+                    border-bottom: 4px dashed;
+                }
+                50% {
+                    border-bottom: 1px dashed;
+                }
+            }
+            @-webkit-keyframes bordcolor {
+                0%, 100% {
+                    border-color: green;
+                }
+                50% {
+                    border-color: black;
+                }
+            }
+
 
             .item {
                 position: relative;
@@ -215,8 +241,10 @@
 
             var toc = q(".toc");
             var items = qa(".item");
+            //var 
             var itemCache = [];
 
+            // -----------------------------------------------------
             // Shuffle initial order of items
             // shuffle(items);
             items.sort(function(a,b){
@@ -270,13 +298,13 @@
             }
 
 
-
             // When done show items
             toc.style.visibility = "visible";
 
 
 
-
+            // -----------------------------------------------------
+            //
             // Utilities
             // 
             function tform(elt, x, y, s) {
