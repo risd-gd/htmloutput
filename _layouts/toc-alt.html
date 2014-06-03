@@ -84,8 +84,6 @@
             }
 
             .item .pullquote a {
-                border-bottom: 0px dotted;
-                -webkit-transition: border 0.5s;
             }
             .item .pullquote a:hover {
                 -webkit-animation: bord 0.3s linear infinite;
@@ -219,6 +217,11 @@
                 .hero-fig {
                     width: 400px;
                 }
+                .pullquote {
+                    width: calc(50vw - 9rem);
+                    font-size: 5vw;
+                }
+
             }
             @media (max-width: 600px) {
                 html {
@@ -243,6 +246,7 @@
             var items = qa(".item");
             //var 
             var itemCache = [];
+            var multiplier = 2;
 
             // -----------------------------------------------------
             // Shuffle initial order of items
@@ -268,6 +272,7 @@
                         top: items[i].offsetTop
                     });
                 }
+                multiplier = window.innerWidth / 800;
                 updatePos();
             }
             makeCache();
@@ -279,7 +284,7 @@
 
                 for (var i = 0; i < itemCache.length; i++) {
                     var diff = itemCache[i].top - pos;
-                    var shift = diff * 2 - 200;
+                    var shift = diff * multiplier - 200;
 
                     var s = 1 - Math.abs(shift)*Math.abs(shift)/200000;
                     if (s < 0) s = 0
