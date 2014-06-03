@@ -24,11 +24,16 @@
             }
 
             header {
-                font: 18px/1.25 "Messenger Text", Avenir, sans-serif;
+                font: 16px/1.4 "Messenger Text", Avenir, sans-serif;
                 /*border-bottom: 1px solid;*/
                 padding: 4em 0 0.3em;
                 margin-bottom: 1em;
                 position: relative;
+            }
+
+            header h1 {
+                display: inline-block;
+                border-bottom: 1px solid black;
             }
 
             header .btn {
@@ -50,7 +55,6 @@
                 margin-top: 3em;
             }
 
-            header .btn,
             .toc-foot a, 
             .toc-foot a:visited {
                 color: blue;
@@ -154,6 +158,26 @@
                 content: "→";
                 left: 105%;
                 -webkit-transform: translate3d(-5px,0,0);
+            }
+
+            .book-icon {
+                position: absolute;
+                top: -1.1em;
+                left: -0.7em;
+            }
+
+            .book-lines {
+                width: 3.6em;
+            }
+
+            .btn:hover .book-lines * {
+                stroke-width: 3pt;
+            }
+
+            .book-lines * {
+                fill: none;
+                stroke: green;
+                stroke-width: 1.5pt;
             }
 
             @media (max-width: 1400px) {
