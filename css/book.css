@@ -337,11 +337,14 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6.15in;
-	left: 0.6in;
+	top: .34in;
+	left: .42in;
+  width: 6in;
 	position: absolute;
 	font-size: 0.6em;
 	font-family: "Messenger Text";
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin: top left;
 }
 
 ._running-head ._footer i, ._book sup {

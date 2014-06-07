@@ -257,7 +257,7 @@ function postProcessPages(){
 
     if (heading) {
       headUrl = heading.getAttribute("data-pageurl");
-      
+
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
         head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
@@ -330,7 +330,7 @@ function postProcessPages(){
 
         footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
         $("sup[data-footnote='"+material+"']").html(j);
-        notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+" ";
+        notes += "&nbsp;<i>"+j+"</i>:&nbsp;"+temp+" ";
       }
       pg.parentNode.querySelector("._footer").innerHTML = notes;
     }
