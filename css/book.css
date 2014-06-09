@@ -283,7 +283,7 @@ Page size and paginalia
 	left:     -0.125in;
 	right:    -0.125in;
 	overflow: hidden;
-	padding:  0.5in 0.6in 0.5in;
+	padding:  0.5in 0.6in 0.85in;
 }
 
 
@@ -320,11 +320,10 @@ Page size and paginalia
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 0.9in;
+	bottom: 0.4in;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.55em;
-	/*font-size: 0.55em;*/
 }
 
 ._recto ._running-head ._pagenum {
@@ -337,14 +336,12 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: .34in;
-	left: .42in;
-  width: 6in;
+	top: 6.2in;
+	left: .5in;
+  width: 3.5in;
 	position: absolute;
 	font-size: 0.6em;
 	font-family: "Messenger Text";
-  -webkit-transform: rotate(90deg);
-  -webkit-transform-origin: top left;
 }
 
 ._running-head ._footer i, ._book sup {

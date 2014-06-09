@@ -292,17 +292,17 @@ function postProcessPages(){
     }
 
     // [E] Set footnotes... might not be necessary any more.
-    var links = pg.querySelectorAll("[data-href]");
-    if (links) {
-      var notes = "";
-      for (var j = 0; j < links.length; j++) {
-        var href = links[j].getAttribute("data-href");
-        links[j].innerText = j;
-        notes += "<div><i>"+ j +"</i> — "+ href +"</div>";
-
-      }
-      pg.parentNode.querySelector("._footer").innerHTML = notes;
-    }
+    //var links = pg.querySelectorAll("[data-href]");
+    //if (links) {
+    //  var notes = "";
+    //  for (var j = 0; j < links.length; j++) {
+    //    var href = links[j].getAttribute("data-href");
+    //    links[j].innerText = j;
+    //    notes += "&rarr; <div><i>"+ j +"</i>&nbsp;"+ href +"</div><br />";
+    //
+    //  }
+    //  pg.parentNode.querySelector("._footer").innerHTML = notes;
+    //}
 
     // [F] Footnotes
     var footnotes = pg.querySelectorAll("[data-footnote]");
@@ -330,7 +330,7 @@ function postProcessPages(){
 
         footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
         $("sup[data-footnote='"+material+"']").html(j);
-        notes += "&nbsp;<i>"+j+"</i>:&nbsp;"+temp+" ";
+        notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+"<br />";
       }
       pg.parentNode.querySelector("._footer").innerHTML = notes;
     }
