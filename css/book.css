@@ -187,6 +187,7 @@ Interview print styles
 }
 .interview-a, .interview-q {
 	font-size: 12pt;
+	line-height: 125%; 	
 	margin: 0;
 }
 
