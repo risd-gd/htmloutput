@@ -24,3 +24,5 @@ _pdf/may13_chrome.pdf
 *.pdf
 
 _site/index.html
+
+.DS_Store
