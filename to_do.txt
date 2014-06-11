@@ -1,33 +1,53 @@
-
-TITLE
-HTML Output
-
-SUBTITLE 
-Conversations and projects that explore the web browser as a general purpose design tool
-
-
-INTRO
-
-This website (book) collects three months of conversations with practicing designers and experimental projects that use the web browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and this book. The book that in fact comes from this very website. A "responsive" website that at any point in its development could output to a LuLu-printable pdf. The book prioritizing reading and documentation, the website foregrounding its ability to update, many more images and links to live code downloads. 
-
-A book is an ideal place for designers to archive and present their work in a physical format. Unlike the web, the book is a final format. It cannot lose compatibility or functionality. It cannot be linked to, it cannot be updated, and it cannot be edited. It can be reprinted but each individual book is an archive of a specific time and state. 
-
-This book was generated on XX/XX/XXXX at XX:XX
+To-Do
+---
+Edit down project intros into one-liners JC
+Email Evan about bindery project CS
+Reworking the order of content
+Project template for print needs to pair down to nothing
+Output section folios to use name not project
+Web index page
+Web inside nav becomes a bulleted list of index page
+Lookout for Moo stuff
 
 
 
-Credits (last page? back? both?)
-HTML Output was produced in spring 2014 at Rhode Island School of Design within a Graphic Design elective with the same name. All projects and work remains the copyright of the student or interviewee. A limited run of 50 books was printed by RISD GD. Further copies available from LuLu.com/asdf
-
-We would like to thank the many practitioners who agreed to be interviewed for the project. Interviews were edited for readability and length. All interviews were performed between Febuary and May, 2014.
 
 
-Colophon:
-Messenger Text, designed  by Anther Kiley and Colin Frazer (ctr). 
-Benton Modern, designed by Cyrus Highsmith (?) and generously provided by WebType.
+Content
+---
+Half Title
 
-This book was generated on XX/XX/XXXX at XX:XX
+Title
 
-Authors and Designers:
-Evan Brooks, Lukas Winkerplins, Phillippe Cao, Catherine Schmidt, Christina Rees, Christina Webb, Kelly Walters, Michael McDermott, Ojus Doshi, Daniel Giuditta, John Caserta
+Contents
 
+Intro
+
+Interviews
+- Interviewee: Title (maybe the interviewer)
+- Interviewee: Title (maybe the interviewer)
+- Interviewee: Title (maybe the interviewer)
+- Interviewee: Title (maybe the interviewer)
+- Interviewee: Title (maybe the interviewer)
+- Interviewee: Title (maybe the interviewer)
+
+
+Output
+- Name and caption 
+- Name and caption 
+- Name and caption 
+- Name and caption 
+- Name and caption 
+- Name and caption 
+- Name and caption 
+
+
+Codebases
+- Print dot jay es by  Lukas W
+- Loom by Evan Brooks
+- Baby Browser by Catherine Schmidt
+- Bindery.js by Evan Brooks
+
+Back Matter
+- Credits
+- Colophon
