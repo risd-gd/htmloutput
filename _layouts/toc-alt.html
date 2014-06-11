@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css"  type="text/css">
+        <style>
+            * {
+                font: inherit;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-rendering: optimizeLegibility;
+            }
+
+            html {
+                font: 28px/1.25 "Benton Modern", Times, serif;
+            }
+
+            body {
+            }
+
+            header {
+                font: 16px/1.4 "Messenger Text", Avenir, sans-serif;
+                /*border-bottom: 1px solid;*/
+                padding: 4em 0 0.3em;
+                margin-bottom: 1em;
+                position: relative;
+            }
+
+            header h1 {
+                display: inline-block;
+                border-bottom: 1px solid black;
+            }
+
+            header .btn {
+                position: absolute;
+                right: 0;
+                top: 4em;
+            }
+
+            .toc {
+                visibility: hidden;
+            }
+
+            .toc, .toc-foot {
+                max-width: 24ch; /* approx character width */
+                margin: 0 auto;
+            }
+
+            .toc-foot {
+                margin-top: 3em;
+            }
+
+            .toc-foot a, 
+            .toc-foot a:visited {
+                color: blue;
+            }
+
+            .toc-wrapper {
+                width: 100%;
+                overflow: hidden;
+                padding-bottom: 50vh;
+            }
+
+            a, a:active, a:visited {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .item > a {
+                display: block;
+            }
+
+            .item h2 {
+                display: inline;
+            }
+
+            .item a:hover h2  {
+                border-bottom: 1px dashed;
+            }
+
+            .item .pullquote a {
+            }
+            .item .pullquote a:hover {
+                -webkit-animation: bord 0.3s linear infinite;
+                border-bottom: 1px dashed;
+            }
+
+            @-webkit-keyframes bord {
+                0%, 100% {
+                    border-bottom: 4px dashed;
+                }
+                50% {
+                    border-bottom: 1px dashed;
+                }
+            }
+            @-webkit-keyframes bordcolor {
+                0%, 100% {
+                    border-color: green;
+                }
+                50% {
+                    border-color: black;
+                }
+            }
+
+
+            .item {
+                position: relative;
+                margin-bottom: 1.25em;
+            }
+
+            .hero-fig {
+                position: absolute;
+                width: 600px;
+                width: calc(50vw - 9rem);
+                top: 0;
+                -webkit-transform: translate3d(0,0,0);
+                opacity: 1;
+            }
+
+            a:hover ~ .pullquote a {
+                border-bottom: 1px dashed;
+            }
+
+            .pullquote {
+                width: calc(50vw - 9rem);
+                /*min-width: 320px;*/
+                font-size: 3.5em;
+                /*font-weight: bold;*/
+                line-height: 105%;
+                text-align: center;
+                color: black;
+            }
+
+            .item:nth-child(odd) .hero-fig {
+                left: 110%;
+            }
+            .item:nth-child(even) .hero-fig {
+                right: 110%;
+            }
+
+            .hero-fig img {
+                width: 100%;
+            }
+
+            /*.active-item h2 .interviewee,*/
+            /*.active-item h2 .project-title,*/
+            /*.pullquote,*/
+            .active-item,
+            .active-item:after {
+                color: rgb(0, 172, 103);
+            }
+
+            .arrowed {
+                position: relative;
+            }
+
+            .arrowed:after {
+                /*top: 0;*/
+                margin-top: -1.25em;
+                white-space: nowrap;
+                position: absolute;
+                display: block;
+                opacity: 0;
+                -webkit-transition: all 0.2s;
+            }
+            .active-item .arrowed:after {
+                opacity: 1;
+                -webkit-transform: translate3d(0,0,0)!important;
+            }
+
+            .item:nth-child(even) .arrowed:after {
+                content: "←";
+                right: 105%;
+                -webkit-transform: translate3d(5px,0,0);
+            }
+            .item:nth-child(odd) .arrowed:after {
+                content: "→";
+                left: 105%;
+                -webkit-transform: translate3d(-5px,0,0);
+            }
+
+            .book-icon {
+                position: absolute;
+                top: -1.1em;
+                left: -0.7em;
+            }
+
+            .book-lines {
+                width: 3.6em;
+            }
+
+            .btn:hover .book-lines * {
+                stroke-width: 3pt;
+            }
+
+            .book-lines * {
+                fill: none;
+                stroke: green;
+                stroke-width: 1.5pt;
+            }
+
+            @media (max-width: 1400px) {
+                .hero-fig {
+                    width: 600px;
+                }
+            }
+
+            @media (max-width: 1000px) {
+                html {
+                    font-size: 24px;
+                }
+                .hero-fig {
+                    width: 400px;
+                }
+                .pullquote {
+                    width: calc(50vw - 9rem);
+                    font-size: 5vw;
+                }
+
+            }
+            @media (max-width: 600px) {
+                html {
+                    font-size: 20px;
+                }
+
+            }
+
+        </style>
+        
+        <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+        {{ content }}
+
+
+        <script>
+
+
+            var toc = q(".toc");
+            var items = qa(".item");
+            //var 
+            var itemCache = [];
+            var multiplier = 2;
+
+            // -----------------------------------------------------
+            // Shuffle initial order of items
+            // shuffle(items);
+            items.sort(function(a,b){
+                if(a.textContent < b.textContent) return -1;
+                if(a.textContent > b.textContent) return 1;
+                return 0;
+            });
+            for (var i = 0; i < items.length; i++) {
+                // Implicitly removed first
+                toc.appendChild(items[i]);
+            }
+
+            window.addEventListener("resize", makeCache, false);
+            function makeCache() {
+                itemCache = [];
+                for (var i = 0; i < items.length; i++) {
+                    // Cache distance from top
+                    itemCache.push({
+                        elt: items[i],
+                        fig: items[i].querySelector("figure"),
+                        top: items[i].offsetTop
+                    });
+                }
+                multiplier = window.innerWidth / 800;
+                updatePos();
+            }
+            makeCache();
+
+            // Listen to scrolling
+            window.addEventListener("scroll", updatePos, false);
+            function updatePos(e) {
+                var pos = document.body.scrollTop + 400; // centerish point
+
+                for (var i = 0; i < itemCache.length; i++) {
+                    var diff = itemCache[i].top - pos;
+                    var shift = diff * multiplier - 200;
+
+                    var s = 1 - Math.abs(shift)*Math.abs(shift)/200000;
+                    if (s < 0) s = 0
+                    tform(itemCache[i].fig, 0, shift, 1);
+
+                    if (Math.abs(diff) < 100) {
+                        itemCache[i].elt.classList.add("active-item");
+                    } else {
+                        itemCache[i].elt.classList.remove("active-item");
+                    }
+
+                    var o = 1 - Math.abs(shift)/600;
+                    //itemCache[i].el.style.opacity = o;
+                }
+
+            }
+
+
+            // When done show items
+            toc.style.visibility = "visible";
+
+
+
+            // -----------------------------------------------------
+            //
+            // Utilities
+            // 
+            function tform(elt, x, y, s) {
+                elt.style.webkitTransform = "translate3d(" + x + "px, " + y + "px, 0) scale(" + s + ")";
+            }
+            function q(arg){
+                return document.querySelector(arg)
+            }
+            function qa(arg){
+                return Array.prototype.slice.call(document.querySelectorAll(arg),0);
+            }
+
+            function shuffle(array) {
+              var currentIndex = array.length
+                , temporaryValue
+                , randomIndex
+                ;
+              // While there remain elements to shuffle...
+              while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+              }
+              return array;
+            }
+
+        </script>
+    </body>
+</html>

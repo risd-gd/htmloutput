@@ -1,0 +1,76 @@
+---
+layout: toc-alt
+title: HTML OUTPUT
+---
+
+
+<div class="toc-wrapper">
+  <div class="toc">
+
+    <header>
+      <h1>HTML Output</h1>
+      <a class="btn" href="#">
+        <span class="book-icon">
+          <svg class="book-lines" preserveAspectRatio="xMinYMin meet" viewBox="0 0 240 240">
+            <path d="M120.5,204.259c-31.205-31.205-81.795-31.205-113-0.002V60.929c31.205-31.205,81.795-31.204,113,0.001"/>
+            <path d="M120.5,60.929c31.205-31.205,81.795-31.204,113,0.001v143.329c-31.205-31.205-81.795-31.205-113-0.002"/>
+            <line x1="120.5" y1="61" x2="120.5" y2="204"/>
+          </svg>
+        </span>
+        <span class="title">
+          <!--&#8984;-->
+          Book
+        </span>
+      </a>
+    </header>
+
+    <p>
+      This is an introduction. I have a lot of things to say about that. Here is one of those things. Okay okay okay.
+    </p><br><br>
+
+    {% for pg in site.pages %}
+      {% if pg.category %}
+        {% if pg.category == 'interview' %}
+          <div class="item item-interview">
+            <a href="{{ site.baseurl }}{{ pg.url }}">
+              <h2 class="arrowed">
+                <span class="interviewee">
+                  {{pg.interviewee}}
+                </span>
+                talks with
+                {{pg.interviewer}}
+              </h2>
+            </a>
+            <figure class="hero-fig pullquote">
+              <a href="{{ site.baseurl }}{{ pg.url }}" >
+                {{pg.title}}
+              </a>
+            </figure>
+          </div>
+        {% else %}
+          <div class="item item-project">
+            <a href="{{ site.baseurl }}{{ pg.url }}" >
+              <h2>
+                <span class="arrowed project-title">
+                  {{pg.title}}
+                </span><br>
+                {{pg.author}}
+              </h2>
+            </a>
+            <figure class="hero-fig">
+              <a href="{{ site.baseurl }}{{ pg.url }}">
+                <img src="{{ site.baseurl }}{{ pg.url }}hero.png" />
+              </a>
+            </figure>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <footer class="toc-foot">
+    <p>
+      A product of <a href="http://risd.gd">RISD Graphic Design</a>. This is where we could put credits and the colophon.
+    </p>
+  </footer>
+</div>
+

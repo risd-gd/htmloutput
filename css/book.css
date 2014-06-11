@@ -320,11 +320,10 @@ Page size and paginalia
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 0.9in;
+	bottom: 0.4in;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.55em;
-	/*font-size: 0.55em;*/
 }
 
 ._recto ._running-head ._pagenum {
@@ -337,8 +336,9 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6.15in;
-	left: 0.6in;
+	top: 6.2in;
+	left: .5in;
+  width: 3.5in;
 	position: absolute;
 	font-size: 0.6em;
 	font-family: "Messenger Text";
