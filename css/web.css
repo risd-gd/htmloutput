@@ -147,7 +147,7 @@ hr {
   font-size:24px;
   color: #20B981;
   max-width:600px;
-  margin-left:30%;
+  margin-left:20%;
   line-height:1.5em;
 
 }
@@ -219,7 +219,7 @@ h1, h2, h3, h4{
 
 
 /*-----Media Query maybe-----*/
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .interview-q {
     font-family:'Benton Modern';
     font-size:18px;
