@@ -207,14 +207,32 @@ nav {
   top: -87px;
   left: 0px;
   width: 100%;
+  overflow-y:auto;
   /*padding-left: 30%;*/
   position: absolute;
   z-index: 1;
   overflow-x: hidden;
 }
 
+#content h1 {
+  font-family: "Messenger Text", sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  margin-top: 300px;
+  margin-left: 30%;
+  max-width: none;
+
+} #content hr {
+  border-bottom: 10pt solid black;
+  width: 15%;
+  margin-left: 30%;
+  height: 0pc;
+  margin-bottom: 100px;
+} 
+
 .pagey{
   width: 100%;
+  margin-top:50px;
 }
 
 .pagey .caption{
@@ -231,20 +249,29 @@ nav {
   border: 1px solid blue;
 }
 
+.pagey h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 31%;
+}
+
 .pagey .name{
   /* width: 100%; */
   text-align: left;
-  background-color: blue;
-  color: white;
+  color: black;
   display: inline-block;
   font-size: 80px;
   xwhite-space: nowrap;
   position: relative;
-  top: 200px;
-  border: 1px solid blue;
-  font-family: "Messenger Text", sans-serif;
+  font-family: "Benton Modern", serif;
   padding: 10px;
   left: 30%;
+}
+
+.pagey .name span {
+  font-family: "Messenger Text", sans-serif;
+  font-size: 20px;
+  color: black;
 }
 
 .pagey .name:hover{
@@ -257,9 +284,35 @@ nav {
 }
 
 .pagey img{
-  width: 100%;
+  width: 42%;
+  max-height: 100px;
   margin-bottom: 0px;
-  margin-top: 0px;
+  margin-top: 83px;
+}
+
+#intro {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100%;
+  background-image: url('img_09.png');
+  background-size: 100% 100%;
+} #intro h2, #intro h1, #intro p, #intro h4 {
+  margin-left: 30%;
+  max-width: 100%;
+} #intro h1 {
+  font-family: "Benton Modern", serif;
+  font-size: 80px;
+  line-height: 80px;
+} #intro h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+} #intro p {
+  font-family: "Messenger Text", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+} #intro h4 {
+  font-size: 20px;
+  line-height: 30px;
 }
 
 
@@ -334,7 +387,7 @@ hr{
 
 .interview-a {}
 .interview-q {}
-.interview-a, .interview-q { line-height: 125%; font-family: "Benton Modern";}
+.interview-a, .interview-q { font-family: "Benton Modern";}
 
 /*//////////Phil messing around////////////*/
 
