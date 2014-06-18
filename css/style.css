@@ -294,7 +294,8 @@ nav {
   margin-top: 100px;
   margin-bottom: 100px;
   width: 100%;
-  background-image: url('img_09.png');
+  min-height: 150vh;
+  background-image: url('../img_09.png');
   background-size: 100% 100%;
 } #intro h2, #intro h1, #intro p, #intro h4 {
   margin-left: 30%;
