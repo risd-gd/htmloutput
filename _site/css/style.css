@@ -334,7 +334,8 @@ nav {
   color: rgba(0,0,0,0);
   -webkit-transition: all 1s;
 } .output:hover {
-  color: black;
+  background: blue;
+  color: white;
   opacity: .8;
   cursor: pointer;
 }
