@@ -3,6 +3,7 @@ layout: toc
 title: HTML OUTPUT
 ---
 
+<!--
 <a href="{{ site.baseurl }}/book" id="print_button_link">
         &#8984; Book
 </a>
@@ -18,6 +19,7 @@ title: HTML OUTPUT
                 {% if category == 'interview' %}
                     <!--<strong><a class="nav_link {{category}}" name="{{page.url}}">{{page.title}}</a><br /></strong>
                     {{ page.interviewee }} &#8212; {{ page.interviewer }}<br /> -->
+        <!--
         <a class="nav_link {{category}}" name="{{page.url}}">{{ page.interviewee }} talks to {{ page.interviewer }}</a><br />
                 {% else %}
                     <a class="nav_link {{category}}" name="{{ page.url }}">{{page.title}}</a><br />
@@ -29,7 +31,7 @@ title: HTML OUTPUT
         <hr />
         {% endfor %}
     </div>
-</div>
+</div> -->
 
     <div id="intro">
         <h1>HTML Output</h1>
@@ -58,23 +60,22 @@ title: HTML OUTPUT
     <h1>Output</h1>
     <hr></hr>
     {% for page in site.pages %}{% if page.category == 'project' %}
-    <div class="pagey">
-        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}" style="top:200px">{{page.author}}</a><br />
-        <img src="{{ site.baseurl }}{{ page.url }}hero.png" />
-        <h3>{{page.description}}</h3>
-
-    </div>
+    <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
+        <h3>{{page.author}}</h3>
+        {{page.description}}
+    </a>
     {% endif %}{% endfor %}
 
 
     <h1>Code</h1>
     <hr></hr>
     {% for page in site.pages %}{% if page.category == 'code' %}
-    <div class="pagey">
-        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}</a><br />
-        <h3>{{page.description}}</h3>
+    <a class="code" href="{{ site.baseurl }}{{ page.url }}">
+        <div style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')"></div>
+        <h2>{{page.title}}</h2><br />
+        {{page.description}}
 
-    </div>
+    </a>
     {% endif %}{% endfor %}
 
 </div>

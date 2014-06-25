@@ -10,6 +10,35 @@ Web inside nav becomes a bulleted list of index page
 Lookout for Moo stuff
 
 
+To-Do 6/18
+---
+
+!! Bindery.js bar as nav on every page
+
+Evan stuff:
+what happens after you click make book?
+can we auto build the book in a new tab? book nav on top?
+
+Outputs:
+	- name title
+	- no rollover for imgs
+	- everything should link to code ideally
+	- text
+	- more --> tiled imgs at the bottom
+
+Code:
+
+Interview:
+	- eliminate all titles everywhere
+	- fix Peter Bil'ak
+
+Index:
+	- intro
+	- Conversations
+	- Outputs: grid of tight images, caption on rollover
+	- Code: become grid of tiles
+	- colophon
+
 
 
 

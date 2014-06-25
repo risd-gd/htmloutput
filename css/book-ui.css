@@ -109,7 +109,7 @@ For previewing the print
 
 
 .print-nav {
-	display: none;
+	/* display: none; */
 	font: 15px/1.4 'Messenger Text', sans-serif;
 }
 
@@ -196,7 +196,7 @@ For previewing the print
 
 	.print-nav {
 		position: fixed;
-		bottom: 0;
+		top: 0;
 		right: 0;
 		left: 0;
 		display: block;

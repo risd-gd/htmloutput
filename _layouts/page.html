@@ -22,13 +22,33 @@
 
     <body>
 
+        {% include nav.html %}
+
         <div class="wrapper">
 
-            <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
+         <!--   <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a> -->
 
-        <div class="title">{{ page.title }} <hr> {{ page.description }}<hr> by {{ page.author }}<hr></div>
+        <div class="category">
+            <h1>Output</h1>
+            <hr></hr>
+        <div>
+
+        <div class="title">{{ page.description }}<hr> by {{ page.author }}<hr></div>
 
         {{ content }}
+
+    </div>
+
+    <div class="category">
+        <h1>More</h1>
+        <hr></hr>
+
+          {% for page in site.pages %}{% if page.category == 'project' %}
+    <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
+        <h3>{{page.author}}</h3>
+        {{page.description}}
+    </a>
+    {% endif %}{% endfor %}
 
     </div>
 

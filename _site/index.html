@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/htmloutput/css/type/type.css"  type="text/css">
         <link rel="stylesheet" href="/htmloutput/css/style.css" type="text/css">
         <link rel="stylesheet" href="/htmloutput/css/web.css" type="text/css">
+        <link rel="stylesheet" href="/htmloutput/css/book-ui.css" type="text/css">
         <link href="//cloud.webtype.com/css/422a9116-3c4c-4a87-8994-557df8ada6b9.css" rel="stylesheet" type="text/css" />
         <link href="//cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
         <link href="//cloud.webtype.com/css/e808a380-c942-4cb0-b7ba-fc7a755d85f9.css" rel="stylesheet" type="text/css" />
@@ -18,7 +19,41 @@
 
     </head>
     <body>
-        <a href="/htmloutput/book" id="print_button_link">
+        <nav class="print-nav">
+    <!--Functions (danger!):
+    <div style="float: right">
+        <button class="toggle-btn" id="restyle">Refresh CSS</button>
+        <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
+        <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
+        <button class="toggle-btn" id="postproc">Post-process</button>
+    </div> -->
+    <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">html output</span>
+
+    <span style="margin-right: 1em">
+        <select>
+            <option value="Home">Home</option>
+            <option value="Conversations">Conversations</option>
+            <option value="Output">Output</option>
+            <option value="Code">Code</option>
+            <option value="About">About</option>
+        </select>
+    </span>
+
+    <span id="postProcessControls" style="display: none;">
+        <label><input id="toggleguides" type="checkbox" checked />Show bleed</label> &nbsp;&nbsp;&nbsp;
+        <label><input id="togglecrop" type="checkbox" /> Crop marks</label>
+        <span id="status" style="display:inline; margin-left: 1em; color: blue;">
+        <!--<img style="width:16px; height: 16px; margin: -4px 5px; vertical-align: middle" src="http://www.animatedgif.net/bookscalendars/anim0019-1_e0.gif"/> -->
+            Making book...
+        </span>
+        <progress id="progbar" value="0" max="1"></progress>
+    </span>
+    <button class="toggle-btn" id="regionize" disabled>Make book</button>
+
+  </nav>
+
+        <!--
+<a href="/htmloutput/book" id="print_button_link">
         &#8984; Book
 </a>
 
@@ -37,6 +72,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-bilak-schmidt/">BILAK BILAK BILAK</a><br /></strong>
                     Peter Biľak &#8212; Catherine Schmidt<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-bilak-schmidt/">Peter Biľak talks to Catherine Schmidt</a><br />
                 
 
@@ -45,6 +81,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-leclair-rees/">Coexisting Publishing Mediums</a><br /></strong>
                     Andrew LeClair &#8212; Christina Rees<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-leclair-rees/">Andrew LeClair talks to Christina Rees</a><br />
                 
 
@@ -53,6 +90,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-mevis-caserta/">Designing in the Mind</a><br /></strong>
                     Armand Mevis &#8212; John Caserta<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-mevis-caserta/">Armand Mevis talks to John Caserta</a><br />
                 
 
@@ -61,6 +99,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-pamental-doshi/">Navigating the Responsive Web</a><br /></strong>
                     Jason Pamental &#8212; Ojus Doshi<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-pamental-doshi/">Jason Pamental talks to Ojus Doshi</a><br />
                 
 
@@ -69,6 +108,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-reinfurt-casertaWebbWalters/">Responsiveness in Design</a><br /></strong>
                     David Reinfurt &#8212; John Caserta, Christina Webb and Kelly Walters<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-reinfurt-casertaWebbWalters/">David Reinfurt talks to John Caserta, Christina Webb and Kelly Walters</a><br />
                 
 
@@ -85,6 +125,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-lehni-caoGiuditta/">BROS BROIN</a><br /></strong>
                     Jürg Lehni &#8212; Philippe Cao, Daniel Giuditta<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-lehni-caoGiuditta/">Jürg Lehni talks to Philippe Cao, Daniel Giuditta</a><br />
                 
 
@@ -94,6 +135,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-pieratt-winklerprins/">Print Is Dead So Print Is Art</a><br /></strong>
                     Ben Pieratt &#8212; Lukas WinklerPrins<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-pieratt-winklerprins/">Ben Pieratt talks to Lukas WinklerPrins</a><br />
                 
 
@@ -103,6 +145,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-decurnex-walters/">Coding in Textiles</a><br /></strong>
                     Augustina Bello-Decurnex &#8212; Kelly Walters<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-decurnex-walters/">Augustina Bello-Decurnex talks to Kelly Walters</a><br />
                 
 
@@ -112,6 +155,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-soulellis-webb/">HTML &amp; Actionable Moments</a><br /></strong>
                     Paul Soulellis &#8212; Christina Webb<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-soulellis-webb/">Paul Soulellis talks to Christina Webb</a><br />
                 
 
@@ -121,6 +165,7 @@
                 
                     <!--<strong><a class="nav_link interview" name="/interview-michaelson-caserta/">Systems as form</a><br /></strong>
                     Dan Michaelson &#8212; John Caserta<br /> -->
+        <!--
         <a class="nav_link interview" name="/interview-michaelson-caserta/">Dan Michaelson talks to John Caserta</a><br />
                 
 
@@ -356,7 +401,7 @@
         <hr />
         
     </div>
-</div>
+</div> -->
 
     <div id="intro">
         <h1>HTML Output</h1>
@@ -454,119 +499,96 @@
     <h1>Output</h1>
     <hr></hr>
     
-    <div class="pagey">
-        <a class="name" id="/project-giuditta-sprites/" href="/htmloutput/project-giuditta-sprites/" style="top:200px">Daniel Giuditta</a><br />
-        <img src="/htmloutput/project-giuditta-sprites/hero.png" />
-        <h3>Fun in the browser with web inspector and CSS Sprite sheets</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-giuditta-sprites/hero.png')" href="/htmloutput/project-giuditta-sprites/">
+        <h3>Daniel Giuditta</h3>
+        Fun in the browser with web inspector and CSS Sprite sheets
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-mcdermott-important/" href="/htmloutput/project-mcdermott-important/" style="top:200px">Michael McDermott &amp; Ojus Doshi</a><br />
-        <img src="/htmloutput/project-mcdermott-important/hero.png" />
-        <h3>CSS Sabotage</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-mcdermott-important/hero.png')" href="/htmloutput/project-mcdermott-important/">
+        <h3>Michael McDermott &amp; Ojus Doshi</h3>
+        CSS Sabotage
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-ojus-typelandscapes/" href="/htmloutput/project-ojus-typelandscapes/" style="top:200px">Ojus Doshi</a><br />
-        <img src="/htmloutput/project-ojus-typelandscapes/hero.png" />
-        <h3>Typographic scale exercises in the browser</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-ojus-typelandscapes/hero.png')" href="/htmloutput/project-ojus-typelandscapes/">
+        <h3>Ojus Doshi</h3>
+        Typographic scale exercises in the browser
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-patterns-walters/" href="/htmloutput/project-patterns-walters/" style="top:200px">Kelly Walters</a><br />
-        <img src="/htmloutput/project-patterns-walters/hero.png" />
-        <h3>Patterns and Shapes</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-patterns-walters/hero.png')" href="/htmloutput/project-patterns-walters/">
+        <h3>Kelly Walters</h3>
+        Patterns and Shapes
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-walters-webb-profiling/" href="/htmloutput/project-walters-webb-profiling/" style="top:200px">Kelly Walters & Christina Webb</a><br />
-        <img src="/htmloutput/project-walters-webb-profiling/hero.png" />
-        <h3>A System of 8</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-walters-webb-profiling/hero.png')" href="/htmloutput/project-walters-webb-profiling/">
+        <h3>Kelly Walters & Christina Webb</h3>
+        A System of 8
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-webb-pattern/" href="/htmloutput/project-webb-pattern/" style="top:200px">Christina Webb</a><br />
-        <img src="/htmloutput/project-webb-pattern/hero.png" />
-        <h3>patterning with code</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-webb-pattern/hero.png')" href="/htmloutput/project-webb-pattern/">
+        <h3>Christina Webb</h3>
+        patterning with code
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-ojus-letterhead/" href="/htmloutput/project-ojus-letterhead/" style="top:200px">Ojus Doshi</a><br />
-        <img src="/htmloutput/project-ojus-letterhead/hero.png" />
-        <h3>Programmatically generate a unique, personal letterhead</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-ojus-letterhead/hero.png')" href="/htmloutput/project-ojus-letterhead/">
+        <h3>Ojus Doshi</h3>
+        Programmatically generate a unique, personal letterhead
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-patterns-caserta/" href="/htmloutput/project-patterns-caserta/" style="top:200px">John Caserta</a><br />
-        <img src="/htmloutput/project-patterns-caserta/hero.png" />
-        <h3></h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-patterns-caserta/hero.png')" href="/htmloutput/project-patterns-caserta/">
+        <h3>John Caserta</h3>
+        
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-rees-animation/" href="/htmloutput/project-rees-animation/" style="top:200px">Christina Rees</a><br />
-        <img src="/htmloutput/project-rees-animation/hero.png" />
-        <h3>Formal animation experiments in the browser.</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-rees-animation/hero.png')" href="/htmloutput/project-rees-animation/">
+        <h3>Christina Rees</h3>
+        Formal animation experiments in the browser.
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-walters-printing/" href="/htmloutput/project-walters-printing/" style="top:200px">Kelly Walters</a><br />
-        <img src="/htmloutput/project-walters-printing/hero.png" />
-        <h3>Overprinting with the browser</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-walters-printing/hero.png')" href="/htmloutput/project-walters-printing/">
+        <h3>Kelly Walters</h3>
+        Overprinting with the browser
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-cao-dearchrome/" href="/htmloutput/project-cao-dearchrome/" style="top:200px">Philippe Cao</a><br />
-        <img src="/htmloutput/project-cao-dearchrome/hero.png" />
-        <h3>Form and color experiments in Google Chrome</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-cao-dearchrome/hero.png')" href="/htmloutput/project-cao-dearchrome/">
+        <h3>Philippe Cao</h3>
+        Form and color experiments in Google Chrome
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-winklerprins-kineticpatterns/" href="/htmloutput/project-winklerprins-kineticpatterns/" style="top:200px">Lukas WinklerPrins</a><br />
-        <img src="/htmloutput/project-winklerprins-kineticpatterns/hero.png" />
-        <h3>User-adjustable repeats via scrolling.</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-winklerprins-kineticpatterns/hero.png')" href="/htmloutput/project-winklerprins-kineticpatterns/">
+        <h3>Lukas WinklerPrins</h3>
+        User-adjustable repeats via scrolling.
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-mcdermott-facebook/" href="/htmloutput/project-mcdermott-facebook/" style="top:200px">Michael McDermott</a><br />
-        <img src="/htmloutput/project-mcdermott-facebook/hero.png" />
-        <h3>Transforming a site with a few lines of CSS</h3>
-
-    </div>
+    <a class="output" style="background-image: url('/htmloutput/project-mcdermott-facebook/hero.png')" href="/htmloutput/project-mcdermott-facebook/">
+        <h3>Michael McDermott</h3>
+        Transforming a site with a few lines of CSS
+    </a>
     
 
 
     <h1>Code</h1>
     <hr></hr>
     
-    <div class="pagey">
-        <a class="name" id="/project-brooks-loom/" href="/htmloutput/project-brooks-loom/">Loom, a design tool</a><br />
-        <h3>One half text editor, one half web server.</h3>
+    <a class="code" href="/htmloutput/project-brooks-loom/">
+        <div style="background-image: url('/htmloutput/project-brooks-loom/hero.png')"></div>
+        <h2>Loom, a design tool</h2><br />
+        One half text editor, one half web server.
 
-    </div>
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-schmidt-browser/" href="/htmloutput/project-schmidt-browser/">A baby browser</a><br />
-        <h3>BabyBrowser is a tiny web browser.</h3>
+    <a class="code" href="/htmloutput/project-schmidt-browser/">
+        <div style="background-image: url('/htmloutput/project-schmidt-browser/hero.png')"></div>
+        <h2>A baby browser</h2><br />
+        BabyBrowser is a tiny web browser.
 
-    </div>
+    </a>
     
-    <div class="pagey">
-        <a class="name" id="/project-winklerprins-printdotjayess/" href="/htmloutput/project-winklerprins-printdotjayess/">Print Dot Jay Ess</a><br />
-        <h3>Automated generation of a print stylesheet for web patterns using javascript.</h3>
+    <a class="code" href="/htmloutput/project-winklerprins-printdotjayess/">
+        <div style="background-image: url('/htmloutput/project-winklerprins-printdotjayess/hero.png')"></div>
+        <h2>Print Dot Jay Ess</h2><br />
+        Automated generation of a print stylesheet for web patterns using javascript.
 
-    </div>
+    </a>
     
 
 </div>

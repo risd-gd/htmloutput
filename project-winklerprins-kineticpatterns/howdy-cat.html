@@ -20,8 +20,8 @@
 
                     if(scrollTop > 400){
                         $("#b1").css("margin-left",100+Math.floor(80+90*Math.sin((scrollTop-400)*0.005))+"px");
-                        $("#b1").css("border-top-left-radius", 100+Math.floor(80+90*Math.sin((scrollTop-400)*0.005)) + "px");
-                        $("#b1").css("border-left", 100+Math.floor(80+90*Math.sin((scrollTop-400)*0.005)) + "px");
+                        $("#b1").css("width", 100+Math.floor(80+90*Math.sin((scrollTop-400)*0.005)) + "px");
+                        $("#b1").css("border", 100+Math.floor(80+90*Math.sin((scrollTop-400)*0.005)) + "px solid #ccc");
                     }
                     if(scrollTop > 800){
                     $("#b2").css("margin-left",100+Math.floor(80+90*Math.sin((scrollTop-800)*0.005))+"px");
@@ -55,6 +55,7 @@
             body{
                 scroll-x: hidden;
                 overflow-x: hidden;
+                min-height: 30000px;
             }
 
             #one{
@@ -111,7 +112,7 @@
                 margin-top: 10%;
                 height: 5%;
                 width: 30%;
-                background-color: rgb(170,178,128);
+                background-color: #ccc;
             }
 
 
