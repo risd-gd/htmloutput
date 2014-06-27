@@ -49,6 +49,8 @@ code {
   width:700px;
   height:300px;
   overflow:hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .imageContainer:hover{
@@ -100,6 +102,11 @@ img{
   margin-top: 15px;
   display: inline-block;
 }
+
+.interview img {
+  height:100%;
+}
+
 
 .interview-q:before, .interview-a:before  {
   font-size: 15px;
