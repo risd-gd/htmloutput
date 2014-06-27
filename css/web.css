@@ -138,6 +138,8 @@ img{
 .interview {
   margin:auto;
   width: 60%;
+} .interview hr {
+
 }
 
 .interview-q{
@@ -296,12 +298,15 @@ Styles for the index/toc page
     box-shadow: 0 0 2px rgba(0,0,0,0.2);
     margin: 0;
   }
-.print-nav span.big {
+.print-nav a span.big {
+  color: black;
   font-family: "Benton Modern", serif;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 20%;
+} a:hover {
+  color: blue;
 }
 
 .pagey{
