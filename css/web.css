@@ -89,13 +89,13 @@ img{
 
 
 .wrapper figure, .wrapper figcaption, .wrapper div, p{
-  max-width: 500px;
-  margin: auto;
+/*  max-width: 500px; */
+  float:left;
 }
 
 .wrapper img {
   height:auto;
-  max-width: 800px;
+/*  max-width: 800px; */
   margin-left: auto;
   margin-top: 15px;
   display: inline-block;
