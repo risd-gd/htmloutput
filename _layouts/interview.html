@@ -29,7 +29,7 @@
 
         {% include nav.html %}
 
-        <div class="wrapper">
+        <div class="wrapper interview">
 
 
            <!-- <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a> -->
@@ -39,10 +39,11 @@
                 <h1>Conversation</h1>
                 <hr></hr>
             </div>
+<!-- {{ page.title }} -->
 
-
-            <div class="title interview-name">{{ page.title }} <hr class="interview-bar" /> {{ page.description }}<hr class="interview-bar" /> by {{ page.author }}<hr class="interview-bar" /></div>
-
+            <div class="title interview-name">
+                <hr>{{page.interviewee}} talks with {{ page.author }} <hr>
+            </div>
             {{ content }}
         </div>
 
