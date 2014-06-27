@@ -198,8 +198,10 @@ Styles for the index/toc page
   overflow-x: hidden;
 }
 
+
 #content h1 {
   margin-left: 20%;
+  margin-bottom: -38px;
 }
 
 .category{
@@ -356,7 +358,7 @@ Styles for the index/toc page
   position: fixed;
   width: 0;
   border-top: 2000px solid rgba(100, 150, 255, .2);
-  border-left: 1000px solid transparent;
+  border-left: 1000ƒpx solid transparent;
   border-right: 1000px solid transparent;
   /* -webkit-transform: skew(50deg, 10deg); */
   z-index: -1;
@@ -364,19 +366,19 @@ Styles for the index/toc page
 }
 
 .one {
-  border-top-color: rgba(255, 50, 14, .3);
+ // border-top-color: rgba(255, 50, 14, .3);
   top: 100px;
   left: 100px;
 }
 
 .two {
-  border-top-color: rgba(67, 250, 70, .5);
+ // border-top-color: rgba(67, 250, 70, .5);
   right: 15px;
   top: 500px;
 }
 
 .three {
-  border-top-color: rgba(30, 112, 255, .2);
+ // border-top-color: rgba(30, 112, 255, .2);
   bottom: 150px;
   right:700px;
 }
