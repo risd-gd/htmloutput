@@ -88,7 +88,7 @@ img{
 }
 
 
- p{
+.wrapper figure, .wrapper figcaption, .wrapper div, p{
   max-width: 500px;
   margin: auto;
 }
