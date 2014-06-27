@@ -31,8 +31,6 @@
 
                     $(".cls").css("border-right", fun + "px solid transparent");
                     $(".cls").css("border-left", fun2 + "px solid transparent");
-                    $(".cls").css("left", fun3 + "px");
-
                 });
 
             });
@@ -42,6 +40,8 @@
     </head>
     <body>
         {% include nav.html %}
+
+        {% include intro.html %}
 
         {{ content }}
     </body>

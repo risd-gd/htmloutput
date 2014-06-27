@@ -354,8 +354,6 @@ Styles for the index/toc page
 .cls {
   position: fixed;
   width: 0;
-  top: 100px;
-  left: 100px;
   border-top: 105px solid blue;
   border-left: 90px solid transparent;
   border-right: 100px solid transparent;
@@ -363,6 +361,21 @@ Styles for the index/toc page
   -webkit-transition: all 1s;
   z-index: -1;
 
+}
+
+.one {
+  top: 100px;
+  left: 100px;
+}
+
+.two {
+  right: 15px;
+  top: 500px;
+}
+
+.three {
+  bottom: 150px;
+  right:700px;
 }
 
 @media (max-height: 1000px) {
