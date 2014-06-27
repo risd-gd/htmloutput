@@ -170,7 +170,7 @@ blockquote{
 .interview-intro {
   max-width:500px;
   margin:auto;
-  border-bottom:1px dotted black;
+  border-bottom:2px solid black;
   font-style:italic;
   font-family:'Benton Modern';
   margin-top: 55px;
@@ -214,7 +214,7 @@ h1, h2, h3, h4{
     max-width: 500px;
     margin: auto;
 }
-
+.interview h1 { margin-top: 50px;}
 
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
