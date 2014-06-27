@@ -82,8 +82,9 @@ img{
 }
 
 .interview-name{
-  /* color: #20B981; */
+ color: black;
 }
+
 .interview-bar{
   border-bottom: 5pt solid #20B981;
   /*border-bottom: 1px solid #20B981;*/
