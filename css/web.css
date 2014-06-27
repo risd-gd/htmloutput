@@ -149,6 +149,9 @@ img{
   line-height:1.5em;
 
 }
+.interview .interview-q {
+  margin-left:0;
+}
 
 .interview-a{
   font-size:18px;
@@ -170,7 +173,6 @@ blockquote{
 .interview-intro {
   max-width:500px;
   margin:auto;
-  border-bottom:2px solid black;
   font-style:italic;
   font-family:'Benton Modern';
   margin-top: 55px;
