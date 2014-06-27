@@ -229,7 +229,13 @@ Styles for the index/toc page
     background: white;
     box-shadow: 0 0 2px rgba(0,0,0,0.2);
   }
-
+.print-nav span.big {
+  font-family: "Benton Modern", serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 20%;
+}
 
 .pagey{
   width: 100%;
