@@ -199,7 +199,7 @@ Styles for the index/toc page
 }
 
 #content h1 {
-  left: 20%;
+  margin-left: 20%;
 }
 
 .category{
@@ -259,15 +259,14 @@ Styles for the index/toc page
   color: black;
   display: inline-block;
   font-size: 50px;
-  line-height: 110%;
   font-weight: bold;
   xwhite-space: nowrap;
   position: relative;
   font-family: "Benton Modern", serif;
   padding: 10px;
   left: 20%;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-top: 12px;
+  margin-bottom: 3px;
 }
 
 .pagey .name span {
@@ -356,9 +355,9 @@ Styles for the index/toc page
 .cls {
   position: fixed;
   width: 0;
-  border-top: 105px solid blue;
-  border-left: 90px solid transparent;
-  border-right: 100px solid transparent;
+  border-top: 2000px solid rgba(100, 150, 255, .2);
+  border-left: 1000px solid transparent;
+  border-right: 1000px solid transparent;
   /* -webkit-transform: skew(50deg, 10deg); */
   z-index: -1;
 
@@ -465,6 +464,8 @@ hr {
 
 hr.dg2 {
   border-bottom: 5px solid black;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 hr.dg3 {
