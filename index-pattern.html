@@ -1,0 +1,167 @@
+<html>
+<head>
+
+	     <link href="http://cloud.webtype.com/css/422a9116-3c4c-4a87-8994-557df8ada6b9.css" rel="stylesheet" type="text/css" />
+        <link href="http://cloud.webtype.com/css/e330b60f-ce51-46d6-b8d4-1272865422fb.css" rel="stylesheet" type="text/css" />
+        <link href="http://cloud.webtype.com/css/e808a380-c942-4cb0-b7ba-fc7a755d85f9.css" rel="stylesheet" type="text/css" />
+        <link href="http://cloud.webtype.com/css/30d3bb54-2826-4d0a-af4b-6629e5dd58b1.css" rel="stylesheet" type="text/css" />
+        <link href="http://cloud.webtype.com/css/e573bdaf-4428-42af-a427-9cc650bb1895.css" rel="stylesheet" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+                <link rel="stylesheet" href="css/type/type.css"  type="text/css">
+
+
+    <script>
+
+    $(document).ready(function() {
+
+    	$(document).scroll(function() {
+
+    		var scroll = $(document).scrollTop();
+
+    		var fun = Math.abs(Math.floor(80+90*Math.sin((scroll-400) * .005)));
+    		var fun2 = Math.abs(100+Math.floor(80+90*Math.sin((scroll-400) * .005)));
+    		var fun3 = Math.floor(80+90*Math.sin((scroll-400) * .005));
+
+    		$(".cls").css("border-right", fun + "px solid transparent");
+    		$(".cls").css("border-left", fun2 + "px solid transparent");
+    		$(".cls").css("left", fun3 + "px");
+
+    	});
+
+    });
+
+    </script>
+
+	<style>
+
+		body {
+			min-height: 5000px;
+		}
+
+		@font-face {
+		    font-family: 'Messenger Text';
+		    src: url('messenger-text.eot');
+		    src: url('messenger-text.eot?#iefix') format('embedded-opentype'),
+		         url('messenger-text.woff') format('woff'),
+		         url('messenger-text.ttf') format('truetype');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
+		#intro {
+		  margin-top: 100px;
+		  margin-bottom: 100px;
+		  width: 75%;
+		  min-height: 150vh;
+		} #intro h2, #intro h1, #intro p, #intro h4 {
+		  margin-left: 30%;
+		  max-width: 100%;
+		} #intro h1 {
+		  font-family: "Benton Modern", serif;
+		  font-size: 80px;
+		  line-height: 80px;
+		} #intro h2 {
+		  font-size: 30px;
+		  margin-bottom: 50px;
+		} #intro p {
+			font-size: 18px;
+			line-height: 150%;
+		  font-family: "Messenger Text", sans-serif;
+		  margin-top: 50px;
+		  margin-bottom: 50px;
+		} #intro h4 {
+			font-family: "Messenger Text", sans-serif;
+		  font-size: 20px;
+		  line-height: 30px;
+		}
+
+		hr {
+			width: 150px;
+			border: 0;
+			border-bottom: 12px solid black;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			margin-left: 30%;
+		}
+
+		hr.dg2 {
+			border-bottom: 6px solid black;
+		}
+
+		hr.dg3 {
+			border-bottom: 2px solid black;
+		}
+
+		.cls {
+			position: fixed;
+			width: 0;
+			top: 100px;
+			left: 100px;
+			border-top: 105px solid blue;
+			border-left: 90px solid transparent;
+			border-right: 100px solid transparent;
+			/* -webkit-transform: skew(50deg, 10deg); */
+			-webkit-transition: all 1s;
+			z-index: -1;
+
+		}
+
+		@media (max-height: 1000px) {
+		  .cls {
+		  	top: 700px;
+		  	left: 1000px;
+		    -webkit-transform: skew(5deg, 150deg);
+		  }
+		}
+
+		@media (max-height: 800px) {
+		  .cls {
+		  	top: 700px;
+		  	left: 100px;
+		    -webkit-transform: skew(120deg, 150deg);
+		  }
+		}
+
+		@media (max-width: 1000px) {
+		  .cls {
+		  	top: initial;
+		  	left: initial;
+		    bottom: 15px;
+		    right: 100px;
+		    -webkit-transform: skew(12deg, 50deg);
+		  }
+		}
+
+
+
+
+
+	</style>
+
+</head>
+<body>
+
+	    <div id="intro">
+        <h1>HTML Output</h1>
+
+        <hr></hr>
+        <p>
+            This website (book) collects three months of conversations with practicing designers and experimental projects that use the web browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and this book. The book that in fact comes from this very website. A "responsive" website that at any point in its development could output to a LuLu-printable pdf. The book prioritizing reading and documentation, the website foregrounding its ability to update, many more images and links to live code downloads. 
+        <p>
+
+        <p>
+        	A book is an ideal place for designers to archive and present their work in a physical format. Unlike the web, the book is a final format. It cannot lose compatibility or functionality. It cannot be linked to, it cannot be updated, and it cannot be edited. It can be reprinted but each individual book is an archive of a specific time and state. 
+        </p>
+
+        <hr></hr>
+        <h2>edited by John Caserta</h2>
+        <h4>featuring work by Evan Brooks, Ojus Doshi, Kelly Walters, Christina Webb, Christina Rees, Lukas WinklerPrins, Dan Giuditta, Phil Cao, Catherine Leigh Schmidt, and Michael McDermott</h4>
+    </div>
+
+    <div class="cls"></div>
+
+
+
+</body>
+</html>

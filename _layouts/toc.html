@@ -17,6 +17,28 @@
         <script type="text/javascript" src="{{ site.baseurl }}/script/jquery.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/script/toc.js"></script>
 
+        <script>
+
+            $(document).ready(function() {
+
+                $(document).scroll(function() {
+
+                    var scroll = $(document).scrollTop();
+
+                    var fun = Math.abs(Math.floor(80+90*Math.sin((scroll-400) * .005)));
+                    var fun2 = Math.abs(100+Math.floor(80+90*Math.sin((scroll-400) * .005)));
+                    var fun3 = Math.floor(80+90*Math.sin((scroll-400) * .005));
+
+                    $(".cls").css("border-right", fun + "px solid transparent");
+                    $(".cls").css("border-left", fun2 + "px solid transparent");
+                    $(".cls").css("left", fun3 + "px");
+
+                });
+
+            });
+
+    </script>
+
     </head>
     <body>
         {% include nav.html %}
