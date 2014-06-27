@@ -237,8 +237,6 @@ Styles for the index/toc page
 #intro {
   margin-top: 100px;
   margin-bottom: 100px;
-  width: 75%;
-  min-height: 150vh;
 } #intro h2, #intro h1, #intro p, #intro h4 {
   margin-left: 20%;
   max-width: 100%;
@@ -257,10 +255,12 @@ Styles for the index/toc page
   font-family: "Messenger Text", sans-serif;
   margin-top: 50px;
   margin-bottom: 50px;
+  max-width: 800px;
 } #intro h4 {
   font-family: "Messenger Text", sans-serif;
   font-size: 20px;
   line-height: 30px;
+  max-width: 800px;
 } #intro hr {
   margin-left: 20%;
 }
@@ -363,25 +363,6 @@ separated into print and web
 
 .interview-name{
   color: rgba(0,255,0,1);
-}
-
-hr {
-  clear: both;
-  width: 150px;
-  border: 0;
-  border-bottom: 12px solid black;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-hr.dg2 {
-  border-bottom: 5px solid black;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-hr.dg3 {
-  border-bottom: 2px solid black;
 }
 
 .interview-bar{
