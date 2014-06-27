@@ -90,7 +90,7 @@ img{
 
 .wrapper figure, .wrapper figcaption, .wrapper div, p{
 /*  max-width: 500px; */
-  float:left;
+  float:left; margin-right: 10px;
 }
 
 .wrapper img {
