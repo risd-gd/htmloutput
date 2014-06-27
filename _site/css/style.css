@@ -41,20 +41,15 @@ a {
 
 h1 {
 	margin-bottom: 1.4rem;
+  font-weight: normal;
 
 }
 
 h2, h3, h4 {
 	margin-bottom: 1.4rem;
 	font-size:     1.5rem;
+  font-weight: normal;
 }
-
-/*
-hr {
-  border: 0;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 1.4rem;
-} */
 
 p {
 	margin-bottom: 1.4rem
@@ -77,12 +72,6 @@ blockquote {
 	color: gray;
 }
 
-hr {
-	border: 0;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 1.4rem;
-}
-
 figcaption{
   text-style: italic;
 
@@ -96,10 +85,6 @@ figcaption{
 Styles for the index/toc page
 
 ----------------------------------*/
-
-nav {
-	position: relative;
-}
 
 .cat-name {
 	text-transform: uppercase;
@@ -214,43 +199,19 @@ nav {
 }
 
 #content h1 {
-  font-family: "Messenger Text", sans-serif;
-  font-size: 30px;
-  line-height: 30px;
-  margin-top: 150px;
-  margin-left: 45%;
-  max-width: none;
-  clear:both;
-} #content hr {
-  border-bottom: 10pt solid black;
-  width: 100px;
-  margin-left: 45%;
-  height: 0pc;
-  margin-bottom: 100px;
-} 
-
-/* this is the same style, reused
-   "page.html"
-*/
-.category {
-  margin-top: 100px;
+  left: 20%;
 }
 
-.category h1 {
+.category{
+  margin-top: 100px;
   font-family: "Messenger Text", sans-serif;
   font-size: 30px;
   line-height: 30px;
   margin-top: 150px;
-  margin-left: 45%;
+  left: 20%;
   max-width: none;
   clear:both;
-} .category hr {
-  border-bottom: 10pt solid black;
-  width: 100px;
-  margin-left: 45%;
-  height: 0pc;
-  margin-bottom: 100px;
-} 
+}
 
 
 /* copied from book-ui.css ... uh oh */
@@ -364,27 +325,70 @@ nav {
 #intro {
   margin-top: 100px;
   margin-bottom: 100px;
-  width: 100%;
+  width: 75%;
   min-height: 150vh;
-  background-image: url('../img_09.png');
-  background-size: 100% 100%;
 } #intro h2, #intro h1, #intro p, #intro h4 {
-  margin-left: 30%;
+  margin-left: 20%;
   max-width: 100%;
 } #intro h1 {
   font-family: "Benton Modern", serif;
   font-size: 80px;
   line-height: 80px;
 } #intro h2 {
+  font-family: "Benton Modern", serif;
+  font-weight: bold;
   font-size: 30px;
   margin-bottom: 50px;
 } #intro p {
+  font-size: 18px;
+  line-height: 150%;
   font-family: "Messenger Text", sans-serif;
   margin-top: 50px;
   margin-bottom: 50px;
 } #intro h4 {
+  font-family: "Messenger Text", sans-serif;
   font-size: 20px;
   line-height: 30px;
+}
+
+.cls {
+  position: fixed;
+  width: 0;
+  top: 100px;
+  left: 100px;
+  border-top: 105px solid blue;
+  border-left: 90px solid transparent;
+  border-right: 100px solid transparent;
+  /* -webkit-transform: skew(50deg, 10deg); */
+  -webkit-transition: all 1s;
+  z-index: -1;
+
+}
+
+@media (max-height: 1000px) {
+  .cls {
+    top: 700px;
+    left: 1000px;
+    -webkit-transform: skew(5deg, 150deg);
+  }
+}
+
+@media (max-height: 800px) {
+  .cls {
+    top: 700px;
+    left: 100px;
+    -webkit-transform: skew(120deg, 150deg);
+  }
+}
+
+@media (max-width: 1000px) {
+  .cls {
+    top: initial;
+    left: initial;
+    bottom: 15px;
+    right: 100px;
+    -webkit-transform: skew(12deg, 50deg);
+  }
 }
 
 
@@ -438,12 +442,22 @@ separated into print and web
   color: rgba(0,255,0,1);
 }
 
-hr{
-	border-bottom: 5pt solid black;
-	width: 25%;
-	height: 0pc;
-	margin-top: 2pc;
-	margin-bottom: 2pc;
+hr {
+  clear: both;
+  width: 150px;
+  border: 0;
+  border-bottom: 12px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20%;
+}
+
+hr.dg2 {
+  border-bottom: 6px solid black;
+}
+
+hr.dg3 {
+  border-bottom: 2px solid black;
 }
 
 .interview-bar{

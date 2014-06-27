@@ -52,17 +52,18 @@ title: HTML OUTPUT
 
 <div id="content">
 
-    <h1>Conversations</h1>
+    <h1 class="category">Conversations</h1>
     <hr></hr>
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="pagey">
         <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>interviewed by {{page.interviewer}}</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     {% endif %}{% endfor %}
 
 
-    <h1>Output</h1>
+    <h1 class="category">Output</h1>
     <hr></hr>
     {% for page in site.pages %}{% if page.category == 'project' %}
     <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
@@ -72,7 +73,7 @@ title: HTML OUTPUT
     {% endif %}{% endfor %}
 
 
-    <h1>Code</h1>
+    <h1 class="category">Code</h1>
     <hr></hr>
     {% for page in site.pages %}{% if page.category == 'code' %}
     <a class="code" href="{{ site.baseurl }}{{ page.url }}">

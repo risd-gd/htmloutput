@@ -17,6 +17,28 @@
         <script type="text/javascript" src="/htmloutput/script/jquery.js"></script>
         <script type="text/javascript" src="/htmloutput/script/toc.js"></script>
 
+        <script>
+
+            $(document).ready(function() {
+
+                $(document).scroll(function() {
+
+                    var scroll = $(document).scrollTop();
+
+                    var fun = Math.abs(Math.floor(80+90*Math.sin((scroll-400) * .005)));
+                    var fun2 = Math.abs(100+Math.floor(80+90*Math.sin((scroll-400) * .005)));
+                    var fun3 = Math.floor(80+90*Math.sin((scroll-400) * .005));
+
+                    $(".cls").css("border-right", fun + "px solid transparent");
+                    $(".cls").css("border-left", fun2 + "px solid transparent");
+                    $(".cls").css("left", fun3 + "px");
+
+                });
+
+            });
+
+    </script>
+
     </head>
     <body>
         <nav class="print-nav">
@@ -27,9 +49,9 @@
         <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
         <button class="toggle-btn" id="postproc">Post-process</button>
     </div> -->
-    <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">html output</span>
+    <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">☰ html output</span>
 
-    <span style="margin-right: 1em">
+  <!--  <span style="margin-right: 1em">
         <select>
             <option value="Home">Home</option>
             <option value="Conversations">Conversations</option>
@@ -37,7 +59,7 @@
             <option value="Code">Code</option>
             <option value="About">About</option>
         </select>
-    </span>
+    </span> -->
 
     <span id="postProcessControls" style="display: none;">
         <label><input id="toggleguides" type="checkbox" checked />Show bleed</label> &nbsp;&nbsp;&nbsp;
@@ -405,19 +427,24 @@
 
     <div id="intro">
         <h1>HTML Output</h1>
-        <h2>Browser-based shenanigans</h2>
+
+        <hr></hr>
 
         <p>
             This website (book) collects three months of conversations with practicing designers and experimental projects that use the web browser to create off-browser forms: event ephemera, wallpaper and textiles, videos and this book. The book that in fact comes from this very website. A "responsive" website that at any point in its development could output to a LuLu-printable pdf. The book prioritizing reading and documentation, the website foregrounding its ability to update, many more images and links to live code downloads. 
         <p>
 
-        <h4>edited by John Caserta</h4>
+        <hr></hr>
+
+        <h2>edited by John Caserta</h2>
         <h4>featuring work by Evan Brooks, Ojus Doshi, Kelly Walters, Christina Webb, Christina Rees, Lukas WinklerPrins, Dan Giuditta, Phil Cao, Catherine Leigh Schmidt, and Michael McDermott</h4>
     </div>
 
+<div class="cls"></div>
+
 <div id="content">
 
-    <h1>Conversations</h1>
+    <h1 class="category">Conversations</h1>
     <hr></hr>
     
     
@@ -428,26 +455,31 @@
     <div class="pagey">
         <a class="name" id="/interview-bilak-schmidt/" href="/htmloutput/interview-bilak-schmidt/">Peter Biľak <span>interviewed by Catherine Schmidt</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     <div class="pagey">
         <a class="name" id="/interview-leclair-rees/" href="/htmloutput/interview-leclair-rees/">Andrew LeClair <span>interviewed by Christina Rees</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     <div class="pagey">
         <a class="name" id="/interview-mevis-caserta/" href="/htmloutput/interview-mevis-caserta/">Armand Mevis <span>interviewed by John Caserta</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     <div class="pagey">
         <a class="name" id="/interview-pamental-doshi/" href="/htmloutput/interview-pamental-doshi/">Jason Pamental <span>interviewed by Ojus Doshi</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     <div class="pagey">
         <a class="name" id="/interview-reinfurt-casertaWebbWalters/" href="/htmloutput/interview-reinfurt-casertaWebbWalters/">David Reinfurt <span>interviewed by John Caserta, Christina Webb and Kelly Walters</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
@@ -461,30 +493,35 @@
     <div class="pagey">
         <a class="name" id="/interview-lehni-caoGiuditta/" href="/htmloutput/interview-lehni-caoGiuditta/">Jürg Lehni <span>interviewed by Philippe Cao, Daniel Giuditta</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
     <div class="pagey">
         <a class="name" id="/interview-pieratt-winklerprins/" href="/htmloutput/interview-pieratt-winklerprins/">Ben Pieratt <span>interviewed by Lukas WinklerPrins</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
     <div class="pagey">
         <a class="name" id="/interview-decurnex-walters/" href="/htmloutput/interview-decurnex-walters/">Augustina Bello-Decurnex <span>interviewed by Kelly Walters</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
     <div class="pagey">
         <a class="name" id="/interview-soulellis-webb/" href="/htmloutput/interview-soulellis-webb/">Paul Soulellis <span>interviewed by Christina Webb</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
     <div class="pagey">
         <a class="name" id="/interview-michaelson-caserta/" href="/htmloutput/interview-michaelson-caserta/">Dan Michaelson <span>interviewed by John Caserta</span></a><br />
     </div>
+    <hr class='dg2'></hr>
     
     
     
@@ -496,7 +533,7 @@
     
 
 
-    <h1>Output</h1>
+    <h1 class="category">Output</h1>
     <hr></hr>
     
     <a class="output" style="background-image: url('/htmloutput/project-giuditta-sprites/hero.png')" href="/htmloutput/project-giuditta-sprites/">
@@ -566,7 +603,7 @@
     
 
 
-    <h1>Code</h1>
+    <h1 class="category">Code</h1>
     <hr></hr>
     
     <a class="code" href="/htmloutput/project-brooks-loom/">
