@@ -364,20 +364,24 @@ Styles for the index/toc page
 }
 
 .one {
+  border-top-color: rgba(255, 50, 14, .3);
   top: 100px;
   left: 100px;
 }
 
 .two {
+  border-top-color: rgba(67, 250, 70, .5);
   right: 15px;
   top: 500px;
 }
 
 .three {
+  border-top-color: rgba(30, 112, 255, .2);
   bottom: 150px;
   right:700px;
 }
 
+/*
 @media (max-height: 1000px) {
   .cls {
     -webkit-transform: skew(5deg, 150deg);
@@ -395,6 +399,7 @@ Styles for the index/toc page
     -webkit-transform: skew(12deg, 50deg);
   }
 }
+*/
 
 
 /* ----------------------------------
