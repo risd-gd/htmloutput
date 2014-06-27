@@ -380,26 +380,18 @@ Styles for the index/toc page
 
 @media (max-height: 1000px) {
   .cls {
-    top: 700px;
-    left: 1000px;
     -webkit-transform: skew(5deg, 150deg);
   }
 }
 
 @media (max-height: 800px) {
   .cls {
-    top: 700px;
-    left: 100px;
     -webkit-transform: skew(120deg, 150deg);
   }
 }
 
 @media (max-width: 1000px) {
   .cls {
-    top: initial;
-    left: initial;
-    bottom: 15px;
-    right: 100px;
     -webkit-transform: skew(12deg, 50deg);
   }
 }
