@@ -38,7 +38,7 @@ title: HTML OUTPUT
 <div class="two cls"></div>
 <div class="three cls"></div>
 
-<div id="content">
+<div id="index">
 
     <h1 class="category">Conversations</h1>
     <hr></hr>
@@ -55,8 +55,8 @@ title: HTML OUTPUT
     <hr></hr>
     {% for page in site.pages %}{% if page.category == 'project' %}
     <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
-        <h3>{{page.author}}</h3>
-        {{page.description}}
+        <div><h3>{{page.author}}</h3>{{page.description}}</div>
+        
     </a>
     {% endif %}{% endfor %}
 
@@ -74,18 +74,3 @@ title: HTML OUTPUT
 
 </div>
 
-<script>
-    /*var toggler = document.querySelector("[data-toggler]");
-    var togglee = document.querySelector("[data-togglee]");
-
-    toggler.addEventListener("click", function(e){
-        togglee.style.maxHeight = "1000px";
-        console.log("hey");
-    }); */
-
-    $( ".site-title" ).click(function() {
-        $( ".toglee" ).toggle( 500, function() {
-            // Animation complete.
-        });
-    });
-</script>

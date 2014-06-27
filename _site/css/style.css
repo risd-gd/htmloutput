@@ -86,108 +86,8 @@ Styles for the index/toc page
 
 ----------------------------------*/
 
-.cat-name {
-	text-transform: uppercase;
-	font-size:      1rem;
-}
 
-
-.item {
-	padding: 0.2rem 0.2rem;
-}
-
-.print-btn {
-	padding: 0.8rem 2rem;
-	border: 1px solid black;
-	text-align: center;
-	color: black;
-}
-
-.print-btn:hover {
-	background: black;
-	color: white;
-  cursor: pointer;
-}
-
-.posts {
-  margin-bottom: 2rem;
-}
-
-/* Above this is old styling, below this is new */
-
-#print_button_link{
-  text-decoration: none;
-  /* border: 2px solid blue; */
-  background: white;
-  text-align: center;
-  color: blue;
-  z-index: 2;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  width: 300px;
-  display: inline-block;
-  padding: 30px 0px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-}
-#print_button_link:hover{
-  background: blue;
-  color: white;
-  cursor: pointer;
-}
-
-.site-title {
-  padding: 10px 0px;
-  color: blue;
-  text-align: center;
-}
-
-
-[data-togglee] {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s;
-}
-
-#nav_box{
-	top: 100px;
-  left: 0px;
-	width: 300px;
-  /*was 400px*/
-	max-height: 90%;
-  /* bottom: 10px; */
-	padding:25px;
-	margin:15px;
-	display:inline-block;
-	position:fixed;
-	background-color: white;
-	/*border: 2px solid black;*/
-	box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-	overflow-y:auto;
-  /*font-size: 14px;*/
-  z-index: 3;
-  font-family: "Messenger Text", sans-serif;
-}
-#nav_box .top{
-  /* text-align: center; */
-  text-transform: uppercase;
-  /*font-weight: bold;*/
-  padding: 10px;
-  font: 20px/1.4 "Messenger Text", sans-serif;
-}
-#nav_box .green{
-  color: green;
-}
-
-#nav_box .nav_link:hover{
-  cursor: pointer;
-}
-
-#nav_box a.interview:before{
-  /*content: "❝ ";*/
-}
-
-#content{
+#index{
   /*was 320px*/
   left: 0px;
   width: 100%;
@@ -199,9 +99,13 @@ Styles for the index/toc page
 }
 
 
-#content h1 {
+#index h1 {
   margin-left: 20%;
   margin-bottom: -38px;
+}
+
+#index hr {
+  margin-left: 20%;
 }
 
 .category{
@@ -225,16 +129,18 @@ Styles for the index/toc page
     left: 0;
     display: block;
     z-index: 999;
-    padding: 1%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: white;
     box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    margin: 0;
   }
 .print-nav span.big {
   font-family: "Benton Modern", serif;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
-  margin-left: 16%;
+  margin-left: 20%;
 }
 
 .pagey{
@@ -283,14 +189,6 @@ Styles for the index/toc page
   color: black;
 }
 
-.pagey .name:hover{
-  color: blue;
-  background-color: transparent;
-}
-.pagey .caption:hover{
-  color: transparent;
-  background-color: transparent;
-}
 
 .output {
   display: block;
@@ -298,17 +196,22 @@ Styles for the index/toc page
   width: 25%;
   height: 350px;
   background-position: center;
-  background-size: 100%;
   font-size: 20px;
   padding: 5px;
   color: rgba(0,0,0,0);
   -webkit-transition: all 1s;
 } .output:hover {
-  background: blue;
-  color: white;
+  background-size: 100%;
   opacity: .8;
   cursor: pointer;
-}
+} .output div {
+  background-image: none;
+  color: rgba(0,0,0,0);
+  -webkit-transition: all 1s;
+} .output div:hover {
+  background-color: white;
+  color:black;
+} 
 
 .code {
   display: block;
@@ -358,6 +261,8 @@ Styles for the index/toc page
   font-family: "Messenger Text", sans-serif;
   font-size: 20px;
   line-height: 30px;
+} #intro hr {
+  margin-left: 20%;
 }
 
 .cls {
@@ -467,7 +372,6 @@ hr {
   border-bottom: 12px solid black;
   margin-top: 50px;
   margin-bottom: 50px;
-  margin-left: 20%;
 }
 
 hr.dg2 {
