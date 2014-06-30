@@ -126,7 +126,7 @@ img{
 }
 
 .interview-a { text-indent: 20px;  }
-.interview-q { padding-left: 20px; color: #20B981;}
+.interview-q { color: #20B981;}
 .interview-a, .interview-q { font-size: 20px; }
 
 .title {
@@ -230,16 +230,6 @@ hr.dg3 {
   border-bottom: 2px solid black;
 }
 
-/*-----Media Query maybe-----*/
-@media (max-width: 600px) {
-  .interview-q {
-    font-family:'Benton Modern';
-    font-size:18px;
-    margin:auto;
-    margin-top:55px;
-    margin-bottom:15px;
-  }
-}
 
 /* ----------------------------------
 
@@ -463,9 +453,24 @@ Styles for the index/toc page
 
 /* MEDIA QUERIES */
 
-@media (min-width: 1500px) {
+@media (min-width: 1800px) {
   .wrapper {
-    max-width: 1500px;
+    max-width: 1800px;
     margin: auto;
     }
+
+  .more {
+    max-width: 1800px;
+    margin:auto;
+  }
+}
+
+/*-----Media Query maybe-----*/
+@media (max-width: 600px) {
+  .interview-q {
+    font-family:'Benton Modern';
+    font-size:18px;
+    margin:auto;
+    margin-bottom:15px;
+  }
 }
