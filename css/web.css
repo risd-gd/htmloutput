@@ -137,6 +137,7 @@ img{
   line-height: 110%;
   max-width: 600px;
   margin: auto;
+  padding-right: 100px;
 }
 
 .interview hr {
@@ -453,6 +454,7 @@ Styles for the index/toc page
 
 /* MEDIA QUERIES */
 
+/* big stuff */
 @media (min-width: 1800px) {
   .wrapper {
     max-width: 1800px;
@@ -464,6 +466,8 @@ Styles for the index/toc page
     margin:auto;
   }
 }
+
+/* ipad ? */
 
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
