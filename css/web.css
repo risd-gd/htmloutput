@@ -274,7 +274,7 @@ Styles for the index/toc page
 .category{
   margin-top: 100px;
   font-family: "Messenger Text", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 30px;
   margin-top: 150px;
   left: 20%;
@@ -343,7 +343,7 @@ Styles for the index/toc page
   xwhite-space: nowrap;
   position: relative;
   font-family: "Benton Modern", serif;
-  padding: 10px;
+  padding: 10px 10px 10px 0;
   left: 20%;
   margin-top: 12px;
   margin-bottom: 3px;
@@ -351,7 +351,7 @@ Styles for the index/toc page
 
 .pagey .name span {
   font-family: "Messenger Text", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   font-weight:normal;
 }
@@ -425,9 +425,10 @@ Styles for the index/toc page
   max-width: 800px;
 } #intro h4 {
   font-family: "Messenger Text", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
   max-width: 800px;
+  margin-bottom: 18px;
 } #intro hr {
   margin-left: 20%;
 }
