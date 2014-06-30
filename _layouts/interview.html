@@ -31,22 +31,22 @@
 
         <div class="wrapper interview">
 
-
-           <!-- <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a> -->
-
-
-<!-- {{ page.title }} -->
-
             <div class="title interview-name">
-                {{page.interviewee}} talks with {{ page.author }} <hr>
+                {{page.interviewee}} talks with {{ page.author }}
+                <hr>
             </div>
             <section class="interview-intro">{{page.description}}
-             <hr class="dg1">
+                <hr class="dg1">
            </section>
+           
+           {{ content }}
 
-            {{ content }}
+        </div>
 
-            <div class="more">
+
+
+
+        <div class="more">
                 <hr>
                  <h1 class="category">More conversations</h1>
                 <hr>
@@ -59,7 +59,6 @@
                 </div>
                 {% endif %}{% endfor %}
 
-            </div>
         </div>
 
 
