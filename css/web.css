@@ -90,6 +90,9 @@ img{
   /*border-bottom: 1px solid #20B981;*/
 }
 
+.wrapper {   margin-top: 100px;
+}
+
 
 .wrapper figure, .wrapper figcaption, .wrapper div, p{
   max-width: 500px;
@@ -135,11 +138,7 @@ img{
   margin: auto;
 }
 
-.interview {
-  margin:auto;
-  margin-top: 100px;
-  width: 60%;
-} .interview hr {
+.interview hr {
 
 }
 
@@ -152,7 +151,7 @@ img{
   line-height:1.5em;
 
 }
-.interview .interview-q {
+ .interview-q {
   margin-left:0;
 }
 
