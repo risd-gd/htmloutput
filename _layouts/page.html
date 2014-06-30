@@ -39,19 +39,7 @@
 
     </div>
 
-    <div class="more">
-        <hr>
-        <h1 class="category">More output</h1>
-        <hr>
-
-          {% for page in site.pages %}{% if page.category == 'project' %}
-    <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
-        <h3>{{page.author}}</h3>
-        {{page.description}}
-        </a>
-        {% endif %}{% endfor %}
-
-    </div>
+    {% include more-output.html %}
 
     <!-- CODEMIRROR (For syntax highlighting) -->
     <script src="{{ site.baseurl }}/script/cm4/lib/codemirror.js"></script>

@@ -469,6 +469,12 @@ Styles for the index/toc page
 
 /* ipad ? */
 
+@media (max-width: 800px) {
+  button {
+    display: none;
+  }
+}
+
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
   .interview-q {
@@ -476,5 +482,9 @@ Styles for the index/toc page
     font-size:18px;
     margin:auto;
     margin-bottom:15px;
+  }
+
+  button {
+    display: none;
   }
 }

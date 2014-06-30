@@ -40,18 +40,8 @@
 
     </div>
 
-    <div class="category">
-        <h1>More</h1>
-        <hr></hr>
 
-        {% for page in site.pages %}{% if page.category == 'code' %}
-    <a class="code" href="{{ site.baseurl }}{{ page.url }}">
-        <div style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')"></div>
-        <h2>{{page.title}}</h2><br />
-        {{page.description}}
-
-    </a>
-    {% endif %}{% endfor %}
+    {% include more-code.html %}
 
 
     </div>
