@@ -45,18 +45,20 @@
             <hr class="dg3">
 
             {{ content }}
-        </div>
+            <hr>
+         <h1>More conversations</h1>
+         <hr>
 
            {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="pagey">
-         <h1>More conversations</h1>
-        <hr>
+        <hr class="dg3">
 
        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
     </div>
     {% endif %}{% endfor %}
 
+       </div>
 
 
     <!-- CODEMIRROR (For syntax highlighting) -->
