@@ -94,7 +94,7 @@ img{
 }
 
 
-.wrapper figure, .wrapper figcaption, .wrapper div, p{
+.wrapper figure, .wrapper figcaption, .wrapper div, .wrapper .more, p{
   max-width: 500px;
   margin: auto;
 }
@@ -264,7 +264,7 @@ Styles for the index/toc page
   margin-bottom: -38px;
 }
 
-#index hr {
+#index hr, .more hr, .more .category {
   margin-left: 20%;
 }
 

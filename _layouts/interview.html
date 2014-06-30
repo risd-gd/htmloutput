@@ -45,20 +45,22 @@
            </section>
 
             {{ content }}
-            <hr>
-         <h1 class="category">More conversations</h1>
-         <hr>
 
-           {% for page in site.pages %}
-    {% if page.category == 'interview' %}
-    <div class="pagey">
-        <hr class="dg3">
+            <div class="more">
+                <hr>
+                 <h1 class="category">More conversations</h1>
+                <hr>
 
-       <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
-    </div>
-    {% endif %}{% endfor %}
+                {% for page in site.pages %}
+                {% if page.category == 'interview' %}
+                <div class="pagey">
+                   <hr class="dg3">
+                   <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
+                </div>
+                {% endif %}{% endfor %}
 
-       </div>
+            </div>
+        </div>
 
 
     <!-- CODEMIRROR (For syntax highlighting) -->
