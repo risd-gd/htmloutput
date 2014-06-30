@@ -45,7 +45,7 @@ title: HTML OUTPUT
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="pagey">
-        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>Talks with {{page.interviewer}}</span></a><br />
+        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
     </div>
     <hr class='dg2'></hr>
     {% endif %}{% endfor %}
