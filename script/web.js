@@ -9,8 +9,8 @@ $(document).ready(function(){
 
   $('.imageContainer').hover(function(){
     $(this).toggleClass('selectedImage');
-    $('.imageContainer').not(".selectedImage").css('opacity','0.05');
-    $('p').css('opacity','0.05');
+//    $('.imageContainer').not(".selectedImage").css('opacity','0.05');
+//    $('p').css('opacity','0.05');
   }, function(){
     $(this).toggleClass('selectedImage');
     $('.imageContainer').css('opacity','1');
