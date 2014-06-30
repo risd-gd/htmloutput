@@ -43,24 +43,7 @@
 
         </div>
 
-
-
-
-        <div class="more">
-                <hr>
-                 <h1 class="category">More conversations</h1>
-                <hr>
-
-                {% for page in site.pages %}
-                {% if page.category == 'interview' %}
-                <div class="pagey">
-                   <hr class="dg3">
-                   <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
-                </div>
-                {% endif %}{% endfor %}
-
-        </div>
-
+        {% include more-conversations.html %}
 
     <!-- CODEMIRROR (For syntax highlighting) -->
         <script src="{{ site.baseurl }}/script/cm4/lib/codemirror.js"></script>

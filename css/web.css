@@ -261,7 +261,6 @@ Styles for the index/toc page
 
 #index h1 {
   margin-left: 20%;
-  margin-bottom: -38px;
 }
 
 #index hr, .more hr, .more .category {
@@ -274,6 +273,7 @@ Styles for the index/toc page
   font-size: 28px;
   line-height: 30px;
   margin-top: 150px;
+  margin-bottom: -28px;
   left: 20%;
   max-width: none;
   clear:both;
