@@ -90,7 +90,8 @@ img{
   /*border-bottom: 1px solid #20B981;*/
 }
 
-.wrapper {   margin-top: 100px;
+.wrapper {   
+  margin-top: 100px;
 }
 
 
@@ -457,4 +458,14 @@ Styles for the index/toc page
  // border-top-color: rgba(30, 112, 255, .2);
   bottom: 150px;
   right:700px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1500px) {
+  .wrapper {
+    max-width: 1500px;
+    margin: auto;
+    }
 }
