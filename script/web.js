@@ -3,7 +3,7 @@ $(document).ready(function(){
   highlightCode();
 
   $('img').not('.nohover').each(function(){
-    $(this).wrap("<div class='imageContainer'></div>");
+    $(this).wrap("<section class='imageContainer'></section>");
   })
 
 

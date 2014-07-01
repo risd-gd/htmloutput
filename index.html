@@ -41,28 +41,30 @@ title: HTML OUTPUT
 <div id="index">
 
     <h1 class="category">Conversations</h1>
-    <hr></hr>
+    <hr>
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="pagey">
         <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.interviewer}}</span></a><br />
     </div>
-    <hr class='dg2'></hr>
+    <hr class='dg2'>
     {% endif %}{% endfor %}
 
 
     <h1 class="category">Output</h1>
-    <hr></hr>
-    {% for page in site.pages %}{% if page.category == 'project' %}
-    <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
-        <div><h3>{{page.author}}</h3>{{page.description}}</div>
-        
-    </a>
-    {% endif %}{% endfor %}
+    <hr>
+    <div class="output-container">
+        {% for page in site.pages %}{% if page.category == 'project' %}
+        <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
+            <div><h3>{{page.author}}</h3>{{page.description}}</div>
+            
+        </a>
+        {% endif %}{% endfor %}
+    </div>
 
 
     <h1 class="category">Code</h1>
-    <hr></hr>
+    <hr>
     {% for page in site.pages %}{% if page.category == 'code' %}
     <a class="code" href="{{ site.baseurl }}{{ page.url }}">
         <div style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')"></div>
@@ -71,6 +73,8 @@ title: HTML OUTPUT
 
     </a>
     {% endif %}{% endfor %}
+
+    {% include credits.html %}
 
 </div>
 

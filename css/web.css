@@ -9,6 +9,7 @@ RGB - (32, 185, 129)
 
 body {
   color: #1A1A1A;
+  margin-bottom: 100px;
 }
 
 .printy{
@@ -45,7 +46,8 @@ code {
   word-wrap: break-word;
 }
 
-.imageContainer{
+.interview .imageContainer{
+  display: block;
   width:700px;
   height:300px;
   overflow:hidden;
@@ -53,7 +55,7 @@ code {
   transition: all 1s;
 }
 
-.imageContainer:hover{
+.interview .imageContainer:hover{
   overflow:visible;
   width: auto;
   height: auto;
@@ -95,23 +97,30 @@ img{
 }
 
 
-.wrapper figure, .wrapper figcaption, .wrapper div, .wrapper .more, p{
+.wrapper div, .wrapper .more, .wrapper figcaption, p{
+  clear: both;
   max-width: 600px;
   margin: auto;
 }
 
 .wrapper img {
   height:auto;
-  max-width: 800px;
-  margin-left: auto;
-  margin-top: 15px;
-  display: inline-block;
+  max-width: 50%;
+  /* margin: auto;
+  margin-top: 15px; */
+  display: auto;
+  float: left;
 }
 
 .interview img {
   height:100%;
+  max-width: 800px;
 }
 
+.interview figure, .interview figcaption {
+  max-width: 600px;
+  margin: auto;
+}
 
 .interview-q:before, .interview-a:before  {
   font-size: 15px;
@@ -369,6 +378,12 @@ Styles for the index/toc page
   color:black;
 } 
 
+.output-container {
+  width: 95%;
+  margin: auto;
+  clear: both;
+}
+
 .code {
   display: block;
   float: left;
@@ -390,37 +405,43 @@ Styles for the index/toc page
   cursor: pointer;
 }
 
-#intro {
-  margin-top: 100px;
-  margin-bottom: 100px;
-} #intro h2, #intro h1, #intro p, #intro h4 {
-  margin-left: 20%;
-  max-width: 100%;
-} #intro h1 {
-  font-family: "Benton Modern", serif;
+
+.toc-block {
+  display: block;
+  clear: both;
+} .toc-block h2, .toc-block h1, .toc-block p, .toc-block h4 {
+    margin-left: 20%;
+   max-width: 700px;
+} .toc-block h1 {
+  ont-family: "Benton Modern", serif;
   font-size: 80px;
   line-height: 80px;
-} #intro h2 {
+} .toc-block h2 {
   font-family: "Benton Modern", serif;
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 50px;
-} #intro p {
+} .tock-block p {
   font-size: 24px;
   line-height: 150%;
   font-family: "Messenger Text", sans-serif;
   margin-top: 50px;
   margin-bottom: 50px;
   max-width: 800px;
-} #intro h4 {
+} .toc-block h4 {
   font-family: "Messenger Text", sans-serif;
   font-size: 18px;
   line-height: 30px;
   max-width: 800px;
   margin-bottom: 18px;
-} #intro hr {
+} .toc-block hr {
   margin-left: 20%;
 }
+
+#intro {
+  margin-top: 100px;
+  margin-bottom: 100px;
+} 
 
 .cls {
   position: fixed;
