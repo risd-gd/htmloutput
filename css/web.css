@@ -488,3 +488,12 @@ Styles for the index/toc page
     display: none;
   }
 }
+
+@media print {
+  .printy{
+    display: visible;
+  }
+  .noprinty{
+    display: none;
+  }
+}
