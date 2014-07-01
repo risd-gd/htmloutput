@@ -209,8 +209,7 @@ a {
     color:rgb(55,50,255);
     text-decoration: none;
 } a:hover {
-    background-color:rgb(55,50,255);
-    color: white;
+    color:rgb(55,50,255);
 }
 
 h1, h2, h3, h4{
@@ -303,8 +302,9 @@ Styles for the index/toc page
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 20%;
-} a:hover {
-  color: blue;
+} a.big:hover {
+  color:rgb(55,50,255);
+
 }
 
 .pagey{
@@ -345,6 +345,8 @@ Styles for the index/toc page
   left: 20%;
   margin-top: 12px;
   margin-bottom: 3px;
+} .name:hover {
+  color:rgb(55,50,255);
 }
 
 .pagey .name span {
@@ -387,7 +389,7 @@ Styles for the index/toc page
 .code {
   display: block;
   float: left;
-  width: 25%;
+  width: 20%;
   margin: 2%;
   padding: 10px;
   color: black;
@@ -396,11 +398,10 @@ Styles for the index/toc page
   font-size: 40px;
   font-weight: bold;
   line-height: 110%;
-} .code div {
+} .code img {
   width: 100%;
-  height: 300px;
-  background-size: 100%;
-  background-position: center;
+  height: auto;
+  padding: 20px;
 } code:hover {
   cursor: pointer;
 }

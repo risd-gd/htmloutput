@@ -53,13 +53,15 @@ title: HTML OUTPUT
 
     <h1 class="category">Output</h1>
     <hr>
-    <div class="output-container">
-        {% for page in site.pages %}{% if page.category == 'project' %}
-        <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
-            <div><h3>{{page.author}}</h3>{{page.description}}</div>
-            
-        </a>
-        {% endif %}{% endfor %}
+    <div style="display: inline-block">
+        <div class="output-container">
+            {% for page in site.pages %}{% if page.category == 'project' %}
+            <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
+                <div><h3>{{page.author}}</h3>{{page.description}}</div>
+                
+            </a>
+            {% endif %}{% endfor %}
+        </div>
     </div>
 
 
@@ -67,7 +69,7 @@ title: HTML OUTPUT
     <hr>
     {% for page in site.pages %}{% if page.category == 'code' %}
     <a class="code" href="{{ site.baseurl }}{{ page.url }}">
-        <div style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')"></div>
+        <img src="{{ site.baseurl }}{{ page.url }}icon.png">
         <h2>{{page.title}}</h2><br />
         {{page.description}}
 
