@@ -491,7 +491,7 @@ Styles for the index/toc page
 
 @media print {
   .printy{
-    display: visible;
+    display: inline-block;
   }
   .noprinty{
     display: none;
