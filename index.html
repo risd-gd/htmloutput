@@ -81,12 +81,10 @@ title: HTML OUTPUT
 
     <h1 class="category">Credits</h1>
     <hr>
-    <div style="display: inline-block;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'about' %}
                 {{page.content}}
                 {% endif %}{% endfor %}
         </div>
-    </div>
 </div>
 
