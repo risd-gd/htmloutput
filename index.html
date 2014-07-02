@@ -83,7 +83,7 @@ title: HTML OUTPUT
     <hr>
     <div style="display: inline-block;">
         <div class="toc-container">
-            {% for page in site.pages %}{% if page.category == 'credits' %}
+            {% for page in site.pages %}{% if page.category == 'about' %}
             <a class="code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
                 <h2>{{page.title}}</h2><br />
