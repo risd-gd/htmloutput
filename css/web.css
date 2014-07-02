@@ -490,7 +490,6 @@ Styles for the index/toc page
 }
 
 .one {
- // border-top-color: rgba(255, 50, 14, .3);
   top: 100px;
   left: 100px;
 }
@@ -502,10 +501,9 @@ Styles for the index/toc page
 }
 
 .three {
- // border-top-color: rgba(30, 112, 255, .2);
   bottom: 150px;
   right:700px;
-  display:none;
+  border: 2000px solid rgba(0, 255, 255, .5);
 }
 
 
