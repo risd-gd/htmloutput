@@ -201,7 +201,7 @@ For previewing the print
 		left: 0;
 		display: block;
 		z-index: 999;
-		padding: 15px;
+		padding-right: 15px;
 		background: white;
 		box-shadow: 0 0 2px rgba(0,0,0,0.2);
 	}
