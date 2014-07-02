@@ -483,7 +483,7 @@ Styles for the index/toc page
   position: fixed;
   width: 0;
   border-top: 2000px solid rgba(100, 150, 255, .2);
-  border-left: 1000ƒpx solid transparent;
+  border-left: 1000px solid transparent;
   border-right: 1000px solid transparent;
   /* -webkit-transform: skew(50deg, 10deg); */
   z-index: -1;
