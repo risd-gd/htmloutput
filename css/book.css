@@ -97,9 +97,17 @@ Title page
 
 ----------------------------------*/
 
-.title-page h1 {
-	font-size: 6em;
+.halftitle-page h1 {
+	font-size: 20px;
 	font-family: Benton Modern;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.title-page h1 {
+	font-size: 50px;
+	font-family: Benton Modern;
+	font-weight: bold;
 }
 
 .category-name {
