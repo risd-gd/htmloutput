@@ -121,6 +121,9 @@ img{
   max-width: 600px;
   margin: auto;
 }
+.outputwrapper figcaption {
+  display:none;
+}
 
 .interview-q:before, .interview-a:before  {
   font-size: 15px;
