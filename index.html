@@ -86,8 +86,7 @@ title: HTML OUTPUT
             {% for page in site.pages %}{% if page.category == 'about' %}
             <a class="code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
-                <h2>{{page.title}}</h2><br />
-                {{page.description}}
+                {{page.content}}
                  </a>
                 {% endif %}{% endfor %}
         </div>
