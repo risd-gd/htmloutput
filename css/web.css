@@ -374,8 +374,7 @@ Styles for the index/toc page
   height: 500%;
   width: 500%;
   -webkit-transition: all 1s;
-}
-.output:hover {
+}.output:hover {
   background-size: 100%;
   opacity: .8;
   cursor: pointer;
@@ -416,22 +415,31 @@ Styles for the index/toc page
 .code {
   display: block;
   float: left;
-  width: 20%;
-  margin: 2%;
+  width: 40%;
+  margin-right: 5%;
+  margin-bottom: 5%;
   padding: 10px;
   color: black;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
 } .code h2 {
   font-family: "Benton Modern";
   font-size: 25px;
   font-weight: bold;
   line-height: 110%;
 } .code img {
-  width: 100%;
+  display: block;
+  width: 50%;
+  margin: auto;
   height: auto;
   padding: 20px;
-} code:hover {
+} .code:hover {
   cursor: pointer;
+} .code p {
+  max-width: 70%;
+} .code hr {
+  margin: auto;
+  margin-top: 25px;
 }
 
 
