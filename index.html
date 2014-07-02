@@ -84,10 +84,7 @@ title: HTML OUTPUT
     <div style="display: inline-block;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'about' %}
-            <a class="code" href="{{ site.baseurl }}{{ page.url }}">
-                <img src="{{ site.baseurl }}{{ page.url }}icon.png">
                 {{page.content}}
-                 </a>
                 {% endif %}{% endfor %}
         </div>
     </div>
