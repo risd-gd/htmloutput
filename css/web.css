@@ -483,10 +483,7 @@ Styles for the index/toc page
   position: fixed;
   width: 0;
   border-radius: 50%;
-  border-top: 2000px solid rgba(0, 150, 255, .2);
-  border-left: 2000px solid rgba(0, 150, 255, .2);
-  border-right: 2000px solid rgba(0, 150, 255, .2);
-  border-bottom: 2000px solid transparent;
+  border: 2000px solid rgba(255, 255, 0, .5);
   /* -webkit-transform: skew(50deg, 10deg); */
   z-index: -1;
 
@@ -499,7 +496,7 @@ Styles for the index/toc page
 }
 
 .two {
- // border-top-color: rgba(67, 250, 70, .5);
+  border: 2000px solid rgba(0, 0, 255, .5);
   right: 15px;
   top: 600px;
 }
