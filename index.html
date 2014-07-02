@@ -53,12 +53,12 @@ title: HTML OUTPUT
 
     <h1 class="category">Output</h1>
     <hr>
-    <div style="display: inline-block">
-        <div class="output-container">
+    <div style="display: inline-block; -webkit-transition: all 1s;">
+        <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'project' %}
-            <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
-                <div><h3>{{page.author}}</h3>{{page.description}}</div>
-                
+            <a class="output" href="{{ site.baseurl }}{{ page.url }}">
+                <div><span>{{page.author}}</span></div>
+                <img src="{{ site.baseurl }}{{ page.url }}hero.png">
             </a>
             {% endif %}{% endfor %}
         </div>
@@ -67,14 +67,18 @@ title: HTML OUTPUT
 
     <h1 class="category">Code</h1>
     <hr>
-    {% for page in site.pages %}{% if page.category == 'code' %}
-    <a class="code" href="{{ site.baseurl }}{{ page.url }}">
-        <img src="{{ site.baseurl }}{{ page.url }}icon.png">
-        <h2>{{page.title}}</h2><br />
-        {{page.description}}
+    <div style="display: inline-block;">
+        <div class="toc-container">
+            {% for page in site.pages %}{% if page.category == 'code' %}
+            <a class="code" href="{{ site.baseurl }}{{ page.url }}">
+                <img src="{{ site.baseurl }}{{ page.url }}icon.png">
+                <h2>{{page.title}}</h2><br />
+                {{page.description}}
+                 </a>
+                {% endif %}{% endfor %}
+        </div>
+    </div>
 
-    </a>
-    {% endif %}{% endfor %}
 
     {% include credits.html %}
 

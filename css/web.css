@@ -361,28 +361,52 @@ Styles for the index/toc page
   display: block;
   float: left;
   width: 25%;
-  height: 350px;
+  height: 225px;
   background-position: center;
   font-size: 20px;
-  padding: 5px;
   color: rgba(0,0,0,0);
   -webkit-transition: all 1s;
-} .output:hover {
+  overflow: hidden;
+} .output img {
+  height: 500%;
+  width: 500%;
+  -webkit-transition: all 1s;
+}
+.output:hover {
   background-size: 100%;
   opacity: .8;
   cursor: pointer;
 } .output div {
+  padding: 2px;
+  position: absolute;
+  display: inline-block;
+  -webkit-transition: all 1s;
+  z-index: 0;
+} .output div span {
+  display: inline-block;
+  max-width: 10vw;
+  -webkit-transition: all 1s;
   background-image: none;
   color: rgba(0,0,0,0);
-  -webkit-transition: all 1s;
-} .output div:hover {
-  background-color: white;
-  color:black;
-} 
+  font-size: 14px;
+  padding: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} .output:hover div{
+  z-index: 100;
+  background-color: rgb(55,50,255);
+} .output:hover div span {
+  color: white;
+  // border-bottom: 1px solid white;
+}.output:hover img {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
 
-.output-container {
-  width: 95%;
-  margin: auto;
+.toc-container {
+  margin-left: 20%;
+  margin-right: 20%;
   clear: both;
 }
 
@@ -393,9 +417,10 @@ Styles for the index/toc page
   margin: 2%;
   padding: 10px;
   color: black;
+  font-size: 16px;
 } .code h2 {
   font-family: "Benton Modern";
-  font-size: 40px;
+  font-size: 25px;
   font-weight: bold;
   line-height: 110%;
 } .code img {
