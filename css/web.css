@@ -439,7 +439,7 @@ Styles for the index/toc page
     margin-left: 20%;
    max-width: 700px;
 } .toc-block h1 {
-  ont-family: "Benton Modern", serif;
+  font-family: "Benton Modern", serif;
   font-size: 80px;
   line-height: 80px;
 } .toc-block h2 {
@@ -447,7 +447,7 @@ Styles for the index/toc page
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 50px;
-} .tock-block p {
+} .toc-block p {
   font-size: 24px;
   line-height: 150%;
   font-family: "Messenger Text", sans-serif;
@@ -466,7 +466,6 @@ Styles for the index/toc page
 
 #intro {
   margin-top: 100px;
-  margin-bottom: 100px;
 } 
 
 .cls {
