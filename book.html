@@ -69,6 +69,7 @@ Title Page
 -->
 <div class="title-page">
   <h1>{{ page.title }}</h1>
+   {% include introcredits.html %}
 </div>
 <div class="_page-break"></div>
 
@@ -79,7 +80,7 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page">
-  <p>This is a book we made.</p>
+   {% include introcredits.html %}
 </div>
 <div class="_page-break"></div>
 
@@ -203,7 +204,7 @@ All Content
 <div class="_page-break"></div>
 
 {% else %}
-
+<!--
   <h1 class="project-name"
       data-change-running-head
       data-change-page-kind
@@ -212,9 +213,10 @@ All Content
       data-id="{{ page.title }}">
         {{ page.title }}
   </h1>
-<hr />
-  <h1 class="project-name">{{ page.author }}</h1>
-
+<hr />-->
+ <div  class="_sideways-page"><h1>{{ page.author }}</h1>
+  <h2>{{ page.description }}</h2>
+ </div>
 <div class="_page-break"></div>
 {% endif %}
 
