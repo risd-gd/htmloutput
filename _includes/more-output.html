@@ -1,16 +1,12 @@
     
  <div class="output-container more">
-    <h1 class="category">More Output</h1>
-    <hr>
-    <div style="display: inline-block; -webkit-transition: all 1s;">
-        <div class="toc-container">
-            {% for page in site.pages %}{% if page.category == 'project' %}
-            <a class="output" href="{{ site.baseurl }}{{ page.url }}">
-                <div><span>{{page.author}}</span></div>
-                <img src="{{ site.baseurl }}{{ page.url }}hero.png">
-            </a>
-            {% endif %}{% endfor %}
-        </div>
-    </div>
+	<h1 class="category">More Output</h1>
+    <hr>    
+    {% for page in site.pages %}{% if page.category == 'project' %}
+    <a class="output" style="background-image: url('{{ site.baseurl }}{{ page.url }}hero.png')" href="{{ site.baseurl }}{{ page.url }}">
+        <div><h3>{{page.author}}</h3>{{page.description}}</div>
+        
+    </a>
+    {% endif %}{% endfor %}
 
 </div>
