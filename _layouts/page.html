@@ -26,16 +26,16 @@
 
         <div class="wrapper outputwrapper">
 
-         <!--   <a href="{{ site.baseurl }}" class="toc">&#10226;</br> Table of Contents</a>
+        <section class="img-zone">    
+            {{ content }}
+        </section>
 
-        <div class="category">
-            <h1>Output</h1>
-            <hr></hr>
-        <div>
- -->
-        <div class="title">{{ page.description }}<hr> by {{ page.author }}<hr></div>
+        <div class="about">
+            <hr class="dg2"> 
+            <h2>by {{ page.author }}</h2>
 
-        {{ content }}
+            <p>{{ page.caption }}</p>
+        </div>
 
     </div>
 

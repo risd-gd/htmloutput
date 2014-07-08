@@ -7,6 +7,7 @@ Hex - #20B981
 RGB - (32, 185, 129)
 ----------------------------------*/
 
+
 body {
   color: #1A1A1A;
   margin-bottom: 100px;
@@ -19,20 +20,59 @@ body {
   display: visible;
 }
 
-.toc {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  width: 115px;
-  text-align: center;
-  display: block;
-  padding: 10px;
-  border-bottom: 3px solid blue;
-}
-
 .site-title{
   cursor: pointer;
 }
+
+/* ----------------------------------
+
+General Styling
+
+----------------------------------*/
+
+p {
+
+    max-width:600px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.5em;
+    margin-bottom:15px;
+}
+
+a {
+    color:rgb(55,50,255);
+    text-decoration: none;
+} a:hover {
+    color:rgb(55,50,255);
+}
+
+h1, h2, h3, h4{
+    margin:auto;
+    margin-bottom:15px;
+    max-width: 600px;
+    margin: auto;
+}
+.interview h1 { margin-top: 50px;}
+
+hr {
+  clear: both;
+  width: 150px;
+  border: 0;
+  border-bottom: 12px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+hr.dg2 {
+  border-bottom: 5px solid black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+hr.dg3 {
+  border-bottom: 2px solid black;
+}
+
 
 code {
 	font: 0.8rem/1.4 Messenger Mono, monospace;
@@ -93,7 +133,8 @@ img{
 }
 
 .wrapper {   
-  margin-top: 100px;
+  clear: both;
+  display: inline-block;
 }
 
 
@@ -112,6 +153,7 @@ img{
   float: left;
 }
 
+/* interview styles */
 .interview img {
   height:100%;
   max-width: 800px;
@@ -120,9 +162,6 @@ img{
 .interview figure, .interview figcaption {
   max-width: 600px;
   margin: auto;
-}
-.outputwrapper figcaption {
-  display:none;
 }
 
 .interview-q:before, .interview-a:before  {
@@ -142,6 +181,7 @@ img{
 .interview-a, .interview-q { font-size: 20px; }
 
 .title {
+  margin-top: 100px;
   font-family: "Benton Modern";
   font-style: normal;
   font-weight: bold;
@@ -193,55 +233,35 @@ blockquote{
   padding-bottom: 15px;
 }
 
-/* ----------------------------------
+/* output styles */
 
-General Styling
-
-----------------------------------*/
-
-p {
-
-    max-width:600px;
-    margin:auto;
-    font-size:18px;
-    line-height:1.5em;
-    margin-bottom:15px;
+.outputwrapper {
+  color: white;
+  padding: 100px 50px;
+  background-color: #1A1A1A
 }
 
-a {
-    color:rgb(55,50,255);
-    text-decoration: none;
-} a:hover {
-    color:rgb(55,50,255);
+.outputwrapper figcaption {
+  display:none;
 }
 
-h1, h2, h3, h4{
-    margin:auto;
-    margin-bottom:15px;
-    max-width: 600px;
-    margin: auto;
-}
-.interview h1 { margin-top: 50px;}
-
-hr {
-  clear: both;
-  width: 150px;
-  border: 0;
-  border-bottom: 12px solid black;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.outputwrapper .img-zone { /* keeps margins behaving */
+  clear:both;
+  display: inline-block;
 }
 
-hr.dg2 {
-  border-bottom: 5px solid black;
-  margin-top: 0;
-  margin-bottom: 0;
+.outputwrapper h2 {
+  font-family: "Benton Modern";
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-hr.dg3 {
-  border-bottom: 2px solid black;
+.outputwrapper hr {
+  border-color: white;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-
 
 /* ----------------------------------
 
