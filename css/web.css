@@ -12,22 +12,54 @@ body {
   margin-bottom: 100px;
 }
 
+p {
+
+    max-width:600px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.5em;
+    margin-bottom:15px;
+}
+
+a {
+    color:rgb(55,50,255);
+    text-decoration: none;
+} a:hover {
+    color:rgb(55,50,255);
+}
+
+h1, h2, h3, h4{
+    margin:auto;
+    margin-bottom:15px;
+    max-width: 600px;
+    margin: auto;
+}
+.interview h1 { margin-top: 50px;}
+
+hr {
+  clear: both;
+  width: 150px;
+  border: 0;
+  border-bottom: 12px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+hr.dg2 {
+  border-bottom: 5px solid black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+hr.dg3 {
+  border-bottom: 2px solid black;
+}
+
 .printy{
   display: none;
 }
 .noprinty{
   display: visible;
-}
-
-.toc {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  width: 115px;
-  text-align: center;
-  display: block;
-  padding: 10px;
-  border-bottom: 3px solid blue;
 }
 
 .site-title{
@@ -70,6 +102,14 @@ code {
 
 /* ----------------------------------
 
+General Styling
+
+----------------------------------*/
+
+
+
+/* ----------------------------------
+
 Interview & Project Styles
 
 ----------------------------------*/
@@ -97,7 +137,7 @@ img{
 }
 
 
-.wrapper div, .wrapper .more, .wrapper figcaption, p{
+.wrapper div, .wrapper figcaption, p{
   clear: both;
   max-width: 600px;
   margin: auto;
@@ -193,53 +233,39 @@ blockquote{
   padding-bottom: 15px;
 }
 
+
+
 /* ----------------------------------
 
-General Styling
+  Nav styles, copied from 
+  book-ui.css
 
 ----------------------------------*/
 
-p {
 
-    max-width:600px;
-    margin:auto;
-    font-size:18px;
-    line-height:1.5em;
-    margin-bottom:15px;
+.print-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  z-index: 999;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  margin: 0;
 }
+.print-nav a.big {
+  color: black;
+  font-family: "Benton Modern", serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 20%;
+} a.big:hover {
+  color:rgb(55,50,255);
 
-a {
-    color:rgb(55,50,255);
-    text-decoration: none;
-} a:hover {
-    color:rgb(55,50,255);
-}
-
-h1, h2, h3, h4{
-    margin:auto;
-    margin-bottom:15px;
-    max-width: 600px;
-    margin: auto;
-}
-.interview h1 { margin-top: 50px;}
-
-hr {
-  clear: both;
-  width: 150px;
-  border: 0;
-  border-bottom: 12px solid black;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-hr.dg2 {
-  border-bottom: 5px solid black;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-hr.dg3 {
-  border-bottom: 2px solid black;
 }
 
 
@@ -261,7 +287,6 @@ Styles for the index/toc page
   overflow-x: hidden;
 }
 
-
 #index h1 {
   margin-left: 20%;
 }
@@ -270,6 +295,7 @@ Styles for the index/toc page
   margin-left: 20%;
 }
 
+/* for category name */
 .category{
   margin-top: 100px;
   font-family: "Messenger Text", sans-serif;
@@ -282,39 +308,10 @@ Styles for the index/toc page
   clear:both;
 }
 
-
-/* copied from book-ui.css ... uh oh */
-
-  .print-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: block;
-    z-index: 999;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background: white;
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
-    margin: 0;
-  }
-.print-nav a.big {
-  color: black;
-  font-family: "Benton Modern", serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-left: 20%;
-} a.big:hover {
-  color:rgb(55,50,255);
-
-}
-
+/* TOC interview links */
 .pagey{
   width: 100%;
-}
-
-.pagey .caption{
+} .pagey .caption{
   width: 60%;
   text-align: left;
   background-color: blue;
@@ -326,15 +323,11 @@ Styles for the index/toc page
   font-family: "Messenger Text", sans-serif;
   padding: 6px;
   border: 1px solid blue;
-}
-
-.pagey h3 {
+} .pagey h3 {
   font-size: 20px;
   margin-top: 10px;
   margin-left: 31%;
-}
-
-.pagey .name{
+} .pagey .name{
   /* width: 100%; */
   text-align: left;
   color: black;
@@ -350,16 +343,22 @@ Styles for the index/toc page
   margin-bottom: 3px;
 } .name:hover {
   color:rgb(55,50,255);
-}
-
-.pagey .name span {
+} .pagey .name span {
   font-family: "Messenger Text", sans-serif;
   font-size: 18px;
   color: black;
   font-weight:normal;
 }
 
+/* for code and output blocks */
+.toc-container {
+  margin-left: 20%;
+  margin-right: 20%;
+  clear: both;
+}
 
+
+/* TOC output */
 .output {
   display: block;
   float: left;
@@ -406,12 +405,7 @@ Styles for the index/toc page
   width: 100%;
 }
 
-.toc-container {
-  margin-left: 20%;
-  margin-right: 20%;
-  clear: both;
-}
-
+/* TOC code */
 .code {
   display: block;
   float: left;
@@ -442,7 +436,7 @@ Styles for the index/toc page
   margin-top: 25px;
 }
 
-
+/* for blocks of text in TOC */
 .toc-block {
   display: block;
   clear: both;
@@ -479,6 +473,13 @@ Styles for the index/toc page
   margin-top: 100px;
 } 
 
+/* ----------------------------------
+
+  Home Floating Circles. See js in 
+  toc.html layout
+
+----------------------------------*/
+
 .cls {
   position: fixed;
   width: 0;
@@ -506,8 +507,12 @@ Styles for the index/toc page
   border: 2000px solid rgba(0, 255, 255, .5);
 }
 
+/* ----------------------------------
 
-/* MEDIA QUERIES */
+  Media Queries
+
+----------------------------------*/
+
 
 /* big stuff */
 @media (min-width: 1800px) {
