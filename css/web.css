@@ -196,16 +196,16 @@ blockquote{
 }
 
 /* output template styles */
-.outputwrapper figcaption {
+.output figcaption {
   display:none;
-} .outputwrapper p {
+} .output p {
   clear: both;
   max-width: 600px;
   margin: auto;
 }
 
 /* code template styles */
-.codewrapper p {
+.code p {
   clear: both;
   max-width: 600px;
   margin: auto;
