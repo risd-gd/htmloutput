@@ -82,6 +82,11 @@ hr.dg3 {
   cursor: pointer;
 }
 
+.benton-italic {
+  font-family: "Benton Modern", serif;
+  font-style: italic;
+}
+
 code {
 	font: 0.8rem/1.4 Messenger Mono, monospace;
 	background: rgba(0, 255, 0, .04);
@@ -119,7 +124,7 @@ blockquote{
 Interview & Project Styles
 
 ----------------------------------*/
-
+.wrapper {
   margin-top: 100px;
 }
 .wrapper div, .wrapper figcaption {
@@ -238,8 +243,15 @@ Interview & Project Styles
 
 .code .title img{
   max-width: 25%;
-  float: left;
-} .code .title
+  margin:auto;
+} .code .title a {
+  margin-top: 15px;
+}.code .title a img{
+  margin: 5px;
+  height: 17px;
+  width: auto;
+  margin-right: 15px;
+}
 
 
 

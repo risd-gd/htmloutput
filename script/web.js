@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   highlightCode();
 
-  $('img').not('.nohover').each(function(){
+  $('.interview img').not('.nohover').each(function(){
     $(this).wrap("<section class='imageContainer'></section>");
   })
 
