@@ -195,9 +195,12 @@ Interview & Project Styles
 }
 .interview-a{
   max-width: 600px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* styles for interview images */
+/* styles for interview images 
+   see web.js for more
+*/
 .interview .imageContainer{
   display: block;
   width:700px;
@@ -224,9 +227,9 @@ Interview & Project Styles
 } .output p {
   clear: both;
   max-width: 600px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 .output img {
   height:auto;
   max-width: 50%;
@@ -238,10 +241,11 @@ Interview & Project Styles
 .code p {
   clear: both;
   max-width: 600px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.code .title img{
+.code .title img.icon{
   max-width: 25%;
   margin:auto;
 } .code .title a {
