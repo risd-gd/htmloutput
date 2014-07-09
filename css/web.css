@@ -68,7 +68,7 @@ hr.dg2 {
 }
 
 hr.dg3 {
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid black;
   margin-top: 25px;
 
 }
@@ -460,6 +460,8 @@ h1.category{
 } .toc-code hr {
   margin: auto;
   margin-top: 25px;
+} .toc-code h2 {
+  margin-bottom: 0;
 }
 
 /* for blocks of text in TOC */
