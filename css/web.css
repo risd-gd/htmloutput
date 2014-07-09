@@ -13,9 +13,6 @@ body {
 }
 
 p {
-
-    max-width:600px;
-    margin:auto;
     font-size:18px;
     line-height:1.5em;
     margin-bottom:15px;
@@ -102,14 +99,6 @@ code {
 
 /* ----------------------------------
 
-General Styling
-
-----------------------------------*/
-
-
-
-/* ----------------------------------
-
 Interview & Project Styles
 
 ----------------------------------*/
@@ -137,7 +126,7 @@ img{
 }
 
 
-.wrapper div, .wrapper figcaption, p{
+.wrapper div, .wrapper figcaption {
   clear: both;
   max-width: 600px;
   margin: auto;
@@ -155,14 +144,22 @@ img{
 .interview img {
   height:100%;
   max-width: 800px;
-}
+} .interview figure, .interview figcaption {
+  max-width: 600px;
+  margin: auto;
+} 
 
-.interview figure, .interview figcaption {
+.outputwrapper figcaption {
+  display:none;
+} .outputwrapper p {
+  clear: both;
   max-width: 600px;
   margin: auto;
 }
-.outputwrapper figcaption {
-  display:none;
+.codewrapper p {
+  clear: both;
+  max-width: 600px;
+  margin: auto;
 }
 
 .interview-q:before, .interview-a:before  {
@@ -207,8 +204,8 @@ img{
 }
 
 .interview-a{
-  font-size:18px;
-  line-height:1.5em;
+  max-width: 600px;
+  margin: auto;
 }
 
 blockquote{
@@ -431,6 +428,7 @@ Styles for the index/toc page
   cursor: pointer;
 } .code p {
   max-width: 70%;
+  margin: auto;
 } .code hr {
   margin: auto;
   margin-top: 25px;
