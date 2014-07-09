@@ -25,6 +25,33 @@ a {
     color:rgb(55,50,255);
 }
 
+h1 {
+  font-family: "Messenger Text", sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+h2 {
+  font-family: "Benton Modern", serif;
+  font-weight: bold;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 110%;
+}
+
+h3 {
+  font-family: "Benton Modern", serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+h4 {
+  font-family: "Messenger Text", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+}
+
 hr {
   clear: both;
   width: 150px;
@@ -67,33 +94,6 @@ code {
   word-wrap: break-word;
 }
 
-.interview .imageContainer{
-  display: block;
-  width:700px;
-  height:300px;
-  overflow:hidden;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-.interview .imageContainer:hover{
-  overflow:visible;
-  width: auto;
-  height: auto;
-  min-width: 700px;
-  min-height: 300px;
-}
-
-.selectedImage{
-  z-index: 200;
-  opacity: 1;
-}
-
-/* ----------------------------------
-
-Interview & Project Styles
-
-----------------------------------*/
 q { background-color: gold;}
 del { text-decoration:line-through; color: grey;}
 mark { font-style: normal; background: rgba(32, 185, 129, .3);}
@@ -114,7 +114,12 @@ blockquote{
   margin-top:55px;
 }
 
-.wrapper {   
+/* ----------------------------------
+
+Interview & Project Styles
+
+----------------------------------*/
+
   margin-top: 100px;
 }
 .wrapper div, .wrapper figcaption {
@@ -122,27 +127,10 @@ blockquote{
   max-width: 600px;
   margin: auto;
 }
-.wrapper img {
-  height:auto;
-  max-width: 50%;
-  /* margin: auto;
-  margin-top: 15px; */
-  display: auto;
-  float: left;
-}
 
-.title { /* currently only in interview */
-  font-family: "Benton Modern";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 110%;
-  max-width: 600px;
-  margin: auto;
-  padding-right: 100px;
+.title {
   color: black;
 }
-
 
 /* interview template styles */
 
@@ -156,6 +144,16 @@ blockquote{
   margin-top: 50px;
 }
 
+.interview .title {
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 110%;
+  max-width: 600px;
+  margin: auto;
+  padding-right: 100px;
+}
 .interview-intro {
   max-width:600px;
   margin:auto;
@@ -194,6 +192,26 @@ blockquote{
   max-width: 600px;
   margin: auto;
 }
+/* styles for interview images */
+.interview .imageContainer{
+  display: block;
+  width:700px;
+  height:300px;
+  overflow:hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.interview .imageContainer:hover{
+  overflow:visible;
+  width: auto;
+  height: auto;
+  min-width: 700px;
+  min-height: 300px;
+}
+.selectedImage{
+  z-index: 200;
+  opacity: 1;
+}
 
 /* output template styles */
 .output figcaption {
@@ -204,12 +222,24 @@ blockquote{
   margin: auto;
 }
 
+.output img {
+  height:auto;
+  max-width: 50%;
+  display: auto;
+  float: left;
+}
+
 /* code template styles */
 .code p {
   clear: both;
   max-width: 600px;
   margin: auto;
 }
+
+.code .title img{
+  max-width: 25%;
+  float: left;
+} .code .title
 
 
 
@@ -276,11 +306,8 @@ Styles for the index/toc page
 }
 
 /* for category name */
-.category{
+h1.category{
   margin-top: 100px;
-  font-family: "Messenger Text", sans-serif;
-  font-size: 28px;
-  line-height: 30px;
   margin-top: 150px;
   margin-bottom: -28px;
   left: 20%;
@@ -395,11 +422,6 @@ Styles for the index/toc page
   color: black;
   font-size: 18px;
   text-align: center;
-} .toc-code h2 {
-  font-family: "Benton Modern";
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 110%;
 } .toc-code img {
   display: block;
   width: 50%;
@@ -420,18 +442,9 @@ Styles for the index/toc page
 .toc-block {
   display: block;
   clear: both;
-} .toc-block h2, .toc-block h1, .toc-block p, .toc-block h4 {
-    margin-left: 20%;
-   max-width: 700px;
-} .toc-block h1 {
-  font-family: "Benton Modern", serif;
-  font-size: 80px;
-  line-height: 80px;
-} .toc-block h2 {
-  font-family: "Benton Modern", serif;
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 50px;
+} .toc-block p, .toc-block h4, .toc-block h3 {
+  margin-left: 20%;
+  max-width: 700px;
 } .toc-block p.mainintro {
   font-size: 24px;
   line-height: 150%;
@@ -440,9 +453,6 @@ Styles for the index/toc page
   margin-bottom: 50px;
   max-width: 800px;
 } .toc-block h4 {
-  font-family: "Messenger Text", sans-serif;
-  font-size: 18px;
-  line-height: 30px;
   max-width: 800px;
   margin-bottom: 18px;
 } .toc-block hr {
