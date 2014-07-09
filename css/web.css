@@ -25,14 +25,6 @@ a {
     color:rgb(55,50,255);
 }
 
-h1, h2, h3, h4{
-    margin:auto;
-    margin-bottom:15px;
-    max-width: 600px;
-    margin: auto;
-}
-.interview h1 { margin-top: 50px;}
-
 hr {
   clear: both;
   width: 150px;
@@ -112,26 +104,24 @@ img{
   margin-bottom: 20px; */
 }
 
-.interview-name{
- color: black;
-}
-
-.interview-bar{
-  border-bottom: 5pt solid #20B981;
-  /*border-bottom: 1px solid #20B981;*/
+blockquote{
+  font-family: 'Messenger Text';
+  font-size:24px;
+  line-height:1.5em;
+  width:600px;
+  margin:auto;
+  margin-bottom:55px;
+  margin-top:55px;
 }
 
 .wrapper {   
   margin-top: 100px;
 }
-
-
 .wrapper div, .wrapper figcaption {
   clear: both;
   max-width: 600px;
   margin: auto;
 }
-
 .wrapper img {
   height:auto;
   max-width: 50%;
@@ -141,25 +131,39 @@ img{
   float: left;
 }
 
+.title { /* currently only in interview */
+  font-family: "Benton Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 110%;
+  max-width: 600px;
+  margin: auto;
+  padding-right: 100px;
+  color: black;
+}
+
+
+/* interview template styles */
+
 .interview img {
   height:100%;
   max-width: 800px;
 } .interview figure, .interview figcaption {
   max-width: 600px;
   margin: auto;
-} 
-
-.outputwrapper figcaption {
-  display:none;
-} .outputwrapper p {
-  clear: both;
-  max-width: 600px;
-  margin: auto;
+} .interview h1 { 
+  margin-top: 50px;
 }
-.codewrapper p {
-  clear: both;
-  max-width: 600px;
-  margin: auto;
+
+.interview-intro {
+  max-width:600px;
+  margin:auto;
+  font-style:italic;
+  font-family:'Benton Modern';
+  margin-top: 55px;
+  margin-bottom:55px;
+  padding-bottom: 15px;
 }
 
 .interview-q:before, .interview-a:before  {
@@ -178,21 +182,6 @@ img{
 .interview-q { color: #20B981;}
 .interview-a, .interview-q { font-size: 20px; }
 
-.title {
-  font-family: "Benton Modern";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 110%;
-  max-width: 600px;
-  margin: auto;
-  padding-right: 100px;
-}
-
-.interview hr {
-
-}
-
 .interview-q{
   font-family: 'Messenger Text';
   font-size:24px;
@@ -200,35 +189,29 @@ img{
   max-width:800px;
   margin-left:20%;
   line-height:1.5em;
-
 }
-
 .interview-a{
   max-width: 600px;
   margin: auto;
 }
 
-blockquote{
-  font-family: 'Messenger Text';
-  font-size:24px;
-  line-height:1.5em;
-
-  width:600px;
-  margin:auto;
-  margin-bottom:55px;
-  margin-top:55px;
-
+/* output template styles */
+.outputwrapper figcaption {
+  display:none;
+} .outputwrapper p {
+  clear: both;
+  max-width: 600px;
+  margin: auto;
 }
 
-.interview-intro {
-  max-width:600px;
-  margin:auto;
-  font-style:italic;
-  font-family:'Benton Modern';
-  margin-top: 55px;
-  margin-bottom:55px;
-  padding-bottom: 15px;
+/* code template styles */
+.codewrapper p {
+  clear: both;
+  max-width: 600px;
+  margin: auto;
 }
+
+
 
 
 
@@ -306,9 +289,9 @@ Styles for the index/toc page
 }
 
 /* TOC interview links */
-.pagey{
+.toc-int{
   width: 100%;
-} .pagey .caption{
+} .toc-int .caption{
   width: 60%;
   text-align: left;
   background-color: blue;
@@ -320,11 +303,11 @@ Styles for the index/toc page
   font-family: "Messenger Text", sans-serif;
   padding: 6px;
   border: 1px solid blue;
-} .pagey h3 {
+} .toc-int h3 {
   font-size: 20px;
   margin-top: 10px;
   margin-left: 31%;
-} .pagey .name{
+} .toc-int .name{
   /* width: 100%; */
   text-align: left;
   color: black;
@@ -338,9 +321,9 @@ Styles for the index/toc page
   left: 20%;
   margin-top: 12px;
   margin-bottom: 3px;
-} .name:hover {
+} .toc-int .name:hover {
   color:rgb(55,50,255);
-} .pagey .name span {
+} .toc-int .name span {
   font-family: "Messenger Text", sans-serif;
   font-size: 18px;
   color: black;
@@ -356,7 +339,7 @@ Styles for the index/toc page
 
 
 /* TOC output */
-.output {
+.toc-out {
   display: block;
   float: left;
   width: 25%;
@@ -366,21 +349,21 @@ Styles for the index/toc page
   color: rgba(0,0,0,0);
   -webkit-transition: all 1s;
   overflow: hidden;
-} .output img {
+} .toc-out img {
   height: 500%;
   width: 500%;
   -webkit-transition: all 1s;
-}.output:hover {
+}.toc-out:hover {
   background-size: 100%;
   opacity: .8;
   cursor: pointer;
-} .output div {
+} .toc-out div {
   padding: 2px;
   position: absolute;
   display: inline-block;
   -webkit-transition: all 1s;
   z-index: 0;
-} .output div span {
+} .toc-out div span {
   display: inline-block;
   max-width: 10vw;
   -webkit-transition: all 1s;
@@ -390,20 +373,19 @@ Styles for the index/toc page
   padding: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-} .output:hover div{
+} .toc-out:hover div{
   z-index: 100;
   background-color: rgb(55,50,255);
-} .output:hover div span {
+} .toc-out:hover div span {
   color: white;
-  // border-bottom: 1px solid white;
-}.output:hover img {
+}.toc-out:hover img {
   z-index: 1;
   height: 100%;
   width: 100%;
 }
 
 /* TOC code */
-.code {
+.toc-code {
   display: block;
   float: left;
   width: 40%;
@@ -413,23 +395,23 @@ Styles for the index/toc page
   color: black;
   font-size: 18px;
   text-align: center;
-} .code h2 {
+} .toc-code h2 {
   font-family: "Benton Modern";
   font-size: 25px;
   font-weight: bold;
   line-height: 110%;
-} .code img {
+} .toc-code img {
   display: block;
   width: 50%;
   margin: auto;
   height: auto;
   padding: 20px;
-} .code:hover {
+} .toc-code:hover {
   cursor: pointer;
-} .code p {
+} .toc-code p {
   max-width: 70%;
   margin: auto;
-} .code hr {
+} .toc-code hr {
   margin: auto;
   margin-top: 25px;
 }

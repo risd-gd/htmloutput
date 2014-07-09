@@ -5,7 +5,7 @@
     <div style="display: inline-block; -webkit-transition: all 1s;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'project' %}
-            <a class="output" href="{{ site.baseurl }}{{ page.url }}">
+            <a class="toc-out" href="{{ site.baseurl }}{{ page.url }}">
                 <div><span>{{page.author}}</span></div>
                 <img src="{{ site.baseurl }}{{ page.url }}hero.png">
             </a>

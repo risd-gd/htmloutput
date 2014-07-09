@@ -4,7 +4,7 @@
     <hr>
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'code' %}
-            <a class="code" href="{{ site.baseurl }}{{ page.url }}">
+            <a class="toc-code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
                 <h2>{{page.title}}</h2><br />
                 <p>{{page.description}}</p>

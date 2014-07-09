@@ -24,14 +24,15 @@
 
         {% include nav.html %}
 
-        <div class="wrapper">
+        <div class="wrapper codewrapper">
 
-        <img src="icon.png">
-        <h1>{{ page.title }}</h1>
-        <h2> {{ page.description }}</h2>
-        <h3><img src="{{site.baseurl}}/fork.png"> fork on github</h3>
-        <hr>
-
+        <div>
+            <img src="icon.png">
+            <h1>{{ page.title }}</h1>
+            <h2> {{ page.description }}</h2>
+            <h3><img src="{{site.baseurl}}/fork.png"> fork on github</h3>
+            <hr>
+        </div>
 
         {{ content }}
 

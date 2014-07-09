@@ -44,7 +44,7 @@ title: HTML OUTPUT
     <hr>
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
-    <div class="pagey">
+    <div class="toc-int">
         <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>with {{page.author}}</span></a><br />
     </div>
     <hr class='dg2'>
@@ -56,7 +56,7 @@ title: HTML OUTPUT
     <div style="display: inline-block; -webkit-transition: all 1s;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'project' %}
-            <a class="output" href="{{ site.baseurl }}{{ page.url }}">
+            <a class="toc-out" href="{{ site.baseurl }}{{ page.url }}">
                 <div><span>{{page.author}}</span></div>
                 <img src="{{ site.baseurl }}{{ page.url }}hero.png">
             </a>
@@ -70,7 +70,7 @@ title: HTML OUTPUT
     <div style="display: inline-block;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'code' %}
-            <a class="code" href="{{ site.baseurl }}{{ page.url }}">
+            <a class="toc-code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
                 <h2>{{page.title}}</h2><br />
                 <p>{{page.description}}</p>

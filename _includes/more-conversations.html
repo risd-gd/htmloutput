@@ -5,7 +5,7 @@
     <hr>
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
-    <div class="pagey">
+    <div class="toc-int">
         <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>with {{page.author}}</span></a><br />
     </div>
     <hr class='dg2'>
