@@ -69,6 +69,8 @@ hr.dg2 {
 
 hr.dg3 {
   border-bottom: 2px solid black;
+  margin-top: 25px;
+
 }
 
 .printy{
@@ -245,17 +247,23 @@ Interview & Project Styles
   margin-right: auto;
 }
 
-.code .title img.icon{
-  max-width: 25%;
-  margin:auto;
-} .code .title a {
+.code img.icon {
+  position: fixed;
+  /* left: 10%; */
+  top: 50px;
+  width: 20%;
+  height: auto;
+}
+
+.code .title a {
   margin-top: 15px;
 }.code .title a img{
-  margin: 5px;
-  height: 17px;
+  height: 13px;
   width: auto;
-  margin-right: 15px;
-}
+  margin-right: 5px;
+}.code .title h2, .code .title h1, .code .title h4 {
+  margin-bottom: 10px;
+}  
 
 
 
