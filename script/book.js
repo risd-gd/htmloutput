@@ -134,7 +134,7 @@ function preProcessPages() {
 
   // [B] Clone text spreads
   var textSpreads = document.querySelectorAll("[data-textspread]");
-null  for (var i = 0; i < textSpreads.length; i++) {
+  for (var i = 0; i < textSpreads.length; i++) {
     var baseNode = textSpreads[i];
 
     var pt2 = baseNode.cloneNode(true);
