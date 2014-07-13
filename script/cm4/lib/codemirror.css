@@ -25,8 +25,8 @@
 /* GUTTER */
 
 .CodeMirror-gutters {
-  //border-right: 1px solid #ddd;
-  //background-color: #f7f7f7;
+  /*border-right: 1px solid #ddd;
+  background-color: #f7f7f7;*/
   white-space: nowrap;
 }
 .CodeMirror-linenumbers {}
@@ -200,9 +200,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   padding-bottom: 30px;
   margin-bottom: -32px;
   display: inline-block;
-  /* Hack to make IE7 behave */
+  /* Hack to make IE7 behave 
   *zoom:1;
-  *display:inline;
+  *display:inline; */
 }
 .CodeMirror-gutter-elt {
   position: absolute;
@@ -286,8 +286,8 @@ div.CodeMirror-cursors {
   background: rgba(255, 255, 0, .4);
 }
 
-/* IE7 hack to prevent it from returning funny offsetTops on the spans */
-.CodeMirror span { *vertical-align: text-bottom; }
+/* IE7 hack to prevent it from returning funny offsetTops on the spans 
+.CodeMirror span { *vertical-align: text-bottom; } */
 
 /* Used to force a border model for a node */
 .cm-force-border { padding-right: .1px; }
