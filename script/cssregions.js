@@ -1781,6 +1781,7 @@ var cssSyntax = {
         }
         var parseerror = function(msg) {
             console.log("Parse error at token " + i + ": " + token + ".\n" + msg);
+            console.log("prev token is: " + tokens[i-2] + "  |  next token is: " + tokens[i+1]);
             return true;
         }
         var pop = function() {
