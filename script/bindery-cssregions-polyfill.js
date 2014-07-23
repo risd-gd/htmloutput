@@ -1,12 +1,25 @@
-"use strict";
-
+//
 // CSS REGIONS POLYFILL
 //
-// This is a lightly modified version of Remy Francois's 
+// NOTICE: This is a lightly modified version of Remy Francois's 
 // https://github.com/FremyCompany/css-regions-polyfill,
 // which is licensed under http://www.apache.org/licenses/LICENSE-2.0
+//
+// It provides the backbone to bindery.js. It presupposes that there is already a 
+// window.Bindery object... a better way would be to let Bindery.js instantiate 
+// the polyfill, but to be honest this polyfill is too big and confusing
+// for me to figure that out. Bindery.js
+// may work better without all the overhead from this polyfill,
+// but using the official web standards for this is nice
+// (at least in theory).
+//
+// MAKE SURE TO LOAD THIS SCRIPT *AFTER* bindery.js UNTIL FURTHER NOTICE
+// 
+// Evan Brooks 2014
+//
+// ------------
 
-
+"use strict";
 
 //
 // start by polyfilling caretRangeFromPoint
@@ -5928,7 +5941,7 @@ cssRegions.Flow.prototype._relayout = function(data){
                 This.relayoutInProgress = false;
                 This.failedLayoutCount = 0;
 
-                finallyTheLayoutIsDone();
+                Bindery.bindComplete();
 
                 // restart a layout if a request was queued during the current one
                 if(This.restartLayout) {

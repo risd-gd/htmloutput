@@ -1,5 +1,13 @@
 "use strict";
 
+// CSS REGIONS POLYFILL
+//
+// This is a lightly modified version of Remy Francois's 
+// https://github.com/FremyCompany/css-regions-polyfill,
+// which is licensed under http://www.apache.org/licenses/LICENSE-2.0
+
+
+
 //
 // start by polyfilling caretRangeFromPoint
 //
@@ -4358,7 +4366,7 @@ var cssRegionsHelpers = {
                         if(!(properties[p] in cssCascade.computationUnsafeProperties) && properties[p][0]!='-') {
                             var style = getComputedStyle(node1).getPropertyValue(properties[p]);
                             var defaultStyle = cssCascade.getDefaultStyleForTag(node1.tagName).getPropertyValue(properties[p]);
-                            if(style != defaultStyle) node2.style.setProperty(properties[p], style) // WHAT IF WE DIDN'T - EB
+                            if(style != defaultStyle) node2.style.setProperty(properties[p], style) 
                             continue;
                         }
 
@@ -4367,7 +4375,7 @@ var cssRegionsHelpers = {
                         if(cssValue && cssValue.length) {
 
                             // if we have a specified value, let's use it
-                            node2.style.setProperty(properties[p], cssValue.toCSSString()); // WHAT IF WE DIDN'T - EB
+                            node2.style.setProperty(properties[p], cssValue.toCSSString()); 
 
                         } else if(isRoot && node1.parentNode && properties[p][0] != '-') {
 
@@ -4482,7 +4490,7 @@ var cssRegionsHelpers = {
     retargetEvents: function retargetEvents(node1,node2) {
 
         var retargetEvent = "cssRegionsHelpers.retargetEvent(this,event)";
-        // WHO CARES ABOUT THIS - EB
+        // Not required here - EB
         // node2.setAttribute("onclick", retargetEvent);
         // node2.setAttribute("ondblclick", retargetEvent);
         // node2.setAttribute("onmousedown", retargetEvent);
