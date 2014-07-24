@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/type/type.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/book.css" type="text/css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/book-ui.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/bindery.css" type="text/css">
 
     <!-- CODEMIRROR (For syntax highlighting) -->
     <link rel="stylesheet" href="{{ site.baseurl }}/script/cm4/lib/codemirror.css">
@@ -34,25 +34,25 @@
 
 
   <nav class="print-nav">
-    <!--Functions (danger!):
-    <div style="float: right">
-        <button class="toggle-btn" id="restyle">Refresh CSS</button>
-        <button class="toggle-btn" id="trimpages">Trim extra pages from end</button>
-        <button class="toggle-btn" id="fixbleeds">Full bleed fix</button>
-        <button class="toggle-btn" id="postproc">Post-process</button>
-    </div> -->
     <span style="display:inline; letter-spacing: 1px; text-transform: uppercase; margin-right: 1em;">bindery.js</span>
 
-    <span id="postProcessControls" style="display: none;">
-        <label><input id="toggleguides" type="checkbox" checked />Show bleed</label> &nbsp;&nbsp;&nbsp;
+    <progress id="progbar" value="0" max="1"></progress>
+
+
+    <span id="postProcessControls">
+
+        <label><input id="toggleguides" type="checkbox" checked />Show bleed</label>
         <label><input id="togglecrop" type="checkbox" /> Crop marks</label>
-        <span id="status" style="display:inline; margin-left: 1em; color: blue;">
-        <!--<img style="width:16px; height: 16px; margin: -4px 5px; vertical-align: middle" src="http://www.animatedgif.net/bookscalendars/anim0019-1_e0.gif"/> -->
-            Making book...
-        </span>
-        <progress id="progbar" value="0" max="1"></progress>
+
     </span>
+
+
     <button class="toggle-btn" id="regionize" disabled>Make book</button>
+
+    <span id="bindStatus" style="display:inline; margin-left: 1em; color: black;">
+        Loading...
+    </span>
+
 
   </nav>
 

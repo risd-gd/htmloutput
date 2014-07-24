@@ -51,6 +51,8 @@
     // 
     this.startBind = function() {
 
+      stat.innerText = "Pre-processing";
+
       // First remove the stuff we don't want to print
       $("[data-remove-before-print]").remove();
 
@@ -64,7 +66,6 @@
 
       // Hide button and mess with controls
       regionizer.style.display = "none";
-      document.getElementById("postProcessControls").style.display = "inline";
 
       // Begin regionizing
       cssRegions.enablePolyfill();
@@ -77,7 +78,7 @@
 
       document.documentElement.classList.add("_bleed-enabled");
       document.body.classList.add("_regions-loaded");
-      stat.innerHTML = "Book is ready.";
+      stat.innerHTML = "Book is ready";
 
       // Feed each page through all postBind functions...
 
@@ -110,8 +111,6 @@
 // --
 // Trim extra pages that have no content
 
-// -------------------------
-
 // From:
 // http://docs.webplatform.org/wiki/apis/css-regions/NamedFlow/firstEmptyRegionIndex
 // deletes any empty regions from the end of a flow:
@@ -119,14 +118,14 @@ function trimRegions(flowName) {
     var flow = document.getNamedFlows().namedItem(flowName);
     var index = flow.firstEmptyRegionIndex;
     var regions = flow.getRegions();
-    console.log("removed regions from index: " + index);
+    console.info("Trimmed all pages after page " + index);
 
     if (index == -1) {
-      alert("Can't trim extra pages. Wait until page splitting is finished?");
+      console.error("Can't trim extra pages— No empty regions found. Maybe wait until page splitting is finished?");
       return(false); // no empty regions?
     }
 
-    // remove first empty region &amp; all thereafter:
+    // remove first empty region and all thereafter:
     for (var i = index; i < regions.length; i++) {
         regions[i].parentNode.parentNode.removeChild(regions[i].parentNode);
     }

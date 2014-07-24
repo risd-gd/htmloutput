@@ -1,3 +1,15 @@
+/*
+
+
+B I N D E R Y . C S S
+
+Evan Brooks 2014
+Accompanies bindery.js
+
+*/
+
+
+
 /* ----------------------------------
 
 CSS Region flow (used by the polyfill)
@@ -43,12 +55,16 @@ UI for bookmaker
 	color: black !important;
 }
 
+._book._notsplityet h4 {
+	color: black;
+}
+
 ._book._notsplityet ._wont-print h4 {
-	opacity: 0.3;
+	color: #aaa;
 }
 
 ._book._notsplityet ._wont-print h4:hover {
-	opacity: 0.4;
+	opacity: 0.8;
 }
 
 ._book._notsplityet .toc-pg {
@@ -59,6 +75,7 @@ UI for bookmaker
 
 ._book._notsplityet .toc-item {
 	padding-left: 2.5em;
+	margin-bottom: 0.2em;
 }
 
 ._book._notsplityet body {
@@ -71,7 +88,7 @@ UI for bookmaker
 }
 
 ._book._notsplityet .toc h4 {
-	font-size: 24px !important;
+	font-size: 20px !important;
 }
 
 ._book._notsplityet .toc-author {
@@ -109,7 +126,7 @@ For previewing the print
 
 
 .print-nav {
-	/* display: none; */
+	display: none; 
 	font: 15px/1.4 'Messenger Text', sans-serif;
 }
 
@@ -121,11 +138,12 @@ For previewing the print
 @media screen {
 	._book body {
 		max-width: 11in;
-		background: #eee;
+		background: white;
 	}
 
 	._book body._regions-loaded {
 		margin-top: 0;
+		background: #eee;
 	}
 
 	._book-pages {
@@ -155,32 +173,6 @@ For previewing the print
 		outline: 1px solid cyan;
 	}
 
-	/* margin line 
-	._guides .page-outer::after {
-		content: "";
-		border: 1px dotted cyan;
-		position: absolute;
-		display: block;
-		bottom: 0.5in;
-		top: 0.2in;
-		left: 0.4in;
-		right: 0.4in;
-		pointer-events: none;
-	} */
-
-	/* page line */
-/*	._guides .page-outer::before {
-		content: "";
-		border: 1px solid magenta;
-		position: absolute;
-		display: block;
-		bottom: 0in;
-		top: 0in;
-		left: 0in;
-		right: 0in;
-		z-index: 100;
-		pointer-events: none;
-	}*/
 
 	/* page break line */
 	._guides ._book ._page-break:after {
@@ -201,49 +193,77 @@ For previewing the print
 		left: 0;
 		display: block;
 		z-index: 999;
-		padding-right: 15px;
-		background: white;
-		box-shadow: 0 0 2px rgba(0,0,0,0.2);
+		padding: 15px;
 	}
 
 	.toggle-btn {
 		padding: 0.4em 1em;
-		margin: -0.3em 0;
+		margin: -7px 0;
 		-webkit-appearance: none;
 		border: none;
-		background: transparent;
+		background: blue;
+		color: white;
 		cursor: pointer;
-		border: 1px solid;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		float: right;
+		-webkit-transition: opacity 0.7s;
 	}
 
 	.toggle-btn:hover {
-		background: blue;
+		background: black;
 	}
 
+	.toggle-btn[disabled] {
+		opacity: 0.2;
+	}
+
+	#bindStatus {
+		float: right;
+		margin-right: 2em;
+	}
+
+	#postProcessControls {
+		display: none;
+		float: right;
+	}
+
+	._regions-loaded #postProcessControls {
+		display: block;
+	}
+
+	#postProcessControls input {
+		margin-right: 1ch;
+	}
+
+	#postProcessControls label {
+		margin-right: 1em;
+	}
+
+
 	#progbar {
-		position: fixed;
-		bottom: 0;
+		position: absolute;
+		top: 0;
 		left: 0;
 		right: 0;
 		width: 100%;
-		height: 51px;
+		height: 5px;
 		-webkit-appearance: none;
 		appearence: none;
 		border: 0;
 		z-index: -1;
-		opacity: 0.2;
-		background: white;
+		opacity: 1;
+		background: transparent;
+		-webkit-transition: opacity 0.8s;
 	}
 
 	._regions-loaded #progbar {
-		display: none;
+		background: blue;
+		opacity: 0;
 	}
 
 	#progbar[value]::-webkit-progress-bar {
-  		background-color: white;
+  		background-color: transparent;
   	}
 
   	#progbar[value]::-webkit-progress-value {

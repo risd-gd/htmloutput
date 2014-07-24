@@ -92,7 +92,6 @@ Table of Contents
 <h1 class="toc-heading">Contents</h1>
 
 <div class="toc">
-
 {% for page in site.pages %}
   {% if page.printready %}
     <label class="toc-item">
@@ -116,33 +115,6 @@ Table of Contents
 
 <div class="_page-break"></div>
 <div class="_page-break"></div>
-
-<!--
-____________________________________________________
-
-Test textspread
--->
-<!--<figure class="_sideways-page" data-textspread data-fullbleed>
-  <h1>
-    Jurg Lehni
-    talks to
-    Daniel
-    Giudetta
-    and Phil
-    Cao
-  </h1>
-</figure> -->
-
-<!--<figure class="_sideways-page" data-textspread data-fullbleed>
-  <h1>
-    Jurg Lehni
-    talks to
-    Daniel
-    Giudetta
-    and Phil
-    Cao
-  </h1>
-</figure>-->
 <div class="_page-break"></div>
 
 
@@ -153,78 +125,49 @@ All Content
 -->
 
 
-
 {% for category in site.types %}
+  {% for page in site.pages %}
+    {% if page.category == category %}
+      {% if page.printready %}
+        {% if category == 'interview' %}
+          <h1 class="interview-name"
+              data-change-running-head
+              data-change-page-kind
+              data-category="{{ page.category }}"
+              data-interviewee="{{ page.interviewee }}"
+              data-interviewer="{{ page.interviewer }}"
+              data-pageurl="html.risd.gd{{page.url}}"
+              data-id="{{ page.interviewee }}">
+              {{ page.title }}
+          </h1>
+          <hr class="interview-bar" />
+          <h1 class="interview-name">{{ page.interviewee }} talks with {{ page.interviewer }}</h1>
+          <hr class="interview-bar" />
 
+          <div class="_page-break"></div>
 
-{% comment %}
-<!-- Category Page -->
-<h1 class="category-name"
-	data-change-page-kind="section-page"
-  data-id="{{ category }}">
-	 test {{ category }}
-</h1>
-<div class="_page-break"></div>
-{% endcomment %}
+        {% else %}
 
-<!-- Content Page -->
+          <h1 class="project-name"
+              data-change-running-head
+              data-change-page-kind
+              data-category="{{ page.category }}"
+              data-pageurl="html.risd.gd{{page.url}}"
+              data-id="{{ page.title }}">
+                {{ page.title }}
+          </h1>
+          <hr />
+           <div  class=""><h1>{{ page.author }}</h1>
+            <h2>{{ page.description }}</h2>
+           </div>
+          <div class="_page-break"></div>
+        {% endif %}
 
-{% for page in site.pages %}
-{% if page.category == category %}
-{% if page.printready %}
+        {{ page.content }}
 
-{% if category == 'interview' %}
-    <!--
-  <h1 class="post-name interview-name"
-      data-change-running-head
-      data-category="{{ page.category }}"
-      data-interviewee="{{ page.interviewee }}"
-      data-interviewer="{{ page.interviewer }}"
-      data-id="{{ page.interviewee }}">
-        {{ page.interviewee }}
-  </h1>
-  <h3>talks to {{ page.interviewer }}</h3>
--->
-
-<h1 class="interview-name"
-    data-change-running-head
-    data-change-page-kind
-    data-category="{{ page.category }}"
-    data-interviewee="{{ page.interviewee }}"
-    data-interviewer="{{ page.interviewer }}"
-    data-pageurl="html.risd.gd{{page.url}}"
-    data-id="{{ page.interviewee }}">
-    {{ page.title }}
-</h1>
-<hr class="interview-bar" />
-<h1 class="interview-name">{{ page.interviewee }} talks with {{ page.interviewer }}</h1>
-<hr class="interview-bar" />
-
-<div class="_page-break"></div>
-
-{% else %}
-
-  <h1 class="project-name"
-      data-change-running-head
-      data-change-page-kind
-      data-category="{{ page.category }}"
-      data-pageurl="html.risd.gd{{page.url}}"
-      data-id="{{ page.title }}">
-        {{ page.title }}
-  </h1>
-<hr />
- <div  class=""><h1>{{ page.author }}</h1>
-  <h2>{{ page.description }}</h2>
- </div>
-<div class="_page-break"></div>
-{% endif %}
-
-  {{ page.content }}
-
-<div class="_page-break"></div>
-{% endif %}
-{% endif %}
-{% endfor %}
-
+      <div class="_page-break"></div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 

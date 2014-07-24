@@ -41,9 +41,6 @@ $(".toc [type=checkbox]").attr("checked", false).change();
 // -------------------------------------
 // Enable UI when we know all images have loaded
 
-imagesLoaded( document.body, function( instance ) {
-  if (regionizer) regionizer.removeAttribute("disabled");
-});
 
 // -------------------------------------
 //
@@ -55,7 +52,7 @@ imagesLoaded( document.body, function( instance ) {
 // -------------------------------------
 
 var progbar = document.getElementById("progbar");
-var stat = document.getElementById("status");
+var stat = document.getElementById("bindStatus");
 var pages = document.querySelectorAll(".page-outer").length;
 function reportPagesLeft(p) {
   var done = pages - p;
@@ -63,6 +60,14 @@ function reportPagesLeft(p) {
   progbar.value = done / pages;
 }
 
+
+stat.innerText = "Loading images...";
+imagesLoaded( document.body, function( instance ) {
+  if (regionizer) {
+    regionizer.removeAttribute("disabled");
+    stat.innerText = "Ready";
+  }
+});
 
 
 
@@ -340,6 +345,5 @@ Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
 
 });
 
-// -------------------------
 
 
