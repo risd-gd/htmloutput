@@ -65,37 +65,6 @@ function reportPagesLeft(p) {
 
 
 
-// _________________________
-
-// Codemirror code highlighting
-
-// _________________________
-
-function highlightCode(){
-  var snippets = document.querySelectorAll(".snippet");
-  for (var i = 0; i < snippets.length; i++) {
-    var snip = snippets[i];
-    var ext = snip.getAttribute("data-mode");
-    var mode = getMode(ext);
-    var txt = snip.value;
-    var insertNode = document.createElement("pre");
-    insertNode.className = "snippet-ready cm-s-loop-light cm-mode-" + ext;
-
-    $(insertNode).insertAfter(snip);
-    $(snip).remove();
-
-    CodeMirror.runMode(txt, mode, insertNode);
-  }
-  function getMode(ext) {
-    if (ext == "html") return "text/html";
-    else if (ext == "css") return ext;
-    else if (ext == "scss") return "text/x-scss";
-    else if (ext == "styl") return "text/x-scss";
-    else if (ext == "md") return "text/x-markdown";
-    else if (ext == "js") return "javascript";
-  };
-}
-
 
 // -------------------------
 
@@ -124,14 +93,25 @@ function toggleCropMarks(e) {
   }
 }
 
+
+
+
+
+
+
 // ==============================================================
 // The following is ssome crude javascript
 // preprocessing to prepare the content for being flowed
 // over the pages, for after the bind is done.
 //
 
+
+
+// -------------------------
+// Split image spreads in half so they can span two pages
+
+
 Bindery.beforeBind(function(){
-  // [A] Clone image spreads
   var imageSpreads = document.querySelectorAll("[data-imagespread]");
   for (var i = 0; i < imageSpreads.length; i++) {
     var oldNode = imageSpreads[i];
@@ -150,46 +130,18 @@ Bindery.beforeBind(function(){
     $(splitImageHtml).insertAfter(oldNode);
     oldNode.parentNode.removeChild(oldNode);
   }
+});
 
-  // [B] Clone text spreads
-  var textSpreads = document.querySelectorAll("[data-textspread]");
-  for (var i = 0; i < textSpreads.length; i++) {
-    var baseNode = textSpreads[i];
 
-    var pt2 = baseNode.cloneNode(true);
-    pt2.setAttribute("data-sideways-part", "2");
 
-    var pt3 = baseNode.cloneNode(true);
-    pt3.setAttribute("data-sideways-part", "3");
 
-    $(baseNode).after([
-      $('<div class="_page-break"></div>'),
-      pt2,
-      $('<div class="_page-break"></div>'),
-      pt3
-    ]);
-  }
 
-  // [B] Detect hrefs and insert
-  var links = document.querySelectorAll("a[href]");
-  if (links) {
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute("href");
-      $("<sup data-footnote='" + href + "'>x</sup>").insertAfter(links[i]);
-    }
-  }
 
-  // [C] find foonotes, add superscripts
-  var footnotes = $("footnote");
-  if(footnotes){
-    for(var i=0; i< footnotes.length; i++){
-      var material = footnotes.eq(i).html(); // this is working!!!
-      $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
-    }
-  }
+// -------------------------
+// [D] Swap GIFs out for fixed PNG version
+// requires there be a .png version of the frame people want in print.
 
-  // [D] Swap GIFs out for fixed PNG version
-  // requires there be a .png version of the frame people want in print.
+Bindery.beforeBind(function(){
   var num_images = $("img").length;
   for(i=0; i<num_images; i++){
     var src = $("img").eq(i).attr("src");
@@ -202,16 +154,42 @@ Bindery.beforeBind(function(){
       $("img").eq(i).attr("src",src.substring(0,start)+".png");
     }
   }
-
-  // [E] highlight Code
-  highlightCode();
 });
 
 
-// ==============================================================
-// The following are the per-page modules 
-// for after the bind is done...
-//
+
+
+// -------------------------
+// [E] highlight Code
+
+Bindery.beforeBind(function(){
+  var snippets = document.querySelectorAll(".snippet");
+  for (var i = 0; i < snippets.length; i++) {
+    var snip = snippets[i];
+    var ext = snip.getAttribute("data-mode");
+    var mode = getMode(ext);
+    var txt = snip.value;
+    var insertNode = document.createElement("pre");
+    insertNode.className = "snippet-ready cm-s-loop-light cm-mode-" + ext;
+
+    $(insertNode).insertAfter(snip);
+    $(snip).remove();
+
+    CodeMirror.runMode(txt, mode, insertNode);
+  }
+  function getMode(ext) {
+    if (ext == "html") return "text/html";
+    else if (ext == "css") return ext;
+    else if (ext == "scss") return "text/x-scss";
+    else if (ext == "styl") return "text/x-scss";
+    else if (ext == "md") return "text/x-markdown";
+    else if (ext == "js") return "javascript";
+  };
+});
+
+
+
+
 
 // -------------------------
 // Let images bleed off edge of page
@@ -223,9 +201,33 @@ Bindery.afterBind({}, function(pg, state){
   }
 });
 
+
+
+
+
+
 // -------------------------
 // Add footnotes to bottom of page
 
+// Before binding, detect both hrefs and footnotes
+Bindery.beforeBind(function(){
+  var links = document.querySelectorAll("a[href]");
+  if (links) {
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      $("<sup data-footnote='" + href + "'>x</sup>").insertAfter(links[i]);
+    }
+  }
+  var footnotes = $("footnote");
+  if(footnotes){
+    for(var i=0; i< footnotes.length; i++){
+      var material = footnotes.eq(i).html(); // this is working!!!
+      $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
+    }
+  }
+});
+
+// After binding, move that text to the bottom of the page
 Bindery.afterBind({}, function(pg, state){
   var footnotes = pg.querySelectorAll("[data-footnote]");
   if(footnotes){
@@ -258,6 +260,10 @@ Bindery.afterBind({}, function(pg, state){
   }
 });
 
+
+
+
+
 // -------------------------
 // Check which kind of page (interview vs. project)
 
@@ -268,6 +274,9 @@ Bindery.afterBind({pageKind: ""}, function(pg, state){
   }
   pg.parentNode.setAttribute("data-page-kind", state.pageKind);
 });
+
+
+
 
 
 // -------------------------
@@ -288,8 +297,13 @@ Bindery.afterBind({}, function(pg, state){
     }
 });
 
+
+
+
+
 // -------------------------
 // Add running heads
+
 Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
 
     var isRecto = pg.parentNode.classList.contains("_recto") ? true : false;
