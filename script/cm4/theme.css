@@ -17,7 +17,7 @@
 .cm-mode-js .cm-atom,
 .cm-mode-js .cm-number,
 .cm-mode-js .cm-string {
-  color: #000;
+  color: rgb(167, 0, 0);
   font-weight: 500;
 }
 .cm-s-loop-light,
@@ -125,7 +125,8 @@
 }
 .cm-s-loop-light .cm-keyword,
 .cm-s-loop-light .cm-kw-special {
-  color: #c24888;
+  color: black;
+  font-weight: 600;
 }
 .cm-s-loop-light .cm-tag,
 .cm-s-loop-light .cm-attribute,
@@ -143,7 +144,7 @@
   color: #aaa;
 }
 .cm-s-loop-light .cm-literate {
-  color: #000;
+  /*color: #000;*/
 }
 .cm-s-loop-light .CodeMirror-lint-message-error,
 .cm-s-loop-light .CodeMirror-lint-message-warning {

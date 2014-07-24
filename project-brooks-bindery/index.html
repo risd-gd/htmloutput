@@ -9,41 +9,62 @@ printready: true
 
 ---
 
-<!--
 <p>
-	Loom is an experimental text editor that is closely integrated with a web server. It's built on the assumption that the smallest possible web site is not simply a line of HTML, but a line of HTML on a web server. Just like you can't open an InDesign document without creating a 'page' of a book, Loom encourages perhaps the most important property of the web— the diversity of screens and interaction methods that embody a web site.
+	Bindery.js is a set of libraries and snippets to design a print-ready book in the web browser. It's an attempt to understand and rethink the proprietary process and tools that define the modern book. It's also an ill-advised and needlessly complex foray into the expectations, standards, and priorities that define how web browsers work. 
 </p>
 <p>
-	I'm cautious of over-reliance on the browser's built-in web inspector. Although the tools in Google Chrome are perhaps the best out there, they seem to portend a tight integration with a single implementation of web standards, and in doing so weaken the importance of the standards in the first place. It is for this reason that Loom does not include any direct preview within the frame of its window. Unlike more sophisticated software, like the Creative Suite and IDEs, text editors don't claim to bring everything to the table. 
+	The library provides an bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed. For example, this is how running heads work—
 </p>
 
--->
+<code>
+<textarea class="snippet" data-mode="js">
 
-<!-- This image will go across two pages and full bleed -->
+// Run through each page in order
+Bindery.afterBind({ head: " ", headUrl: " "}, function(pg, state){
 
-<!--
-<figure data-imagespread data-fullbleed>
-	<img src="../project-brooks-loom/main.png">
-</figure>
+  // If there is a heading on this page, then this is
+  // the beginning of a new article!
+  var heading = pg.find("[data-change-running-head]");
+  if (heading) {
+  	// Record the URL and name of this article in the 'state' object
+  	// so we can put it on all subsequent pages
+    state.headUrl = heading.attr("data-pageurl");
+    state.head = heading.innerText();
+  }
 
+  // Depending on whether the page is recto or verso, insert
+  // either the last heading we passed, or the last url we passed.
+  var isRecto = pg.hasClass("_recto");
+  var runnerNode = pg.find("._running-head ._section");
+  if (!isRecto) {
+    runnerNode.html("<span>" + state.head + "</span>");
+  }
+  else {
+    runnerNode.html("<span class='_headurl'>" + state.headUrl + "</span>");
+  }
+});
+</textarea>
+</code>
 <p>
-	Loom is a live coding environment— changes in Loom appear instantly in all browsers, regardless of how far away they are. While it doesn't obscure or alter the nature of code, numerical parameters can be tweaked fluidly by dragging a slider. Color, too, may be manipulated with a more familiar interface. By not hiding the workings of code behind proprietary abstractions, people who use it can take part in the wide community of people building for the web.
+	Our effort in writing bindery.js is an exercise in deliberately misusing software. At times it was also an exercise in futility, as our idea about what a book should be lead only to long-abandoned forum posts and bug reports from 2007, a forgotten time in which some still believed that ordinary people wanted to hold in their hands a printed-out piece of paper from their browser. 
 </p>
 <p>
-	Loom is built using <a href="https://github.com/rogerwang/node-webkit">node-webkit</a>, <a href="http://codemirror.net/">CodeMirror</a>, and <a href="http://socket.io/">socket.io</a>, and takes inspiration from similar open-source projects like <a href="http://www.lighttable.com/">Light Table</a> and <a href="http://brackets.io/">Brackets</a>.
+	But despite the rough edges, it's become a truly useful framework for thinking about the book and the patterns and repetition that shape it.
 </p>
--->
-
-
-<!-- This image will go across two pages and full bleed -->
-
-<!--
-<figure data-imagespread data-fullbleed>
-	<img src="../project-brooks-loom/main2.png">
-</figure>
-
 <p>
-	The end.
+	—
 </p>
--->
+<p>
+	Some background:
+</p>
+<p>
+	When you grow up with Adobe InDesign, you take for granted the ability to flow text across boxes and pages— it's the only way to design a layout for a book or magazine. In 2011, Adobe's <a href="http://blogs.adobe.com/webplatform/">Web Platform Team</a> proposed <a href="http://blogs.adobe.com/webplatform/2012/10/16/a-tale-of-css-regions-and-cssom-moving-forward-within-the-web-community/">bringing that concept to the web</a>, both as a <a href="http://dev.w3.org/csswg/css-regions/">standard for all browsers</a> and as actual working code, contributed to the Webkit project (at the time overseen by Apple and Google). The design and tech worlds were pleased— Adobe, the behemoth of design software, once so proprietary and inscrutable, was opening up and engaging with the web and technology in a new way.
+</p>
+<p>
+	Three years later, Google ripped the code for CSS regions out of Chrome, arguing that their priority was how fast the web was, not how 'rich' the content was. The father of CSS himself <a href="http://alistapart.com/blog/post/css-regions-considered-harmful">condemned the CSS Regions spec</a> as "harmful" to the web. He argued that it needlessly confused the distinction between 'content,' the role of HTML, and 'presentation,' the role of CSS. A designer might argue that the distinction is somewhat arbitrary, but in the community of the web, semantic meaning comes mostly from assigning bits of text labels like 'paragraph' or 'pullquote.'
+</p>
+<p>
+	It's a reminder that even though a browser is 'open source' and open to contributions, the work that gets done usually benefits Google. The <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/page.html">CSS Paged Media standard</a> from 2008 remains missing, as Google builds features to draw 3d graphics and hook up to webcams and build mobile apps. And it's notoriously tricky to show a new advertisement once you've printed the web page out (in fact, print preview mode is actually a great way to strip irritating ads, breaks, and sidebars from a news article).
+</p>
 
+<!-- Printing from the computer inevitably means passing through Adobe's technology, be it InDesign or PDFs or PostScript. -->

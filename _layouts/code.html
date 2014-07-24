@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css">
         <link rel="stylesheet" href="{{ site.baseurl }}/css/web.css" type="text/css">
 
+
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/script/jquery.js"></script>
         <script type="text/javascript" src="{{ site.baseurl }}/script/web.js"></script>
@@ -47,11 +49,38 @@
 
 
     <!-- CODEMIRROR (For syntax highlighting) -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/script/cm4/theme.css">
+
     <script src="{{ site.baseurl }}/script/cm4/lib/codemirror.js"></script>
     <script src="{{ site.baseurl }}/script/cm4/addon/runmode/runmode.js"></script>
     <script src="{{ site.baseurl }}/script/cm4/mode/xml/xml.js"></script>
     <script src="{{ site.baseurl }}/script/cm4/mode/javascript/javascript.js"></script>
     <script src="{{ site.baseurl }}/script/cm4/mode/css/css.js"></script>
+
+    <script>
+      var snippets = document.querySelectorAll(".snippet");
+      for (var i = 0; i < snippets.length; i++) {
+        var snip = snippets[i];
+        var ext = snip.getAttribute("data-mode");
+        var mode = getMode(ext);
+        var txt = snip.value;
+        var insertNode = document.createElement("pre");
+        insertNode.className = "snippet-ready cm-s-loop-light cm-mode-" + ext;
+
+        $(insertNode).insertAfter(snip);
+        $(snip).remove();
+
+        CodeMirror.runMode(txt, mode, insertNode);
+      }
+      function getMode(ext) {
+        if (ext == "html") return "text/html";
+        else if (ext == "css") return ext;
+        else if (ext == "scss") return "text/x-scss";
+        else if (ext == "styl") return "text/x-scss";
+        else if (ext == "md") return "text/x-markdown";
+        else if (ext == "js") return "javascript";
+      };
+    </script>
 </body>
 </html>
 
