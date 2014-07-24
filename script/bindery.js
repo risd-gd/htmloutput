@@ -30,40 +30,53 @@ window.HAS_COMPLETED_ONE_LAYOUT = false;
 
     // Allows user to add various passes
     // without worrying about all the outher stuff.
-    this.preBindFuncs = [];
-    this.postBindFuncs = [];
+    var preBindFuncs = [];
+    var postBindFuncs = [];
 
     // A beforeBind function receives as an argument
     // the DOM Node for the content flow and makes
     // whatever changes it wants
     this.beforeBind = function(preProc) {
-      this.preBindFuncs.push(preProc);
+      preBindFuncs.push(preProc);
     }
 
     // An afterBind function receives as an argument
     // both the DOM Node for each page in turn,
-    // and a global 'state' object.
-    // the state object is shared among
-    // all of the afterBind functions so they (could)
-    // conceivably communicate.
-    //
-    // Really the only reason to support separate afterBind
-    // functions is for the sake of organization in the hopes
-    // of some future modularity...
+    // and a state object to keep track of what.
+    // has been processed so far.
     //
     // afterBind functions change sizes/etc at
     // their own risk because the pages will not
     // reflow a second time.
     //
-    this.afterBind = function(postProc) {
-      this.postBindFuncs.push(postProc);
+    this.afterBind = function(initialState, postProc) {
+      postBindFuncs.push({
+        func: postProc,
+        state: initialState
+      });
     }
 
+    // 
+    this.startBind = function() {
 
-    this.bind = function() {
-      for (var i = 0; i < this.preBindFuncs.length; i++) {
-        this.preBindFuncs[i]();
+      // First remove the stuff we don't want to print
+      $("[data-remove-before-print]").remove();
+
+      // Then preprocess various stuff
+      for (var i = 0; i < preBindFuncs.length; i++) {
+        preBindFuncs[i]();
       }
+
+      // Remove global class
+      document.documentElement.classList.remove("_notsplityet");
+
+      // Hide button and mess with controls
+      regionizer.style.display = "none";
+      document.getElementById("postProcessControls").style.display = "inline";
+
+      // Begin regionizing
+      cssRegions.enablePolyfill();
+
     }
 
     this.bindComplete = function() {
@@ -75,20 +88,16 @@ window.HAS_COMPLETED_ONE_LAYOUT = false;
       stat.innerHTML = "Book is ready.";
 
       // Feed each page through all postBind functions...
-      var state = {
-        head: "",
-        headUrl: "",
-        pageKind: "",
-        intervName: "",
-      };
 
       var pages = document.querySelectorAll(".page-inner");
 
       for (var i = 0; i < pages.length; i++) {
-        for (var j = 0; j < this.postBindFuncs.length; j++) {
-          this.postBindFuncs[j](pages[i], state);
+        for (var j = 0; j < postBindFuncs.length; j++) {
+          postBindFuncs[j].func(pages[i], postBindFuncs[j].state);
         }
       }
+
+      $(".toc [type=checkbox]").replaceWith("&#10005;"); // replaces checkboxes with X
 
       // Trim unused pages from the end
       trimRegions('content-flow');
@@ -102,199 +111,6 @@ window.HAS_COMPLETED_ONE_LAYOUT = false;
 
 
 
-// _________________________
-
-// Pre-process to detect full-spread images and split them in half
-// And also a lot of other thing!
-
-// _________________________
-
-
-function preProcessPages() {
-
-  // [A] Clone image spreads
-  var imageSpreads = document.querySelectorAll("[data-imagespread]");
-  for (var i = 0; i < imageSpreads.length; i++) {
-    var oldNode = imageSpreads[i];
-    var src = oldNode.querySelector("img").src;
-
-    var splitImageHtml = ' \
-      <div class="_dontpage-break"></div>\
-      <div class="_book-spread-l" data-fullbleed>\
-        <img src="' + src + '"/>\
-      </div>\
-      <div class="_book-spread-r" data-fullbleed>\
-        <img src="' + src + '"/>\
-      </div> \
-      <div class="_dontpage-break"></div>';
-
-    $(splitImageHtml).insertAfter(oldNode);
-    oldNode.parentNode.removeChild(oldNode);
-  }
-
-  // [B] Clone text spreads
-  var textSpreads = document.querySelectorAll("[data-textspread]");
-  for (var i = 0; i < textSpreads.length; i++) {
-    var baseNode = textSpreads[i];
-
-    var pt2 = baseNode.cloneNode(true);
-    pt2.setAttribute("data-sideways-part", "2");
-
-    var pt3 = baseNode.cloneNode(true);
-    pt3.setAttribute("data-sideways-part", "3");
-
-    $(baseNode).after([
-      $('<div class="_page-break"></div>'),
-      pt2,
-      $('<div class="_page-break"></div>'),
-      pt3
-    ]);
-  }
-
-  // [B] Detect hrefs and insert
-  var links = document.querySelectorAll("a[href]");
-  if (links) {
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute("href");
-      $("<sup data-footnote='" + href + "'>x</sup>").insertAfter(links[i]);
-    }
-  }
-
-  // [C] find foonotes, add superscripts
-  var footnotes = $("footnote");
-  if(footnotes){
-    for(var i=0; i< footnotes.length; i++){
-      var material = footnotes.eq(i).html(); // this is working!!!
-      $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
-    }
-  }
-
-  // [D] Swap GIFs out for fixed PNG version
-  // requires there be a .png version of the frame people want in print.
-  var num_images = $("img").length;
-  for(i=0; i<num_images; i++){
-    var src = $("img").eq(i).attr("src");
-    var end = src.length;
-    var start = end-4;
-
-    if(src.substring(start,end)==".gif" || src.substring(start,end)==".GIF"){
-      //alert("WE FOUND ONE LADDY!");
-      // swap out PNG extension with fixed frame for printing
-      $("img").eq(i).attr("src",src.substring(0,start)+".png");
-    }
-  }
-
-  // [E] highlight Code
-  highlightCode();
-
-}
-
-// _________________________
-
-// Post-process to detect bleeds, running heads
-
-// _________________________
-
-function postProcessPages(){
-
-  document.documentElement.classList.add("_bleed-enabled");
-
-  // Persists as we loop through pages
-  // var head  = ""
-  //   , headUrl = ""
-  //   , pageKind = ""
-  //   , intervName;
-
-  // var pages = document.querySelectorAll(".page-inner");
-  // for (var i = 0; i < pages.length; i++) {
-  //   var pg = pages[i];
-  //   var isRecto = pg.parentNode.classList.contains("_recto") ? true : false;
-
-  //   // [A] Detect bleeds
-  //   var hasBleeds = pg.querySelector("[data-fullbleed]");
-  //   if (hasBleeds) {
-  //     pg.classList.add("_bleed");
-  //   }
-
-  //   // [B] If there is an in-page heading designed to trigger a new running head
-  //   var heading = pg.querySelector("[data-change-running-head]");
-  //   var pagekindchange = pg.querySelector("[data-change-page-kind]");
-
-  //   if (pagekindchange) {
-  //     pageKind = pagekindchange.getAttribute("data-category");
-  //   }
-
-  //   if (heading) {
-  //     headUrl = heading.getAttribute("data-pageurl");
-
-  //     // If it was an interview heading, it's a special case
-  //     if (heading.getAttribute("data-category") == "interview") {
-  //       head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
-  //       intervName = heading.getAttribute("data-interviewee");
-  //     }
-  //     else {
-  //       head = heading.innerText;
-  //     }
-
-  //     // Add this page to the table of contents
-  //     var id = heading.getAttribute("data-id");
-  //     if (id) {
-  //       var num = pg.parentNode.getAttribute("data-page");
-  //       var tocLine = document.querySelector('.page-inner [data-toc="' + id + '"]');
-  //       if (tocLine) tocLine.innerText = num;
-  //     }
-  //   }
-
-  //   // [C] Set this page's page kind
-  //   pg.parentNode.setAttribute("data-page-kind", pageKind);
-  //   pg.parentNode.setAttribute("data-page-interv", intervName);
-
-  //   // [D] Set this page's running head to the current running head
-  //   var runner = pg.parentNode.querySelector("._running-head ._section");
-  //   if (runner) {
-  //     if (!isRecto) {
-  //       runner.innerHTML = "<span>" + head + "</span>";
-  //     }
-  //     else {
-  //       runner.innerHTML = "<span class='_headurl'>" + headUrl + "</span>";
-  //     }
-  //   }
-
-  //   // [F] Footnotes
-  //   var footnotes = pg.querySelectorAll("[data-footnote]");
-  //   if(footnotes){
-  //     var notes = ""; // don't make this more than 3 lines or so!
-  //     for (var j = 0; j < footnotes.length; j++){
-  //       var material = footnotes[j].getAttribute("data-footnote");
-  //       var temp = material;
-
-  //       // strip "http://"
-  //       var start = temp.indexOf("://");
-  //       var end = temp.length;
-  //       if(start !== -1){
-  //         start = start + 3;
-  //         temp = temp.substring(start,end);
-  //       }
-
-  //       // strip "www."
-  //       start = temp.indexOf("www.");
-  //       end = temp.length;
-  //       if(start !== -1){
-  //         start = start + 4;
-  //         temp = temp.substring(start,end);
-  //       }
-
-  //       footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
-  //       $("sup[data-footnote='"+material+"']").html(j);
-  //       notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+"<br />";
-  //     }
-  //     pg.parentNode.querySelector("._footer").innerHTML = notes;
-  //   }
-
-  //   $(".toc [type=checkbox]").replaceWith("&#10005;"); // replaces checkboxes with X
-
-  // }
-}
 
 // -------------------------
 

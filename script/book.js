@@ -11,16 +11,11 @@
 var toggler = document.getElementById("toggleguides");
 var togglecrop = document.getElementById("togglecrop");
 var regionizer = document.getElementById("regionize");
-var restyle = document.getElementById("restyle");
-var postproc = document.getElementById("postproc");
 
 if (toggler) toggler.addEventListener("click", toggleGuidesAndBleed);
 if (togglecrop) togglecrop.addEventListener("click", toggleCropMarks);
-if (regionizer) regionizer.addEventListener("click", regionize);
-if (restyle) restyle.addEventListener("click", reloadStylesheets);
-if (postproc) postproc.addEventListener("click", function(){
-  postProcessPages(this);
-});
+if (regionizer) regionizer.addEventListener("click", Bindery.startBind);
+
 
 
 // ==================
@@ -56,24 +51,6 @@ imagesLoaded( document.body, function( instance ) {
 //
 // Load polyfill when we know all images have loaded
 
-function regionize() {
-
-  // First remove the stuff we don't want to print
-  $("[data-remove-before-print]").remove();
-
-  // Then preprocess various stuff
-  preProcessPages();
-
-  // Remove global class
-  document.documentElement.classList.remove("_notsplityet");
-
-  // Hide button and mess with controls
-  regionizer.style.display = "none";
-  document.getElementById("postProcessControls").style.display = "inline";
-
-  // Begin regionizing
-  cssRegions.enablePolyfill();
-}
 
 // -------------------------------------
 
@@ -147,14 +124,99 @@ function toggleCropMarks(e) {
   }
 }
 
-// -----------
-// Per-page modules for after the bind is done...
+// ==============================================================
+// The following is ssome crude javascript
+// preprocessing to prepare the content for being flowed
+// over the pages, for after the bind is done.
+//
+
+Bindery.beforeBind(function(){
+  // [A] Clone image spreads
+  var imageSpreads = document.querySelectorAll("[data-imagespread]");
+  for (var i = 0; i < imageSpreads.length; i++) {
+    var oldNode = imageSpreads[i];
+    var src = oldNode.querySelector("img").src;
+
+    var splitImageHtml = ' \
+      <div class="_dontpage-break"></div>\
+      <div class="_book-spread-l" data-fullbleed>\
+        <img src="' + src + '"/>\
+      </div>\
+      <div class="_book-spread-r" data-fullbleed>\
+        <img src="' + src + '"/>\
+      </div> \
+      <div class="_dontpage-break"></div>';
+
+    $(splitImageHtml).insertAfter(oldNode);
+    oldNode.parentNode.removeChild(oldNode);
+  }
+
+  // [B] Clone text spreads
+  var textSpreads = document.querySelectorAll("[data-textspread]");
+  for (var i = 0; i < textSpreads.length; i++) {
+    var baseNode = textSpreads[i];
+
+    var pt2 = baseNode.cloneNode(true);
+    pt2.setAttribute("data-sideways-part", "2");
+
+    var pt3 = baseNode.cloneNode(true);
+    pt3.setAttribute("data-sideways-part", "3");
+
+    $(baseNode).after([
+      $('<div class="_page-break"></div>'),
+      pt2,
+      $('<div class="_page-break"></div>'),
+      pt3
+    ]);
+  }
+
+  // [B] Detect hrefs and insert
+  var links = document.querySelectorAll("a[href]");
+  if (links) {
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      $("<sup data-footnote='" + href + "'>x</sup>").insertAfter(links[i]);
+    }
+  }
+
+  // [C] find foonotes, add superscripts
+  var footnotes = $("footnote");
+  if(footnotes){
+    for(var i=0; i< footnotes.length; i++){
+      var material = footnotes.eq(i).html(); // this is working!!!
+      $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
+    }
+  }
+
+  // [D] Swap GIFs out for fixed PNG version
+  // requires there be a .png version of the frame people want in print.
+  var num_images = $("img").length;
+  for(i=0; i<num_images; i++){
+    var src = $("img").eq(i).attr("src");
+    var end = src.length;
+    var start = end-4;
+
+    if(src.substring(start,end)==".gif" || src.substring(start,end)==".GIF"){
+      //alert("WE FOUND ONE LADDY!");
+      // swap out PNG extension with fixed frame for printing
+      $("img").eq(i).attr("src",src.substring(0,start)+".png");
+    }
+  }
+
+  // [E] highlight Code
+  highlightCode();
+});
+
+
+// ==============================================================
+// The following are the per-page modules 
+// for after the bind is done...
 //
 
 // -------------------------
-
 // Let images bleed off edge of page
-Bindery.afterBind(function(pg, state){
+
+Bindery.afterBind({}, function(pg, state){
   var hasBleeds = pg.querySelector("[data-fullbleed]");
   if (hasBleeds) {
     pg.classList.add("_bleed");
@@ -162,9 +224,9 @@ Bindery.afterBind(function(pg, state){
 });
 
 // -------------------------
-
 // Add footnotes to bottom of page
-Bindery.afterBind(function(pg, state){
+
+Bindery.afterBind({}, function(pg, state){
   var footnotes = pg.querySelectorAll("[data-footnote]");
   if(footnotes){
     var notes = ""; // don't make this more than 3 lines or so!
@@ -197,9 +259,9 @@ Bindery.afterBind(function(pg, state){
 });
 
 // -------------------------
-
 // Check which kind of page (interview vs. project)
-Bindery.afterBind(function(pg, state){
+
+Bindery.afterBind({pageKind: ""}, function(pg, state){
   var pagekindchange = pg.querySelector("[data-change-page-kind]");
   if (pagekindchange) {
     state.pageKind = pagekindchange.getAttribute("data-category");
@@ -207,10 +269,28 @@ Bindery.afterBind(function(pg, state){
   pg.parentNode.setAttribute("data-page-kind", state.pageKind);
 });
 
-// -------------------------
 
+// -------------------------
+// Update table of contents
+
+Bindery.afterBind({}, function(pg, state){
+
+    // If there is an in-page heading
+    var heading = pg.querySelector("[data-change-running-head]");
+    if (heading) {
+      // Add this page to the table of contents
+      var id = heading.getAttribute("data-id");
+      if (id) {
+        var num = pg.parentNode.getAttribute("data-page");
+        var tocLine = document.querySelector('.page-inner [data-toc="' + id + '"]');
+        if (tocLine) tocLine.innerText = num;
+      }
+    }
+});
+
+// -------------------------
 // Add running heads
-Bindery.afterBind(function(pg, state){
+Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
 
     var isRecto = pg.parentNode.classList.contains("_recto") ? true : false;
 
@@ -229,13 +309,6 @@ Bindery.afterBind(function(pg, state){
         state.head = heading.innerText;
       }
 
-      // Add this page to the table of contents
-      var id = heading.getAttribute("data-id");
-      if (id) {
-        var num = pg.parentNode.getAttribute("data-page");
-        var tocLine = document.querySelector('.page-inner [data-toc="' + id + '"]');
-        if (tocLine) tocLine.innerText = num;
-      }
     }
 
     pg.parentNode.setAttribute("data-page-interv", state.intervName);
