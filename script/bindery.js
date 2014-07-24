@@ -6,7 +6,7 @@
 // version 0.2
 // Evan Brooks 2014
 //
-// Depends on a custom version of 
+// Depends on a custom version of https://github.com/FremyCompany/css-regions-polyfill
 //
 // Developed through the course HTML Output,
 // taught by John Caserta at RISD in Spring 2014.
@@ -15,18 +15,10 @@
 
 
 
-// Block polyfill from beginning to run automatically
-window.cssRegionsManualTrigger = false;
-
-// Block polyfill from running another time
-// after completing a full layout.
-// (because our polyfill is listening to
-// all sorts of resize events)
-window.HAS_COMPLETED_ONE_LAYOUT = false;
-
-
 (function() {
   var Bindery = function() {
+
+    this.isBound = false;
 
     // Allows user to add various passes
     // without worrying about all the outher stuff.
@@ -81,7 +73,7 @@ window.HAS_COMPLETED_ONE_LAYOUT = false;
 
     this.bindComplete = function() {
 
-      HAS_COMPLETED_ONE_LAYOUT = true;
+      this.isBound = true;
 
       document.documentElement.classList.add("_bleed-enabled");
       document.body.classList.add("_regions-loaded");

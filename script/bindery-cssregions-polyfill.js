@@ -5,15 +5,11 @@
 // https://github.com/FremyCompany/css-regions-polyfill,
 // which is licensed under http://www.apache.org/licenses/LICENSE-2.0
 //
-// It provides the backbone to bindery.js. It presupposes that there is already a 
-// window.Bindery object... a better way would be to let Bindery.js instantiate 
-// the polyfill, but to be honest this polyfill is too big and confusing
-// for me to figure that out. Bindery.js
+// It provides the backbone to bindery.js ... everything
 // may work better without all the overhead from this polyfill,
 // but using the official web standards for this is nice
 // (at least in theory).
 //
-// MAKE SURE TO LOAD THIS SCRIPT *AFTER* bindery.js UNTIL FURTHER NOTICE
 // 
 // Evan Brooks 2014
 //
@@ -5751,7 +5747,9 @@ cssRegions.Flow.prototype._relayout = function(data){
     var This=this;
 
 
-    if (HAS_COMPLETED_ONE_LAYOUT) return;
+    // Cancel immediately if this is running again
+    // for some reason - EB
+    if (Bindery.isBound) return;
 
 
     try {
@@ -6142,4 +6140,4 @@ cssRegions.enablePolyfillObjectModel = function() {
 }
 
 // load the polyfill immediately if not especially told otherwise
-if(!("cssRegionsManualTrigger" in window)) { cssRegions.enablePolyfill(); }
+// if(!("cssRegionsManualTrigger" in window)) { cssRegions.enablePolyfill(); }
