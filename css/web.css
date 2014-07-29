@@ -43,7 +43,6 @@ h3 {
   font-family: "Benton Modern", serif;
   font-weight: bold;
   font-size: 30px;
-  margin-bottom: 50px;
 }
 
 h4 {
@@ -87,6 +86,11 @@ hr.dg3 {
 .benton-italic {
   font-family: "Benton Modern", serif;
   font-style: italic;
+}
+
+.green-bg {
+  background-color: rgb(32, 185, 129);
+  color: white;
 }
 
 code {
@@ -224,19 +228,22 @@ Interview & Project Styles
 }
 
 /* output template styles */
+
 .output figcaption {
   display:none;
 } .output p {
   clear: both;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .output img {
   height:auto;
-  max-width: 50%;
+  width: 100%;
   display: auto;
-  float: left;
+  margin:0;
+}
+
+.output div {
+  margin-left: 20%;
 }
 
 /* code template styles */
@@ -440,28 +447,21 @@ h1.category{
   display: block;
   float: left;
   width: 40%;
-  margin-right: 5%;
-  margin-bottom: 5%;
-  padding: 10px;
+  margin-right: 2%;
+  margin-bottom: 2%;
   color: black;
-  font-size: 18px;
-  text-align: center;
 } .toc-code img {
   display: block;
-  width: 50%;
-  margin: auto;
+  width: 30%;
   height: auto;
-  padding: 20px;
 } .toc-code:hover {
   cursor: pointer;
 } .toc-code p {
   max-width: 70%;
-  margin: auto;
 } .toc-code hr {
-  margin: auto;
-  margin-top: 25px;
+  margin: 0;
 } .toc-code h2 {
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 /* for blocks of text in TOC */
