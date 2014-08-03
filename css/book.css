@@ -181,6 +181,12 @@ Interview print styles
   color: black
 }
 
+.interview-bar{
+  border-color: black;
+  margin-bottom: 1.5pc;
+}
+
+
 
 .interview-q:before,
 .interview-a:before {
