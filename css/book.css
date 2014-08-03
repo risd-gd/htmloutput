@@ -170,6 +170,14 @@ Interview print styles
 ----------------------------------*/
 
 
+.interview-name, .project-name {
+  color: black
+}
+
+.interview-name{
+  color: black
+}
+
 
 .interview-q:before,
 .interview-a:before {

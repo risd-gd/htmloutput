@@ -154,6 +154,7 @@ separated into print and web
 }
 
 .interview-bar{
+	border: 0;
   border-bottom: 5pt solid rgba(0,255,0,1);
 }
 
