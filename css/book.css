@@ -126,6 +126,10 @@ Title page
 	font-size: 0.8em;
 	color: rgba(0, 255, 0, 1);
 }
+
+.title-page ._footer {
+	top: 5in;
+}
 .intro p {
 	margin-top: 1pc;
 	margin-right: 2pc;
