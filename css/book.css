@@ -118,9 +118,10 @@ Title page
 
 .title-page p {
 	margin-top: 2pc;
+	margin-right: 2pc;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	font-size: 0.5em;
+	font-size: 0.8em;
 }
 
 .category-name {
