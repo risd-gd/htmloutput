@@ -217,12 +217,10 @@ h1.project-name { display: none; }
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 1em;
-	display: inline-block;
-	position: absolute;
-	z-index: 2;
-	background: rgba(255, 255, 255, .5);
-	margin: 3.6pc 6pc 0 3.6pc;
-	padding: 1.5pc;
+	margin-bottom: 1.5pc;
+	display: block;
+	color: rgba(0, 255, 0, 1);
+
 }
 
 .interview-name, .project-name {
