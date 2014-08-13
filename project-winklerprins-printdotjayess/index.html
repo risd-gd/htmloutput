@@ -4,23 +4,13 @@ layout: code
 title: Print.js
 author: Lukas WinklerPrins
 
-description: Automated generation of a print stylesheet for web patterns using javascript.
+description: I returned to the patterns that many people had been making for this class&mdash;my kinetic patterns, Daniel's stock element creations, John's repeats, Catherine's typographic layerings. These outputs have felt the most digital-native to me, by playing with how the browser structures output to create novel forms in a scrolling environment. I went about trying to print these. "print.js" is a file that, in theory, you can simply put into the end of your head tag and it will create an @media print{} style sheet that translates your screen output into something printable. With it, one can easily specify paper output size that crops the pattern before printing.
+
 category: code
 
 printready: true
 
 ---
-<p>
-    I returned to the patterns that many people had been making for this class&mdash;my kinetic patterns, Daniel's stock element creations, John's repeats, Catherine's typographic layerings. These outputs have felt the most digital-native to me, by playing with how the browser structures output to create novel forms in a scrolling environment.
-    I went about trying to print these. &ldquo;print.js&rdquo; is a file that, in theory, you can simply put into the end of your head tag and <mark>it will create an @media print{} style sheet that translates your screen output into something printable</mark>.
-</p>
-<p>
-    With it, one can easily specify paper output size that crops the pattern before printing.
-</p>
-<p>
-    print.js works best in Safari<footnote>This is because Google Chrome has limited built-in paper size options and Firefox applies obnoxious user agent styles.</footnote>.
-</p>
-
 <p>
     There are some best practices for formatting:<br />
     <strong>1.</strong> All javascript must be in the head or external file. None in the body. Use jquery!<br />
@@ -173,6 +163,10 @@ $('document').ready(function(){
     <p>
         To install, simply save the above in your directory as &ldquo;print.js&rdquo;. Then, put the following two lines into your html page:
 </p>
+<p>
+    print.js works best in Safari<footnote>This is because Google Chrome has limited built-in paper size options and Firefox applies obnoxious user agent styles.</footnote>.
+</p>
+
 
     <code><textarea class="snippet" data-mode="html">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
