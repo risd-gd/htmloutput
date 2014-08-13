@@ -149,8 +149,9 @@ Table of contents
 .toc label { margin-bottom: 6px;}
 
 .toc-heading {
+	margin-left: 1.5pc;
 	color: rgba(0, 255, 0, 1);
-	font-size: 1.1em;
+	font-size: 1em;
 	line-height: 110%;
 	font-family: "Messenger Text";
 	display: inline-block;
@@ -184,7 +185,7 @@ Table of contents
 
 .toc h4 {
 	margin: 0;
-	font-size: 1em;
+	font-size: .9em;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	text-indent: -2pc;

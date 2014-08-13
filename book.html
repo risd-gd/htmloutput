@@ -195,6 +195,7 @@ ____________________________________________________
 All Content
 -->
 
+<!-- conversations version -->
 
 {% for category in site.types %}
   {% for page in site.pages %}
@@ -216,7 +217,55 @@ All Content
 
           <div class="_page-break"></div>
 
-        {% else %}
+       {% endif %} 
+
+        {{ page.content }}
+
+      <div class="_page-break"></div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+
+
+<!-- output version -->
+{% for category in site.types %}
+  {% for page in site.pages %}
+    {% if page.category == category %}
+      {% if page.printready %}
+        {% if category == 'project' %}
+
+          <h1 class="project-name"
+              data-change-running-head
+              data-change-page-kind
+              data-category="{{ page.category }}"
+              data-pageurl="html.risd.gd{{page.url}}"
+              data-id="{{ page.title }}">
+              {{ page.author }}
+          </h1>
+           <div class="projectdescription">
+            <h2><span class="green">{{ page.author }}</span> / {{ page.description }}</h2>
+           </div>
+       <div class="_page-break"></div>
+       {% endif %} 
+
+        {{ page.content }}
+
+      <div class="_page-break"></div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<!-- code version -->
+{% for category in site.types %}
+  {% for page in site.pages %}
+    {% if page.category == category %}
+      {% if page.printready %}
+        {% if category == 'code' %}
 
           <h1 class="project-name"
               data-change-running-head
