@@ -157,10 +157,10 @@ All Content
               data-pageurl="htmloutput.risd.gd{{page.url}}"
               data-id="{{ page.author }}">
           </h1>
-       <h4>{{ page.description }}</h4>
+          <h4>{{ page.description }}</h4>
+        {% endif %}
       {% endif %}
-        {{ page.content }}
-      {% endif %}
+      {{ page.content }}
     {% endif %}
   {% endfor %}
 {% endfor %}
