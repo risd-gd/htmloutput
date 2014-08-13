@@ -106,21 +106,10 @@ Table of Contents
         <h4>
           {{ page.title }} <span class="toc-author">{{ page.description }}</span>
         </h4>
-      {% else if page.category == 'about' %}
-        <div class="toc-pg" data-toc="{{ page.title }}">
-          <input type="checkbox" checked="false" />
-        </div>
-        <h4>
-          {{ page.title }} <span class="toc-author">{{ page.description }}</span>
-        </h4>
-      {% endif %}
     </label>
   {% endif %}
 {% endfor %}
 </div>
-<div class="_page-break"></div>
-
-
 
 
 <h1 class="toc-heading">Conversations</h1>
@@ -133,7 +122,7 @@ Table of Contents
         <div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
         </div>
-        <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
+        <h4>{{ page.interviewee }} with {{ page.interviewer }}</h4>
       {% endif %}
     </label>
   {% endif %}
@@ -231,7 +220,6 @@ All Content
            <div  class="interviewblock"></h1>
             <h2>{{ page.description }}</h2>
            </div>
-          <div class="_page-break"></div>
         {% endif %}
 
         {{ page.content }}
