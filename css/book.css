@@ -230,6 +230,12 @@ h1.project-name { display: none; }
 	color: rgba(0, 255, 0, 1);
 
 }
+.projectdescription h1 {
+	font-size: 1.75pc;
+	font-weight: bold;
+	line-height: 105%;
+
+}
  
 .interview-name, .project-name {
   color: black
