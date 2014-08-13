@@ -284,7 +284,7 @@ All Content
     {% if page.category == category %}
       {% if page.printready %}
         {% if category == 'code' %}
-        <img src="{{page.url}}icon.png" style="width: 50%;">
+        <img src="/htmloutput{{page.url}}icon.png" style="width: 50%; margin-top: 2pc;">
           <h1 class="project-name"
               data-change-running-head
               data-change-page-kind
@@ -295,7 +295,7 @@ All Content
           </h1>
            <div class="projectdescription">
             <h1>{{ page.title }}</h1>
-            <h2><span class="black">{{ page.author }}</span> / {{ page.description }}</h2>
+            <h2><span class="black">{{ page.description }}</span> / {{ page.author }}</span></h2>
            </div>
        <div class="_page-break"></div>
         {{ page.content }}
