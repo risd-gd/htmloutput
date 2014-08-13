@@ -148,15 +148,6 @@ Table of contents
 
 .toc label { margin-bottom: 10px;}
 
-.toc-heading.two {
-	font-size: 1.4em;
-	line-height: 110%;
-	font-family: "Benton Modern";
-	font-weight: bold;
-	display: inline-block;
-  	border-bottom: 5px solid black;
-}
-
 .toc-heading {
 	color: rgba(0, 255, 0, 1);
 	font-size: 1.2em;
@@ -165,6 +156,16 @@ Table of contents
 	display: inline-block;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
 	margin-bottom: .5em; margin-top: 1em;
+}
+
+.toc-heading.two {
+	font-size: 1.5em;
+	line-height: 110%;
+	font-family: "Benton Modern";
+	color: black;
+	font-weight: bold;
+	display: inline-block;
+  	border-bottom: 5px solid black;
 }
 
 
