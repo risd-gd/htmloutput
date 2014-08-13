@@ -111,6 +111,7 @@ Title page
 	line-height: 90%;
 	font-family: Benton Modern;
 	font-weight: bold;
+	margin-top: 10px;
 }
 
 .title-page h2{
@@ -126,8 +127,8 @@ Title page
 	color: rgba(0, 255, 0, 1);
 }
 
-.title-page ._footer {
-	top: 5in;
+.title-page ._running-head ._footer {
+	top: 5in !important;
 }
 .intro p {
 	margin-top: 1pc;
