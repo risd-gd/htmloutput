@@ -17,7 +17,6 @@ if (togglecrop) togglecrop.addEventListener("click", toggleCropMarks);
 if (regionizer) regionizer.addEventListener("click", Bindery.startBind);
 
 
-
 // ==================
 // React to checkbox
 
