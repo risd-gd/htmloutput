@@ -428,7 +428,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	top: 6.2in;
+	bottom: .25in;
 	left: .5in;
   width: 3.5in;
 	position: absolute;
