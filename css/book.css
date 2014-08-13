@@ -154,7 +154,7 @@ Table of contents
 	font-family: "Benton Modern";
 	font-weight: bold;
 	display: inline-block;
-  	border-bottom: 5px solid rgba(0, 255, 0, 1);
+  	border-bottom: 5px solid black;
 }
 
 .toc-heading {
@@ -163,7 +163,7 @@ Table of contents
 	line-height: 110%;
 	font-family: "Messenger Text";
 	display: inline-block;
-  	border-bottom: 5px solid rgba(0, 255, 0, 1);
+  	border-bottom: 3px solid rgba(0, 255, 0, 1);
 }
 
 
