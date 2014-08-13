@@ -107,6 +107,7 @@ Title page
 }
 
 .title-page h1 {
+	color: rgba(0, 255, 0, 1);
 	font-size: 7pc;
 	line-height: 90%;
 	font-family: Benton Modern;
@@ -115,6 +116,7 @@ Title page
 }
 
 .title-page h2{
+	color: black;
 	position: absolute;
 	z-index: 2;
 }  
