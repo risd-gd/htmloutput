@@ -97,7 +97,7 @@ Title page
  
 ----------------------------------*/
  
-.halftitle-page h1, .title-page h2, .interviewblock h2 {
+.halftitle-page h1, .title-page h2{
 	color: rgba(0, 255, 0, 1);
 	font-family: "Messenger Text";
 	font-weight: normal;
@@ -113,7 +113,7 @@ Title page
 	font-weight: bold;
 }
 
-.title-page h2, .interviewblock h2 {
+.title-page h2{
 	position: absolute;
 	z-index: 2;
 }  
@@ -199,6 +199,15 @@ Interview print styles
 
 ----------------------------------*/
 
+.interviewblock h2 {
+	font-family: "Messenger Text";
+	font-weight: normal;
+	font-size: .9em;
+	display: inline-block;
+	position: absolute;
+	z-index: 2;
+	background: white;
+}
 
 .interview-name, .project-name {
   color: black
@@ -243,7 +252,7 @@ Interview print styles
 	margin: 0;
 }
 
-.interview-q {
+.interview-q, .green {
 	color: rgba(0, 255, 0, 1);
 }
 
