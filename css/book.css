@@ -177,8 +177,9 @@ Table of contents
 	text-indent: -2pc;
 	padding-left: 2pc;
 	line-height: 110%;
+	margin-bottom: 4px;
 }
-
+ 
 .toc-author {
 	color: rgba(0, 255, 0, 1);
 	letter-spacing: .5px;
