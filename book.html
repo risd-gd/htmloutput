@@ -95,24 +95,6 @@ Table of Contents
 <div class="_page-break"></div>
 
 
-<div class="toc">
-{% for page in site.pages %}
-  {% if page.printready %}
-    <label class="toc-item">
-      {% if page.category == 'intro' %}
-        <div class="toc-pg" data-toc="{{ page.title }}">
-          <input type="checkbox" checked="false" />
-        </div>
-        <h4>
-          {{ page.title }} <span class="toc-author">{{ page.description }}</span>
-        </h4>
-      {% endif %}
-    </label>
-  {% endif %}
-{% endfor %}
-</div>
-
-
 <h1 class="toc-heading">Conversations</h1>
 
 <div class="toc">
