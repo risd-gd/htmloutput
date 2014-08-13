@@ -97,11 +97,12 @@ Title page
  
 ----------------------------------*/
  
-.halftitle-page h1, .title-page h2 {
+.halftitle-page h1, .title-page h2, .interviewblock h2 {
 	color: rgba(0, 255, 0, 1);
 	font-family: "Messenger Text";
 	font-weight: normal;
-	font-size: 1em;
+	display: inline-block;
+	font-size: .9em;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
 }
 
@@ -112,16 +113,18 @@ Title page
 	font-weight: bold;
 }
 
-.title-page h2 {
+.title-page h2, .interviewblock h2 {
 	position: absolute;
+	z-index: 2;
 }  
 
 .title-page p {
-	margin-top: 2pc;
+	margin-top: 1pc;
 	margin-right: 2pc;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.8em;
+	color: rgba(0, 255, 0, 1);
 }
 
 .category-name {
