@@ -70,6 +70,8 @@ Title Page
 <div class="title-page">
   <h2>HTML Output: Designing for / with / in the Browser</h2>
   <h1>{{ page.title }}</h1>
+  <p><a href="http://evn.io">Evan Brooks</a>, <a href="http://ltwp.net">Lukas Winklerprins</a>, <a href="http://phil-cao.com">Philippe Cao</a>, <a href="http://cath.land">Catherine Schmidt, <a href="http://christinarees.com">Christina Rees</a>, <a href="http://#">Christina Webb</a>, <a href="http://#">Kelly Walters</a>, <a href="http://mwmcdermott.com">Michael McDermott</a>, <a href="http://ojusdoshi.com">Ojus Doshi</a>, <a href="http://#">Daniel Giuditta</a>, <a href="http://johncaserta.com">John Caserta</a>
+</p>
 </div>
 <div class="_page-break"></div>
 <div class="_page-break"></div>
@@ -81,7 +83,7 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page">
-<p>{% for page in site.pages %}{% if page.category == 'about' %}
+<p>{% for page in site.pages %}{% if page.category == 'credits' %}
                {{page.content}}
                 {% endif %}{% endfor %}</p>
 </div>
@@ -104,14 +106,6 @@ Table of Contents
   {% if page.printready %}
     <label class="toc-item">
       {% if page.category == 'about' %}
-        <div class="toc-pg" data-toc="{{ page.title }}">
-          <input type="checkbox" checked="false" />
-        </div>
-        <h4>
-          {{ page.title }} 
-        </h4>
-      {% endif %}
-      {% if page.category == 'credits' %}
         <div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />
         </div>
@@ -209,7 +203,7 @@ All Content
               data-id="{{ page.title }}">
               {{ page.title }}
           </h1>
-        {{ page.content }}
+       <div class="intro">{{ page.content }}</div>
 
       <div class="_page-break"></div>
        {% endif %} 

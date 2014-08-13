@@ -126,6 +126,15 @@ Title page
 	font-size: 0.8em;
 	color: rgba(0, 255, 0, 1);
 }
+.intro p {
+	margin-top: 1pc;
+	margin-right: 2pc;
+	font-family: "Messenger Text";
+	font-weight: normal;
+	font-size: 1em;
+	color: black;
+}
+
 
 .category-name {
 	font-size: 3em;
@@ -151,7 +160,7 @@ Table of contents
 .toc-heading {
 	margin-left: 1.5pc;
 	color: rgba(0, 255, 0, 1);
-	font-size: 1em;
+	font-size: 1.2em;
 	line-height: 110%;
 	font-family: "Messenger Text";
 	display: inline-block;
