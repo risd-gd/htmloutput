@@ -321,7 +321,7 @@ Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
 
       // If it was an interview heading, it's a special case
       if (heading.getAttribute("data-category") == "interview") {
-        state.head = heading.getAttribute("data-interviewee") + " & " + heading.getAttribute("data-interviewer");
+        state.head = heading.getAttribute("data-interviewee") + " with " + heading.getAttribute("data-interviewer");
         state.intervName = heading.getAttribute("data-interviewee");
       }
       else {

@@ -50,7 +50,7 @@ Half Title Page
 -->
 <div class="halftitle-page">
   <h1>{{ page.title }}</h1>
-  <hr>
+<hr class="interview-bar">
 </div>
 <div class="_page-break"></div>
 
@@ -70,8 +70,8 @@ Title Page
 -->
 <div class="title-page">
   <h1>{{ page.title }}</h1>
-  <hr>
-  <h1>HTML Output: Designing for / with / in the Browser</h1>
+  <hr class="interview-bar">
+  <h2>HTML Output: Designing for / with / in the Browser</h2>
 </div>
 <div class="_page-break"></div>
 
@@ -141,7 +141,7 @@ All Content
               data-category="{{ page.category }}"
               data-interviewee="{{ page.interviewee }}"
               data-interviewer="{{ page.interviewer }}"
-              data-pageurl="html.risd.gd{{page.url}}"
+              data-pageurl="htmloutput.risd.gd{{page.url}}"
               data-id="{{ page.interviewee }}">
           </h1> 
           <hr class="interview-bar" />
@@ -156,13 +156,11 @@ All Content
               data-change-running-head
               data-change-page-kind
               data-category="{{ page.category }}"
-              data-pageurl="html.risd.gd{{page.url}}"
+              data-pageurl="htmloutput.risd.gd{{page.url}}"
               data-id="{{ page.author }}">
-                {{ page.author }}
           </h1>
           <hr />
-           <div  class=""><h1>{{ page.author }}</h1>
-            <h2>{{ page.description }}</h2>
+            <p>{{ page.description }}</p>
            </div>
           <div class="_page-break"></div>
         {% endif %}
