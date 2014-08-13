@@ -1,6 +1,6 @@
 ---
 layout: book_pages
-title: This Book is a Website
+title: HTML Output: Designing for/with/in the Browser
 ---
 
 
@@ -79,7 +79,11 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page">
-Front matter
+<p>
+            {% for page in site.pages %}{% if page.category == 'credits' %}
+               {{page.content}}
+             {% endif %}{% endfor %}
+</p>
 </div>
 <div class="_page-break"></div>
 

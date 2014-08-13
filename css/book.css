@@ -98,16 +98,21 @@ Title page
 ----------------------------------*/
 
 .halftitle-page h1 {
-	font-size: 20px;
-	font-family: Benton Modern;
-	text-transform: uppercase;
-	font-weight: bold;
+	font-family: "Messenger Text";
+	font-weight: normal;
+	font-size: 0.55em;
 }
 
 .title-page h1 {
-	font-size: 50px;
+	font-size: 7pc;
 	font-family: Benton Modern;
 	font-weight: bold;
+}
+
+.title-page p {
+	font-family: "Messenger Text";
+	font-weight: normal;
+	font-size: 0.25em;
 }
 
 .category-name {
