@@ -217,14 +217,14 @@ Bindery.afterBind({}, function(pg, state){
 Bindery.beforeBind(function(){
   var links = document.querySelectorAll("a[href]");
   if (links) {
-    for (var i = 1; i < links.length; i++) {
+    for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
       $("<sup data-footnote='" + href + "'>x</sup>").insertAfter(links[i]);
     }
   }
   var footnotes = $("footnote");
   if(footnotes){
-    for(var i=1; i< footnotes.length; i++){
+    for(var i=0; i< footnotes.length; i++){
       var material = footnotes.eq(i).html(); // this is working!!!
       $("<sup data-footnote='"+material+"'>x</sup>").insertAfter(footnotes.eq(i));
     }
@@ -256,7 +256,7 @@ Bindery.afterBind({}, function(pg, state){
         temp = temp.substring(start,end);
       }
 
-      footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
+      footnotes[j].innertext = j+1; // set footnote number (instead of 'x'), each page starts at 0.
       $("sup[data-footnote='"+material+"']").html(j);
       notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+"<br />";
     }
