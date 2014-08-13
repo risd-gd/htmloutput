@@ -324,7 +324,7 @@ Bindery.afterBind({ head: "", headUrl: "", intervName: ""}, function(pg, state){
         state.intervName = heading.getAttribute("data-interviewee");
       }
       else {
-        state.head = heading.getAttribute("data-author");
+        state.head = heading.getAttribute("data-running");
       }
 
     }

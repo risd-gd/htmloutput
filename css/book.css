@@ -164,6 +164,7 @@ Table of contents
 	font-family: "Messenger Text";
 	display: inline-block;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
+	margin-bottom: .5em; margin-top: 1em;
 }
 
 
@@ -190,8 +191,6 @@ Table of contents
 	line-height: 110%;
 	margin-bottom: 4px;
 }
-
-.toc h1 { margin-bottom: 1em; margin-top: 2em; }
  
 .toc-author {
 	color: rgba(0, 255, 0, 1);
@@ -214,11 +213,13 @@ Interview print styles
 .projectdescription h2 {
 	font-family: "Messenger Text";
 	font-weight: normal;
-	font-size: .9em;
+	font-size: 1em;
 	display: inline-block;
 	position: absolute;
 	z-index: 2;
-	background: white;
+	background: rgba(255, 255, 255, .5);
+	margin: 3.6pc 6pc 0 3.6pc;
+	padding: 1.5pc;
 }
 
 .interview-name, .project-name {
