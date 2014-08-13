@@ -158,14 +158,15 @@ All Content
               data-category="{{ page.category }}"
               data-pageurl="htmloutput.risd.gd{{page.url}}"
               data-id="{{ page.author }}">
+                {{ page.author }}
           </h1>
           <hr />
-           <div  class=""><h1></h1>
-            <h2></h2>
+           <div  class=""><h1>{{ page.author }}</h1>
+            <h2>{{ page.description }}</h2>
            </div>
-<!--          <div class="_page-break"></div> -->
+          <div class="_page-break"></div>
         {% endif %}
-        {{ page.description }}
+
         {{ page.content }}
 
       <div class="_page-break"></div>
