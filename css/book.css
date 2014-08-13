@@ -366,6 +366,7 @@ Page size and paginalia
 	font-family: "Benton Modern";
 	letter-spacing: 0.2em;
 	font-size: 0.55em;
+	z-index: 100;
 }
 
 ._running-head ._section {
@@ -396,6 +397,7 @@ Page size and paginalia
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.55em;
+	z-index: 100;
 }
 
 ._recto ._running-head ._pagenum {
