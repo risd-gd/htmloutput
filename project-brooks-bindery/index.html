@@ -3,19 +3,13 @@
 layout: code
 title: Bindery.js
 author: Evan Brooks
-description: How we made this book.
-github: https://github.com/evanbrooks/bindery
+description:  Bindery.js is a set of libraries and snippets to design a print-ready book in the web browser. It's an attempt to understand and rethink the proprietary process and tools that define the modern book. It's also an ill-advised and needlessly complex foray into the expectations, standards, and priorities that define how web browsers work. The library provides an bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed.
+
 category: code
 printready: true
 
 ---
 
-<p>
-	Bindery.js is a set of libraries and snippets to design a print-ready book in the web browser. It's an attempt to understand and rethink the proprietary process and tools that define the modern book. It's also an ill-advised and needlessly complex foray into the expectations, standards, and priorities that define how web browsers work. 
-</p>
-<p>
-	The library provides an bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed. For example, this is how running heads work—
-</p>
 
 <code>
 <textarea class="snippet" data-mode="js">
@@ -67,5 +61,7 @@ Bindery.afterBind({ head: " ", headUrl: " "}, function(pg, state){
 <p>
 	It's a reminder that even though a browser is 'open source' and open to contributions, the work that gets done usually benefits Google. The <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/page.html">CSS Paged Media standard</a> from 2008 remains missing, as Google builds features to draw 3d graphics and hook up to webcams and build mobile apps. And it's notoriously tricky to show a new advertisement once you've printed the web page out (in fact, print preview mode is actually a great way to strip irritating ads, breaks, and sidebars from a news article).
 </p>
+
+<p><a href="github: https://github.com/evanbrooks/bindery">Download here</a></p>
 
 <!-- Printing from the computer inevitably means passing through Adobe's technology, be it InDesign or PDFs or PostScript. -->
