@@ -95,6 +95,25 @@ Table of Contents
 <div class="_page-break"></div>
 
 
+
+<div class="toc">
+{% for page in site.pages %}
+  {% if page.printready %}
+    <label class="toc-item">
+      {% if page.category == 'about' %}
+        <div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>
+          {{ page.title }} / {{ page.description }}
+        </h4>
+      {% endif %}
+    </label>
+  {% endif %}
+{% endfor %}
+</div>
+
+
 <h1 class="toc-heading">Conversations</h1>
 
 <div class="toc">
@@ -199,7 +218,7 @@ All Content
               data-pageurl="html.risd.gd{{page.url}}"
               data-id="{{ page.title }}">
           </h1>
-           <div class="interviewblock">
+           <div class="projectdescription">
             <h2><span class="green">{{page.author}}</span> / {{ page.description }}</h2>
            </div>
         {% endif %} 
