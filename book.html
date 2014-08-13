@@ -95,6 +95,7 @@ Table of Contents
 <div class="_page-break"></div>
 
 
+<h1 class="toc-heading2">Contents</h1>
 
 <div class="toc">
 {% for page in site.pages %}
@@ -105,7 +106,15 @@ Table of Contents
           <input type="checkbox" checked="false" />
         </div>
         <h4>
-          {{ page.title }} / {{ page.description }}
+          {{ page.title }} 
+        </h4>
+      {% endif %}
+      {% if page.category == 'credits' %}
+        <div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>
+          {{ page.title }} 
         </h4>
       {% endif %}
     </label>
@@ -150,7 +159,6 @@ Table of Contents
   {% endif %}
 {% endfor %}
 </div>
-<div class="_page-break"></div>
 
 <h1 class="toc-heading">Code</h1>
 
