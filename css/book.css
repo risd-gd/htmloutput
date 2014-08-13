@@ -98,6 +98,7 @@ Title page
 ----------------------------------*/
  
 .halftitle-page h1 {
+	color: rgba(0, 255, 0, 1);
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 1em;
@@ -111,7 +112,7 @@ Title page
 }
 
 .title-page p {
-	margin: 6pc 0 1pc;
+	margin: 3pc 0 1pc;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.5em;
@@ -137,7 +138,8 @@ Table of contents
 ----------------------------------*/
 
 .toc-heading {
-	font-size: 2em;
+	font-size: 3.5pc;
+	line-height: 110%;
 	font-family: Benton Modern;
 	font-weight: bold;
 }
@@ -151,7 +153,7 @@ Table of contents
 .toc-item {
 	position: relative;
 	padding-right: 0.4in;
-	margin-bottom: 1em;
+	margin-bottom: 0;
 	display: block;
 }
 
@@ -160,7 +162,6 @@ Table of contents
 	font-size: 1em;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	text-transform: uppercase;
 	text-indent: -2pc;
 	padding-left: 2pc;
 }

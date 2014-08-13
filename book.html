@@ -68,7 +68,7 @@ ____________________________________________________
 Title Page
 -->
 <div class="title-page">
-  <h1>&nbsp;for / with / &nbsp;in /</h1>
+  <h1>{{ page.title }}</h1>
 </div>
 <div class="_page-break"></div>
 
@@ -79,7 +79,9 @@ ____________________________________________________
 Front Matter, maybe?
 -->
 <div class="title-page">
-<p>Front matter</p>
+<p>{% for page in site.pages %}{% if page.category == 'credits' %}
+               {{page.content}}
+                {% endif %}{% endfor %}</p>
 </div>
 <div class="_page-break"></div>
 
@@ -89,7 +91,6 @@ ____________________________________________________
 
 Table of Contents
 -->
-<hr>
 <h1 class="toc-heading">Contents</h1>
 
 <div class="toc">
@@ -100,13 +101,13 @@ Table of Contents
         <div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
         </div>
-        <h4>{{ page.interviewee }} with <span class="toc-author">{{ page.interviewer }}</span></h4>
+        <h4>{{ page.interviewee }} with {{ page.interviewer }}</h4>
       {% else %}
       	<div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />
         </div>
         <h4>
-          {{ page.title }} — <span class="toc-author">{{ page.author }}</span>
+          {{ page.title }} <span class="toc-author">{{ page.author }}</span>
         </h4>
       {% endif %}
     </label>
