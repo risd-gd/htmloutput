@@ -103,7 +103,7 @@ Title page
 	font-weight: normal;
 	display: inline-block;
 	font-size: .9em;
-  	border-bottom: 3px solid rgba(0, 255, 0, 1);
+  	border-bottom: 5px solid rgba(0, 255, 0, 1);
 }
 
 .title-page h1 {
@@ -147,10 +147,12 @@ Table of contents
 ----------------------------------*/
 
 .toc-heading {
-	font-size: 1.75pc;
+	color: rgba(0, 255, 0, 1);
+	font-size: 2em;
 	line-height: 110%;
-	font-family: Benton Modern;
-	font-weight: bold;
+	font-family: "Messenger Text";
+	display: inline-block;
+  	border-bottom: 5px solid rgba(0, 255, 0, 1);
 }
 
 .toc-title {

@@ -94,7 +94,7 @@ Table of Contents
 -->
 <div class="_page-break"></div>
 
-<h1 class="toc-heading">Contents</h1>
+<h1 class="toc-heading">Conversations</h1>
 
 <div class="toc">
 {% for page in site.pages %}
@@ -105,8 +105,68 @@ Table of Contents
           <input type="checkbox" checked="false" />
         </div>
         <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
+      {% endif %}
+    </label>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="_page-break"></div>
+
+<h1 class="toc-heading">Output</h1>
+
+<div class="toc">
+{% for page in site.pages %}
+  {% if page.printready %}
+    <label class="toc-item">
+      {% if page.category == 'project' %}
+        <div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>
+          {{ page.author }}
+        </h4>
+      {% endif %}
+    </label>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="_page-break"></div>
+
+<h1 class="toc-heading">Code</h1>
+
+<div class="toc">
+{% for page in site.pages %}
+  {% if page.printready %}
+    <label class="toc-item">
+      {% if page.category == 'project' %}
+        <div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>
+          {{ page.title }} <span class="toc-author">{{ page.description }}</span>
+        </h4>
+      {% endif %}
+    </label>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="_page-break"></div>
+
+
+
+
+<!-- original 
+<div class="toc">
+{% for page in site.pages %}
+  {% if page.printready %}
+    <label class="toc-item">
+      {% if page.category == 'interview' %}
+        <div class="toc-pg" data-toc="{{ page.interviewee }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
       {% else %}
-      	<div class="toc-pg" data-toc="{{ page.title }}">
+        <div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />
         </div>
         <h4>
@@ -117,9 +177,13 @@ Table of Contents
   {% endif %}
 {% endfor %}
 </div>
+<div class="_page-break"></div>
 
-<div class="_page-break"></div>
-<div class="_page-break"></div>
+-->
+
+
+
+
 <div class="_page-break"></div>
 
 
@@ -158,10 +222,9 @@ All Content
               data-category="{{ page.category }}"
               data-pageurl="html.risd.gd{{page.url}}"
               data-id="{{ page.title }}">
-                {{ page.title }}
           </h1>
           <hr />
-           <div  class=""><h1>{{ page.author }}</h1>
+           <div  class="interviewblock"></h1>
             <h2>{{ page.description }}</h2>
            </div>
           <div class="_page-break"></div>
