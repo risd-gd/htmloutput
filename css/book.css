@@ -111,6 +111,13 @@ Title page
 	font-weight: bold;
 }
 
+.title-page h2 {
+	font-size: 1.75pc;
+	line-height: 90%;
+	font-family: Benton Modern;
+	font-weight: bold;
+}
+
 .title-page p {
 	margin: 3pc 0 1pc;
 	font-family: "Messenger Text";
@@ -138,7 +145,7 @@ Table of contents
 ----------------------------------*/
 
 .toc-heading {
-	font-size: 3.5pc;
+	font-size: 1.75pc;
 	line-height: 110%;
 	font-family: Benton Modern;
 	font-weight: bold;
@@ -168,6 +175,8 @@ Table of contents
 
 .toc-author {
 	color: rgba(0, 255, 0, 1);
+	text-transform: uppercase;
+	font-size: .8em;
 }
 
 .toc-pg {
