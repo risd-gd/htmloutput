@@ -176,6 +176,7 @@ Table of contents
 .toc-author {
 	color: rgba(0, 255, 0, 1);
 	text-transform: uppercase;
+	letter-spacing: 1px;
 	font-size: .8em;
 }
 
