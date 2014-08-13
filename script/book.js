@@ -256,7 +256,7 @@ Bindery.afterBind({}, function(pg, state){
         temp = temp.substring(start,end);
       }
 
-      footnotes[j].innertext = j+1; // set footnote number (instead of 'x'), each page starts at 0.
+      footnotes[j].innertext = j; // set footnote number (instead of 'x'), each page starts at 0.
       $("sup[data-footnote='"+material+"']").html(j);
       notes += "&rarr;&nbsp;<i>"+j+"</i>&nbsp;"+temp+"<br />";
     }
