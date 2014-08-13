@@ -148,9 +148,10 @@ Table of contents
 
 .toc-heading {
 	color: rgba(0, 255, 0, 1);
-	font-size: 2em;
+	font-size: 1.4em;
 	line-height: 110%;
-	font-family: "Messenger Text";
+	font-family: "Benton Modern";
+	font-weight: bold;
 	display: inline-block;
   	border-bottom: 5px solid rgba(0, 255, 0, 1);
 }
@@ -175,12 +176,12 @@ Table of contents
 	font-weight: normal;
 	text-indent: -2pc;
 	padding-left: 2pc;
+	line-height: 110%;
 }
 
 .toc-author {
 	color: rgba(0, 255, 0, 1);
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: .5px;
 	font-size: .8em;
 }
 
