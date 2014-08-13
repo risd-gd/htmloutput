@@ -190,6 +190,8 @@ Table of contents
 	line-height: 110%;
 	margin-bottom: 4px;
 }
+
+.toc h1 { margin-bottom: 1em; margin-top: 2em; }
  
 .toc-author {
 	color: rgba(0, 255, 0, 1);
