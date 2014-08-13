@@ -211,6 +211,8 @@ Interview print styles
 
 ----------------------------------*/
 
+h1.project-name { display: none; }
+
 .projectdescription h2 {
 	font-family: "Messenger Text";
 	font-weight: normal;
