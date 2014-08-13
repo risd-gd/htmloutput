@@ -117,6 +117,7 @@ Title page
 
 .title-page h2{
 	color: black;
+	border-bottom: 5px solid black;
 	position: absolute;
 	z-index: 2;
 }  
@@ -126,19 +127,10 @@ Title page
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.8em;
-	color: rgba(0, 255, 0, 1);
 }
 
 .title-page ._running-head ._footer {
 	top: 5in !important;
-}
-.intro p {
-	margin-top: 1pc;
-	margin-right: 2pc;
-	font-family: "Messenger Text";
-	font-weight: normal;
-	font-size: 1em;
-	color: black;
 }
 
 
