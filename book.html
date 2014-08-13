@@ -72,6 +72,7 @@ Title Page
   <h1>{{ page.title }}</h1>
 </div>
 <div class="_page-break"></div>
+<div class="_page-break"></div>
 
 
 <!--
@@ -125,7 +126,6 @@ Table of Contents
  
 
 <h1 class="toc-heading">Conversations</h1>
-
 <div class="toc">
 {% for page in site.pages %}
   {% if page.printready %}
@@ -143,7 +143,6 @@ Table of Contents
 <div class="_page-break"></div>
 
 <h1 class="toc-heading">Output</h1>
-
 <div class="toc">
 {% for page in site.pages %}
   {% if page.printready %}
@@ -162,7 +161,6 @@ Table of Contents
 </div>
 
 <h1 class="toc-heading">Code</h1>
-
 <div class="toc">
 {% for page in site.pages %}
   {% if page.printready %}
@@ -231,7 +229,8 @@ All Content
            <div class="projectdescription">
             <h2><span class="green">{{ page.author }}</span> / {{ page.description }}</h2>
            </div>
-        {% endif %} 
+       <div class="_page-break"></div>
+       {% endif %} 
 
         {{ page.content }}
 
