@@ -103,7 +103,7 @@ Title page
 	font-weight: normal;
 	display: inline-block;
 	font-size: 1em;
-  	border-bottom: 5px solid rgba(0, 255, 0, 1);
+  	border-bottom: 5px solid black;
 }
 
 .title-page h1 {
