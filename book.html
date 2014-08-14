@@ -77,18 +77,6 @@ Title Page
 <div class="_page-break"></div>
 
 
-<!--
-____________________________________________________
-
-Front Matter, maybe?
--->
-<div class="title-page">
-<p>{% for page in site.pages %}{% if page.category == 'credits' %}
-               {{page.content}}
-                {% endif %}{% endfor %}</p>
-</div>
-<div class="_page-break"></div>
-
 
 <!--
 ____________________________________________________
@@ -331,4 +319,16 @@ All Content
     {% endif %}
   {% endfor %}
 {% endfor %}
+
+<!--
+____________________________________________________
+
+Front Matter, maybe?
+-->
+<div class="title-page">
+<p>{% for page in site.pages %}{% if page.category == 'credits' %}
+               {{page.content}}
+                {% endif %}{% endfor %}</p>
+</div>
+<div class="_page-break"></div>
 
