@@ -269,10 +269,10 @@ h1.project-name { display: none; }
 	color: black;
 }
 
-.interview-a {
+.interview-a, .indentanswer {
 	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
 }
-.interview-q {
+.interview-q, .indentquestion {
 	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 0; padding-right: 0;
 }
 .interview-a, .interview-q {
