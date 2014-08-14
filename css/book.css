@@ -119,11 +119,9 @@ Title page
 .title-page h2{
 	color: black;
 	border-bottom: 5px solid black;
-	position: absolute;
-	z-index: 2;
 }  
 
-.title-page p {
+.title-page.copyright p {
 	margin-right: 1.8pc;
 	font-family: "Messenger Text";
 	font-weight: normal;
