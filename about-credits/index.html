@@ -15,6 +15,10 @@ printready: true
 <p>
     All interviews were performed between Febuary and May, 2014. We would like to thank the many practitioners who agreed to be interviewed for the project. Interviews were edited for readability and length. All work remains the copyright of the student or interviewee. 
 </p>
+</p>
+<p>
+The sans-serif font Messenger Text was designed and generously provided by the <a href="http://ctrtype.com">Center for Typographical Research</a> / Anther Kiley and Colin Frazer. Specimens available.</p><p>    Benton Modern, designed by Tobias Frere-Jones and generously provided by <a href="http://www.webtype.com/font/benton-modern-family">WebType</a>.
+</p>
 <p>Rendered and output to PDF from 
 
 <script>
@@ -52,8 +56,17 @@ function get_browser_version(){
 	document.write(browser); 
 	document.write(' ' + browser_version);
 </script>
-</p>
-<p>
-The sans-serif font Messenger Text was designed and generously provided by the <a href="http://ctrtype.com">Center for Typographical Research</a> / Anther Kiley and Colin Frazer. Specimens available.</p><p>    Benton Modern, designed by Tobias Frere-Jones and generously provided by <a href="http://www.webtype.com/font/benton-modern-family">WebType</a>.
-</p>
-<p>htmloutput.risd.gd</p>
+
+<p>Generated at 
+<script>
+var d = new Date(),
+    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+</script>
+
+
+<p>More at htmloutput.risd.gd</p>
