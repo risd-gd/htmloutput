@@ -72,7 +72,7 @@ function formatAMPM() {
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0' + minutes : minutes;
     var strTime = dayName + ' ' + monthName + ' ' + currDate + ' ' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
-    alert(strTime);
+    document.write(strTime);
 }
 
 function getMonthName(month) {
