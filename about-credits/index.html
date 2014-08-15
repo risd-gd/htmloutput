@@ -59,13 +59,33 @@ function get_browser_version(){
 
 <p>Generated at 
 <script>
-var d = new Date(),
-    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-    ampm = d.getHours() >= 12 ? 'pm' : 'am',
-    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+function formatAMPM() {
+    var date = new Date();
+    var currDate = date.getDate();
+    var hours = date.getHours();
+    var dayName = getDayName(date.getDay());
+    var minutes = date.getMinutes();
+    var monthName = getMonthName(date.getMonth());
+    var year = date.getFullYear();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = dayName + ' ' + monthName + ' ' + currDate + ' ' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
+    alert(strTime);
+}
+
+function getMonthName(month) {
+    var ar = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    return ar[month];
+}
+
+function getDayName(day) {
+    var ar1 = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    return ar1[day];
+}
+
+formatAMPM();
 </script>
 
 
