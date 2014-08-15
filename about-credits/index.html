@@ -15,7 +15,44 @@ printready: true
 <p>
     All interviews were performed between Febuary and May, 2014. We would like to thank the many practitioners who agreed to be interviewed for the project. Interviews were edited for readability and length. All work remains the copyright of the student or interviewee. 
 </p>
-<p>Certain editions printed by LuLu</p>
+<p>Rendered and output to PDF from 
+
+<script>
+function get_browser(){
+    var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+    if(/trident/i.test(M[1])){
+        tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
+        return 'IE '+(tem[1]||'');
+        }   
+    if(M[1]==='Chrome'){
+        tem=ua.match(/\bOPR\/(\d+)/)
+        if(tem!=null)   {return 'Opera '+tem[1];}
+        }   
+    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+    return M[0];
+    }
+
+function get_browser_version(){
+    var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];                                                                                                                         
+    if(/trident/i.test(M[1])){
+        tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1]||'');
+        }
+    if(M[1]==='Chrome'){
+        tem=ua.match(/\bOPR\/(\d+)/)
+        if(tem!=null)   {return 'Opera '+tem[1];}
+        }   
+    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+    return M[1];
+    }
+    var browser=get_browser();
+	var browser_version=get_browser_version();
+	document.write(browser); 
+	document.write(browser_version);
+</script>
+</p>
 <p>
 The sans-serif font Messenger Text was designed and generously provided by the <a href="http://ctrtype.com">Center for Typographical Research</a> / Anther Kiley and Colin Frazer. Specimens available.</p><p>    Benton Modern, designed by Tobias Frere-Jones and generously provided by <a href="http://www.webtype.com/font/benton-modern-family">WebType</a>.
 </p>
