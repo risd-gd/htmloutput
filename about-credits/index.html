@@ -57,7 +57,7 @@ function get_browser_version(){
 	document.write(' ' + browser_version);
 </script>
 
-<p>Generated at 
+<p>Generated on 
 <script>
 function formatAMPM() {
     var date = new Date();
@@ -71,7 +71,7 @@ function formatAMPM() {
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = dayName + ' ' + monthName + ' ' + currDate + ' ' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
+    var strTime = monthName + ' ' + currDate + ', ' + year + ' at ' + hours + ':' + minutes + ' ' + ampm;
     document.write(strTime);
 }
 
