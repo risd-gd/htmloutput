@@ -267,18 +267,17 @@ h1.project-name { display: none; }
 	color: black;
 }
 
-.interview-a, .indentanswer {
-	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
-}
 .interview-q, .indentquestion {
 	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 0; padding-right: 0;
 }
-.interview-a, .interview-q {
+.interview-a, .interview-q, .indentanswer {
 	font-size: 12pt;
 	line-height: 125%; 	
 	margin: 0;
 }
-
+.interview-a, .indentanswer {
+	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
+}
 .interview-q, .green {
 	color: rgba(0, 255, 0, 1);
 }
@@ -392,7 +391,7 @@ Page size and paginalia
 
 ._running-head ._section {
 	bottom: 0in;
-	width: 6.4in;
+	width: 6.88in;
 	text-align: center;
 	/*text-decoration: underline;*/
 	font-family: "Messenger Text";
@@ -417,7 +416,7 @@ Page size and paginalia
 	bottom: 0.4in;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	font-size: 0.55em;
+	font-size: 0.6em;
 	z-index: 100;
 }
 
@@ -447,6 +446,7 @@ Page size and paginalia
 	text-transform: none;
 	letter-spacing: 0.2pt;
 	font-size: 110%;
+	color: blue;
 }
 
 ._book sup {
