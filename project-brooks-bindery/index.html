@@ -10,7 +10,8 @@ printready: true
 
 ---
 
-<p>The library provides a bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed.</p>
+<p class="indentanswer">
+The library provides a bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed.</p>
 <code>
 <textarea class="snippet" data-mode="js">
 
@@ -40,25 +41,26 @@ Bindery.afterBind({ head: " ", headUrl: " "}, function(pg, state){
 });
 </textarea>
 </code>
-<p>
+<p class="indentanswer">
+
 	Our effort in writing bindery.js is an exercise in deliberately misusing software. At times it was also an exercise in futility, as our idea about what a book should be lead only to long-abandoned forum posts and bug reports from 2007, a forgotten time in which some still believed that ordinary people wanted to hold in their hands a printed-out piece of paper from their browser. 
 </p>
-<p>
+<p class="indentanswer">
+
 	But despite the rough edges, it's become a truly useful framework for thinking about the book and the patterns and repetition that shape it.
 </p>
-<p>
-	<h3>Some background:</h3>
-</p>
-<p>
+	<h3>Some background</h3>
+<p class="indentanswer">
 	When you grow up with Adobe InDesign, you take for granted the ability to flow text across boxes and pages— it's the only way to design a layout for a book or magazine. In 2011, Adobe's Web Platform Team proposed <a href="http://tinyurl.com/on285pj">bringing that concept to the web</a>, both as a <a href="http://dev.w3.org/csswg/css-regions/">standard for all browsers</a> and as actual working code, contributed to the Webkit project (at the time overseen by Apple and Google). The design and tech worlds were pleased— Adobe, the behemoth of design software, once so proprietary and inscrutable, was opening up and engaging with the web and technology in a new way.
 </p>
-<p>
+<p class="indentanswer">
 	Three years later, Google ripped the code for CSS regions out of Chrome, arguing that their priority was how fast the web was, not how 'rich' the content was. The father of CSS himself <a href="http://alistapart.com/blog/post/css-regions-considered-harmful">condemned the CSS Regions spec</a> as "harmful" to the web. He argued that it needlessly confused the distinction between 'content,' the role of HTML, and 'presentation,' the role of CSS. A designer might argue that the distinction is somewhat arbitrary, but in the community of the web, semantic meaning comes mostly from assigning bits of text labels like 'paragraph' or 'pullquote.'
 </p>
-<p>
+<p class="indentanswer">
 	It's a reminder that even though a browser is 'open source' and open to contributions, the work that gets done usually benefits Google. The <a href="http://www.w3.org/TR/2008/REC-CSS2-20080411/page.html">CSS Paged Media standard</a> from 2008 remains missing, as Google builds features to draw 3d graphics and hook up to webcams and build mobile apps. And it's notoriously tricky to show a new advertisement once you've printed the web page out (in fact, print preview mode is actually a great way to strip irritating ads, breaks, and sidebars from a news article).
 </p>
 
-<p><a href="github: https://github.com/evanbrooks/bindery">Download here</a></p>
+<p class="indentanswer">
+<a href="github: https://github.com/evanbrooks/bindery">Download here</a></p>
 
 <!-- Printing from the computer inevitably means passing through Adobe's technology, be it InDesign or PDFs or PostScript. -->
