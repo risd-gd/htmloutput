@@ -288,7 +288,8 @@ h1.project-name { display: none; }
 	font-family: "Benton Modern";
 	position: relative;
 	z-index: 1;
-	margin-bottom: 18px;
+	margin-bottom: 16px;
+	margin-left: 1.5pc; padding-left: 1.5pc; margin-right: 0; 
 }
 
 blockquote{
