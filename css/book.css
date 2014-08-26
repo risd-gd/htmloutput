@@ -232,7 +232,7 @@ h1.project-name { display: none; }
 .projectdescription h1 {
 	font-size: 3.5pc;
 	font-weight: bold;
-	line-height: 105%;
+	line-height: 100%;
 
 }
  
@@ -275,7 +275,7 @@ h1.project-name { display: none; }
 	line-height: 125%; 	
 	margin: 0;
 }
-.interview-a, .indentanswer, .interview-intro {
+.interview-a, .indentanswer {
 	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
 }
 .interview-q, .green {
@@ -288,7 +288,7 @@ h1.project-name { display: none; }
 	font-family: "Benton Modern";
 	position: relative;
 	z-index: 1;
-	margin-bottom: 3pc;
+	margin-bottom: 18px;
 }
 
 blockquote{
