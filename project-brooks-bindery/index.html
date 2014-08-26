@@ -10,7 +10,7 @@ printready: true
 
 ---
 
-<p class="indentanswer">
+<p class="indentanswer noindent">
 The library provides a bare-bones structure to perform operations on the book content. A snippet of code may perform operations on the whole continuous text, or on a page-by-page level, or both. This gives us a way to think about how a book is processed.</p>
 <code>
 <textarea class="snippet" data-mode="js">
@@ -49,7 +49,6 @@ Bindery.afterBind({ head: " ", headUrl: " "}, function(pg, state){
 
 	But despite the rough edges, it's become a truly useful framework for thinking about the book and the patterns and repetition that shape it.
 </p>
-	<h3>Some background</h3>
 <p class="indentanswer">
 	When you grow up with Adobe InDesign, you take for granted the ability to flow text across boxes and pages— it's the only way to design a layout for a book or magazine. In 2011, Adobe's Web Platform Team proposed <a href="http://tinyurl.com/on285pj">bringing that concept to the web</a>, both as a <a href="http://dev.w3.org/csswg/css-regions/">standard for all browsers</a> and as actual working code, contributed to the Webkit project (at the time overseen by Apple and Google). The design and tech worlds were pleased— Adobe, the behemoth of design software, once so proprietary and inscrutable, was opening up and engaging with the web and technology in a new way.
 </p>
