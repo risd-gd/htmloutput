@@ -162,10 +162,11 @@ Table of contents
 	font-family: "Messenger Text";
 	display: inline-block;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
+  	padding-bottom: 1px;
 	margin-bottom: .5em; margin-top: 1em;
 }
 
-.toc-heading.two {
+.toc-heading.two, .project-name {
 	font-size: 1.5em;
 	line-height: 110%;
 	font-family: "Benton Modern";
@@ -218,7 +219,7 @@ Interview print styles
 
 ----------------------------------*/
 
-h1.project-name { display: none; }
+h1.project-name { /* display: none; */ }
 
 .projectdescription h2 {
 	font-family: "Messenger Text";
