@@ -280,7 +280,8 @@ h1.project-name { /* display: none; */ }
 .interview-a, .indentanswer {
 	margin: 0; text-indent: 1.5pc; margin-right: 1pc;
 }
-.noindent { text-indent: 0; }
+.indentanswer.noindent { text-indent: 0; }
+
 .interview-q, .green {
 	color: rgba(0, 255, 0, 1);
 }
