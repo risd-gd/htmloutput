@@ -166,7 +166,7 @@ Table of contents
 	margin-bottom: .5em; margin-top: 1em;
 }
 
-.toc-heading.two, .project-name {
+.toc-heading.two, h1.intro.project-name {
 	font-size: 1.3em;
 	line-height: 110%;
 	font-family: "Benton Modern";
@@ -220,7 +220,7 @@ Interview print styles
 
 ----------------------------------*/
 
-h1.project-name { /* display: none; */ }
+h1.project-name {  display: none;  }
 
 .projectdescription h2 {
 	font-family: "Messenger Text";
