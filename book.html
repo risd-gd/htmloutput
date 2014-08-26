@@ -1,7 +1,7 @@
 ---
 layout: book_pages
 title: for / with / in 
-subtitle: Conversations, graphic output and code that explores graphic design for, with, and in the web browser
+subtitle: "Conversations, graphic output and code that explores graphic design for, with, and in the web browser"
 ---
 
 
@@ -18,12 +18,12 @@ just ask Evan!
 -->
 <style>
   {% for page in site.pages %}{% if page.category == 'interview' %}
-  	[data-page-interv="{{page.interviewee}}"] .interview-a:before {
-  		content: '{{ page.interviewee_initials }}';
-  	}
-  	[data-page-interv="{{page.interviewee}}"] .interview-q:before {
-  		content: '{{ page.interviewer_initials }}';
-  	}
+    [data-page-interv="{{page.interviewee}}"] .interview-a:before {
+      content: '{{ page.interviewee_initials }}';
+    }
+    [data-page-interv="{{page.interviewee}}"] .interview-q:before {
+      content: '{{ page.interviewer_initials }}';
+    }
   {% endif %}{% endfor %}
 </style>
 
