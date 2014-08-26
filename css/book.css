@@ -214,6 +214,8 @@ Table of contents
 	font-weight: normal;
 }
 
+.nobreak { whit-space: nowrap;}
+
 /* ----------------------------------
 
 Interview print styles
