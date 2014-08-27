@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-family: "Benton Modern", serif;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 48px;
   font-weight: bold;
   line-height: 110%;
 }
@@ -557,8 +557,12 @@ h1.category{
 
 @media (max-width: 800px) {
   button {
-    display: none;
+    
   }
+  h2 {
+  font-size: 40px;
+}
+
 }
 
 /*-----Media Query maybe-----*/

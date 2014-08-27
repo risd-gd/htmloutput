@@ -45,7 +45,7 @@ title: for / with / in
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="toc-int">
-        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span>talks with {{page.author}}</span></a><br />
+        <a class="name" id="{{ page.url }}" href="{{ site.baseurl }}{{ page.url }}">{{page.interviewee}} <span class="nobreak">talks with {{page.author}}</span></a><br />
     </div>
     <hr class='dg2'>
     {% endif %}{% endfor %}
@@ -73,7 +73,7 @@ title: for / with / in
             <a class="toc-code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
                 <h2>{{page.title}}</h2>
-                <p>{{page.description}}</p>
+                <p>{{page.author}}</p>
                  </a>
                 {% endif %}{% endfor %}
         </div>
