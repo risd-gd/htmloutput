@@ -478,7 +478,7 @@ Page size and paginalia
 	-webkit-transform: rotate(90deg);
 	-moz-transform-origin: top right;
 	-moz-transform: rotate(90deg);
-	right: 0.13in;
+	right: 0.12in;
 }
 
 ._verso ._running-head ._section,
@@ -487,7 +487,7 @@ Page size and paginalia
 	-webkit-transform: rotate(-90deg);
 	-moz-transform-origin: top left;
 	-moz-transform: rotate(-90deg);
-	left: 0.13in;
+	left: 0.12in;
 }
 
 
