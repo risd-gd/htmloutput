@@ -306,7 +306,8 @@ Interview & Project Styles
   margin: 0;
 }
 .print-nav a.big {
-  color: rgba(0, 255, 0, 1);
+  margin-left: 20%;
+    color: rgba(0, 255, 0, 1);
   font-family: "Messenger Text";
   font-weight: normal;
   display: inline-block;
@@ -314,7 +315,7 @@ Interview & Project Styles
   border-bottom: 5px solid rgba(0, 255, 0, 1);
 
 } a.big:hover {
-  border-bottom: 5px solid rgba(0, 0, 0, 1);
+  color:rgb(55,50,255);
 
 }
 
