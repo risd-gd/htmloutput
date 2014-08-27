@@ -105,7 +105,7 @@ Title page
 	display: inline-block;
 	font-size: 1em;
   	border-bottom: 5px solid rgba(0, 255, 0, 1);
-;
+
 }
 
 .title-page h1 {
@@ -214,7 +214,6 @@ Table of contents
 	font-weight: normal;
 }
 
-.nobreak { white-space: nowrap;}
 
 /* ----------------------------------
 
