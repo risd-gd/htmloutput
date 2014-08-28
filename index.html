@@ -68,8 +68,7 @@ title: for / with / in
             {% for page in site.pages %}{% if page.category == 'code' %}
             <a class="toc-code" href="{{ site.baseurl }}{{ page.url }}">
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
-                <h2>{{page.title}}</h2>
-                <p>{{page.author}}</p>
+                <h2>{{page.title}}  <span class="nobreak">/ {{page.author}}</span></h2>
                  </a>
                 {% endif %}{% endfor %}
         </div>

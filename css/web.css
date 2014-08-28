@@ -465,8 +465,8 @@ h1.category{
 /* TOC code */
 .toc-code {
   display: block;
-  float: left;
   color: black;
+  width: 40%;
 } .toc-code img {
   display: block;
   width: 30%;
