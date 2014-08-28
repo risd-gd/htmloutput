@@ -104,6 +104,12 @@ hr.dg3 {
   color: white;
 }
 
+.rotatescreen {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 code {
 	font: 0.8rem/1.4 Messenger Mono, monospace;
 	background: rgba(0, 255, 0, .04);
