@@ -27,7 +27,7 @@ a {
 
 h1 {
   font-family: "Messenger Text", sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 30px;
 }
 
@@ -314,7 +314,7 @@ Interview & Project Styles
   font-weight: normal;
   display: inline-block;
   font-size: 1.3em;
- /* border-bottom: 5px solid rgba(0, 255, 0, 1); */
+  border-bottom: 3px solid rgba(0, 255, 0, 1); 
 
 } a.big:hover {
   color:rgb(55,50,255);
@@ -356,6 +356,7 @@ h1.category{
   left: 20%;
   max-width: none;
   clear:both;
+  color: rgb(0,255,0);
 }
 
 /* TOC interview links */
