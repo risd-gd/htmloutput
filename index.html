@@ -41,7 +41,6 @@ title: for / with / in
 <div id="index">
 
     <h1 class="category">Conversations</h1>
-    <hr class="green">
     {% for page in site.pages %}
     {% if page.category == 'interview' %}
     <div class="toc-int">
@@ -52,7 +51,6 @@ title: for / with / in
 
 
     <h1 class="category">Output</h1>
-    <hr class="green">
     <div style="display: inline-block; -webkit-transition: all 1s;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'project' %}
@@ -66,7 +64,6 @@ title: for / with / in
 
 
     <h1 class="category">Code</h1>
-    <hr class="green">
     <div style="display: inline-block;">
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'code' %}
