@@ -162,6 +162,10 @@ Interview & Project Styles
 } .interview figure, .interview figcaption {
   max-width: 600px;
   margin: auto;
+  font-family: "Benton Modern";
+  font-style:italic;
+  margin-bottom:28px;
+
 } .interview h1 { 
   margin-top: 50px;
 }
