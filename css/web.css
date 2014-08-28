@@ -234,7 +234,6 @@ Interview & Project Styles
   cursor: pointer;
   width: auto;
   height: auto;
-  min-height: 300px;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
