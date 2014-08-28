@@ -490,6 +490,7 @@ h1.category{
   max-width: 700px;
 } .toc-block p.mainintro {
   font-size: 24px;
+  padding-right: 18px;
   line-height: 150%;
   font-family: "Messenger Text", sans-serif;
   margin-top: 50px;
@@ -571,7 +572,6 @@ h1.category{
 }
 
    .toc-block p.mainintro {
-    padding-right: 18px;
     font-size: 18px;
 }
   .interview-q {font-size: 16px;}
