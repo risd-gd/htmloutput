@@ -234,7 +234,6 @@ Interview & Project Styles
   height: 800px;
   -webkit-transition: all 1s;
   transition: all 1s;
-  margin: 0 auto;
 }
 .interview .imageContainer img {
   height:100%;
