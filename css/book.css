@@ -250,6 +250,7 @@ h1.project-name {  display: none;  }
 .interview-bar{
   border-color: black;
   margin-bottom: 1.5pc;
+  border-width: 12px;
 }
 
 
