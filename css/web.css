@@ -226,8 +226,9 @@ Interview & Project Styles
   -webkit-transition: all 1s;
   transition: all 1s;
 }
-.interview .imageContainer:hover{
+.interview .imageContainer:hover {
   overflow:visible;
+  cursor: pointer;
   width: auto;
   height: auto;
   min-width: 700px;
