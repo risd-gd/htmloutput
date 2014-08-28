@@ -76,7 +76,7 @@ title: for / with / in
 
     <h1 class="category">Credits</h1>
             {% for page in site.pages %}{% if page.category == 'credits' %}
-              <div class="toc-block">
+              <div class="toc-block" style="margin-top: 20px">
                {{page.content}}
                 </div>
                 {% endif %}{% endfor %}
