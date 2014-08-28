@@ -580,6 +580,7 @@ h1.category{
 
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
+  body { margin: 20px;}
   .interview-q {
     font-family:'Benton Modern';
     font-size:18px;
