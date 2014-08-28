@@ -157,7 +157,7 @@ Interview & Project Styles
 /* interview template styles */
 
 .interview img {
-  height:100%;
+  height:auto;
   max-width: 800px;
 } .interview figure, .interview figcaption {
   max-width: 600px;
@@ -204,7 +204,7 @@ Interview & Project Styles
 
 .interview-q {
   font-family: 'Messenger Text';
-  font-size:24px;
+  font-size:22px;
   color: #20B981;
   max-width:800px;
   margin-left:20%;
