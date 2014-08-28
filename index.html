@@ -66,10 +66,10 @@ title: for / with / in
     <h1 class="category">Code</h1>
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'code' %}
-            <a class="toc-code" href="{{ site.baseurl }}{{ page.url }}">
+            <div class="toc-code" >
                 <img src="{{ site.baseurl }}{{ page.url }}icon.png">
-                <h2>{{page.title}}  <span class="nobreak">/ {{page.author}}</span></h2>
-                 </a>
+                <a class="name" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}  <span class="nobreak">/ {{page.author}}</span></a>
+             </div>
                 {% endif %}{% endfor %}
         </div>
 
