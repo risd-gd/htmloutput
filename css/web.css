@@ -89,7 +89,7 @@ hr.dg3 {
   display: visible;
 }
 
-.green { border-color: #20B981; color: #20B981; }
+.green, .dg2.green, .dg3.green, hr.green { border-color: #20B981; color: #20B981; }
 .site-title{
   cursor: pointer;
 }
