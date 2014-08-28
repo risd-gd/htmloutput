@@ -156,10 +156,11 @@ Interview & Project Styles
 
 /* interview template styles */
 
-.interview img {
-  height:auto;
+.interview .imageContainer img {
+  height:100%;
   max-width: 800px;
-} .interview figure, .interview figcaption {
+} 
+.interview figure, .interview figcaption {
   max-width: 600px;
   margin: auto;
   font-family: "Benton Modern";
@@ -224,7 +225,7 @@ Interview & Project Styles
 */
 .interview .imageContainer{
   display: block;
-  width:100%;
+  width:auto;
   height:300px;
   overflow:hidden;
   -webkit-transition: all 1s;
@@ -233,7 +234,7 @@ Interview & Project Styles
 .interview .imageContainer:hover {
   cursor: pointer;
   width: auto;
-  height: auto;
+  height: 100%;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
