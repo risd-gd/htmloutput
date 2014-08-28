@@ -222,7 +222,7 @@ Interview & Project Styles
 .interview .imageContainer{
   display: block;
   width:auto;
-  height:300px;
+  height:500px;
   overflow:hidden;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -234,6 +234,7 @@ Interview & Project Styles
   height: 800px;
   -webkit-transition: all 1s;
   transition: all 1s;
+  margin: 0 auto;
 }
 .interview .imageContainer img {
   height:100%;
