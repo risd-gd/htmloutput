@@ -89,6 +89,7 @@ hr.dg3 {
   display: visible;
 }
 
+.green { border-color: #20B981; color: #20B981; }
 .site-title{
   cursor: pointer;
 }
@@ -310,13 +311,13 @@ Interview & Project Styles
 }
 .print-nav a.big {
   margin-left: 20%;
-    color: rgba(0, 255, 0, 1);
+    color: #20B981;
   font-family: "Messenger Text";
   font-weight: normal;
   display: inline-block;
   width: 152px;
   font-size: 1.3em;
-  border-bottom: 3px solid rgba(0, 255, 0, 1); 
+  border-bottom: 3px solid #20B981; 
 
 } a.big:hover {
   color:rgb(55,50,255);
@@ -359,8 +360,8 @@ h1.category{
   width: 152px;
   max-width: none;
   clear:both;
-  color: rgb(0,255,0);
-  font-size: 18px;
+  color: #20B981;
+  font-size: 24px;
 }
 
 /* TOC interview links */
@@ -387,9 +388,9 @@ h1.category{
   text-align: left;
   color: black;
   display: inline-block;
-  font-size: 50px;
+  font-size: 42px;
   font-weight: bold;
-  xwhite-space: nowrap;
+  white-space: nowrap;
   position: relative;
   font-family: "Benton Modern", serif;
   padding: 10px 10px 10px 0;
@@ -566,9 +567,10 @@ h1.category{
   button {
     
   }
-  h2 {
-  font-size: 40px;
+  .toc-int .name {
+  font-size: 30px;
 }
+  .interview-q {font-size: 16px;}
 
 }
 
