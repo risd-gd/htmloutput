@@ -572,6 +572,11 @@ h1.category{
   .toc-int .name {
   font-size: 30px;
 }
+
+   .toc-block p.mainintro {
+    padding-right: 18px;
+    font-size: 18px;
+}
   .interview-q {font-size: 16px;}
 
 }
