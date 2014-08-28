@@ -299,12 +299,12 @@ Interview & Project Styles
   top: 0;
   right: 0;
   left: 0;
-  display: block;
+  display: inline-block;
   z-index: 999;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0;
   background: white;
-  box-shadow: 0 0 1px rgba(0,255,0,1);
+  /* box-shadow: 0 0 1px rgba(0,255,0,1); */
   margin: 0;
 }
 .print-nav a.big {
