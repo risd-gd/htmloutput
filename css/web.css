@@ -428,8 +428,8 @@ h1.category{
   -webkit-transition: all 1s;
   overflow: hidden;
 } .toc-out img {
-  height: 500%;
-  width: 500%;
+  height: 200%;
+  width: 200%;
   -webkit-transition: all 1s;
 }.toc-out:hover {
   background-size: 100%;
@@ -574,7 +574,7 @@ h1.category{
    .toc-block p.mainintro {
     font-size: 18px;
 }
-  .interview-q {font-size: 21px;}
+  .interview-q {font-size: 20px;}
 
 }
 
