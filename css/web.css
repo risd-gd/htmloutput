@@ -338,7 +338,9 @@ Interview & Project Styles
 
 }
 
-
+.morespace {
+  margin-bottom: 28px;
+}
 /* ----------------------------------
 
 Styles for the index/toc page
