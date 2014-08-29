@@ -67,7 +67,7 @@ title: for / with / in
         <div class="toc-container">
             {% for page in site.pages %}{% if page.category == 'code' %}
             <div class="toc-code" >
-                <img src="{{ site.baseurl }}{{ page.url }}icon.png">
+                <a href="{{ site.baseurl }}{{ page.url }}"><img src="{{ site.baseurl }}{{ page.url }}icon.png"></a>
                 <a class="name" href="{{ site.baseurl }}{{ page.url }}">{{page.title}}  <span class="">/ {{page.author}}</span></a>
              </div>
                 {% endif %}{% endfor %}
