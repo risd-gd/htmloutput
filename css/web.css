@@ -365,7 +365,7 @@ Styles for the index/toc page
 }
 
 /* for category name */
-h1.category{
+h1.category, h2.category {
   margin-top: 100px;
   margin-top: 150px;
   margin-bottom: 0;
