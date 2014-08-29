@@ -266,7 +266,7 @@ Interview & Project Styles
   margin:0;
 }
 
-.output div {
+.output div, div.footer {
   margin-left: 20%;
 }
 
