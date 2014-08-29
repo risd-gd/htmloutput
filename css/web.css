@@ -587,7 +587,7 @@ h1.category{
    .toc-block p.mainintro {
     font-size: 18px;
 }
-  .interview-q {font-size: 20px;}
+  .interview-q {font-size: 20px; padding-right: 24px;}
 
 }
 
