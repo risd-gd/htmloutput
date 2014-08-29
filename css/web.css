@@ -500,10 +500,10 @@ h1.category{
 } .toc-block p, .toc-block h4, .toc-block h3 {
   margin-left: 20%;
   max-width: 700px;
-  padding-right: 18px;
+  padding-right: 50px;
 } .toc-block p.mainintro {
   font-size: 24px;
-  padding-right: 18px;
+  padding-right: 50px;
   line-height: 150%;
   font-family: "Messenger Text", sans-serif;
   margin-top: 50px;
