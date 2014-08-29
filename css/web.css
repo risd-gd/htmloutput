@@ -440,8 +440,8 @@ h1.category{
   -webkit-transition: all 1s;
   overflow: hidden;
 } .toc-out img {
-  height: 200%;
-  width: 200%;
+  height: 140%;
+  width: 140%;
   -webkit-transition: all 1s;
 }.toc-out:hover {
   background-size: 100%;
