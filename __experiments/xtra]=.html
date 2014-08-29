@@ -1,0 +1,90 @@
+<!-- original 
+<div class="toc">
+{% for page in site.pages %}
+  {% if page.printready %}
+    <label class="toc-item">
+      {% if page.category == 'interview' %}
+        <div class="toc-pg" data-toc="{{ page.interviewee }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
+      {% else %}
+        <div class="toc-pg" data-toc="{{ page.title }}">
+          <input type="checkbox" checked="false" />
+        </div>
+        <h4>
+          {{ page.title }} <span class="toc-author">{{ page.author }}</span>
+        </h4>
+      {% endif %}
+    </label>
+  {% endif %}
+{% endfor %}
+</div>
+<div class="_page-break"></div>
+
+-->
+
+
+
+
+
+<!-- original version -->
+{% for category in site.types %}
+  {% for page in site.pages %}
+    {% if page.category == category %}
+      {% if page.printready %}
+        {% if category == 'interview' %}
+         <h1 class="interview-name"
+              data-change-running-head
+              data-change-page-kind
+              data-category="{{ page.category }}"
+              data-interviewee="{{ page.interviewee }}"
+              data-interviewer="{{ page.interviewer }}"
+              data-pageurl="htmloutput.risd.gd{{page.url}}"
+              data-id="{{ page.interviewee }}">
+          </h1> 
+          <hr class="interview-bar" />
+          <h1 class="interview-name">{{ page.interviewee }} talks with {{ page.interviewer }}</h1>
+          <hr class="interview-bar" />
+
+          <div class="_page-break"></div>
+
+        {% else %}
+
+          <h1 class="project-name"
+              data-change-running-head
+              data-change-page-kind
+              data-category="{{ page.category }}"
+              data-pageurl="html.risd.gd{{page.url}}"
+              data-id="{{ page.title }}">
+              {{ page.author }}
+          </h1>
+           <div class="projectdescription">
+            <h2><span class="green">{{ page.author }}</span> / {{ page.description }}</h2>
+           </div>
+       <div class="_page-break"></div>
+       {% endif %} 
+
+        {{ page.content }}
+
+      <div class="_page-break"></div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+
+
+description:  Every tool has its purpose. But it's our role as designers to stretch the defintion of our tools. I have been using the Web Inspector within the browser for the last couple years to make adjustments to designs. Designing patterns is perhaps the simplest way to make this process clear. Whereas a dialog box might be needed to make global adjustments in Illustrator, altering margins or border width in the browser can provide immediate access to a multitude of ideas. David Reinfurt refers to responsivity as an important aspect of process <a href="#">later in this book</a>. That a process of immediate feedback is valuable in terms of making adjustments. Tools for making that allow for an "aha" moment seem critical when faced when infinite options. 
+</p>
+<p>
+ This real-time working process, where the rendering engine and the tool become one. This is more than an issue of speed. There is a cognitive shift that occurs when the volley between action and result gets collapsed into one moment. Each tap of the keyboard alters one number, but in doing so, the entirety of the composition changes. No palettes, or shift in windows or waiting is needed. And although adjusting numbers in the browser's Web Inspector is quantitative, it is more identical to collage than WYSIWYG design methods.</p>
+
+<p>The following patterns are the result of this play and the inspiration for the greater project: the web environment as a tool to produce designs of any sort -- like this book.
+category: project
+printready: true
+
+
+I have been using the Web Inspector within the browser for the last couple years to make adjustments to designs. Designing patterns is perhaps the simplest way to make this process clear. Whereas a dialog box might be needed to make global adjustments in Illustrator, altering margins or border width in the browser can provide immediate access to a multitude of ideas. Adjusting numbers in the browser's Web Inspector is more like collage than WYSIWYG design methods. The following patterns are the result of this play and the inspiration for the greater project: the web environment as a tool to produce designs of any sort, like this book.
