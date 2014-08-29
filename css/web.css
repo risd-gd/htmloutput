@@ -275,8 +275,7 @@ Interview & Project Styles
 .code p {
   clear: both;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20%;
 }
 
 .code img.icon {
@@ -295,6 +294,7 @@ Interview & Project Styles
   margin-right: 5px;
 }.code .title h2, .code .title h1, .code .title h4 {
   margin-bottom: 10px;
+  margin-left: 20%;
 }  
 
 
