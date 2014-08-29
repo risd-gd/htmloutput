@@ -602,9 +602,9 @@ h1.category, h2.category {
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
 
-.toc-block p, .toc-block h4, .toc-block h3, .toc-block p.mainintro {
-  font-size: 16px; line-height: 110%;
-}  
+
+ .toc-block p.mainintro { padding-right: 10px; }
+
   .toc-code { width: 100%; } 
   .toc-code img { width: 50%; }
 
