@@ -417,7 +417,7 @@ h1.category, h2.category {
   font-family: "Benton Modern", serif;
   padding: 10px 10px 10px 0;
   left: 20%;
-  margin-top: 12px;
+  margin-top: 6px;
   margin-bottom: 3px;
 } .toc-int .name:hover {
   color:rgb(55,50,255);
