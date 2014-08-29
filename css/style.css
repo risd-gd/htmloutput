@@ -80,7 +80,7 @@ figcaption{
 .printy{}
 .noprinty{}
 .nobreak { white-space: nowrap;}
-
+.noindent { text-indent: 0;}
 
 
 /*
