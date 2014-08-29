@@ -366,8 +366,9 @@ Styles for the index/toc page
 
 #index hr, .more hr, .more .category {
   margin-left: 20%;
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
+.more .category  {   margin-bottom: 28px; }
 
 /* for category name */
 h1.category, h2.category {
