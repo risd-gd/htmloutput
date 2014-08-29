@@ -278,7 +278,7 @@ Interview & Project Styles
   margin-left: 20%;
 }
 
-.code img.icon {
+img.icon.code {
   position: fixed;
   /* left: 10%; */
   top: 50px;
