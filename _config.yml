@@ -16,7 +16,7 @@ highlighter: pygments
 markdown:    kramdown
 
 name:        html-output
-baseurl:     /htmloutput
+baseurl:     
 
 permalink:   pretty
 
