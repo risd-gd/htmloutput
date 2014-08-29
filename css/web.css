@@ -593,11 +593,13 @@ h1.category{
 
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
-  .toc-code {
-  width: 100%;
-} .toc-code img {
-  width: 50%;
-}
+
+.toc-block p, .toc-block h4, .toc-block h3, .toc-block p.mainintro {
+  font-size: 16px; line-height: 110%;
+}  
+  .toc-code { width: 100%; } 
+  .toc-code img { width: 50%; }
+
   .interview-q {
     font-family:'Benton Modern';
     font-size:18px;
