@@ -204,7 +204,8 @@ Interview & Project Styles
   line-height: 1.5em;
 }
 
-.interview-a,  .indentanswer, .interview-conclusion { text-indent: 20px;  }
+.interview-a,  .indentanswer, .interview-conclusion { text-indent: 20px;   font-family:'Benton Modern';
+ }
 .interview-q { color: #20B981;}
 .interview-a, .interview-q,  .indentanswer { font-size: 20px; }
 
@@ -220,7 +221,6 @@ Interview & Project Styles
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-family:'Benton Modern';
   
 }
 /* styles for interview images 
