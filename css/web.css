@@ -333,7 +333,8 @@ Interview & Project Styles
   border-bottom: 5px solid #20B981; 
 
 } a.big:hover {
-  color:rgb(55,50,255);
+  color:black;
+  border-color: black;
 
 }
 
