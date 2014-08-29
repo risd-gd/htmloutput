@@ -366,6 +366,8 @@ Styles for the index/toc page
 
 /* for category name */
 h1.category, h2.category {
+  font-family: "Messenger Text";
+  font-weight: normal;
   margin-top: 100px;
   margin-top: 150px;
   margin-bottom: 0;
