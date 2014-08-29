@@ -78,7 +78,10 @@ hr.dg3 {
   background: none;
   float: right;
   padding: 5px 20px;
+  color: blue;
 }
+.toggle-btn:hover { cursor: pointer; color: black;}
+
 .toggle-btn a:hover {
   color: black;
 }
