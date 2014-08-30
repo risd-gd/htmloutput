@@ -242,6 +242,7 @@ Interview & Project Styles
   cursor: pointer;
   width: 100%;
   height: 700px;
+  margin: 10px 0;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
