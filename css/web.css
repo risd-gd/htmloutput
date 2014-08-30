@@ -232,7 +232,7 @@ Interview & Project Styles
 .interview .imageContainer{
   display: block;
   width:auto;
-  height:500px; 
+  height:300px; 
   overflow:hidden;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -241,7 +241,7 @@ Interview & Project Styles
 .interview .imageContainer:hover {
   cursor: pointer;
   width: 100%;
-  height: 800px;
+  height: 700px;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
