@@ -607,7 +607,7 @@ h1.category, h2.category {
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
 
-.wrapper.interview { margin-left: 10px; margin-right: 10px;}
+.wrapper.interview { margin-left: 20px; margin-right: 20px;}
  .toc-block p.mainintro { padding-right: 10px; }
 
   .toc-code { width: 100%; } 
