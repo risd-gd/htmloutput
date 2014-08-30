@@ -241,7 +241,7 @@ Interview & Project Styles
 .interview .imageContainer:hover {
   cursor: pointer;
   width: 100%;
-  height: 600px;
+  height: 580px;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
