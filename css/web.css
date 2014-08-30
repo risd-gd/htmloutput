@@ -231,7 +231,7 @@ Interview & Project Styles
 */
 .interview .imageContainer{
   display: block;
-  width:auto;
+  width:200px;
   height:300px; 
   overflow:hidden;
   -webkit-transition: all 1s;
