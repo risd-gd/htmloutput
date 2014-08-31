@@ -606,7 +606,7 @@ h1.category, h2.category {
 /*-----Media Query maybe-----*/
 @media (max-width: 600px) {
 
-.interview-name { font-size: 42px;}
+.interview .title { font-size: 48px;}
 .wrapper.interview { margin-left: 20px; margin-right: 20px;}
  .toc-block p.mainintro { padding-right: 10px; }
 
