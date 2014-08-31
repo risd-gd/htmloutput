@@ -612,11 +612,12 @@ h1.category, h2.category {
   .toc-code { width: 100%; } 
   .toc-code img { width: 50%; }
 
-  .interview-q {
+  .interview-q, .interview-a, .indentanswer {
     font-family:'Benton Modern';
     font-size:18px;
     margin:auto;
     margin-bottom:15px;
+    line-height: 120%;
   }
 
   button {
