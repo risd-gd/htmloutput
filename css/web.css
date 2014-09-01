@@ -185,7 +185,7 @@ Interview & Project Styles
   margin: auto;
   padding-right: 100px;
 }
-.interview-intro {
+.interview-intro, .interview-conclusion {
   max-width:600px;
   margin:auto;
   font-style:italic;
