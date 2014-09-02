@@ -271,7 +271,7 @@ Interview & Project Styles
   margin:0;
 }
 
-.output div, div.footer {
+.output div, div.footer, .output code textarea {
   margin-left: 20%;
 }
 
