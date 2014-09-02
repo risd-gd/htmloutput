@@ -262,6 +262,7 @@ Interview & Project Styles
 } .output p {
   clear: both;
   max-width: 600px;
+  margin-left: 20%;
 }
 .output img {
   height:auto;
