@@ -567,7 +567,7 @@ h1.category, h2.category {
 }
 
 .three {
-  bottom: 150px;
+  top: 450px;
   right:700px;
   border: 200px solid rgba(185, 32, 115, .5);
   -webkit-transform: skew(-10deg, 4deg); 
