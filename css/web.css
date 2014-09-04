@@ -545,7 +545,6 @@ h1.category, h2.category {
   width: 0;
   border: 200px solid rgba(32, 185, 129, .5);
   /*   border-radius: 50%; */
-  -webkit-transform: skew(50deg, 10deg); 
   z-index: -1;
 
 }
@@ -553,18 +552,27 @@ h1.category, h2.category {
 .one {
   top: 100px;
   left: 100px;
+  -webkit-transform: skew(2deg, 98deg); 
+  -moz-transform: skew(2deg, 98deg); 
+  transform: skew(2deg, 98deg); 
 }
 
 .two {
   border: 200px solid rgba(32, 118, 185, .5);
   right: 15px;
   top: 300px;
+  -webkit-transform: skew(98deg, 4deg); 
+  -moz-transform: skew(98deg, 4deg); 
+  transform: skew(98deg, 4deg); 
 }
 
 .three {
   bottom: 150px;
   right:700px;
   border: 200px solid rgba(185, 32, 115, .5);
+  -webkit-transform: skew(-10deg, 4deg); 
+  -moz-transform: skew(-10deg, 4deg); 
+  transform: skew(-10deg, 4deg); 
 }
 
 /* ----------------------------------
