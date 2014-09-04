@@ -193,15 +193,15 @@ Table of contents
 	display: block;
 }
 
-.toc h4 {
+.toc-item h4 {
 	margin: 0;
 	font-size: 1em;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	text-indent: -2pc;
-	padding-left: 2pc;
-	line-height: 120%;
-	margin-top: 4px;
+	text-indent: -24px;
+	padding-left: 24px;
+	line-height: 140%;
+	margin-top: 4px; 
 }
  
 .toc-author {
