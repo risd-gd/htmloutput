@@ -582,7 +582,7 @@ h1.category, h2.category {
 ----------------------------------*/
 
 
-/* big stuff */
+/* big stuff 
 @media (min-width: 1800px) {
   .wrapper {
     max-width: 1800px;
@@ -594,7 +594,7 @@ h1.category, h2.category {
     margin:auto;
   }
 }
-
+*/
 /* ipad ? */
 
 @media (max-width: 800px) {
