@@ -543,9 +543,9 @@ h1.category, h2.category {
 .cls {
   position: fixed;
   width: 0;
-  border-radius: 50%;
-  border: 2000px solid rgba(255, 255, 0, .5);
-  /* -webkit-transform: skew(50deg, 10deg); */
+  border: 200px solid rgba(255, 255, 0, .5);
+  /*   border-radius: 50%;
+  -webkit-transform: skew(50deg, 10deg); */
   z-index: -1;
 
 }
@@ -556,15 +556,15 @@ h1.category, h2.category {
 }
 
 .two {
-  border: 2000px solid rgba(0, 0, 255, .5);
+  border: 200px solid rgba(0, 0, 255, .5);
   right: 15px;
-  top: 600px;
+  top: 00px;
 }
 
 .three {
   bottom: 150px;
   right:700px;
-  border: 2000px solid rgba(0, 255, 255, .5);
+  border: 200px solid rgba(0, 255, 255, .5);
 }
 
 /* ----------------------------------
