@@ -37,14 +37,14 @@ Book overall style
   text-indent: 0pt;
   opacity: 1;
   letter-spacing: .5pt;
-  color: blue;
+  color: rgb(0,0,255);
   font-size: 6pt;
   text-transform: uppercase;
   z-index: -1;
   display: inline-block;
   margin: 0pt;
   padding: 0pt;
-  /* xbackground-color: blue;
+  /* xbackground-color: rgb(0,0,255);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -55,7 +55,7 @@ Book overall style
 }
  
 ._book-content a{
-  color: blue;
+  color: rgb(0,0,255);
   text-decoration: none;
 }
 
@@ -449,7 +449,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer i, ._book sup {
-	color: blue;
+	color: rgb(0,0,255);
 }
 
 ._running-head ._headurl {
