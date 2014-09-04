@@ -543,7 +543,7 @@ h1.category, h2.category {
 .cls {
   position: fixed;
   width: 0;
-  border: 200px solid rgba(32, 185, 129, .5);
+  border: 200px solid rgba(32, 185, 129, .4);
   /*   border-radius: 50%; */
   z-index: -1;
 
@@ -558,7 +558,7 @@ h1.category, h2.category {
 }
 
 .two {
-  border: 200px solid rgba(32, 118, 185, .5);
+  border: 200px solid rgba(32, 118, 185, .4);
   right: 15px;
   top: 300px;
   -webkit-transform: skew(98deg, 4deg); 
@@ -569,7 +569,7 @@ h1.category, h2.category {
 .three {
   top: 450px;
   right:700px;
-  border: 200px solid rgba(185, 32, 115, .5);
+  border: 200px solid rgba(185, 32, 115, .4);
   -webkit-transform: skew(-10deg, 4deg); 
   -moz-transform: skew(-10deg, 4deg); 
   transform: skew(-10deg, 4deg); 
