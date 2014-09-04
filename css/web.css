@@ -556,15 +556,15 @@ h1.category, h2.category {
 }
 
 .two {
-  border: 200px solid rgba(0, 0, 255, .5);
+  border: 200px solid rgba(32, 118, 185, .5);
   right: 15px;
-  top: 00px;
+  top: 600px;
 }
 
 .three {
   bottom: 150px;
   right:700px;
-  border: 200px solid rgba(0, 255, 255, .5);
+  border: 200px solid rgba(185, 32, 115, .5);
 }
 
 /* ----------------------------------
