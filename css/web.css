@@ -572,14 +572,6 @@ h1.category, h2.category {
   transform: skew(-10deg, 4deg); 
 }
 
-.four {
-  top: 350px;
-  right:300px;
-  -webkit-transform: skew(-10deg, 4deg); 
-  -moz-transform: skew(-10deg, 4deg); 
-  transform: skew(-10deg, 4deg); 
-}
-
 
 /* ----------------------------------
 
