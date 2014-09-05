@@ -514,7 +514,7 @@ h1.category, h2.category {
   margin-left: 20%;
   max-width: 700px;
   padding-right: 50px;
-} .toc-block.creditsfront { max-width: 560px; }
+} .toc-block.creditsfront p { max-width: 560px; }
 .toc-block p.mainintro {
   font-size: 24px;
   padding-right: 50px;
