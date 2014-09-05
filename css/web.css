@@ -542,8 +542,8 @@ h1.category, h2.category {
 
 .cls {
   position: fixed;
-  width: 2000%; 
-  border: 5px solid rgba(32, 185, 129, .4);
+  width: 200%; 
+  border: 20px solid rgba(32, 185, 129, .4);
    border-radius: 50%; 
   z-index: -1;
 
