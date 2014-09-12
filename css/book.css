@@ -37,14 +37,14 @@ Book overall style
   text-indent: 0pt;
   opacity: 1;
   letter-spacing: .5pt;
-  color: rgb(0,0,255);
+  color: blue;
   font-size: 6pt;
   text-transform: uppercase;
   z-index: -1;
   display: inline-block;
   margin: 0pt;
   padding: 0pt;
-  /* xbackground-color: rgb(0,0,255);
+  /* xbackground-color: blue;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -55,7 +55,7 @@ Book overall style
 }
  
 ._book-content a{
-  color: rgb(0,0,255);
+  color: blue;
   text-decoration: none;
 }
 
@@ -176,7 +176,6 @@ Table of contents
   	border-bottom: 5px solid black;
 	margin-left: 1.5pc;
 	margin-top: 1pc;
-	padding-bottom: 1px;
 }
 
 
@@ -193,15 +192,15 @@ Table of contents
 	display: block;
 }
 
-.toc-item h4 {
+.toc h4 {
 	margin: 0;
 	font-size: 1em;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	text-indent: -24px;
-	padding-left: 24px;
-	line-height: 140%;
-	margin-top: 4px; 
+	text-indent: -2pc;
+	padding-left: 2pc;
+	line-height: 120%;
+	margin-top: 4px;
 }
  
 .toc-author {
@@ -235,7 +234,7 @@ h1.project-name {  display: none;  }
 
 }
 .projectdescription h1 {
-	font-size: 3.74pc;
+	font-size: 3.5pc;
 	font-weight: bold;
 	line-height: 100%;
 
@@ -431,16 +430,16 @@ Page size and paginalia
 }
 
 ._recto ._running-head ._pagenum {
-	right: 0.18in;
+	right: 0.16in;
 	-webkit-transform: rotate(90deg);
 }
 ._verso ._running-head ._pagenum {
-	left: 0.18in;
+	left: 0.16in;
 	-webkit-transform: rotate(-90deg);
 }
 
 ._running-head ._footer {
-	bottom: .24in;
+	bottom: .25in;
 	left: .5in;
   width: 3.5in;
 	position: absolute;
@@ -449,7 +448,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer i, ._book sup {
-	color: rgb(0,0,255);
+	color: blue;
 }
 
 ._running-head ._headurl {
@@ -480,7 +479,7 @@ Page size and paginalia
 	-webkit-transform: rotate(90deg);
 	-moz-transform-origin: top right;
 	-moz-transform: rotate(90deg);
-	right: 0.16in;
+	right: 0.11in;
 }
 
 ._verso ._running-head ._section,
@@ -489,7 +488,7 @@ Page size and paginalia
 	-webkit-transform: rotate(-90deg);
 	-moz-transform-origin: top left;
 	-moz-transform: rotate(-90deg);
-	left: 0.16in;
+	left: 0.11in;
 }
 
 
@@ -586,7 +585,7 @@ figcaption{
 }
 
 ._book-spread-l img {
-	left: 0; 
+	left: 0;
 }
 
 ._book-spread-r img {
