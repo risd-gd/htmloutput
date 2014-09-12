@@ -271,3 +271,26 @@ For previewing the print
   	}
 
 }
+
+/* ----------------------------------
+
+Actual print styles
+
+----------------------------------*/
+
+@media print {
+	body, html {
+		margin: 1px;
+		padding: 0;
+	}
+
+	.page-outer {
+		/* BECAUSE CHROME !?!?! 
+		-webkit-transform: scale(0.944);  */
+	}
+
+	/* Hacky and temporary, assume that crop marks means large paper*/
+	._cropmarks .page-outer {
+		margin-top: 1in;
+	}
+}
