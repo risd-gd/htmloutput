@@ -280,7 +280,7 @@ Actual print styles
 
 @media print {
 	body, html {
-		margin: 1px;
+	/*	margin: 1px; */
 		padding: 0;
 	}
 
@@ -291,6 +291,6 @@ Actual print styles
 
 	/* Hacky and temporary, assume that crop marks means large paper*/
 	._cropmarks .page-outer {
-		margin-top: 1in;
+	/*	margin-top: 1in;  */
 	}
 }
