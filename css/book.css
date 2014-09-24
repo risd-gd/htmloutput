@@ -431,7 +431,7 @@ Page size and paginalia
 }
 
 ._recto ._running-head ._pagenum {
-	right: 0.28in;
+	right: 0.32in;
 	-webkit-transform: rotate(90deg);
 }
 ._verso ._running-head ._pagenum {
