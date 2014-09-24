@@ -362,8 +362,8 @@ Page size and paginalia
 ----------------------------------*/
 
 .page-outer {
-	height: 6.88in;
-	width: 4.25in;
+	height: 7.13in;
+	width: 4.5in;
 	position: relative;
     page-break-after: always;
     margin: auto;
@@ -380,10 +380,10 @@ Page size and paginalia
 .page-inner {
 	position: absolute;
 	margin:   auto;
-	bottom:   -0.125in;
-	top:      -0.125in;
-	left:     -0.125in;
-	right:    -0.125in;
+	bottom:   0;
+	top:      0;
+	left:     0;
+	right:    0;
 	overflow: hidden;
 	padding:  0.5in 0.6in 0.85in;
 }
@@ -401,7 +401,7 @@ Page size and paginalia
 
 ._running-head ._section {
 	bottom: 0in;
-	width: 6.88in;
+	width: 7.13in;
 	text-align: center;
 	/*text-decoration: underline;*/
 	font-family: "Messenger Text";
@@ -423,7 +423,7 @@ Page size and paginalia
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 0.35in;
+	bottom: 0.5in;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.6em;
@@ -431,17 +431,17 @@ Page size and paginalia
 }
 
 ._recto ._running-head ._pagenum {
-	right: 0.18in;
+	right: 0.3in;
 	-webkit-transform: rotate(90deg);
 }
 ._verso ._running-head ._pagenum {
-	left: 0.18in;
+	left: 0.3in;
 	-webkit-transform: rotate(-90deg);
 }
 
 ._running-head ._footer {
-	bottom: .24in;
-	left: .5in;
+	bottom: .37in;
+	left: .625in;
   width: 3.5in;
 	position: absolute;
 	font-size: 0.6em;
