@@ -442,7 +442,7 @@ Page size and paginalia
 ._running-head ._footer {
 	bottom: .38in;
 	left: .625in;
-  width: 3.5in;
+  	width: 3in;
 	position: absolute;
 	font-size: 0.6em;
 	font-family: "Messenger Text";
