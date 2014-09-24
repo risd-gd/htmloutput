@@ -385,7 +385,7 @@ Page size and paginalia
 	left:     0;
 	right:    0;
 	overflow: hidden;
-	padding:  0.5in 0.6in 0.85in;
+	padding:  0.6in 0.6in 0.85in;
 }
 
 
@@ -440,7 +440,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	bottom: .37in;
+	bottom: .3in;
 	left: .625in;
   width: 3.5in;
 	position: absolute;
