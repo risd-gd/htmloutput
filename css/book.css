@@ -423,7 +423,7 @@ Page size and paginalia
 
 ._running-head ._pagenum {
 	position: absolute;
-	bottom: 0.5in;
+	bottom: 0.6in;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.6em;
@@ -435,7 +435,7 @@ Page size and paginalia
 	-webkit-transform: rotate(90deg);
 }
 ._verso ._running-head ._pagenum {
-	left: 0.28in;
+	left: 0.29in;
 	-webkit-transform: rotate(-90deg);
 }
 
