@@ -440,7 +440,7 @@ Page size and paginalia
 }
 
 ._running-head ._footer {
-	bottom: .3in;
+	bottom: .37in;
 	left: .625in;
   width: 3.5in;
 	position: absolute;
@@ -544,7 +544,7 @@ Book image spreads
 
 ._bleed [data-fullbleed],
 ._bleed [data-fullbleed] {
-	height: 7.05in !important; /* Sorry */
+	height: 7.13in !important; /* Sorry */
 	/*margin: -0.5em -0.5in;
 	padding: 0.5em 0.5in;*/
 }
