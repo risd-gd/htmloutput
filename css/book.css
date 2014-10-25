@@ -209,9 +209,7 @@ Table of contents
 }
 
 .toc-pg {
-	position: absolute;
-	right: 0;
-	top: 0;
+	float; left; width: 60px;
 	font-family: "Messenger Text";
 	font-weight: normal;
 }
