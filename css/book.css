@@ -202,6 +202,7 @@ Table of contents
 	padding-left: 24px;
 	line-height: 140%;
 	margin-top: 4px; 
+	margin-left: 80px;
 }
  
 .toc-author {
@@ -209,7 +210,9 @@ Table of contents
 }
 
 .toc-pg {
-	float; left; width: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
 	font-family: "Messenger Text";
 	font-weight: normal;
 }
