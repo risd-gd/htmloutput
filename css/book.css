@@ -174,7 +174,7 @@ Table of contents
 	font-weight: bold;
 	display: inline-block;
   	border-bottom: 5px solid black;
-	margin-left: 1.5pc;
+	margin-left: 30px;
 	margin-top: 1pc;
 	padding-bottom: 1px;
 }
@@ -202,7 +202,7 @@ Table of contents
 	padding-left: 24px;
 	line-height: 140%;
 	margin-top: 4px; 
-	margin-left: 80px;
+	margin-left: 30px;
 }
  
 .toc-author {
