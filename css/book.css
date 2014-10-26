@@ -198,8 +198,8 @@ Table of contents
 	font-size: 1em;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	text-indent: 0px;
-	padding-left: 50px;
+	text-indent: -24px;
+	padding-left: 24px;
 	line-height: 140%;
 	margin-top: 4px; 
 }
