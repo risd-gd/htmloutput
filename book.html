@@ -125,10 +125,10 @@ Table of Contents
   {% if page.printready %}
     <label class="toc-item">
       {% if page.category == 'interview' %}
-        <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
         <div class="toc-pg" data-toc="{{ page.interviewee }}">
           <input type="checkbox" checked="false" />
         </div>
+        <h4>{{ page.interviewee }} talks with {{ page.interviewer }}</h4>
       {% endif %}
     </label>
   {% endif %}
