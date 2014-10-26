@@ -195,7 +195,7 @@ Table of contents
 
 .toc-item h4 {
 	margin: 0;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	text-indent: 0;
@@ -214,6 +214,7 @@ Table of contents
 	top: 0;
 	font-family: "Messenger Text";
 	font-weight: normal;
+	font-size: 0.9em;
 }
 
 
