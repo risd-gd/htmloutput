@@ -99,10 +99,11 @@ Table of Contents
 
 
 
-<div class="toc">
 
 <h1 class="toc-heading two">Contents</h1>
+<div class="toc">
 
+<h1 class="toc-heading">Introduction</h1>
 {% for page in site.pages %}
   {% if page.printready %}
     <label class="toc-item">
@@ -111,7 +112,7 @@ Table of Contents
           <input type="checkbox" checked="false" />
         </div>
         <h4>
-          {{ page.title }} / {{ page.author }} 
+          {{ page.description }} / {{ page.author }} 
         </h4>
       {% endif %}
     </label>
