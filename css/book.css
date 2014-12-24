@@ -211,7 +211,7 @@ Table of contents
 .toc-pg {
 	position: absolute;
 	left: -16px;
-	top: -1px;
+	top: 0px;
 	font-family: "Messenger Text";
 	font-weight: normal;
 	font-size: 0.94em;
