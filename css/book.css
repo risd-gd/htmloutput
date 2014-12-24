@@ -159,13 +159,13 @@ Table of contents
 .toc-heading {
 	margin-left: 1.5pc;
 	color: rgba(0, 255, 0, 1);
-	font-size: 1.1em;
+	font-size: 1em;
 	line-height: 110%;
 	font-family: "Messenger Text";
 	display: inline-block;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
   	padding-bottom: 1px;
-	margin-bottom: 6px; margin-top: 1em;
+	margin-bottom: 4px; margin-top: 1em;
 }
 
 .toc-heading.two, h1.intro.project-name {
@@ -212,7 +212,7 @@ Table of contents
 
 .toc-pg {
 	position: absolute;
-	left: -14px;
+	left: -12px;
 	top: 0px;
 	font-family: "Messenger Text";
 	font-weight: normal;
