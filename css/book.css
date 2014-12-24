@@ -321,7 +321,7 @@ blockquote{
 mark {
 	font-style: normal;
 	background: rgba(0, 255, 0, 0);
-	border-bottom: 1px solid rgba(0,255,0,1);
+	border-bottom: 2px solid rgba(0,255,0,1);
 	padding-bottom: 0;
 }
 
