@@ -11,9 +11,9 @@ ____________________________________________________
 
 This is the generated global stylesheet for the book.
 Any dynamic content that is part of a stylesheet should end up here.
-Do not include stylesheets within a post that aren't correctly
 namespaced. If you aren't sure what namespacing is
 just ask Evan!
+Do not include stylesheets within a post that aren't correctly
 
 -->
 <style>
@@ -107,11 +107,11 @@ Table of Contents
   {% if page.printready %}
     <label class="toc-item">
       {% if page.category == 'about' %}
+        <h4>
+          {{ page.title }} 
         <div class="toc-pg" data-toc="{{ page.title }}">
           <input type="checkbox" checked="false" />
         </div>
-        <h4>
-          {{ page.title }} 
         </h4>
       {% endif %}
     </label>
