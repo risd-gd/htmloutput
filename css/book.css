@@ -163,7 +163,7 @@ Table of contents
 	display: inline-block;
   	border-bottom: 3px solid rgba(0, 255, 0, 1);
   	padding-bottom: 1px;
-	margin-bottom: .5em; margin-top: 1em;
+	margin-bottom: 6px; margin-top: 1em;
 }
 
 .toc-heading.two, h1.intro.project-name {
@@ -200,7 +200,7 @@ Table of contents
 	font-weight: normal;
 	text-indent: 0;
 	padding-left: 25px;
-	line-height: 136%;
+	line-height: 147%;
 	margin-top: 4px; 
 }
  
@@ -214,7 +214,7 @@ Table of contents
 	top: -1px;
 	font-family: "Messenger Text";
 	font-weight: normal;
-	font-size: 0.88em;
+	font-size: 0.94em;
 	text-align:right;
 	width: 26px;
 }
