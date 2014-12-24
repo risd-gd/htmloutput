@@ -577,7 +577,7 @@ figcaption{
 	display: block;
 	/*outline: 1px solid orange;*/
 	top: 0;
-	width: 193%;
+	width: 196%;
 	/* less than 200% to account for bleed and spine */
 }
 
