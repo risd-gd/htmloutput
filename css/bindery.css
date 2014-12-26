@@ -287,7 +287,7 @@ Actual print styles
 	.page-outer {
 		/* BECAUSE CHROME !?!?!  
 		-webkit-transform: scale(0.936);  */
-		-webkit-transform: scale(0.936);  
+		-webkit-transform: scale(0.95);  
 	}
 
 	/* Hacky and temporary, assume that crop marks means large paper*/
