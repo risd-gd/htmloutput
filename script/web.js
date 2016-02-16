@@ -2,11 +2,13 @@ $(document).ready(function(){
 
   highlightCode();
 
+
+// Do we even use these???
+//Interview images grow & shrink
   $('.interview img').not('.nohover').each(function(){
     $(this).wrap("<section class='imageContainer'></section>");
   })
-
-
+//Z-index change
   $('.imageContainer').hover(function(){
     $(this).toggleClass('selectedImage');
 //    $('.imageContainer').not(".selectedImage").css('opacity','0.05');
@@ -19,6 +21,8 @@ $(document).ready(function(){
 
 });
 
+
+//Code Highlighting
 function highlightCode(){
   var snippets = document.querySelectorAll(".snippet");
   for (var i = 0; i < snippets.length; i++) {
