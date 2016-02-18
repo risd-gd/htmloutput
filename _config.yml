@@ -12,13 +12,12 @@ encoding:    nil
 future:      true
 show_drafts: nil
 limit_posts: 0
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 
 name:        html-output
-baseurl:     
+baseurl:
 
 permalink:   pretty
 
 types:       [interview, project, about, code]
-
